@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deutsch oder was – Lernmaterial</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white;
+      padding: 40px 20px 30px;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2em; letter-spacing: 1px; }
+    header p { margin-top: 8px; color: #aac4f0; font-size: 1em; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 30px 20px; }
+
+    .section { margin-bottom: 36px; }
+    .section h2 {
+      font-size: 1.1em;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #555;
+      border-left: 4px solid #4a90d9;
+      padding-left: 10px;
+      margin-bottom: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: #222;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      transition: transform 0.15s, box-shadow 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.13);
+    }
+    .card .emoji { font-size: 1.3em; }
+    .card .label { font-size: 0.9em; line-height: 1.3; }
+    .badge {
+      font-size: 0.7em;
+      background: #eef3fb;
+      color: #4a90d9;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 3px;
+    }
+    .badge.a2 { background: #e8f5e9; color: #388e3c; }
+    .badge.b1b2 { background: #fff3e0; color: #f57c00; }
+    .badge.b2c1 { background: #fce4ec; color: #c2185b; }
+    .badge.gram { background: #ede7f6; color: #7b1fa2; }
+    .badge.boost { background: #e3f2fd; color: #1565c0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🇩🇪 Deutsch oder was?</h1>
+  <p>Lernmaterial für alle Niveaus</p>
+</header>
+
+<div class="container">
+
+  <!-- WOCHENPLÄNE -->
+  <div class="section">
+    <h2>📅 Wochenpläne</h2>
+    <div class="grid">
+      <a class="card" href="Wochenplan_01_06-06_06.html"><span class="emoji">📋</span><span class="label">01.06 – 06.06</span></a>
+      <a class="card" href="Wochenplan_08_06-13_06.html"><span class="emoji">📋</span><span class="label">08.06 – 13.06</span></a>
+      <a class="card" href="Wochenplan_15_06-20_06.html"><span class="emoji">📋</span><span class="label">15.06 – 20.06</span></a>
+      <a class="card" href="Wochenplan_25_05-30_05.html"><span class="emoji">📋</span><span class="label">25.05 – 30.05</span></a>
+      <a class="card" href="Wochenplan_18_05-23_05.html"><span class="emoji">📋</span><span class="label">18.05 – 23.05</span></a>
+      <a class="card" href="Wochenplan_11_05-16_05.html"><span class="emoji">📋</span><span class="label">11.05 – 16.05</span></a>
+      <a class="card" href="Wochenplan_04_05-09_05.html"><span class="emoji">📋</span><span class="label">04.05 – 09.05</span></a>
+    </div>
+  </div>
+
+  <!-- A2 -->
+  <div class="section">
+    <h2>🟢 Niveau A2</h2>
+    <div class="grid">
+      <a class="card" href="familie_a2.html"><span class="emoji">👨‍👩‍👧</span><span class="label">Familie<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="im_cafe_a2.html"><span class="emoji">☕</span><span class="label">Im Café<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="kleidung_a2.html"><span class="emoji">👗</span><span class="label">Kleidung<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="wetter_jahreszeiten_a2.html"><span class="emoji">🌤</span><span class="label">Wetter &amp; Jahreszeiten<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="zahlen_preise_a2.html"><span class="emoji">🔢</span><span class="label">Zahlen &amp; Preise<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="rezepte_essen_a2.html"><span class="emoji">🍽</span><span class="label">Rezepte &amp; Essen<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="sport_freizeit_a2.html"><span class="emoji">⚽</span><span class="label">Sport &amp; Freizeit<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="supermarkt_a2.html"><span class="emoji">🛒</span><span class="label">Supermarkt<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="stadtorientierung_a2.html"><span class="emoji">🗺</span><span class="label">Stadtorientierung<br><span class="badge a2">A2</span></span></a>
+      <a class="card" href="termine_a2.html"><span class="emoji">📅</span><span class="label">Termine<br><span class="badge a2">A2</span></span></a>
+    </div>
+  </div>
+</div>
+<footer style="text-align:center; padding: 30px; color: #999; font-size: 0.85em;">🇩🇪 Deutsch oder was? - Lernmaterial</footer>
+</body>
+</html>
