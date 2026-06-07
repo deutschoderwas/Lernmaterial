@@ -1,0 +1,359 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>KI Agenten · Die Geschichte des Internets · B2/C1 | deutschoderwas</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.tab:hover{border-color:var(--ink);}.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);}
+/* TIMELINE */
+.timeline{position:relative;padding-left:30px;margin:1.5rem 0;}
+.timeline::before{content:'';position:absolute;left:10px;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--red),var(--teal),#6A3D9C);}
+.tl-item{position:relative;margin-bottom:1.2rem;}
+.tl-item::before{content:'';position:absolute;left:-25px;top:.4rem;width:14px;height:14px;border-radius:50%;background:var(--red);border:3px solid white;box-shadow:0 0 0 2px var(--red);}
+.tl-item:nth-child(2)::before{background:var(--teal);box-shadow:0 0 0 2px var(--teal);}
+.tl-item:nth-child(3)::before{background:#B66809;box-shadow:0 0 0 2px #B66809;}
+.tl-item:nth-child(4)::before{background:#6A3D9C;box-shadow:0 0 0 2px #6A3D9C;}
+.tl-item:nth-child(5)::before{background:#A04060;box-shadow:0 0 0 2px #A04060;}
+.tl-item:nth-child(6)::before{background:#5F7A2A;box-shadow:0 0 0 2px #5F7A2A;}
+.tl-year{display:inline-block;background:var(--cream-warm);font-family:'Fraunces',serif;font-weight:900;color:var(--ink);padding:.15em .55em;border-radius:6px;font-size:1rem;}
+.tl-text{font-family:'Fraunces',serif;color:var(--ink);font-size:.95rem;margin-top:.3rem;}
+.tl-text strong{color:var(--red);background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+/* EPOCHEN-CARDS */
+.epoch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+@media(max-width:700px){.epoch-grid{grid-template-columns:1fr;}}
+.epoch{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:1.3rem;border-top:5px solid var(--red);}
+.epoch.e2{border-top-color:var(--teal);}.epoch.e3{border-top-color:#6A3D9C;}
+.epoch-icon{font-size:2.2rem;margin-bottom:.4rem;}
+.epoch-year{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1rem;}
+.epoch.e2 .epoch-year{color:var(--teal);}.epoch.e3 .epoch-year{color:#6A3D9C;}
+.epoch-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.05rem;margin:.3rem 0;}
+.epoch-desc{color:var(--ink-soft);font-size:.85rem;line-height:1.5;}
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;}.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.6rem;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.quiz-chip:hover{border-color:var(--ink);}.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.match-stage{margin:1.5rem 0;}.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;text-align:center;font-family:'Outfit',sans-serif;}
+.match-item:hover{border-color:var(--ink);}.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
+.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
+.debate:nth-child(2){border-left-color:var(--teal);}.debate:nth-child(3){border-left-color:var(--yellow);}.debate:nth-child(4){border-left-color:var(--pink);}
+.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.debate:nth-child(2) .debate-num{color:var(--teal);}.debate:nth-child(3) .debate-num{color:#B66809;}.debate:nth-child(4) .debate-num{color:#A04060;}
+.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+</style></head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Sprechclub B2/C1</div>
+<div class="title-wrap"><h1 class="title">KI Agenten — Die Geschichte des <span class="hl">Internets</span></h1></div>
+<p class="subtitle">Von der ARPANET bis ChatGPT — die digitale Evolution, was sie für uns Menschen bedeutet und wohin wir gehen.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg"><g font-family="Outfit" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">📡</text><text y="40" text-anchor="middle" fill="#E8302A">60er</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">💻</text><text y="40" text-anchor="middle" fill="#0FB5A6">90er</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">📱</text><text y="40" text-anchor="middle" fill="#B66809">2000er</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">📲</text><text y="40" text-anchor="middle" fill="#A04060">Social</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">🤖</text><text y="40" text-anchor="middle" fill="#5F7A2A">KI</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">🔮</text><text y="40" text-anchor="middle" fill="#6A3D9C">Zukunft</text></g>
+</g></svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Wortschatz</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<section class="section active" data-section="0">
+<h2 class="section-title">Die <em style="font-style:italic;">3 Epochen</em></h2>
+<div class="epoch-grid">
+<div class="epoch e1"><div class="epoch-icon">📡</div><div class="epoch-year">1969–1995</div><div class="epoch-name">Geburt &amp; Verbindung</div><div class="epoch-desc">ARPANET, E-Mail, WWW. Internet als „Werkzeug" für Wissenschaftler.</div></div>
+<div class="epoch e2"><div class="epoch-icon">📱</div><div class="epoch-year">1995–2015</div><div class="epoch-name">Demokratisierung</div><div class="epoch-desc">Google, Wikipedia, iPhone, Social Media. Internet wird zum Alltag.</div></div>
+<div class="epoch e3"><div class="epoch-icon">🤖</div><div class="epoch-year">2015–heute</div><div class="epoch-name">KI-Revolution</div><div class="epoch-desc">ChatGPT, autonome Agenten, KI in jeder App. Maschinen, die denken.</div></div>
+</div>
+
+<h2 class="section-title">📜 Die <em style="font-style:italic;">wichtigsten Jahre</em></h2>
+<div class="timeline">
+<div class="tl-item"><span class="tl-year">1969</span><div class="tl-text"><strong>ARPANET</strong> — die erste Nachricht im Netz: „LO" (sollte „LOGIN" sein, dann stürzte das System ab!)</div></div>
+<div class="tl-item"><span class="tl-year">1989</span><div class="tl-text"><strong>Tim Berners-Lee</strong> erfindet das WWW am CERN — die Geburt des modernen Internets</div></div>
+<div class="tl-item"><span class="tl-year">2004</span><div class="tl-text">Facebook startet — <strong>Social Media</strong> verändert die Kommunikation für immer</div></div>
+<div class="tl-item"><span class="tl-year">2007</span><div class="tl-text">Das erste <strong>iPhone</strong> — Internet immer in der Tasche</div></div>
+<div class="tl-item"><span class="tl-year">2022</span><div class="tl-text"><strong>ChatGPT</strong> wird veröffentlicht — KI wird massentauglich, 100 Mio Nutzer in 2 Monaten</div></div>
+<div class="tl-item"><span class="tl-year">2025+</span><div class="tl-text"><strong>KI-Agenten</strong> — Maschinen handeln autonom, planen, buchen, kommunizieren für uns</div></div>
+</div>
+
+<div class="tip">💡 <strong>Was sind „KI-Agenten"?</strong> KI-Agenten sind Programme, die nicht nur ANTWORTEN, sondern eigenständig HANDELN. Sie buchen Flüge, verwalten Kalender, schreiben Code — ohne dass du jeden Schritt vorgeben musst.</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Persönlich</div><div class="qq">Erinnerst du dich noch an die Zeit OHNE Smartphone? Wie war das Leben anders?</div><div class="think">💭 Wenn nein — fragst du deine Eltern! Spannende Antworten garantiert.</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Provokant</div><div class="qq">Welches Internet-Tool kannst du dir NICHT mehr aus deinem Leben wegdenken?</div><div class="think">💭 WhatsApp? Google? YouTube? ChatGPT?</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Zukunft</div><div class="qq">Wirst du persönlich KI-Agenten benutzen? Wofür?</div><div class="think">💭 Reisen planen? Einkäufe? Therapie? Lernen?</div></div>
+</section>
+
+<section class="section" data-section="1">
+<h2 class="section-title">💬 KI im <em style="font-style:italic;">Alltag</em></h2>
+<div class="uss-grid">
+<div class="chat"><div class="chat-head"><div class="av">🤖</div><div><div class="name">Best Friend · KI-Hype</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hast du ChatGPT schon mal benutzt?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Klar! <strong>Mega praktisch</strong> für E-Mails. Aber manchmal <strong>halluziniert</strong> es total 😅</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Mein Kollege lässt sich JEDE Mail schreiben. <strong>Voll abhängig</strong>!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Krass. Wir <strong>verlernen das Schreiben</strong>!</div></div>
+<div class="chat-meaning"><strong>„halluzinieren"</strong> = KI erfindet Fakten · <strong>„abhängig sein"</strong> = nicht mehr ohne können</div></div>
+
+<div class="chat"><div class="chat-head"><div class="av">👴</div><div><div class="name">Opa · Skepsis</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Diese KI macht mir Angst. Die übernimmt unsere Jobs!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Opa, das sagten Leute auch über den Computer in den 80ern!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Aber diesmal ist es anders. Die <strong>Maschinen denken</strong>!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Stimmt, das ist <strong>eine neue Dimension</strong>. Wir müssen lernen damit umzugehen.</div></div>
+<div class="chat-meaning">Typischer Generationskonflikt — KI ist <strong>polarisiert</strong> in der Gesellschaft!</div></div>
+
+<div class="chat"><div class="chat-head"><div class="av">🎨</div><div><div class="name">Künstlerin · Frust</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">KI-Bilder zerstören meine Branche 😩</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Aber du hast Talent und Erfahrung!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Trotzdem: <strong>jeder kann jetzt</strong> in 10 Sekunden ein Bild erstellen. <strong>Wofür braucht man mich noch</strong>?</div></div>
+<div class="chat-meaning">Die <strong>ehrliche Sorge</strong> vieler Kreativer — sehr aktuelles Thema!</div></div>
+
+<div class="chat"><div class="chat-head"><div class="av">💼</div><div><div class="name">Kollegin · Effizienz</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich nutze ChatGPT für ALLES bei der Arbeit 🚀</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wie viel Zeit sparst du?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Locker <strong>30%</strong>! Aber ich <strong>überprüfe immer alles</strong>.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ja, KI ist ein <strong>Werkzeug, kein Wundermittel</strong>.</div></div>
+<div class="chat-meaning">Realistische Sicht: KI als Tool — pro mit kritischem Auge!</div></div>
+</div>
+</section>
+
+<section class="section" data-section="2">
+<h2 class="section-title">Wortschatz-Karten</h2>
+<div class="flip" id="flip"><div class="flip-inner">
+<div class="flip-side front"><div class="flip-emoji" id="flipEmoji">🤖</div><div class="flip-word" id="flipWord">die künstliche Intelligenz</div><div class="flip-badge" id="flipBadge">KI · Substantiv</div><div class="flip-prompt">Was ist das? (tippen)</div></div>
+<div class="flip-side back"><div class="flip-rule" id="flipRule">artificial intelligence — Maschinen die „denken"</div><div class="flip-ex" id="flipEx">„<strong>Die künstliche Intelligenz</strong> verändert alles."</div></div>
+</div></div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span><button class="lk-btn" id="lkNext">→</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz</h2>
+<div class="quiz"><div class="quiz-q">Wann wurde das WWW erfunden?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">1969</span><span class="quiz-chip">1989</span><span class="quiz-chip">2007</span></div><div class="quiz-explain">✓ Tim Berners-Lee · CERN · 1989</div></div>
+<div class="quiz"><div class="quiz-q">Was bedeutet „KI halluziniert"?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">KI schläft</span><span class="quiz-chip">KI lernt</span><span class="quiz-chip">KI erfindet Fakten</span></div><div class="quiz-explain">✓ Halluzinieren = falsche Infos plausibel präsentieren</div></div>
+<div class="quiz"><div class="quiz-q">Wann startete ChatGPT?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">2015</span><span class="quiz-chip">2020</span><span class="quiz-chip">2022</span></div><div class="quiz-explain">✓ November 2022 — 100 Mio Nutzer in 2 Monaten!</div></div>
+<div class="quiz"><div class="quiz-q">Was ist ein „KI-Agent"?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ein Chatbot</span><span class="quiz-chip">Eine KI, die autonom handelt</span><span class="quiz-chip">Eine App</span></div><div class="quiz-explain">✓ KI-Agent = handelt eigenständig, nicht nur antwortet</div></div>
+<div class="quiz"><div class="quiz-q">Was war das erste Wort im Internet (ARPANET 1969)?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">„LO"</span><span class="quiz-chip">„HELLO"</span><span class="quiz-chip">„INTERNET"</span></div><div class="quiz-explain">✓ „LO" — sollte „LOGIN" sein, aber System stürzte ab!</div></div>
+<div class="quiz"><div class="quiz-q">Was änderte das iPhone 2007?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Nichts</span><span class="quiz-chip">Nur die Telefonie</span><span class="quiz-chip">Internet wurde mobil</span></div><div class="quiz-explain">✓ Internet ÜBERALL — Revolution!</div></div>
+<div class="quiz"><div class="quiz-q">Was bedeutet „abhängig sein von KI"?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Nichts mehr ohne KI machen können</span><span class="quiz-chip">KI bezahlen</span><span class="quiz-chip">KI besitzen</span></div><div class="quiz-explain">✓ Risiko: wir verlernen Skills!</div></div>
+<div class="quiz"><div class="quiz-q">Wer erfand das WWW?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Bill Gates</span><span class="quiz-chip">Tim Berners-Lee</span><span class="quiz-chip">Steve Jobs</span></div><div class="quiz-explain">✓ Tim Berners-Lee am CERN, Schweiz</div></div>
+</section>
+
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext</h2>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. <select data-sol="KI"><option value="">…</option><option>KI</option><option>USB</option><option>PDF</option></select> steht für „künstliche Intelligenz".</div>
+<div class="gap-line">2. Das WWW wurde <select data-sol="1989"><option value="">…</option><option>1969</option><option>1989</option><option>2007</option></select> von Tim Berners-Lee erfunden.</div>
+<div class="gap-line">3. ChatGPT wurde 2022 veröffentlicht und gewann <select data-sol="100"><option value="">…</option><option>1</option><option>10</option><option>100</option></select> Millionen Nutzer in 2 Monaten.</div>
+<div class="gap-line">4. „KI <select data-sol="halluziniert"><option value="">…</option><option>schläft</option><option>halluziniert</option><option>weint</option></select>" — wenn sie falsche Fakten erfindet.</div>
+<div class="gap-line">5. Ein KI-<select data-sol="Agent"><option value="">…</option><option>Mitarbeiter</option><option>Agent</option><option>Hund</option></select> handelt autonom — er antwortet nicht nur.</div>
+<div class="gap-line">6. <select data-sol="Facebook"><option value="">…</option><option>Facebook</option><option>Google</option><option>Twitter</option></select> startete 2004 — Beginn der Social-Media-Ära.</div>
+<div class="gap-line">7. Das <select data-sol="iPhone"><option value="">…</option><option>iPhone</option><option>iPad</option><option>iMac</option></select> 2007 brachte Internet in die Hosentasche.</div>
+<div class="gap-line">8. Viele befürchten, dass KI ihre <select data-sol="Jobs"><option value="">…</option><option>Häuser</option><option>Jobs</option><option>Familien</option></select> übernimmt.</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<section class="section" data-section="5">
+<h2 class="section-title">Jahr &harr; <em style="font-style:italic;">Ereignis</em></h2>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Jahr</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Ereignis</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen</h2>
+<div class="speak-card" id="speakCard"><div class="speak-emoji">🎲</div><div class="speak-cat">KI-Karte</div><div class="speak-q">Tippe auf „Neue Karte"!</div></div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">2 Rollenspiele</h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1</div>
+<div class="role-title">🤖 KI-Skeptiker vs KI-Enthusiast</div>
+<div class="role-situation">Person A ist begeistert von KI. Person B ist sehr kritisch. Diskutiert respektvoll!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🚀</div><div><div class="person-label">Enthusiast</div><div class="person-quote">„KI ist die größte Erfindung seit dem Feuer! Wir müssen sie umarmen!"</div></div></div>
+<div class="person b"><div class="person-avatar">⚠️</div><div><div class="person-label">Skeptiker:in</div><div class="person-quote">„Wir verlieren Jobs, Privatsphäre, sogar das selbstständige Denken!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Mindestens 5 Argumente pro Seite!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2</div>
+<div class="role-title">👴 Generationen-Dialog</div>
+<div class="role-situation">Großelternteil versteht KI nicht. Du erklärst, was sich verändert hat — von Telegramm bis ChatGPT.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">👴</div><div><div class="person-label">Opa/Oma</div><div class="person-quote">„Was ist denn dieses Internet wirklich? Und KI?"</div></div></div>
+<div class="person b"><div class="person-avatar">🧑</div><div><div class="person-label">Enkel:in</div><div class="person-quote">„Stell dir vor, Oma, früher gab es nur Briefe..."</div></div></div>
+</div>
+<div class="role-goal">🎯 Geschichte des Internets in 5 einfachen Sätzen erklären!</div>
+</div>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">4 Debatten-Thesen</h2>
+<div class="debate-grid">
+<div class="debate"><div class="debate-num">These 1</div><div class="debate-q">„KI wird in 10 Jahren 50% aller Jobs ersetzen — und das ist NICHT schlimm."</div></div>
+<div class="debate"><div class="debate-num">These 2</div><div class="debate-q">„Schulen sollten ChatGPT erlauben — wer es nicht nutzt, hat später Nachteile."</div></div>
+<div class="debate"><div class="debate-num">These 3</div><div class="debate-q">„Soziale Medien haben mehr Schaden als Nutzen gebracht."</div></div>
+<div class="debate"><div class="debate-num">These 4</div><div class="debate-q">„Wir sollten KI-Entwicklung pausieren — wie eine Atombombe gefährlich!"</div></div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Beobachten:</strong> Notiere jeden Tag, WANN du KI nutzt (ChatGPT, Spam-Filter, Empfehlungen, GPS, etc.). Wie oft KI in deinem Tag — du wirst überrascht sein!<br><br>
+🏆 <strong>Bonus:</strong> Lies einen deutschen Artikel über KI (Spiegel, Zeit, FAZ) und formuliere mündlich 5 Argumente daraus.
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> · KI Agenten · Geschichte des Internets · B2/C1</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+{emoji:'🤖',word:'die künstliche Intelligenz',badge:'KI · Substantiv',rule:'artificial intelligence',ex:'„<strong>Die künstliche Intelligenz</strong> verändert alles."'},
+{emoji:'🌐',word:'das World Wide Web',badge:'WWW',rule:'1989 erfunden',ex:'„Tim Berners-Lee erfand das <strong>WWW</strong> am CERN."'},
+{emoji:'📧',word:'die E-Mail',badge:'1971',rule:'elektronische Post',ex:'„Die erste <strong>E-Mail</strong> wurde 1971 verschickt."'},
+{emoji:'📱',word:'das Smartphone',badge:'2007+',rule:'Computer in der Tasche',ex:'„Das iPhone war das erste echte <strong>Smartphone</strong>."'},
+{emoji:'📲',word:'soziale Medien',badge:'2004+',rule:'social media platforms',ex:'„<strong>Soziale Medien</strong> ändern die Politik."'},
+{emoji:'💬',word:'der Chatbot',badge:'KI-Tool',rule:'Programm das chattet',ex:'„ChatGPT ist ein berühmter <strong>Chatbot</strong>."'},
+{emoji:'🎭',word:'halluzinieren',badge:'KI-Schwäche',rule:'Fakten erfinden',ex:'„KI kann <strong>halluzinieren</strong> — immer überprüfen!"'},
+{emoji:'🚀',word:'der KI-Agent',badge:'2024+',rule:'KI die autonom handelt',ex:'„Ein <strong>KI-Agent</strong> bucht deinen Urlaub allein."'},
+{emoji:'🔒',word:'der Datenschutz',badge:'wichtiges Thema',rule:'Schutz persönlicher Daten',ex:'„<strong>Datenschutz</strong> ist im Internet sehr wichtig."'},
+{emoji:'⚠️',word:'die Abhängigkeit',badge:'Risiko',rule:'nicht mehr ohne können',ex:'„Wir entwickeln eine <strong>Abhängigkeit</strong> von Smartphones."'},
+{emoji:'💼',word:'der Arbeitsplatz',badge:'wird verändert',rule:'Job',ex:'„KI verändert jeden <strong>Arbeitsplatz</strong>."'},
+{emoji:'🎓',word:'das lebenslange Lernen',badge:'B2/C1',rule:'lifelong learning',ex:'„<strong>Lebenslanges Lernen</strong> wird Pflicht."'},
+{emoji:'🤝',word:'der digitale Wandel',badge:'B2/C1',rule:'digital transformation',ex:'„Der <strong>digitale Wandel</strong> betrifft alle."'},
+{emoji:'🛡️',word:'die Cybersicherheit',badge:'IT-Sicherheit',rule:'cybersecurity',ex:'„<strong>Cybersicherheit</strong> wird immer wichtiger."'},
+{emoji:'🌍',word:'die globale Vernetzung',badge:'B2/C1',rule:'globale Verbindung',ex:'„Internet schafft <strong>globale Vernetzung</strong>."'},
+{emoji:'🔮',word:'die Zukunftsperspektive',badge:'B2/C1',rule:'future perspective',ex:'„Welche <strong>Zukunftsperspektive</strong> haben wir mit KI?"'}
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='<strong>'+right+'/'+total+'</strong> richtig!';};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[{l:'1969',r:'ARPANET startet (erste Internet-Verbindung)'},{l:'1989',r:'WWW von Tim Berners-Lee erfunden'},{l:'1998',r:'Google wird gegründet'},{l:'2004',r:'Facebook startet'},{l:'2007',r:'Das erste iPhone'},{l:'2010',r:'Instagram launcht'},{l:'2022',r:'ChatGPT erscheint'},{l:'2024',r:'KI-Agenten werden Massenphänomen'}];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+{emoji:'🤖',cat:'KI persönlich',q:'Welche KI-Tools nutzt du täglich? Wie haben sie dein Leben verändert?'},
+{emoji:'😨',cat:'Sorgen',q:'Welche Angst hast du vor KI? Ist sie berechtigt?'},
+{emoji:'💼',cat:'Jobs',q:'Welche Jobs werden in 10 Jahren verschwinden? Welche neu entstehen?'},
+{emoji:'🎓',cat:'Bildung',q:'Sollten Schulen ChatGPT erlauben? Pro/Contra!'},
+{emoji:'📱',cat:'Vor-Smartphone',q:'Wie war das Leben OHNE Smartphone? Vermisst du etwas davon?'},
+{emoji:'💬',cat:'Social Media',q:'Was hat sich durch Social Media in deinem Land verändert?'},
+{emoji:'🔒',cat:'Datenschutz',q:'Wie wichtig ist DIR Datenschutz? Was tust du dafür?'},
+{emoji:'🌍',cat:'Internet weltweit',q:'In welchem Land sollte das Internet am freisten sein? Warum?'},
+{emoji:'👴',cat:'Generationen',q:'Was würdest du deinen Großeltern über das moderne Internet erklären?'},
+{emoji:'🎨',cat:'Kreativität',q:'KI-Bilder, KI-Musik — Kunst oder nicht?'},
+{emoji:'🤝',cat:'Beziehungen',q:'Können KI-Begleiter echte Freunde ersetzen? Was meinst du?'},
+{emoji:'🏥',cat:'Medizin',q:'KI-Ärzte? Würdest du dich von einer KI diagnostizieren lassen?'},
+{emoji:'🚗',cat:'Selbstfahrend',q:'Autonome Autos — sicher oder Risiko?'},
+{emoji:'🔮',cat:'Zukunft',q:'Wie sieht das Internet 2050 aus? Deine Prognose!'},
+{emoji:'⚖️',cat:'Regulierung',q:'Sollte KI strenger reguliert werden? Wie?'},
+{emoji:'🎯',cat:'Freestyle',q:'Erkläre einem Außerirdischen das Internet in 90 Sekunden!'}
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">90 Sekunden — strukturiert antworten!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

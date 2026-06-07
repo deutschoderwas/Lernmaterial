@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Befehle erteilen · Imperativ · B1/B2 | deutschoderwas</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,4rem);line-height:1.05;color:var(--ink);}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.tab:hover{border-color:var(--ink);}.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;}
+@media(max-width:600px){.form-grid{grid-template-columns:1fr;}}
+.form-card{background:var(--paper);border:2px solid var(--red);border-radius:16px;padding:1.3rem;text-align:center;}
+.form-card:nth-child(2){border-color:var(--teal);}.form-card:nth-child(3){border-color:#B66809;}
+.form-card .pers{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.form-card:nth-child(2) .pers{color:var(--teal);}.form-card:nth-child(3) .pers{color:#B66809;}
+.form-card .impf{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.8rem;margin:.3rem 0;}
+.form-card .ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.5;}
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;}.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.quiz-chip:hover{border-color:var(--ink);}.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text input{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.25rem .6rem;margin:0 .25em;min-width:100px;}
+.gap-text input.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}.gap-text input.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.match-stage{margin:1.5rem 0;}.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;text-align:center;font-family:'Outfit',sans-serif;}
+.match-item:hover{border-color:var(--ink);}.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+</style></head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Grammatik B1/B2 Sprechclub</div>
+<div class="title-wrap"><h1 class="title">Befehle erteilen · <span class="hl">Imperativ</span></h1></div>
+<p class="subtitle">Anweisungen geben, Tipps mitteilen, jemanden zu etwas auffordern — die Form, die DU jeden Tag brauchst.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg"><g font-family="Outfit" font-weight="700" font-size="9">
+<g transform="translate(60,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">🙋</text><text y="40" text-anchor="middle" fill="#E8302A">DU</text></g>
+<g transform="translate(140,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">👥</text><text y="40" text-anchor="middle" fill="#0FB5A6">IHR</text></g>
+<g transform="translate(220,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">👤</text><text y="40" text-anchor="middle" fill="#B66809">SIE (formell)</text></g>
+<g transform="translate(310,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">🤝</text><text y="40" text-anchor="middle" fill="#A04060">WIR (Vorschlag)</text></g>
+</g></svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<section class="section active" data-section="0">
+<h2 class="section-title">Die <em style="font-style:italic;">3 Formen</em> des Imperativs</h2>
+
+<div class="form-grid">
+<div class="form-card"><div class="pers">DU-Form</div><div class="impf">Geh!</div><div class="ex">Verb-Stamm ohne -st<br>„Du gehst" → „<strong>Geh</strong>!"</div></div>
+<div class="form-card"><div class="pers">IHR-Form</div><div class="impf">Geht!</div><div class="ex">wie Präsens, ohne „ihr"<br>„Ihr geht" → „<strong>Geht</strong>!"</div></div>
+<div class="form-card"><div class="pers">SIE-Form (formell)</div><div class="impf">Gehen Sie!</div><div class="ex">Verb + Sie (Inversion)<br>„Sie gehen" → „<strong>Gehen Sie</strong>!"</div></div>
+</div>
+
+<div class="tip">💡 <strong>Die wichtigsten Sonderformen:</strong> sein → „<u>Sei</u>!" / „<u>Seid</u>!" / „<u>Seien Sie</u>!" · haben → „<u>Hab</u>!" / „<u>Habt</u>!" / „<u>Haben Sie</u>!" · essen → „<u>Iss</u>!" · lesen → „<u>Lies</u>!" · helfen → „<u>Hilf</u>!" (e → i Vokalwechsel!)</div>
+
+<h2 class="section-title">Wann nutzt man <em style="font-style:italic;">Imperativ</em>?</h2>
+<div class="form-grid">
+<div class="form-card" style="border-color:var(--pink);"><div class="pers" style="color:#A04060;">Anweisung</div><div class="impf" style="color:#A04060;font-size:1.2rem;">📝</div><div class="ex">„Mach die Tür zu!" / „Schreib mir morgen!"</div></div>
+<div class="form-card" style="border-color:#5F7A2A;"><div class="pers" style="color:#5F7A2A;">Tipp / Ratschlag</div><div class="impf" style="color:#5F7A2A;font-size:1.2rem;">💡</div><div class="ex">„Probier mal das!" / „Sei nicht so streng!"</div></div>
+<div class="form-card" style="border-color:#6A3D9C;"><div class="pers" style="color:#6A3D9C;">Bitte</div><div class="impf" style="color:#6A3D9C;font-size:1.2rem;">🙏</div><div class="ex">„Hilf mir bitte!" / „Komm doch rein!"</div></div>
+</div>
+
+<div class="tip">🎯 <strong>Höflichkeits-Trick:</strong> Imperativ wirkt oft hart! Mit <strong>„bitte"</strong>, <strong>„doch"</strong>, <strong>„mal"</strong> wird er weicher. „<em>Mach das!</em>" vs „<em>Mach das bitte mal!</em>" — riesiger Unterschied!</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Persönlich</div><div class="qq">Welche Anweisungen gibst du täglich? An wen?</div><div class="think">💭 Kinder? Kollegen? Hund? Roboter? 😉</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Kultur</div><div class="qq">Wirkt direkter Imperativ in deinem Land höflich oder unhöflich?</div><div class="think">💭 In Deutschland: oft direkt = ehrlich + okay. In manchen Kulturen: zu hart!</div></div>
+</section>
+
+<section class="section" data-section="1">
+<h2 class="section-title">💬 Imperativ im <em style="font-style:italic;">Alltag</em></h2>
+<div class="uss-grid">
+
+<div class="chat"><div class="chat-head"><div class="av">👨‍🍳</div><div><div class="name">Mama · Kochanleitung</div><div class="stat">live</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Mama, wie machst du die Pasta-Soße?</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Schneide</strong> erst die Zwiebeln klein. Dann <strong>brate</strong> sie in Öl an. <strong>Gib</strong> Tomatensoße dazu. Und <strong>vergiss</strong> nicht das Salz! 🍝</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Danke! 😊</div></div>
+<div class="chat-meaning"><strong>Rezepte sind PUR Imperativ!</strong> „Schneide, brate, gib, vergiss…" — typisch Du-Form</div></div>
+
+<div class="chat"><div class="chat-head"><div class="av">⚡</div><div><div class="name">Chef · dringend!</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Schicken Sie mir bitte</strong> sofort den Bericht!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Mache ich gleich!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Und <strong>vergessen Sie nicht</strong>, alle Zahlen zu prüfen.</div></div>
+<div class="chat-meaning">Im Büro = SIE-Form mit „bitte" → höflich aber bestimmt</div></div>
+
+<div class="chat"><div class="chat-head"><div class="av">🚨</div><div><div class="name">Bestie · WG-Notfall</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Lukas, <strong>mach mal die Spülmaschine an</strong>! 🙏</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ich kann nicht, bin im Bad!</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Beeil dich</strong>, ich brauch Geschirr!</div></div>
+<div class="chat-meaning">Mit Freunden = Du-Form + „mal" = lockerer Imperativ</div></div>
+
+<div class="chat"><div class="chat-head"><div class="av">🎮</div><div><div class="name">Best Friend · Spiel</div><div class="stat">live</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Yo, kommst du gleich auf die Couch?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Klar! <strong>Mach</strong> schon mal Filmen an!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Welcher? <strong>Sag</strong> einen Namen!</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Such</strong> du was Lustiges! 🍿</div></div>
+<div class="chat-meaning">Sehr informell: „Mach, sag, such" — alles Du-Form, kurz und direkt</div></div>
+</div>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Mit <strong>„doch", „mal", „eben"</strong> klingt der Imperativ viel netter! „<em>Komm rein!</em>" vs „<em>Komm doch mal rein!</em>" — fühlt sich ganz anders an!</div>
+</section>
+
+<section class="section" data-section="2">
+<h2 class="section-title">Imperativ-Karten</h2>
+<div class="flip" id="flip"><div class="flip-inner">
+<div class="flip-side front"><div class="flip-emoji" id="flipEmoji">🚪</div><div class="flip-word" id="flipWord">kommen (du)</div><div class="flip-badge" id="flipBadge">Du-Form</div><div class="flip-prompt">Wie heißt der Imperativ? (tippen)</div></div>
+<div class="flip-side back"><div class="flip-rule" id="flipRule">Verb-Stamm + „-e" oft weglassbar</div><div class="flip-ex" id="flipEx">„<strong>Komm</strong>!" / „<strong>Komm</strong> bitte!"</div></div>
+</div></div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span><button class="lk-btn" id="lkNext">→</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz</h2>
+<div class="quiz"><div class="quiz-q">„Du gehst" → Imperativ?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Geh!</span><span class="quiz-chip">Geht!</span><span class="quiz-chip">Gehen!</span></div><div class="quiz-explain">✓ <strong>Geh!</strong> Verb-Stamm ohne -st</div></div>
+<div class="quiz"><div class="quiz-q">„Ihr seid leise" → Imperativ?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Seid Sie leise!</span><span class="quiz-chip">Seid leise!</span><span class="quiz-chip">Sei leise!</span></div><div class="quiz-explain">✓ Ihr-Form: wie Präsens, ohne „ihr"</div></div>
+<div class="quiz"><div class="quiz-q">Höfliche Form an einen Kunden: „helfen"</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Hilf!</span><span class="quiz-chip">Helft!</span><span class="quiz-chip">Helfen Sie!</span></div><div class="quiz-explain">✓ SIE-Form für Höflichkeit + Inversion</div></div>
+<div class="quiz"><div class="quiz-q">„essen" → Imperativ DU?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Esse!</span><span class="quiz-chip">Iss!</span><span class="quiz-chip">Esst!</span></div><div class="quiz-explain">✓ Vokalwechsel e→i: „du isst" → „Iss!"</div></div>
+<div class="quiz"><div class="quiz-q">„Sei doch nicht so streng!" — Was macht das Wort „doch"?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Macht den Imperativ weicher</span><span class="quiz-chip">Macht ihn stärker</span><span class="quiz-chip">Macht nichts</span></div><div class="quiz-explain">✓ „doch", „mal", „bitte" = WEICHER!</div></div>
+<div class="quiz"><div class="quiz-q">„Ihr trinkt Wasser" → Imperativ?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Trink Wasser!</span><span class="quiz-chip">Trinkt Wasser!</span><span class="quiz-chip">Trinken Sie Wasser!</span></div><div class="quiz-explain">✓ Ihr-Form für mehrere Personen</div></div>
+<div class="quiz"><div class="quiz-q">„nehmen" — Du-Form Imperativ?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Nimm!</span><span class="quiz-chip">Nehm!</span><span class="quiz-chip">Nimme!</span></div><div class="quiz-explain">✓ Vokalwechsel e→i: „du nimmst" → „Nimm!"</div></div>
+<div class="quiz"><div class="quiz-q">Höchst-höfliche Bitte (Restaurant):</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Bring Wasser!</span><span class="quiz-chip">Bringt Wasser!</span><span class="quiz-chip">Bringen Sie mir bitte Wasser!</span></div><div class="quiz-explain">✓ SIE + bitte = maximale Höflichkeit</div></div>
+</section>
+
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext</h2>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. „du machst" → <input data-sol="Mach" placeholder="…"> die Tür zu!</div>
+<div class="gap-line">2. „ihr lest" → <input data-sol="Lest" placeholder="…"> das Buch zu Ende!</div>
+<div class="gap-line">3. „Sie kommen" → <input data-sol="Kommen Sie" placeholder="…"> bitte rein!</div>
+<div class="gap-line">4. „du isst" → <input data-sol="Iss" placeholder="…"> mehr Gemüse!</div>
+<div class="gap-line">5. „du bist" → <input data-sol="Sei" placeholder="…"> nicht so streng!</div>
+<div class="gap-line">6. „du hilfst" → <input data-sol="Hilf" placeholder="…"> mir bitte!</div>
+<div class="gap-line">7. „ihr nehmt" → <input data-sol="Nehmt" placeholder="…"> bitte Platz!</div>
+<div class="gap-line">8. „Sie schreiben" → <input data-sol="Schreiben Sie" placeholder="…"> Ihren Namen hier!</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<section class="section" data-section="5">
+<h2 class="section-title">Infinitiv &harr; <em style="font-style:italic;">Imperativ</em></h2>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Infinitiv</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Imperativ (du)</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen</h2>
+<div class="speak-card" id="speakCard"><div class="speak-emoji">🎲</div><div class="speak-cat">Karte</div><div class="speak-q">Tippe auf „Neue Karte"!</div></div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">mit Imperativ</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Rezept</div>
+<div class="role-title">👨‍🍳 Kochanleitung am Telefon</div>
+<div class="role-situation">Person A erklärt Person B Schritt für Schritt ein Lieblingsrezept — alles im DU-Imperativ!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">📞</div><div><div class="person-label">Koch</div><div class="person-quote">„Schneide die Zwiebeln! Brate sie an! Gib Salz dazu! Rühre um!"</div></div></div>
+<div class="person b"><div class="person-avatar">🍳</div><div><div class="person-label">Lernender</div><div class="person-quote">„Wie lange? Wie viel? Was kommt als nächstes?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Mindestens 10 Imperativ-Befehle!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Sportlehrer</div>
+<div class="role-title">💪 Fitness-Kurs</div>
+<div class="role-situation">Person A ist Trainer:in und gibt Sportübungen. IHR-Form für die ganze Gruppe!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🏋️</div><div><div class="person-label">Trainer:in</div><div class="person-quote">„Lauft schneller! Hebt die Arme! Atmet tief! Macht 10 Liegestütze!"</div></div></div>
+<div class="person b"><div class="person-avatar">😅</div><div><div class="person-label">Sportler:in</div><div class="person-quote">„Ich kann nicht mehr! Wie lange noch?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Nur IHR-Form! Mindestens 10 Übungen!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Service</div>
+<div class="role-title">📞 Höfliche Kundenanweisung</div>
+<div class="role-situation">Person A ist IT-Support. Person B hat ein Computer-Problem. Erkläre formal mit SIE-Form!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">💻</div><div><div class="person-label">IT-Support</div><div class="person-quote">„Klicken Sie auf Start! Öffnen Sie das Menü! Wählen Sie ‚Einstellungen'! Starten Sie neu!"</div></div></div>
+<div class="person b"><div class="person-avatar">🤔</div><div><div class="person-label">Kunde:in</div><div class="person-quote">„Wo finde ich das? Was meinen Sie? Wie soll ich das machen?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Nur SIE-Form + immer mit „bitte"!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Aufgabe:</strong> Schreibe jeden Tag 5 Imperativ-Sätze in 3 verschiedenen Formen (DU/IHR/SIE). Z.B. „Mach...! / Macht...! / Machen Sie...!"<br><br>
+🏆 <strong>Bonus:</strong> Erstelle ein eigenes Mini-Rezept oder eine Anleitung — KOMPLETT im Imperativ!
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> · Befehle erteilen · Imperativ · B1/B2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+{emoji:'🚪',word:'kommen (du)',badge:'Du-Form',rule:'„komm!" — auch ohne -e am Ende',ex:'„<strong>Komm</strong> bitte rein!"'},
+{emoji:'🍝',word:'essen (du)',badge:'Du · Vokalwechsel',rule:'e → i: „Iss!"',ex:'„<strong>Iss</strong> dein Gemüse!"'},
+{emoji:'📖',word:'lesen (du)',badge:'Du · Vokalwechsel',rule:'e → ie: „Lies!"',ex:'„<strong>Lies</strong> dieses Buch!"'},
+{emoji:'🤝',word:'helfen (du)',badge:'Du · Vokalwechsel',rule:'e → i: „Hilf!"',ex:'„<strong>Hilf</strong> mir bitte!"'},
+{emoji:'💆',word:'nehmen (du)',badge:'Du · Vokalwechsel',rule:'e → i: „Nimm!"',ex:'„<strong>Nimm</strong> Platz!"'},
+{emoji:'😊',word:'sein (du)',badge:'Sonderform',rule:'„Sei!"',ex:'„<strong>Sei</strong> nicht so streng!"'},
+{emoji:'😊',word:'sein (ihr)',badge:'Sonderform',rule:'„Seid!"',ex:'„<strong>Seid</strong> bitte leise!"'},
+{emoji:'😊',word:'sein (Sie)',badge:'Sonderform formell',rule:'„Seien Sie!"',ex:'„<strong>Seien Sie</strong> vorsichtig!"'},
+{emoji:'🎁',word:'haben (du)',badge:'Sonderform',rule:'„Hab!"',ex:'„<strong>Hab</strong> keine Angst!"'},
+{emoji:'🎁',word:'haben (Sie)',badge:'Sonderform formell',rule:'„Haben Sie!"',ex:'„<strong>Haben Sie</strong> Geduld!"'},
+{emoji:'🚗',word:'fahren (du)',badge:'Du-Form',rule:'„Fahr!" — Vokal bleibt',ex:'„<strong>Fahr</strong> vorsichtig!"'},
+{emoji:'🛌',word:'schlafen (du)',badge:'Du-Form',rule:'„Schlaf gut!"',ex:'„<strong>Schlaf</strong> gut!"'},
+{emoji:'🧠',word:'sich beeilen (du)',badge:'Reflexiv',rule:'„Beeil dich!"',ex:'„<strong>Beeil dich</strong>, wir sind spät!"'},
+{emoji:'🚪',word:'aufmachen (du)',badge:'Trennbar',rule:'„Mach auf!" — ab/auf/zu ans Ende',ex:'„<strong>Mach</strong> die Tür <strong>auf</strong>!"'},
+{emoji:'🍦',word:'probieren (du)',badge:'Du · weicher Imp.',rule:'„Probier mal!"',ex:'„<strong>Probier</strong> mal das Eis!"'}
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const inps=document.querySelectorAll('#gapText input');let right=0;inps.forEach(s=>{s.classList.remove('right','wrong');const u=s.value.trim().toLowerCase();const sol=s.dataset.sol.toLowerCase();if(u===sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='<strong>'+right+'/'+inps.length+'</strong> richtig!';};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText input').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[{l:'kommen',r:'Komm!'},{l:'essen',r:'Iss!'},{l:'lesen',r:'Lies!'},{l:'sein',r:'Sei!'},{l:'haben',r:'Hab!'},{l:'helfen',r:'Hilf!'},{l:'nehmen',r:'Nimm!'},{l:'sprechen',r:'Sprich!'}];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+{emoji:'🍳',cat:'Rezept · Du',q:'Erkläre wie man ein Spiegelei macht — 5 Imperativ-Sätze!'},
+{emoji:'🚗',cat:'Anweisung · Sie',q:'Du bist Fahrlehrer. Sag deinem Schüler 5 Sachen formell!'},
+{emoji:'💪',cat:'Sport · Ihr',q:'Trainier deine Gruppe — 5 Übungen in der IHR-Form!'},
+{emoji:'🙏',cat:'Bitte · höflich',q:'Bitte deine Mitbewohnerin um 3 Sachen — mit „bitte"!'},
+{emoji:'⚠️',cat:'Warnung',q:'Warne ein Kind vor 3 Gefahren — Du-Form mit „Pass auf!"'},
+{emoji:'💡',cat:'Tipp · Mutter',q:'Gib einer Freundin 5 Lebenstipps — Du-Form mit „Sei...!"'},
+{emoji:'🛒',cat:'Einkaufsliste',q:'Sag deinem Partner 8 Sachen, die er einkaufen soll!'},
+{emoji:'📞',cat:'Service formell',q:'Erkläre einem Kunden 5 Schritte am Telefon — SIE-Form!'},
+{emoji:'🐕',cat:'Hundetraining',q:'Trainier einen Hund — 5 Befehle: „Sitz!", „Bleib!" etc.'},
+{emoji:'🎮',cat:'Spielanleitung',q:'Erkläre ein Brettspiel — 8 Schritte mit Imperativ!'},
+{emoji:'🚪',cat:'Wegbeschreibung',q:'Beschreibe einen Weg — 5 Imperative: „Geh!", „Bieg ab!" etc.'},
+{emoji:'❤️',cat:'Romantik',q:'Schreibe 3 Liebes-Imperative: „Bleib!", „Sei...", „Vergiss nicht..."'},
+{emoji:'🎨',cat:'Kreativ',q:'Schreibe 5 Imperative für einen Künstler: „Mal!", „Zeichne!", „Sei mutig!"'},
+{emoji:'🌅',cat:'Yoga-Stunde',q:'Lead eine kleine Yoga-Session — Sie-Form, 5 Anweisungen!'},
+{emoji:'🎯',cat:'Freestyle',q:'Erfinde 8 Imperative aus deinem Alltag — alle 3 Formen!'}
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Achte auf die richtige Form!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

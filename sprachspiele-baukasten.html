@@ -1,0 +1,494 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sprachspiele · Wochenthemen spielerisch · B1+ | deutschoderwas</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,4rem);line-height:1.05;color:var(--ink);}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
+.tab:hover{border-color:var(--ink);}.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);}.tip em{font-style:italic;}
+/* GAME CARD BIG */
+.game{background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem;margin:1.5rem 0;box-shadow:0 6px 20px rgba(38,32,25,.06);}
+.game-icon{font-size:3rem;text-align:center;margin-bottom:.5rem;}
+.game-title{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.6rem;text-align:center;margin-bottom:.3rem;}
+.game-sub{text-align:center;color:var(--ink-soft);font-size:.95rem;font-style:italic;margin-bottom:1.3rem;}
+.game-rules{background:var(--cream-warm);border-radius:14px;padding:1rem 1.2rem;margin-bottom:1.2rem;}
+.game-rules h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;margin-bottom:.4rem;}
+.game-rules ol{padding-left:1.3rem;color:var(--ink-soft);font-size:.92rem;line-height:1.7;}
+.game-action{text-align:center;}
+.game-btn{background:var(--red);color:white;border:none;font-family:'Outfit',sans-serif;font-weight:700;padding:.8rem 1.8rem;border-radius:999px;cursor:pointer;font-size:1.05rem;display:inline-block;}
+.game-btn:hover{background:#C8211D;}
+.game-display{background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border:3px dashed var(--yellow);border-radius:18px;padding:2rem 1.5rem;margin:1.2rem 0;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center;}
+.game-display.empty{background:var(--paper);border-color:var(--sand);}
+.gd-emoji{font-size:2.2rem;margin-bottom:.4rem;}
+.gd-word{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.5rem;}
+.gd-hint{font-size:.82rem;color:var(--ink-soft);margin-top:.4rem;font-style:italic;}
+.gd-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;}
+
+/* WHEEL */
+.wheel-stage{text-align:center;margin:1.5rem 0;}
+.wheel{width:300px;height:300px;border-radius:50%;background:conic-gradient(var(--red) 0deg 45deg,var(--teal) 45deg 90deg,var(--yellow) 90deg 135deg,var(--pink) 135deg 180deg,#6A3D9C 180deg 225deg,#B66809 225deg 270deg,#5F7A2A 270deg 315deg,#A04060 315deg 360deg);margin:0 auto;position:relative;border:6px solid var(--paper);box-shadow:0 8px 24px rgba(38,32,25,.15);transition:transform 4s cubic-bezier(.17,.67,.3,1);}
+.wheel-arrow{position:absolute;left:50%;top:-25px;transform:translateX(-50%);font-size:2rem;}
+.wheel-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 10px rgba(0,0,0,.15);}
+.wheel-labels{position:absolute;inset:0;}
+.wheel-label{position:absolute;left:50%;top:50%;transform-origin:0 0;color:white;font-family:'Outfit',sans-serif;font-weight:700;font-size:.75rem;text-shadow:0 1px 2px rgba(0,0,0,.3);}
+
+/* SCORE */
+.score{display:inline-block;background:var(--teal);color:white;padding:.4rem 1rem;border-radius:999px;font-family:'Fraunces',serif;font-weight:700;margin:.5rem;}
+
+/* THEMES */
+.themes-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem;margin:1.5rem 0;}
+@media(max-width:700px){.themes-grid{grid-template-columns:repeat(2,1fr);}}
+.theme-card{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.7rem;text-align:center;}
+.theme-icon{font-size:1.5rem;display:block;margin-bottom:.2rem;}
+.theme-name{font-size:.75rem;font-weight:700;color:var(--ink);line-height:1.2;}
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+</style></head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Spiele aus allen Wochenthemen · B1+</div>
+<div class="title-wrap"><h1 class="title">Sprach<span class="hl">spiele</span></h1></div>
+<p class="subtitle">7 echte Spiele aus den Wochenthemen — Konnektoren, LASSEN, Beschwerde, Passiv, Konjunktiv 2, Wegbeschreibung &amp; mehr — alles spielerisch wiederholen!</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg"><g font-family="Outfit" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">🎲</text><text y="40" text-anchor="middle" fill="#E8302A">Würfeln</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">🎯</text><text y="40" text-anchor="middle" fill="#0FB5A6">Drehen</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">🎤</text><text y="40" text-anchor="middle" fill="#B66809">Tabu</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">⏱️</text><text y="40" text-anchor="middle" fill="#A04060">Speed</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">🃏</text><text y="40" text-anchor="middle" fill="#5F7A2A">Karten</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">🏆</text><text y="40" text-anchor="middle" fill="#6A3D9C">Sieger</text></g>
+</g></svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">🎲 Spiel 1: Themen-Rad</button>
+<button class="tab" data-tab="2">🎤 Spiel 2: Tabu</button>
+<button class="tab" data-tab="3">⏱️ Spiel 3: 60-Sekunden</button>
+<button class="tab" data-tab="4">🃏 Spiel 4: Story-Karten</button>
+<button class="tab" data-tab="5">🔄 Spiel 5: Kettenreaktion</button>
+<button class="tab" data-tab="6">🎯 Spiel 6: Frage-Sturm</button>
+<button class="tab" data-tab="7">🏆 Spiel 7: Speed-Quiz</button>
+</nav>
+
+<section class="section active" data-section="0">
+<h2 class="section-title">7 Spiele aus den <em style="font-style:italic;">Wochenthemen</em></h2>
+<p class="section-sub">Jedes Spiel wiederholt mehrere Themen gleichzeitig — perfekt für den Sprechclub!</p>
+
+<div class="themes-grid">
+<div class="theme-card"><span class="theme-icon">🔗</span><div class="theme-name">Konnektoren</div></div>
+<div class="theme-card"><span class="theme-icon">💇</span><div class="theme-name">LASSEN</div></div>
+<div class="theme-card"><span class="theme-icon">📞</span><div class="theme-name">Beschwerde</div></div>
+<div class="theme-card"><span class="theme-icon">🖼️</span><div class="theme-name">Was passiert da?</div></div>
+<div class="theme-card"><span class="theme-icon">🙏</span><div class="theme-name">Konjunktiv 2</div></div>
+<div class="theme-card"><span class="theme-icon">🗺️</span><div class="theme-name">Wegbeschreibung</div></div>
+<div class="theme-card"><span class="theme-icon">💬</span><div class="theme-name">Freies Sprechen</div></div>
+<div class="theme-card"><span class="theme-icon">⚖️</span><div class="theme-name">Männer/Frauen</div></div>
+<div class="theme-card"><span class="theme-icon">🍝</span><div class="theme-name">Ernährung</div></div>
+<div class="theme-card"><span class="theme-icon">👋</span><div class="theme-name">Smalltalk</div></div>
+</div>
+
+<div class="tip">💡 <strong>So funktioniert's:</strong> Jedes Spiel hat klare Regeln. Wählt 2-4 Spieler. Macht es zu zweit oder in der Gruppe. Wer am Ende die meisten Punkte hat, gewinnt!</div>
+
+<div class="game" style="background:var(--cream-warm);">
+<div class="game-icon">🏆</div>
+<div class="game-title">Die goldenen Sprechclub-Regeln</div>
+<div class="game-rules">
+<ol>
+<li><strong>Nur Deutsch sprechen!</strong> Auch beim Lachen 😄</li>
+<li><strong>Mut zur Lücke</strong> — falsche Sätze sind besser als Schweigen!</li>
+<li><strong>Korrigiert euch gegenseitig</strong> — aber LIEBEVOLL</li>
+<li><strong>Jeder spricht gleich viel</strong> — Punkt für die schüchterne Person extra!</li>
+<li><strong>Spaß steht im Vordergrund</strong> 🎉</li>
+</ol>
+</div>
+</div>
+</section>
+
+<!-- SPIEL 1: THEMEN-RAD -->
+<section class="section" data-section="1">
+<h2 class="section-title">🎲 Spiel 1: <em style="font-style:italic;">Themen-Rad</em></h2>
+<p class="section-sub">Dreht das Rad — sprecht 90 Sekunden über das Thema mit dem PFLICHT-Detail!</p>
+
+<div class="game">
+<div class="game-rules">
+<h4>🎯 So spielt ihr:</h4>
+<ol>
+<li>Spieler A drückt „Drehen"</li>
+<li>Das Rad zeigt ein Thema + eine GRAMMATIK-Pflicht</li>
+<li>Spieler A spricht 90 Sekunden über das Thema</li>
+<li>Mindestens 5 Sätze müssen die Pflicht-Grammatik enthalten!</li>
+<li>Andere Spieler hören zu und zählen die Pflicht-Sätze</li>
+<li>5+ richtig = 1 Punkt 🏆</li>
+</ol>
+</div>
+
+<div class="wheel-stage">
+<div class="wheel" id="wheel"></div>
+</div>
+
+<div class="game-display empty" id="wheelDisplay">
+<div class="gd-cat">Bereit?</div>
+<div class="gd-word">Drücke „Rad drehen"!</div>
+</div>
+
+<div class="game-action">
+<button class="game-btn" id="spinBtn">🎲 Rad drehen!</button>
+</div>
+</div>
+</section>
+
+<!-- SPIEL 2: TABU -->
+<section class="section" data-section="2">
+<h2 class="section-title">🎤 Spiel 2: <em style="font-style:italic;">Tabu</em></h2>
+<p class="section-sub">Erkläre das Wort — OHNE die 5 Tabu-Wörter zu benutzen!</p>
+
+<div class="game">
+<div class="game-rules">
+<h4>🎯 So spielt ihr:</h4>
+<ol>
+<li>Spieler A bekommt ein Wort + 5 verbotene Tabu-Wörter</li>
+<li>A hat 60 Sekunden Zeit, das Wort zu erklären — OHNE die Tabu-Wörter</li>
+<li>Die anderen müssen das Wort raten</li>
+<li>Erraten = 2 Punkte für A + 1 Punkt für den Errater</li>
+<li>Tabu-Wort gesagt = MINUS 1 Punkt für A 😬</li>
+</ol>
+</div>
+
+<div class="game-display empty" id="tabuDisplay">
+<div class="gd-cat">Neues Tabu-Wort?</div>
+<div class="gd-word">Drücke unten!</div>
+</div>
+
+<div class="game-action">
+<button class="game-btn" id="tabuBtn">🎴 Neues Wort!</button>
+</div>
+</div>
+</section>
+
+<!-- SPIEL 3: 60-SEKUNDEN -->
+<section class="section" data-section="3">
+<h2 class="section-title">⏱️ Spiel 3: <em style="font-style:italic;">60-Sekunden-Challenge</em></h2>
+<p class="section-sub">Schaffe es, 60 Sekunden ohne „äh" und ohne Pause über ein Thema zu sprechen!</p>
+
+<div class="game">
+<div class="game-rules">
+<h4>🎯 So spielt ihr:</h4>
+<ol>
+<li>Spieler A bekommt ein Thema</li>
+<li>A spricht 60 Sekunden ohne Pause + ohne „äh"</li>
+<li>„Äh", „hmm", lange Pausen = Ausgeschieden 😱</li>
+<li>Schafft A 60 Sek = 3 Punkte!</li>
+<li>Andere können „STOP!" rufen wenn sie ein „äh" hören</li>
+</ol>
+</div>
+
+<div class="game-display empty" id="sixtyDisplay">
+<div class="gd-cat">Bereit zum Sprechen?</div>
+<div class="gd-word">Tippe für neues Thema!</div>
+</div>
+
+<div class="game-action">
+<button class="game-btn" id="sixtyBtn">⏱️ Neues Thema!</button>
+</div>
+</div>
+</section>
+
+<!-- SPIEL 4: STORY-KARTEN -->
+<section class="section" data-section="4">
+<h2 class="section-title">🃏 Spiel 4: <em style="font-style:italic;">Story-Karten</em></h2>
+<p class="section-sub">5 Zufallswörter → eine zusammenhängende Geschichte erfinden!</p>
+
+<div class="game">
+<div class="game-rules">
+<h4>🎯 So spielt ihr:</h4>
+<ol>
+<li>Drücke „5 Karten ziehen"</li>
+<li>Du bekommst 5 zufällige Wörter aus den Wochenthemen</li>
+<li>Erzähle eine ZUSAMMENHÄNGENDE Geschichte mit ALLEN 5 Wörtern</li>
+<li>Mindestens 8 Sätze!</li>
+<li>Bonus: 1 Konjunktiv-II-Satz + 1 Passiv-Satz = +2 Punkte!</li>
+</ol>
+</div>
+
+<div class="game-display empty" id="storyDisplay">
+<div class="gd-cat">Deine 5 Story-Wörter</div>
+<div class="gd-word">Klick zum Ziehen!</div>
+</div>
+
+<div class="game-action">
+<button class="game-btn" id="storyBtn">🃏 5 Karten ziehen!</button>
+</div>
+</div>
+</section>
+
+<!-- SPIEL 5: KETTENREAKTION -->
+<section class="section" data-section="5">
+<h2 class="section-title">🔄 Spiel 5: <em style="font-style:italic;">Kettenreaktion</em></h2>
+<p class="section-sub">Jeder Satz beginnt mit dem letzten Wort des vorherigen!</p>
+
+<div class="game">
+<div class="game-rules">
+<h4>🎯 So spielt ihr:</h4>
+<ol>
+<li>Spieler A bekommt ein Startwort (Klick unten!)</li>
+<li>A bildet einen Satz mit dem Wort am Anfang</li>
+<li>Spieler B muss einen Satz mit dem LETZTEN Wort von A's Satz beginnen</li>
+<li>Spieler C macht weiter mit dem letzten Wort von B</li>
+<li>Wer keinen Satz bildet → scheidet aus</li>
+<li>Beispiel: <em>„Apfel ist gesund. Gesund sein macht glücklich. Glücklich werden alle bei der Hochzeit."</em></li>
+</ol>
+</div>
+
+<div class="game-display empty" id="chainDisplay">
+<div class="gd-cat">Startwort</div>
+<div class="gd-word">Klick zum Start!</div>
+</div>
+
+<div class="game-action">
+<button class="game-btn" id="chainBtn">🔄 Startwort!</button>
+</div>
+</div>
+</section>
+
+<!-- SPIEL 6: FRAGE-STURM -->
+<section class="section" data-section="6">
+<h2 class="section-title">🎯 Spiel 6: <em style="font-style:italic;">Frage-Sturm</em></h2>
+<p class="section-sub">Eine provokante Frage — beide Spieler antworten je 90 Sekunden, dann diskutieren!</p>
+
+<div class="game">
+<div class="game-rules">
+<h4>🎯 So spielt ihr:</h4>
+<ol>
+<li>Klick auf „Provokante Frage"</li>
+<li>Spieler A antwortet 90 Sekunden — gibt seine Position</li>
+<li>Spieler B antwortet 90 Sekunden — gibt SEINE Position</li>
+<li>Dann: 2 Minuten Diskussion!</li>
+<li>Pflicht: mindestens 3 Konnektoren („weil", „obwohl", „trotzdem")</li>
+<li>Wer mehr Redemittel nutzt = Sieger 🏆</li>
+</ol>
+</div>
+
+<div class="game-display empty" id="stormDisplay">
+<div class="gd-cat">Nächste Frage?</div>
+<div class="gd-word">Drücke unten!</div>
+</div>
+
+<div class="game-action">
+<button class="game-btn" id="stormBtn">🎯 Provokante Frage!</button>
+</div>
+</div>
+</section>
+
+<!-- SPIEL 7: SPEED-QUIZ -->
+<section class="section" data-section="7">
+<h2 class="section-title">🏆 Spiel 7: <em style="font-style:italic;">Speed-Quiz</em></h2>
+<p class="section-sub">Schnelle Fragen aus allen Wochenthemen — Punkte sammeln!</p>
+
+<div class="game">
+<div class="game-rules">
+<h4>🎯 So spielt ihr:</h4>
+<ol>
+<li>Klick „Frage" — du bekommst eine Frage aus den Wochenthemen</li>
+<li>Beantworte IMMER in einem KOMPLETTEN deutschen Satz</li>
+<li>Richtig = 1 Punkt</li>
+<li>Spielt 10 Runden gegeneinander</li>
+<li>Wer am Ende mehr Punkte hat = Champion! 🏆</li>
+</ol>
+</div>
+
+<div class="game-display empty" id="quizDisplay">
+<div class="gd-cat">Bereit?</div>
+<div class="gd-word">Drücke „Nächste Frage"!</div>
+</div>
+
+<div class="game-action">
+<button class="game-btn" id="quizBtn">🏆 Nächste Frage!</button>
+<div style="margin-top:1rem;">
+<span class="score">A: <span id="scoreA">0</span></span>
+<span class="score" style="background:#6A3D9C;">B: <span id="scoreB">0</span></span>
+</div>
+<div style="margin-top:.7rem;">
+<button class="game-btn" style="background:var(--teal);padding:.5rem 1rem;font-size:.85rem;" onclick="document.getElementById('scoreA').textContent=parseInt(document.getElementById('scoreA').textContent)+1">+1 für A</button>
+<button class="game-btn" style="background:#6A3D9C;padding:.5rem 1rem;font-size:.85rem;" onclick="document.getElementById('scoreB').textContent=parseInt(document.getElementById('scoreB').textContent)+1">+1 für B</button>
+<button class="game-btn" style="background:var(--ink);padding:.5rem 1rem;font-size:.85rem;" onclick="document.getElementById('scoreA').textContent=0;document.getElementById('scoreB').textContent=0">↺ Reset</button>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> · Sprachspiele · Wochenthemen spielerisch wiederholen · B1+</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+// SPIEL 1: THEMEN-RAD
+const WHEEL=[
+{emoji:'🔗',cat:'Konnektoren · WEIL',q:'Erzähle über deine WG / dein Wohnen — mit mind. 5 WEIL-Sätzen!'},
+{emoji:'💇',cat:'LASSEN',q:'Was lässt du machen, statt es selbst zu tun? 5+ lassen-Sätze!'},
+{emoji:'📞',cat:'Beschwerde + Konj. II',q:'Du hast eine kalte Pizza geliefert bekommen. Beschwere dich höflich! Min 5x Konj II!'},
+{emoji:'🖼️',cat:'Passiv',q:'Beschreibe eine Küche — wer macht was? Mindestens 5 Passiv-Sätze!'},
+{emoji:'🙏',cat:'Konjunktiv II',q:'Wenn du Geld hättest... — 5 irreale Wünsche mit „wäre / hätte / würde"!'},
+{emoji:'🗺️',cat:'Wegbeschreibung',q:'Beschreibe deinem Partner den Weg zum Bahnhof — mit Präpositionen!'},
+{emoji:'💬',cat:'Freies Sprechen',q:'„Soziale Medien zerstören Beziehungen" — 90 Sek Pro/Contra!'},
+{emoji:'⚖️',cat:'Männer/Frauen',q:'Wer trägt in deinem Umfeld den Mental Load? Sprich 90 Sek!'},
+{emoji:'🍝',cat:'Ernährung',q:'Beschreibe dein perfektes Wochenend-Essen — vom Frühstück bis Abendbrot!'},
+{emoji:'👋',cat:'Smalltalk',q:'Mache 60 Sek Smalltalk an der Bushaltestelle — was sagst du?'}
+];
+
+document.getElementById('spinBtn').onclick=()=>{
+  const wheel=document.getElementById('wheel');
+  const idx=Math.floor(Math.random()*WHEEL.length);
+  const deg=720+(idx*36)+Math.random()*30;
+  wheel.style.transform='rotate('+deg+'deg)';
+  setTimeout(()=>{
+    const k=WHEEL[idx];
+    const d=document.getElementById('wheelDisplay');
+    d.classList.remove('empty');
+    d.innerHTML='<div class="gd-emoji">'+k.emoji+'</div><div class="gd-cat">'+k.cat+'</div><div class="gd-word" style="font-size:1.05rem;line-height:1.4;">'+k.q+'</div><div class="gd-hint">90 Sek sprechen!</div>';
+  },4200);
+};
+
+// SPIEL 2: TABU
+const TABU=[
+{w:'Kaffee',v:['trinken','Bohnen','Tasse','schwarz','Frühstück']},
+{w:'Bahnhof',v:['Zug','Reisen','Ticket','Gleis','Schaffner']},
+{w:'Konjunktiv II',v:['Grammatik','höflich','wäre','hätte','würde']},
+{w:'WhatsApp',v:['Handy','Nachricht','schreiben','grün','App']},
+{w:'vegan',v:['Fleisch','Milch','Tier','Pflanze','essen']},
+{w:'Restaurant',v:['essen','Kellner','bestellen','Tisch','Menü']},
+{w:'Frühling',v:['Jahreszeit','Blumen','warm','März','Mai']},
+{w:'Wegbeschreibung',v:['Straße','rechts','links','geradeaus','gehen']},
+{w:'Apotheke',v:['Medizin','krank','Tabletten','Arzt','Rezept']},
+{w:'Hochzeit',v:['heiraten','Liebe','Kirche','weiß','Kleid']},
+{w:'Internet',v:['Computer','online','surfen','www','Google']},
+{w:'Schule',v:['lernen','Lehrer','Schüler','Hausaufgaben','Klasse']},
+{w:'Kino',v:['Film','Popcorn','Sessel','Leinwand','Karte']},
+{w:'Krankenhaus',v:['Arzt','krank','Patient','Bett','OP']},
+{w:'Geburtstag',v:['Kuchen','Kerze','Geschenk','feiern','Alter']}
+];
+document.getElementById('tabuBtn').onclick=()=>{
+  const k=TABU[Math.floor(Math.random()*TABU.length)];
+  const d=document.getElementById('tabuDisplay');
+  d.classList.remove('empty');
+  d.innerHTML='<div class="gd-cat">Dein Wort</div><div class="gd-word" style="font-size:2rem;color:var(--red);">'+k.w+'</div><div style="margin-top:1rem;background:white;padding:.7rem;border-radius:10px;"><div style="font-size:.72rem;font-weight:700;color:var(--ink);">VERBOTEN (Tabu-Wörter):</div><div style="font-family:Fraunces,serif;color:var(--ink-soft);margin-top:.3rem;">'+k.v.map(x=>'<span style="background:var(--red-soft);padding:.1em .4em;border-radius:5px;margin:.15em;display:inline-block;">'+x+'</span>').join('')+'</div></div>';
+};
+
+// SPIEL 3: 60 SEK
+const SIXTY=['dein erster Tag in Deutschland','dein Lieblingsessen + warum','dein perfekter Urlaub','dein Tagesablauf','deine Familie','deine schönste Erinnerung','dein Lieblingsfilm','was du am Wochenende machst','dein letzter peinlicher Moment','was du gestern gegessen hast','dein Lieblingsplatz in deiner Stadt','dein Beruf / Studium','dein Hobby','deine Träume für die Zukunft','warum du Deutsch lernst','dein letztes Restaurant-Erlebnis','deine Lieblings-App','dein erstes Date','dein Lieblings-Song','warum du heute müde bist'];
+document.getElementById('sixtyBtn').onclick=()=>{
+  const t=SIXTY[Math.floor(Math.random()*SIXTY.length)];
+  const d=document.getElementById('sixtyDisplay');
+  d.classList.remove('empty');
+  d.innerHTML='<div class="gd-emoji">⏱️</div><div class="gd-cat">60 Sekunden über…</div><div class="gd-word">'+t+'</div><div class="gd-hint">Kein „äh"! Keine Pause! 🚫</div>';
+};
+
+// SPIEL 4: STORY KARTEN
+const STORY=['Kaffee','Bahnhof','WhatsApp','Hund','Liebe','Konjunktiv','Pizza','Auto','Schule','Geburtstag','Urlaub','Regen','Buch','Telefon','Apotheke','Brötchen','Hochzeit','Restaurant','Smartphone','Wohnung','Freund','Internet','Kuchen','Hund','Polizei'];
+document.getElementById('storyBtn').onclick=()=>{
+  const cards=[];
+  while(cards.length<5){const c=STORY[Math.floor(Math.random()*STORY.length)];if(!cards.includes(c))cards.push(c);}
+  const d=document.getElementById('storyDisplay');
+  d.classList.remove('empty');
+  d.innerHTML='<div class="gd-cat">Deine 5 Story-Wörter</div><div style="font-family:Fraunces,serif;font-size:1.4rem;font-weight:700;color:var(--ink);margin-top:.5rem;line-height:1.8;">'+cards.map(c=>'<span style="background:var(--paper);padding:.2em .6em;border-radius:8px;margin:.2em;display:inline-block;border:2px solid var(--red);">'+c+'</span>').join(' ')+'</div><div class="gd-hint">Erzähle EINE Geschichte mit ALLEN 5!</div>';
+};
+
+// SPIEL 5: KETTE
+const CHAIN=['Apfel','Hund','Schule','Reise','Wetter','Kino','Familie','Arbeit','Essen','Buch','Auto','Telefon','Liebe','Geld','Glück','Pizza','Café','Urlaub','Sport','Musik'];
+document.getElementById('chainBtn').onclick=()=>{
+  const w=CHAIN[Math.floor(Math.random()*CHAIN.length)];
+  const d=document.getElementById('chainDisplay');
+  d.classList.remove('empty');
+  d.innerHTML='<div class="gd-emoji">🔄</div><div class="gd-cat">Startwort</div><div class="gd-word" style="font-size:2rem;">'+w+'</div><div class="gd-hint">Beginne einen Satz mit „'+w+'"!</div>';
+};
+
+// SPIEL 6: FRAGE-STURM
+const STORM=[
+'Gibt es zu viel Hass im Internet — oder ist das gesund?',
+'Sollten Schulen handyfrei sein?',
+'Ist Heiraten heute noch sinnvoll?',
+'Reisen oder Zuhause-Sparen — was bringt mehr?',
+'Sollte man nie über Politik mit der Familie reden?',
+'Vegan oder Fleisch — wer hat mehr Recht?',
+'Brauchen wir wirklich KI im Klassenzimmer?',
+'Sollte man immer höflich sein — auch wenn man wütend ist?',
+'Lieber langsam und genießen oder schnell und effizient?',
+'Ist Smalltalk wirklich nutzlos?',
+'Soll man Ratschläge geben, wenn keiner fragt?',
+'Lieber im Ausland leben oder in der Heimat?',
+'Geld oder Zeit — was ist wertvoller?',
+'Sollte man Geheimnisse bewahren — auch große?',
+'Ist Hass auf Werbung berechtigt?'
+];
+document.getElementById('stormBtn').onclick=()=>{
+  const q=STORM[Math.floor(Math.random()*STORM.length)];
+  const d=document.getElementById('stormDisplay');
+  d.classList.remove('empty');
+  d.innerHTML='<div class="gd-emoji">🎯</div><div class="gd-cat">Provokante Frage</div><div class="gd-word" style="font-size:1.15rem;line-height:1.4;">'+q+'</div><div class="gd-hint">A: 90 Sek · B: 90 Sek · Diskussion: 2 Min!</div>';
+};
+
+// SPIEL 7: SPEED QUIZ
+const QUIZ=[
+{q:'Was bedeutet „im Stich lassen"?',a:'jemanden enttäuschen / nicht helfen'},
+{q:'Konjugiere: „du" + „helfen" im Imperativ',a:'Hilf!'},
+{q:'Wie sagt man „Ich will einen Kaffee" höflich?',a:'„Ich hätte gern einen Kaffee."'},
+{q:'Was ist ein „Bekommen-Passiv"? Beispiel!',a:'„Sie bekommt die Haare geschnitten."'},
+{q:'Welche Konnektoren-Familie hat Inversion?',a:'Familie 2 — Adverbien (deshalb, trotzdem...)'},
+{q:'Was ist die Frauenquote?',a:'gesetzlicher Mindestanteil Frauen in Führungspositionen'},
+{q:'Wer erfand das WWW?',a:'Tim Berners-Lee, 1989'},
+{q:'„Es regnet, deshalb ___ ich zu Hause." — Verb?',a:'„bleibe" (Inversion!)'},
+{q:'Wie sagt man auf Bayrisch „Hallo"?',a:'„Servus" oder „Grüß Gott"'},
+{q:'Was ist „Abendbrot"?',a:'kaltes deutsches Abendessen mit Brot, Wurst, Käse'},
+{q:'Beispiel für ein Idiom mit „lassen"?',a:'„im Stich lassen", „sich Zeit lassen"...'},
+{q:'Wenn ich Zeit ___, würde ich reisen. — Verb?',a:'„hätte" (Konjunktiv II)'},
+{q:'Höfliche Wegbeschreibung anfangen?',a:'„Entschuldigung, wie komme ich zu...?"'},
+{q:'Was bedeutet „Mental Load"?',a:'unsichtbares Planen/Organisieren der Familie'},
+{q:'Wann sagt man „Da kann man nichts machen"?',a:'bei einer ärgerlichen Situation, die man nicht ändern kann'},
+{q:'Beispiel für Passiv: „Der Koch kocht die Suppe."',a:'„Die Suppe wird gekocht."'},
+{q:'Höflich am Telefon: „Können Sie...?"',a:'„Könnten Sie...?" (Konjunktiv II)'},
+{q:'Beispiel: Vorschlag mit „lassen" — wir!',a:'„Lass uns ins Kino gehen!"'},
+{q:'Wann benutzt man „falls" statt „wenn"?',a:'bei unsicherer Bedingung'},
+{q:'Imperativ für „Sie" (höflich) bei „kommen"?',a:'„Kommen Sie bitte!"'}
+];
+let lastQ=-1;
+document.getElementById('quizBtn').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*QUIZ.length);}while(i===lastQ&&QUIZ.length>1);lastQ=i;
+  const k=QUIZ[i];
+  const d=document.getElementById('quizDisplay');
+  d.classList.remove('empty');
+  d.innerHTML='<div class="gd-cat">Frage</div><div class="gd-word" style="font-size:1.05rem;line-height:1.4;">'+k.q+'</div><button onclick="this.nextElementSibling.style.display=\'block\';this.style.display=\'none\';" style="margin-top:1rem;background:var(--teal);color:white;border:none;padding:.5rem 1.2rem;border-radius:999px;cursor:pointer;font-family:Outfit;font-weight:600;">💡 Antwort zeigen</button><div style="display:none;margin-top:1rem;background:var(--teal-soft);padding:.8rem;border-radius:10px;color:var(--teal);font-weight:700;">✓ '+k.a+'</div>';
+};
+
+// WHEEL labels (visual)
+const wheelLabels=['🔗','💇','📞','🖼️','🙏','🗺️','💬','⚖️','🍝','👋'];
+const wheelEl=document.getElementById('wheel');
+wheelLabels.slice(0,8).forEach((label,i)=>{
+  const angle=i*45+22.5;
+  const labelEl=document.createElement('div');
+  labelEl.className='wheel-label';
+  labelEl.textContent=label;
+  labelEl.style.transform='rotate('+angle+'deg) translate(110px, -10px) rotate(-'+angle+'deg)';
+  labelEl.style.fontSize='1.5rem';
+  wheelEl.appendChild(labelEl);
+});
+const arrow=document.createElement('div');arrow.className='wheel-arrow';arrow.textContent='▼';wheelEl.parentElement.style.position='relative';wheelEl.parentElement.appendChild(arrow);
+const center=document.createElement('div');center.className='wheel-center';center.textContent='🎯';wheelEl.appendChild(center);
+</script>
+</body></html>

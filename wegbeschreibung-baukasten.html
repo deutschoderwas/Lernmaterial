@@ -1,0 +1,928 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Wegbeschreibung + Präpositionen · A2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+  --map-road:#FFFFFF; --map-grass:#D4E8B8; --map-bg:#EAF4F7;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}
+.tip em{color:var(--ink);font-style:italic;}
+.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* PRÄPOSITIONEN CARDS */
+.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:600px){.prep-grid{grid-template-columns:repeat(2,1fr);}}
+.prep{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.9rem;text-align:center;}
+.prep-icon{font-size:1.8rem;margin-bottom:.3rem;}
+.prep-word{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.05rem;margin-bottom:.2rem;}
+.prep-case{font-size:.7rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.prep-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.82rem;margin-top:.3rem;}
+
+/* INTERACTIVE MAP */
+.map-stage{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem;margin:1.5rem 0;box-shadow:0 4px 16px rgba(38,32,25,.05);}
+.map-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.2rem;margin-bottom:.5rem;text-align:center;}
+.map-sub{text-align:center;color:var(--ink-soft);font-size:.9rem;margin-bottom:1rem;}
+.map-wrapper{position:relative;width:100%;background:var(--map-bg);border-radius:14px;overflow:hidden;border:2px solid var(--sand);}
+.map-wrapper svg{display:block;width:100%;height:auto;cursor:crosshair;}
+.map-svg-icon{cursor:pointer;transition:transform .15s;}
+.map-svg-icon:hover{transform:scale(1.15);}
+.map-legend{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--sand);}
+.map-legend-item{display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--ink);background:var(--cream);padding:.3rem .7rem;border-radius:14px;cursor:pointer;transition:.15s;}
+.map-legend-item:hover{background:var(--cream-warm);transform:translateY(-1px);}
+.map-legend-item .em{font-size:1.1rem;}
+.map-info{background:var(--yellow-soft);border-left:5px solid var(--yellow);border-radius:10px;padding:.9rem 1.1rem;margin-top:1rem;display:none;}
+.map-info.show{display:block;}
+.map-info-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.05rem;margin-bottom:.3rem;}
+.map-info-addr{color:var(--red);font-weight:700;font-size:.88rem;margin-bottom:.4rem;}
+.map-info-desc{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.92rem;}
+
+/* DIALOG STEPS */
+.dialog-grid{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0;}
+.dial{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;}
+.dial.d1{border-left:5px solid var(--red);}
+.dial.d2{border-left:5px solid var(--teal);}
+.dial.d3{border-left:5px solid #B66809;}
+.dial.d4{border-left:5px solid #6A3D9C;}
+.dial-icon{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.dial.d2 .dial-icon{background:var(--teal);}
+.dial.d3 .dial-icon{background:#B66809;}
+.dial.d4 .dial-icon{background:#6A3D9C;}
+.dial-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.02rem;margin-bottom:.3rem;}
+.dial-body ul{list-style:none;padding:0;}
+.dial-body li{padding:.2rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;padding-left:1.1rem;position:relative;}
+.dial-body li::before{content:'›';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+
+/* ALLTAG-FRAGEN */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:340px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.96rem;margin-top:.6rem;line-height:1.55;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLES + DEBATE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}
+.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}
+.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="eyebrow">deutschoderwas · A2 Sprechclub · Alltag</div>
+
+<div class="title-wrap">
+<h1 class="title">Den <span class="hl">Weg</span> beschreiben</h1>
+</div>
+<p class="subtitle">Mit echten Straßennamen, Häusern und Plätzen — ihr fragt nach dem Weg und führt euren Tandempartner zum Ziel. Wie auf einer richtigen deutschen Straße!</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="5" font-size="22">➡️</text><text text-anchor="middle" y="40" fill="#E8302A">geradeaus</text></g>
+<g transform="translate(95,20)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="5" font-size="22">⬅️</text><text text-anchor="middle" y="40" fill="#0FB5A6">links</text></g>
+<g transform="translate(155,20)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="5" font-size="22">➡️</text><text text-anchor="middle" y="40" fill="#B66809">rechts</text></g>
+<g transform="translate(215,20)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="5" font-size="22">🚦</text><text text-anchor="middle" y="40" fill="#A04060">Ampel</text></g>
+<g transform="translate(275,20)"><circle cx="0" cy="0" r="22" fill="#E2EBC9"/><text text-anchor="middle" dy="5" font-size="22">🚏</text><text text-anchor="middle" y="40" fill="#5F7A2A">Haltestelle</text></g>
+<g transform="translate(335,20)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="5" font-size="22">🏛️</text><text text-anchor="middle" y="40" fill="#6A3D9C">Gebäude</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">🗺️ Die Stadt</button>
+<button class="tab" data-tab="2">💬 Umgangssprache</button>
+<button class="tab" data-tab="3">🃏 Lernkarten</button>
+<button class="tab" data-tab="4">✅ Quiz</button>
+<button class="tab" data-tab="5">✍️ Lückentext</button>
+<button class="tab" data-tab="6">🧩 Zuordnen</button>
+<button class="tab" data-tab="7">🗣️ Sprechen</button>
+</nav>
+
+<!-- ============== ÜBERBLICK ============== -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die <em style="font-style:italic;">10 wichtigsten</em> Präpositionen</h2>
+<p class="section-sub">Damit du den Weg beschreiben kannst!</p>
+
+<div class="prep-grid">
+<div class="prep"><div class="prep-icon">🛣️</div><div class="prep-word">an … vorbei</div><div class="prep-case">Dativ</div><div class="prep-ex">„an der Kirche vorbei"</div></div>
+<div class="prep"><div class="prep-icon">📍</div><div class="prep-word">bis zu</div><div class="prep-case">Dativ</div><div class="prep-ex">„bis zur Ampel"</div></div>
+<div class="prep"><div class="prep-icon">🚦</div><div class="prep-word">an der …</div><div class="prep-case">Dativ</div><div class="prep-ex">„an der Kreuzung"</div></div>
+<div class="prep"><div class="prep-icon">🔄</div><div class="prep-word">um … herum</div><div class="prep-case">Akkusativ</div><div class="prep-ex">„um die Ecke"</div></div>
+<div class="prep"><div class="prep-icon">⬆️</div><div class="prep-word">über</div><div class="prep-case">Akkusativ</div><div class="prep-ex">„über die Brücke"</div></div>
+<div class="prep"><div class="prep-icon">⬇️</div><div class="prep-word">durch</div><div class="prep-case">Akkusativ</div><div class="prep-ex">„durch den Park"</div></div>
+<div class="prep"><div class="prep-icon">↩️</div><div class="prep-word">nach</div><div class="prep-case">Dativ</div><div class="prep-ex">„nach links / rechts"</div></div>
+<div class="prep"><div class="prep-icon">⬅️</div><div class="prep-word">in</div><div class="prep-case">Akk/Dat</div><div class="prep-ex">„in die Hauptstraße"</div></div>
+<div class="prep"><div class="prep-icon">🚏</div><div class="prep-word">zu / zur / zum</div><div class="prep-case">Dativ</div><div class="prep-ex">„zum Bahnhof"</div></div>
+<div class="prep"><div class="prep-icon">🏁</div><div class="prep-word">gegenüber von</div><div class="prep-case">Dativ</div><div class="prep-ex">„gegenüber von der Post"</div></div>
+</div>
+
+<div class="tip">
+💡 <strong>Die goldene Regel A2:</strong> Bei BEWEGUNG → <u>Akkusativ</u> (in die Straße, über die Brücke). Bei ORT → <u>Dativ</u> (an der Ampel, bei der Kirche). Bei den meisten Wegbeschreibungen brauchst du <strong>Dativ</strong>, weil du eine Strecke beschreibst!
+</div>
+
+<h2 class="section-title">Die <em style="font-style:italic;">4 Schritte</em> einer Wegbeschreibung</h2>
+
+<div class="dialog-grid">
+<div class="dial d1">
+<div class="dial-icon">1</div>
+<div class="dial-body">
+<h4>❓ Höflich fragen</h4>
+<ul>
+<li>„Entschuldigung, wie komme ich zum Bahnhof?"</li>
+<li>„Können Sie mir helfen? Ich suche die Post."</li>
+<li>„Wo ist hier in der Nähe ein Supermarkt?"</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d2">
+<div class="dial-icon">2</div>
+<div class="dial-body">
+<h4>🚶 Beschreiben (gehen)</h4>
+<ul>
+<li>„Gehen Sie geradeaus."</li>
+<li>„Gehen Sie die Hauptstraße entlang."</li>
+<li>„Gehen Sie über die Brücke."</li>
+<li>„Gehen Sie an der Kirche vorbei."</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d3">
+<div class="dial-icon">3</div>
+<div class="dial-body">
+<h4>↪️ Abbiegen</h4>
+<ul>
+<li>„An der Ampel biegen Sie links/rechts ab."</li>
+<li>„Die zweite Straße rechts."</li>
+<li>„Nach dem Supermarkt biegen Sie rechts ab."</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d4">
+<div class="dial-icon">4</div>
+<div class="dial-body">
+<h4>🎯 Ziel beschreiben</h4>
+<ul>
+<li>„Das Café ist auf der linken/rechten Seite."</li>
+<li>„Es liegt direkt gegenüber der Post."</li>
+<li>„Sie können es nicht verfehlen!"</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+
+<div class="alltag-q">
+<div class="ql">Alltag · Fragen</div>
+<div class="qq">Wenn du in einer fremden Stadt nach dem Weg fragst — was sagst du als ERSTEN Satz?</div>
+<div class="think">💭 Mit „Entschuldigung…" beginnen ist immer höflich!</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);">
+<div class="ql" style="color:var(--teal);">Alltag · Helfen</div>
+<div class="qq">Jemand fragt dich nach dem Weg zum Bahnhof. Wie startest du deine Antwort?</div>
+<div class="think">💭 „Gehen Sie geradeaus, dann…"</div>
+</div>
+
+</section>
+
+<!-- ============== STADT-KARTE INTERAKTIV ============== -->
+<section class="section" data-section="1">
+
+<h2 class="section-title">🗺️ Die <em style="font-style:italic;">Sprechstadt</em></h2>
+<p class="section-sub">Klick auf ein Gebäude — siehe die Adresse und Beschreibung. Dann übe mit deinem Partner!</p>
+
+<div class="map-stage">
+<div class="map-title">Stadtplan · 15 wichtige Orte</div>
+<div class="map-sub">Du startest am 📍 <strong>Bahnhof</strong> (Bahnhofstraße 1). Wohin führst du deinen Partner?</div>
+
+<div class="map-wrapper">
+<svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+<!-- BACKGROUND -->
+<rect width="700" height="500" fill="#EAF4F7"/>
+
+<!-- PARKS / GRASS -->
+<rect x="20" y="20" width="160" height="100" fill="#D4E8B8" rx="8"/>
+<text x="100" y="75" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="12" fill="#5F7A2A">Stadtpark</text>
+<rect x="540" y="350" width="140" height="130" fill="#D4E8B8" rx="8"/>
+<text x="610" y="420" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="12" fill="#5F7A2A">Schillerpark</text>
+
+<!-- ROADS HORIZONTAL -->
+<rect x="0" y="140" width="700" height="40" fill="#FFFFFF" stroke="#A8957D" stroke-width="1"/>
+<text x="280" y="135" font-family="Outfit" font-weight="700" font-size="11" fill="#5C4E3E">Hauptstraße</text>
+<line x1="0" y1="160" x2="700" y2="160" stroke="#FFD24A" stroke-width="2" stroke-dasharray="20,15"/>
+
+<rect x="0" y="290" width="700" height="35" fill="#FFFFFF" stroke="#A8957D" stroke-width="1"/>
+<text x="100" y="285" font-family="Outfit" font-weight="700" font-size="11" fill="#5C4E3E">Schillerstraße</text>
+<line x1="0" y1="307" x2="700" y2="307" stroke="#FFD24A" stroke-width="2" stroke-dasharray="20,15"/>
+
+<rect x="0" y="430" width="700" height="35" fill="#FFFFFF" stroke="#A8957D" stroke-width="1"/>
+<text x="100" y="425" font-family="Outfit" font-weight="700" font-size="11" fill="#5C4E3E">Mozartstraße</text>
+<line x1="0" y1="447" x2="700" y2="447" stroke="#FFD24A" stroke-width="2" stroke-dasharray="20,15"/>
+
+<!-- ROADS VERTICAL -->
+<rect x="200" y="0" width="35" height="500" fill="#FFFFFF" stroke="#A8957D" stroke-width="1"/>
+<text x="217" y="15" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Bahnhofstraße</text>
+
+<rect x="420" y="0" width="35" height="500" fill="#FFFFFF" stroke="#A8957D" stroke-width="1"/>
+<text x="437" y="15" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Goethestraße</text>
+
+<rect x="600" y="0" width="30" height="350" fill="#FFFFFF" stroke="#A8957D" stroke-width="1"/>
+<text x="615" y="15" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Parkstraße</text>
+
+<!-- TRAFFIC LIGHTS at crossings -->
+<g transform="translate(217,160)"><circle r="5" fill="#E8302A"/><text y="3" text-anchor="middle" font-size="8" fill="white">🚦</text></g>
+<g transform="translate(437,160)"><circle r="5" fill="#E8302A"/><text y="3" text-anchor="middle" font-size="8" fill="white">🚦</text></g>
+<g transform="translate(217,307)"><circle r="5" fill="#E8302A"/></g>
+<g transform="translate(437,307)"><circle r="5" fill="#E8302A"/></g>
+
+<!-- 1. BAHNHOF -->
+<g class="map-svg-icon" data-id="1" onclick="showPlace(1)">
+<rect x="195" y="60" width="50" height="60" fill="#A8957D" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<rect x="205" y="75" width="30" height="40" fill="#262019"/>
+<text x="220" y="100" text-anchor="middle" font-size="20">🚆</text>
+<text x="220" y="55" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#262019">Bahnhof</text>
+</g>
+
+<!-- 2. POST -->
+<g class="map-svg-icon" data-id="2" onclick="showPlace(2)">
+<rect x="295" y="55" width="60" height="65" fill="#FFD24A" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<text x="325" y="95" text-anchor="middle" font-size="22">📬</text>
+<text x="325" y="50" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Post</text>
+</g>
+
+<!-- 3. APOTHEKE -->
+<g class="map-svg-icon" data-id="3" onclick="showPlace(3)">
+<rect x="370" y="55" width="40" height="65" fill="#E8302A" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<text x="390" y="95" text-anchor="middle" font-size="22" fill="white">💊</text>
+<text x="390" y="50" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Apotheke</text>
+</g>
+
+<!-- 4. KIRCHE -->
+<g class="map-svg-icon" data-id="4" onclick="showPlace(4)">
+<polygon points="467,80 480,55 493,80 493,120 467,120" fill="#A8957D" stroke="#5C4E3E" stroke-width="2"/>
+<line x1="480" y1="50" x2="480" y2="55" stroke="#5C4E3E" stroke-width="2"/>
+<polygon points="476,40 484,40 482,50 478,50" fill="#5C4E3E"/>
+<text x="480" y="105" text-anchor="middle" font-size="18">⛪</text>
+<text x="480" y="135" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Kirche</text>
+</g>
+
+<!-- 5. RATHAUS -->
+<g class="map-svg-icon" data-id="5" onclick="showPlace(5)">
+<rect x="510" y="60" width="65" height="60" fill="#D9B89A" stroke="#5C4E3E" stroke-width="2" rx="2"/>
+<polygon points="510,60 542,40 575,60" fill="#5C4E3E"/>
+<rect x="535" y="80" width="15" height="40" fill="#E8302A"/>
+<text x="542" y="55" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Rathaus</text>
+</g>
+
+<!-- 6. BUSHALTESTELLE -->
+<g class="map-svg-icon" data-id="6" onclick="showPlace(6)">
+<rect x="265" y="190" width="40" height="25" fill="#5C4E3E"/>
+<text x="285" y="207" text-anchor="middle" font-size="14" fill="white">🚏</text>
+<text x="285" y="230" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="9" fill="#5C4E3E">Haltestelle</text>
+</g>
+
+<!-- 7. SUPERMARKT -->
+<g class="map-svg-icon" data-id="7" onclick="showPlace(7)">
+<rect x="80" y="200" width="100" height="70" fill="#E8302A" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<text x="130" y="240" text-anchor="middle" font-size="14" fill="white" font-family="Outfit" font-weight="700">SUPER-</text>
+<text x="130" y="258" text-anchor="middle" font-size="14" fill="white" font-family="Outfit" font-weight="700">MARKT</text>
+<text x="130" y="195" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Edeka</text>
+</g>
+
+<!-- 8. CAFÉ -->
+<g class="map-svg-icon" data-id="8" onclick="showPlace(8)">
+<rect x="330" y="220" width="55" height="50" fill="#FBEDD8" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<text x="357" y="252" text-anchor="middle" font-size="22">☕</text>
+<text x="357" y="215" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Café Lila</text>
+</g>
+
+<!-- 9. SCHULE -->
+<g class="map-svg-icon" data-id="9" onclick="showPlace(9)">
+<rect x="475" y="200" width="100" height="80" fill="#D9B89A" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<polygon points="475,200 525,180 575,200" fill="#5C4E3E"/>
+<rect x="490" y="220" width="20" height="20" fill="#FFD24A"/>
+<rect x="540" y="220" width="20" height="20" fill="#FFD24A"/>
+<text x="525" y="265" text-anchor="middle" font-size="14">🏫</text>
+<text x="525" y="195" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Schule</text>
+</g>
+
+<!-- 10. KRANKENHAUS -->
+<g class="map-svg-icon" data-id="10" onclick="showPlace(10)">
+<rect x="20" y="340" width="120" height="80" fill="#FFFFFF" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<rect x="65" y="355" width="30" height="50" fill="#E8302A"/>
+<rect x="70" y="370" width="20" height="5" fill="white"/>
+<rect x="77" y="362" width="5" height="20" fill="white"/>
+<text x="80" y="335" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Krankenhaus</text>
+</g>
+
+<!-- 11. BANK -->
+<g class="map-svg-icon" data-id="11" onclick="showPlace(11)">
+<rect x="180" y="340" width="60" height="75" fill="#5C4E3E" stroke="#262019" stroke-width="2" rx="4"/>
+<polygon points="180,340 210,320 240,340" fill="#262019"/>
+<text x="210" y="385" text-anchor="middle" font-size="16" fill="#FFD24A" font-family="Outfit" font-weight="900">$</text>
+<text x="210" y="335" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Bank</text>
+</g>
+
+<!-- 12. RESTAURANT -->
+<g class="map-svg-icon" data-id="12" onclick="showPlace(12)">
+<rect x="280" y="340" width="70" height="70" fill="#FFD24A" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<text x="315" y="385" text-anchor="middle" font-size="22">🍽️</text>
+<text x="315" y="335" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Restaurant</text>
+</g>
+
+<!-- 13. KINO -->
+<g class="map-svg-icon" data-id="13" onclick="showPlace(13)">
+<rect x="380" y="340" width="70" height="70" fill="#262019" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<text x="415" y="370" text-anchor="middle" font-size="11" fill="#FFD24A" font-family="Outfit" font-weight="700">KINO</text>
+<text x="415" y="395" text-anchor="middle" font-size="20">🎬</text>
+<text x="415" y="335" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Cinemax</text>
+</g>
+
+<!-- 14. HOTEL -->
+<g class="map-svg-icon" data-id="14" onclick="showPlace(14)">
+<rect x="475" y="340" width="60" height="80" fill="#A8957D" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<rect x="485" y="350" width="10" height="10" fill="#FFD24A"/>
+<rect x="500" y="350" width="10" height="10" fill="#FFD24A"/>
+<rect x="515" y="350" width="10" height="10" fill="#FFD24A"/>
+<rect x="485" y="375" width="10" height="10" fill="#FFD24A"/>
+<rect x="500" y="375" width="10" height="10" fill="#FFD24A"/>
+<rect x="515" y="375" width="10" height="10" fill="#FFD24A"/>
+<rect x="498" y="395" width="14" height="20" fill="#262019"/>
+<text x="505" y="335" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Hotel Adler</text>
+</g>
+
+<!-- 15. POLIZEI -->
+<g class="map-svg-icon" data-id="15" onclick="showPlace(15)">
+<rect x="615" y="200" width="60" height="70" fill="#0FB5A6" stroke="#5C4E3E" stroke-width="2" rx="4"/>
+<text x="645" y="240" text-anchor="middle" font-size="18">🚓</text>
+<text x="645" y="195" text-anchor="middle" font-family="Outfit" font-weight="700" font-size="10" fill="#5C4E3E">Polizei</text>
+</g>
+
+</svg>
+</div>
+
+<div class="map-info" id="mapInfo">
+<div class="map-info-name" id="mapInfoName">Klick auf ein Gebäude</div>
+<div class="map-info-addr" id="mapInfoAddr">…</div>
+<div class="map-info-desc" id="mapInfoDesc">Du siehst dann die Adresse und einen Beispielsatz, wie man hierhin findet.</div>
+</div>
+
+<div class="map-legend">
+<div class="map-legend-item" onclick="showPlace(1)"><span class="em">🚆</span>Bahnhof</div>
+<div class="map-legend-item" onclick="showPlace(2)"><span class="em">📬</span>Post</div>
+<div class="map-legend-item" onclick="showPlace(3)"><span class="em">💊</span>Apotheke</div>
+<div class="map-legend-item" onclick="showPlace(4)"><span class="em">⛪</span>Kirche</div>
+<div class="map-legend-item" onclick="showPlace(5)"><span class="em">🏛️</span>Rathaus</div>
+<div class="map-legend-item" onclick="showPlace(6)"><span class="em">🚏</span>Bushaltestelle</div>
+<div class="map-legend-item" onclick="showPlace(7)"><span class="em">🛒</span>Supermarkt</div>
+<div class="map-legend-item" onclick="showPlace(8)"><span class="em">☕</span>Café</div>
+<div class="map-legend-item" onclick="showPlace(9)"><span class="em">🏫</span>Schule</div>
+<div class="map-legend-item" onclick="showPlace(10)"><span class="em">🏥</span>Krankenhaus</div>
+<div class="map-legend-item" onclick="showPlace(11)"><span class="em">🏦</span>Bank</div>
+<div class="map-legend-item" onclick="showPlace(12)"><span class="em">🍽️</span>Restaurant</div>
+<div class="map-legend-item" onclick="showPlace(13)"><span class="em">🎬</span>Kino</div>
+<div class="map-legend-item" onclick="showPlace(14)"><span class="em">🏨</span>Hotel</div>
+<div class="map-legend-item" onclick="showPlace(15)"><span class="em">🚓</span>Polizei</div>
+</div>
+</div>
+
+<div class="tip">
+🎯 <strong>Partner-Übung 1:</strong> Person A wählt ein Ziel (klick aufs Gebäude!). Person B muss raten, wo es liegt — A beschreibt den Weg vom Bahnhof. <strong>Mindestens 5 Sätze!</strong>
+</div>
+
+<div class="tip" style="background:#D7F0EC;border-color:var(--teal);">
+🎯 <strong>Partner-Übung 2:</strong> Person A startet beim <strong>Café Lila</strong> und beschreibt den Weg zum <strong>Krankenhaus</strong>. Person B malt den Weg mit dem Finger auf der Karte. Stimmt es?
+</div>
+
+<div class="tip" style="background:#FAE0EA;border-color:var(--pink);">
+🎯 <strong>Partner-Übung 3:</strong> Person A nennt nur die Adresse („Mozartstraße, gegenüber vom Restaurant"). Person B muss den Ort raten!
+</div>
+
+</section>
+
+<!-- ============== UMGANGSSPRACHE ============== -->
+<section class="section" data-section="2">
+<h2 class="section-title">💬 So fragen Deutsche <em style="font-style:italic;">wirklich</em></h2>
+<p class="section-sub">Echte Chats — wenn man unterwegs ist und sich verlaufen hat.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Im Alltag startet man immer mit „<strong>Entschuldigung…</strong>" — das ist die Magie-Wort, die alle Türen öffnet!</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">📍</div><div><div class="name">Maria · lost in Berlin</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ey hilfe, ich find euer Café nicht 😩</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wo bist du gerade?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Am Bahnhof, Ausgang Hauptstraße</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Geh geradeaus</strong> bis zur Ampel, dann <strong>biege rechts ab</strong> in die Goethestraße. Café Lila ist auf der linken Seite!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Top, danke! 🙏</div></div>
+<div class="chat-meaning"><strong>„geh geradeaus" · „biege rechts ab" · „auf der linken Seite"</strong> — die 3 wichtigsten Sätze für jede Wegbeschreibung!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🚲</div><div><div class="name">Tom · per Fahrrad</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hey, wie komme ich zu dir?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Fahr <strong>durch den Park</strong>, dann <strong>über die Brücke</strong>, und ich wohne <strong>direkt gegenüber</strong> vom Supermarkt</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Welcher Supermarkt? Edeka oder Rewe?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Edeka — Schillerstraße 12!</div></div>
+<div class="chat-meaning"><strong>„durch den Park" · „über die Brücke" · „gegenüber vom"</strong> — diese Präpositionen brauchst du im Alltag!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😅</div><div><div class="name">Touristin</div><div class="stat">verloren</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Entschuldigung</strong>, wie komme ich zum Rathaus?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Das ist nicht weit! Sehen Sie die Kirche dort drüben? <strong>Gleich daneben</strong>!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Oh perfekt, vielen Dank! 😊</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Bitte gerne, schönen Tag noch!</div></div>
+<div class="chat-meaning"><strong>„Entschuldigung"</strong> = das Zauberwort. <strong>„gleich daneben"</strong> = direkt nebenan!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📱</div><div><div class="name">Google Maps Failed</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Google Maps hat mich falsch geleitet 😭 Wo bist du?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Welche Straße siehst du gerade?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Mozartstraße 23</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ah perfekt! <strong>Geh die Mozartstraße entlang</strong>, dann <strong>an der Bushaltestelle</strong> rechts. Ich bin <strong>am Eingang vom Park</strong>!</div></div>
+<div class="chat-meaning"><strong>„die Straße entlang"</strong> · <strong>„an der Haltestelle"</strong> · <strong>„am Eingang"</strong> — typische Orientierungspunkte!</div>
+</div>
+
+</div>
+
+<h2 class="section-title">10 <em style="font-style:italic;">Alltagssätze</em></h2>
+
+<div class="prep-grid" style="grid-template-columns:1fr;">
+<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Entschuldigung, wo finde ich…?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">höfliche Standardfrage</div></div>
+<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„Können Sie mir helfen? Ich suche…"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">höflich um Hilfe bitten</div></div>
+<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">„Bin ich hier richtig zum…?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">kurz nachfragen ob die Richtung stimmt</div></div>
+<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">„Wie weit ist es noch?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">nach der Entfernung fragen</div></div>
+<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Es ist gleich um die Ecke."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">sehr nah</div></div>
+<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„Es liegt direkt gegenüber von…"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">auf der anderen Straßenseite</div></div>
+<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">„Das sind ungefähr 5 Minuten zu Fuß."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Zeit angeben statt Distanz</div></div>
+<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">„Sie können es nicht verfehlen!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">unmöglich zu übersehen</div></div>
+</div>
+
+</section>
+
+<!-- ============== LERNKARTEN ============== -->
+<section class="section" data-section="3">
+<h2 class="section-title">Lernkarten · <em style="font-style:italic;">Wegbeschreibung</em></h2>
+<p class="section-sub">Erst denken — dann tippen.</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">⬅️</div>
+<div class="flip-word" id="flipWord">links abbiegen</div>
+<div class="flip-badge" id="flipBadge">trennbar</div>
+<div class="flip-prompt">Wie sagt man das in einem Satz? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">„abbiegen" — trennbares Verb!</div>
+<div class="flip-ex" id="flipEx">„An der Ampel <strong>biegen</strong> Sie links <strong>ab</strong>."</div>
+</div>
+</div>
+</div>
+
+<div class="lk-nav">
+<button class="lk-btn" id="lkPrev">←</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span>
+<button class="lk-btn" id="lkNext">→</button>
+</div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- ============== QUIZ ============== -->
+<section class="section" data-section="4">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Welche Präposition?</em></h2>
+
+<div class="quiz"><div class="quiz-q">„Gehen Sie <span class="blank">?</span> die Brücke."</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">an</span><span class="quiz-chip">über</span><span class="quiz-chip">bei</span></div><div class="quiz-explain">✓ <strong>über</strong> — von einer Seite zur anderen (Akkusativ)</div></div>
+
+<div class="quiz"><div class="quiz-q">„Das Café ist <span class="blank">?</span> der Ecke."</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">in</span><span class="quiz-chip">auf</span><span class="quiz-chip">um</span></div><div class="quiz-explain">✓ „Es ist <strong>um die Ecke</strong>" — feste Wendung, Akkusativ</div></div>
+
+<div class="quiz"><div class="quiz-q">„Gehen Sie <span class="blank">?</span> Kirche vorbei."</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">an der</span><span class="quiz-chip">an die</span><span class="quiz-chip">in der</span></div><div class="quiz-explain">✓ <strong>an der</strong> Kirche vorbei — Dativ (Ort)</div></div>
+
+<div class="quiz"><div class="quiz-q">„Wie komme ich <span class="blank">?</span> Bahnhof?"</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">zur</span><span class="quiz-chip">zum</span><span class="quiz-chip">in der</span></div><div class="quiz-explain">✓ <strong>zum</strong> Bahnhof (der Bahnhof → zu dem → zum)</div></div>
+
+<div class="quiz"><div class="quiz-q">„Die Post ist <span class="blank">?</span> der Apotheke."</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">gegenüber von</span><span class="quiz-chip">durch</span><span class="quiz-chip">über</span></div><div class="quiz-explain">✓ <strong>gegenüber von</strong> + Dativ — auf der anderen Seite</div></div>
+
+<div class="quiz"><div class="quiz-q">„An der Ampel <span class="blank">?</span> Sie rechts ab." <span style="color:var(--ink-mute);font-size:.85em;">(trennbares Verb!)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">biegen</span><span class="quiz-chip">gehen</span><span class="quiz-chip">biegen … ab</span></div><div class="quiz-explain">✓ <strong>biegen … ab</strong> — trennbar! „ab" ans Ende!</div></div>
+
+<div class="quiz"><div class="quiz-q">„Gehen Sie die Hauptstraße <span class="blank">?</span>."</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">über</span><span class="quiz-chip">entlang</span><span class="quiz-chip">durch</span></div><div class="quiz-explain">✓ „die Straße <strong>entlang</strong>" — der Straße folgen</div></div>
+
+<div class="quiz"><div class="quiz-q">„Das Hotel ist <span class="blank">?</span> linken Seite."</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">auf der</span><span class="quiz-chip">in der</span><span class="quiz-chip">an der</span></div><div class="quiz-explain">✓ „<strong>auf der</strong> linken/rechten Seite" — Standardform</div></div>
+
+</section>
+
+<!-- ============== LÜCKENTEXT ============== -->
+<section class="section" data-section="5">
+<h2 class="section-title">Lückentext · <em style="font-style:italic;">Wegbeschreibung</em></h2>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Gehen Sie <select data-sol="geradeaus"><option value="">…</option><option>geradeaus</option><option>links</option><option>oben</option></select> bis zur Ampel.</div>
+<div class="gap-line">2. <select data-sol="An"><option value="">…</option><option>An</option><option>In</option><option>Auf</option></select> der Ampel biegen Sie rechts ab.</div>
+<div class="gap-line">3. Gehen Sie die Hauptstraße <select data-sol="entlang"><option value="">…</option><option>vorbei</option><option>entlang</option><option>über</option></select>.</div>
+<div class="gap-line">4. Gehen Sie <select data-sol="an"><option value="">…</option><option>an</option><option>in</option><option>auf</option></select> der Apotheke vorbei.</div>
+<div class="gap-line">5. Das Café ist <select data-sol="auf"><option value="">…</option><option>in</option><option>auf</option><option>an</option></select> der linken Seite.</div>
+<div class="gap-line">6. Wie komme ich <select data-sol="zum"><option value="">…</option><option>zur</option><option>zum</option><option>nach</option></select> Bahnhof?</div>
+<div class="gap-line">7. Die Post liegt <select data-sol="gegenüber"><option value="">…</option><option>gegenüber</option><option>durch</option><option>über</option></select> von der Bank.</div>
+<div class="gap-line">8. Es ist nur <select data-sol="um"><option value="">…</option><option>auf</option><option>um</option><option>bei</option></select> die Ecke!</div>
+<div class="gap-actions">
+<button class="btn-secondary" id="gapReset">Neu</button>
+<button class="btn-primary" id="gapCheck">Überprüfen</button>
+</div>
+</div>
+
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ============== ZUORDNEN ============== -->
+<section class="section" data-section="6">
+<h2 class="section-title">Frage &harr; <em style="font-style:italic;">Antwort</em> zuordnen</h2>
+
+<div class="match-stage">
+<div class="match-cols">
+<div class="match-col">
+<h4>❓ Frage</h4>
+<div class="match-list" id="leftCol"></div>
+</div>
+<div class="match-col">
+<h4>💬 Antwort</h4>
+<div class="match-list" id="rightCol"></div>
+</div>
+</div>
+<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+</div>
+</section>
+
+<!-- ============== SPRECHEN ============== -->
+<section class="section" data-section="7">
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht's!</em></h2>
+<p class="section-sub">Zieh eine Karte. Schau auf die Stadtkarte in Tab 🗺️ und beschreibe den Weg!</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div>
+<div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+
+<div class="speak-controls">
+<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">mit der Karte</em></h2>
+<p class="section-sub">Übt zu zweit — schaut auf die Karte in Tab 🗺️!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Anfänger</div>
+<div class="role-title">🚆 Vom Bahnhof zum Café Lila</div>
+<div class="role-situation">Person A ist gerade am Bahnhof angekommen und sucht das Café Lila. Person B kennt die Stadt und beschreibt den Weg.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🧳</div><div><div class="person-label">Person A — Tourist:in</div><div class="person-quote">„Entschuldigung, wie komme ich zum Café Lila? Ich bin neu hier."</div></div></div>
+<div class="person b"><div class="person-avatar">🙋</div><div><div class="person-label">Person B — Einheimisch</div><div class="person-quote">„Gehen Sie die Bahnhofstraße geradeaus, dann an der Ampel rechts. Das Café ist auf der linken Seite!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: Person A wiederholt am Ende den Weg, um zu prüfen ob alles klar ist!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Detektiv</div>
+<div class="role-title">🔍 Wer wohnt wo?</div>
+<div class="role-situation">Person A wählt ein Gebäude auf der Karte und beschreibt seine LAGE (ohne den Namen zu sagen!). Person B muss raten, welches Gebäude gemeint ist.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🕵️</div><div><div class="person-label">Person A — Beschreiber</div><div class="person-quote">„Dieses Gebäude liegt in der Schillerstraße, gegenüber von der Bank, neben dem Kino…"</div></div></div>
+<div class="person b"><div class="person-avatar">🤔</div><div><div class="person-label">Person B — Rate-Maus</div><div class="person-quote">„Ist es das Restaurant?" / „Nein, weiter rechts…"</div></div></div>
+</div>
+<div class="role-goal">🎯 Nach 3 Hinweisen muss man raten — wer schafft mehr Treffer?</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Profi</div>
+<div class="role-title">🗺️ Stadtführung</div>
+<div class="role-situation">Person A ist Stadtführer:in und plant eine Tour durch 5 Orte. Person B ist Tourist:in. A führt B mündlich durch die Stadt — alle Wege werden beschrieben!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🎓</div><div><div class="person-label">Person A — Guide</div><div class="person-quote">„Willkommen! Zuerst gehen wir zum Rathaus. Vom Bahnhof aus geradeaus, an der Post vorbei… dann weiter zur Kirche."</div></div></div>
+<div class="person b"><div class="person-avatar">📷</div><div><div class="person-label">Person B — Tourist:in</div><div class="person-quote">„Wie lange dauert das? Was ist das für ein Gebäude? Kann man da reingehen?"</div></div></div>
+</div>
+<div class="role-goal">🎯 5 Orte = 5 Wegbeschreibungen. Mindestens 8 verschiedene Präpositionen!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Mini-Aufgabe:</strong> Beschreibe jeden Tag einen anderen Weg aus deinem Alltag auf Deutsch — vom Bett zur Toilette, von zu Hause zum Supermarkt, vom Café zum Park. Mindestens 5 Sätze!<br><br>
+🏆 <strong>Bonus-Challenge:</strong> Frag eine echte Person auf der Straße in Deutschland nach dem Weg — komplett auf Deutsch! Notiere 3 Sätze, die sie sagt.
+</div>
+
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit ❤️ für meine Sprechclub-Lernenden · Wegbeschreibung · A2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// MAP INFO
+const PLACES={
+  1:{name:'🚆 Bahnhof',addr:'Bahnhofstraße 1',desc:'Hier startest du! Sehr zentrale Lage — direkt an der Hauptstraße. Von hier kommst du überall hin.'},
+  2:{name:'📬 Post',addr:'Hauptstraße 14',desc:'Geh vom Bahnhof aus auf der Hauptstraße nach rechts. Die Post ist nach 100 Metern auf der rechten Seite.'},
+  3:{name:'💊 Apotheke',addr:'Hauptstraße 22',desc:'Geh die Hauptstraße geradeaus — die Apotheke ist gleich nach der Post, auch auf der rechten Seite.'},
+  4:{name:'⛪ Kirche',addr:'Hauptstraße / Ecke Goethestraße',desc:'An der Kreuzung mit der Goethestraße. Du erkennst sie sofort am Turm!'},
+  5:{name:'🏛️ Rathaus',addr:'Hauptstraße 40',desc:'Ganz am Ende der Hauptstraße rechts. Großes gelbes Gebäude mit Säulen.'},
+  6:{name:'🚏 Bushaltestelle',addr:'Bahnhofstraße / Schillerstraße',desc:'Direkt an der Kreuzung. Hier fahren Bus 12, 34 und 78. Praktisch für lange Strecken!'},
+  7:{name:'🛒 Supermarkt Edeka',addr:'Schillerstraße 8',desc:'Geh vom Bahnhof die Bahnhofstraße runter, dann an der Bushaltestelle nach links in die Schillerstraße. Edeka ist gleich links.'},
+  8:{name:'☕ Café Lila',addr:'Schillerstraße 18',desc:'Vom Bahnhof in die Bahnhofstraße, an der Schillerstraße links — das Café ist auf der rechten Seite!'},
+  9:{name:'🏫 Schule (Gymnasium)',addr:'Schillerstraße 30',desc:'Am östlichen Ende der Schillerstraße. Großes Gebäude mit Glockenturm.'},
+  10:{name:'🏥 Krankenhaus',addr:'Mozartstraße 5',desc:'Vom Bahnhof aus die Bahnhofstraße ganz runter — bis zur Mozartstraße. Dann links. Das Krankenhaus ist gleich auf der rechten Seite.'},
+  11:{name:'🏦 Bank',addr:'Mozartstraße 15',desc:'In der Mozartstraße, direkt nach dem Krankenhaus auf der linken Seite.'},
+  12:{name:'🍽️ Restaurant',addr:'Mozartstraße 25',desc:'In der Mozartstraße, gegenüber von der Bank — gelbes Gebäude mit Garten!'},
+  13:{name:'🎬 Kino Cinemax',addr:'Mozartstraße 35',desc:'Mozartstraße, neben dem Restaurant. Schwarzes Gebäude — sehr modern!'},
+  14:{name:'🏨 Hotel Adler',addr:'Mozartstraße 45 / Ecke Goethestraße',desc:'Am Ende der Mozartstraße rechts. Direkt gegenüber vom Schillerpark.'},
+  15:{name:'🚓 Polizei',addr:'Goethestraße 50',desc:'In der Goethestraße ganz oben. Türkis-grünes Gebäude — gut sichtbar!'}
+};
+function showPlace(id){
+  const p=PLACES[id];if(!p)return;
+  document.getElementById('mapInfoName').textContent=p.name;
+  document.getElementById('mapInfoAddr').textContent='📍 '+p.addr;
+  document.getElementById('mapInfoDesc').textContent=p.desc;
+  document.getElementById('mapInfo').classList.add('show');
+  document.getElementById('mapInfo').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+window.showPlace=showPlace;
+
+// LERNKARTEN
+const KARTEN=[
+  {emoji:'⬅️',word:'links abbiegen',badge:'trennbares Verb',rule:'„abbiegen" — trennbar!',ex:'„An der Ampel <strong>biegen</strong> Sie links <strong>ab</strong>."'},
+  {emoji:'➡️',word:'geradeaus gehen',badge:'kein Komma!',rule:'einfach weiter in dieselbe Richtung',ex:'„<strong>Gehen Sie geradeaus</strong> bis zur Kirche."'},
+  {emoji:'🛣️',word:'die Straße entlang',badge:'Akkusativ',rule:'der Straße folgen',ex:'„Gehen Sie die Hauptstraße <strong>entlang</strong>."'},
+  {emoji:'🌉',word:'über die Brücke',badge:'Akkusativ · Bewegung',rule:'von einer Seite zur anderen',ex:'„Gehen Sie <strong>über die Brücke</strong>."'},
+  {emoji:'🌳',word:'durch den Park',badge:'Akkusativ · Bewegung',rule:'von einer Seite des Parks zur anderen',ex:'„Gehen Sie <strong>durch den Park</strong>."'},
+  {emoji:'⛪',word:'an der Kirche vorbei',badge:'Dativ',rule:'an einem Objekt vorbei',ex:'„Gehen Sie <strong>an der Kirche vorbei</strong>."'},
+  {emoji:'🔄',word:'um die Ecke',badge:'Akkusativ',rule:'„gleich um die Ecke" = sehr nah',ex:'„Das Café ist <strong>um die Ecke</strong>!"'},
+  {emoji:'🎯',word:'gegenüber von',badge:'Dativ',rule:'auf der anderen Straßenseite',ex:'„Die Post liegt <strong>gegenüber von</strong> der Bank."'},
+  {emoji:'🚦',word:'an der Ampel',badge:'Dativ · Ort',rule:'Standardpunkt zum Abbiegen',ex:'„<strong>An der Ampel</strong> biegen Sie rechts ab."'},
+  {emoji:'➡️',word:'auf der linken Seite',badge:'feste Wendung',rule:'wo das Ziel sich befindet',ex:'„Das Hotel ist <strong>auf der linken Seite</strong>."'},
+  {emoji:'⏱️',word:'5 Minuten zu Fuß',badge:'Zeitangabe',rule:'Entfernung in Zeit angeben',ex:'„Das sind ungefähr <strong>5 Minuten zu Fuß</strong>."'},
+  {emoji:'🚏',word:'an der Bushaltestelle',badge:'Dativ · Ort',rule:'wichtiger Orientierungspunkt',ex:'„<strong>An der Bushaltestelle</strong> nach links."'},
+  {emoji:'❓',word:'Wie komme ich zum…?',badge:'Standardfrage',rule:'zum (m,n) / zur (f) + Dativ',ex:'„<strong>Wie komme ich zum</strong> Bahnhof?"'},
+  {emoji:'🙋',word:'Bin ich hier richtig…?',badge:'Bestätigung suchen',rule:'höflich nachfragen',ex:'„<strong>Bin ich hier richtig</strong> zum Markt?"'},
+  {emoji:'✋',word:'Sie können es nicht verfehlen!',badge:'Beruhigung',rule:'„total leicht zu finden!"',ex:'„Es ist groß und gelb — <strong>Sie können es nicht verfehlen</strong>!"'},
+];
+let order=KARTEN.map((_,i)=>i);
+let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){
+  const k=KARTEN[order[lkIdx]];
+  document.getElementById('flipEmoji').textContent=k.emoji;
+  document.getElementById('flipWord').textContent=k.word;
+  document.getElementById('flipBadge').textContent=k.badge;
+  document.getElementById('flipRule').textContent=k.rule;
+  document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('lkCur').textContent=lkIdx+1;
+  document.getElementById('lkTot').textContent=KARTEN.length;
+  flipEl.classList.remove('flipped');
+}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+// QUIZ
+document.querySelectorAll('.quiz-opts').forEach(opts=>{
+  const c=parseInt(opts.dataset.c);
+  const chips=opts.querySelectorAll('.quiz-chip');
+  const exp=opts.parentElement.querySelector('.quiz-explain');
+  chips.forEach((chip,i)=>{
+    chip.onclick=()=>{
+      if(opts.dataset.done)return;opts.dataset.done='1';
+      if(i===c)chip.classList.add('correct');
+      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
+      exp.classList.add('show');
+    };
+  });
+});
+
+// GAP
+document.getElementById('gapCheck').onclick=()=>{
+  const sels=document.querySelectorAll('#gapText select');
+  let right=0,total=sels.length;
+  sels.forEach(s=>{
+    s.classList.remove('right','wrong');
+    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    else s.classList.add('wrong');
+  });
+  const score=document.getElementById('gapScore');
+  score.style.display='block';
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');
+};
+document.getElementById('gapReset').onclick=()=>{
+  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  document.getElementById('gapScore').style.display='none';
+};
+
+// MATCH
+const PAIRS=[
+  {l:'Wie komme ich zum Bahnhof?',r:'Gehen Sie geradeaus, dann rechts.'},
+  {l:'Wo ist die Apotheke?',r:'Gleich um die Ecke!'},
+  {l:'Bin ich hier richtig zur Post?',r:'Ja, sie liegt auf der linken Seite.'},
+  {l:'Wie weit ist es noch?',r:'Nur 5 Minuten zu Fuß.'},
+  {l:'Wo ist hier ein Supermarkt?',r:'In der Schillerstraße, gegenüber von der Bank.'},
+  {l:'Entschuldigung, wo finde ich das Café Lila?',r:'Gleich neben der Bushaltestelle!'},
+  {l:'Wie komme ich zur Schule?',r:'An der Kirche vorbei und dann rechts.'},
+  {l:'Wo ist das Hotel Adler?',r:'In der Mozartstraße, am Ende rechts.'},
+];
+function buildMatch(){
+  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
+  L.innerHTML='';R.innerHTML='';
+  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
+  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
+  let pick=null;
+  document.querySelectorAll('.match-item').forEach(item=>{
+    item.onclick=()=>{
+      if(item.classList.contains('done'))return;
+      if(!pick){pick=item;item.classList.add('selected');return;}
+      if(pick===item){item.classList.remove('selected');pick=null;return;}
+      const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;
+      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
+      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
+      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
+    };
+  });
+}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
+
+// SPEAK
+const SPEAK=[
+  {emoji:'🚆',cat:'Karte · Vom Bahnhof',q:'Beschreibe den Weg vom Bahnhof zum Café Lila — mind. 5 Sätze!'},
+  {emoji:'☕',cat:'Karte · Vom Café',q:'Du bist im Café Lila. Beschreibe den Weg zum Krankenhaus.'},
+  {emoji:'⛪',cat:'Karte · Von der Kirche',q:'Du stehst vor der Kirche. Wie kommst du zum Hotel Adler?'},
+  {emoji:'🏥',cat:'Karte · Vom Krankenhaus',q:'Du verlässt das Krankenhaus. Wie kommst du zum Bahnhof zurück?'},
+  {emoji:'🛒',cat:'Karte · Vom Supermarkt',q:'Du warst einkaufen. Wie gehst du zum Restaurant?'},
+  {emoji:'🎬',cat:'Karte · Vom Kino',q:'Nach dem Film: Wie kommst du zur Bushaltestelle?'},
+  {emoji:'🏨',cat:'Karte · Vom Hotel',q:'Du bist Hotelgast und willst zur Polizei. Wie?'},
+  {emoji:'🏫',cat:'Karte · Von der Schule',q:'Schule ist aus! Wie kommst du zum Café Lila?'},
+  {emoji:'🚏',cat:'Karte · Von der Haltestelle',q:'Du bist gerade ausgestiegen. Wie kommst du zum Stadtpark?'},
+  {emoji:'❓',cat:'Detektiv-Spiel',q:'Wähle ein Gebäude auf der Karte. Beschreibe seine Lage OHNE Namen — Partner muss raten!'},
+  {emoji:'🗺️',cat:'Touren planen',q:'Plane eine Tour durch 4 Orte deiner Wahl. Beschreibe den Weg zwischen jedem!'},
+  {emoji:'😅',cat:'Verlaufen',q:'Stell dir vor: Du hast dich in der Stadt verlaufen. Wie fragst du höflich nach dem Weg?'},
+  {emoji:'🤝',cat:'Hilfe geben',q:'Eine Touristin fragt dich nach dem Bahnhof. Erkläre den Weg vom Café Lila!'},
+  {emoji:'📍',cat:'Eigene Stadt',q:'Beschreibe den Weg von deiner Wohnung zum nächsten Supermarkt — auf Deutsch!'},
+  {emoji:'🚗',cat:'Mit dem Auto',q:'Erkläre die Tour vom Bahnhof zum Hotel — als ob du mit dem Auto fährst (Hauptstraßen!).'},
+  {emoji:'🚲',cat:'Mit dem Fahrrad',q:'Schöne Route vom Stadtpark zum Schillerpark — über die kleinen Straßen!'},
+];
+let lastSpeak=-1;
+document.getElementById('speakNew').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
+  lastSpeak=i;const k=SPEAK[i];
+  const c=document.getElementById('speakCard');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';
+    c.style.opacity='1';
+  },200);
+};
+</script>
+</body></html>
