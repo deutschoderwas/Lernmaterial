@@ -1,0 +1,543 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vorstellungsgespräche auf Deutsch · B2/C1 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:640px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:400px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.7rem,3.5vw,2.4rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;max-width:680px;margin-left:auto;margin-right:auto;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}
+
+/* PHASEN-CARDS */
+.phasen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:760px){.phasen-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.phasen-grid{grid-template-columns:1fr;}}
+.phase{background:var(--paper);border:1.5px solid var(--sand);border-radius:16px;padding:1.1rem 1rem;border-top:5px solid var(--red);}
+.phase:nth-child(2){border-top-color:var(--teal);}
+.phase:nth-child(3){border-top-color:#B66809;}
+.phase:nth-child(4){border-top-color:#6A3D9C;}
+.phase:nth-child(5){border-top-color:#A04060;}
+.phase:nth-child(6){border-top-color:#5F7A2A;}
+.phase-num{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:.85rem;letter-spacing:.05em;}
+.phase:nth-child(2) .phase-num{color:var(--teal);}.phase:nth-child(3) .phase-num{color:#B66809;}.phase:nth-child(4) .phase-num{color:#6A3D9C;}.phase:nth-child(5) .phase-num{color:#A04060;}.phase:nth-child(6) .phase-num{color:#5F7A2A;}
+.phase-icon{font-size:1.8rem;margin:.2rem 0;}
+.phase-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.02rem;margin-bottom:.3rem;}
+.phase-desc{color:var(--ink-soft);font-size:.83rem;line-height:1.5;}
+
+/* WORTSCHATZ */
+.w-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.w-grid{grid-template-columns:1fr;}}
+.w{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.85rem 1.1rem;}
+.w-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;}
+.w-en{color:var(--ink-soft);font-size:.78rem;margin-top:.2rem;}
+
+/* SCHWIERIGE FRAGEN */
+.q-block{background:var(--paper);border:1.5px solid var(--sand);border-radius:16px;padding:1.1rem 1.3rem;margin:.8rem 0;border-left:5px solid var(--red);}
+.q-block:nth-of-type(2){border-left-color:var(--teal);}
+.q-block:nth-of-type(3){border-left-color:#B66809;}
+.q-block:nth-of-type(4){border-left-color:#6A3D9C;}
+.q-block:nth-of-type(5){border-left-color:#A04060;}
+.q-label{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.q-block:nth-of-type(2) .q-label{color:var(--teal);}.q-block:nth-of-type(3) .q-label{color:#B66809;}.q-block:nth-of-type(4) .q-label{color:#6A3D9C;}.q-block:nth-of-type(5) .q-label{color:#A04060;}
+.q-question{font-family:'Fraunces',serif;font-size:1.08rem;color:var(--ink);font-style:italic;margin-top:.3rem;}
+.q-strategy{background:var(--cream-warm);border-radius:10px;padding:.55rem .85rem;margin-top:.6rem;font-size:.88rem;color:var(--ink);}
+.q-strategy strong{color:var(--red);}
+.q-example{background:var(--teal-soft);border-radius:10px;padding:.55rem .85rem;margin-top:.4rem;font-size:.86rem;color:var(--ink);font-family:'Fraunces',serif;font-style:italic;}
+
+/* ALLTAG-FRAGE */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:460px;height:380px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:2.8rem;margin-bottom:.5rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:1rem;line-height:1.4;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.7rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-direction:column;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.92rem;color:var(--ink);padding:.55rem 1rem;border-radius:14px;cursor:pointer;text-align:left;font-family:'Outfit',sans-serif;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.85rem;transition:.15s;text-align:center;font-family:'Outfit',sans-serif;}
+.match-item:hover{border-color:var(--ink);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE + DEBATE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Sprechclub B2/C1</div>
+<div class="title-wrap"><h1 class="title">Vorstellungsgespräche auf <span class="hl">Deutsch</span></h1></div>
+<p class="subtitle">Selbstpräsentation, schwierige Fragen, Stärken &amp; Schwächen, Gehaltsverhandlung — alles, was du für ein souveränes Bewerbungsgespräch brauchst.</p>
+
+<svg class="hero-svg" viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="8.5">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">👋</text><text y="40" text-anchor="middle" fill="#E8302A">Begrüßung</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">🎤</text><text y="40" text-anchor="middle" fill="#0FB5A6">Self-Talk</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">🧠</text><text y="40" text-anchor="middle" fill="#B66809">Fachfragen</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">😬</text><text y="40" text-anchor="middle" fill="#A04060">Stress-Q</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">💰</text><text y="40" text-anchor="middle" fill="#5F7A2A">Gehalt</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">❓</text><text y="40" text-anchor="middle" fill="#6A3D9C">Rückfragen</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ÜBERBLICK -->
+<section class="section active" data-section="0">
+<h2 class="section-title">Die <em style="font-style:italic;">6 Phasen</em> eines Bewerbungsgesprächs</h2>
+<p class="section-sub">In Deutschland läuft fast jedes Vorstellungsgespräch nach diesem Muster ab. Wer die Phasen kennt, ist nie überrascht!</p>
+
+<div class="phasen-grid">
+<div class="phase"><div class="phase-num">PHASE 1</div><div class="phase-icon">👋</div><div class="phase-name">Begrüßung &amp; Smalltalk</div><div class="phase-desc">Händedruck, Wetter, Anreise. Wirkt unwichtig — entscheidet aber den ersten Eindruck!</div></div>
+<div class="phase"><div class="phase-num">PHASE 2</div><div class="phase-icon">🎤</div><div class="phase-name">Selbstpräsentation</div><div class="phase-desc">„Erzählen Sie etwas über sich" — 2 bis 3 Minuten strukturiert deinen Werdegang.</div></div>
+<div class="phase"><div class="phase-num">PHASE 3</div><div class="phase-icon">🧠</div><div class="phase-name">Fachfragen</div><div class="phase-desc">Hard Skills: Erfahrung, Tools, Projekte. Konkrete Beispiele bringen!</div></div>
+<div class="phase"><div class="phase-num">PHASE 4</div><div class="phase-icon">😬</div><div class="phase-name">Stress- &amp; Soft-Skill-Fragen</div><div class="phase-desc">Stärken, Schwächen, Konflikte, Teamfähigkeit. Hier wird es persönlich!</div></div>
+<div class="phase"><div class="phase-num">PHASE 5</div><div class="phase-icon">💰</div><div class="phase-name">Gehaltsverhandlung</div><div class="phase-desc">Realistisch, recherchiert, selbstbewusst. Niemals als erstes eine Zahl nennen!</div></div>
+<div class="phase"><div class="phase-num">PHASE 6</div><div class="phase-icon">❓</div><div class="phase-name">Deine Rückfragen</div><div class="phase-desc">Wer keine Fragen stellt, wirkt uninteressiert. Immer 3 Fragen mitbringen!</div></div>
+</div>
+
+<div class="tip">💡 <strong>Wichtig:</strong> In Deutschland wird <strong>Pünktlichkeit, Struktur und Ehrlichkeit</strong> sehr geschätzt. Übertreibe nicht, aber verkaufe dich auch nicht unter Wert. Die deutsche Direktheit ist deine Freundin — sprich klar und auf den Punkt!</div>
+
+<h2 class="section-title">📚 Der wichtigste <em style="font-style:italic;">Wortschatz</em></h2>
+<div class="w-grid">
+<div class="w"><div class="w-de">der Werdegang</div><div class="w-en">career path · beruflicher Lebensweg</div></div>
+<div class="w"><div class="w-de">die Berufserfahrung</div><div class="w-en">work experience · bisherige Tätigkeiten</div></div>
+<div class="w"><div class="w-de">die Stärken / die Schwächen</div><div class="w-en">strengths / weaknesses</div></div>
+<div class="w"><div class="w-de">die Karriereplanung</div><div class="w-en">career planning · langfristige Ziele</div></div>
+<div class="w"><div class="w-de">die Soft Skills</div><div class="w-en">soziale Kompetenzen (Team, Kommunikation)</div></div>
+<div class="w"><div class="w-de">die Hard Skills</div><div class="w-en">fachliche Fähigkeiten (Tools, Sprachen)</div></div>
+<div class="w"><div class="w-de">die Teamfähigkeit</div><div class="w-en">ability to work in a team</div></div>
+<div class="w"><div class="w-de">das Konfliktmanagement</div><div class="w-en">Umgang mit Konflikten</div></div>
+<div class="w"><div class="w-de">die Belastbarkeit</div><div class="w-en">resilience · Stressresistenz</div></div>
+<div class="w"><div class="w-de">die Eigenmotivation</div><div class="w-en">self-motivation</div></div>
+<div class="w"><div class="w-de">die Gehaltsvorstellung</div><div class="w-en">salary expectation</div></div>
+<div class="w"><div class="w-de">die Kündigungsfrist</div><div class="w-en">notice period · Zeit bis Vertragsende</div></div>
+<div class="w"><div class="w-de">die Probezeit</div><div class="w-en">probationary period (meist 6 Monate)</div></div>
+<div class="w"><div class="w-de">die Weiterbildung</div><div class="w-en">further training · Lernen im Job</div></div>
+</div>
+
+<h2 class="section-title">🔥 Die <em style="font-style:italic;">schwierigsten</em> Fragen — und wie du sie meisterst</h2>
+<p class="section-sub">Auf diese Fragen MUSST du vorbereitet sein. Antworten vorher üben — nicht improvisieren!</p>
+
+<div class="q-block">
+<div class="q-label">Frage 1 · Klassiker</div>
+<div class="q-question">„Erzählen Sie etwas über sich."</div>
+<div class="q-strategy"><strong>Strategie:</strong> Strukturiere in 3 Teile — <em>Vergangenheit</em> (Werdegang), <em>Gegenwart</em> (aktuelle Rolle), <em>Zukunft</em> (warum diese Stelle). Maximal 2–3 Minuten!</div>
+<div class="q-example">„Ich bin gelernte Marketing-Managerin mit fünf Jahren Erfahrung in der Digitalbranche. Aktuell leite ich ein Team von vier Personen bei XY. Ich bewerbe mich bei Ihnen, weil mich Ihre Mission im Bereich Nachhaltigkeit überzeugt."</div>
+</div>
+
+<div class="q-block">
+<div class="q-label">Frage 2 · Selbstkritik</div>
+<div class="q-question">„Was ist Ihre größte Schwäche?"</div>
+<div class="q-strategy"><strong>Strategie:</strong> Wähle eine <strong>echte</strong> Schwäche (kein verkapptes Selbstlob wie „Ich bin Perfektionistin"), zeige aber, dass du daran arbeitest.</div>
+<div class="q-example">„Ich tue mir manchmal schwer damit, Aufgaben zu delegieren. Daran arbeite ich aktiv — mein letzter Workshop zum Thema Führung hat mir sehr geholfen."</div>
+</div>
+
+<div class="q-block">
+<div class="q-label">Frage 3 · Provokation</div>
+<div class="q-question">„Warum sollten gerade WIR Sie einstellen?"</div>
+<div class="q-strategy"><strong>Strategie:</strong> Hier zählen die Schnittmengen zwischen deinen Stärken und der Stelle. Nicht angeben — verbinden!</div>
+<div class="q-example">„Sie suchen jemanden mit Erfahrung in B2B-Vertrieb UND Englischkenntnissen — genau das bringe ich mit. Außerdem schätze ich Ihre flache Hierarchie sehr."</div>
+</div>
+
+<div class="q-block">
+<div class="q-label">Frage 4 · Stress-Test</div>
+<div class="q-question">„Warum haben Sie Ihren letzten Job gekündigt?"</div>
+<div class="q-strategy"><strong>Strategie:</strong> NIEMALS schlecht über den Ex-Arbeitgeber sprechen! Formuliere positiv — du suchst neue Herausforderungen.</div>
+<div class="q-example">„Ich habe dort viel gelernt, aber ich suche jetzt eine Position mit mehr Verantwortung und neuen fachlichen Herausforderungen — die ich bei Ihnen sehe."</div>
+</div>
+
+<div class="q-block">
+<div class="q-label">Frage 5 · Geld</div>
+<div class="q-question">„Was sind Ihre Gehaltsvorstellungen?"</div>
+<div class="q-strategy"><strong>Strategie:</strong> Recherchiere vorher (kununu, gehalt.de). Nenne eine <strong>Spanne</strong>, nicht eine fixe Zahl. Begründe mit deiner Erfahrung.</div>
+<div class="q-example">„Basierend auf meiner Erfahrung und der Marktlage stelle ich mir ein Jahresgehalt zwischen 55.000 und 62.000 Euro vor — natürlich abhängig vom Gesamtpaket."</div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Persönlich</div><div class="qq">Wann hattest du dein letztes Vorstellungsgespräch? Wie ist es gelaufen — und was würdest du heute anders machen?</div><div class="think">💭 Mit etwas Abstand sieht man oft viel klarer!</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Reflexion</div><div class="qq">Was ist DEINE größte Schwäche im Beruf — ehrlich gesagt? Und wie gehst du damit um?</div><div class="think">💭 Übe diese Antwort — du brauchst sie irgendwann!</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Karriere</div><div class="qq">Wo möchtest du in 5 Jahren stehen — beruflich UND persönlich?</div><div class="think">💭 Klassische Frage, die jeder Personaler stellt!</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Tabu</div><div class="qq">Würdest du im Vorstellungsgespräch eher lügen oder die unbequeme Wahrheit sagen?</div><div class="think">💭 Sei ehrlich mit dir selbst!</div></div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So spricht man <em style="font-style:italic;">über Interviews</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats zwischen Freunden — Vorbereitung, Aufregung, Nachgespräche.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Im Alltag sprechen Deutsche oft <strong>locker</strong> über Bewerbungsgespräche — mit viel Humor und Selbstironie. Hier lernst du den Ton, der zwischen Freunden üblich ist!</div>
+
+<div class="uss-grid">
+<div class="chat">
+<div class="chat-head"><div class="av">😰</div><div><div class="name">Lisa · Panik vor Interview</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hilfeee, morgen ist mein Interview 😱</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Atmen! Was macht dir am meisten Angst?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Die Frage nach den <strong>Schwächen</strong> — was soll ich sagen?!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wähl eine ECHTE Schwäche und zeig, dass du dran arbeitest. <strong>Nicht „Perfektionismus"</strong>, das durchschauen alle 😅</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ok, ich nehm „Delegieren fällt mir schwer". Danke!! 🙏</div></div>
+<div class="chat-meaning"><strong>„Delegieren fällt mir schwer"</strong> = klassische, glaubwürdige Schwäche. Klingt menschlich, nicht angeberisch!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">👔</div><div><div class="name">Marco · Outfit-Frage</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Was zieh ich an für mein Bewerbungsgespräch bei der Bank?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Anzug, klassisch. Bei Banken ist <strong>Business formal</strong> Pflicht!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Und Krawatte?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Auf jeden Fall. Lieber <strong>overdressed als underdressed</strong> beim ersten Gespräch.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ok, dann hol ich heute noch eine 🤵</div></div>
+<div class="chat-meaning"><strong>Dresscode-Regel:</strong> Banken/Anwälte = formal · Start-ups = smart casual · Kreativbranche = du selbst!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😊</div><div><div class="name">Sara · Nach dem Interview</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Und?? Wie war's??</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Puuh, anstrengend. Sie haben gefragt: <strong>„Warum sollen wir gerade Sie einstellen?"</strong> 😵</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Klassiker! Was hast du gesagt?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich hab meine Erfahrung mit ihrer Stellenanzeige verbunden — also <strong>Schnittmengen gezeigt</strong>.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Perfekt! Genau das wollen die hören 💪</div></div>
+<div class="chat-meaning"><strong>„Schnittmengen zeigen"</strong> = deine Stärken mit den Anforderungen verbinden. Goldene Regel!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">💰</div><div><div class="name">Tim · Gehaltsfrage</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Sie fragen morgen nach meiner <strong>Gehaltsvorstellung</strong>. Was sag ich?!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Recherchier kununu! Was zahlen die für deine Rolle?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Zwischen 48k und 58k</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Dann sag <strong>„zwischen 55.000 und 62.000 Euro"</strong> — leicht drüber, mit Begründung!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Und wenn sie nein sagen?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Dann gibt's noch <strong>Verhandlungsspielraum</strong> nach unten. Niemals zu niedrig starten!</div></div>
+<div class="chat-meaning"><strong>Verhandlungsregel:</strong> Immer 10–15% höher starten als dein Wunschgehalt — Spielraum behalten!</div>
+</div>
+</div>
+
+<h2 class="section-title">12 Sätze, die du im <em style="font-style:italic;">Interview</em> hören wirst</h2>
+<div class="w-grid">
+<div class="w"><div class="w-de">„Erzählen Sie etwas über sich."</div><div class="w-en">Start der Selbstpräsentation</div></div>
+<div class="w"><div class="w-de">„Was sind Ihre Stärken / Schwächen?"</div><div class="w-en">Klassiker — IMMER vorbereiten!</div></div>
+<div class="w"><div class="w-de">„Wo sehen Sie sich in 5 Jahren?"</div><div class="w-en">Frage nach Karriereplanung</div></div>
+<div class="w"><div class="w-de">„Warum sollten wir gerade Sie einstellen?"</div><div class="w-en">Provokation — Schnittmengen zeigen</div></div>
+<div class="w"><div class="w-de">„Was wissen Sie über unser Unternehmen?"</div><div class="w-en">Hausaufgabe: Webseite lesen!</div></div>
+<div class="w"><div class="w-de">„Wie gehen Sie mit Konflikten um?"</div><div class="w-en">Konkretes Beispiel parat haben</div></div>
+<div class="w"><div class="w-de">„Können Sie ein Projekt schildern, das schiefging?"</div><div class="w-en">Ehrlich antworten + Lernerfahrung</div></div>
+<div class="w"><div class="w-de">„Was sind Ihre Gehaltsvorstellungen?"</div><div class="w-en">Spanne nennen, nicht fix!</div></div>
+<div class="w"><div class="w-de">„Wann könnten Sie bei uns anfangen?"</div><div class="w-en">Kündigungsfrist beachten</div></div>
+<div class="w"><div class="w-de">„Haben Sie noch Fragen an uns?"</div><div class="w-en">JA! Immer 3 Fragen mitbringen</div></div>
+<div class="w"><div class="w-de">„Warum haben Sie gekündigt?"</div><div class="w-en">Niemals lästern — positiv formulieren</div></div>
+<div class="w"><div class="w-de">„Wir melden uns in den nächsten Tagen."</div><div class="w-en">Höflich verabschieden, geduldig warten</div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Lernkarten — <em style="font-style:italic;">Frage &amp; Antwort-Strategie</em></h2>
+<p class="section-sub">Vorne die Frage, hinten die Strategie + ein Beispielsatz zum Üben. Tippe zum Umdrehen!</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">🎤</div>
+<div class="flip-word" id="flipWord">„Erzählen Sie etwas über sich."</div>
+<div class="flip-badge" id="flipBadge">Klassiker</div>
+<div class="flip-prompt">Beste Strategie? <br>(tippen zum Umdrehen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">3-Teile-Struktur: Vergangenheit · Gegenwart · Zukunft (max. 2–3 Min.)</div>
+<div class="flip-ex" id="flipEx">„Ich bin <strong>gelernte Marketing-Managerin</strong> mit fünf Jahren Erfahrung..."</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">&larr;</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span><button class="lk-btn" id="lkNext">&rarr;</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Welche Antwort ist klüger?</em></h2>
+<p class="section-sub">Wähle die Antwort, die im deutschen Vorstellungsgespräch den besten Eindruck macht.</p>
+
+<div class="quiz"><div class="quiz-q">Personaler: <strong>„Was ist Ihre größte Schwäche?"</strong> — Welche Antwort ist klüger?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">„Ich bin leider Perfektionist."</span><span class="quiz-chip">„Delegieren fällt mir schwer — daran arbeite ich aktiv."</span><span class="quiz-chip">„Ich habe eigentlich keine Schwächen."</span></div><div class="quiz-explain">✓ Echte Schwäche + Arbeit daran zeigen. „Perfektionismus" durchschauen alle Personaler!</div></div>
+
+<div class="quiz"><div class="quiz-q">Auf <strong>„Warum haben Sie gekündigt?"</strong> antwortest du am besten:</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">„Mein Chef war unfähig."</span><span class="quiz-chip">„Das Gehalt war zu niedrig."</span><span class="quiz-chip">„Ich suche neue Herausforderungen und mehr Verantwortung."</span></div><div class="quiz-explain">✓ Niemals den Ex-Arbeitgeber kritisieren! Positiv formulieren = professionell.</div></div>
+
+<div class="quiz"><div class="quiz-q">Wenn nach <strong>Gehaltsvorstellung</strong> gefragt wird, solltest du:</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Eine konkrete fixe Summe nennen.</span><span class="quiz-chip">Eine Spanne nennen, mit Recherche begründet.</span><span class="quiz-chip">Sagen: „Das ist mir egal, Hauptsache der Job."</span></div><div class="quiz-explain">✓ Spanne (z.B. 55–62k) zeigt Marktkenntnis und gibt Verhandlungsspielraum!</div></div>
+
+<div class="quiz"><div class="quiz-q">Auf die Frage <strong>„Haben Sie noch Fragen?"</strong> antwortest du:</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">„Nein, alles klar."</span><span class="quiz-chip">„Wann bekomme ich Urlaub?"</span><span class="quiz-chip">„Ja — wie sieht ein typischer Arbeitstag in dieser Rolle aus?"</span></div><div class="quiz-explain">✓ Wer KEINE Fragen hat, wirkt uninteressiert. Stelle inhaltliche Fragen zur Rolle/Kultur!</div></div>
+
+<div class="quiz"><div class="quiz-q">Bei <strong>„Wo sehen Sie sich in 5 Jahren?"</strong> ist die beste Strategie:</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">„Bei einem anderen, besseren Unternehmen."</span><span class="quiz-chip">„CEO werden."</span><span class="quiz-chip">„In einer Position mit mehr Verantwortung — idealerweise bei Ihnen."</span></div><div class="quiz-explain">✓ Realistisch + Bindung zum Unternehmen zeigen. Ehrgeiz ja, aber loyal!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist beim Smalltalk in <strong>Phase 1</strong> wichtig?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Freundlich, kurz, harmlos (Wetter, Anreise).</span><span class="quiz-chip">Über Politik diskutieren.</span><span class="quiz-chip">Persönliche Probleme erzählen.</span></div><div class="quiz-explain">✓ Smalltalk = Eisbrecher, NICHT der Moment für tiefe Themen!</div></div>
+
+<div class="quiz"><div class="quiz-q">Auf <strong>„Warum sollten wir gerade Sie einstellen?"</strong> antwortest du am klügsten:</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">„Weil ich der beste Bewerber bin."</span><span class="quiz-chip">„Weil meine Erfahrung perfekt zu Ihren Anforderungen passt — Sie suchen X, ich biete X."</span><span class="quiz-chip">„Das müssen Sie entscheiden."</span></div><div class="quiz-explain">✓ Schnittmengen-Strategie: deine Stärken konkret mit der Stellenanzeige verbinden!</div></div>
+
+<div class="quiz"><div class="quiz-q">Welche Vorbereitung ist <strong>Pflicht</strong> vor dem Interview?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Webseite des Unternehmens lesen + LinkedIn der Interviewer checken.</span><span class="quiz-chip">Den Konkurrenten anrufen.</span><span class="quiz-chip">Mit Freunden über das Unternehmen lästern.</span></div><div class="quiz-explain">✓ Hausaufgaben machen ist Pflicht — und zeigt echtes Interesse!</div></div>
+</section>
+
+<!-- LÜCKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext: <em style="font-style:italic;">Strukturiere deine Selbstpräsentation</em></h2>
+<p class="section-sub">Ergänze die Sätze einer überzeugenden Selbstpräsentation.</p>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Vielen Dank für die Einladung — ich freue mich sehr über die Möglichkeit, mich heute <select data-sol="vorzustellen"><option value="">…</option><option>vorzustellen</option><option>auszuruhen</option><option>zu verstecken</option></select>.</div>
+<div class="gap-line">2. Mein Name ist Anna Müller, ich bin gelernte <select data-sol="Marketing-Managerin"><option value="">…</option><option>Sportlerin</option><option>Marketing-Managerin</option><option>Köchin</option></select> mit fünf Jahren Berufserfahrung.</div>
+<div class="gap-line">3. Aktuell <select data-sol="leite"><option value="">…</option><option>verlasse</option><option>leite</option><option>verstecke</option></select> ich ein Team von vier Personen in der Digitalabteilung.</div>
+<div class="gap-line">4. Meine größten Stärken sind <select data-sol="Teamfähigkeit"><option value="">…</option><option>Faulheit</option><option>Teamfähigkeit</option><option>Schüchternheit</option></select> und strategisches Denken.</div>
+<div class="gap-line">5. An meiner Schwäche, dem schwierigen Delegieren, <select data-sol="arbeite"><option value="">…</option><option>vergesse</option><option>arbeite</option><option>schlafe</option></select> ich gerade aktiv mit einem Coaching.</div>
+<div class="gap-line">6. Ich bewerbe mich bei Ihnen, weil Ihre Mission im Bereich Nachhaltigkeit mich <select data-sol="überzeugt"><option value="">…</option><option>verwirrt</option><option>überzeugt</option><option>langweilt</option></select>.</div>
+<div class="gap-line">7. Meine Gehaltsvorstellung liegt in einer <select data-sol="Spanne"><option value="">…</option><option>Lücke</option><option>Spanne</option><option>Strafe</option></select> zwischen 55.000 und 62.000 Euro.</div>
+<div class="gap-line">8. Vielen Dank für das Gespräch — ich freue mich auf Ihre <select data-sol="Rückmeldung"><option value="">…</option><option>Rechnung</option><option>Rückmeldung</option><option>Einladung zum Essen</option></select>.</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Schwierige Frage &harr; <em style="font-style:italic;">kluge Strategie</em></h2>
+<p class="section-sub">Ordne jeder typischen Interview-Frage die passende Antwort-Technik zu.</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Frage des Personalers</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Beste Strategie</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">jetzt übst du!</em></h2>
+<p class="section-sub">16 Sprechkarten zum Üben. Tippe auf „Neue Karte" und antworte laut — wie im echten Gespräch.</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div><div class="speak-cat">Sprech-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 komplette <em style="font-style:italic;">Mock-Bewerbungsgespräche</em></h2>
+<p class="section-sub">Spielt die Gespräche zu zweit durch — eine:r ist Bewerber:in, eine:r Personaler:in. Mindestens 10 Minuten pro Rolle!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Junior-Position</div>
+<div class="role-title">🌱 Erstes Bewerbungsgespräch nach dem Studium</div>
+<div class="role-situation">Du bist frisch von der Uni und bewirbst dich auf eine Junior-Stelle im Marketing. Person B ist Personalleiter:in eines mittelständischen Unternehmens.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🎓</div><div><div class="person-label">Person A — Berufseinsteiger:in</div><div class="person-quote">„Ich habe Marketing studiert und während des Studiums zwei Praktika gemacht. Jetzt möchte ich richtig durchstarten!"</div></div></div>
+<div class="person b"><div class="person-avatar">💼</div><div><div class="person-label">Person B — Personalleitung</div><div class="person-quote">„Was bringen Sie mit, das wir bei einem Berufseinsteiger nicht erwarten würden?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Geht durch ALLE 6 Phasen — von Smalltalk bis Rückfragen. Bewerber:in muss 3 Rückfragen vorbereitet haben!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Senior-Wechsel</div>
+<div class="role-title">🚀 Karrieresprung mit 10 Jahren Erfahrung</div>
+<div class="role-situation">Du hast 10 Jahre Erfahrung in einem Konzern und willst zu einem Start-up wechseln. Du verhandelst mit der Geschäftsführerin — sie will dich, aber das Gehalt ist die Herausforderung.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">💪</div><div><div class="person-label">Person A — Erfahrene Fachkraft</div><div class="person-quote">„Mein aktuelles Gehalt liegt bei 80.000 Euro. Bei Ihnen erwarte ich mindestens das Gleiche — plus Anteile."</div></div></div>
+<div class="person b"><div class="person-avatar">🦄</div><div><div class="person-label">Person B — Start-up-CEO</div><div class="person-quote">„Wir können nicht mit Konzern-Gehältern mithalten — aber wir bieten Verantwortung, Aktien und Sinn."</div></div></div>
+</div>
+<div class="role-goal">🎯 Verhandelt mindestens 5 Minuten über das Gehaltspaket — beide müssen am Ende zufrieden sein!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Stress-Pingpong</div>
+<div class="role-title">😬 Die unbequemen Fragen</div>
+<div class="role-situation">Person B (Personaler:in) stellt absichtlich provokante Fragen. Person A bleibt höflich, professionell und souverän — KEINE Panik!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🧘</div><div><div class="person-label">Person A — Bewerber:in</div><div class="person-quote">„Ich bleibe ruhig, atme tief und antworte überlegt — auch wenn die Frage gemein klingt."</div></div></div>
+<div class="person b"><div class="person-avatar">🦊</div><div><div class="person-label">Person B — kritische:r Personaler:in</div><div class="person-quote">„Warum sind Sie schon DREIMAL in vier Jahren gewechselt? Sind Sie wirklich loyal?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Mindestens 8 Stress-Fragen abarbeiten — Bewerber:in darf nie aggressiv werden, sondern souverän reagieren!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Sprich deine eigene Selbstpräsentation auf!</strong> Nimm dein Handy, stelle die Sprachmemo-App ein und sprich 2 Minuten frei über dich — als wärst du im echten Vorstellungsgespräch. Höre dir die Aufnahme an: Wo bist du stark? Wo holprig? Wiederhole es 3-mal in der Woche.<br><br>
+🏆 <strong>Bonus:</strong> Schau dir auf YouTube ein deutsches Vorstellungsgespräch (Suchwort: „Bewerbungsgespräch Beispiel") an — analysiere die 6 Phasen und notiere 3 starke Formulierungen.
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Vorstellungsgespräche · B2/C1</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'🎤',word:'„Erzählen Sie etwas über sich."',badge:'Klassiker',rule:'3-Teile-Struktur: Vergangenheit · Gegenwart · Zukunft (max. 2–3 Min.)',ex:'„Ich bin <strong>gelernte Marketing-Managerin</strong> mit fünf Jahren Erfahrung..."'},
+  {emoji:'💪',word:'„Was sind Ihre Stärken?"',badge:'Standard',rule:'Maximal 3 Stärken nennen + jeweils ein konkretes Beispiel',ex:'„Meine größte Stärke ist <strong>strategisches Denken</strong> — bei Projekt X habe ich..."'},
+  {emoji:'😬',word:'„Was ist Ihre größte Schwäche?"',badge:'Falle!',rule:'Echte Schwäche + zeige aktive Arbeit daran. NICHT „Perfektionismus"!',ex:'„<strong>Delegieren fällt mir schwer</strong> — daran arbeite ich mit Coaching."'},
+  {emoji:'🔮',word:'„Wo sehen Sie sich in 5 Jahren?"',badge:'Karriereplanung',rule:'Realistisch + Bindung zum Unternehmen zeigen. Ehrgeiz ja, aber loyal!',ex:'„In einer Position mit <strong>mehr Verantwortung</strong> — idealerweise bei Ihnen."'},
+  {emoji:'🎯',word:'„Warum sollten wir gerade Sie einstellen?"',badge:'Provokation',rule:'Schnittmengen-Strategie: deine Stärken mit der Stellenanzeige verbinden',ex:'„Sie suchen X — genau das <strong>bringe ich mit</strong>, plus Erfahrung in Y."'},
+  {emoji:'🚪',word:'„Warum haben Sie gekündigt?"',badge:'Tabu',rule:'NIEMALS Ex-Arbeitgeber kritisieren! Positiv formulieren: neue Herausforderungen',ex:'„Ich suche jetzt <strong>mehr Verantwortung</strong> und neue Herausforderungen."'},
+  {emoji:'🏢',word:'„Was wissen Sie über uns?"',badge:'Hausaufgabe',rule:'Webseite, Mission, aktuelle News kennen. 2-3 konkrete Punkte nennen!',ex:'„Mich überzeugt vor allem <strong>Ihre Mission</strong> im Bereich Nachhaltigkeit."'},
+  {emoji:'💰',word:'„Was sind Ihre Gehaltsvorstellungen?"',badge:'Verhandlung',rule:'Spanne nennen (recherchiert!), nicht eine fixe Zahl. Begründen mit Erfahrung.',ex:'„Eine Spanne zwischen <strong>55.000 und 62.000 Euro</strong> — abhängig vom Gesamtpaket."'},
+  {emoji:'❓',word:'„Haben Sie noch Fragen an uns?"',badge:'Pflicht!',rule:'JA! Mindestens 3 inhaltliche Fragen mitbringen. Nichts zu Urlaub fragen.',ex:'„Wie sieht <strong>ein typischer Arbeitstag</strong> in dieser Rolle aus?"'},
+  {emoji:'⚔️',word:'„Wie gehen Sie mit Konflikten um?"',badge:'Soft Skill',rule:'Konkretes Beispiel + STAR-Methode (Situation, Aufgabe, Aktion, Resultat)',ex:'„In einem Projekt gab es <strong>Streit über Prioritäten</strong> — ich habe vermittelt..."'},
+  {emoji:'😢',word:'„Erzählen Sie von einem Misserfolg."',badge:'Ehrlichkeit',rule:'Ehrlich antworten + Lernerfahrung zeigen. Kein Versteckspiel!',ex:'„Ein Projekt ist gescheitert — daraus habe ich gelernt, <strong>früher zu kommunizieren</strong>."'},
+  {emoji:'🤝',word:'„Sind Sie eher Teamplayer oder Einzelkämpfer?"',badge:'Trickfrage',rule:'BEIDES! Je nach Situation. Konkrete Beispiele für beide Szenarien.',ex:'„Ich liebe Teamarbeit, kann aber auch <strong>selbstständig</strong> komplexe Themen bearbeiten."'},
+  {emoji:'⏰',word:'„Wann könnten Sie anfangen?"',badge:'Praxis',rule:'Kündigungsfrist beachten (meist 3 Monate). Ehrlich und realistisch sein.',ex:'„Meine Kündigungsfrist beträgt <strong>3 Monate</strong> — also frühestens im April."'},
+  {emoji:'📚',word:'„Lernen Sie gerne dazu?"',badge:'Weiterbildung',rule:'JA + konkretes Beispiel der letzten Weiterbildung nennen',ex:'„Letzten Monat habe ich eine <strong>Zertifizierung</strong> in agilem Projektmanagement abgeschlossen."'},
+  {emoji:'🎬',word:'„Wir melden uns in den nächsten Tagen."',badge:'Abschluss',rule:'Höflich verabschieden, geduldig warten — nach 7 Tagen freundlich nachfragen',ex:'„Vielen Dank für das Gespräch — ich freue mich auf <strong>Ihre Rückmeldung</strong>."'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'„Was ist Ihre Schwäche?"',r:'Echte Schwäche + Arbeit daran zeigen'},
+  {l:'„Warum gekündigt?"',r:'Positiv: neue Herausforderungen suchen'},
+  {l:'„Gehaltsvorstellung?"',r:'Recherchierte Spanne nennen'},
+  {l:'„Warum gerade Sie?"',r:'Schnittmengen mit Stellenanzeige zeigen'},
+  {l:'„In 5 Jahren?"',r:'Realistisch + Bindung zum Unternehmen'},
+  {l:'„Haben Sie Fragen?"',r:'JA, 3 inhaltliche Fragen vorbereiten'},
+  {l:'„Konfliktbeispiel?"',r:'STAR-Methode mit echtem Beispiel'},
+  {l:'„Erzählen Sie über sich"',r:'Vergangenheit · Gegenwart · Zukunft'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.innerHTML=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'🎤',cat:'Selbstpräsentation',q:'Stelle dich in genau 60 Sekunden vor — Werdegang, aktuelle Rolle, Zukunftsplan!'},
+  {emoji:'💪',cat:'Stärken',q:'Nenne deine 3 größten beruflichen Stärken — jeweils mit einem konkreten Beispiel.'},
+  {emoji:'😬',cat:'Schwächen',q:'Was ist deine ECHTE Schwäche im Beruf — und was tust du dagegen?'},
+  {emoji:'💰',cat:'Gehalt',q:'Du wirst nach deiner Gehaltsvorstellung gefragt — wie antwortest du strukturiert?'},
+  {emoji:'🔮',cat:'Karriereplanung',q:'Wo siehst du dich in 5 Jahren — beruflich und persönlich?'},
+  {emoji:'🚪',cat:'Kündigung',q:'Warum hast du deinen letzten Job gekündigt (oder würdest kündigen)?'},
+  {emoji:'🎯',cat:'Schnittmengen',q:'Warum sollten WIR genau DICH einstellen? Begründe in 90 Sekunden!'},
+  {emoji:'⚔️',cat:'Konflikt',q:'Erzähle von einem Konflikt im Job — wie hast du ihn gelöst? (STAR-Methode!)'},
+  {emoji:'🌍',cat:'Über Deutschland',q:'Was wäre für dich am schwersten in einem deutschen Vorstellungsgespräch?'},
+  {emoji:'❓',cat:'Rückfragen',q:'Welche 3 klugen Rückfragen würdest du am Ende stellen?'},
+  {emoji:'🤝',cat:'Teamarbeit',q:'Bist du eher Teamplayer oder Einzelkämpfer? Begründe mit Beispielen!'},
+  {emoji:'😱',cat:'Stress',q:'Wie reagierst du, wenn der Personaler eine sehr provokante Frage stellt?'},
+  {emoji:'📚',cat:'Weiterbildung',q:'Was war deine letzte berufliche Weiterbildung — und warum?'},
+  {emoji:'🎬',cat:'Abschluss',q:'Wie verabschiedest du dich am Ende eines Gesprächs — souverän und professionell?'},
+  {emoji:'🏢',cat:'Unternehmen',q:'Stell dir vor, du bewirbst dich bei deinem Traumunternehmen — was würdest du über sie wissen?'},
+  {emoji:'🎯',cat:'Freestyle',q:'Improvisier ein 2-Minuten-Bewerbungsgespräch — die Lehrerin spielt Personalerin!'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60 bis 90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

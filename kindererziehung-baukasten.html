@@ -1,0 +1,573 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kindererziehung heute vs. früher · B1/B2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.8rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* VERGLEICHSWÖRTER */
+.compare-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:700px){.compare-grid{grid-template-columns:repeat(2,1fr);}}
+.compare{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem .8rem;text-align:center;border-top:5px solid var(--red);}
+.compare:nth-child(4n+2){border-top-color:var(--teal);}
+.compare:nth-child(4n+3){border-top-color:#B66809;}
+.compare:nth-child(4n){border-top-color:#6A3D9C;}
+.compare-icon{font-size:1.8rem;margin-bottom:.2rem;display:block;}
+.compare-word{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:.95rem;margin-bottom:.2rem;}
+.compare-desc{color:var(--ink-soft);font-size:.78rem;line-height:1.4;font-style:italic;}
+
+/* STYLE-CARDS */
+.style-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;margin:1.5rem 0;}
+@media(max-width:600px){.style-grid{grid-template-columns:1fr;}}
+.style{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.2rem;border-left:5px solid var(--red);}
+.style:nth-child(2){border-left-color:var(--teal);}
+.style:nth-child(3){border-left-color:#B66809;}
+.style:nth-child(4){border-left-color:#6A3D9C;}
+.style:nth-child(5){border-left-color:var(--pink);}
+.style:nth-child(6){border-left-color:#5F7A2A;}
+.style-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.05rem;margin-bottom:.3rem;}
+.style-def{color:var(--ink-soft);font-size:.85rem;line-height:1.55;}
+.style-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.85rem;margin-top:.5rem;background:var(--cream-warm);padding:.4rem .7rem;border-radius:8px;}
+
+/* VORHER/NACHHER */
+.vn-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
+.vn-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.1rem;margin-bottom:1rem;text-align:center;}
+.vn-grid{display:grid;grid-template-columns:1fr 60px 1fr;gap:.7rem;align-items:center;}
+@media(max-width:600px){.vn-grid{grid-template-columns:1fr;}.vn-arrow{display:none;}}
+.vn-card{background:var(--cream);border-radius:14px;padding:1rem;text-align:center;border:1.5px solid var(--sand);}
+.vn-card.a{background:#FFF0F0;border-color:#F5C5C2;}
+.vn-card.b{background:var(--yellow-soft);border-color:var(--yellow);}
+.vn-label{font-size:.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;}
+.vn-card.b .vn-label{color:#B66809;}
+.vn-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.3rem;}
+.vn-arrow{text-align:center;font-size:2rem;color:var(--red);font-weight:900;}
+
+/* TOPIC-CARDS */
+.topic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:600px){.topic-grid{grid-template-columns:1fr;}}
+.topic{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;align-items:center;border-left:5px solid var(--teal);}
+.topic-icon{font-size:1.8rem;text-align:center;}
+.topic-name{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;}
+.topic-desc{color:var(--ink-soft);font-size:.78rem;margin-top:.2rem;}
+
+/* ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* PHRASE */
+.phrase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+@media(max-width:600px){.phrase-grid{grid-template-columns:1fr;}}
+.phrase{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;align-items:center;}
+.phrase-icon{font-size:2rem;text-align:center;}
+.phrase-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;font-style:italic;}
+.phrase-meaning{color:var(--ink-soft);font-size:.8rem;margin-top:.2rem;}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE + DEBATE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
+.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
+.debate:nth-child(2){border-left-color:var(--teal);}
+.debate:nth-child(3){border-left-color:var(--yellow);}
+.debate:nth-child(4){border-left-color:var(--pink);}
+.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.debate:nth-child(2) .debate-num{color:var(--teal);}.debate:nth-child(3) .debate-num{color:#B66809;}.debate:nth-child(4) .debate-num{color:#A04060;}
+.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Alltag B1/B2 Sprechclub</div>
+<div class="title-wrap"><h1 class="title">Kindererziehung heute &amp; <span class="hl">früher</span></h1></div>
+<p class="subtitle">Strenge oder Vertrauen? Bildschirmzeit oder Spielplatz? Wir vergleichen Generationen und diskutieren die großen Erziehungs-Themen.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">👵</text><text y="40" text-anchor="middle" fill="#E8302A">Früher</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">👶</text><text y="40" text-anchor="middle" fill="#0FB5A6">Heute</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">📱</text><text y="40" text-anchor="middle" fill="#B66809">Bildschirm</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">🚸</text><text y="40" text-anchor="middle" fill="#A04060">Freiheit</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">🚫</text><text y="40" text-anchor="middle" fill="#5F7A2A">Grenzen</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">💬</text><text y="40" text-anchor="middle" fill="#6A3D9C">Diskussion</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ÜBERBLICK -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">8 wichtige <em style="font-style:italic;">Vergleichswörter</em></h2>
+<p class="section-sub">Mit diesen Wörtern vergleichst du Generationen, Stile und Meinungen — perfekt für Diskussionen!</p>
+
+<div class="compare-grid">
+<div class="compare"><span class="compare-icon">↔️</span><div class="compare-word">während … während</div><div class="compare-desc">„Während früher…, während heute…"</div></div>
+<div class="compare"><span class="compare-icon">⚖️</span><div class="compare-word">im Gegensatz zu</div><div class="compare-desc">„Im Gegensatz zu früher…"</div></div>
+<div class="compare"><span class="compare-icon">🔀</span><div class="compare-word">anders als</div><div class="compare-desc">„Anders als meine Eltern…"</div></div>
+<div class="compare"><span class="compare-icon">⏳</span><div class="compare-word">früher — heute</div><div class="compare-desc">„Früher war…, heute ist…"</div></div>
+<div class="compare"><span class="compare-icon">🔄</span><div class="compare-word">vergleichen mit</div><div class="compare-desc">„Wenn ich es mit meiner Kindheit vergleiche…"</div></div>
+<div class="compare"><span class="compare-icon">📈</span><div class="compare-word">mehr/weniger als</div><div class="compare-desc">„Kinder haben heute mehr Freiheit als…"</div></div>
+<div class="compare"><span class="compare-icon">🆚</span><div class="compare-word">einerseits — andererseits</div><div class="compare-desc">„Einerseits…, andererseits…"</div></div>
+<div class="compare"><span class="compare-icon">🌗</span><div class="compare-word">obwohl — trotzdem</div><div class="compare-desc">„Obwohl wir wenig hatten, …"</div></div>
+</div>
+
+<div class="tip">💡 <strong>Tipp für die Prüfung B1/B2:</strong> Wenn du über Generationen sprichst, nutze immer Vergleichswörter wie <u>„im Gegensatz zu"</u> oder <u>„während früher…"</u> — das wirkt sofort viel reifer und differenzierter!</div>
+
+<h2 class="section-title">6 <em style="font-style:italic;">Erziehungsstile</em></h2>
+<p class="section-sub">Jeder kennt sie — aber wie heißen sie auf Deutsch genau?</p>
+
+<div class="style-grid">
+<div class="style">
+<div class="style-name">🪖 Autoritär</div>
+<div class="style-def">Eltern bestimmen alles. Strenge Regeln, klare Strafen, wenig Diskussion.</div>
+<div class="style-ex">„Du machst, was ich sage! Punkt!"</div>
+</div>
+<div class="style">
+<div class="style-name">🌈 Antiautoritär</div>
+<div class="style-def">Sehr wenige Regeln, viel Freiheit. Kinder entscheiden selbst.</div>
+<div class="style-ex">„Mach was du willst — du musst es selbst lernen."</div>
+</div>
+<div class="style">
+<div class="style-name">🚁 Helikopter-Eltern</div>
+<div class="style-def">Überprotektive Eltern, die alles kontrollieren und überwachen.</div>
+<div class="style-ex">„Hast du genug getrunken? Hausaufgaben gemacht? Wo bist du?"</div>
+</div>
+<div class="style">
+<div class="style-name">🤗 Attachment Parenting</div>
+<div class="style-def">Sehr viel Körperkontakt, lange stillen, Familienbett. Sehr nah am Kind.</div>
+<div class="style-ex">„Wir machen alles zusammen — auch nachts."</div>
+</div>
+<div class="style">
+<div class="style-name">🌿 Free-Range</div>
+<div class="style-def">Kinder bekommen viel Freiheit, gehen früh allein raus. Vertrauen in Kompetenz.</div>
+<div class="style-ex">„Mit 8 Jahren darf sie schon allein zur Schule gehen."</div>
+</div>
+<div class="style">
+<div class="style-name">⚖️ Autoritativ (demokratisch)</div>
+<div class="style-def">Klare Regeln + Liebe + Erklärungen. Kinder dürfen mitreden.</div>
+<div class="style-ex">„Wir machen Regeln zusammen — und halten uns dran."</div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">Strafe vs. Konsequenz</div>
+<div class="vn-grid">
+<div class="vn-card a"><div class="vn-label">Strafe (alt)</div><div class="vn-text">„Weil du gelogen hast, kein Fernsehen für eine Woche!"</div></div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b"><div class="vn-label">Konsequenz (neu)</div><div class="vn-text">„Du hast gelogen — jetzt vertraue ich dir weniger. Das müssen wir wieder aufbauen."</div></div>
+</div>
+</div>
+
+<h2 class="section-title">Die <em style="font-style:italic;">kontroversen Themen</em></h2>
+
+<div class="topic-grid">
+<div class="topic"><div class="topic-icon">📱</div><div><div class="topic-name">Bildschirmzeit</div><div class="topic-desc">Wie viel iPad mit 3? 5? 10?</div></div></div>
+<div class="topic"><div class="topic-icon">🏫</div><div><div class="topic-name">Schulpflicht vs. Homeschooling</div><div class="topic-desc">In DE: Schulpflicht — kein Homeschooling erlaubt!</div></div></div>
+<div class="topic"><div class="topic-icon">✋</div><div><div class="topic-name">Klaps oder absolutes Tabu?</div><div class="topic-desc">In DE seit 2000 gesetzlich verboten!</div></div></div>
+<div class="topic"><div class="topic-icon">💉</div><div><div class="topic-name">Impfen</div><div class="topic-desc">Pflicht oder Entscheidung der Eltern?</div></div></div>
+<div class="topic"><div class="topic-icon">🍬</div><div><div class="topic-name">Süßigkeiten</div><div class="topic-desc">Verbieten oder kontrollierter Zugang?</div></div></div>
+<div class="topic"><div class="topic-icon">🏆</div><div><div class="topic-name">Leistungsdruck</div><div class="topic-desc">Wettbewerb fördern oder Druck wegnehmen?</div></div></div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Eigene Kindheit</div><div class="qq">Wie streng waren deine Eltern? Würdest du dich an diesem Stil orientieren?</div><div class="think">💭 „Meine Eltern waren… Ich würde es genauso/anders machen…"</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Generationen-Vergleich</div><div class="qq">Was war früher BESSER als heute? Was ist heute BESSER?</div><div class="think">💭 Freiheit, Sicherheit, Aufmerksamkeit, Medien — wo waren früher Vorteile?</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Position</div><div class="qq">Bildschirmzeit: Wie viel ist okay für Kinder unter 10? Begründe!</div><div class="think">💭 0 Minuten? 30? 2 Stunden? Was sagst du als (zukünftige:r) Elternteil?</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Provokant</div><div class="qq">Sind die heutigen Kinder „verwöhnt" oder „verzogen"? Oder ist das ein Generationen-Vorurteil?</div><div class="think">💭 „Wir hatten ja nichts…" — wie reagierst du auf solche Sätze?</div></div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So reden Deutsche <em style="font-style:italic;">über Erziehung</em></h2>
+<p class="section-sub">Eltern-Gruppen, Großeltern-Gespräche, Streit am Esstisch — die echten Diskussionen.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Bei Erziehungs-Diskussionen wird es schnell <u>emotional</u>. Bleib bei deiner Meinung, aber zeige auch Verständnis: „Ich verstehe deine Sicht, aber ich denke…"</div>
+
+<div class="uss-grid">
+<div class="chat">
+<div class="chat-head"><div class="av">👩‍👩‍👧</div><div><div class="name">Mama-Gruppe · Bildschirm</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wie macht ihr das mit dem <strong>Handy</strong>? Lukas (8) will jetzt auch eins! 😩</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Bei uns gibt es <strong>frühestens mit 10</strong>! Und nur 30 Min pro Tag.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Echt? Alle anderen Kinder in der Klasse haben schon eins…</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Soll uns egal sein! <strong>Ist es richtig oder falsch</strong>, nicht: machen es alle!</div></div>
+<div class="chat-meaning"><strong>„Soll uns egal sein"</strong> = wir lassen uns nicht beeinflussen · sehr typisch in Erziehungs-Diskussionen</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">👵</div><div><div class="name">Oma vs. Mama</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Früher</strong> haben wir die Kinder einfach rausgeschickt zum Spielen!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Heute ist das anders, Mama. Verkehr ist mehr, alles ist gefährlicher…</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ach, ihr seid alle <strong>Helikopter-Eltern</strong>! Wir haben das überlebt!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Mama, wir machen es einfach <strong>anders als ihr</strong>. Das ist okay!</div></div>
+<div class="chat-meaning"><strong>„Helikopter-Eltern"</strong> = Eltern, die alles kontrollieren · klassisches Schimpfwort der Großelterngeneration!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🍝</div><div><div class="name">Papa-Gruppe · Essen</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Mein Sohn (5) isst <strong>NUR Nudeln</strong>! Keine Karotten, kein Gemüse…</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Das ist eine <strong>Phase</strong> — geht vorbei!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Seit 2 Jahren?! Ich mach mir Sorgen.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Nicht <strong>zum Kampf machen</strong>. Anbieten, nicht zwingen — das ist die neue Methode!</div></div>
+<div class="chat-meaning"><strong>„nicht zum Kampf machen"</strong> = keinen Streit daraus machen · zentraler Ratschlag in moderner Erziehung!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">⚖️</div><div><div class="name">Bestrafen oder nicht?</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Bestrafung</strong> oder Verständnis? Was macht ihr, wenn das Kind frech ist?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Keine Bestrafung mehr! Nur <strong>Konsequenzen</strong>. „Wenn du das tust, passiert das."</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Verstehe… aber manchmal hilft ein <strong>klares NEIN</strong>!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Stimmt! <strong>Grenzen mit Liebe</strong>. Nicht hart, aber bestimmt.</div></div>
+<div class="chat-meaning"><strong>„Grenzen mit Liebe"</strong> = Grenzen setzen ohne Strenge · moderner Erziehungs-Slogan!</div>
+</div>
+</div>
+
+<h2 class="section-title">12 wichtige <em style="font-style:italic;">Erziehungs-Phrasen</em></h2>
+<div class="phrase-grid">
+<div class="phrase"><div class="phrase-icon">👵</div><div><div class="phrase-de">„Früher war alles besser…"</div><div class="phrase-meaning">Klassiker der älteren Generation</div></div></div>
+<div class="phrase"><div class="phrase-icon">🚁</div><div><div class="phrase-de">„Du bist eine Helikopter-Mutter!"</div><div class="phrase-meaning">Vorwurf an überprotektive Eltern</div></div></div>
+<div class="phrase"><div class="phrase-icon">🚫</div><div><div class="phrase-de">„Grenzen setzen — mit Liebe!"</div><div class="phrase-meaning">Slogan der modernen Erziehung</div></div></div>
+<div class="phrase"><div class="phrase-icon">📱</div><div><div class="phrase-de">„Wie viel Bildschirmzeit ist okay?"</div><div class="phrase-meaning">die Frage unserer Zeit</div></div></div>
+<div class="phrase"><div class="phrase-icon">⚖️</div><div><div class="phrase-de">„Konsequenz statt Strafe."</div><div class="phrase-meaning">moderne Erziehungs-Philosophie</div></div></div>
+<div class="phrase"><div class="phrase-icon">🤗</div><div><div class="phrase-de">„Kinder brauchen Wurzeln und Flügel."</div><div class="phrase-meaning">Sicherheit + Freiheit</div></div></div>
+<div class="phrase"><div class="phrase-icon">💪</div><div><div class="phrase-de">„Anbieten, nicht zwingen."</div><div class="phrase-meaning">v.a. beim Essen — sehr beliebt!</div></div></div>
+<div class="phrase"><div class="phrase-icon">🎯</div><div><div class="phrase-de">„Kinder müssen Frust aushalten lernen."</div><div class="phrase-meaning">wichtige Erziehungs-Idee</div></div></div>
+<div class="phrase"><div class="phrase-icon">🌱</div><div><div class="phrase-de">„Jedes Kind ist anders."</div><div class="phrase-meaning">moderne Einsicht — keine Pauschalrezepte</div></div></div>
+<div class="phrase"><div class="phrase-icon">😤</div><div><div class="phrase-de">„Das ist eine Phase — geht vorbei!"</div><div class="phrase-meaning">der typische Eltern-Trost</div></div></div>
+<div class="phrase"><div class="phrase-icon">🏠</div><div><div class="phrase-de">„Vorbild sein, nicht predigen."</div><div class="phrase-meaning">Erziehen durch eigenes Verhalten</div></div></div>
+<div class="phrase"><div class="phrase-icon">⏰</div><div><div class="phrase-de">„Kinder brauchen klare Strukturen."</div><div class="phrase-meaning">Rituale, Routinen, Verlässlichkeit</div></div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Erziehungs-Karten</h2>
+<p class="section-sub">Erst denken — dann tippen.</p>
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">🪖</div>
+<div class="flip-word" id="flipWord">autoritär</div>
+<div class="flip-badge" id="flipBadge">Erziehungsstil</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">streng, viele Regeln, wenig Diskussion</div>
+<div class="flip-ex" id="flipEx">„Meine Großeltern waren sehr <strong>autoritär</strong>."</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span><button class="lk-btn" id="lkNext">→</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Welcher Stil ist das?</em></h2>
+
+<div class="quiz"><div class="quiz-q">„Du machst, was ich sage. Punkt!" — welcher Stil ist das?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Autoritär</span><span class="quiz-chip">Antiautoritär</span><span class="quiz-chip">Demokratisch</span></div><div class="quiz-explain">Autoritär = streng, Eltern bestimmen alles, keine Diskussion.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was sind „Helikopter-Eltern"?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Sehr lockere Eltern</span><span class="quiz-chip">Eltern in Hubschraubern</span><span class="quiz-chip">Eltern, die alles überwachen und kontrollieren</span></div><div class="quiz-explain">Helikopter-Eltern = ständig in der Nähe, alles kontrollieren — wie ein Hubschrauber!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet „Free Range" in der Erziehung?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Nur Bio-Essen</span><span class="quiz-chip">Kinder bekommen viel Freiheit</span><span class="quiz-chip">Eltern arbeiten von zu Hause</span></div><div class="quiz-explain">Free Range = freie Bewegung. Kinder gehen früh allein raus, Vertrauen in ihre Kompetenz.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist der Unterschied zwischen „Strafe" und „Konsequenz"?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Kein Unterschied</span><span class="quiz-chip">Konsequenz erklärt das Warum, Strafe nicht</span><span class="quiz-chip">Strafe ist immer körperlich</span></div><div class="quiz-explain">Moderne Erziehung: Konsequenz = logische Folge der Tat. Strafe = willkürlich und ohne Erklärung.</div></div>
+
+<div class="quiz"><div class="quiz-q">Welcher Satz ist ein VERGLEICH zwischen Generationen?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Mein Kind ist süß</span><span class="quiz-chip">Ich mag Schokolade</span><span class="quiz-chip">Im Gegensatz zu früher haben Kinder heute mehr Freiheit</span></div><div class="quiz-explain">„Im Gegensatz zu früher" — perfekte Vergleichs-Formel für B1/B2!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist seit 2000 in DE gesetzlich verboten in der Erziehung?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Körperliche Bestrafung (Klaps, Schläge)</span><span class="quiz-chip">Süßigkeiten verbieten</span><span class="quiz-chip">Hausarrest</span></div><div class="quiz-explain">Seit 2000: Kinder haben in DE ein RECHT auf gewaltfreie Erziehung — auch keine Klapse!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet „Wurzeln und Flügel"?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Garten und Vogelhaus</span><span class="quiz-chip">Sicherheit (Wurzeln) und Freiheit (Flügel)</span><span class="quiz-chip">Strenge Regeln</span></div><div class="quiz-explain">Wunderschöne Erziehungs-Metapher: Wurzeln (= Zuhause, Sicherheit) und Flügel (= Selbstständigkeit).</div></div>
+
+<div class="quiz"><div class="quiz-q">„Anbieten, nicht zwingen" — wann passt dieser Rat besonders?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Hausaufgaben</span><span class="quiz-chip">Schule</span><span class="quiz-chip">Essen / neue Lebensmittel probieren</span></div><div class="quiz-explain">Beim Essen wichtig: Druck schadet, geduldiges Anbieten hilft langfristig.</div></div>
+</section>
+
+<!-- LÜCKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext: <em style="font-style:italic;">Vergleichs-Sätze</em></h2>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. <select data-sol="Während"><option value="">…</option><option>Während</option><option>Weil</option><option>Wenn</option></select> früher die Kinder draußen spielten, sitzen sie heute oft am Handy.</div>
+<div class="gap-line">2. Im <select data-sol="Gegensatz"><option value="">…</option><option>Vergleich</option><option>Gegensatz</option><option>Gegenteil</option></select> zu meinen Eltern bin ich viel weniger streng.</div>
+<div class="gap-line">3. Kinder haben heute <select data-sol="mehr"><option value="">…</option><option>mehr</option><option>weniger</option><option>kein</option></select> Bildschirmzeit als früher.</div>
+<div class="gap-line">4. <select data-sol="Anders"><option value="">…</option><option>Anders</option><option>Gleich</option><option>Genauso</option></select> als meine Großeltern erziehe ich ohne Strafen.</div>
+<div class="gap-line">5. <select data-sol="Einerseits"><option value="">…</option><option>Außerdem</option><option>Einerseits</option><option>Dann</option></select> brauchen Kinder Freiheit, andererseits klare Grenzen.</div>
+<div class="gap-line">6. <select data-sol="Obwohl"><option value="">…</option><option>Obwohl</option><option>Weil</option><option>Damit</option></select> wir früher wenig hatten, waren wir glücklich.</div>
+<div class="gap-line">7. Wir setzen <select data-sol="Grenzen"><option value="">…</option><option>Grenzen</option><option>Strafen</option><option>Häuser</option></select> mit Liebe — nicht hart, aber bestimmt.</div>
+<div class="gap-line">8. Heute heißt es: <select data-sol="Konsequenz"><option value="">…</option><option>Konsequenz</option><option>Konfekt</option><option>Konzept</option></select> statt Strafe.</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Erziehungs-Konzept &harr; <em style="font-style:italic;">Beispiel-Situation</em></h2>
+<p class="section-sub">Welches Konzept passt zu welcher konkreten Situation?</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Konzept</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Beispiel</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht\'s!</em></h2>
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div><div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">rund um Kindererziehung</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Generationen-Streit</div>
+<div class="role-title">👵 Eltern vs. Großeltern</div>
+<div class="role-situation">Die Großeltern besuchen Familie. Sie geben dem Kind Süßigkeiten vor dem Essen und sagen: „Früher war alles besser!" Die Eltern sind nicht einverstanden.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">👵</div><div><div class="person-label">Oma / Opa</div><div class="person-quote">„Ach, ein Bonbon hat noch keinem geschadet! Bei uns gab es Schokolade vor dem Essen — und seht uns an!"</div></div></div>
+<div class="person b"><div class="person-avatar">👨‍👩‍👧</div><div><div class="person-label">Mutter / Vater</div><div class="person-quote">„Mama / Papa, bei uns gibt es Süßes nur nach dem Essen. Bitte respektiere unsere Regeln!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Beide Seiten respektvoll argumentieren — Vergleichswörter „während früher" / „heute machen wir" benutzen!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Elternabend</div>
+<div class="role-title">🏫 Elternabend in der Grundschule</div>
+<div class="role-situation">Auf dem Elternabend wird über die Schul-Handy-Regel diskutiert: Sollen Handys verboten sein? Du bist DAFÜR oder DAGEGEN — diskutiere mit anderen Eltern!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">📱</div><div><div class="person-label">Pro Handy-Verbot</div><div class="person-quote">„Handys lenken nur ab. Kinder müssen lernen, ohne sie auszukommen. Im Notfall ist das Sekretariat da."</div></div></div>
+<div class="person b"><div class="person-avatar">📞</div><div><div class="person-label">Gegen Handy-Verbot</div><div class="person-quote">„Aber ich will mein Kind notfalls erreichen können! Und sie lernen den Umgang mit Medien."</div></div></div>
+</div>
+<div class="role-goal">🎯 Mindestens 4 Argumente pro Seite + auf Gegenargumente reagieren — wie auf einem echten Elternabend!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Partnerstreit</div>
+<div class="role-title">📱 Bildschirmzeit-Diskussion</div>
+<div class="role-situation">Du und dein:e Partner:in streitet über Bildschirmzeit für euer 7-jähriges Kind. Du bist STRENG (max. 30 Min/Tag), Partner:in liberal (Kind soll selbst lernen).</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">⏰</div><div><div class="person-label">Streng (du)</div><div class="person-quote">„30 Minuten reichen! Studien zeigen, mehr Bildschirmzeit ist schlecht für die Entwicklung."</div></div></div>
+<div class="person b"><div class="person-avatar">🌈</div><div><div class="person-label">Liberal (Partner)</div><div class="person-quote">„Wir vertrauen unserem Kind! Wenn wir verbieten, machen sie es nur heimlich."</div></div></div>
+</div>
+<div class="role-goal">🎯 Konstruktiv streiten — am Ende einen Kompromiss finden! „Einerseits…, andererseits…" verwenden!</div>
+</div>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">4 Thesen <em style="font-style:italic;">zum Debattieren</em></h2>
+<div class="debate-grid">
+<div class="debate"><div class="debate-num">These 1</div><div class="debate-q">„Ein bisschen Strenge hat noch nie geschadet — die heutigen Kinder sind zu verwöhnt."</div></div>
+<div class="debate"><div class="debate-num">These 2</div><div class="debate-q">„Belohnungen sind genauso schlecht wie Strafen — Kinder sollen aus Eigenmotivation lernen."</div></div>
+<div class="debate"><div class="debate-num">These 3</div><div class="debate-q">„Kinder müssen früh lernen, ohne Eltern zurechtzukommen — sonst werden sie nie selbstständig."</div></div>
+<div class="debate"><div class="debate-num">These 4</div><div class="debate-q">„Bildschirmzeit unter 6 Jahren sollte gesetzlich verboten sein."</div></div>
+</div>
+<div class="tip" style="margin-top:1.5rem;">🎯 <strong>Pflicht:</strong> Bei jeder These mindestens 2 Pro-Argumente UND 2 Contra-Argumente — auch wenn du persönlich nur eine Seite vertrittst!</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Mission:</strong> Frage Großeltern (oder ältere Verwandte) auf Deutsch: „Wie war Kindererziehung früher? Was war anders?" Schreibe 10 Sätze mit Vergleichswörtern auf!<br><br>
+🏆 <strong>Bonus:</strong> Beobachte 1 Familie auf dem Spielplatz (oder im Café). Welcher Erziehungsstil ist das? Beschreibe es auf Deutsch — 5–8 Sätze!
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Kindererziehung heute vs. früher · B1/B2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'🪖',word:'autoritär',badge:'Erziehungsstil',rule:'streng, viele Regeln, wenig Diskussion',ex:'„Meine Großeltern waren sehr <strong>autoritär</strong>."'},
+  {emoji:'🌈',word:'antiautoritär',badge:'Erziehungsstil',rule:'sehr wenig Regeln, viel Freiheit',ex:'„In den 70ern war <strong>antiautoritär</strong> sehr beliebt."'},
+  {emoji:'🚁',word:'Helikopter-Eltern',badge:'Stil',rule:'überprotektiv, kontrollieren alles',ex:'„Sie ist eine typische <strong>Helikopter-Mutter</strong>."'},
+  {emoji:'🤗',word:'Attachment Parenting',badge:'Modern',rule:'sehr nah am Kind — viel Körperkontakt',ex:'„<strong>Attachment Parenting</strong> heißt: zusammen schlafen, lange stillen."'},
+  {emoji:'🌿',word:'Free Range',badge:'Modern',rule:'Kinder bekommen früh viel Freiheit',ex:'„<strong>Free Range</strong> bedeutet: Vertrauen statt Kontrolle."'},
+  {emoji:'⚖️',word:'Konsequenz',badge:'Folge',rule:'logische Folge der Tat (nicht Strafe!)',ex:'„Wir nutzen <strong>Konsequenzen</strong>, keine Strafen."'},
+  {emoji:'🚫',word:'die Grenze',badge:'Regel',rule:'klare Regel, die das Kind kennt',ex:'„Kinder brauchen klare <strong>Grenzen</strong>."'},
+  {emoji:'💔',word:'die Strafe',badge:'Konsequenz alt',rule:'willkürliche Folge ohne Erklärung',ex:'„Früher gab es viel <strong>Strafe</strong>, heute nicht mehr."'},
+  {emoji:'🤝',word:'das Vertrauen',badge:'Beziehung',rule:'der Glaube an das Kind',ex:'„<strong>Vertrauen</strong> ist die Basis moderner Erziehung."'},
+  {emoji:'📱',word:'die Bildschirmzeit',badge:'Aktuell',rule:'Zeit mit Handy/Tablet/TV',ex:'„Wie viel <strong>Bildschirmzeit</strong> ist okay?"'},
+  {emoji:'🏫',word:'die Schulpflicht',badge:'Gesetz DE',rule:'in DE: Kinder MÜSSEN zur Schule',ex:'„In DE gibt es <strong>Schulpflicht</strong> — kein Homeschooling."'},
+  {emoji:'⚖️',word:'autoritativ (demokratisch)',badge:'Stil',rule:'Liebe + Regeln + Erklärungen + Mitsprache',ex:'„<strong>Autoritativ</strong> heißt: streng UND warm."'},
+  {emoji:'🍬',word:'verwöhnen',badge:'Verb',rule:'dem Kind ALLES geben',ex:'„Großeltern <strong>verwöhnen</strong> die Enkel."'},
+  {emoji:'😤',word:'verziehen',badge:'negativ',rule:'schlecht erzogen — egoistisch geworden',ex:'„Das Kind ist total <strong>verzogen</strong>!"'},
+  {emoji:'💪',word:'die Selbstständigkeit',badge:'Ziel',rule:'allein zurechtkommen können',ex:'„<strong>Selbstständigkeit</strong> ist wichtigstes Erziehungsziel."'},
+  {emoji:'🌱',word:'das Vorbild',badge:'Beispiel',rule:'durch eigenes Verhalten erziehen',ex:'„Eltern müssen ein gutes <strong>Vorbild</strong> sein."'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=6?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'Autoritär',r:'„Weil ich es sage!"'},
+  {l:'Antiautoritär',r:'„Mach was du willst — du lernst es selbst."'},
+  {l:'Helikopter-Eltern',r:'„Hast du genug getrunken? Wo bist du?"'},
+  {l:'Free Range',r:'„Mit 8 darf sie allein zur Schule."'},
+  {l:'Autoritativ',r:'„Wir machen die Regel zusammen."'},
+  {l:'Attachment Parenting',r:'„Wir schlafen alle im Familienbett."'},
+  {l:'Konsequenz',r:'„Du hast gelogen — jetzt vertraue ich dir weniger."'},
+  {l:'Strafe (alt)',r:'„Eine Woche Hausarrest, fertig!"'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'👶',cat:'Eigene Kindheit',q:'Wie streng waren deine Eltern? Beschreibe drei Regeln aus deiner Kindheit!'},
+  {emoji:'👵',cat:'Generation Großeltern',q:'Wie haben deine Großeltern erzogen? Was war anders?'},
+  {emoji:'⚖️',cat:'Heute machen',q:'Wenn du Kinder hättest (oder hast): Welchen Stil würdest du wählen? Warum?'},
+  {emoji:'📱',cat:'Bildschirmzeit',q:'Wie viel Handy/Tablet ist okay für ein 8-jähriges Kind? Begründe!'},
+  {emoji:'🏫',cat:'Schule früher/heute',q:'Wie war Schule für dich? Was würdest du heute anders gestalten?'},
+  {emoji:'🚫',cat:'Grenzen setzen',q:'Wie setzt man Grenzen, OHNE streng zu sein? Geht das?'},
+  {emoji:'✋',cat:'Strafen',q:'Was hältst du davon, dass Klapse in DE verboten sind? Pro/Contra?'},
+  {emoji:'🍬',cat:'Süßigkeiten',q:'Verbieten oder erlauben? Wie soll man mit Süßigkeiten umgehen?'},
+  {emoji:'🚸',cat:'Selbstständigkeit',q:'Ab wann darf ein Kind allein in die Stadt? In deinem Land vs. DE?'},
+  {emoji:'🆚',cat:'Vergleich',q:'Heute oder früher — wann hatten Kinder es BESSER? Warum?'},
+  {emoji:'🌍',cat:'Kulturen',q:'Wie unterscheidet sich Erziehung in deinem Land von Deutschland?'},
+  {emoji:'😤',cat:'Verwöhnt?',q:'Sind heutige Kinder „verwöhnt"? Oder ist das ein Vorurteil?'},
+  {emoji:'🎯',cat:'Ziel',q:'Was ist das WICHTIGSTE Ziel von Erziehung — Glück, Selbstständigkeit, Erfolg?'},
+  {emoji:'👨‍👩‍👧',cat:'Eltern als Team',q:'Müssen Eltern immer einer Meinung sein? Was, wenn nicht?'},
+  {emoji:'🏠',cat:'Vorbild',q:'Was lernen Kinder von uns — auch wenn wir es nicht wollen?'},
+  {emoji:'🎯',cat:'Freestyle',q:'Wenn du eine neue Erziehungsregel erfinden könntest — welche wäre das?'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

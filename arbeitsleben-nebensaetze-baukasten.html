@@ -1,0 +1,826 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Arbeitsleben &amp; Nebensätze · Baukasten | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.2rem,5.5vw,4.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:360px;width:100%;}
+
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}
+.tip em{color:var(--ink);font-style:italic;}
+.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* MEAN CARDS */
+.mean-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin:1.5rem 0;}
+@media(max-width:520px){.mean-grid{grid-template-columns:1fr;}}
+.mean{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:0;box-shadow:0 4px 16px rgba(38,32,25,.05);transition:.2s;cursor:pointer;overflow:hidden;}
+.mean:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(38,32,25,.12);}
+.mean-svg{background:linear-gradient(135deg,#FFE8E3,#FBEDD8);height:120px;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--sand);}
+.mean.m2 .mean-svg{background:linear-gradient(135deg,#D7F0EC,#E8F8F4);}
+.mean.m3 .mean-svg{background:linear-gradient(135deg,#FFF1C2,#FFE8E3);}
+.mean.m4 .mean-svg{background:linear-gradient(135deg,#FAE0EA,#FFE8E3);}
+.mean.m5 .mean-svg{background:linear-gradient(135deg,#E2EBC9,#FBEDD8);}
+.mean.m6 .mean-svg{background:linear-gradient(135deg,#E5D8F2,#FAE0EA);}
+.mean-body{padding:1.1rem 1.3rem 1.4rem;}
+.mean-num{display:inline-block;background:var(--red-soft);color:var(--red);font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;}
+.mean.m2 .mean-num{background:var(--teal-soft);color:var(--teal);}
+.mean.m3 .mean-num{background:var(--yellow-soft);color:#B66809;}
+.mean.m4 .mean-num{background:#FAE0EA;color:#A04060;}
+.mean.m5 .mean-num{background:#E2EBC9;color:#5F7A2A;}
+.mean.m6 .mean-num{background:#E5D8F2;color:#6A3D9C;}
+.mean-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.35rem;}
+.mean-meaning{color:var(--red);font-weight:700;font-size:.9rem;margin-bottom:.6rem;}
+.mean.m2 .mean-meaning{color:var(--teal);}
+.mean.m3 .mean-meaning{color:#B66809;}
+.mean.m4 .mean-meaning{color:#A04060;}
+.mean.m5 .mean-meaning{color:#5F7A2A;}
+.mean.m6 .mean-meaning{color:#6A3D9C;}
+.mean-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;padding-top:.7rem;border-top:1px dashed var(--sand);}
+.mean-ex strong{color:var(--ink);background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+
+/* WORD CHIPS */
+.wschatz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.3rem 1.5rem;margin:1.5rem 0;}
+.wschatz h3{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.15rem;margin-bottom:.7rem;text-align:center;}
+.chip-row{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;}
+.chip-row span{background:var(--cream-warm);font-family:'Fraunces',serif;font-style:italic;color:var(--ink);padding:.25rem .7rem;border-radius:10px;font-size:.92rem;border:1px solid var(--sand);}
+
+/* ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* VORHER/NACHHER */
+.vn-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
+.vn-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.2rem;margin-bottom:1rem;text-align:center;}
+.vn-grid{display:grid;grid-template-columns:1fr 60px 1fr;gap:.7rem;align-items:center;}
+@media(max-width:600px){.vn-grid{grid-template-columns:1fr;}.vn-arrow{display:none;}}
+.vn-card{background:var(--cream);border-radius:14px;padding:1rem;text-align:center;border:1.5px solid var(--sand);}
+.vn-card.b{background:var(--yellow-soft);border-color:var(--yellow);}
+.vn-label{font-size:.72rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.vn-card.b .vn-label{color:#B66809;}
+.vn-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.3rem;}
+.vn-arrow{text-align:center;font-size:2rem;color:var(--red);font-weight:900;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);position:relative;}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name-row{flex:1;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;font-family:'Outfit',sans-serif;color:var(--ink);line-height:1.45;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.06);}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;color:var(--ink);margin-bottom:.3rem;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.6rem;line-height:1.55;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-family:'Outfit',sans-serif;font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);transition:.15s;}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.lk-shuffle:hover{background:var(--ink);color:white;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;transition:.15s;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;color:var(--ink);font-size:.9rem;transition:.15s;text-align:center;line-height:1.35;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+
+/* ROLE */
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}
+.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}
+.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="eyebrow">deutschoderwas · Grammatik trifft Berufswortschatz</div>
+
+<div class="title-wrap">
+<h1 class="title">Arbeitsleben &amp; <span class="hl">Nebensätze</span></h1>
+</div>
+<p class="subtitle">Über den Job sprechen — mit weil, dass, wenn, obwohl, damit und ob. Hier verstehst du endlich, <em>wohin das Verb wandert</em>, wenn ein Nebensatz beginnt.</p>
+
+<!-- HERO SVG: Büro-Szene mit Konnektoren -->
+<svg class="hero-svg" viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="10">
+<g transform="translate(30,25)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="6" font-size="22">💼</text><text text-anchor="middle" y="40" fill="#E8302A">weil</text></g>
+<g transform="translate(85,25)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="6" font-size="22">💬</text><text text-anchor="middle" y="40" fill="#0FB5A6">dass</text></g>
+<g transform="translate(140,25)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="6" font-size="22">⏰</text><text text-anchor="middle" y="40" fill="#B66809">wenn</text></g>
+<g transform="translate(195,25)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="6" font-size="22">🙅</text><text text-anchor="middle" y="40" fill="#A04060">obwohl</text></g>
+<g transform="translate(250,25)"><circle cx="0" cy="0" r="22" fill="#E2EBC9"/><text text-anchor="middle" dy="6" font-size="22">🎯</text><text text-anchor="middle" y="40" fill="#5F7A2A">damit</text></g>
+<g transform="translate(305,25)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="6" font-size="22">❓</text><text text-anchor="middle" y="40" fill="#6A3D9C">ob</text></g>
+</g>
+</svg>
+
+<!-- TAB NAV -->
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ============== ÜBERBLICK ============== -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die <em style="font-style:italic;">6 wichtigsten</em> Nebensatz-Konnektoren</h2>
+<p class="section-sub">Tipp auf eine Karte 👆 — sieh den Job-Kontext + Beispiele.</p>
+
+<div class="tip">
+💡 <strong>Die GOLDENE Regel für ALLE Nebensätze:</strong> Nach dem Konnektor (weil, dass, wenn, obwohl, damit, ob…) wandert das <u>konjugierte Verb ans ENDE</u>. Subjekt zuerst, dann alle anderen Wörter, ganz am Schluss das Verb. <em>Punkt.</em>
+</div>
+
+<div class="mean-grid">
+
+<div class="mean m1">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><circle cx="55" cy="55" r="28" fill="#FFFFFF" stroke="#E8302A" stroke-width="2"/><text x="55" y="65" text-anchor="middle" font-size="26">😤</text><g transform="translate(110,30)"><rect x="0" y="0" width="80" height="50" rx="10" fill="#FCE5E3"/><text x="40" y="22" text-anchor="middle" font-size="10" font-family="Outfit" font-weight="700" fill="#E8302A">WEIL</text><text x="40" y="38" text-anchor="middle" font-size="8" font-family="Outfit" fill="#5C4E3E">Grund</text></g></svg></div>
+<div class="mean-body">
+<div class="mean-num">Konnektor 1 · Grund</div>
+<div class="mean-name">weil</div>
+<div class="mean-meaning">Warum? → Verb am Ende</div>
+<div class="mean-ex">„Ich bin müde, <strong>weil</strong> ich gestern Überstunden gemacht <strong>habe</strong>." <br>„Sie ist zufrieden, <strong>weil</strong> sie eine Beförderung <strong>bekommen hat</strong>."</div>
+</div>
+</div>
+
+<div class="mean m2">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(40,30)"><circle cx="0" cy="20" r="16" fill="#D7F0EC"/><text x="0" y="27" text-anchor="middle" font-size="18">🧑‍💼</text></g><g transform="translate(120,30)"><rect x="0" y="0" width="60" height="35" rx="8" fill="#FFFFFF" stroke="#0FB5A6" stroke-width="2"/><text x="30" y="22" text-anchor="middle" font-size="10" font-family="Outfit" font-weight="700" fill="#0FB5A6">DASS</text></g><text x="100" y="95" text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#0FB5A6">„Ich denke, dass…"</text></svg></div>
+<div class="mean-body">
+<div class="mean-num">Konnektor 2 · Meinung/Info</div>
+<div class="mean-name">dass</div>
+<div class="mean-meaning">indirekte Rede / Gedanken</div>
+<div class="mean-ex">„Ich denke, <strong>dass</strong> mein Gehalt zu niedrig <strong>ist</strong>." <br>„Mein Chef sagt, <strong>dass</strong> ich mehr Verantwortung <strong>übernehmen soll</strong>."</div>
+</div>
+</div>
+
+<div class="mean m3">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(50,40)"><circle cx="0" cy="0" r="22" fill="#FFF1C2" stroke="#B66809" stroke-width="2"/><text x="0" y="7" text-anchor="middle" font-size="22">⏰</text></g><g transform="translate(130,30)"><rect x="0" y="0" width="55" height="40" rx="8" fill="#FFFFFF" stroke="#B66809" stroke-width="2"/><text x="27" y="18" text-anchor="middle" font-size="10" font-family="Outfit" font-weight="700" fill="#B66809">WENN</text><text x="27" y="32" text-anchor="middle" font-size="8" font-family="Outfit" fill="#5C4E3E">Bedingung</text></g></svg></div>
+<div class="mean-body">
+<div class="mean-num">Konnektor 3 · Bedingung</div>
+<div class="mean-name">wenn</div>
+<div class="mean-meaning">Falls / immer wenn</div>
+<div class="mean-ex">„<strong>Wenn</strong> ich Homeoffice <strong>mache</strong>, bin ich produktiver." <br>„<strong>Wenn</strong> du Hilfe <strong>brauchst</strong>, frag deine Kollegen."</div>
+</div>
+</div>
+
+<div class="mean m4">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(40,40)"><circle cx="0" cy="0" r="22" fill="#FAE0EA" stroke="#A04060" stroke-width="2"/><text x="0" y="7" text-anchor="middle" font-size="22">🙅</text></g><g transform="translate(110,30)"><rect x="0" y="0" width="70" height="40" rx="8" fill="#FFFFFF" stroke="#A04060" stroke-width="2"/><text x="35" y="18" text-anchor="middle" font-size="10" font-family="Outfit" font-weight="700" fill="#A04060">OBWOHL</text><text x="35" y="32" text-anchor="middle" font-size="8" font-family="Outfit" fill="#5C4E3E">Gegensatz</text></g></svg></div>
+<div class="mean-body">
+<div class="mean-num">Konnektor 4 · Gegensatz</div>
+<div class="mean-name">obwohl</div>
+<div class="mean-meaning">trotzdem, contre tout</div>
+<div class="mean-ex">„Ich mache Überstunden, <strong>obwohl</strong> ich krank <strong>bin</strong>." <br>„Sie bleibt im Job, <strong>obwohl</strong> der Chef sehr anstrengend <strong>ist</strong>."</div>
+</div>
+</div>
+
+<div class="mean m5">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(40,40)"><circle cx="0" cy="0" r="22" fill="#E2EBC9" stroke="#5F7A2A" stroke-width="2"/><text x="0" y="7" text-anchor="middle" font-size="22">🎯</text></g><g transform="translate(110,30)"><rect x="0" y="0" width="60" height="40" rx="8" fill="#FFFFFF" stroke="#5F7A2A" stroke-width="2"/><text x="30" y="18" text-anchor="middle" font-size="10" font-family="Outfit" font-weight="700" fill="#5F7A2A">DAMIT</text><text x="30" y="32" text-anchor="middle" font-size="8" font-family="Outfit" fill="#5C4E3E">Zweck</text></g></svg></div>
+<div class="mean-body">
+<div class="mean-num">Konnektor 5 · Zweck</div>
+<div class="mean-name">damit</div>
+<div class="mean-meaning">Ziel/Zweck (versch. Subjekte)</div>
+<div class="mean-ex">„Ich arbeite hart, <strong>damit</strong> meine Familie ein gutes Leben <strong>hat</strong>." <br>„Sie organisiert ein Meeting, <strong>damit</strong> alle informiert <strong>sind</strong>."</div>
+</div>
+</div>
+
+<div class="mean m6">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(40,40)"><circle cx="0" cy="0" r="22" fill="#E5D8F2" stroke="#6A3D9C" stroke-width="2"/><text x="0" y="7" text-anchor="middle" font-size="22">❓</text></g><g transform="translate(110,30)"><rect x="0" y="0" width="60" height="40" rx="8" fill="#FFFFFF" stroke="#6A3D9C" stroke-width="2"/><text x="30" y="18" text-anchor="middle" font-size="10" font-family="Outfit" font-weight="700" fill="#6A3D9C">OB</text><text x="30" y="32" text-anchor="middle" font-size="8" font-family="Outfit" fill="#5C4E3E">Ja/Nein?</text></g></svg></div>
+<div class="mean-body">
+<div class="mean-num">Konnektor 6 · indirekte Frage</div>
+<div class="mean-name">ob</div>
+<div class="mean-meaning">Ja/Nein-Frage indirekt</div>
+<div class="mean-ex">„Ich frage mich, <strong>ob</strong> ich die Bewerbung <strong>abschicken soll</strong>." <br>„Er weiß nicht, <strong>ob</strong> er die Stelle <strong>bekommt</strong>."</div>
+</div>
+</div>
+
+</div>
+
+<!-- VORHER/NACHHER -->
+<h2 class="section-title">Hauptsatz <em style="font-style:italic;">vs.</em> Nebensatz</h2>
+<p class="section-sub">Wo steht das Verb? Das ist der wichtigste Unterschied.</p>
+
+<div class="vn-stage">
+<div class="vn-title">🎯 Das Verb wandert!</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-label">Hauptsatz</div>
+<div class="vn-text">„Ich <strong>mache</strong> Überstunden."<br><span style="font-size:.78rem;color:var(--ink-mute);">Verb auf Position 2</span></div>
+</div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b">
+<div class="vn-label">Nebensatz mit WEIL</div>
+<div class="vn-text">„…, weil ich Überstunden <strong>mache</strong>."<br><span style="font-size:.78rem;color:#B66809;">Verb ganz am Ende!</span></div>
+</div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">📦 Mit Modalverb (haben/sein)</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-label">Hauptsatz</div>
+<div class="vn-text">„Ich <strong>habe</strong> die Bewerbung <strong>abgeschickt</strong>."</div>
+</div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b">
+<div class="vn-label">Nebensatz mit DASS</div>
+<div class="vn-text">„…, dass ich die Bewerbung <strong>abgeschickt habe</strong>."<br><span style="font-size:.78rem;color:#B66809;">Partizip + haben/sein ganz hinten!</span></div>
+</div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">🔄 Nebensatz VORNE? Dann Inversion!</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-label">Nebensatz hinten</div>
+<div class="vn-text">„Ich bleibe zu Hause, <strong>wenn</strong> ich krank bin."</div>
+</div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b">
+<div class="vn-label">Nebensatz vorne</div>
+<div class="vn-text">„<strong>Wenn</strong> ich krank bin, <strong>bleibe ich</strong> zu Hause."<br><span style="font-size:.78rem;color:#B66809;">Verb vor Subjekt!</span></div>
+</div>
+</div>
+</div>
+
+<!-- WORTSCHATZ ARBEITSLEBEN -->
+<h2 class="section-title">Wortschatz <em style="font-style:italic;">Arbeitsleben</em></h2>
+<p class="section-sub">Die wichtigsten Wörter, die du brauchst — kombiniere sie mit deinen Nebensätzen!</p>
+
+<div class="wschatz">
+<h3>👥 Menschen am Arbeitsplatz</h3>
+<div class="chip-row"><span>der Chef / die Chefin</span><span>der Kollege / die Kollegin</span><span>die Mitarbeiter:innen</span><span>der Praktikant / die Praktikantin</span><span>der Kunde / die Kundin</span><span>das Team</span><span>die Abteilung</span></div>
+</div>
+
+<div class="wschatz">
+<h3>💼 Job &amp; Vertrag</h3>
+<div class="chip-row"><span>die Stelle</span><span>der Arbeitsvertrag</span><span>das Gehalt</span><span>die Bewerbung</span><span>das Vorstellungsgespräch</span><span>die Probezeit</span><span>die Kündigung</span><span>die Beförderung</span><span>die Gehaltserhöhung</span></div>
+</div>
+
+<div class="wschatz">
+<h3>⏰ Arbeitsalltag</h3>
+<div class="chip-row"><span>die Überstunden</span><span>der Feierabend</span><span>die Pause</span><span>das Meeting / die Besprechung</span><span>die Deadline</span><span>das Homeoffice</span><span>der Urlaub</span><span>der Krankenstand</span></div>
+</div>
+
+<!-- ALLTAG-FRAGEN -->
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<p class="section-sub">Denk kurz nach — formuliere innerlich einen Nebensatz.</p>
+
+<div class="alltag-q">
+<div class="ql">Alltag · WEIL (Grund)</div>
+<div class="qq">Warum hast du deinen aktuellen Job gewählt?</div>
+<div class="think">💭 „Ich arbeite hier, weil …" — Verb ganz ans Ende!</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);">
+<div class="ql" style="color:var(--teal);">Alltag · DASS (Meinung)</div>
+<div class="qq">Was glaubst du über dein Gehalt — ist es fair?</div>
+<div class="think">💭 „Ich denke, dass mein Gehalt …"</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#B66809;">
+<div class="ql" style="color:#B66809;">Alltag · WENN (Bedingung)</div>
+<div class="qq">Was machst du, wenn dein Chef dich nervt?</div>
+<div class="think">💭 „Wenn mein Chef mich nervt, dann …"</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#A04060;">
+<div class="ql" style="color:#A04060;">Alltag · OBWOHL (Gegensatz)</div>
+<div class="qq">Was machst du im Job, obwohl du es eigentlich nicht magst?</div>
+<div class="think">💭 „Ich mache …, obwohl ich es nicht mag."</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#6A3D9C;">
+<div class="ql" style="color:#6A3D9C;">Alltag · OB (Unsicherheit)</div>
+<div class="qq">Worüber bist du im Job gerade unsicher?</div>
+<div class="think">💭 „Ich frage mich, ob …"</div>
+</div>
+
+</section>
+
+<!-- ============== UMGANGSSPRACHE ============== -->
+<section class="section" data-section="1">
+
+<h2 class="section-title">💬 So <em style="font-style:italic;">redet</em> man über die Arbeit</h2>
+<p class="section-sub">Echte WhatsApp-Chats aus dem Berufsalltag mit Nebensätzen!</p>
+
+<div class="tip">
+🔥 <strong>Achtung:</strong> In der Umgangssprache hörst du oft „<em>weil</em> + Hauptsatz" (z.B. „weil ich bin müde") — das ist <u>grammatikalisch falsch</u>, aber sehr verbreitet. Im Sprechclub übst du die korrekte Form mit Verb am Ende!
+</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">😩</div><div class="name-row"><div class="name">Lisa · beste Kollegin</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Mein Chef nervt mich heute soooo!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Was ist denn los? 😬</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Er hat gesagt, <strong>dass</strong> ich heute Abend Überstunden machen <strong>muss</strong>, <strong>obwohl</strong> ich morgen krankgemeldet <strong>bin</strong> 😡</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ohje! Geh trotzdem früher, <strong>damit</strong> du dich <strong>erholst</strong>!</div></div>
+<div class="chat-meaning"><strong>3 Nebensätze in einer Nachricht:</strong> dass + obwohl + damit — alle mit Verb am Ende!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">💼</div><div class="name-row"><div class="name">Maria · Schwester</div><div class="stat">tippt…</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wie war dein Vorstellungsgespräch?? 🤞</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Gut, glaube ich! Ich weiß noch nicht, <strong>ob</strong> ich die Stelle <strong>bekomme</strong>.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Was hat der Chef gesagt?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Er meinte, <strong>dass</strong> sie sich nächste Woche <strong>melden</strong>. Ich hoffe, <strong>dass</strong> es <strong>klappt</strong>!</div></div>
+<div class="chat-meaning"><strong>„Ich weiß nicht, ob…"</strong> = die Standardphrase für indirekte Ja/Nein-Fragen! Sehr B1.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🏠</div><div class="name-row"><div class="name">Tom · Mann</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich gehe heute früher ins Büro, <strong>damit</strong> ich pünktlich Feierabend <strong>habe</strong>.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Warum so früh?</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Weil</strong> wir heute Abend doch ins Kino <strong>gehen wollten</strong>!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Stimmt! Vergiss nicht, <strong>dass</strong> der Film um 19 Uhr <strong>anfängt</strong> 🎬</div></div>
+<div class="chat-meaning"><strong>damit + weil + dass</strong> in einem Chat: Zweck, Grund und Information!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📱</div><div class="name-row"><div class="name">Anna · alte Kollegin</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hast du gehört, <strong>dass</strong> Klaus eine Beförderung <strong>bekommen hat</strong>? 😱</div></div>
+<div class="chat-msg out"><div class="chat-bubble">WAS?! <strong>Obwohl</strong> er erst seit einem Jahr da <strong>ist</strong>?!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ja, ich verstehe auch nicht, <strong>warum</strong> der Chef ihn <strong>befördert hat</strong>.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich frage mich, <strong>ob</strong> er ein gutes Verhältnis zum Chef <strong>hat</strong> 🤔</div></div>
+<div class="chat-meaning"><strong>Klatsch im Büro!</strong> dass + obwohl + warum + ob — alles Nebensätze.</div>
+</div>
+
+</div>
+
+<!-- BONUS Phrasen -->
+<h2 class="section-title">12 typische <em style="font-style:italic;">Job-Phrasen</em> mit Nebensätzen</h2>
+
+<div class="uss-grid" style="grid-template-columns:1fr 1fr;">
+<div class="alltag-q" style="margin:.5rem 0;"><div class="ql">Frust</div><div class="qq">„Ich kann nicht mehr, <strong>weil</strong> ich so viel Stress habe."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Wunsch</div><div class="qq">„Ich hoffe, <strong>dass</strong> ich bald Urlaub bekomme."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Plan</div><div class="qq">„<strong>Wenn</strong> ich die Beförderung bekomme, ziehe ich um."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#A04060;"><div class="ql" style="color:#A04060;">Durchhalten</div><div class="qq">„Ich mache weiter, <strong>obwohl</strong> es schwer ist."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#5F7A2A;"><div class="ql" style="color:#5F7A2A;">Strategie</div><div class="qq">„Ich lerne Deutsch, <strong>damit</strong> mein Chef stolz ist."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Unsicher</div><div class="qq">„Weißt du, <strong>ob</strong> heute Meeting ist?"</div></div>
+<div class="alltag-q" style="margin:.5rem 0;"><div class="ql">Klage</div><div class="qq">„Mein Chef hat gesagt, <strong>dass</strong> ich zu langsam bin."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Stolz</div><div class="qq">„Ich bin froh, <strong>dass</strong> ich diese Kollegen habe."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Bewerbung</div><div class="qq">„<strong>Wenn</strong> Sie Fragen haben, melden Sie sich gerne."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#A04060;"><div class="ql" style="color:#A04060;">Trotz</div><div class="qq">„Sie hat gekündigt, <strong>obwohl</strong> sie viel verdient hat."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#5F7A2A;"><div class="ql" style="color:#5F7A2A;">Ziel</div><div class="qq">„Ich mache Überstunden, <strong>damit</strong> ich befördert werde."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Frage</div><div class="qq">„Ich überlege, <strong>ob</strong> ich kündigen soll."</div></div>
+</div>
+
+</section>
+
+<!-- ============== LERNKARTEN ============== -->
+<section class="section" data-section="2">
+
+<h2 class="section-title">Lernkarten · <em style="font-style:italic;">Konnektor + Job-Satz</em></h2>
+<p class="section-sub">Errätst du den Beispielsatz aus dem Arbeitsleben? Erst denken — dann tippen.</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">💼</div>
+<div class="flip-word" id="flipWord">weil</div>
+<div class="flip-badge" id="flipBadge">Grund</div>
+<div class="flip-prompt">Wie sieht ein Beispielsatz aus dem Job aus? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">Grund · Verb am Ende</div>
+<div class="flip-ex" id="flipEx">„Ich bin gestresst, <strong>weil</strong> ich viele Überstunden gemacht <strong>habe</strong>."</div>
+</div>
+</div>
+</div>
+
+<div class="lk-nav">
+<button class="lk-btn" id="lkPrev">←</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span>
+<button class="lk-btn" id="lkNext">→</button>
+</div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+
+</section>
+
+<!-- ============== QUIZ ============== -->
+<section class="section" data-section="3">
+
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Welcher Konnektor?</em></h2>
+<p class="section-sub">Achte auf die Bedeutung UND die Verbposition.</p>
+
+<div class="quiz"><div class="quiz-q">„Ich bin heute müde, <span class="blank">?</span> ich gestern Überstunden gemacht habe." <span style="color:var(--ink-mute);font-size:.85em;">(Grund)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">weil</span><span class="quiz-chip">obwohl</span><span class="quiz-chip">damit</span></div><div class="quiz-explain">✓ <strong>weil</strong> — gibt den Grund an, Verb am Ende</div></div>
+
+<div class="quiz"><div class="quiz-q">„Mein Chef hat gesagt, <span class="blank">?</span> ich eine Gehaltserhöhung bekomme." <span style="color:var(--ink-mute);font-size:.85em;">(indirekte Information)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">ob</span><span class="quiz-chip">dass</span><span class="quiz-chip">wenn</span></div><div class="quiz-explain">✓ <strong>dass</strong> — für indirekte Rede / Information</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich arbeite viel, <span class="blank">?</span> ich befördert werde." <span style="color:var(--ink-mute);font-size:.85em;">(Zweck/Ziel)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">weil</span><span class="quiz-chip">wenn</span><span class="quiz-chip">damit</span></div><div class="quiz-explain">✓ <strong>damit</strong> — Zweck (verschiedene Subjekte sind möglich)</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich frage mich, <span class="blank">?</span> ich die Stelle bekomme." <span style="color:var(--ink-mute);font-size:.85em;">(unsicher · Ja/Nein-Frage)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">dass</span><span class="quiz-chip">wenn</span><span class="quiz-chip">ob</span></div><div class="quiz-explain">✓ <strong>ob</strong> — für indirekte Ja/Nein-Fragen</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich gehe ins Büro, <span class="blank">?</span> ich krank bin." <span style="color:var(--ink-mute);font-size:.85em;">(Gegensatz)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">obwohl</span><span class="quiz-chip">weil</span><span class="quiz-chip">damit</span></div><div class="quiz-explain">✓ <strong>obwohl</strong> — Gegensatz, Verb am Ende</div></div>
+
+<div class="quiz"><div class="quiz-q">„<span class="blank">?</span> mein Kollege im Urlaub ist, übernehme ich seine Arbeit." <span style="color:var(--ink-mute);font-size:.85em;">(Bedingung/Zeit)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ob</span><span class="quiz-chip">Wenn</span><span class="quiz-chip">Damit</span></div><div class="quiz-explain">✓ <strong>Wenn</strong> — Bedingung / immer wenn. Nebensatz vorne → Inversion!</div></div>
+
+<div class="quiz"><div class="quiz-q">„Welcher Satz ist KORREKT?" <span style="color:var(--ink-mute);font-size:.85em;">(Verbposition!)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">„Ich denke, dass mein Chef ist nett."</span><span class="quiz-chip">„Ich denke, dass mein Chef nett ist."</span><span class="quiz-chip">„Ich denke, dass ist mein Chef nett."</span></div><div class="quiz-explain">✓ <strong>„…dass mein Chef nett ist."</strong> — Verb (ist) GANZ am Ende!</div></div>
+
+<div class="quiz"><div class="quiz-q">„Sie hat gekündigt, <span class="blank">?</span> sie eine bessere Stelle gefunden hat." <span style="color:var(--ink-mute);font-size:.85em;">(Grund)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">weil</span><span class="quiz-chip">obwohl</span><span class="quiz-chip">ob</span></div><div class="quiz-explain">✓ <strong>weil</strong> — sie hatte einen guten Grund: neue Stelle!</div></div>
+
+</section>
+
+<!-- ============== LÜCKENTEXT ============== -->
+<section class="section" data-section="4">
+
+<h2 class="section-title">Lückentext</h2>
+<p class="section-sub">Wähle pro Satz den passenden Konnektor. Dann auf „Überprüfen" tippen.</p>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Ich mache heute Homeoffice, <select data-sol="weil"><option value="">…</option><option>weil</option><option>damit</option><option>obwohl</option></select> mein Kind krank ist.</div>
+<div class="gap-line">2. Mein Chef hat mir gesagt, <select data-sol="dass"><option value="">…</option><option>ob</option><option>dass</option><option>wenn</option></select> ich nächste Woche eine Beförderung bekomme.</div>
+<div class="gap-line">3. <select data-sol="Wenn"><option value="">…</option><option>Ob</option><option>Wenn</option><option>Damit</option></select> ich Feierabend habe, gehe ich sofort nach Hause.</div>
+<div class="gap-line">4. Ich arbeite jeden Tag bis 20 Uhr, <select data-sol="obwohl"><option value="">…</option><option>weil</option><option>obwohl</option><option>damit</option></select> mein Vertrag nur bis 17 Uhr geht.</div>
+<div class="gap-line">5. Ich lerne fleißig Deutsch, <select data-sol="damit"><option value="">…</option><option>damit</option><option>weil</option><option>ob</option></select> ich bessere Chancen auf dem Arbeitsmarkt habe.</div>
+<div class="gap-line">6. Ich weiß noch nicht, <select data-sol="ob"><option value="">…</option><option>dass</option><option>wenn</option><option>ob</option></select> ich die Bewerbung abschicken soll.</div>
+<div class="gap-line">7. Mein Kollege ist sehr nett, <select data-sol="obwohl"><option value="">…</option><option>weil</option><option>damit</option><option>obwohl</option></select> er sehr viel zu tun hat.</div>
+<div class="gap-line">8. Ich hoffe, <select data-sol="dass"><option value="">…</option><option>ob</option><option>dass</option><option>wenn</option></select> ich bald in den Urlaub fahren kann.</div>
+<div class="gap-actions">
+<button class="btn-secondary" id="gapReset">Neu</button>
+<button class="btn-primary" id="gapCheck">Überprüfen</button>
+</div>
+</div>
+
+<div class="tip" id="gapScore" style="display:none;"></div>
+
+</section>
+
+<!-- ============== ZUORDNEN ============== -->
+<section class="section" data-section="5">
+
+<h2 class="section-title">Hauptsatz &amp; <em style="font-style:italic;">Nebensatz</em> zuordnen</h2>
+<p class="section-sub">Tippe links einen Hauptsatz — dann rechts den passenden Nebensatz. Richtige Paare werden grün.</p>
+
+<div class="match-stage">
+<div class="match-cols">
+<div class="match-col">
+<h4>🏢 Hauptsatz</h4>
+<div class="match-list" id="leftCol"></div>
+</div>
+<div class="match-col">
+<h4>🔗 Nebensatz</h4>
+<div class="match-list" id="rightCol"></div>
+</div>
+</div>
+<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+</div>
+
+</section>
+
+<!-- ============== SPRECHEN ============== -->
+<section class="section" data-section="6">
+
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">über den Job!</em></h2>
+<p class="section-sub">Allein, mit Partner oder in der Gruppe. Zieh eine Karte und sprich frei — mit Nebensätzen!</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div>
+<div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+
+<div class="speak-controls">
+<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+</div>
+
+<!-- ROLLENSPIELE -->
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">aus dem Büro</em></h2>
+<p class="section-sub">Übt zu zweit — nutzt möglichst viele Nebensätze!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Gehaltsverhandlung</div>
+<div class="role-title">💰 „Ich verdiene mehr!"</div>
+<div class="role-situation">Du arbeitest seit 3 Jahren in deiner Firma und möchtest mehr Gehalt. Dein Chef ist zurückhaltend. Argumentiere mit Nebensätzen, warum du mehr verdient hast!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🙋‍♀️</div><div>
+<div class="person-label">Mitarbeiter:in</div>
+<div class="person-quote">„Ich möchte über mein Gehalt sprechen, <strong>weil</strong> ich seit 3 Jahren hier bin. Ich denke, <strong>dass</strong> meine Leistung sehr gut ist, <strong>obwohl</strong> ich nie eine Erhöhung bekommen habe."</div>
+</div></div>
+<div class="person b"><div class="person-avatar">🧑‍💼</div><div>
+<div class="person-label">Chef:in</div>
+<div class="person-quote">„Ich verstehe, <strong>dass</strong> Sie unzufrieden sind. Ich weiß nicht, <strong>ob</strong> das jetzt möglich ist. <strong>Wenn</strong> Sie weiter so gute Arbeit leisten, sehen wir nächstes Jahr."</div>
+</div></div>
+</div>
+<div class="role-goal">🎯 Ziel: Mindestens <strong>5 verschiedene Nebensatz-Konnektoren</strong> (weil, dass, wenn, obwohl, damit, ob)!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Konflikt mit Kollege</div>
+<div class="role-title">😤 Stress im Team</div>
+<div class="role-situation">Dein Kollege macht ständig Fehler und du musst seine Arbeit korrigieren. Heute reicht es dir. Sprich mit ihm direkt — höflich, aber bestimmt.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😠</div><div>
+<div class="person-label">Person A — die genervte Kollegin</div>
+<div class="person-quote">„Ich muss mit dir reden, <strong>weil</strong> ich oft deine Fehler korrigiere. Ich bin frustriert, <strong>obwohl</strong> wir eigentlich ein gutes Team sind. <strong>Wenn</strong> das so weitergeht, gehe ich zum Chef."</div>
+</div></div>
+<div class="person b"><div class="person-avatar">😅</div><div>
+<div class="person-label">Person B — der überforderte Kollege</div>
+<div class="person-quote">„Es tut mir leid, <strong>dass</strong> du wegen mir Stress hast. Ich frage mich, <strong>ob</strong> ich vielleicht eine Schulung brauche, <strong>damit</strong> ich besser werde."</div>
+</div></div>
+</div>
+<div class="role-goal">🎯 Bonus: Mindestens 1 Nebensatz mit „obwohl" für den Gegensatz!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Bewerbungs-Smalltalk</div>
+<div class="role-title">🤝 Vorstellungsgespräch</div>
+<div class="role-situation">Du bist im Vorstellungsgespräch. Erzähle über dich, warum du den Job willst, was du gut kannst — alles in vollständigen Nebensätzen. Der Chef stellt höfliche Rückfragen.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🧑</div><div>
+<div class="person-label">Bewerber:in</div>
+<div class="person-quote">„Ich habe mich beworben, <strong>weil</strong> ich Ihre Firma sehr spannend finde. Ich glaube, <strong>dass</strong> ich gut ins Team passe, <strong>damit</strong> wir gemeinsam erfolgreich sind."</div>
+</div></div>
+<div class="person b"><div class="person-avatar">👔</div><div>
+<div class="person-label">HR / Chef:in</div>
+<div class="person-quote">„Schön, <strong>dass</strong> Sie da sind. Können Sie mir sagen, <strong>warum</strong> Sie Ihren letzten Job verlassen haben? Und ich frage mich, <strong>ob</strong> Sie auch im Homeoffice arbeiten möchten?"</div>
+</div></div>
+</div>
+<div class="role-goal">🏆 Bonus: Wer 8+ verschiedene Nebensätze unterbringt, gewinnt!</div>
+</div>
+</div>
+
+<!-- MISSION -->
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Mini-Aufgabe:</strong> Schreibe jeden Tag <strong>3 Sätze über deinen Arbeitstag</strong> — jeden Tag mit einem anderen Konnektor! Mo: weil · Di: dass · Mi: wenn · Do: obwohl · Fr: damit · Sa: ob. Achte: Verb am Ende! <br><br>
+🏆 <strong>Bonus-Challenge:</strong> Erzähle einer Freundin / einem Freund 2 Minuten lang von deinem Job — und nutze <strong>alle 6 Konnektoren mindestens einmal</strong> ohne Pause!
+</div>
+
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Arbeitsleben &amp; Nebensätze</footer>
+
+<script>
+// ===== TAB NAV =====
+document.querySelectorAll('.tab').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// ===== LERNKARTEN =====
+const KARTEN=[
+  {emoji:'💼',word:'weil',badge:'Grund · Verb am Ende',rule:'Antwort auf WARUM?',ex:'„Ich bin gestresst, <strong>weil</strong> ich viele Überstunden gemacht <strong>habe</strong>."'},
+  {emoji:'💬',word:'dass',badge:'indirekte Rede · Verb am Ende',rule:'nach denken, sagen, glauben, hoffen',ex:'„Mein Chef sagt, <strong>dass</strong> ich morgen ein Meeting <strong>habe</strong>."'},
+  {emoji:'⏰',word:'wenn',badge:'Bedingung / immer wenn',rule:'für reale Bedingungen oder Wiederholung',ex:'„<strong>Wenn</strong> ich Homeoffice <strong>mache</strong>, bin ich entspannter."'},
+  {emoji:'🙅',word:'obwohl',badge:'Gegensatz · Verb am Ende',rule:'trotz / contre tout',ex:'„Ich arbeite weiter, <strong>obwohl</strong> ich krank <strong>bin</strong>."'},
+  {emoji:'🎯',word:'damit',badge:'Zweck · verschiedene Subjekte',rule:'für ein Ziel, das jemand anders erreicht',ex:'„Ich arbeite viel, <strong>damit</strong> meine Familie ein gutes Leben <strong>hat</strong>."'},
+  {emoji:'❓',word:'ob',badge:'indirekte Ja/Nein-Frage',rule:'nach „ich weiß nicht/frage mich…"',ex:'„Ich frage mich, <strong>ob</strong> ich die Stelle <strong>bekomme</strong>."'},
+  {emoji:'🤝',word:'Bewerbung',badge:'WEIL-Satz',rule:'Grund für deine Bewerbung erklären',ex:'„Ich bewerbe mich, <strong>weil</strong> ich neue Herausforderungen <strong>suche</strong>."'},
+  {emoji:'💸',word:'Gehalt',badge:'DASS-Satz',rule:'Meinung übers Gehalt äußern',ex:'„Ich finde, <strong>dass</strong> mein Gehalt zu niedrig <strong>ist</strong>."'},
+  {emoji:'🏖️',word:'Urlaub',badge:'WENN-Satz',rule:'eine Bedingung formulieren',ex:'„<strong>Wenn</strong> ich Urlaub <strong>habe</strong>, fahre ich nach Italien."'},
+  {emoji:'🤒',word:'Krankenstand',badge:'OBWOHL-Satz',rule:'Gegensatz beschreiben',ex:'„Ich gehe arbeiten, <strong>obwohl</strong> ich Fieber <strong>habe</strong>."'},
+  {emoji:'🚀',word:'Beförderung',badge:'DAMIT-Satz',rule:'Ziel formulieren',ex:'„Ich mache Überstunden, <strong>damit</strong> ich befördert <strong>werde</strong>."'},
+  {emoji:'❌',word:'Kündigung',badge:'OB-Satz',rule:'Unsicherheit ausdrücken',ex:'„Ich überlege, <strong>ob</strong> ich kündigen <strong>soll</strong>."'},
+  {emoji:'👥',word:'Kollegen',badge:'DASS-Satz',rule:'über Kollegen sprechen',ex:'„Ich freue mich, <strong>dass</strong> meine Kollegen so nett <strong>sind</strong>."'},
+  {emoji:'🧑‍💼',word:'Chef',badge:'WEIL-Satz',rule:'Grund mit Chef-Verhalten',ex:'„Ich bin sauer, <strong>weil</strong> mein Chef mich nicht <strong>respektiert</strong>."'},
+  {emoji:'🏠',word:'Homeoffice',badge:'WENN-Satz',rule:'Bedingung im Homeoffice',ex:'„<strong>Wenn</strong> ich von zu Hause <strong>arbeite</strong>, bin ich produktiver."'},
+  {emoji:'⏱️',word:'Überstunden',badge:'OBWOHL-Satz',rule:'Überstunden trotz allem',ex:'„Ich mache Überstunden, <strong>obwohl</strong> ich es nicht <strong>mag</strong>."'},
+];
+let order=KARTEN.map((_,i)=>i);
+let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){
+  const k=KARTEN[order[lkIdx]];
+  document.getElementById('flipEmoji').textContent=k.emoji;
+  document.getElementById('flipWord').textContent=k.word;
+  document.getElementById('flipBadge').textContent=k.badge;
+  document.getElementById('flipRule').textContent=k.rule;
+  document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('lkCur').textContent=lkIdx+1;
+  document.getElementById('lkTot').textContent=KARTEN.length;
+  flipEl.classList.remove('flipped');
+}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+// ===== QUIZ =====
+document.querySelectorAll('.quiz-opts').forEach(opts=>{
+  const c=parseInt(opts.dataset.c);
+  const chips=opts.querySelectorAll('.quiz-chip');
+  const exp=opts.parentElement.querySelector('.quiz-explain');
+  chips.forEach((chip,i)=>{
+    chip.onclick=()=>{
+      if(opts.dataset.done)return;
+      opts.dataset.done='1';
+      if(i===c)chip.classList.add('correct');
+      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
+      exp.classList.add('show');
+    };
+  });
+});
+
+// ===== LÜCKENTEXT =====
+document.getElementById('gapCheck').onclick=()=>{
+  const sels=document.querySelectorAll('#gapText select');
+  let right=0,total=sels.length;
+  sels.forEach(s=>{
+    s.classList.remove('right','wrong');
+    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    else s.classList.add('wrong');
+  });
+  const score=document.getElementById('gapScore');
+  score.style.display='block';
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=6?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');
+};
+document.getElementById('gapReset').onclick=()=>{
+  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  document.getElementById('gapScore').style.display='none';
+};
+
+// ===== ZUORDNEN =====
+const PAIRS=[
+  {l:'Ich mache Homeoffice,',r:'weil mein Kind krank ist.'},
+  {l:'Mein Chef hat gesagt,',r:'dass ich befördert werde.'},
+  {l:'Wenn ich Feierabend habe,',r:'gehe ich sofort joggen.'},
+  {l:'Ich gehe ins Büro,',r:'obwohl ich erkältet bin.'},
+  {l:'Ich arbeite viel,',r:'damit meine Familie ein gutes Leben hat.'},
+  {l:'Ich weiß nicht,',r:'ob ich die Stelle bekomme.'},
+  {l:'Ich bin glücklich,',r:'weil meine Kollegen so nett sind.'},
+  {l:'Ich hoffe,',r:'dass ich bald Urlaub bekomme.'},
+];
+function buildMatch(){
+  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
+  L.innerHTML='';R.innerHTML='';
+  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
+  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
+  let pick=null;
+  document.querySelectorAll('.match-item').forEach(item=>{
+    item.onclick=()=>{
+      if(item.classList.contains('done'))return;
+      if(!pick){pick=item;item.classList.add('selected');return;}
+      if(pick===item){item.classList.remove('selected');pick=null;return;}
+      const pickCol=pick.parentElement.id;
+      const itemCol=item.parentElement.id;
+      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
+      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
+      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
+    };
+  });
+}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
+
+// ===== SPRECHKARTEN =====
+const SPEAK=[
+  {emoji:'💼',cat:'WEIL · Job-Wahl',q:'Warum hast du deinen aktuellen Job (oder deine letzte Stelle) gewählt? Nenne 3 Gründe mit WEIL!'},
+  {emoji:'💬',cat:'DASS · Meinung Gehalt',q:'Was denkst du über dein Gehalt? Beginne 3 Sätze mit „Ich denke, dass …" oder „Ich finde, dass …"'},
+  {emoji:'⏰',cat:'WENN · Routine',q:'Was machst du jeden Morgen, WENN du ins Büro kommst? Beschreibe deine Morgenroutine!'},
+  {emoji:'🙅',cat:'OBWOHL · Trotzdem',q:'Was machst du im Job, OBWOHL du es eigentlich nicht magst? Erzähle 3 Beispiele!'},
+  {emoji:'🎯',cat:'DAMIT · Ziel',q:'Was machst du jeden Tag, DAMIT deine Karriere besser wird? Mindestens 3 Aktionen!'},
+  {emoji:'❓',cat:'OB · Unsicherheit',q:'Worüber bist du im Job gerade unsicher? Stelle 3 indirekte Fragen mit „Ich frage mich, ob…"'},
+  {emoji:'🧑‍💼',cat:'WEIL/OBWOHL · Chef',q:'Beschreibe deinen Chef / deine Chefin — mit WEIL für Gründe und OBWOHL für Gegensätze.'},
+  {emoji:'👥',cat:'DASS · Kollegen',q:'Was schätzt du an deinen Kollegen? Beginne 3 Sätze mit „Ich mag, dass …"'},
+  {emoji:'🏠',cat:'WENN · Homeoffice',q:'Wie ist dein Tag, WENN du Homeoffice machst? Beschreibe den Unterschied zum Büro-Tag.'},
+  {emoji:'⏱️',cat:'OBWOHL · Überstunden',q:'Machst du Überstunden, OBWOHL du es nicht musst? Warum?'},
+  {emoji:'🤝',cat:'DAMIT · Karriere',q:'Was machst du gerade, DAMIT du in 5 Jahren einen besseren Job hast?'},
+  {emoji:'❌',cat:'OB · Kündigung',q:'Hast du schon mal überlegt, OB du kündigen sollst? In welcher Situation war das?'},
+  {emoji:'🤒',cat:'WENN · Krankenstand',q:'Was machst du, WENN du krank bist und dein Chef trotzdem anruft?'},
+  {emoji:'🎉',cat:'WEIL · Beförderung',q:'Du hast eine Beförderung bekommen — WARUM? Erzähle, WEIL was du gemacht hast!'},
+  {emoji:'🤐',cat:'DASS · Büro-Geheimnis',q:'Was hast du im Büro gehört, was du jemandem erzählen würdest? „Hast du gehört, dass…?"'},
+  {emoji:'🌟',cat:'Freestyle · alle 6',q:'Erzähle 90 Sekunden über deinen Job — mit ALLEN 6 Konnektoren (weil, dass, wenn, obwohl, damit, ob)!'},
+];
+let lastSpeak=-1;
+document.getElementById('speakNew').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
+  lastSpeak=i;const k=SPEAK[i];
+  const c=document.getElementById('speakCard');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60-90 Sekunden!</div>';
+    c.style.opacity='1';
+  },200);
+};
+</script>
+</body></html>

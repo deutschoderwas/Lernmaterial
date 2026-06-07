@@ -1,0 +1,546 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Videoanalyse &amp; Debatten · B2/C1 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:640px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:400px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.7rem,3.5vw,2.4rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;max-width:680px;margin-left:auto;margin-right:auto;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}
+
+/* PHASEN-CARDS (Debatten-Struktur) */
+.phasen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:760px){.phasen-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.phasen-grid{grid-template-columns:1fr;}}
+.phase{background:var(--paper);border:1.5px solid var(--sand);border-radius:16px;padding:1.1rem 1rem;border-top:5px solid var(--red);}
+.phase:nth-child(2){border-top-color:var(--teal);}
+.phase:nth-child(3){border-top-color:#B66809;}
+.phase:nth-child(4){border-top-color:#6A3D9C;}
+.phase-num{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:.85rem;letter-spacing:.05em;}
+.phase:nth-child(2) .phase-num{color:var(--teal);}.phase:nth-child(3) .phase-num{color:#B66809;}.phase:nth-child(4) .phase-num{color:#6A3D9C;}
+.phase-icon{font-size:1.8rem;margin:.2rem 0;}
+.phase-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.02rem;margin-bottom:.3rem;}
+.phase-desc{color:var(--ink-soft);font-size:.83rem;line-height:1.5;}
+
+/* WORTSCHATZ */
+.w-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.w-grid{grid-template-columns:1fr;}}
+.w{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.85rem 1.1rem;}
+.w-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;}
+.w-en{color:var(--ink-soft);font-size:.78rem;margin-top:.2rem;}
+
+/* STILMITTEL-Cards */
+.stil-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:600px){.stil-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:400px){.stil-grid{grid-template-columns:1fr;}}
+.stil{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem;border-top:5px solid #C44569;}
+.stil-icon{font-size:1.7rem;margin-bottom:.3rem;}
+.stil-name{font-family:'Fraunces',serif;font-weight:900;color:#C44569;font-size:.98rem;margin-bottom:.3rem;}
+.stil-desc{font-size:.82rem;color:var(--ink-soft);line-height:1.5;}
+.stil-ex{font-family:'Fraunces',serif;font-style:italic;font-size:.82rem;color:var(--ink);margin-top:.4rem;background:var(--cream-warm);padding:.4rem .6rem;border-radius:6px;}
+
+/* RHETORIK-3 (Logos/Pathos/Ethos) */
+.r3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:600px){.r3-grid{grid-template-columns:1fr;}}
+.r3{background:var(--paper);border:2px solid var(--red);border-radius:16px;padding:1.1rem;text-align:center;}
+.r3:nth-child(2){border-color:var(--teal);}.r3:nth-child(3){border-color:#6A3D9C;}
+.r3-greek{font-family:'Fraunces',serif;font-weight:900;font-size:1.4rem;color:var(--red);margin-bottom:.3rem;font-style:italic;}
+.r3:nth-child(2) .r3-greek{color:var(--teal);}.r3:nth-child(3) .r3-greek{color:#6A3D9C;}
+.r3-name{font-weight:700;color:var(--ink);font-size:.95rem;margin-bottom:.3rem;}
+.r3-desc{color:var(--ink-soft);font-size:.85rem;line-height:1.5;}
+
+/* ALLTAG-FRAGE */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:460px;height:380px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:2.8rem;margin-bottom:.5rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:1rem;line-height:1.4;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.7rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-direction:column;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.92rem;color:var(--ink);padding:.55rem 1rem;border-radius:14px;cursor:pointer;text-align:left;font-family:'Outfit',sans-serif;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.85rem;transition:.15s;text-align:center;font-family:'Outfit',sans-serif;}
+.match-item:hover{border-color:var(--ink);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE + DEBATE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
+.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
+.debate:nth-child(2){border-left-color:var(--teal);}
+.debate:nth-child(3){border-left-color:var(--yellow);}
+.debate:nth-child(4){border-left-color:var(--pink);}
+.debate:nth-child(5){border-left-color:#6A3D9C;}
+.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.debate:nth-child(2) .debate-num{color:var(--teal);}.debate:nth-child(3) .debate-num{color:#B66809;}.debate:nth-child(4) .debate-num{color:#A04060;}.debate:nth-child(5) .debate-num{color:#6A3D9C;}
+.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Sprechclub B2/C1</div>
+<div class="title-wrap"><h1 class="title">Videoanalyse &amp; <span class="hl">Debatten</span></h1></div>
+<p class="subtitle">Reden analysieren, Argumente strukturieren, Manipulation entlarven, souverän diskutieren — Rhetorik-Werkzeuge für anspruchsvolle Gespräche.</p>
+
+<svg class="hero-svg" viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="8.5">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">🎙️</text><text y="40" text-anchor="middle" fill="#E8302A">Rhetorik</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">🧱</text><text y="40" text-anchor="middle" fill="#0FB5A6">Argument</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">🔍</text><text y="40" text-anchor="middle" fill="#B66809">Analyse</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">🎭</text><text y="40" text-anchor="middle" fill="#A04060">Stilmittel</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">⚖️</text><text y="40" text-anchor="middle" fill="#5F7A2A">Debatte</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">🛑</text><text y="40" text-anchor="middle" fill="#6A3D9C">Manipulation</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ÜBERBLICK -->
+<section class="section active" data-section="0">
+<h2 class="section-title">Die <em style="font-style:italic;">4 Phasen</em> einer guten Debatte</h2>
+<p class="section-sub">Ob TV-Talkshow, Diskussionsrunde oder Bundestagsrede — fast jede gute Debatte folgt dieser Struktur.</p>
+
+<div class="phasen-grid">
+<div class="phase"><div class="phase-num">PHASE 1</div><div class="phase-icon">🚪</div><div class="phase-name">Eröffnung</div><div class="phase-desc">These klar benennen, eigene Position festlegen, Aufmerksamkeit gewinnen.</div></div>
+<div class="phase"><div class="phase-num">PHASE 2</div><div class="phase-icon">🧱</div><div class="phase-name">Argumentation</div><div class="phase-desc">Argumente strukturiert vorbringen: These &rarr; Begründung &rarr; Beleg &rarr; Beispiel.</div></div>
+<div class="phase"><div class="phase-num">PHASE 3</div><div class="phase-icon">⚔️</div><div class="phase-name">Widerlegung</div><div class="phase-desc">Gegenargumente entkräften, Schwächen aufzeigen, sachlich bleiben.</div></div>
+<div class="phase"><div class="phase-num">PHASE 4</div><div class="phase-icon">🎯</div><div class="phase-name">Schluss</div><div class="phase-desc">Kernpunkte zusammenfassen, an die Emotion appellieren, klar Position beziehen.</div></div>
+</div>
+
+<div class="tip">💡 <strong>Wichtig:</strong> Eine gute Debatte ist <strong>kein Streit</strong>, sondern ein strukturierter Austausch. Wer brüllt, hat schon verloren. Wer ruhig und mit Belegen argumentiert, gewinnt das Publikum!</div>
+
+<h2 class="section-title">📚 Der <em style="font-style:italic;">Analyse-Wortschatz</em></h2>
+<p class="section-sub">Diese Begriffe brauchst du, um Reden, Reportagen und Argumente zu sezieren.</p>
+
+<div class="w-grid">
+<div class="w"><div class="w-de">die These</div><div class="w-en">Hauptaussage · zentrale Behauptung</div></div>
+<div class="w"><div class="w-de">das Argument</div><div class="w-en">Begründung für eine These</div></div>
+<div class="w"><div class="w-de">der Beleg / der Beweis</div><div class="w-en">Studie, Zahl, Zitat — stützt das Argument</div></div>
+<div class="w"><div class="w-de">das Beispiel</div><div class="w-en">konkreter Fall, der die These illustriert</div></div>
+<div class="w"><div class="w-de">das Gegenargument</div><div class="w-en">Einwand · widerlegt die These</div></div>
+<div class="w"><div class="w-de">die Schlussfolgerung</div><div class="w-en">logisches Fazit aus den Argumenten</div></div>
+<div class="w"><div class="w-de">die Rhetorik</div><div class="w-en">Kunst des überzeugenden Sprechens</div></div>
+<div class="w"><div class="w-de">die Manipulation</div><div class="w-en">unfaire Beeinflussung des Publikums</div></div>
+<div class="w"><div class="w-de">der Tonfall</div><div class="w-en">wie etwas gesagt wird (ruhig, aggressiv...)</div></div>
+<div class="w"><div class="w-de">die Körpersprache</div><div class="w-en">Gestik, Mimik, Haltung</div></div>
+<div class="w"><div class="w-de">der Subtext</div><div class="w-en">die verborgene Botschaft hinter den Worten</div></div>
+<div class="w"><div class="w-de">die Polemik</div><div class="w-en">scharfer, oft persönlicher Angriff</div></div>
+</div>
+
+<h2 class="section-title">🎙️ Die <em style="font-style:italic;">3 Säulen</em> der Rhetorik (nach Aristoteles)</h2>
+<p class="section-sub">Diese drei Begriffe musst du kennen — sie sind das Fundament JEDER Rede.</p>
+
+<div class="r3-grid">
+<div class="r3"><div class="r3-greek">Logos</div><div class="r3-name">Der Verstand</div><div class="r3-desc">Argumentation mit Fakten, Zahlen, Logik. Spricht den Kopf an.</div></div>
+<div class="r3"><div class="r3-greek">Pathos</div><div class="r3-name">Das Gefühl</div><div class="r3-desc">Argumentation mit Emotion, Bildern, Geschichten. Spricht das Herz an.</div></div>
+<div class="r3"><div class="r3-greek">Ethos</div><div class="r3-name">Die Glaubwürdigkeit</div><div class="r3-desc">Argumentation mit Autorität, Erfahrung, Charakter. Spricht das Vertrauen an.</div></div>
+</div>
+
+<div class="tip">🔥 <strong>Profi-Tipp:</strong> Die besten Redner:innen mischen alle drei: ein klares Argument (<em>Logos</em>) + ein berührendes Beispiel (<em>Pathos</em>) + die eigene Erfahrung als Beweis (<em>Ethos</em>).</div>
+
+<h2 class="section-title">🎭 Wichtige <em style="font-style:italic;">Stilmittel</em> in Reden</h2>
+<div class="stil-grid">
+<div class="stil"><div class="stil-icon">🔁</div><div class="stil-name">Wiederholung</div><div class="stil-desc">Schlüsselworte mehrfach wiederholen — bleibt im Kopf!</div><div class="stil-ex">„Yes we can. Yes we can. Yes we can."</div></div>
+<div class="stil"><div class="stil-icon">🌉</div><div class="stil-name">Metapher</div><div class="stil-desc">Sprachliches Bild — macht Abstraktes greifbar.</div><div class="stil-ex">„Wir stehen am Abgrund der Geschichte."</div></div>
+<div class="stil"><div class="stil-icon">❓</div><div class="stil-name">Rhetorische Frage</div><div class="stil-desc">Frage ohne erwartete Antwort — aktiviert das Publikum.</div><div class="stil-ex">„Wollen wir wirklich so weitermachen?"</div></div>
+<div class="stil"><div class="stil-icon">⚖️</div><div class="stil-name">Vergleich</div><div class="stil-desc">Zwei Dinge nebeneinander stellen — verstärkt die Botschaft.</div><div class="stil-ex">„Demokratie ist wie ein zarter Garten."</div></div>
+<div class="stil"><div class="stil-icon">📈</div><div class="stil-name">Steigerung</div><div class="stil-desc">Wörter werden immer stärker — emotionale Wirkung.</div><div class="stil-ex">„Schlecht, schlechter, katastrophal!"</div></div>
+<div class="stil"><div class="stil-icon">🎯</div><div class="stil-name">Direkte Ansprache</div><div class="stil-desc">„Sie" oder „du" — schafft Nähe zum Publikum.</div><div class="stil-ex">„Sie wissen, was richtig ist."</div></div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Persönlich</div><div class="qq">Welche Rede oder welches Video hat dich in den letzten Monaten am meisten beeindruckt — und warum?</div><div class="think">💭 War es Pathos, Logos oder Ethos, das dich überzeugt hat?</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Selbstreflexion</div><div class="qq">In welchem Stil argumentierst DU am liebsten — emotional, faktisch oder über deine Erfahrung?</div><div class="think">💭 Und in welchem Stil bist du am wenigsten geübt?</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Kritisch</div><div class="qq">Welche Politiker:innen oder Influencer:innen finden du eindeutig manipulativ? Woran erkennst du das?</div><div class="think">💭 Achte auf Übertreibungen, Schwarz-Weiß-Denken, falsche Fakten!</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Provokant</div><div class="qq">Hast du schon mal in einer Diskussion deine Meinung geändert? Was hat dich überzeugt?</div><div class="think">💭 Meinungswechsel ist KEIN Schwäche — sondern Lernen!</div></div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So <em style="font-style:italic;">diskutieren Deutsche</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats über Videos, Reden, politische Themen — der Ton, den du wirklich brauchst.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Deutsche diskutieren oft <strong>direkt und sachlich</strong> — auch unter Freund:innen. „Das sehe ich anders" oder „Da bin ich nicht deiner Meinung" sind völlig normal und werden NICHT als unhöflich empfunden!</div>
+
+<div class="uss-grid">
+<div class="chat">
+<div class="chat-head"><div class="av">📺</div><div><div class="name">Anna · Talkshow-Reaktion</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hast du gestern „Hart aber fair" gesehen? 👀</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Klar! Aber dieser Politiker hat NUR mit <strong>Pathos</strong> argumentiert, nicht mit Fakten 🙄</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Genau! Und seine <strong>rhetorischen Fragen</strong> waren echt manipulativ.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Trotzdem hat er das Publikum erreicht — leider!</div></div>
+<div class="chat-meaning">Typisch deutsch: nach Talkshows sofort <strong>die Rhetorik analysieren</strong>! Echte Sprechclub-Kultur.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🎙️</div><div><div class="name">Tom · Rede-Analyse</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hast du die Bundestagsrede von der Außenministerin gehört?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ja! <strong>Sehr stark</strong> — sie hat Logos UND Pathos perfekt gemischt.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Und ihre <strong>Körpersprache</strong>! Total souverän!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Die <strong>Steigerung</strong> am Ende — da hatte ich Gänsehaut 😮</div></div>
+<div class="chat-meaning">Eine Rede analysieren ist Volkssport in Deutschland — von Bundestag bis Sportclub-Ansprache!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">⚠️</div><div><div class="name">Lisa · Manipulation entlarvt</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Schau mal dieses Influencer-Video — was meinst du? 👀</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Das war <strong>reine Manipulation</strong>! Keine Quellen, nur Emotion!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Aber die Kommentare feiern ihn 😤</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Klar — er nutzt <strong>Schwarz-Weiß-Denken</strong>. Wirkt simpel, ist aber gefährlich!</div></div>
+<div class="chat-meaning"><strong>„Schwarz-Weiß-Denken"</strong> = nur zwei Optionen sehen (entweder–oder). Klassisches Manipulations-Muster!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">⚖️</div><div><div class="name">Max · Debatten-Modus</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ich finde, KI sollte in der Schule verboten werden.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Interessante These! Aber <strong>bedenk auch</strong>: Schüler:innen brauchen Medienkompetenz.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Stimmt. Mein <strong>Argument war zu schwach</strong>.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Vielleicht eher „regulieren statt verbieten"? <strong>Das wäre eine differenziertere Position</strong>.</div></div>
+<div class="chat-meaning">So sieht <strong>konstruktiver Diskurs</strong> aus — Position revidieren ist Stärke, nicht Schwäche!</div>
+</div>
+</div>
+
+<h2 class="section-title">12 Phrasen für <em style="font-style:italic;">souveräne Debatten</em></h2>
+<div class="w-grid">
+<div class="w"><div class="w-de">„Da bin ich völlig anderer Meinung, weil..."</div><div class="w-en">höflich widersprechen + begründen</div></div>
+<div class="w"><div class="w-de">„Ihr Argument hat einen Haken..."</div><div class="w-en">Schwäche im Argument benennen</div></div>
+<div class="w"><div class="w-de">„Bedenken Sie aber auch..."</div><div class="w-en">Gegenperspektive einführen</div></div>
+<div class="w"><div class="w-de">„Das ist ein typischer Trugschluss..."</div><div class="w-en">Denkfehler aufzeigen</div></div>
+<div class="w"><div class="w-de">„Belegen Sie das mit konkreten Zahlen."</div><div class="w-en">nach Beweisen fragen</div></div>
+<div class="w"><div class="w-de">„Sie verallgemeinern hier."</div><div class="w-en">unzulässige Pauschalisierung kritisieren</div></div>
+<div class="w"><div class="w-de">„Das ist reine Polemik."</div><div class="w-en">scharfer Angriff statt Sachlichkeit</div></div>
+<div class="w"><div class="w-de">„Im Grunde stimme ich zu, aber..."</div><div class="w-en">teilweise zustimmen, dann nuancieren</div></div>
+<div class="w"><div class="w-de">„Lassen Sie mich kurz ausreden."</div><div class="w-en">Unterbrechung höflich abwehren</div></div>
+<div class="w"><div class="w-de">„Wir reden aneinander vorbei."</div><div class="w-en">Missverständnis ansprechen</div></div>
+<div class="w"><div class="w-de">„Das ist ein gutes Argument — danke."</div><div class="w-en">faires Anerkennen der Gegenseite</div></div>
+<div class="w"><div class="w-de">„Wir müssen das differenzierter sehen."</div><div class="w-en">vor Schwarz-Weiß-Denken warnen</div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Lernkarten — <em style="font-style:italic;">Rhetorik &amp; Argumentation</em></h2>
+<p class="section-sub">Vorne der Begriff, hinten die Definition + ein Beispielsatz. Tippe zum Umdrehen!</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">📌</div>
+<div class="flip-word" id="flipWord">die These</div>
+<div class="flip-badge" id="flipBadge">Substantiv f.</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">zentrale Behauptung, die bewiesen werden muss</div>
+<div class="flip-ex" id="flipEx">„Seine <strong>These</strong> war klar: KI bedroht die Demokratie."</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">&larr;</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span><button class="lk-btn" id="lkNext">&rarr;</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Erkennst du Rhetorik?</em></h2>
+<p class="section-sub">Welches Stilmittel? Welche Argumentationsform? Wo steckt die Schwäche?</p>
+
+<div class="quiz"><div class="quiz-q">„Wollen wir wirklich, dass unsere Kinder so aufwachsen?" — Welches Stilmittel ist das?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Metapher</span><span class="quiz-chip">Rhetorische Frage</span><span class="quiz-chip">Steigerung</span></div><div class="quiz-explain">✓ Rhetorische Frage — keine Antwort erwartet, aber aktiviert das Publikum emotional.</div></div>
+
+<div class="quiz"><div class="quiz-q">„Unsere Demokratie ist ein zarter Garten." — Was ist das?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Metapher (sprachliches Bild)</span><span class="quiz-chip">Beleg</span><span class="quiz-chip">Schlussfolgerung</span></div><div class="quiz-explain">✓ Metapher — Demokratie wird mit einem Garten verglichen, ohne „wie" zu benutzen.</div></div>
+
+<div class="quiz"><div class="quiz-q">Ein Redner sagt: „<strong>Ich</strong> war 30 Jahre Arzt — glauben Sie mir, ich weiß, wovon ich rede." Was ist das?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Pathos</span><span class="quiz-chip">Logos</span><span class="quiz-chip">Ethos (Glaubwürdigkeit)</span></div><div class="quiz-explain">✓ Ethos — er nutzt seine eigene Autorität/Erfahrung als Argument.</div></div>
+
+<div class="quiz"><div class="quiz-q">„Alle Politiker lügen." — Was ist die Schwäche dieses Arguments?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Es ist zu höflich.</span><span class="quiz-chip">Unzulässige Verallgemeinerung (Pauschalisierung).</span><span class="quiz-chip">Es nutzt Pathos.</span></div><div class="quiz-explain">✓ „Alle" ist eine Pauschalisierung — wenn auch nur ein:e Politiker:in NICHT lügt, fällt das Argument.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist der UNTERSCHIED zwischen einem Argument und einem Beleg?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Es gibt keinen.</span><span class="quiz-chip">Ein Beleg ist immer emotional.</span><span class="quiz-chip">Ein Argument BEGRÜNDET, ein Beleg BEWEIST mit Studie/Zahl/Zitat.</span></div><div class="quiz-explain">✓ Argumente brauchen Belege, sonst sind sie nur Behauptungen!</div></div>
+
+<div class="quiz"><div class="quiz-q">„Klimawandel ist eine Erfindung der Eliten." — Was ist das Problem?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Verschwörungsdenken ohne Belege — wissenschaftlich widerlegt.</span><span class="quiz-chip">Es ist zu sachlich.</span><span class="quiz-chip">Es benutzt Logos.</span></div><div class="quiz-explain">✓ Behauptung ohne Beweise, gegen die wissenschaftliche Faktenlage. Manipulation pur!</div></div>
+
+<div class="quiz"><div class="quiz-q">In einer Debatte sagt die Gegenseite etwas Gutes. Was ist die BESTE Reaktion?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Ignorieren und lauter reden.</span><span class="quiz-chip">Persönlich angreifen.</span><span class="quiz-chip">„Das ist ein gutes Argument — aber bedenken Sie auch..."</span></div><div class="quiz-explain">✓ Faires Anerkennen + eigene Nuancierung = souveräner Debattenstil!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet „Schwarz-Weiß-Denken" in einer Debatte?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Auf Fotos diskutieren.</span><span class="quiz-chip">Nur zwei Optionen sehen — keine Zwischentöne.</span><span class="quiz-chip">Über Rassismus reden.</span></div><div class="quiz-explain">✓ „Entweder bist du für uns oder gegen uns" — typisches Manipulations-Muster.</div></div>
+</section>
+
+<!-- LÜCKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext: <em style="font-style:italic;">Strukturiere ein Argument</em></h2>
+<p class="section-sub">Ergänze die Lücken in einer typischen Debattenstruktur.</p>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Meine <select data-sol="These"><option value="">…</option><option>These</option><option>Pause</option><option>Bühne</option></select> lautet: Soziale Medien gehören stärker reguliert.</div>
+<div class="gap-line">2. Ich begründe das mit drei <select data-sol="Argumenten"><option value="">…</option><option>Witzen</option><option>Argumenten</option><option>Liedern</option></select>: Jugendschutz, Demokratie und psychische Gesundheit.</div>
+<div class="gap-line">3. Als <select data-sol="Beleg"><option value="">…</option><option>Hut</option><option>Beleg</option><option>Geschenk</option></select> dient eine Studie der WHO aus dem Jahr 2024.</div>
+<div class="gap-line">4. Ein konkretes <select data-sol="Beispiel"><option value="">…</option><option>Beispiel</option><option>Lied</option><option>Tier</option></select>: Eine 14-Jährige verbringt täglich 6 Stunden auf TikTok.</div>
+<div class="gap-line">5. Mögliche <select data-sol="Gegenargumente"><option value="">…</option><option>Gegenargumente</option><option>Tassen</option><option>Schuhe</option></select> sind: Zensur-Gefahr und Innovationsbremse.</div>
+<div class="gap-line">6. Diese kann ich aber <select data-sol="entkräften"><option value="">…</option><option>backen</option><option>entkräften</option><option>essen</option></select>: Regulierung ist nicht gleich Zensur.</div>
+<div class="gap-line">7. Mein <select data-sol="Tonfall"><option value="">…</option><option>Schuh</option><option>Tonfall</option><option>Hund</option></select> bleibt sachlich, auch wenn die Gegenseite emotional wird.</div>
+<div class="gap-line">8. Meine <select data-sol="Schlussfolgerung"><option value="">…</option><option>Schlussfolgerung</option><option>Pause</option><option>Frage</option></select>: Wir brauchen kluge Regulierung — jetzt!</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Argument &harr; <em style="font-style:italic;">passendes Gegenargument</em></h2>
+<p class="section-sub">Ordne jeder Behauptung das beste, sachliche Gegenargument zu.</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Argument</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Gegenargument</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">argumentieren!</em></h2>
+<p class="section-sub">16 Sprechkarten zum Üben. Tippe „Neue Karte" und positioniere dich klar — wie in einer echten Debatte.</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div><div class="speak-cat">Sprech-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">5 <em style="font-style:italic;">Debatten-Thesen</em></h2>
+<p class="section-sub">Sucht euch eine These — bildet zwei Lager — debattiert mindestens 10 Minuten!</p>
+<div class="debate-grid">
+<div class="debate"><div class="debate-num">These 1 · KI</div><div class="debate-q">„KI sollte in der Politik mitentscheiden dürfen — sie ist objektiver als Menschen."</div></div>
+<div class="debate"><div class="debate-num">These 2 · Social Media</div><div class="debate-q">„Soziale Medien gehören für alle unter 16 Jahren komplett verboten."</div></div>
+<div class="debate"><div class="debate-num">These 3 · Bildung</div><div class="debate-q">„Das Studium ist überschätzt — eine Ausbildung bringt mehr Lebenserfolg."</div></div>
+<div class="debate"><div class="debate-num">These 4 · Klima</div><div class="debate-q">„Persönlicher Verzicht beim Klimaschutz ist sinnlos — nur die Industrie zählt."</div></div>
+<div class="debate"><div class="debate-num">These 5 · Familie</div><div class="debate-q">„Eltern sollten Smartphones für Kinder bis 14 Jahren komplett verbieten."</div></div>
+</div>
+<div class="tip" style="margin-top:1.5rem;">🎯 <strong>Wichtig:</strong> Auch wenn du die These nicht persönlich vertrittst — übe das ARGUMENTIEREN! Es macht dich stärker im echten Leben.</div>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele aus der <em style="font-style:italic;">Medienwelt</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · TV-Talkshow</div>
+<div class="role-title">📺 „Hart aber fair" — politische Talkrunde</div>
+<div class="role-situation">Person A ist Klimaaktivist:in, Person B ist konservative:r Wirtschaftspolitiker:in. Beide diskutieren über Klimaschutz vs. Wirtschaftswachstum. Sachlich bleiben — aber pointiert!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🌱</div><div><div class="person-label">Person A — Klimaaktivist:in</div><div class="person-quote">„Wir haben noch 7 Jahre. Jeder Tag ohne radikale Maßnahmen ist ein Tag zu viel!"</div></div></div>
+<div class="person b"><div class="person-avatar">💼</div><div><div class="person-label">Person B — Wirtschaftspolitiker:in</div><div class="person-quote">„Wenn wir die Wirtschaft zerstören, verlieren wir alle — auch die Klimaforschung!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Beide nutzen ALLE 3 Säulen: Logos (Fakten), Pathos (Emotion), Ethos (eigene Erfahrung)!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Pro/Contra-Duell</div>
+<div class="role-title">⚖️ Strukturierte Debatte mit Regeln</div>
+<div class="role-situation">These: „Homeoffice sollte gesetzlich Pflicht werden, wenn der Job es erlaubt." Beide bekommen 3 Minuten Eröffnung, dann je 2 Minuten Widerlegung, dann 1 Minute Schluss.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🏠</div><div><div class="person-label">Person A — PRO</div><div class="person-quote">„Klimaschutz, Vereinbarkeit, Produktivität — alle Studien sind eindeutig!"</div></div></div>
+<div class="person b"><div class="person-avatar">🏢</div><div><div class="person-label">Person B — CONTRA</div><div class="person-quote">„Innovation, Teamgeist, mentale Gesundheit — das geht nur im Büro!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Strenge Zeit-Regeln einhalten! Keine Unterbrechungen. Argument-Beleg-Beispiel-Struktur einsetzen!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Talk-Moderation</div>
+<div class="role-title">🎙️ Du moderierst eine hitzige Debatte</div>
+<div class="role-situation">Du bist Moderator:in. Zwei Gäste streiten heftig über Migration — eine:r wird emotional, die andere Person verallgemeinert. Du musst sachlich vermitteln und für faire Argumente sorgen.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🎤</div><div><div class="person-label">Person A — Moderator:in</div><div class="person-quote">„Lassen Sie ihn ausreden! Frau X, können Sie Ihre Aussage mit Zahlen belegen?"</div></div></div>
+<div class="person b"><div class="person-avatar">🔥</div><div><div class="person-label">Person B — emotionale Gäste</div><div class="person-quote">Persönliche Angriffe + Verallgemeinerungen + ständige Unterbrechungen!</div></div></div>
+</div>
+<div class="role-goal">🎯 Moderator:in muss MINDESTENS 5-mal eingreifen: nach Belegen fragen, Unterbrechungen stoppen, Pauschalisierungen aufdecken!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Halte deine eigene 2-Minuten-Rede!</strong> Wähle ein Thema, das dir wichtig ist. Strukturiere sie nach den 4 Phasen (Eröffnung · Argumentation · Widerlegung · Schluss). Nimm dich mit dem Handy auf — schau dann die Aufnahme an und analysiere: Welche Stilmittel hast du benutzt? Logos, Pathos oder Ethos?<br><br>
+🏆 <strong>Bonus:</strong> Schau auf YouTube eine deutsche Bundestagsrede (5-10 Min.) und notiere mindestens 3 Stilmittel, 2 Argumente und 1 Manipulationsversuch.
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Videoanalyse &amp; Debatten · B2/C1</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'📌',word:'die These',badge:'Substantiv f.',rule:'zentrale Behauptung, die bewiesen werden muss',ex:'„Seine <strong>These</strong> war klar: KI bedroht die Demokratie."'},
+  {emoji:'🧱',word:'das Argument',badge:'Substantiv n.',rule:'Begründung, die die These stützt',ex:'„Ihr stärkstes <strong>Argument</strong>: 80% der Studien bestätigen es."'},
+  {emoji:'📊',word:'der Beleg',badge:'Substantiv m.',rule:'Beweis: Studie, Zahl, Zitat',ex:'„Sie lieferte einen <strong>Beleg</strong> aus der WHO-Studie 2024."'},
+  {emoji:'⚔️',word:'das Gegenargument',badge:'Substantiv n.',rule:'Einwand, der die These angreift',ex:'„Mein <strong>Gegenargument</strong>: das gilt nur in der Theorie."'},
+  {emoji:'🎯',word:'die Schlussfolgerung',badge:'Substantiv f.',rule:'logisches Fazit aus den Argumenten',ex:'„Die <strong>Schlussfolgerung</strong>: Wir müssen jetzt handeln."'},
+  {emoji:'🎙️',word:'die Rhetorik',badge:'Substantiv f.',rule:'Kunst des überzeugenden Sprechens',ex:'„Ihre <strong>Rhetorik</strong> war meisterhaft — sie hat alle überzeugt."'},
+  {emoji:'🧠',word:'Logos',badge:'griechisch',rule:'Argumentation mit Fakten, Zahlen, Logik',ex:'„Mit reinem <strong>Logos</strong> erreicht man nicht das Herz."'},
+  {emoji:'❤️',word:'Pathos',badge:'griechisch',rule:'Argumentation mit Emotion und Bildern',ex:'„Sein <strong>Pathos</strong> brachte das Publikum zu Tränen."'},
+  {emoji:'🏛️',word:'Ethos',badge:'griechisch',rule:'Argumentation mit Glaubwürdigkeit und Autorität',ex:'„Als Arzt nutzte er sein <strong>Ethos</strong> als Argument."'},
+  {emoji:'🌉',word:'die Metapher',badge:'Stilmittel',rule:'sprachliches Bild — macht Abstraktes greifbar',ex:'„Die <strong>Metapher</strong> vom „Garten der Demokratie" blieb hängen."'},
+  {emoji:'🔁',word:'die Wiederholung',badge:'Stilmittel',rule:'Schlüsselworte mehrfach wiederholen',ex:'„Die <strong>Wiederholung</strong> „Yes we can" wurde zur Hymne."'},
+  {emoji:'❓',word:'die rhetorische Frage',badge:'Stilmittel',rule:'Frage ohne erwartete Antwort — aktiviert das Publikum',ex:'„Mit einer <strong>rhetorischen Frage</strong> begann sie die Rede."'},
+  {emoji:'🛑',word:'die Manipulation',badge:'Risiko',rule:'unfaire Beeinflussung des Publikums',ex:'„Das war keine Argumentation, sondern reine <strong>Manipulation</strong>."'},
+  {emoji:'🎭',word:'der Tonfall',badge:'Stimme',rule:'wie etwas gesagt wird — ruhig, aggressiv, ironisch',ex:'„Ihr ruhiger <strong>Tonfall</strong> war stärker als jeder Schrei."'},
+  {emoji:'🕵️',word:'der Subtext',badge:'B2/C1',rule:'die verborgene Botschaft hinter den Worten',ex:'„Der <strong>Subtext</strong> war klar: er meinte das Gegenteil."'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'„KI macht uns alle arbeitslos."',r:'„Neue Technologien schaffen auch neue Jobs."'},
+  {l:'„Junge Leute lesen nichts mehr."',r:'„Sie lesen anders — Posts, Newsletter, E-Books."'},
+  {l:'„Homeoffice senkt die Produktivität."',r:'„Studien zeigen meist das Gegenteil."'},
+  {l:'„Veganismus ist Luxus für Reiche."',r:'„Linsen und Bohnen sind billiger als Fleisch."'},
+  {l:'„Verbote bringen nichts."',r:'„Anschnallpflicht hat tausende Leben gerettet."'},
+  {l:'„Migration zerstört die Wirtschaft."',r:'„Deutschland braucht jährlich 400.000 Zuwanderer."'},
+  {l:'„Frauen sind nicht für Führung gemacht."',r:'„Unternehmen mit Frauen im Vorstand sind profitabler."'},
+  {l:'„Klimaschutz schadet der Wirtschaft."',r:'„Die grüne Transformation schafft Millionen neuer Jobs."'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.innerHTML=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'🎙️',cat:'Position vertreten',q:'Vertrete in 60 Sekunden eine These — egal welche! Nutze Logos, Pathos und Ethos!'},
+  {emoji:'⚔️',cat:'Widerlegen',q:'Jemand sagt: „Alle Politiker lügen." — Widerlege das souverän mit 3 Argumenten!'},
+  {emoji:'🔍',cat:'Analysieren',q:'Beschreibe in 90 Sekunden ein Video, das du kürzlich gesehen hast — analytisch, nicht emotional!'},
+  {emoji:'🎭',cat:'Stilmittel',q:'Benutze in deinem nächsten Statement bewusst eine Metapher UND eine rhetorische Frage!'},
+  {emoji:'⚖️',cat:'Vermitteln',q:'Spiele Moderator:in: Wie würdest du zwei sich anschreiende Gäste beruhigen?'},
+  {emoji:'❤️',cat:'Pathos',q:'Begründe etwas Wichtiges ausschließlich mit Pathos — Emotion und Bildern!'},
+  {emoji:'🧠',cat:'Logos',q:'Begründe das gleiche Thema jetzt ausschließlich mit Logos — nur Fakten und Zahlen!'},
+  {emoji:'🏛️',cat:'Ethos',q:'Erzähle eine Geschichte aus deinem Leben, die deine Position glaubwürdig macht!'},
+  {emoji:'🛑',cat:'Manipulation',q:'Analysiere ein bekanntes politisches Werbevideo — wo wird hier manipuliert?'},
+  {emoji:'🤝',cat:'Konsens',q:'Wann hast du zum letzten Mal deine Meinung geändert — und warum?'},
+  {emoji:'💪',cat:'Pro-Position',q:'„Soziale Medien sind ein Segen für die Demokratie." Verteidige diese These!'},
+  {emoji:'❌',cat:'Contra-Position',q:'„Soziale Medien zerstören die Demokratie." Verteidige jetzt das Gegenteil!'},
+  {emoji:'🎯',cat:'Schluss-Strategie',q:'Fasse eine 5-Minuten-Diskussion in einem starken 30-Sekunden-Schluss zusammen!'},
+  {emoji:'📺',cat:'Talkshow-Analyse',q:'Welche TV-Talkshow oder Diskussion hat dich zuletzt beeindruckt — und warum?'},
+  {emoji:'🌍',cat:'Globaler Vergleich',q:'In welchen Ländern wird politisch besser/schlechter debattiert als in Deutschland?'},
+  {emoji:'🎬',cat:'Freestyle',q:'Halte eine 2-Minuten-Rede über das Thema deiner Wahl — frei, mit Struktur!'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60 bis 90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>
