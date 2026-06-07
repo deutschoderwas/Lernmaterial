@@ -1,0 +1,629 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Konnektoren · Das Baukasten-System | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);
+  color:var(--ink); font-family:'Outfit',sans-serif; line-height:1.55;
+  min-height:100vh;
+}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+
+/* HEADER */
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.eyebrow .was{color:var(--teal);}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.2rem,5.5vw,4.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .flag{display:inline-block;margin-right:.1em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:580px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+
+/* TAB-NAV */
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+
+/* SECTION */
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+
+/* TIP BOX */
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}
+.tip em{color:var(--ink);font-style:italic;}
+.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* FAMILY CARDS (Überblick) */
+.fam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:1.5rem 0;}
+@media(max-width:760px){.fam-grid{grid-template-columns:1fr;}}
+.fam{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:1.4rem 1.4rem 1.6rem;box-shadow:0 4px 16px rgba(38,32,25,.05);transition:.2s;cursor:pointer;position:relative;}
+.fam:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(38,32,25,.1);}
+.fam-icon{font-size:2.4rem;margin-bottom:.7rem;display:block;}
+.fam-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin-bottom:.3rem;}
+.fam-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.7rem;}
+.fam.f2 .fam-badge{background:var(--red-soft);color:var(--red);}
+.fam.f3 .fam-badge{background:#E2EBC9;color:#5F7A2A;}
+.fam-rule{color:var(--red);font-weight:700;font-size:.94rem;margin-bottom:.5rem;}
+.fam.f2 .fam-rule{color:#B66809;}
+.fam.f3 .fam-rule{color:#5F7A2A;}
+.fam-words{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.7rem;}
+.fam-words span{background:var(--cream-warm);font-family:'Fraunces',serif;font-style:italic;color:var(--ink);padding:.15rem .55rem;border-radius:8px;font-size:.86rem;}
+.fam-ex{margin-top:.9rem;padding-top:.9rem;border-top:1px dashed var(--sand);font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;line-height:1.5;}
+.fam-ex strong{color:var(--red);font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.fam.f2 .fam-ex strong{color:#B66809;}
+.fam.f3 .fam-ex strong{color:#5F7A2A;}
+
+/* THEORY ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* FLIP CARDS */
+.lk-controls{text-align:center;margin:1rem 0;color:var(--ink-soft);font-size:.92rem;}
+.flip{perspective:1000px;width:100%;max-width:420px;height:340px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3.2rem;margin-bottom:.7rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;color:var(--ink);margin-bottom:.3rem;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:1rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:1rem;margin-top:.6rem;line-height:1.55;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-family:'Outfit',sans-serif;font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);transition:.15s;}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.lk-shuffle:hover{background:var(--ink);color:white;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;transition:.15s;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* LÜCKENTEXT */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* ZUORDNEN */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;color:var(--ink);font-size:.94rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPRECHEN */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+
+/* ROLLENSPIELE */
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;}
+.person.a{border-color:var(--red);background:#FFF6F5;}
+.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.4rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+/* DEBATTEN */
+.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
+.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
+.debate:nth-child(2){border-left-color:var(--teal);}
+.debate:nth-child(3){border-left-color:var(--yellow);}
+.debate:nth-child(4){border-left-color:var(--pink);}
+.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.debate:nth-child(2) .debate-num{color:var(--teal);}
+.debate:nth-child(3) .debate-num{color:#B66809;}
+.debate:nth-child(4) .debate-num{color:#A04060;}
+.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="eyebrow">deutschoderwas · Grammatik für den Alltag</div>
+
+<div class="title-wrap">
+<h1 class="title"><span class="flag">🔗</span>Das große <span class="hl">Konnektoren</span>-Buch</h1>
+</div>
+<p class="subtitle">Drei Familien, glasklare Regeln. Hier verstehst du endlich, <em>wo das Verb steht</em> – mit Alltagsbeispielen, Lernkarten und richtigen Sprechübungen.</p>
+
+<!-- TAB NAV -->
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">🃏 Lernkarten</button>
+<button class="tab" data-tab="2">✅ Quiz</button>
+<button class="tab" data-tab="3">✍️ Lückentext</button>
+<button class="tab" data-tab="4">🧩 Zuordnen</button>
+<button class="tab" data-tab="5">🗣️ Sprechen</button>
+</nav>
+
+<!-- ============== ÜBERBLICK ============== -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die <em style="font-style:italic;">drei Familien</em> auf einen Blick</h2>
+<p class="section-sub">Tipp auf eine Karte 👆 — und du siehst Alltagsbeispiele.</p>
+
+<div class="tip">
+💡 <strong>Die einzige Regel, die du wirklich brauchst:</strong> Frag dich immer „<u>Wo steht das Verb?</u>" Das Verb verrät dir die Familie. Pos 2? <em>aber/denn/oder</em>. Inversion? <em>deshalb/trotzdem</em>. Am Ende? <em>weil/obwohl/wenn</em>.
+</div>
+
+<div class="fam-grid">
+
+<div class="fam f1">
+<span class="fam-icon">🌸</span>
+<div class="fam-name">Konjunktionen</div>
+<div class="fam-badge">Familie 1 · Pos 0</div>
+<div class="fam-rule">Verb bleibt auf Position 2 — alles normal!</div>
+<div class="fam-words"><span>und</span><span>aber</span><span>oder</span><span>denn</span><span>sondern</span></div>
+<div class="fam-ex">„Es regnet, <strong>aber</strong> ich gehe raus." <br>„Ich bleibe zu Hause, <strong>denn</strong> ich bin müde."</div>
+</div>
+
+<div class="fam f2">
+<span class="fam-icon">🌊</span>
+<div class="fam-name">Adverbien</div>
+<div class="fam-badge">Familie 2 · Pos 1</div>
+<div class="fam-rule">INVERSION — Verb springt nach vorne!</div>
+<div class="fam-words"><span>deshalb</span><span>deswegen</span><span>darum</span><span>trotzdem</span><span>dann</span><span>jedoch</span></div>
+<div class="fam-ex">„Es regnet, <strong>deshalb bleibe ich</strong> zu Hause." <br>„Ich bin müde, <strong>trotzdem gehe ich</strong> joggen."</div>
+</div>
+
+<div class="fam f3">
+<span class="fam-icon">🍃</span>
+<div class="fam-name">Subjunktionen</div>
+<div class="fam-badge">Familie 3 · Nebensatz</div>
+<div class="fam-rule">Verb springt ans ENDE!</div>
+<div class="fam-words"><span>weil</span><span>obwohl</span><span>damit</span><span>wenn</span><span>dass</span><span>ob</span><span>als</span><span>falls</span></div>
+<div class="fam-ex">„Ich bleibe zu Hause, <strong>weil</strong> es <strong>regnet</strong>." <br>„Ich frage, <strong>ob</strong> er <strong>kommt</strong>."</div>
+</div>
+
+</div>
+
+<!-- THEORY mit ALLTAGSFRAGEN -->
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<p class="section-sub">Denk kurz nach — schreib innerlich einen Satz.</p>
+
+<div class="alltag-q">
+<div class="ql">Alltag · Familie 1</div>
+<div class="qq">Warum bist du heute Morgen aufgestanden — und was hast du <em>direkt danach</em> gemacht?</div>
+<div class="think">💭 Verbinde 2 Sätze mit <strong>UND</strong> oder <strong>DANN</strong> — sieh, wo dein Verb landet!</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#B66809;">
+<div class="ql" style="color:#B66809;">Alltag · Familie 2 (Inversion!)</div>
+<div class="qq">Heute regnet es. Was änderst du an deinem Tag?</div>
+<div class="think">💭 Versuch's mit <strong>DESHALB</strong>: „Es regnet, deshalb …" Achtung — Verb VOR Subjekt!</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#5F7A2A;">
+<div class="ql" style="color:#5F7A2A;">Alltag · Familie 3 (Verb am Ende!)</div>
+<div class="qq">Warum lernst du eigentlich Deutsch?</div>
+<div class="think">💭 Antworte mit <strong>WEIL</strong>: „Ich lerne Deutsch, weil ich …" Wohin wandert das Verb?</div>
+</div>
+
+<!-- Vergleichs-Box -->
+<h2 class="section-title">Gleiche <em style="font-style:italic;">Bedeutung</em>, drei Wege</h2>
+<p class="section-sub">Wie sagt man „weil es regnet, bleibe ich zu Hause" auf 3 Arten?</p>
+
+<div class="fam-grid" style="margin-top:1rem;">
+<div class="fam f3">
+<div class="fam-badge">WEIL · F3</div>
+<div class="fam-ex" style="margin-top:0;padding-top:0;border:0;">„Ich bleibe zu Hause, <strong>weil</strong> es <strong>regnet</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">→ Verb am Ende</span></div>
+</div>
+<div class="fam f1">
+<div class="fam-badge">DENN · F1</div>
+<div class="fam-ex" style="margin-top:0;padding-top:0;border:0;">„Ich bleibe zu Hause, <strong>denn</strong> es <strong>regnet</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">→ Verb auf Pos. 2</span></div>
+</div>
+<div class="fam f2">
+<div class="fam-badge">DESHALB · F2</div>
+<div class="fam-ex" style="margin-top:0;padding-top:0;border:0;">„Es <strong>regnet</strong>, <strong>deshalb bleibe</strong> ich zu Hause."<br><span style="font-size:.78rem;color:var(--ink-mute);">→ Inversion</span></div>
+</div>
+</div>
+
+<div class="tip" style="margin-top:1.5rem;">
+🎯 <strong>Häufigster Fehler bei B1:</strong> „Es regnet, <em>trotzdem ich gehe raus</em>." ❌ — Inversion vergessen! Richtig: „<em>trotzdem gehe ich raus</em>." ✓
+</div>
+
+</section>
+
+<!-- ============== LERNKARTEN ============== -->
+<section class="section" data-section="1">
+
+<h2 class="section-title">Lernkarten</h2>
+<p class="section-sub">Errätst du die Funktion? Erst denken — dann tippen.</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">🌸</div>
+<div class="flip-word" id="flipWord">aber</div>
+<div class="flip-badge" id="flipBadge">Familie 1</div>
+<div class="flip-prompt">Was bedeutet das? Wo steht das Verb? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">Gegensatz · Verb bleibt auf Pos. 2</div>
+<div class="flip-ex" id="flipEx">„Es regnet, <strong>aber</strong> ich gehe raus."</div>
+</div>
+</div>
+</div>
+
+<div class="lk-nav">
+<button class="lk-btn" id="lkPrev">←</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span>
+<button class="lk-btn" id="lkNext">→</button>
+</div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+
+</section>
+
+<!-- ============== QUIZ ============== -->
+<section class="section" data-section="2">
+
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Welcher Konnektor?</em></h2>
+<p class="section-sub">Achte auf die Wortstellung — sie verrät die Familie.</p>
+
+<div class="quiz"><div class="quiz-q">„Ich bleibe zu Hause, <span class="blank">?</span> es regnet." <span style="color:var(--ink-mute);font-size:.85em;">(Grund · Verb am Ende)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">weil</span><span class="quiz-chip">deshalb</span><span class="quiz-chip">aber</span></div><div class="quiz-explain">✓ <strong>weil</strong> — Subjunktion, Verb am Ende</div></div>
+
+<div class="quiz"><div class="quiz-q">„Es ist spät, <span class="blank">?</span> gehe ich ins Bett." <span style="color:var(--ink-mute);font-size:.85em;">(Folge · Inversion!)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">weil</span><span class="quiz-chip">aber</span><span class="quiz-chip">deshalb</span></div><div class="quiz-explain">✓ <strong>deshalb</strong> — Adverb F2, Verb springt nach vorne</div></div>
+
+<div class="quiz"><div class="quiz-q">„Er bleibt zu Hause, <span class="blank">?</span> er eigentlich gehen will." <span style="color:var(--ink-mute);font-size:.85em;">(Gegensatz · Verb am Ende)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">obwohl</span><span class="quiz-chip">trotzdem</span><span class="quiz-chip">aber</span></div><div class="quiz-explain">✓ <strong>obwohl</strong> — Subjunktion, Verb am Ende</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich frage mich, <span class="blank">?</span> er heute kommt." <span style="color:var(--ink-mute);font-size:.85em;">(indirekte Ja/Nein-Frage)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">dass</span><span class="quiz-chip">ob</span><span class="quiz-chip">wenn</span></div><div class="quiz-explain">✓ <strong>ob</strong> — für indirekte Ja/Nein-Fragen</div></div>
+
+<div class="quiz"><div class="quiz-q">„<span class="blank">?</span> ich klein war, habe ich Geige gespielt." <span style="color:var(--ink-mute);font-size:.85em;">(Vergangenheit · einmalig)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Wenn</span><span class="quiz-chip">Als</span><span class="quiz-chip">Während</span></div><div class="quiz-explain">✓ <strong>Als</strong> — einmalige Ereignisse in der Vergangenheit</div></div>
+
+<div class="quiz"><div class="quiz-q">„<span class="blank">?</span> du krank wirst, ruf mich bitte an." <span style="color:var(--ink-mute);font-size:.85em;">(unsicher · hoffentlich nicht!)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Wenn</span><span class="quiz-chip">Falls</span><span class="quiz-chip">Bevor</span></div><div class="quiz-explain">✓ <strong>Falls</strong> — bei unsicherer Bedingung</div></div>
+
+<div class="quiz"><div class="quiz-q">„Sie lernt fleißig, <span class="blank">?</span> besser <span class="blank">?</span> werden." <span style="color:var(--ink-mute);font-size:.85em;">(Zweck · gleiches Subjekt SIE→SIE)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">damit</span><span class="quiz-chip">um…zu</span><span class="quiz-chip">weil</span></div><div class="quiz-explain">✓ <strong>um…zu</strong> — bei gleichem Subjekt: kürzer & eleganter</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich rufe an, <span class="blank">?</span> du nach Hause kommst." <span style="color:var(--ink-mute);font-size:.85em;">(Zeitpunkt · ab dem Moment)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">während</span><span class="quiz-chip">bevor</span><span class="quiz-chip">sobald</span></div><div class="quiz-explain">✓ <strong>sobald</strong> — ab diesem Zeitpunkt</div></div>
+
+</section>
+
+<!-- ============== LÜCKENTEXT ============== -->
+<section class="section" data-section="3">
+
+<h2 class="section-title">Lückentext</h2>
+<p class="section-sub">Wähle pro Satz das passende Verbindungswort. Dann auf „Überprüfen" tippen.</p>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Ich bleibe heute zu Hause, <select data-sol="weil"><option value="">…</option><option>weil</option><option>aber</option><option>deshalb</option></select> ich krank bin.</div>
+<div class="gap-line">2. Es regnet stark, <select data-sol="trotzdem"><option value="">…</option><option>weil</option><option>denn</option><option>trotzdem</option></select> gehe ich joggen.</div>
+<div class="gap-line">3. Ich lerne Deutsch, <select data-sol="um"><option value="">…</option><option>damit</option><option>um</option><option>weil</option></select> in Deutschland zu arbeiten.</div>
+<div class="gap-line">4. Ich frage meinen Lehrer, <select data-sol="ob"><option value="">…</option><option>dass</option><option>ob</option><option>wenn</option></select> die Prüfung schwer ist.</div>
+<div class="gap-line">5. <select data-sol="Als"><option value="">…</option><option>Wenn</option><option>Als</option><option>Während</option></select> ich Kind war, habe ich oft im Garten gespielt.</div>
+<div class="gap-line">6. <select data-sol="Falls"><option value="">…</option><option>Wenn</option><option>Falls</option><option>Bevor</option></select> du Hilfe brauchst, ruf mich bitte an.</div>
+<div class="gap-line">7. Ich gehe ins Bett, <select data-sol="sobald"><option value="">…</option><option>sobald</option><option>während</option><option>bevor</option></select> ich nach Hause komme.</div>
+<div class="gap-line">8. Es ist sehr kalt, <select data-sol="deshalb"><option value="">…</option><option>weil</option><option>obwohl</option><option>deshalb</option></select> ziehe ich einen Mantel an.</div>
+<div class="gap-actions">
+<button class="btn-secondary" id="gapReset">Neu</button>
+<button class="btn-primary" id="gapCheck">Überprüfen</button>
+</div>
+</div>
+
+<div class="tip" id="gapScore" style="display:none;"></div>
+
+</section>
+
+<!-- ============== ZUORDNEN ============== -->
+<section class="section" data-section="4">
+
+<h2 class="section-title">Konnektor &amp; <em style="font-style:italic;">Funktion</em> zuordnen</h2>
+<p class="section-sub">Tippe links einen Konnektor — dann rechts die passende Funktion. Richtige Paare werden grün.</p>
+
+<div class="match-stage">
+<div class="match-cols">
+<div class="match-col">
+<h4>🔗 Konnektor</h4>
+<div class="match-list" id="leftCol"></div>
+</div>
+<div class="match-col">
+<h4>🎯 Funktion</h4>
+<div class="match-list" id="rightCol"></div>
+</div>
+</div>
+<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+</div>
+
+</section>
+
+<!-- ============== SPRECHEN ============== -->
+<section class="section" data-section="5">
+
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht's!</em></h2>
+<p class="section-sub">Allein, mit Partner oder in der Gruppe. Zieh eine Karte und sprich frei.</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div>
+<div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+
+<div class="speak-controls">
+<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+</div>
+
+<!-- ROLLENSPIELE -->
+<div class="role-section">
+<h2 class="section-title">2 Rollenspiele</h2>
+<p class="section-sub">Übt zu zweit — nutzt möglichst viele Konnektoren!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1</div>
+<div class="role-title">🛋️ Faules Wochenende vs. Aktivurlaub</div>
+<div class="role-situation">Ihr seid ein Paar und plant das Wochenende. Einer will zu Hause bleiben und chillen, der andere will wandern. Findet einen Kompromiss!</div>
+<div class="role-people">
+<div class="person a">
+<div class="person-label">🙋‍♀️ Person A — möchte chillen</div>
+<div class="person-quote">„Ich will zu Hause bleiben, <strong>weil</strong> ich müde bin. <strong>Trotzdem</strong> könnten wir abends ins Kino gehen, <strong>wenn</strong> du magst."</div>
+</div>
+<div class="person b">
+<div class="person-label">🧗 Person B — möchte wandern</div>
+<div class="person-quote">„Wir waren schon 3 Wochenenden nicht draußen, <strong>deshalb</strong> wäre Wandern jetzt perfekt. <strong>Obwohl</strong> ich verstehe, dass du müde bist…"</div>
+</div>
+</div>
+<div class="role-goal">🎯 Ziel: Mindestens <strong>8 verschiedene Konnektoren</strong> aus allen 3 Familien verwenden!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2</div>
+<div class="role-title">📱 Handy am Esstisch?</div>
+<div class="role-situation">Eltern und Teenager diskutieren: Soll das Handy beim Essen verboten sein? Der Teenager findet das übertrieben, die Eltern bestehen darauf.</div>
+<div class="role-people">
+<div class="person a">
+<div class="person-label">👨‍👩 Eltern — Handy weg</div>
+<div class="person-quote">„<strong>Während</strong> wir essen, soll das Handy weg sein, <strong>damit</strong> wir miteinander reden. <strong>Bevor</strong> du nach dem Essen aufstehst, hilfst du beim Abräumen!"</div>
+</div>
+<div class="person b">
+<div class="person-label">🧑 Teenager — bisschen okay</div>
+<div class="person-quote">„Das ist nicht fair! <strong>Falls</strong> ich eine wichtige Nachricht bekomme, muss ich antworten. <strong>Wenn</strong> ihr selbst checkt, darf ich es auch."</div>
+</div>
+</div>
+<div class="role-goal">🎯 Ziel: Nutzt mindestens <strong>WEIL · DAMIT · WENN · TROTZDEM · OBWOHL · FALLS</strong>!</div>
+</div>
+</div>
+
+<!-- DEBATTEN -->
+<div class="role-section">
+<h2 class="section-title">4 Thesen <em style="font-style:italic;">zum Debattieren</em></h2>
+<p class="section-sub">4 Gruppen — jede verteidigt eine These. 5 Min Vorbereitung, dann argumentieren!</p>
+
+<div class="debate-grid">
+<div class="debate"><div class="debate-num">These 1</div><div class="debate-q">„Smartphones machen unsere Gesellschaft einsamer."</div></div>
+<div class="debate"><div class="debate-num">These 2</div><div class="debate-q">„Hausaufgaben gehören abgeschafft — sie sind ineffektiv."</div></div>
+<div class="debate"><div class="debate-num">These 3</div><div class="debate-q">„Eine 4-Tage-Woche wäre besser für alle."</div></div>
+<div class="debate"><div class="debate-num">These 4</div><div class="debate-q">„Fernsehen bildet nicht — Bücher dagegen schon."</div></div>
+</div>
+
+<div class="tip" style="margin-top:1.5rem;">
+🎯 <strong>Pflicht in deiner Argumentation:</strong> Mindestens <strong>WEIL</strong> (Grund), <strong>OBWOHL</strong> (Einwand), <strong>DESHALB</strong> (Folge) und <strong>WENN/FALLS</strong> (Bedingung) verwenden — jede Familie kommt vor!
+</div>
+</div>
+
+<!-- MISSION -->
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Mini-Aufgabe:</strong> Notiere jeden Tag <strong>5 Sätze mit verschiedenen Konnektoren</strong> — jeden Tag eine andere Familie! Mo: nur F1, Di: nur F2, Mi: nur F3… <br><br>
+🏆 <strong>Bonus-Challenge:</strong> Diskutiere mit einem Freund über ein freies Thema (Klimawandel, Social Media, Beziehungen…) mit <strong>10 verschiedenen Konnektoren</strong>, ohne dich zu wiederholen!
+</div>
+
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit ❤️ für meine Sprechclub-Lernenden · Konnektoren-Baukasten</footer>
+
+<script>
+// ===== TAB NAV =====
+document.querySelectorAll('.tab').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// ===== LERNKARTEN =====
+const KARTEN=[
+  {emoji:'🌸',word:'aber',badge:'Familie 1 · Konjunktion',rule:'Gegensatz · Verb bleibt auf Pos. 2',ex:'„Es regnet, <strong>aber</strong> ich gehe raus."'},
+  {emoji:'🌸',word:'denn',badge:'Familie 1 · Konjunktion',rule:'Grund · Verb bleibt auf Pos. 2',ex:'„Ich bleibe zu Hause, <strong>denn</strong> ich bin müde."'},
+  {emoji:'🌸',word:'oder',badge:'Familie 1 · Konjunktion',rule:'Alternative · Verb auf Pos. 2',ex:'„Möchtest du Tee <strong>oder</strong> Kaffee?"'},
+  {emoji:'🌸',word:'sondern',badge:'Familie 1 · Konjunktion',rule:'Korrektur (nach Verneinung!)',ex:'„Es ist nicht warm, <strong>sondern</strong> kalt."'},
+  {emoji:'🌊',word:'deshalb',badge:'Familie 2 · Adverb',rule:'Folge · INVERSION — Verb vor Subjekt',ex:'„Es regnet, <strong>deshalb bleibe ich</strong> zu Hause."'},
+  {emoji:'🌊',word:'trotzdem',badge:'Familie 2 · Adverb',rule:'Gegensatz-Folge · INVERSION',ex:'„Ich bin müde, <strong>trotzdem gehe ich</strong> joggen."'},
+  {emoji:'🌊',word:'dann',badge:'Familie 2 · Adverb',rule:'Zeitliche Folge · INVERSION',ex:'„Wir essen, <strong>dann sehen wir</strong> einen Film."'},
+  {emoji:'🌊',word:'jedoch',badge:'Familie 2 · Adverb (formell)',rule:'Gegensatz (formell) · INVERSION',ex:'„Ich liebe sie, <strong>jedoch habe ich</strong> Angst."'},
+  {emoji:'🍃',word:'weil',badge:'Familie 3 · Subjunktion',rule:'Grund · Verb am ENDE!',ex:'„Ich bleibe, <strong>weil</strong> es <strong>regnet</strong>."'},
+  {emoji:'🍃',word:'obwohl',badge:'Familie 3 · Subjunktion',rule:'Gegensatz · Verb am ENDE!',ex:'„Ich gehe raus, <strong>obwohl</strong> es <strong>regnet</strong>."'},
+  {emoji:'🍃',word:'damit',badge:'Familie 3 · Subjunktion',rule:'Zweck (verschiedene Subjekte) · Verb am ENDE',ex:'„Ich lerne, <strong>damit</strong> mein Vater stolz <strong>ist</strong>."'},
+  {emoji:'🍃',word:'um … zu',badge:'Familie 3 · Infinitivsatz',rule:'Zweck (gleiches Subjekt) · kürzer & eleganter',ex:'„Ich lerne, <strong>um</strong> besser <strong>zu sprechen</strong>."'},
+  {emoji:'🍃',word:'wenn',badge:'Familie 3 · Subjunktion',rule:'Bedingung / Wiederholung · Verb am ENDE',ex:'„<strong>Wenn</strong> es <strong>regnet</strong>, bleibe ich zu Hause."'},
+  {emoji:'🍃',word:'als',badge:'Familie 3 · Subjunktion',rule:'einmalige Vergangenheit · Verb am ENDE',ex:'„<strong>Als</strong> ich Kind <strong>war</strong>, spielte ich Geige."'},
+  {emoji:'🍃',word:'falls',badge:'Familie 3 · Subjunktion',rule:'unsichere Bedingung · Verb am ENDE',ex:'„<strong>Falls</strong> du krank <strong>wirst</strong>, ruf an."'},
+  {emoji:'🍃',word:'sobald',badge:'Familie 3 · Subjunktion',rule:'Zeitpunkt (sofort wenn) · Verb am ENDE',ex:'„Ich rufe an, <strong>sobald</strong> ich da <strong>bin</strong>."'},
+];
+let order=KARTEN.map((_,i)=>i);
+let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){
+  const k=KARTEN[order[lkIdx]];
+  document.getElementById('flipEmoji').textContent=k.emoji;
+  document.getElementById('flipWord').textContent=k.word;
+  document.getElementById('flipBadge').textContent=k.badge;
+  document.getElementById('flipRule').textContent=k.rule;
+  document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('lkCur').textContent=lkIdx+1;
+  document.getElementById('lkTot').textContent=KARTEN.length;
+  flipEl.classList.remove('flipped');
+}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+// ===== QUIZ =====
+document.querySelectorAll('.quiz-opts').forEach(opts=>{
+  const c=parseInt(opts.dataset.c);
+  const chips=opts.querySelectorAll('.quiz-chip');
+  const exp=opts.parentElement.querySelector('.quiz-explain');
+  chips.forEach((chip,i)=>{
+    chip.onclick=()=>{
+      if(opts.dataset.done)return;
+      opts.dataset.done='1';
+      if(i===c)chip.classList.add('correct');
+      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
+      exp.classList.add('show');
+    };
+  });
+});
+
+// ===== LÜCKENTEXT =====
+document.getElementById('gapCheck').onclick=()=>{
+  const sels=document.querySelectorAll('#gapText select');
+  let right=0,total=sels.length;
+  sels.forEach(s=>{
+    s.classList.remove('right','wrong');
+    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    else s.classList.add('wrong');
+  });
+  const score=document.getElementById('gapScore');
+  score.style.display='block';
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');
+};
+document.getElementById('gapReset').onclick=()=>{
+  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  document.getElementById('gapScore').style.display='none';
+};
+
+// ===== ZUORDNEN =====
+const PAIRS=[
+  {l:'weil',r:'Grund (Verb am Ende)'},
+  {l:'deshalb',r:'Folge (Inversion)'},
+  {l:'obwohl',r:'Gegensatz (Verb am Ende)'},
+  {l:'trotzdem',r:'Gegensatz (Inversion)'},
+  {l:'damit',r:'Zweck — verschiedene Subjekte'},
+  {l:'um…zu',r:'Zweck — gleiches Subjekt'},
+  {l:'ob',r:'indirekte Ja/Nein-Frage'},
+  {l:'falls',r:'unsichere Bedingung'},
+];
+function buildMatch(){
+  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
+  L.innerHTML='';R.innerHTML='';
+  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
+  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
+  let pick=null;
+  document.querySelectorAll('.match-item').forEach(item=>{
+    item.onclick=()=>{
+      if(item.classList.contains('done'))return;
+      if(!pick){pick=item;item.classList.add('selected');return;}
+      if(pick===item){item.classList.remove('selected');pick=null;return;}
+      // need one from each column
+      const pickCol=pick.parentElement.id;
+      const itemCol=item.parentElement.id;
+      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
+      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
+      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
+    };
+  });
+}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+// add wrong shake style
+const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
+
+// ===== SPRECHKARTEN =====
+const SPEAK=[
+  {emoji:'🌧️',cat:'Familie 1 · UND/ABER',q:'Erzähle dein heutiges Wetter — und was du trotzdem (oder deswegen) machen wirst.'},
+  {emoji:'🎬',cat:'Familie 2 · DESHALB',q:'Du hast einen ganz schlechten Film gesehen. Erkläre WARUM — und was DESHALB folgte.'},
+  {emoji:'🧗',cat:'Familie 3 · WEIL',q:'Beschreibe dein letztes Wochenende mit mindestens 5 WEIL-Sätzen.'},
+  {emoji:'💡',cat:'OBWOHL · Mut',q:'Wann hast du etwas getan, OBWOHL es gefährlich oder dumm war? Erzähle!'},
+  {emoji:'🎁',cat:'DAMIT · Zweck',q:'Was tust du jeden Tag, DAMIT andere Menschen glücklich sind?'},
+  {emoji:'🎓',cat:'UM…ZU · Ziel',q:'Nenne 5 Dinge, die du tust, UM besser Deutsch zu lernen.'},
+  {emoji:'⏰',cat:'BEVOR/NACHDEM · Routine',q:'Beschreibe deine Morgenroutine mit BEVOR und NACHDEM.'},
+  {emoji:'🌍',cat:'WENN · Träume',q:'WENN ich Millionär wäre… (mind. 3 Sätze mit Konjunktiv II!)'},
+  {emoji:'🎒',cat:'FALLS · Unsicherheit',q:'FALLS du morgen krank wirst — was machst du? Erzähle deinen Notfallplan!'},
+  {emoji:'☕',cat:'TROTZDEM · Sturheit',q:'Wann warst du stur? Sag 3 Mal: „Alle sagten X, TROTZDEM machte ich Y."'},
+  {emoji:'❓',cat:'OB · Unsicherheit',q:'Was fragst du dich oft? Stelle 3 indirekte Fragen mit OB.'},
+  {emoji:'🚗',cat:'SOBALD · Plan',q:'Was machst du SOBALD du nach Hause kommst? Erzähle 5 Aktionen!'},
+  {emoji:'🏖️',cat:'ALS · Erinnerung',q:'ALS ich klein war… — erzähle eine schöne Kindheitserinnerung.'},
+  {emoji:'🍕',cat:'WÄHREND · Multitasking',q:'Was machst du gerne WÄHREND du isst, kochst, lernst?'},
+  {emoji:'😴',cat:'SEITDEM · Veränderung',q:'SEITDEM ich Deutsch lerne, hat sich etwas verändert. Was?'},
+  {emoji:'🎲',cat:'FREESTYLE · Alle Familien',q:'Erzähle 1 Minute lang — und nutze MINDESTENS 3 verschiedene Konnektoren-Familien!'},
+];
+let lastSpeak=-1;
+document.getElementById('speakNew').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
+  lastSpeak=i;const k=SPEAK[i];
+  const c=document.getElementById('speakCard');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';
+    c.style.opacity='1';
+  },200);
+};
+</script>
+</body></html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Wie telefoniere ich bei einer Beschwerde · B1/B2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,4rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+
+/* HERO SVG */
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:360px;width:100%;}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}
+.tip em{color:var(--ink);font-style:italic;}
+.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* PHASE CARDS */
+.phase-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:760px){.phase-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:420px){.phase-grid{grid-template-columns:1fr;}}
+.phase-card{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem .9rem;text-align:center;box-shadow:0 2px 8px rgba(38,32,25,.05);}
+.phase-card .pc-num{display:inline-block;background:var(--red);color:white;width:28px;height:28px;line-height:28px;border-radius:50%;font-weight:700;font-size:.85rem;margin-bottom:.4rem;}
+.phase-card.p2 .pc-num{background:var(--teal);}
+.phase-card.p3 .pc-num{background:#B66809;}
+.phase-card.p4 .pc-num{background:var(--pink);}
+.phase-card.p5 .pc-num{background:#6A3D9C;}
+.phase-card .pc-name{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.92rem;line-height:1.2;}
+.phase-card .pc-emoji{font-size:1.5rem;display:block;margin-top:.3rem;}
+
+/* KONJUNKTIV II VERBS */
+.kk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:600px){.kk-grid{grid-template-columns:repeat(2,1fr);}}
+.kk{background:var(--paper);border:2px solid var(--red);border-radius:16px;padding:1.1rem .8rem;text-align:center;}
+.kk:nth-child(2){border-color:var(--teal);}
+.kk:nth-child(3){border-color:#B66809;}
+.kk:nth-child(4){border-color:#6A3D9C;}
+.kk-word{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.5rem;margin-bottom:.2rem;}
+.kk:nth-child(2) .kk-word{color:var(--teal);}
+.kk:nth-child(3) .kk-word{color:#B66809;}
+.kk:nth-child(4) .kk-word{color:#6A3D9C;}
+.kk-use{font-size:.78rem;color:var(--ink-soft);}
+
+/* VORHER/NACHHER */
+.vn-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
+.vn-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.1rem;margin-bottom:1rem;text-align:center;}
+.vn-grid{display:grid;grid-template-columns:1fr 60px 1fr;gap:.7rem;align-items:center;}
+@media(max-width:600px){.vn-grid{grid-template-columns:1fr;}.vn-arrow{display:none;}}
+.vn-card{background:var(--cream);border-radius:14px;padding:1rem;text-align:center;border:1.5px solid var(--sand);}
+.vn-card.a{background:#FFF0F0;border-color:#F5C5C2;}
+.vn-card.b{background:var(--yellow-soft);border-color:var(--yellow);}
+.vn-label{font-size:.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;}
+.vn-card.b .vn-label{color:#B66809;}
+.vn-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.3rem;}
+.vn-arrow{text-align:center;font-size:2rem;color:var(--red);font-weight:900;}
+
+/* PHASE STEPS */
+.step{background:var(--paper);border:1.5px solid var(--sand);border-radius:16px;padding:1.2rem 1.4rem;margin-bottom:.9rem;display:grid;grid-template-columns:50px 1fr;gap:1rem;}
+.step.s1{border-left:5px solid var(--red);}
+.step.s2{border-left:5px solid var(--teal);}
+.step.s3{border-left:5px solid #B66809;}
+.step.s4{border-left:5px solid var(--pink);}
+.step.s5{border-left:5px solid #6A3D9C;}
+.step-num{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;}
+.step.s2 .step-num{background:var(--teal);}
+.step.s3 .step-num{background:#B66809;}
+.step.s4 .step-num{background:var(--pink);}
+.step.s5 .step-num{background:#6A3D9C;}
+.step-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;margin-bottom:.4rem;}
+.step-body ul{list-style:none;padding:0;}
+.step-body li{padding:.3rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.92rem;padding-left:1.1rem;position:relative;}
+.step-body li::before{content:'›';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+
+/* ALLTAG-FRAGEN */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name-row{flex:1;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;font-family:'Outfit',sans-serif;color:var(--ink);line-height:1.45;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.06);}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP CARDS */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);margin-bottom:.3rem;line-height:1.2;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.96rem;margin-top:.6rem;line-height:1.55;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-family:'Outfit',sans-serif;font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);transition:.15s;}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.lk-shuffle:hover{background:var(--ink);color:white;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;transition:.15s;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;color:var(--ink);font-size:.9rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+
+/* ROLE */
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}
+.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}
+.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+/* DEBATE */
+.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
+.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
+.debate:nth-child(2){border-left-color:var(--teal);}
+.debate:nth-child(3){border-left-color:var(--yellow);}
+.debate:nth-child(4){border-left-color:var(--pink);}
+.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.debate:nth-child(2) .debate-num{color:var(--teal);}
+.debate:nth-child(3) .debate-num{color:#B66809;}
+.debate:nth-child(4) .debate-num{color:#A04060;}
+.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="eyebrow">deutschoderwas · Alltag B1/B2 Sprechclub</div>
+
+<div class="title-wrap">
+<h1 class="title">Wie telefoniere ich bei einer <span class="hl">Beschwerde</span>?</h1>
+</div>
+<p class="subtitle">Reklamationen am Telefon — professionell, höflich, selbstsicher. Mit Konjunktiv II, echten Chats und Rollenspielen aus dem deutschen Alltag.</p>
+
+<!-- HERO SVG: Telefon + Sprechblasen -->
+<svg class="hero-svg" viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="10">
+<g transform="translate(30,20)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="5" font-size="22">📞</text><text text-anchor="middle" y="40" fill="#E8302A">Beginnen</text></g>
+<g transform="translate(95,20)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="5" font-size="22">📝</text><text text-anchor="middle" y="40" fill="#0FB5A6">Beschreiben</text></g>
+<g transform="translate(160,20)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="5" font-size="22">🙏</text><text text-anchor="middle" y="40" fill="#B66809">Fordern</text></g>
+<g transform="translate(225,20)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="5" font-size="22">🛡️</text><text text-anchor="middle" y="40" fill="#A04060">Reagieren</text></g>
+<g transform="translate(290,20)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="5" font-size="22">👋</text><text text-anchor="middle" y="40" fill="#6A3D9C">Abschluss</text></g>
+</g>
+</svg>
+
+<!-- TAB NAV -->
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ============== ÜBERBLICK ============== -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die <em style="font-style:italic;">5 Phasen</em> jedes Beschwerde-Anrufs</h2>
+<p class="section-sub">Egal welches Problem — diese Reihenfolge funktioniert IMMER.</p>
+
+<div class="phase-grid">
+<div class="phase-card p1"><div class="pc-num">1</div><div class="pc-name">Beginnen</div><span class="pc-emoji">📞</span></div>
+<div class="phase-card p2"><div class="pc-num">2</div><div class="pc-name">Problem beschreiben</div><span class="pc-emoji">📝</span></div>
+<div class="phase-card p3"><div class="pc-num">3</div><div class="pc-name">Lösung fordern</div><span class="pc-emoji">🙏</span></div>
+<div class="phase-card p4"><div class="pc-num">4</div><div class="pc-name">Bei Blockaden</div><span class="pc-emoji">🛡️</span></div>
+<div class="phase-card p5"><div class="pc-num">5</div><div class="pc-name">Abschluss</div><span class="pc-emoji">👋</span></div>
+</div>
+
+<div class="tip">
+🎯 <strong>Die wichtigste Regel überhaupt:</strong> Am Telefon = IMMER Konjunktiv II. Nie „Ich will…" oder „Schicken Sie!" — sondern „Ich <u>hätte gerne</u>…" oder „<u>Könnten</u> Sie?". Der Unterschied entscheidet, ob du eine Lösung bekommst oder einen Streit!
+</div>
+
+<h2 class="section-title">Konjunktiv II — deine <em style="font-style:italic;">4 Zauber-Verben</em></h2>
+<p class="section-sub">Die merkst du dir auswendig — damit klingst du immer höflich.</p>
+
+<div class="kk-grid">
+<div class="kk"><div class="kk-word">KÖNNTEN</div><div class="kk-use">höfliche Bitte</div></div>
+<div class="kk"><div class="kk-word">WÄRE</div><div class="kk-use">Möglichkeit</div></div>
+<div class="kk"><div class="kk-word">HÄTTE</div><div class="kk-use">Wunsch</div></div>
+<div class="kk"><div class="kk-word">WÜRDEN</div><div class="kk-use">Handlung</div></div>
+</div>
+
+<h2 class="section-title">Direkt <em style="font-style:italic;">vs.</em> höflich</h2>
+<p class="section-sub">Derselbe Satz, zwei Welten. Was wirkt besser?</p>
+
+<div class="vn-stage">
+<div class="vn-title">Wunsch äußern</div>
+<div class="vn-grid">
+<div class="vn-card a"><div class="vn-label">❌ Direkt</div><div class="vn-text">„Ich will eine Erstattung."</div></div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b"><div class="vn-label">✅ Höflich</div><div class="vn-text">„Ich <strong>hätte gerne</strong> eine Erstattung."</div></div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">Um eine Aktion bitten</div>
+<div class="vn-grid">
+<div class="vn-card a"><div class="vn-label">❌ Direkt</div><div class="vn-text">„Schicken Sie mir das!"</div></div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b"><div class="vn-label">✅ Höflich</div><div class="vn-text">„<strong>Könnten</strong> Sie mir das bitte schicken?"</div></div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">Nach Möglichkeit fragen</div>
+<div class="vn-grid">
+<div class="vn-card a"><div class="vn-label">❌ Direkt</div><div class="vn-text">„Helfen Sie mir!"</div></div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b"><div class="vn-label">✅ Höflich</div><div class="vn-text">„<strong>Wäre</strong> es möglich, dass Sie mir helfen?"</div></div>
+</div>
+</div>
+
+<h2 class="section-title">Die <em style="font-style:italic;">5 Phasen</em> Schritt für Schritt</h2>
+<p class="section-sub">Jede Phase hat ihre eigenen Sätze. Lerne sie auswendig!</p>
+
+<div class="step s1">
+<div class="step-num">1</div>
+<div class="step-body">
+<h4>📞 Beginnen — der erste Eindruck zählt</h4>
+<ul>
+<li>„Guten Tag, mein Name ist [Name]."</li>
+<li>„Ich rufe an wegen…"</li>
+<li>„Es geht um meine Bestellung Nummer …"</li>
+<li>„Sind Sie der/die richtige Ansprechpartner:in?"</li>
+<li>„Hätten Sie kurz Zeit für mich?"</li>
+</ul>
+</div>
+</div>
+
+<div class="step s2">
+<div class="step-num">2</div>
+<div class="step-body">
+<h4>📝 Problem beschreiben — sachlich, keine Emotionen!</h4>
+<ul>
+<li>„Ich habe folgendes Problem: …"</li>
+<li>„Am [Datum] habe ich [Produkt] bestellt — bis heute nichts da."</li>
+<li>„Der Artikel ist leider defekt / beschädigt / unvollständig."</li>
+<li>„Was mich besonders stört, ist…"</li>
+<li>„Ich hatte eine andere Erwartung."</li>
+</ul>
+</div>
+</div>
+
+<div class="step s3">
+<div class="step-num">3</div>
+<div class="step-body">
+<h4>🙏 Lösung fordern — JETZT Konjunktiv II!</h4>
+<ul>
+<li>„Ich hätte gerne, dass…"</li>
+<li>„Könnten Sie das bitte für mich prüfen?"</li>
+<li>„Wäre es möglich, dass…?"</li>
+<li>„Was wäre Ihre Lösung?"</li>
+<li>„Ich würde gerne eine Erstattung bekommen."</li>
+<li>„Was schlagen Sie vor?"</li>
+</ul>
+</div>
+</div>
+
+<div class="step s4">
+<div class="step-num">4</div>
+<div class="step-body">
+<h4>🛡️ Bei Blockaden reagieren — höflich aber STARK</h4>
+<ul>
+<li>„Das ist leider nicht zufriedenstellend."</li>
+<li>„Könnte ich bitte mit dem/der Vorgesetzten sprechen?"</li>
+<li>„Ich bestehe auf einer Lösung bis [Datum]."</li>
+<li>„Ich werde mich an die Verbraucherzentrale wenden, falls keine Lösung gefunden wird."</li>
+<li>„Ich möchte das bitte schriftlich bestätigt bekommen."</li>
+</ul>
+</div>
+</div>
+
+<div class="step s5">
+<div class="step-num">5</div>
+<div class="step-body">
+<h4>👋 Abschluss — sichere das Ergebnis!</h4>
+<ul>
+<li>„Vielen Dank für Ihre Zeit."</li>
+<li>„Können Sie mir das schriftlich bestätigen?"</li>
+<li>„Wann kann ich mit einer Antwort rechnen?"</li>
+<li>„Wo kann ich den Status meines Vorgangs verfolgen?"</li>
+<li>„Auf Wiederhören!"</li>
+</ul>
+</div>
+</div>
+
+<div class="tip">📝 <strong>IMMER notieren:</strong> Vorgangsnummer · Name des Ansprechpartners · Datum &amp; Uhrzeit · was vereinbart wurde. Das ist deine Versicherung!</div>
+
+<!-- ALLTAGSFRAGEN -->
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<p class="section-sub">Denk kurz nach — wie würdest du es höflich auf Deutsch sagen?</p>
+
+<div class="alltag-q">
+<div class="ql">Alltag · Lieferung</div>
+<div class="qq">Du hast vor 2 Wochen Schuhe bestellt — sie sind immer noch nicht da. Wie startest du den Anruf?</div>
+<div class="think">💭 Tipp: Phase 1 + 2 kombinieren. „Guten Tag… ich rufe an wegen…"</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);">
+<div class="ql" style="color:var(--teal);">Alltag · Restaurant</div>
+<div class="qq">Im Restaurant: Die Suppe ist kalt. Wie sagst du das dem Kellner — höflich aber bestimmt?</div>
+<div class="think">💭 Tipp: KÖNNTEN Sie + bitte. „Entschuldigung, könnten Sie…?"</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#B66809;">
+<div class="ql" style="color:#B66809;">Alltag · Internet</div>
+<div class="qq">Dein Internet funktioniert seit 3 Tagen nicht. Du rufst zum 4. Mal an. Wie eskalierst du höflich?</div>
+<div class="think">💭 Tipp: Phase 4 nutzen — „Könnte ich bitte mit dem Vorgesetzten sprechen?"</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#6A3D9C;">
+<div class="ql" style="color:#6A3D9C;">Alltag · Rechnung</div>
+<div class="qq">Deine Stromrechnung wurde DOPPELT abgebucht (240 €). Was sagst du in den ersten 30 Sekunden?</div>
+<div class="think">💭 Tipp: Sachlich bleiben! „Es geht um eine Doppelabbuchung in Höhe von…"</div>
+</div>
+
+</section>
+
+<!-- ============== UMGANGSSPRACHE ============== -->
+<section class="section" data-section="1">
+
+<h2 class="section-title">💬 Wie Deutsche <em style="font-style:italic;">wirklich</em> reklamieren</h2>
+<p class="section-sub">Echte Chats und Telefon-Ausdrücke — was du in der App, im SMS und am Telefon hörst.</p>
+
+<div class="tip">
+🔥 <strong>Achtung:</strong> Diese Phrasen sind echte Umgangssprache aus dem Alltag — nicht aus dem Lehrbuch. Schriftlich an Firmen bleibst du formell. Aber so reden Deutsche WIRKLICH, wenn sie sich aufregen!
+</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">📦</div><div class="name-row"><div class="name">DHL Service</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Guten Tag! Mein Paket sollte gestern kommen, ist aber nicht da 😕</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Welche Sendungsnummer haben Sie?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">123456789. Können Sie das bitte <strong>nochmal checken</strong>? Das ist jetzt der dritte Tag…</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Einen Moment bitte 🙏</div></div>
+<div class="chat-meaning"><strong>„nochmal checken"</strong> = informelles Englisch-Deutsch im Service. Bei jüngeren Mitarbeitern total normal!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😤</div><div class="name-row"><div class="name">Best Friend</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Boah, der Vodafone Service ist <strong>echt eine Katastrophe!</strong> 🤬</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Was war los?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">30 Minuten Warteschleife, dann sagen sie: „<strong>Da kann ich Ihnen leider auch nicht helfen</strong>" 🙄</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Klassiker! Du musst nach dem Vorgesetzten verlangen, sonst <strong>läuft das im Sand</strong> 💪</div></div>
+<div class="chat-meaning"><strong>„läuft im Sand"</strong> = nichts passiert / wird nicht bearbeitet · <strong>„Da kann ich nicht helfen"</strong> = typischer Service-Satz, den du HASSEN wirst!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🛒</div><div class="name-row"><div class="name">Amazon Customer Service</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hallo, mein Artikel kam kaputt an 😩</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Oh nein! Das tut uns leid. Schicken Sie uns ein Foto und Sie bekommen das Geld <strong>zurückerstattet</strong>.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Super, danke! In wie vielen Tagen?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Innerhalb von 3–5 Werktagen 📅</div></div>
+<div class="chat-meaning"><strong>„zurückerstatten"</strong> = formelle Form für „zurückzahlen" — wirst du oft hören und brauchen!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🍕</div><div class="name-row"><div class="name">Lieferando-Bestellung</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Meine Pizza ist <strong>komplett kalt</strong> angekommen!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Das tut uns leid. Wir können Ihnen einen <strong>Gutschein</strong> von 10€ anbieten.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Echt jetzt? Ich hätte gerne mein Geld zurück, nicht einen Gutschein 😒</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Verstanden. Wir leiten das weiter — Sie hören in 24h von uns.</div></div>
+<div class="chat-meaning"><strong>„Echt jetzt?"</strong> = umgangssprachlich für „Ist das wirklich Ihr Ernst?" · <strong>„Gutschein"</strong> = oft erster Trick → fordere CASH zurück!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📞</div><div class="name-row"><div class="name">Telekom Hotline</div><div class="stat">in der Warteschleife…</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Guten Tag, was kann ich für Sie tun?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich möchte meinen Vertrag <strong>fristgerecht kündigen</strong>.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Oh, wieso denn? Wir können Ihnen ein besseres Angebot machen 🎁</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Nein danke, ich <strong>bleibe dabei</strong>. Bitte schicken Sie mir die Kündigungsbestätigung schriftlich.</div></div>
+<div class="chat-meaning"><strong>„fristgerecht kündigen"</strong> = innerhalb der Kündigungsfrist · <strong>„Ich bleibe dabei"</strong> = ich ändere meine Meinung NICHT (sehr wichtig bei Telekom/Vodafone!)</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🔧</div><div class="name-row"><div class="name">Handwerker Schmidt</div><div class="stat">heute online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Sie sollten gestern um 14 Uhr kommen. Wo waren Sie?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Tut mir leid, ich <strong>hab's vergessen</strong> 🤷</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Das geht so nicht!</strong> Ich habe extra freigenommen. Wann können Sie kommen?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Morgen 10 Uhr?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Okay. Aber bitte zuverlässig! 🙏</div></div>
+<div class="chat-meaning"><strong>„Das geht so nicht!"</strong> = sehr deutsch! Bedeutet „Das ist inakzeptabel!" — drückt Empörung höflich aus.</div>
+</div>
+
+</div>
+
+<h2 class="section-title">15 wichtige <em style="font-style:italic;">Beschwerde-Phrasen</em></h2>
+
+<div class="kk-grid" style="grid-template-columns:repeat(2,1fr);gap:.8rem;">
+<div class="kk" style="border-color:var(--red);text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Das ist leider nicht okay so."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">höflich-deutsche Beschwerde-Standardphrase</div></div>
+<div class="kk" style="border-color:var(--teal);text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„So habe ich mir das nicht vorgestellt."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">höfliche Enttäuschung ausdrücken</div></div>
+<div class="kk" style="border-color:#B66809;text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">„Ich bin sehr enttäuscht."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">starkes Statement — wirkt!</div></div>
+<div class="kk" style="border-color:#6A3D9C;text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">„Was schlagen Sie vor?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">übergibt Verantwortung an den Service</div></div>
+<div class="kk" style="border-color:var(--red);text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Können Sie mir das bitte erklären?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">höflich um Klärung bitten</div></div>
+<div class="kk" style="border-color:var(--teal);text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„Da muss ein Fehler vorliegen."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">freundlich auf einen Fehler hinweisen</div></div>
+<div class="kk" style="border-color:#B66809;text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">„Ich bestehe darauf, dass…"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">höflich aber entschlossen — Eskalations-Stufe!</div></div>
+<div class="kk" style="border-color:#6A3D9C;text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">„Habe ich Sie richtig verstanden, dass…?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Missverständnisse vermeiden!</div></div>
+<div class="kk" style="border-color:var(--red);text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Das nehme ich so nicht hin."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">starke Eskalation — NICHT akzeptieren!</div></div>
+<div class="kk" style="border-color:var(--teal);text-align:left;"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„Vielen Dank für Ihre Geduld."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">höfliche Schlussformel</div></div>
+</div>
+
+</section>
+
+<!-- ============== LERNKARTEN ============== -->
+<section class="section" data-section="2">
+
+<h2 class="section-title">Lernkarten · <em style="font-style:italic;">Beschwerde-Wortschatz</em></h2>
+<p class="section-sub">Errätst du die Bedeutung? Erst denken — dann tippen.</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">📞</div>
+<div class="flip-word" id="flipWord">die Warteschleife</div>
+<div class="flip-badge" id="flipBadge">Telefon</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">on hold — warten, bis jemand abnimmt</div>
+<div class="flip-ex" id="flipEx">„Ich war 30 Minuten in der <strong>Warteschleife</strong>!"</div>
+</div>
+</div>
+</div>
+
+<div class="lk-nav">
+<button class="lk-btn" id="lkPrev">←</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">18</span></span>
+<button class="lk-btn" id="lkNext">→</button>
+</div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+
+</section>
+
+<!-- ============== QUIZ ============== -->
+<section class="section" data-section="3">
+
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Welcher Ausdruck passt?</em></h2>
+<p class="section-sub">Achte auf die Höflichkeitsstufe!</p>
+
+<div class="quiz"><div class="quiz-q">„Ich <span class="blank">?</span> gerne eine Erstattung bekommen." <span style="color:var(--ink-mute);font-size:.85em;">(höflich + Wunsch)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">will</span><span class="quiz-chip">möchte</span><span class="quiz-chip">würde</span></div><div class="quiz-explain">✓ <strong>würde</strong> + Infinitiv = höflichste Form</div></div>
+
+<div class="quiz"><div class="quiz-q">„<span class="blank">?</span> Sie das bitte für mich prüfen?" <span style="color:var(--ink-mute);font-size:.85em;">(höfliche Bitte)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Könnten</span><span class="quiz-chip">Können</span><span class="quiz-chip">Müssen</span></div><div class="quiz-explain">✓ <strong>Könnten</strong> — Konjunktiv II = höflicher als „Können"</div></div>
+
+<div class="quiz"><div class="quiz-q">„<span class="blank">?</span> es möglich, dass Sie mir helfen?" <span style="color:var(--ink-mute);font-size:.85em;">(Möglichkeit erfragen)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ist</span><span class="quiz-chip">Wäre</span><span class="quiz-chip">War</span></div><div class="quiz-explain">✓ <strong>Wäre</strong> — Konjunktiv II für höfliche Anfrage</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich <span class="blank">?</span> gerne eine Lösung bis Ende der Woche." <span style="color:var(--ink-mute);font-size:.85em;">(Wunsch)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">habe</span><span class="quiz-chip">will</span><span class="quiz-chip">hätte</span></div><div class="quiz-explain">✓ <strong>hätte gerne</strong> — höflicher Wunsch</div></div>
+
+<div class="quiz"><div class="quiz-q">„Könnte ich bitte mit dem/der <span class="blank">?</span> sprechen?" <span style="color:var(--ink-mute);font-size:.85em;">(Eskalation Phase 4)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Lehrer</span><span class="quiz-chip">Vorgesetzten</span><span class="quiz-chip">Freund</span></div><div class="quiz-explain">✓ <strong>Vorgesetzten</strong> — wenn der erste Service nicht hilft</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich war 20 Minuten in der <span class="blank">?</span> — das ist viel zu lang!"</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Durchwahl</span><span class="quiz-chip">Warteschleife</span><span class="quiz-chip">Hotline</span></div><div class="quiz-explain">✓ <strong>Warteschleife</strong> — wartend am Telefon</div></div>
+
+<div class="quiz"><div class="quiz-q">„Das Geld wurde zweimal abgebucht — das ist eine <span class="blank">?</span>!"</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Doppelabbuchung</span><span class="quiz-chip">Rückerstattung</span><span class="quiz-chip">Gutschrift</span></div><div class="quiz-explain">✓ <strong>Doppelabbuchung</strong> — das Geld wurde 2× abgezogen</div></div>
+
+<div class="quiz"><div class="quiz-q">„Was Sie mir da sagen, das <span class="blank">?</span> ich so nicht hin!" <span style="color:var(--ink-mute);font-size:.85em;">(starke Eskalation)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">nehme</span><span class="quiz-chip">gebe</span><span class="quiz-chip">akzeptiere</span></div><div class="quiz-explain">✓ „Das <strong>nehme</strong> ich so nicht hin" = Umgangssprache für „Das akzeptiere ich nicht"</div></div>
+
+<div class="quiz"><div class="quiz-q">„Vielen Dank, dass Sie sich <span class="blank">?</span> haben." <span style="color:var(--ink-mute);font-size:.85em;">(höflicher Abschluss)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">gekümmert</span><span class="quiz-chip">geärgert</span><span class="quiz-chip">erfreut</span></div><div class="quiz-explain">✓ <strong>gekümmert</strong> — sich um etwas kümmern = Verantwortung übernehmen</div></div>
+
+</section>
+
+<!-- ============== LÜCKENTEXT ============== -->
+<section class="section" data-section="4">
+
+<h2 class="section-title">Lückentext · <em style="font-style:italic;">Musterdialog</em></h2>
+<p class="section-sub">Lieferverzögerung — fülle die Konjunktiv-II-Lücken!</p>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. „Guten Tag, mein Name ist Maria Schmidt. Ich <select data-sol="rufe"><option value="">…</option><option>rufe</option><option>spreche</option><option>komme</option></select> an wegen meiner Bestellung."</div>
+<div class="gap-line">2. „Die Bestellung sollte vor 3 Tagen ankommen. <select data-sol="Könnten"><option value="">…</option><option>Können</option><option>Könnten</option><option>Müssen</option></select> Sie das bitte prüfen?"</div>
+<div class="gap-line">3. „Es scheint ein Problem zu geben. Was <select data-sol="wäre"><option value="">…</option><option>ist</option><option>wäre</option><option>war</option></select> Ihre Lösung?"</div>
+<div class="gap-line">4. „Wir <select data-sol="könnten"><option value="">…</option><option>können</option><option>könnten</option><option>müssen</option></select> die Lieferung kostenlos beschleunigen oder eine Erstattung anbieten."</div>
+<div class="gap-line">5. „Ich <select data-sol="hätte"><option value="">…</option><option>habe</option><option>hätte</option><option>nehme</option></select> gerne die beschleunigte Lieferung."</div>
+<div class="gap-line">6. „Wann <select data-sol="könnte"><option value="">…</option><option>kann</option><option>könnte</option><option>muss</option></select> sie da sein?"</div>
+<div class="gap-line">7. „Innerhalb von 24 Stunden. Sie bekommen die Bestätigung per E-Mail. Bitte <select data-sol="bestätigen"><option value="">…</option><option>bestätigen</option><option>schreiben</option><option>schicken</option></select> Sie mir das auch schriftlich."</div>
+<div class="gap-line">8. „<select data-sol="Vielen"><option value="">…</option><option>Vielen</option><option>Tausend</option><option>Viele</option></select> Dank für Ihre Hilfe. Auf Wiederhören!"</div>
+<div class="gap-actions">
+<button class="btn-secondary" id="gapReset">Neu</button>
+<button class="btn-primary" id="gapCheck">Überprüfen</button>
+</div>
+</div>
+
+<div class="tip" id="gapScore" style="display:none;"></div>
+
+</section>
+
+<!-- ============== ZUORDNEN ============== -->
+<section class="section" data-section="5">
+
+<h2 class="section-title">Direkt &harr; <em style="font-style:italic;">Höflich</em> zuordnen</h2>
+<p class="section-sub">Finde die höfliche Konjunktiv-II-Form. Richtige Paare werden grün!</p>
+
+<div class="match-stage">
+<div class="match-cols">
+<div class="match-col">
+<h4>❌ Direkt (zu hart!)</h4>
+<div class="match-list" id="leftCol"></div>
+</div>
+<div class="match-col">
+<h4>✅ Höflich</h4>
+<div class="match-list" id="rightCol"></div>
+</div>
+</div>
+<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+</div>
+
+</section>
+
+<!-- ============== SPRECHEN ============== -->
+<section class="section" data-section="6">
+
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht's!</em></h2>
+<p class="section-sub">Zieh eine Karte und übe dein Beschwerde-Deutsch — allein oder mit Tandempartner.</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div>
+<div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+
+<div class="speak-controls">
+<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+</div>
+
+<!-- ROLLENSPIELE -->
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">am Telefon</em></h2>
+<p class="section-sub">Übt zu zweit — mindestens 8 Konjunktiv-II-Formen pro Dialog!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Lieferverzögerung</div>
+<div class="role-title">📦 Defekter Bluetooth-Lautsprecher</div>
+<div class="role-situation">Du hast vor 1 Woche einen Bluetooth-Lautsprecher für 89 € gekauft. Er schaltet sich nach 5 Minuten von selbst aus. Du rufst den Kundenservice an.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🙋‍♀️</div><div><div class="person-label">Person A — Kund:in</div><div class="person-quote">„Guten Tag, ich <strong>hätte</strong> gerne, dass Sie mir helfen. Mein Lautsprecher ist defekt. <strong>Könnten</strong> Sie das prüfen?"</div></div></div>
+<div class="person b"><div class="person-avatar">🎧</div><div><div class="person-label">Person B — Kundenservice</div><div class="person-quote">„Das tut mir leid. <strong>Hätten</strong> Sie eine Bestellnummer? Wir <strong>könnten</strong> Ihnen einen Tausch oder eine Erstattung anbieten."</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: Mindestens <strong>8 Konjunktiv-II-Formen</strong> im Dialog verwenden!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Geld zurück</div>
+<div class="role-title">💡 Falsche Stromrechnung · Doppelabbuchung 240 €</div>
+<div class="role-situation">Deine Stromrechnung wurde doppelt abgebucht (240 €). Der Service-Mitarbeiter verteidigt zunächst die Entscheidung — bleib HÖFLICH aber BESTIMMT!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🙋</div><div><div class="person-label">Person A — Kund:in</div><div class="person-quote">„Ich bin sehr enttäuscht. <strong>Wäre</strong> es möglich, dass Sie das prüfen? Ich <strong>bestehe darauf</strong>, dass das Geld bis Freitag zurück ist."</div></div></div>
+<div class="person b"><div class="person-avatar">👔</div><div><div class="person-label">Person B — Service</div><div class="person-quote">„Das ist eigentlich nicht meine Zuständigkeit… aber lassen Sie mich kurz schauen. <strong>Hätten</strong> Sie die Vorgangsnummer?"</div></div></div>
+</div>
+<div class="role-goal">⚠️ <strong>Pflicht:</strong> Schriftliche Bestätigung verlangen + Rückzahlungsdatum klären!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · SCHWER</div>
+<div class="role-title">😤 „Da kann ich Ihnen leider auch nicht helfen…"</div>
+<div class="role-situation">Du hast vor 2 Wochen eine Rückerstattung beantragt. Nichts passiert. Du rufst zum 3. Mal an. Der Service-Mitarbeiter ist müde und abweisend. Eskaliere höflich!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😠</div><div><div class="person-label">Person A — genervte:r Kund:in</div><div class="person-quote">„Das <strong>nehme ich so nicht hin</strong>. <strong>Könnte</strong> ich bitte mit dem/der Vorgesetzten sprechen? Sonst wende ich mich an die Verbraucherzentrale!"</div></div></div>
+<div class="person b"><div class="person-avatar">😅</div><div><div class="person-label">Person B — abweisender Service</div><div class="person-quote">„Da kann ich Ihnen leider auch nicht helfen…" / „Da müssen Sie nochmal anrufen…" — erst nach Eskalation kooperativ werden!</div></div></div>
+</div>
+<div class="role-goal">🏆 <strong>Bonus-Ziel:</strong> Höflich bleiben aber STARK — professionell eskalieren ohne die Fassung zu verlieren!</div>
+</div>
+</div>
+
+<!-- DEBATTEN -->
+<div class="role-section">
+<h2 class="section-title">4 Thesen <em style="font-style:italic;">zum Debattieren</em></h2>
+<p class="section-sub">4 Gruppen — jede verteidigt eine These!</p>
+
+<div class="debate-grid">
+<div class="debate"><div class="debate-num">These 1</div><div class="debate-q">„Telefonische Beschwerden sind effektiver als schriftliche — der direkte Druck funktioniert besser."</div></div>
+<div class="debate"><div class="debate-num">These 2</div><div class="debate-q">„Höflichkeit lohnt sich nicht — wer laut ist, bekommt schneller, was er will."</div></div>
+<div class="debate"><div class="debate-num">These 3</div><div class="debate-q">„Service-Mitarbeiter sollten geschützt werden — Kunden behandeln sie zu oft unfair."</div></div>
+<div class="debate"><div class="debate-num">These 4</div><div class="debate-q">„KI-Bots werden bald alle Service-Hotlines ersetzen — und das wird besser als heute."</div></div>
+</div>
+
+<div class="tip" style="margin-top:1.5rem;">
+🎯 <strong>Pflicht:</strong> In deiner Argumentation mindestens 5 verschiedene Konjunktiv-II-Formen verwenden — auch „würde", „könnte", „hätte", „wäre", „müsste"!
+</div>
+</div>
+
+<!-- MISSION -->
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Mini-Aufgabe:</strong> Schreibe jeden Tag <strong>5 Sätze mit Konjunktiv II</strong> aus deinem Alltag — keine erfundenen Sätze! Was würdest du dir wünschen? Was könnte besser sein? <br><br>
+🏆 <strong>Bonus-Challenge:</strong> Wähle BEWUSST eine echte deutsche Hotline (Telekom, Vodafone, Hermes, Lieferando…) und stelle EINE höfliche Beschwerde mit Konjunktiv II. Notiere 3 Sätze, die schwierig waren!
+</div>
+
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit ❤️ für meine Sprechclub-Lernenden · Beschwerde am Telefon · B1/B2</footer>
+
+<script>
+// ===== TAB NAV =====
+document.querySelectorAll('.tab').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// ===== LERNKARTEN =====
+const KARTEN=[
+  {emoji:'📞',word:'die Warteschleife',badge:'Telefon',rule:'on hold — warten, bis jemand abnimmt',ex:'„Ich war 30 Minuten in der <strong>Warteschleife</strong>!"'},
+  {emoji:'☎️',word:'die Durchwahl',badge:'Telefon',rule:'direkte Nummer zu einem Mitarbeiter',ex:'„Haben Sie eine <strong>Durchwahl</strong> zu Herrn Müller?"'},
+  {emoji:'👤',word:'der/die Ansprechpartner:in',badge:'Telefon',rule:'die zuständige Person für ein Anliegen',ex:'„Wer ist der <strong>Ansprechpartner</strong> für Reklamationen?"'},
+  {emoji:'🔁',word:'jemanden verbinden',badge:'Telefon',rule:'an einen anderen Mitarbeiter weiterleiten',ex:'„Ich <strong>verbinde Sie</strong> mit der Buchhaltung."'},
+  {emoji:'💔',word:'defekt / kaputt',badge:'Problem',rule:'funktioniert nicht / ist zerbrochen',ex:'„Der Artikel ist leider <strong>defekt</strong> angekommen."'},
+  {emoji:'📋',word:'die Mängelrüge',badge:'Problem · formell',rule:'offizielle Beschwerde über Mängel',ex:'„Ich erhebe eine <strong>Mängelrüge</strong> wegen der defekten Ware."'},
+  {emoji:'💸',word:'die Doppelabbuchung',badge:'Geld',rule:'Geld wurde zweimal abgezogen',ex:'„Die <strong>Doppelabbuchung</strong> muss korrigiert werden."'},
+  {emoji:'💰',word:'die Erstattung',badge:'Geld',rule:'Geld zurückbekommen',ex:'„Ich hätte gerne eine <strong>Erstattung</strong>."'},
+  {emoji:'🎫',word:'die Gutschrift',badge:'Geld',rule:'Guthaben als Ersatz für Geld',ex:'„Wir bieten Ihnen eine <strong>Gutschrift</strong> von 20 € an."'},
+  {emoji:'🛡️',word:'die Garantie / Gewährleistung',badge:'Recht',rule:'gesetzlicher Schutz bei Mängeln',ex:'„Auf den Artikel gibt es 2 Jahre <strong>Garantie</strong>."'},
+  {emoji:'↩️',word:'stornieren',badge:'Aktion',rule:'eine Bestellung rückgängig machen',ex:'„Ich möchte meine Bestellung <strong>stornieren</strong>."'},
+  {emoji:'🔄',word:'umtauschen',badge:'Aktion',rule:'gegen einen anderen Artikel tauschen',ex:'„Kann ich das <strong>umtauschen</strong>?"'},
+  {emoji:'📦',word:'zurückschicken',badge:'Aktion',rule:'an den Verkäufer zurücksenden',ex:'„Ich werde das Paket <strong>zurückschicken</strong>."'},
+  {emoji:'📈',word:'die Eskalation',badge:'Aktion · stark',rule:'an Vorgesetzte weitergeben',ex:'„Wir brauchen eine <strong>Eskalation</strong> dieser Sache!"'},
+  {emoji:'👔',word:'der/die Vorgesetzte',badge:'Person',rule:'der Chef / die Chefin des Mitarbeiters',ex:'„Ich möchte mit dem <strong>Vorgesetzten</strong> sprechen!"'},
+  {emoji:'⚖️',word:'die Verbraucherzentrale',badge:'Institution',rule:'staatliche Stelle für Verbraucherrechte',ex:'„Sonst wende ich mich an die <strong>Verbraucherzentrale</strong>!"'},
+  {emoji:'📝',word:'schriftlich bestätigen',badge:'Recht · WICHTIG',rule:'auf Papier / E-Mail bestätigen lassen',ex:'„Bitte <strong>bestätigen Sie</strong> das <strong>schriftlich</strong>."'},
+  {emoji:'🔢',word:'die Vorgangsnummer',badge:'Recht · NOTIEREN!',rule:'eindeutige Nummer für deinen Fall',ex:'„Haben Sie meine <strong>Vorgangsnummer</strong> notiert?"'},
+];
+let order=KARTEN.map((_,i)=>i);
+let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){
+  const k=KARTEN[order[lkIdx]];
+  document.getElementById('flipEmoji').textContent=k.emoji;
+  document.getElementById('flipWord').textContent=k.word;
+  document.getElementById('flipBadge').textContent=k.badge;
+  document.getElementById('flipRule').textContent=k.rule;
+  document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('lkCur').textContent=lkIdx+1;
+  document.getElementById('lkTot').textContent=KARTEN.length;
+  flipEl.classList.remove('flipped');
+}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+// ===== QUIZ =====
+document.querySelectorAll('.quiz-opts').forEach(opts=>{
+  const c=parseInt(opts.dataset.c);
+  const chips=opts.querySelectorAll('.quiz-chip');
+  const exp=opts.parentElement.querySelector('.quiz-explain');
+  chips.forEach((chip,i)=>{
+    chip.onclick=()=>{
+      if(opts.dataset.done)return;
+      opts.dataset.done='1';
+      if(i===c)chip.classList.add('correct');
+      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
+      exp.classList.add('show');
+    };
+  });
+});
+
+// ===== LÜCKENTEXT =====
+document.getElementById('gapCheck').onclick=()=>{
+  const sels=document.querySelectorAll('#gapText select');
+  let right=0,total=sels.length;
+  sels.forEach(s=>{
+    s.classList.remove('right','wrong');
+    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    else s.classList.add('wrong');
+  });
+  const score=document.getElementById('gapScore');
+  score.style.display='block';
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');
+};
+document.getElementById('gapReset').onclick=()=>{
+  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  document.getElementById('gapScore').style.display='none';
+};
+
+// ===== ZUORDNEN =====
+const PAIRS=[
+  {l:'Ich will eine Erstattung.',r:'Ich hätte gerne eine Erstattung.'},
+  {l:'Schicken Sie mir das!',r:'Könnten Sie mir das bitte schicken?'},
+  {l:'Helfen Sie mir!',r:'Wäre es möglich, dass Sie mir helfen?'},
+  {l:'Wann kann ich…?',r:'Wann könnte ich…?'},
+  {l:'Geben Sie mir das Geld zurück!',r:'Ich würde gerne mein Geld zurück.'},
+  {l:'Ich brauche eine Lösung!',r:'Was wäre Ihre Lösung?'},
+  {l:'Verbinden Sie mich mit dem Chef!',r:'Könnte ich bitte mit dem Vorgesetzten sprechen?'},
+  {l:'Sie machen jetzt sofort etwas!',r:'Ich bestehe darauf, dass Sie das prüfen.'},
+];
+function buildMatch(){
+  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
+  L.innerHTML='';R.innerHTML='';
+  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
+  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
+  let pick=null;
+  document.querySelectorAll('.match-item').forEach(item=>{
+    item.onclick=()=>{
+      if(item.classList.contains('done'))return;
+      if(!pick){pick=item;item.classList.add('selected');return;}
+      if(pick===item){item.classList.remove('selected');pick=null;return;}
+      const pickCol=pick.parentElement.id;
+      const itemCol=item.parentElement.id;
+      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
+      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
+      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
+    };
+  });
+}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
+
+// ===== SPRECHKARTEN =====
+const SPEAK=[
+  {emoji:'📦',cat:'Phase 1+2 · Einstieg',q:'Du hast online Schuhe bestellt — sie sind 2 Wochen verspätet. Wie startest du den Anruf in 30 Sekunden?'},
+  {emoji:'💔',cat:'Phase 2 · Beschreiben',q:'Beschreibe sachlich (ohne Emotionen!), warum dein letzter Online-Kauf eine Enttäuschung war.'},
+  {emoji:'🙏',cat:'Phase 3 · Konjunktiv II',q:'Formuliere 3 Wünsche an einen Service-Mitarbeiter — alle mit „Ich hätte gerne…" oder „Könnten Sie…?"'},
+  {emoji:'🛡️',cat:'Phase 4 · Eskalation',q:'Der Service hilft dir nicht. Wie eskalierst du HÖFLICH? 3 Sätze!'},
+  {emoji:'👋',cat:'Phase 5 · Abschluss',q:'Beende einen Anruf professionell — was musst du NOTIEREN bevor du auflegst?'},
+  {emoji:'😤',cat:'Frust ausdrücken (höflich!)',q:'Du bist seit 30 Minuten in der Warteschleife. Wie zeigst du höflich, dass du genervt bist?'},
+  {emoji:'☎️',cat:'Restaurant-Beschwerde',q:'Im Restaurant: Die Suppe ist kalt. Wie sagst du das dem Kellner — höflich aber bestimmt?'},
+  {emoji:'💸',cat:'Geld-Beschwerde',q:'Doppelabbuchung — 240 €! Was sind deine 5 wichtigsten Sätze gegenüber dem Bank-Service?'},
+  {emoji:'🏥',cat:'Arzt-Beschwerde',q:'Du wartest seit 2 Stunden beim Arzt — obwohl du einen Termin hattest. Wie beschwerst du dich höflich beim Empfang?'},
+  {emoji:'🚆',cat:'Bahn-Beschwerde',q:'Dein Zug fällt aus, du verpasst einen wichtigen Termin. Wie reklamierst du am Bahnhof?'},
+  {emoji:'🛒',cat:'Supermarkt-Beschwerde',q:'Das Brot, das du gekauft hast, ist verschimmelt. Was sagst du der Kassiererin?'},
+  {emoji:'📞',cat:'Telekom-Klassiker',q:'Dein Internet geht seit 3 Tagen nicht. Sie sagen „Da kann ich Ihnen leider nicht helfen". Was antwortest du?'},
+  {emoji:'🍕',cat:'Lieferdienst-Beschwerde',q:'Die Pizza ist kalt und der Belag fehlt. Wie verhandelst du eine Lösung mit Lieferando?'},
+  {emoji:'🔧',cat:'Handwerker-Frust',q:'Der Handwerker kommt nicht zum vereinbarten Termin. Was sagst du, wenn du ihn erreichst?'},
+  {emoji:'✈️',cat:'Flugausfall',q:'Dein Flug ist gestrichen! Wie reklamierst du eine Erstattung + Umbuchung höflich aber bestimmt?'},
+  {emoji:'🏨',cat:'Hotel-Probleme',q:'Dein Hotelzimmer ist viel kleiner als auf den Fotos. Wie sprichst du das an der Rezeption an?'},
+  {emoji:'😅',cat:'Selbstverschulden!',q:'Du hast eine Lieferung verpasst, weil du nicht da warst. Wie organisierst du höflich einen neuen Termin?'},
+  {emoji:'🎯',cat:'Freestyle',q:'Erfinde eine eigene Beschwerde-Situation und führe sie durch — mit mindestens 5 Konjunktiv-II-Formen!'},
+];
+let lastSpeak=-1;
+document.getElementById('speakNew').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
+  lastSpeak=i;const k=SPEAK[i];
+  const c=document.getElementById('speakCard');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';
+    c.style.opacity='1';
+  },200);
+};
+</script>
+</body></html>

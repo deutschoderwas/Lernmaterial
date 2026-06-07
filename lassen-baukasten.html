@@ -1,0 +1,869 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Das Verb LASSEN · Sechs Gesichter eines Wortes | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.2rem,5.5vw,4.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+
+/* HERO SVG */
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:340px;width:100%;}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}
+.tip em{color:var(--ink);font-style:italic;}
+.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* MEANING CARDS mit SVG */
+.mean-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin:1.5rem 0;}
+@media(max-width:520px){.mean-grid{grid-template-columns:1fr;}}
+.mean{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:0;box-shadow:0 4px 16px rgba(38,32,25,.05);transition:.2s;cursor:pointer;overflow:hidden;}
+.mean:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(38,32,25,.12);}
+.mean-svg{background:linear-gradient(135deg,#FFE8E3,#FBEDD8);height:130px;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--sand);}
+.mean.m2 .mean-svg{background:linear-gradient(135deg,#D7F0EC,#E8F8F4);}
+.mean.m3 .mean-svg{background:linear-gradient(135deg,#FFF1C2,#FFE8E3);}
+.mean.m4 .mean-svg{background:linear-gradient(135deg,#FAE0EA,#FFE8E3);}
+.mean.m5 .mean-svg{background:linear-gradient(135deg,#E2EBC9,#FBEDD8);}
+.mean.m6 .mean-svg{background:linear-gradient(135deg,#E5D8F2,#FAE0EA);}
+.mean-svg svg{max-height:115px;}
+.mean-body{padding:1.1rem 1.3rem 1.4rem;}
+.mean-num{display:inline-block;background:var(--red-soft);color:var(--red);font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;}
+.mean.m2 .mean-num{background:var(--teal-soft);color:var(--teal);}
+.mean.m3 .mean-num{background:var(--yellow-soft);color:#B66809;}
+.mean.m4 .mean-num{background:#FAE0EA;color:#A04060;}
+.mean.m5 .mean-num{background:#E2EBC9;color:#5F7A2A;}
+.mean.m6 .mean-num{background:#E5D8F2;color:#6A3D9C;}
+.mean-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.35rem;}
+.mean-meaning{color:var(--red);font-weight:700;font-size:.9rem;margin-bottom:.6rem;}
+.mean.m2 .mean-meaning{color:var(--teal);}
+.mean.m3 .mean-meaning{color:#B66809;}
+.mean.m4 .mean-meaning{color:#A04060;}
+.mean.m5 .mean-meaning{color:#5F7A2A;}
+.mean.m6 .mean-meaning{color:#6A3D9C;}
+.mean-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;padding-top:.7rem;border-top:1px dashed var(--sand);}
+.mean-ex strong{color:var(--ink);background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+
+/* VORHER/NACHHER */
+.vn-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
+.vn-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.2rem;margin-bottom:1rem;text-align:center;}
+.vn-grid{display:grid;grid-template-columns:1fr 60px 1fr;gap:.7rem;align-items:center;}
+@media(max-width:600px){.vn-grid{grid-template-columns:1fr;}.vn-arrow{display:none;}}
+.vn-card{background:var(--cream);border-radius:14px;padding:1rem;text-align:center;border:1.5px solid var(--sand);}
+.vn-card.b{background:var(--yellow-soft);border-color:var(--yellow);}
+.vn-svg{height:80px;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;}
+.vn-label{font-size:.72rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.vn-card.b .vn-label{color:#B66809;}
+.vn-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.3rem;}
+.vn-arrow{text-align:center;font-size:2rem;color:var(--red);font-weight:900;}
+
+/* ALLTAG-FRAGEN */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* IDIOM-VISUAL */
+.idiom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+@media(max-width:600px){.idiom-grid{grid-template-columns:1fr;}}
+.idiom{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;align-items:center;}
+.idiom-icon{font-size:2rem;text-align:center;}
+.idiom-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;font-style:italic;}
+.idiom-meaning{color:var(--ink-soft);font-size:.8rem;margin-top:.2rem;}
+
+/* CHAT (Umgangssprache) */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);position:relative;}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name-row{flex:1;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;font-family:'Outfit',sans-serif;color:var(--ink);line-height:1.45;position:relative;box-shadow:0 1px 1px rgba(0,0,0,.06);}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-bubble .time{font-size:.65rem;color:var(--ink-mute);margin-left:.4rem;float:right;margin-top:.4rem;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP CARDS */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;color:var(--ink);margin-bottom:.3rem;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.6rem;line-height:1.55;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-family:'Outfit',sans-serif;font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);transition:.15s;}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.lk-shuffle:hover{background:var(--ink);color:white;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;transition:.15s;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;color:var(--ink);font-size:.92rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+
+/* ROLE */
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}
+.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}
+.person.b .person-avatar{border-color:var(--teal);}
+.person-content{}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+/* DEBATE */
+.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
+.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
+.debate:nth-child(2){border-left-color:var(--teal);}
+.debate:nth-child(3){border-left-color:var(--yellow);}
+.debate:nth-child(4){border-left-color:var(--pink);}
+.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.debate:nth-child(2) .debate-num{color:var(--teal);}
+.debate:nth-child(3) .debate-num{color:#B66809;}
+.debate:nth-child(4) .debate-num{color:#A04060;}
+.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="eyebrow">deutschoderwas · Wortschatzboost für den Alltag</div>
+
+<div class="title-wrap">
+<h1 class="title">Das Verb <span class="hl">lassen</span></h1>
+</div>
+<p class="subtitle">Sechs Bedeutungen, ein Wort. Hier verstehst du endlich, wann du <em>lassen</em> wirklich brauchst – mit Alltagssätzen, WhatsApp-Chats, Idiomen und echten Sprechübungen.</p>
+
+<!-- HERO SVG: Sechs lassen-Hände -->
+<svg class="hero-svg" viewBox="0 0 340 100" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="11">
+<g transform="translate(20,20)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="5" font-size="22">🛑</text><text text-anchor="middle" y="40" fill="#E8302A">sein lassen</text></g>
+<g transform="translate(72,20)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="5" font-size="22">🙏</text><text text-anchor="middle" y="40" fill="#0FB5A6">erlauben</text></g>
+<g transform="translate(124,20)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="5" font-size="22">🔧</text><text text-anchor="middle" y="40" fill="#B66809">beauftragen</text></g>
+<g transform="translate(176,20)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="5" font-size="22">📍</text><text text-anchor="middle" y="40" fill="#A04060">zurücklassen</text></g>
+<g transform="translate(228,20)"><circle cx="0" cy="0" r="22" fill="#E2EBC9"/><text text-anchor="middle" dy="5" font-size="22">⚡</text><text text-anchor="middle" y="40" fill="#5F7A2A">lässt sich</text></g>
+<g transform="translate(280,20)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="5" font-size="22">🤝</text><text text-anchor="middle" y="40" fill="#6A3D9C">Lass uns!</text></g>
+</g>
+</svg>
+
+<!-- TAB NAV -->
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ============== ÜBERBLICK ============== -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die <em style="font-style:italic;">6 Gesichter</em> von „lassen"</h2>
+<p class="section-sub">Tipp auf eine Karte 👆 — sieh die Szene + Beispiele.</p>
+
+<div class="tip">
+💡 <strong>Der goldene Trick:</strong> Frag dich: Was passiert mit der Aktion? <u>Mache ich es selbst?</u> <em>(→ normales Verb)</em> Oder <u>lasse ich es jemand anderen tun?</u> <em>(→ lassen + Infinitiv)</em> Oder <u>tue ich es einfach nicht?</u> <em>(→ etwas sein lassen!)</em>
+</div>
+
+<div class="mean-grid">
+
+<div class="mean m1">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><circle cx="60" cy="55" r="35" fill="#FFFFFF" stroke="#E8302A" stroke-width="2"/><text x="60" y="65" text-anchor="middle" font-size="32">🚭</text><line x1="40" y1="35" x2="80" y2="75" stroke="#E8302A" stroke-width="4" stroke-linecap="round"/><g transform="translate(115,30)"><rect x="0" y="0" width="70" height="50" rx="10" fill="#FCE5E3"/><text x="35" y="22" text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#E8302A">LASS!</text><text x="35" y="38" text-anchor="middle" font-size="8" font-family="Outfit" fill="#5C4E3E">Hör auf!</text></g></svg></div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 1</div>
+<div class="mean-name">aufhören / nicht tun</div>
+<div class="mean-meaning">etwas <em>sein lassen</em></div>
+<div class="mean-ex">„<strong>Lass</strong> das! Hör auf damit!" <br>„Ich habe das Rauchen <strong>gelassen</strong>." <br>„<strong>Lass</strong> uns nach Hause gehen."</div>
+</div>
+</div>
+
+<div class="mean m2">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(40,15)"><circle cx="0" cy="20" r="15" fill="#FBEDD8"/><text x="0" y="26" text-anchor="middle" font-size="18">👩</text><text x="0" y="50" text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#0FB5A6">Mama</text></g><g transform="translate(120,15)"><circle cx="0" cy="20" r="15" fill="#FBEDD8"/><text x="0" y="26" text-anchor="middle" font-size="18">🧒</text><text x="0" y="50" text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#0FB5A6">Kind</text></g><g transform="translate(75,75)"><rect x="0" y="0" width="55" height="20" rx="8" fill="#D7F0EC"/><text x="27" y="14" text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#0FB5A6">✓ OK</text></g></svg></div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 2</div>
+<div class="mean-name">erlauben</div>
+<div class="mean-meaning">jemanden etwas tun lassen</div>
+<div class="mean-ex">„Meine Mutter <strong>lässt</strong> mich nicht ins Kino." <br>„<strong>Lass</strong> mich bitte in Ruhe." <br>„Eltern <strong>lassen</strong> Kinder am Wochenende länger spielen."</div>
+</div>
+</div>
+
+<div class="mean m3">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(50,55)"><circle cx="0" cy="0" r="22" fill="#FFFFFF" stroke="#B66809" stroke-width="2"/><text x="0" y="7" text-anchor="middle" font-size="22">💁‍♀️</text></g><g transform="translate(95,40)" font-family="Outfit" font-weight="700" font-size="9" fill="#B66809"><text>lässt sich</text><text y="11">schneiden</text></g><g transform="translate(155,55)"><circle cx="0" cy="0" r="22" fill="#FFF1C2" stroke="#B66809" stroke-width="2"/><text x="0" y="7" text-anchor="middle" font-size="22">✂️</text></g><line x1="72" y1="55" x2="133" y2="55" stroke="#B66809" stroke-width="2" stroke-dasharray="3,3"/></svg></div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 3 · WICHTIG!</div>
+<div class="mean-name">beauftragen / veranlassen</div>
+<div class="mean-meaning">ich tu's nicht selbst — jemand macht es FÜR mich</div>
+<div class="mean-ex">„Ich <strong>lasse</strong> mir die Haare <strong>schneiden</strong>." <br>„Wir <strong>lassen</strong> das Auto <strong>reparieren</strong>." <br>„Sie <strong>lässt</strong> sich ein Kleid <strong>nähen</strong>."</div>
+</div>
+</div>
+
+<div class="mean m4">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(35,40)"><rect x="0" y="0" width="40" height="50" rx="4" fill="#FFFFFF" stroke="#A04060" stroke-width="2"/><text x="20" y="32" text-anchor="middle" font-size="20">🏠</text></g><g transform="translate(120,40)"><circle cx="20" cy="20" r="18" fill="#FAE0EA"/><text x="20" y="28" text-anchor="middle" font-size="18">📖</text></g><g transform="translate(85,55)"><path d="M0 0 L25 0 L20 -4 M25 0 L20 4" stroke="#A04060" stroke-width="2" fill="none"/></g><text x="100" y="95" text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#A04060">Buch zu Hause gelassen</text></svg></div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 4</div>
+<div class="mean-name">irgendwo zurücklassen</div>
+<div class="mean-meaning">etwas/jemanden an einem Ort lassen</div>
+<div class="mean-ex">„Ich <strong>lasse</strong> mein Buch zu Hause." <br>„Den Hund <strong>lassen</strong> wir bei Oma." <br>„Lass mich nicht allein!"</div>
+</div>
+</div>
+
+<div class="mean m5">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(60,30)"><rect x="0" y="0" width="80" height="55" rx="4" fill="#FFFFFF" stroke="#5F7A2A" stroke-width="2"/><circle cx="65" cy="28" r="3" fill="#5F7A2A"/></g><g transform="translate(80,93)"><text text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#5F7A2A">lässt sich öffnen ✓</text></g><g transform="translate(150,55)" opacity="0.7"><text font-size="14">⚡</text></g></svg></div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 5 · B2</div>
+<div class="mean-name">Möglichkeit (Passiv-Ersatz)</div>
+<div class="mean-meaning">„sich lassen" = „können"</div>
+<div class="mean-ex">„Das <strong>lässt sich machen</strong>." <em>(= das kann man machen)</em> <br>„Die Tür <strong>lässt sich</strong> nicht öffnen." <em>(= kann nicht geöffnet werden)</em> <br>„Das Problem <strong>lässt sich</strong> lösen."</div>
+</div>
+</div>
+
+<div class="mean m6">
+<div class="mean-svg"><svg viewBox="0 0 200 110" width="180" height="110"><g transform="translate(50,40)"><circle cx="0" cy="20" r="15" fill="#E5D8F2"/><text x="0" y="26" text-anchor="middle" font-size="18">🧑</text></g><g transform="translate(150,40)"><circle cx="0" cy="20" r="15" fill="#E5D8F2"/><text x="0" y="26" text-anchor="middle" font-size="18">🧑</text></g><g transform="translate(75,30)"><rect x="0" y="0" width="50" height="22" rx="10" fill="#FFFFFF" stroke="#6A3D9C" stroke-width="2"/><text x="25" y="14" text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#6A3D9C">Lass uns!</text></g><text x="100" y="98" text-anchor="middle" font-size="9" font-family="Outfit" font-weight="700" fill="#6A3D9C">gemeinsam = wir</text></svg></div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 6</div>
+<div class="mean-name">Vorschlag (Lass uns…!)</div>
+<div class="mean-meaning">gemeinsam etwas tun</div>
+<div class="mean-ex">„<strong>Lass uns</strong> ins Kino gehen!" <br>„<strong>Lasst uns</strong> einen Kaffee trinken!" <br>„<strong>Lass uns</strong> reden, bitte."</div>
+</div>
+</div>
+
+</div>
+
+<!-- VORHER/NACHHER -->
+<h2 class="section-title">Selbst tun <em style="font-style:italic;">vs.</em> machen lassen</h2>
+<p class="section-sub">Der Schlüssel-Unterschied beim Verb lassen.</p>
+
+<div class="vn-stage">
+<div class="vn-title">💇 Beim Friseur</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-svg"><svg viewBox="0 0 80 60" width="80" height="60"><circle cx="40" cy="25" r="18" fill="#FBEDD8"/><text x="40" y="34" text-anchor="middle" font-size="22">🤷‍♀️✂️</text></div>
+<div class="vn-label">Selbst</div>
+<div class="vn-text">„Ich schneide mir die Haare."</div>
+</div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b">
+<div class="vn-svg"><svg viewBox="0 0 80 60" width="80" height="60"><circle cx="40" cy="25" r="18" fill="#FFF1C2"/><text x="40" y="34" text-anchor="middle" font-size="22">💇✂️</text></svg></div>
+<div class="vn-label">Lassen</div>
+<div class="vn-text">„Ich <strong>lasse</strong> mir die Haare <strong>schneiden</strong>."</div>
+</div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">🔧 Beim Auto</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-svg"><span style="font-size:2rem;">🧑‍🔧🚗</span></div>
+<div class="vn-label">Selbst</div>
+<div class="vn-text">„Ich repariere mein Auto."</div>
+</div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b">
+<div class="vn-svg"><span style="font-size:2rem;">🚗➡️🛠️</span></div>
+<div class="vn-label">Lassen</div>
+<div class="vn-text">„Ich <strong>lasse</strong> mein Auto <strong>reparieren</strong>."</div>
+</div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">🍕 Beim Essen</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-svg"><span style="font-size:2rem;">👨‍🍳🍕</span></div>
+<div class="vn-label">Selbst</div>
+<div class="vn-text">„Ich koche heute."</div>
+</div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b">
+<div class="vn-svg"><span style="font-size:2rem;">📱➡️🛵🍕</span></div>
+<div class="vn-label">Lassen</div>
+<div class="vn-text">„Ich <strong>lasse</strong> Essen <strong>kommen</strong>."</div>
+</div>
+</div>
+</div>
+
+<!-- THEORY mit ALLTAGSFRAGEN -->
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<p class="section-sub">Denk kurz nach — formuliere innerlich einen Satz mit lassen.</p>
+
+<div class="alltag-q">
+<div class="ql">Alltag · Bedeutung 3 (beauftragen)</div>
+<div class="qq">Was machst du NICHT selbst — sondern was lässt du machen?</div>
+<div class="think">💭 Beispiele: Haare schneiden? Auto waschen? Wohnung putzen? Essen liefern? Probiere: „Ich lasse mir …"</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);">
+<div class="ql" style="color:var(--teal);">Alltag · Bedeutung 1 (aufhören)</div>
+<div class="qq">Was hast du in den letzten Jahren <em>gelassen</em>?</div>
+<div class="think">💭 Vielleicht: Rauchen? Süßigkeiten? Eine schlechte Gewohnheit? „Ich habe … gelassen."</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#B66809;">
+<div class="ql" style="color:#B66809;">Alltag · Bedeutung 2 (erlauben)</div>
+<div class="qq">Was haben deine Eltern dich als Kind NICHT machen lassen?</div>
+<div class="think">💭 „Meine Eltern haben mich nicht … lassen."</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#6A3D9C;">
+<div class="ql" style="color:#6A3D9C;">Alltag · Bedeutung 6 (Vorschlag)</div>
+<div class="qq">Wenn du jetzt mit deinem Tandempartner etwas machen könntest — was wäre es?</div>
+<div class="think">💭 „Lass uns …!" (Du-Form: Lass · Ihr-Form: Lasst)</div>
+</div>
+
+<!-- IDIOME -->
+<h2 class="section-title">10 Idiome mit <em style="font-style:italic;">lassen</em></h2>
+<p class="section-sub">Die hört man jeden Tag in Deutschland — kennst du sie?</p>
+
+<div class="idiom-grid">
+<div class="idiom"><div class="idiom-icon">🆘</div><div><div class="idiom-de">jemanden im Stich lassen</div><div class="idiom-meaning">in einer schwierigen Situation verlassen / nicht helfen</div></div></div>
+<div class="idiom"><div class="idiom-icon">🙅</div><div><div class="idiom-de">die Finger von etwas lassen</div><div class="idiom-meaning">etwas nicht tun / nicht anfassen</div></div></div>
+<div class="idiom"><div class="idiom-icon">🧘</div><div><div class="idiom-de">jemanden in Ruhe lassen</div><div class="idiom-meaning">aufhören jemanden zu nerven</div></div></div>
+<div class="idiom"><div class="idiom-icon">😞</div><div><div class="idiom-de">jemanden hängen lassen</div><div class="idiom-meaning">jemanden enttäuschen / nicht erscheinen</div></div></div>
+<div class="idiom"><div class="idiom-icon">⏳</div><div><div class="idiom-de">sich Zeit lassen</div><div class="idiom-meaning">langsam machen, sich nicht beeilen</div></div></div>
+<div class="idiom"><div class="idiom-icon">🐱</div><div><div class="idiom-de">die Katze aus dem Sack lassen</div><div class="idiom-meaning">ein Geheimnis verraten</div></div></div>
+<div class="idiom"><div class="idiom-icon">😌</div><div><div class="idiom-de">locker lassen</div><div class="idiom-meaning">nicht so streng sein / entspannen</div></div></div>
+<div class="idiom"><div class="idiom-icon">🥺</div><div><div class="idiom-de">den Kopf hängen lassen</div><div class="idiom-meaning">traurig sein / aufgeben</div></div></div>
+<div class="idiom"><div class="idiom-icon">☔</div><div><div class="idiom-de">jemanden im Regen stehen lassen</div><div class="idiom-meaning">jemanden allein lassen mit einem Problem</div></div></div>
+<div class="idiom"><div class="idiom-icon">💪</div><div><div class="idiom-de">nichts unversucht lassen</div><div class="idiom-meaning">alles versuchen / nichts auslassen</div></div></div>
+</div>
+
+</section>
+
+<!-- ============== UMGANGSSPRACHE ============== -->
+<section class="section" data-section="1">
+
+<h2 class="section-title">💬 Wie Deutsche <em style="font-style:italic;">wirklich</em> reden</h2>
+<p class="section-sub">Echte WhatsApp-Chats mit Umgangssprache. So sagt man's auf der Straße!</p>
+
+<div class="tip">
+🔥 <strong>Achtung:</strong> Diese Ausdrücke hörst du JEDEN TAG in Deutschland — aber sie stehen in keinem Lehrbuch. Nutze sie nicht in einer Bewerbung, aber gerne mit Freunden!
+</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">🍕</div><div class="name-row"><div class="name">Tim · Mitbewohner</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hab voll Bock auf Pizza heute Abend 🍕</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Lass mal!</strong> Ich hab grad gestern Pizza gegessen 😅</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Lass uns abhauen</strong> und Sushi essen gehen!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Geil, klar! Wo treffen wir uns?</div></div>
+<div class="chat-meaning"><strong>„Lass mal!"</strong> = Nein, lass uns das nicht machen.<br><strong>„Lass uns abhauen!"</strong> = Komm, wir gehen weg!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">💼</div><div class="name-row"><div class="name">Anna · Chefin</div><div class="stat">zuletzt online: gestern</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Bitte machen Sie die Präsentation bis morgen 9 Uhr fertig!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Aber das ist heute Abend bis 23 Uhr…</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Lass die Kirche im Dorf</strong> — wir machen das immer so 😊</div></div>
+<div class="chat-meaning"><strong>„Lass die Kirche im Dorf!"</strong> = Übertreib nicht / Bleib realistisch / Mach kein Drama!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🎉</div><div class="name-row"><div class="name">Best Friend Forever</div><div class="stat">tippt…</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hab heute meinen Job gekündigt 🥳</div></div>
+<div class="chat-msg in"><div class="chat-bubble">WAAAAS?! 😱</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Lass es heute Abend krachen!</strong> Ich lade dich ein 🍾</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Yesss, <strong>lass die Sau raus</strong> 🐷✨</div></div>
+<div class="chat-meaning"><strong>„Lass es krachen!"</strong> = Feier richtig hart!<br><strong>„Die Sau rauslassen"</strong> = wild feiern, total ausflippen (positiv!)</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😔</div><div class="name-row"><div class="name">Schwester ❤️</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hab die Prüfung verhauen 😭</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Oh nein! <strong>Lass dich nicht hängen</strong> ❤️</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Das passiert jedem mal. <strong>Lass es gut sein</strong> für heute, morgen ist neuer Tag!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Danke 🥺 Du hast recht</div></div>
+<div class="chat-meaning"><strong>„Lass dich nicht hängen!"</strong> = Kopf hoch! Sei nicht traurig!<br><strong>„Lass es gut sein"</strong> = Schon okay / mach dir keinen Kopf mehr</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🎲</div><div class="name-row"><div class="name">Marco</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Rate mal, wen ich gestern getroffen hab! 👀</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Lass mich raten…</strong> Sabine? 😏</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wie hast du das gewusst?! 🤯</div></div>
+<div class="chat-msg out"><div class="chat-bubble">😂 <strong>Lass mal sehen…</strong> ist sie dann mit dir essen gegangen?</div></div>
+<div class="chat-meaning"><strong>„Lass mich raten…"</strong> = Let me guess!<br><strong>„Lass mal sehen!"</strong> = Lass mich nachdenken / let me see</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🤦</div><div class="name-row"><div class="name">Genervte Mama</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wann kommst du nach Hause???</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hast du Hausaufgaben gemacht???</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hast du dein Zimmer aufgeräumt???</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Lass mich in Ruhe!</strong> 😤 Ich komme gleich!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wie redest du mit deiner Mutter?! 😡</div></div>
+<div class="chat-meaning"><strong>„Lass mich in Ruhe!"</strong> = Leave me alone! (Achtung: schon ziemlich genervt!)</div>
+</div>
+
+</div>
+
+<!-- BONUS: Umgangs-Phrasen Liste -->
+<h2 class="section-title">12 weitere <em style="font-style:italic;">lassen</em>-Phrasen aus dem Alltag</h2>
+
+<div class="idiom-grid">
+<div class="idiom"><div class="idiom-icon">🛑</div><div><div class="idiom-de">„Lass den Quatsch!"</div><div class="idiom-meaning">Hör auf mit dem Unsinn!</div></div></div>
+<div class="idiom"><div class="idiom-icon">💪</div><div><div class="idiom-de">„Lass dich nicht stressen!"</div><div class="idiom-meaning">Don't stress yourself / bleib cool</div></div></div>
+<div class="idiom"><div class="idiom-icon">😊</div><div><div class="idiom-de">„Lass mich auch mal!"</div><div class="idiom-meaning">Let me try too! / Ich will auch dran!</div></div></div>
+<div class="idiom"><div class="idiom-icon">🤝</div><div><div class="idiom-de">„Lass uns ehrlich sein."</div><div class="idiom-meaning">Let's be honest</div></div></div>
+<div class="idiom"><div class="idiom-icon">😅</div><div><div class="idiom-de">„Lass es uns versuchen!"</div><div class="idiom-meaning">Let's try it!</div></div></div>
+<div class="idiom"><div class="idiom-icon">🚪</div><div><div class="idiom-de">„Lass mich durch!"</div><div class="idiom-meaning">Let me through! (in der U-Bahn etc.)</div></div></div>
+<div class="idiom"><div class="idiom-icon">🤫</div><div><div class="idiom-de">„Lass uns nicht darüber reden."</div><div class="idiom-meaning">Lass uns das Thema wechseln</div></div></div>
+<div class="idiom"><div class="idiom-icon">💸</div><div><div class="idiom-de">„Lass es dir gut gehen!"</div><div class="idiom-meaning">Have a good one / Genieße dein Leben!</div></div></div>
+<div class="idiom"><div class="idiom-icon">😂</div><div><div class="idiom-de">„Lass uns lachen!"</div><div class="idiom-meaning">Komm, lustig sein!</div></div></div>
+<div class="idiom"><div class="idiom-icon">⏰</div><div><div class="idiom-de">„Lass es bis morgen!"</div><div class="idiom-meaning">Mach's morgen / verschiebe es</div></div></div>
+<div class="idiom"><div class="idiom-icon">🙌</div><div><div class="idiom-de">„Lass dich nicht unterkriegen!"</div><div class="idiom-meaning">Don't let them get you down!</div></div></div>
+<div class="idiom"><div class="idiom-icon">🎯</div><div><div class="idiom-de">„Lass uns Nägel mit Köpfen machen!"</div><div class="idiom-meaning">Lass uns richtig handeln / entscheiden!</div></div></div>
+</div>
+
+</section>
+
+<!-- ============== LERNKARTEN ============== -->
+<section class="section" data-section="2">
+
+<h2 class="section-title">Lernkarten · trennbare <em style="font-style:italic;">lassen</em>-Verben</h2>
+<p class="section-sub">Errätst du die Bedeutung? Erst denken — dann tippen.</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">🐦</div>
+<div class="flip-word" id="flipWord">freilassen</div>
+<div class="flip-badge" id="flipBadge">trennbar</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">jemanden in die Freiheit lassen</div>
+<div class="flip-ex" id="flipEx">„Der Vogel wurde aus dem Käfig <strong>freigelassen</strong>."</div>
+</div>
+</div>
+</div>
+
+<div class="lk-nav">
+<button class="lk-btn" id="lkPrev">←</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span>
+<button class="lk-btn" id="lkNext">→</button>
+</div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+
+</section>
+
+<!-- ============== QUIZ ============== -->
+<section class="section" data-section="3">
+
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Welches lassen-Verb?</em></h2>
+<p class="section-sub">Lies die Situation und wähle das passende Verb.</p>
+
+<div class="quiz"><div class="quiz-q">„Ich habe meinen Schlüssel im Büro <span class="blank">?</span>." <span style="color:var(--ink-mute);font-size:.85em;">(= dort gelassen / vergessen)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">verlassen</span><span class="quiz-chip">freigelassen</span><span class="quiz-chip">liegen lassen</span></div><div class="quiz-explain">✓ <strong>liegen lassen</strong> — etwas an einem Ort zurücklassen / vergessen</div></div>
+
+<div class="quiz"><div class="quiz-q">„Bitte <span class="blank">?</span> Sie mich kurz — ich muss telefonieren." <span style="color:var(--ink-mute);font-size:.85em;">(höflich: jemanden in Ruhe lassen)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">verlassen</span><span class="quiz-chip">entschuldigen / lassen</span><span class="quiz-chip">loslassen</span></div><div class="quiz-explain">✓ Höflich: „Lassen Sie mich kurz" — Bedeutung 2 (erlauben)</div></div>
+
+<div class="quiz"><div class="quiz-q">„Das Auto streikt — ich muss es <span class="blank">?</span>." <span style="color:var(--ink-mute);font-size:.85em;">(Werkstatt → jemand anders repariert)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">selbst reparieren</span><span class="quiz-chip">reparieren lassen</span><span class="quiz-chip">stehen lassen</span></div><div class="quiz-explain">✓ <strong>reparieren lassen</strong> — Bedeutung 3: jemand anders macht es FÜR mich</div></div>
+
+<div class="quiz"><div class="quiz-q">„<span class="blank">?</span> uns gemeinsam essen gehen!" <span style="color:var(--ink-mute);font-size:.85em;">(freundlicher Vorschlag)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Lass</span><span class="quiz-chip">Lasst</span><span class="quiz-chip">Lassen</span></div><div class="quiz-explain">✓ <strong>Lass</strong> uns — Du-Form (zu einer Person). Bei mehreren: „Lasst uns…!"</div></div>
+
+<div class="quiz"><div class="quiz-q">„Das Fenster <span class="blank">?</span> nicht öffnen — es ist kaputt." <span style="color:var(--ink-mute);font-size:.85em;">(= kann nicht geöffnet werden)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">öffnet</span><span class="quiz-chip">wird</span><span class="quiz-chip">lässt sich</span></div><div class="quiz-explain">✓ <strong>lässt sich</strong> nicht öffnen — Bedeutung 5: Passiv-Ersatz mit „können"</div></div>
+
+<div class="quiz"><div class="quiz-q">„Mein Freund hat mich beim Umzug <span class="blank">?</span> — er kam einfach nicht!" <span style="color:var(--ink-mute);font-size:.85em;">(Idiom: enttäuschen)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">gelassen</span><span class="quiz-chip">hängen lassen</span><span class="quiz-chip">in Ruhe gelassen</span></div><div class="quiz-explain">✓ <strong>hängen lassen</strong> — Idiom: jemanden enttäuschen / nicht erscheinen</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich bin um 18 Uhr zu Hause — kannst du den Hund <span class="blank">?</span>?" <span style="color:var(--ink-mute);font-size:.85em;">(= rein in die Wohnung lassen)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">reinlassen</span><span class="quiz-chip">freilassen</span><span class="quiz-chip">verlassen</span></div><div class="quiz-explain">✓ <strong>reinlassen</strong> — jemanden / etwas in einen Raum hereinlassen</div></div>
+
+<div class="quiz"><div class="quiz-q">„Lass die Vergangenheit endlich <span class="blank">?</span> und genieß den Moment!" <span style="color:var(--ink-mute);font-size:.85em;">(= nicht mehr daran festhalten)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">verlassen</span><span class="quiz-chip">freilassen</span><span class="quiz-chip">los</span></div><div class="quiz-explain">✓ „lass <strong>los</strong>" — loslassen: nicht mehr festhalten (physisch & emotional)</div></div>
+
+<div class="quiz"><div class="quiz-q">„Hör auf zu nerven! <span class="blank">?</span> die Kirche im Dorf!" <span style="color:var(--ink-mute);font-size:.85em;">(Umgangssprache: nicht übertreiben)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Lass</span><span class="quiz-chip">Lasst</span><span class="quiz-chip">Lassen</span></div><div class="quiz-explain">✓ <strong>Lass</strong> die Kirche im Dorf! — informelle Du-Form gegen Übertreibung</div></div>
+
+<div class="quiz"><div class="quiz-q">„Es ist Freitag — heute <span class="blank">?</span> wir es krachen!" <span style="color:var(--ink-mute);font-size:.85em;">(Umgangssprache: feiern!)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">lassen</span><span class="quiz-chip">lass</span><span class="quiz-chip">lasst</span></div><div class="quiz-explain">✓ „<strong>Lass</strong> uns…" oder „lasst uns…" — als wir 1.Pl.: heute lassen wir es krachen!</div></div>
+
+</section>
+
+<!-- ============== LÜCKENTEXT ============== -->
+<section class="section" data-section="4">
+
+<h2 class="section-title">Lückentext</h2>
+<p class="section-sub">Wähle pro Satz das passende lassen-Verb. Dann auf „Überprüfen" tippen.</p>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Ich gehe nicht selbst zum Friseur — ich <select data-sol="lasse"><option value="">…</option><option>lasse</option><option>schneide</option><option>verlasse</option></select> mir die Haare schneiden.</div>
+<div class="gap-line">2. <select data-sol="Lass"><option value="">…</option><option>Lass</option><option>Lassen</option><option>Lasst</option></select> uns am Wochenende wandern gehen!</div>
+<div class="gap-line">3. Mein Kollege hat mich gestern total im <select data-sol="Stich"><option value="">…</option><option>Stich</option><option>Regen</option><option>Sack</option></select> gelassen — niemand half mir mit der Präsentation.</div>
+<div class="gap-line">4. Das Problem <select data-sol="lässt"><option value="">…</option><option>kann</option><option>lässt</option><option>wird</option></select> sich leicht lösen, wenn wir zusammenarbeiten.</div>
+<div class="gap-line">5. Ich habe meinen Regenschirm im Bus liegen <select data-sol="lassen"><option value="">…</option><option>lassen</option><option>verlassen</option><option>gelassen</option></select> — wieder einmal!</div>
+<div class="gap-line">6. Mama, <select data-sol="lass"><option value="">…</option><option>lass</option><option>verlasse</option><option>lässt</option></select> mich heute Abend bitte länger aufbleiben!</div>
+<div class="gap-line">7. Du bist gestresst? <select data-sol="Lass"><option value="">…</option><option>Lass</option><option>Lasst</option><option>Lassen</option></select> dir Zeit — alles wird gut.</div>
+<div class="gap-line">8. Wir <select data-sol="lassen"><option value="">…</option><option>lassen</option><option>nehmen</option><option>verlassen</option></select> das Auto in der Werkstatt, weil der Motor komisch klingt.</div>
+<div class="gap-actions">
+<button class="btn-secondary" id="gapReset">Neu</button>
+<button class="btn-primary" id="gapCheck">Überprüfen</button>
+</div>
+</div>
+
+<div class="tip" id="gapScore" style="display:none;"></div>
+
+</section>
+
+<!-- ============== ZUORDNEN ============== -->
+<section class="section" data-section="5">
+
+<h2 class="section-title">Idiom &amp; <em style="font-style:italic;">Bedeutung</em> zuordnen</h2>
+<p class="section-sub">Tippe links ein Idiom — dann rechts die passende Bedeutung. Richtige Paare werden grün.</p>
+
+<div class="match-stage">
+<div class="match-cols">
+<div class="match-col">
+<h4>🗣️ Idiom</h4>
+<div class="match-list" id="leftCol"></div>
+</div>
+<div class="match-col">
+<h4>💭 Bedeutung</h4>
+<div class="match-list" id="rightCol"></div>
+</div>
+</div>
+<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+</div>
+
+</section>
+
+<!-- ============== SPRECHEN ============== -->
+<section class="section" data-section="6">
+
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht's!</em></h2>
+<p class="section-sub">Allein, mit Partner oder in der Gruppe. Zieh eine Karte und sprich frei mit lassen.</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div>
+<div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+
+<div class="speak-controls">
+<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+</div>
+
+<!-- ROLLENSPIELE -->
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">mit lassen</em></h2>
+<p class="section-sub">Übt zu zweit — möglichst viele „lassen"-Formen verwenden!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Bedeutung 3</div>
+<div class="role-title">💇‍♀️ Im Friseursalon</div>
+<div class="role-situation">Du gehst zum Friseur und lässt dir die Haare schneiden. Erkläre genau, was du machen lassen willst — und was du AUF KEINEN FALL machen lassen willst!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🙋‍♀️</div><div class="person-content"><div class="person-label">Kund:in</div><div class="person-quote">„Ich <strong>lasse</strong> mir heute die Haare <strong>schneiden</strong> und vielleicht auch <strong>färben</strong>. Aber bitte <strong>lassen</strong> Sie meinen Pony, wie er ist!"</div></div></div>
+<div class="person b"><div class="person-avatar">💇</div><div class="person-content"><div class="person-label">Friseur:in</div><div class="person-quote">„Sehr gerne. <strong>Lassen</strong> Sie sich auch die Spitzen <strong>schneiden</strong>? Und das Wasser — kalt oder warm <strong>lassen</strong>?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: Nutzt mindestens <strong>8 verschiedene „lassen"-Konstruktionen</strong> — auch mit Idiomen!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Bedeutung 2 + 6</div>
+<div class="role-title">👨‍👧 Eltern &amp; Teenager — Erlaubnis</div>
+<div class="role-situation">Der Teenager will heute Abend auf eine Party. Die Eltern sind skeptisch. Diskutiert: Was lassen die Eltern zu? Was lassen sie nicht zu? Und wer hat am Ende recht?</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🧑</div><div class="person-content"><div class="person-label">Teenager</div><div class="person-quote">„<strong>Lass</strong> mich bitte gehen! Alle anderen Eltern <strong>lassen</strong> ihre Kinder auch dort sein. <strong>Lass uns</strong> einen Kompromiss finden!"</div></div></div>
+<div class="person b"><div class="person-avatar">👨‍👩</div><div class="person-content"><div class="person-label">Eltern</div><div class="person-quote">„Wir <strong>lassen</strong> dich nicht so spät raus. <strong>Lass die Kirche im Dorf</strong> — du bist erst 15! Aber <strong>lass uns</strong> ehrlich reden."</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: Mindestens 6× „lassen" für Erlaubnis + 2× „Lass uns…" für Vorschläge + 1 Umgangssprache-Idiom!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Idiome</div>
+<div class="role-title">😢 Beziehungs-Streit — Idiom-Battle</div>
+<div class="role-situation">Zwei Freund:innen streiten, weil A immer wieder Termine vergisst und B dadurch im Stich gelassen wird. Jede:r soll mindestens 4 lassen-Idiome benutzen!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😠</div><div class="person-content"><div class="person-label">Person A — der/die Enttäuschte</div><div class="person-quote">„Du hast mich im <strong>Stich gelassen</strong>! Du <strong>lässt</strong> mich immer wieder <strong>im Regen stehen</strong>. <strong>Lass es endlich sein</strong>!"</div></div></div>
+<div class="person b"><div class="person-avatar">😅</div><div class="person-content"><div class="person-label">Person B — der/die Schuldige</div><div class="person-quote">„Bitte <strong>lass</strong> mich erklären! <strong>Lass die Vergangenheit los</strong>. <strong>Lass uns</strong> nochmal von vorne anfangen — ich verspreche, nichts <strong>unversucht zu lassen</strong>."</div></div></div>
+</div>
+<div class="role-goal">🏆 Bonus: Wer 5+ verschiedene Idiome unterbringt, gewinnt!</div>
+</div>
+</div>
+
+<!-- DEBATTEN -->
+<div class="role-section">
+<h2 class="section-title">4 Thesen <em style="font-style:italic;">zum Debattieren</em></h2>
+<p class="section-sub">4 Gruppen — jede verteidigt eine These mit „lassen"-Argumenten!</p>
+
+<div class="debate-grid">
+<div class="debate"><div class="debate-num">These 1</div><div class="debate-q">„Eltern sollten ihre Kinder mehr selbst entscheiden lassen — auch wenn sie Fehler machen."</div></div>
+<div class="debate"><div class="debate-num">These 2</div><div class="debate-q">„Wir lassen heute zu viele Dinge von anderen machen — wir verlernen, selbst zu handeln."</div></div>
+<div class="debate"><div class="debate-num">These 3</div><div class="debate-q">„Manchmal muss man Menschen einfach gehen lassen, auch wenn man sie liebt."</div></div>
+<div class="debate"><div class="debate-num">These 4</div><div class="debate-q">„Soziale Medien lassen uns nie richtig abschalten — wir sollten sie bewusst lassen."</div></div>
+</div>
+
+<div class="tip" style="margin-top:1.5rem;">
+🎯 <strong>Pflicht in deiner Argumentation:</strong> Nutze mindestens 5 verschiedene Konstruktionen mit „lassen" — z.B. <em>etwas machen lassen, jemanden in Ruhe lassen, sein lassen, Lass uns…, das lässt sich…</em>
+</div>
+</div>
+
+<!-- MISSION -->
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Mini-Aufgabe:</strong> Schreibe jeden Tag <strong>3 echte Sätze aus deinem Leben</strong> mit „lassen" — jeden Tag eine andere Bedeutung! Mo: beauftragen, Di: erlauben, Mi: sein lassen, Do: Vorschlag, Fr: Passiv-Ersatz, Sa: ein Umgangs-Idiom. <br><br>
+🏆 <strong>Bonus-Challenge:</strong> Schick deinem Tandempartner einen kurzen WhatsApp-Chat (5 Nachrichten hin und her) — mit <strong>mindestens 4 lassen-Phrasen</strong> aus der Umgangssprache!
+</div>
+
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit ❤️ für meine Sprechclub-Lernenden · Das Verb lassen</footer>
+
+<script>
+// ===== TAB NAV =====
+document.querySelectorAll('.tab').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// ===== LERNKARTEN =====
+const KARTEN=[
+  {emoji:'🐦',word:'freilassen',badge:'trennbar',rule:'jemanden in die Freiheit lassen',ex:'„Der Vogel wurde aus dem Käfig <strong>freigelassen</strong>."'},
+  {emoji:'👋',word:'loslassen',badge:'trennbar',rule:'nicht mehr festhalten (physisch & emotional)',ex:'„<strong>Lass</strong> meine Hand <strong>los</strong>!" / „Du musst die Vergangenheit <strong>loslassen</strong>."'},
+  {emoji:'🚪',word:'reinlassen',badge:'trennbar · informell',rule:'jemanden in einen Raum lassen',ex:'„Es klingelt — kannst du den Hund <strong>reinlassen</strong>?"'},
+  {emoji:'🚫',word:'rauslassen',badge:'trennbar · informell',rule:'jemanden hinaus lassen',ex:'„Ich <strong>lasse</strong> den Hund kurz <strong>raus</strong>."'},
+  {emoji:'🏠',word:'verlassen',badge:'NICHT trennbar (ver-)',rule:'einen Ort/eine Person verlassen',ex:'„Sie hat ihren Mann <strong>verlassen</strong>." / „Wir <strong>verlassen</strong> das Haus um 8 Uhr."'},
+  {emoji:'⏭️',word:'auslassen',badge:'trennbar',rule:'etwas überspringen / nicht machen',ex:'„Ich <strong>lasse</strong> heute das Frühstück <strong>aus</strong>."'},
+  {emoji:'💧',word:'ablassen',badge:'trennbar',rule:'Flüssigkeit/Druck rauslassen',ex:'„Sie <strong>lässt</strong> das Wasser aus der Badewanne <strong>ab</strong>."'},
+  {emoji:'❌',word:'weglassen',badge:'trennbar',rule:'etwas nicht hinzufügen / weglassen',ex:'„Im Rezept kannst du den Zucker <strong>weglassen</strong>."'},
+  {emoji:'📉',word:'nachlassen',badge:'trennbar',rule:'weniger / schwächer werden',ex:'„Der Regen <strong>lässt nach</strong>." / „Seine Konzentration <strong>lässt nach</strong>."'},
+  {emoji:'🎁',word:'überlassen',badge:'NICHT trennbar',rule:'jemandem etwas geben/überlassen',ex:'„Ich <strong>überlasse</strong> dir die Entscheidung."'},
+  {emoji:'📝',word:'hinterlassen',badge:'NICHT trennbar',rule:'etwas zurücklassen (auch Nachrichten!)',ex:'„Er hat eine Nachricht auf der Mailbox <strong>hinterlassen</strong>."'},
+  {emoji:'🚯',word:'unterlassen',badge:'NICHT trennbar · formell',rule:'etwas absichtlich NICHT tun',ex:'„Bitte <strong>unterlassen</strong> Sie das Rauchen hier!"'},
+  {emoji:'✅',word:'zulassen',badge:'trennbar',rule:'erlauben / akzeptieren',ex:'„Ich <strong>lasse</strong> das nicht <strong>zu</strong>!"'},
+  {emoji:'🛬',word:'einlassen',badge:'trennbar',rule:'hineinlassen / sich auf etwas einlassen',ex:'„Sie <strong>lassen</strong> niemanden ohne Einladung <strong>ein</strong>." / „Ich <strong>lasse</strong> mich nicht darauf <strong>ein</strong>."'},
+  {emoji:'🛌',word:'liegen lassen',badge:'2 Wörter!',rule:'etwas an einem Ort vergessen',ex:'„Ich habe mein Buch im Zug <strong>liegen lassen</strong>."'},
+  {emoji:'⏸️',word:'stehen lassen',badge:'2 Wörter!',rule:'etwas/jemanden allein lassen',ex:'„Sein Freund hat ihn einfach <strong>stehen lassen</strong>."'},
+];
+let order=KARTEN.map((_,i)=>i);
+let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){
+  const k=KARTEN[order[lkIdx]];
+  document.getElementById('flipEmoji').textContent=k.emoji;
+  document.getElementById('flipWord').textContent=k.word;
+  document.getElementById('flipBadge').textContent=k.badge;
+  document.getElementById('flipRule').textContent=k.rule;
+  document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('lkCur').textContent=lkIdx+1;
+  document.getElementById('lkTot').textContent=KARTEN.length;
+  flipEl.classList.remove('flipped');
+}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+// ===== QUIZ =====
+document.querySelectorAll('.quiz-opts').forEach(opts=>{
+  const c=parseInt(opts.dataset.c);
+  const chips=opts.querySelectorAll('.quiz-chip');
+  const exp=opts.parentElement.querySelector('.quiz-explain');
+  chips.forEach((chip,i)=>{
+    chip.onclick=()=>{
+      if(opts.dataset.done)return;
+      opts.dataset.done='1';
+      if(i===c)chip.classList.add('correct');
+      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
+      exp.classList.add('show');
+    };
+  });
+});
+
+// ===== LÜCKENTEXT =====
+document.getElementById('gapCheck').onclick=()=>{
+  const sels=document.querySelectorAll('#gapText select');
+  let right=0,total=sels.length;
+  sels.forEach(s=>{
+    s.classList.remove('right','wrong');
+    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    else s.classList.add('wrong');
+  });
+  const score=document.getElementById('gapScore');
+  score.style.display='block';
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');
+};
+document.getElementById('gapReset').onclick=()=>{
+  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  document.getElementById('gapScore').style.display='none';
+};
+
+// ===== ZUORDNEN =====
+const PAIRS=[
+  {l:'im Stich lassen',r:'jemanden in einer schwierigen Situation verlassen'},
+  {l:'die Finger lassen von',r:'etwas nicht tun / nicht anfassen'},
+  {l:'in Ruhe lassen',r:'aufhören jemanden zu nerven'},
+  {l:'hängen lassen',r:'jemanden enttäuschen / nicht erscheinen'},
+  {l:'sich Zeit lassen',r:'langsam machen / sich nicht beeilen'},
+  {l:'Katze aus dem Sack lassen',r:'ein Geheimnis verraten'},
+  {l:'locker lassen',r:'nicht so streng sein / entspannen'},
+  {l:'den Kopf hängen lassen',r:'traurig sein / aufgeben'},
+];
+function buildMatch(){
+  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
+  L.innerHTML='';R.innerHTML='';
+  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
+  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
+  let pick=null;
+  document.querySelectorAll('.match-item').forEach(item=>{
+    item.onclick=()=>{
+      if(item.classList.contains('done'))return;
+      if(!pick){pick=item;item.classList.add('selected');return;}
+      if(pick===item){item.classList.remove('selected');pick=null;return;}
+      const pickCol=pick.parentElement.id;
+      const itemCol=item.parentElement.id;
+      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
+      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
+      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
+    };
+  });
+}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
+
+// ===== SPRECHKARTEN =====
+const SPEAK=[
+  {emoji:'💇',cat:'Bedeutung 3 · beauftragen',q:'Was lässt du regelmäßig machen, anstatt es selbst zu tun? Nenne mindestens 5 Sachen.'},
+  {emoji:'🚭',cat:'Bedeutung 1 · sein lassen',q:'Welche schlechte Gewohnheit hast du gelassen — oder willst du noch lassen? Warum?'},
+  {emoji:'👪',cat:'Bedeutung 2 · erlauben',q:'Was haben dich deine Eltern als Kind NICHT machen lassen, was du heute deinen Kindern erlauben würdest?'},
+  {emoji:'🎒',cat:'Bedeutung 4 · zurücklassen',q:'Was hast du schon mal wo vergessen oder liegen lassen? Erzähle die peinlichste Geschichte!'},
+  {emoji:'💔',cat:'Idiom · im Stich lassen',q:'Wann hat dich jemand im Stich gelassen? Wie hast du dich gefühlt — und wie ging es weiter?'},
+  {emoji:'⏰',cat:'Idiom · sich Zeit lassen',q:'Wann musst du dir bewusst Zeit lassen? Bei welcher Aktivität willst du NIE schnell sein?'},
+  {emoji:'🤐',cat:'Idiom · Katze aus dem Sack',q:'Hast du schon mal ein Geheimnis verraten — die Katze aus dem Sack gelassen? Erzähle!'},
+  {emoji:'🎉',cat:'Umgangssprache · Lass es krachen!',q:'Wann hast du das letzte Mal richtig gefeiert — die Sau rausgelassen? Was war los?'},
+  {emoji:'⛪',cat:'Umgangssprache · Kirche im Dorf',q:'Wann musste jemand zu DIR sagen: „Lass die Kirche im Dorf"? Hast du übertrieben?'},
+  {emoji:'😤',cat:'Umgangssprache · Lass mich in Ruhe',q:'Wer oder was lässt dich nie in Ruhe? Wie reagierst du darauf?'},
+  {emoji:'🚪',cat:'Trennbar · loslassen',q:'Was musst du in deinem Leben loslassen — und was kannst du einfach nicht loslassen?'},
+  {emoji:'😴',cat:'Bedeutung 1 · liegen lassen',q:'Was hast du heute liegen lassen, was du eigentlich tun wolltest? Schlechtes Gewissen oder völlig egal?'},
+  {emoji:'🚗',cat:'Trennbar · verlassen',q:'Wann hast du das letzte Mal eine Stadt/ein Land/einen Job verlassen? Wie war das Gefühl?'},
+  {emoji:'⚡',cat:'B2 · lässt sich',q:'Was in deinem Leben „lässt sich nicht ändern" und was „lässt sich" leicht ändern? Nenne je 3.'},
+  {emoji:'🎨',cat:'Freestyle',q:'Erzähle 90 Sekunden über deinen Tag heute — mit mindestens 5 verschiedenen „lassen"-Bedeutungen!'},
+  {emoji:'🌧️',cat:'Idiom · im Regen stehen lassen',q:'Wann hast du jemanden im Regen stehen lassen — oder bist du selbst im Regen stehen gelassen worden?'},
+  {emoji:'💬',cat:'Umgangssprache · Lass mal!',q:'Wann sagst du „Lass mal!"? Was lehnst du gerade ab? Nenne 3 Beispiele.'},
+  {emoji:'😊',cat:'Lass dich nicht stressen',q:'Was stresst dich gerade? Sag dir selbst: „Lass dich nicht stressen, weil…" und erzähle warum.'},
+];
+let lastSpeak=-1;
+document.getElementById('speakNew').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
+  lastSpeak=i;const k=SPEAK[i];
+  const c=document.getElementById('speakCard');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';
+    c.style.opacity='1';
+  },200);
+};
+</script>
+</body></html>
