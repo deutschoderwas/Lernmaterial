@@ -1,0 +1,541 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Globalisierung - Pro &amp; Contra - B2/C1 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* PRO/CONTRA-SPLIT */
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
+@media(max-width:700px){.pc-grid{grid-template-columns:1fr;}}
+.pc{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:1.3rem 1.4rem;}
+.pc.pro{border-top:5px solid var(--teal);}
+.pc.contra{border-top:5px solid var(--red);}
+.pc-head{font-family:'Fraunces',serif;font-weight:900;font-size:1.15rem;margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;}
+.pc.pro .pc-head{color:var(--teal);}
+.pc.contra .pc-head{color:var(--red);}
+.pc ul{list-style:none;padding:0;}
+.pc li{padding:.45rem 0;border-bottom:1px dashed var(--sand);font-size:.92rem;color:var(--ink);display:flex;gap:.5rem;align-items:flex-start;}
+.pc li:last-child{border-bottom:0;}
+.pc li::before{content:'';flex-shrink:0;width:8px;height:8px;border-radius:50%;margin-top:.45rem;}
+.pc.pro li::before{background:var(--teal);}
+.pc.contra li::before{background:var(--red);}
+.pc li strong{color:var(--ink);font-weight:700;}
+
+/* BEISPIEL-CARDS */
+.bsp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.5rem 0;}
+@media(max-width:600px){.bsp-grid{grid-template-columns:1fr;}}
+.bsp{background:var(--paper);border:1.5px solid var(--sand);border-radius:16px;padding:1.2rem 1.3rem;border-left:5px solid #B66809;}
+.bsp:nth-child(2){border-left-color:#6A3D9C;}
+.bsp-icon{font-size:1.8rem;margin-bottom:.3rem;}
+.bsp-name{font-family:'Fraunces',serif;font-weight:900;color:#B66809;font-size:1.05rem;margin-bottom:.3rem;}
+.bsp:nth-child(2) .bsp-name{color:#6A3D9C;}
+.bsp-text{font-size:.88rem;color:var(--ink-soft);line-height:1.55;}
+.bsp-text strong{color:var(--ink);font-weight:700;background:var(--yellow-soft);padding:.05em .3em;border-radius:4px;}
+
+/* STATISTIK CARDS */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:760px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+.stat{background:var(--paper);border:2px solid var(--red);border-radius:14px;padding:1rem .8rem;text-align:center;}
+.stat:nth-child(2){border-color:var(--teal);}.stat:nth-child(3){border-color:#B66809;}.stat:nth-child(4){border-color:#6A3D9C;}
+.stat-num{font-family:'Fraunces',serif;font-weight:900;font-size:1.9rem;color:var(--red);margin-bottom:.2rem;}
+.stat:nth-child(2) .stat-num{color:var(--teal);}.stat:nth-child(3) .stat-num{color:#B66809;}.stat:nth-child(4) .stat-num{color:#6A3D9C;}
+.stat-label{font-size:.78rem;color:var(--ink-soft);}
+
+/* WORTSCHATZ */
+.w-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.w-grid{grid-template-columns:1fr;}}
+.w{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.85rem 1.1rem;}
+.w-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;}
+.w-en{color:var(--ink-soft);font-size:.78rem;margin-top:.2rem;}
+
+/* ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.6rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE + DEBATE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person.c{border-color:#6A3D9C;background:#F4EEFA;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}.person.c .person-avatar{border-color:#6A3D9C;}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
+.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
+.debate:nth-child(2){border-left-color:var(--teal);}
+.debate:nth-child(3){border-left-color:var(--yellow);}
+.debate:nth-child(4){border-left-color:var(--pink);}
+.debate:nth-child(5){border-left-color:#6A3D9C;}
+.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.debate:nth-child(2) .debate-num{color:var(--teal);}.debate:nth-child(3) .debate-num{color:#B66809;}.debate:nth-child(4) .debate-num{color:#A04060;}.debate:nth-child(5) .debate-num{color:#6A3D9C;}
+.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas - Sprechclub B2/C1</div>
+<div class="title-wrap"><h1 class="title">Globalisierung - <span class="hl">Pro &amp; Contra</span></h1></div>
+<p class="subtitle">Lieferketten, Welthandel, Klimaschaden, Fair Trade - diskutiert die groessten Streitpunkte unserer vernetzten Welt auf B2/C1-Niveau.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">🌍</text><text y="40" text-anchor="middle" fill="#E8302A">Welthandel</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">📦</text><text y="40" text-anchor="middle" fill="#0FB5A6">Lieferkette</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">🏭</text><text y="40" text-anchor="middle" fill="#B66809">Outsourcing</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">🤝</text><text y="40" text-anchor="middle" fill="#A04060">Fair Trade</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">🌱</text><text y="40" text-anchor="middle" fill="#5F7A2A">Klima</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">🚧</text><text y="40" text-anchor="middle" fill="#6A3D9C">Protektion</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">⚖️ Pro &amp; Contra</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Wortschatz</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ÜBERBLICK -->
+<section class="section active" data-section="0">
+<h2 class="section-title">📊 Globalisierung in <em style="font-style:italic;">Zahlen</em></h2>
+<p class="section-sub">Was sagen die Statistiken? Wie vernetzt ist unsere Welt wirklich?</p>
+
+<div class="stats-grid">
+<div class="stat"><div class="stat-num">25%</div><div class="stat-label">des Welt-BIP durch Welthandel</div></div>
+<div class="stat"><div class="stat-num">80%</div><div class="stat-label">aller Kleidung aus Asien</div></div>
+<div class="stat"><div class="stat-num">11%</div><div class="stat-label">CO2-Emissionen durch Schiffstransport</div></div>
+<div class="stat"><div class="stat-num">2 Mrd.</div><div class="stat-label">Menschen leben unter 2 Euro/Tag</div></div>
+</div>
+
+<div class="tip">💡 <strong>Was zeigt das?</strong> Globalisierung ist allgegenwaertig - vom Smartphone in deiner Tasche bis zur Banane auf deinem Tisch. Aber: Wohlstand und Lasten sind extrem ungleich verteilt.</div>
+
+<h2 class="section-title">⚖️ <em style="font-style:italic;">Pro</em> vs. <em style="font-style:italic;">Contra</em></h2>
+<div class="pc-grid">
+<div class="pc pro">
+<div class="pc-head">👍 Pro-Argumente</div>
+<ul>
+<li><strong>Guenstige Produkte</strong> - dank globaler Lieferketten ist Konsum erschwinglich</li>
+<li><strong>Kulturelle Vielfalt</strong> - Musik, Essen, Mode aus aller Welt im Alltag</li>
+<li><strong>Innovation</strong> - internationale Forschung beschleunigt Fortschritt enorm</li>
+<li><strong>Armutsbekaempfung</strong> - hunderte Millionen sind aus extremer Armut entkommen</li>
+<li><strong>Wissenstransfer</strong> - Bildung und Technologien verbreiten sich schneller</li>
+<li><strong>Friedensfunktion</strong> - vernetzte Volkswirtschaften fuehren seltener Krieg</li>
+</ul>
+</div>
+<div class="pc contra">
+<div class="pc-head">👎 Contra-Argumente</div>
+<ul>
+<li><strong>Ausbeutung</strong> - Hungerloehne und Kinderarbeit in Schwellenlaendern</li>
+<li><strong>Klimaschaeden</strong> - lange Transportwege und Massenproduktion zerstoeren Umwelt</li>
+<li><strong>Lokale Wirtschaft</strong> stirbt - regionale Betriebe koennen mit Billigware nicht mithalten</li>
+<li><strong>Abhaengigkeit</strong> - Lieferengpaesse legen ganze Industrien lahm (siehe Corona)</li>
+<li><strong>Kulturverlust</strong> - Traditionen werden durch Konsumkultur ueberlagert</li>
+<li><strong>Steuerflucht</strong> - Multikonzerne zahlen kaum Steuern, wo sie verdienen</li>
+</ul>
+</div>
+</div>
+
+<h2 class="section-title">🔍 Konkrete <em style="font-style:italic;">Beispiele</em></h2>
+<div class="bsp-grid">
+<div class="bsp">
+<div class="bsp-icon">👕</div>
+<div class="bsp-name">Made in Bangladesch</div>
+<div class="bsp-text">Eine T-Shirt-Naeherin verdient ca. <strong>90 Euro im Monat</strong>. 2013 stuerzte die Fabrik Rana Plaza ein - <strong>1.134 Tote</strong>. Trotzdem produzieren H&amp;M, Zara &amp; Co. weiter dort. Warum? Niedrige Lohnkosten = niedrige Endpreise = hohe Gewinne.</div>
+</div>
+<div class="bsp">
+<div class="bsp-icon">📱</div>
+<div class="bsp-name">Apple-Lieferkette</div>
+<div class="bsp-text">Ein iPhone besteht aus Teilen aus <strong>43 Laendern</strong>: Lithium aus Chile, Coltan aus dem Kongo, Montage in China. Apple-Gewinnmarge: rund <strong>40%</strong>. Der chinesische Arbeiter in Shenzhen bekommt wenige Cents pro Geraet.</div>
+</div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Persoenlich</div><div class="qq">Schau auf das Etikett deines T-Shirts - wo wurde es hergestellt? Wuerdest du mehr bezahlen fuer faire Produktion?</div><div class="think">💭 Ehrlich: Wie viel mehr waerst du wirklich bereit zu zahlen?</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Provokant</div><div class="qq">Ist es egoistisch, billige Kleidung zu kaufen - oder ist es Luxus, sich Fair Trade leisten zu koennen?</div><div class="think">💭 Hat Verbraucher-Ethik mit Einkommen zu tun?</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Heimat</div><div class="qq">Welche Rolle spielt dein Heimatland in der Globalisierung - Produzent, Konsument, beides?</div><div class="think">💭 Gibt es Branchen, die wegen Globalisierung gestorben sind?</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Zukunft</div><div class="qq">Wird Globalisierung in 20 Jahren staerker oder schwaecher sein? Was sind die Treiber?</div><div class="think">💭 Denkt an Klimawandel, Krieg, KI, Migration...</div></div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So diskutieren <em style="font-style:italic;">Deutsche</em></h2>
+<p class="section-sub">Echte Chat-Diskussionen ueber Globalisierung - in Familien, mit Aktivist:innen, im Buero.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Globalisierung ist in Deutschland ein <strong>hoch emotionales</strong> Thema. Die Gruenen sind eher kritisch, die FDP eher pro-Welthandel, die Linke gegen Multikonzerne. Hoere die Argumente - es gibt keine einfache Wahrheit!</div>
+
+<div class="uss-grid">
+<div class="chat">
+<div class="chat-head"><div class="av">🗳️</div><div><div class="name">Politik-Chat</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Habt ihr gesehen? Trump fuehrt wieder Zoelle ein 😤</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Klassischer <strong>Protektionismus</strong> - schadet am Ende allen</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Aber rettet er nicht Arbeitsplaetze in den USA?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Kurzfristig vielleicht. Langfristig wird alles teurer und der <strong>Welthandel</strong> bricht ein 📉</div></div>
+<div class="chat-meaning"><strong>Protektionismus</strong> = wirtschaftliche Abschottung durch Zoelle &amp; Importverbote. Klassisches Gegenstueck zur Globalisierung!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📱</div><div><div class="name">Wo wurde dein Handy gebaut?</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Schau mal hinten auf dein iPhone - was steht da?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">„Designed in California, assembled in China". Krass.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Genau! Die Gewinne bleiben in den USA, die Arbeit in China. Klassische <strong>Lieferkette</strong> 🔗</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Und der <strong>Multikonzern</strong> verdient an beidem. Wahnsinn.</div></div>
+<div class="chat-meaning"><strong>Lieferkette</strong> (supply chain) = der gesamte Weg eines Produkts von Rohstoff bis Verbraucher. Oft ueber 10+ Laender!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">✊</div><div><div class="name">Aktivismus-Chat</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wir planen eine Demo gegen Shein! 🪧</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Was ist das Hauptproblem?</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Ausbeutung</strong> in den Fabriken + extreme <strong>Klimaschaeden</strong> durch Fast Fashion</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich bin dabei. Konsumkritik muss sichtbar werden 💪</div></div>
+<div class="chat-meaning">Junge Deutsche sind oft <strong>konsumkritisch</strong>. „Fast Fashion" ist zum Reizwort geworden!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">👵</div><div><div class="name">Oma · Generationskonflikt</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Frueher war alles aus Deutschland. Heute alles aus China!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Oma, dafuer war frueher auch alles viel teurer 😅</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Aber die Qualitaet! Und die Arbeitsplaetze hier sind weg!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Du hast einen Punkt mit den Jobs. Aber zurueck zum <strong>Schwellenland</strong>-Modell? Schwierig...</div></div>
+<div class="chat-meaning">Aeltere haben die Deindustrialisierung erlebt. <strong>Schwellenland</strong> = Land im wirtschaftlichen Aufstieg (z.B. China, Indien, Brasilien).</div>
+</div>
+</div>
+
+<h2 class="section-title">10 Woerter, die JEDE:R kennen sollte</h2>
+<div class="w-grid">
+<div class="w"><div class="w-de">die Globalisierung</div><div class="w-en">globalization - weltweite Vernetzung der Wirtschaft</div></div>
+<div class="w"><div class="w-de">die Lieferkette</div><div class="w-en">supply chain - Weg eines Produkts vom Rohstoff bis zum Verbraucher</div></div>
+<div class="w"><div class="w-de">das Outsourcing</div><div class="w-en">Verlagerung der Produktion ins Ausland</div></div>
+<div class="w"><div class="w-de">der Multikonzern</div><div class="w-en">multinational corporation - weltweit taetiges Grossunternehmen</div></div>
+<div class="w"><div class="w-de">der Welthandel</div><div class="w-en">world trade - internationaler Warenaustausch</div></div>
+<div class="w"><div class="w-de">das Schwellenland</div><div class="w-en">emerging market - Land im Aufstieg (z.B. Brasilien, Indien)</div></div>
+<div class="w"><div class="w-de">der Fair Trade</div><div class="w-en">fairer Handel zu gerechten Bedingungen</div></div>
+<div class="w"><div class="w-de">der Protektionismus</div><div class="w-en">wirtschaftliche Abschottung durch Zoelle</div></div>
+<div class="w"><div class="w-de">die Ausbeutung</div><div class="w-en">exploitation - unfaire Nutzung von Arbeitskraft</div></div>
+<div class="w"><div class="w-de">der CO2-Fussabdruck</div><div class="w-en">carbon footprint - eigene Klimabilanz</div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Wortschatz-Karten</h2>
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">🌍</div>
+<div class="flip-word" id="flipWord">die Globalisierung</div>
+<div class="flip-badge" id="flipBadge">Substantiv f.</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">weltweite Vernetzung der Wirtschaft</div>
+<div class="flip-ex" id="flipEx">„Die <strong>Globalisierung</strong> hat unser Leben grundlegend veraendert."</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span><button class="lk-btn" id="lkNext">→</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Pro oder Contra?</em></h2>
+
+<div class="quiz"><div class="quiz-q">Was ist eine <strong>Lieferkette</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Eine Halskette aus China</span><span class="quiz-chip">Der Weg eines Produkts vom Rohstoff zum Verbraucher</span><span class="quiz-chip">Ein DHL-Liefervertrag</span></div><div class="quiz-explain">✓ Die Lieferkette (supply chain) umfasst alle Produktions- und Transportschritte - oft ueber viele Laender hinweg.</div></div>
+
+<div class="quiz"><div class="quiz-q">Welches ist ein typisches <strong>Pro-Argument</strong> der Globalisierung?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Hoehere CO2-Emissionen</span><span class="quiz-chip">Guenstigere Produkte fuer Verbraucher</span><span class="quiz-chip">Ausbeutung in Fabriken</span></div><div class="quiz-explain">✓ Niedrige Preise sind ein klassisches Pro-Argument - Kritiker sagen jedoch: zu welchem Preis fuer Mensch und Umwelt?</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist <strong>Outsourcing</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Eine Outdoor-Marke</span><span class="quiz-chip">Outdoor-Werbung</span><span class="quiz-chip">Verlagerung der Produktion ins Ausland</span></div><div class="quiz-explain">✓ Outsourcing = Auslagerung von Aufgaben/Produktion in Niedriglohnlaender - spart Kosten, kostet aber Jobs.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet <strong>Protektionismus</strong>?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Wirtschaftliche Abschottung durch Zoelle</span><span class="quiz-chip">Schutz von Tieren</span><span class="quiz-chip">Datenschutz im Internet</span></div><div class="quiz-explain">✓ Protektionismus schuetzt die eigene Wirtschaft - z.B. Trumps Zoelle. Gegenstueck zum Freihandel.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist ein <strong>Schwellenland</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ein armes Land</span><span class="quiz-chip">Ein Land im wirtschaftlichen Aufstieg</span><span class="quiz-chip">Ein Land mit hoher Schwelle an der Grenze</span></div><div class="quiz-explain">✓ Schwellenlaender (emerging markets) - z.B. China, Indien, Brasilien - befinden sich zwischen Entwicklungs- und Industrieland.</div></div>
+
+<div class="quiz"><div class="quiz-q">Welches Argument ist ein typisches <strong>Contra-Argument</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Kulturelle Vielfalt</span><span class="quiz-chip">Mehr Innovation</span><span class="quiz-chip">Lokale Wirtschaft wird zerstoert</span></div><div class="quiz-explain">✓ Kritiker bemaengeln, dass globale Billigware regionale Betriebe und Traditionen verdraengt.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist <strong>Fair Trade</strong>?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Handel zu gerechten Bedingungen</span><span class="quiz-chip">Ein deutsches Modelabel</span><span class="quiz-chip">Eine Boersenstrategie</span></div><div class="quiz-explain">✓ Fair Trade = Produzenten erhalten faire Preise und arbeiten unter humanen Bedingungen. Bekannt aus Kaffee &amp; Schokolade.</div></div>
+
+<div class="quiz"><div class="quiz-q">Wo werden ca. <strong>80% aller Kleidung</strong> hergestellt?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">In Europa</span><span class="quiz-chip">In den USA</span><span class="quiz-chip">In Asien (China, Bangladesch, Vietnam)</span></div><div class="quiz-explain">✓ Etwa 80% der globalen Textilproduktion findet in Asien statt - Hauptgrund: niedrige Lohnkosten.</div></div>
+</section>
+
+<!-- LÜCKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext</h2>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Der Weg eines iPhones vom Rohstoff bis ins Geschaeft nennt man <select data-sol="Lieferkette"><option value="">…</option><option>Lieferkette</option><option>Welthandel</option><option>Outsourcing</option></select>.</div>
+<div class="gap-line">2. Wenn ein Konzern seine Produktion nach Vietnam verlegt, ist das <select data-sol="Outsourcing"><option value="">…</option><option>Protektionismus</option><option>Outsourcing</option><option>Fair Trade</option></select>.</div>
+<div class="gap-line">3. China und Indien zaehlen zu den wichtigsten <select data-sol="Schwellenländern"><option value="">…</option><option>Industrielaendern</option><option>Schwellenländern</option><option>Entwicklungslaendern</option></select>.</div>
+<div class="gap-line">4. Apple, Nestle und Amazon sind <select data-sol="Multikonzerne"><option value="">…</option><option>Multikonzerne</option><option>Kleinbetriebe</option><option>Familienunternehmen</option></select>.</div>
+<div class="gap-line">5. Trumps neue Zoelle sind ein Beispiel fuer <select data-sol="Protektionismus"><option value="">…</option><option>Welthandel</option><option>Fair Trade</option><option>Protektionismus</option></select>.</div>
+<div class="gap-line">6. Wer fair produzierten Kaffee kauft, unterstuetzt <select data-sol="Fair Trade"><option value="">…</option><option>Fair Trade</option><option>Outsourcing</option><option>Protektionismus</option></select>.</div>
+<div class="gap-line">7. Hungerloehne in Naehfabriken sind ein klassischer Fall von <select data-sol="Ausbeutung"><option value="">…</option><option>Innovation</option><option>Ausbeutung</option><option>Vielfalt</option></select>.</div>
+<div class="gap-line">8. Lange Transportwege erhoehen den <select data-sol="CO2-Fußabdruck"><option value="">…</option><option>BIP</option><option>Gewinn</option><option>CO2-Fußabdruck</option></select> jedes Produkts.</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Argument &harr; <em style="font-style:italic;">Gegenargument</em></h2>
+<p class="section-sub">Ordne das Pro-Argument dem passenden Contra-Argument zu!</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>👍 Pro</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>👎 Contra</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen - <em style="font-style:italic;">los geht's!</em></h2>
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div><div class="speak-cat">Diskussions-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele aus dem <em style="font-style:italic;">Diskurs</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 - Talkshow</div>
+<div class="role-title">🎤 „Maybrit Illner": Fluch oder Segen Globalisierung?</div>
+<div class="role-situation">Ihr seid Gaeste in einer Polit-Talkshow. Thema: Soll Deutschland weiter auf Welthandel setzen oder mehr produzieren im eigenen Land? Diskutiert lebhaft - aber lasst einander ausreden!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">📊</div><div><div class="person-label">Person A - Wirtschaftsexperte</div><div class="person-quote">„Ohne Welthandel bricht unser Wohlstand zusammen - jeder vierte Job in Deutschland haengt am Export!"</div></div></div>
+<div class="person b"><div class="person-avatar">🌱</div><div><div class="person-label">Person B - Klima-Aktivistin</div><div class="person-quote">„Welthandel ist Klimakiller Nummer eins. Wir koennen nicht weiter so konsumieren!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Findet 3 Kompromiss-Vorschlaege - was waere ein Mittelweg?</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 - Streit</div>
+<div class="role-title">🏭 Konzernsprecher vs. Aktivist</div>
+<div class="role-situation">Vor einer Textilfabrik in Bangladesch - eine NGO-Aktivistin trifft auf den Sprecher eines deutschen Modekonzerns. Sie fordert faire Loehne, er verteidigt das Geschaeftsmodell.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">👔</div><div><div class="person-label">Person A - Konzernsprecher</div><div class="person-quote">„Wir schaffen hier Arbeitsplaetze. Ohne uns waeren die Menschen noch aermer dran!"</div></div></div>
+<div class="person b"><div class="person-avatar">✊</div><div><div class="person-label">Person B - Aktivistin</div><div class="person-quote">„Sie zahlen Hungerloehne und nennen das Entwicklungshilfe? Das ist zynisch!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Nutzt Konjunktiv II („koennten", „muessten") fuer Forderungen - und konkrete Zahlen!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 - UN-Konferenz</div>
+<div class="role-title">🏛️ Drei Laender, drei Interessen</div>
+<div class="role-situation">UN-Klimakonferenz. Drei Delegationen verhandeln neue Regeln fuer fairen Welthandel. Jede Seite hat eigene Interessen!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🇩🇪</div><div><div class="person-label">Person A - EU-Delegation</div><div class="person-quote">„Wir brauchen strenge CO2-Zoelle auf Importe aus Laendern ohne Klimaschutz!"</div></div></div>
+<div class="person b"><div class="person-avatar">🇧🇩</div><div><div class="person-label">Person B - Schwellenland</div><div class="person-quote">„Das ist Protektionismus im Klima-Maentelchen! Wir brauchen Zeit zum Aufholen!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Person C (🇺🇸) kann als Vermittler eingreifen. Findet einen Kompromiss in 10 Minuten!</div>
+</div>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">5 Thesen <em style="font-style:italic;">zum Debattieren</em></h2>
+<div class="debate-grid">
+<div class="debate"><div class="debate-num">These 1</div><div class="debate-q">„Globalisierung ist die Hauptursache des Klimawandels."</div></div>
+<div class="debate"><div class="debate-num">These 2</div><div class="debate-q">„Fair Trade ist Augenwischerei - Konsumenten beruhigen damit nur ihr Gewissen."</div></div>
+<div class="debate"><div class="debate-num">These 3</div><div class="debate-q">„Protektionismus rettet Arbeitsplaetze und sollte gefoerdert werden."</div></div>
+<div class="debate"><div class="debate-num">These 4</div><div class="debate-q">„Ohne Globalisierung waere die Welt insgesamt aermer und unfreier."</div></div>
+<div class="debate"><div class="debate-num">These 5</div><div class="debate-q">„Multikonzerne sind maechtiger als Staaten - das ist gefaehrlich fuer die Demokratie."</div></div>
+</div>
+<div class="tip" style="margin-top:1.5rem;">🎯 <strong>Wichtig:</strong> Diese Thesen sind PROVOKANT! Uebe Argumente - auch wenn du die These nicht persoenlich vertrittst!</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Lieferketten-Detektiv:</strong> Schau dir 5 Produkte aus deinem Alltag an (T-Shirt, Smartphone, Banane, Kaffee, Schuhe). Notiere: Woher kommen sie? Wer hat sie hergestellt? Zu welchem Preis?<br><br>
+🏆 <strong>Bonus:</strong> Lies einen Artikel in Spiegel/Zeit/FAZ zum Thema „Lieferketten-Sorgfaltspflichtengesetz" und formuliere muendlich 5 Argumente Pro/Contra!
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> - authentisches Deutsch fuer den Alltag<br>Erstellt mit Liebe fuer meine Sprechclub-Lernenden - Globalisierung - B2/C1</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'🌍',word:'die Globalisierung',badge:'Substantiv f.',rule:'weltweite Vernetzung der Wirtschaft',ex:'„Die <strong>Globalisierung</strong> hat unser Leben veraendert."'},
+  {emoji:'📦',word:'die Lieferkette',badge:'Substantiv f.',rule:'Weg eines Produkts vom Rohstoff bis Verbraucher',ex:'„Corona hat die globalen <strong>Lieferketten</strong> erschuettert."'},
+  {emoji:'🏭',word:'das Outsourcing',badge:'Substantiv n.',rule:'Verlagerung der Produktion ins Ausland',ex:'„Durch <strong>Outsourcing</strong> nach China sparen Konzerne Milliarden."'},
+  {emoji:'🏢',word:'der Multikonzern',badge:'Substantiv m.',rule:'weltweit taetiges Grossunternehmen',ex:'„Apple ist ein typischer <strong>Multikonzern</strong> mit Macht in 100+ Laendern."'},
+  {emoji:'🚢',word:'der Welthandel',badge:'Substantiv m.',rule:'internationaler Warenaustausch',ex:'„Der <strong>Welthandel</strong> macht 25% des Welt-BIP aus."'},
+  {emoji:'📈',word:'das Schwellenland',badge:'Substantiv n.',rule:'Land im wirtschaftlichen Aufstieg',ex:'„Indien gilt als wichtigstes <strong>Schwellenland</strong> Asiens."'},
+  {emoji:'🤝',word:'der Fair Trade',badge:'engl. Begriff',rule:'fairer Handel zu gerechten Bedingungen',ex:'„<strong>Fair Trade</strong>-Kaffee kostet 30% mehr - lohnt sich das?"'},
+  {emoji:'🚧',word:'der Protektionismus',badge:'B2/C1 Politik',rule:'wirtschaftliche Abschottung durch Zoelle',ex:'„Trumps Zoelle sind reiner <strong>Protektionismus</strong>."'},
+  {emoji:'💸',word:'die Ausbeutung',badge:'Substantiv f.',rule:'unfaire Nutzung von Arbeitskraft',ex:'„Hungerloehne sind moderne <strong>Ausbeutung</strong>."'},
+  {emoji:'🌱',word:'der CO2-Fussabdruck',badge:'Klima-Begriff',rule:'persoenliche oder produktbezogene Klimabilanz',ex:'„Mein <strong>CO2-Fussabdruck</strong> ist durch Flugreisen riesig."'},
+  {emoji:'🏗️',word:'die Deindustrialisierung',badge:'C1 Wirtschaft',rule:'Rueckgang der industriellen Produktion',ex:'„Das Ruhrgebiet erlebte eine harte <strong>Deindustrialisierung</strong>."'},
+  {emoji:'💼',word:'die Niedriglohnländer',badge:'Plural',rule:'Laender mit sehr niedrigen Loehnen',ex:'„Konzerne suchen gezielt nach <strong>Niedriglohnländern</strong>."'},
+  {emoji:'🛒',word:'der Konsumkritiker',badge:'Substantiv m.',rule:'jemand, der den Massenkonsum kritisch sieht',ex:'„<strong>Konsumkritiker</strong> fordern weniger statt billiger."'},
+  {emoji:'⚡',word:'die Abhängigkeit',badge:'B2 Begriff',rule:'das Angewiesensein auf etwas',ex:'„Europas <strong>Abhängigkeit</strong> von chinesischen Solarzellen ist riesig."'},
+  {emoji:'🌐',word:'die Vernetzung',badge:'Substantiv f.',rule:'weltweite Verbindungen und Verflechtungen',ex:'„Die digitale <strong>Vernetzung</strong> beschleunigt die Globalisierung."'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter ueben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'Guenstige Produkte fuer alle',r:'Hungerloehne und Ausbeutung'},
+  {l:'Kulturelle Vielfalt',r:'Verlust lokaler Traditionen'},
+  {l:'Innovation durch Forschung',r:'Abhaengigkeit von Multikonzernen'},
+  {l:'Armutsbekaempfung weltweit',r:'Wachsende Ungleichheit'},
+  {l:'Effiziente Lieferketten',r:'Hohe CO2-Emissionen'},
+  {l:'Wirtschaftswachstum',r:'Lokale Betriebe sterben'},
+  {l:'Mehr Auswahl im Supermarkt',r:'Konsumwahn und Plastikmuell'},
+  {l:'Friedensfunktion durch Handel',r:'Steuerflucht der Konzerne'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.innerHTML=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'👕',cat:'Konsum',q:'Schau auf dein T-Shirt: Wo wurde es hergestellt? Wuerdest du fuer faire Produktion das Doppelte bezahlen?'},
+  {emoji:'📱',cat:'Technik',q:'Was wuerde mit deinem Leben passieren, wenn alle Lieferketten ploetzlich abreissen?'},
+  {emoji:'🌍',cat:'Klima',q:'Sollten Erdbeeren im Winter aus Spanien verboten werden? Pro und Contra!'},
+  {emoji:'🏭',cat:'Arbeit',q:'Wuerdest du fuer 90 Euro im Monat in einer Naehfabrik arbeiten? Wie urteilst du ueber die, die es muessen?'},
+  {emoji:'🤝',cat:'Fair Trade',q:'Kaufst du Fair Trade? Wann ja, wann nein? Sei ehrlich!'},
+  {emoji:'🚧',cat:'Protektionismus',q:'Bist du fuer hohe Zoelle gegen China? Was waeren die Folgen fuer dich persoenlich?'},
+  {emoji:'🍌',cat:'Alltag',q:'Wie viele Laender stecken in deinem Fruehstueck? Schaetze, dann recherchiere!'},
+  {emoji:'💸',cat:'Steuern',q:'Apple zahlt in Europa kaum Steuern. Wie kann man Multikonzerne zwingen, fair zu zahlen?'},
+  {emoji:'🇩🇪',cat:'Heimat',q:'Welche deutsche Branche ist durch Globalisierung gestorben? Welche profitiert am meisten?'},
+  {emoji:'🌱',cat:'Loesung',q:'Was waere DEINE drei besten Vorschlaege fuer „faire Globalisierung"?'},
+  {emoji:'👶',cat:'Generation',q:'Wie diskutieren deine Eltern/Grosseltern ueber Globalisierung anders als du?'},
+  {emoji:'🗳️',cat:'Politik',q:'Welche deutsche Partei vertritt deine Position am besten? Warum?'},
+  {emoji:'🎯',cat:'Zukunft',q:'Wird Globalisierung in 30 Jahren staerker oder schwaecher? Was sind die Treiber?'},
+  {emoji:'🏆',cat:'Vergleich',q:'Welches Land macht es besser - Deutschland, China, USA - beim Thema fairer Handel?'},
+  {emoji:'🎤',cat:'Provokation',q:'„Globalisierung hat mehr Menschen aus der Armut geholt als jede Hilfsorganisation." - Stimmt das?'},
+  {emoji:'🛒',cat:'Konsumkritik',q:'Boykottierst du bestimmte Marken? Welche - und mit welchem Erfolg?'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei - 90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

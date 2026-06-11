@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Wohnungssuche &amp; Mietvertrag in Deutschland · B1/B2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* KOSTEN-GRID */
+.kosten-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:700px){.kosten-grid{grid-template-columns:repeat(2,1fr);}}
+.kosten{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem .8rem;text-align:center;border-top:5px solid var(--red);}
+.kosten:nth-child(4n+2){border-top-color:var(--teal);}
+.kosten:nth-child(4n+3){border-top-color:#B66809;}
+.kosten:nth-child(4n){border-top-color:#6A3D9C;}
+.kosten-icon{font-size:2rem;margin-bottom:.3rem;display:block;}
+.kosten-word{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1rem;margin-bottom:.2rem;}
+.kosten-desc{color:var(--ink-soft);font-size:.78rem;line-height:1.4;font-style:italic;}
+
+/* BEGRIFFE */
+.begriff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.5rem 0;}
+@media(max-width:700px){.begriff-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.begriff-grid{grid-template-columns:1fr;}}
+.begriff{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem;text-align:center;}
+.begriff-icon{font-size:1.8rem;margin-bottom:.3rem;}
+.begriff-name{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;}
+.begriff-desc{color:var(--ink-soft);font-size:.78rem;margin-top:.25rem;}
+
+/* VORHER/NACHHER */
+.vn-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
+.vn-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.1rem;margin-bottom:1rem;text-align:center;}
+.vn-grid{display:grid;grid-template-columns:1fr 60px 1fr;gap:.7rem;align-items:center;}
+@media(max-width:600px){.vn-grid{grid-template-columns:1fr;}.vn-arrow{display:none;}}
+.vn-card{background:var(--cream);border-radius:14px;padding:1rem;text-align:center;border:1.5px solid var(--sand);}
+.vn-card.a{background:#FFF0F0;border-color:#F5C5C2;}
+.vn-card.b{background:var(--yellow-soft);border-color:var(--yellow);}
+.vn-label{font-size:.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;}
+.vn-card.b .vn-label{color:#B66809;}
+.vn-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.3rem;}
+.vn-arrow{text-align:center;font-size:2rem;color:var(--red);font-weight:900;}
+
+/* PROBLEM-CARDS */
+.prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:600px){.prob-grid{grid-template-columns:repeat(2,1fr);}}
+.prob{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem;text-align:center;border-top:5px solid #C44569;}
+.prob-icon{font-size:2rem;margin-bottom:.3rem;}
+.prob-name{font-family:'Fraunces',serif;font-weight:900;color:#C44569;font-size:.95rem;margin-bottom:.3rem;}
+.prob-text{font-size:.82rem;color:var(--ink-soft);}
+
+/* ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* PHRASE */
+.phrase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+@media(max-width:600px){.phrase-grid{grid-template-columns:1fr;}}
+.phrase{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;align-items:center;}
+.phrase-icon{font-size:2rem;text-align:center;}
+.phrase-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;font-style:italic;}
+.phrase-meaning{color:var(--ink-soft);font-size:.8rem;margin-top:.2rem;}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.6rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Alltag B1/B2 Sprechclub</div>
+<div class="title-wrap"><h1 class="title">Wohnungssuche &amp; <span class="hl">Mietvertrag</span></h1></div>
+<p class="subtitle">Kaltmiete, Schufa, Kaution, Besichtigung — das Wohnungs-Vokabular und die Survival-Phrasen, die du in Deutschland wirklich brauchst.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">🔎</text><text y="40" text-anchor="middle" fill="#E8302A">Suche</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">💶</text><text y="40" text-anchor="middle" fill="#0FB5A6">Miete</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">🏠</text><text y="40" text-anchor="middle" fill="#B66809">Besichtigung</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">📄</text><text y="40" text-anchor="middle" fill="#A04060">Vertrag</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">👥</text><text y="40" text-anchor="middle" fill="#5F7A2A">WG</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">🛠️</text><text y="40" text-anchor="middle" fill="#6A3D9C">Probleme</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ÜBERBLICK -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Welche <em style="font-style:italic;">Kosten</em> bei der Wohnung?</h2>
+<p class="section-sub">In Deutschland gibt es nicht nur „eine Miete" — du musst mehrere Posten kennen!</p>
+
+<div class="kosten-grid">
+<div class="kosten"><span class="kosten-icon">💶</span><div class="kosten-word">Kaltmiete</div><div class="kosten-desc">nur die Wohnung — ohne alles</div></div>
+<div class="kosten"><span class="kosten-icon">🔥</span><div class="kosten-word">Warmmiete</div><div class="kosten-desc">Kaltmiete + Nebenkosten</div></div>
+<div class="kosten"><span class="kosten-icon">💡</span><div class="kosten-word">Nebenkosten</div><div class="kosten-desc">Heizung, Wasser, Müll, Hausmeister</div></div>
+<div class="kosten"><span class="kosten-icon">💰</span><div class="kosten-word">Kaution</div><div class="kosten-desc">2–3 Monatsmieten Sicherheit</div></div>
+<div class="kosten"><span class="kosten-icon">💼</span><div class="kosten-word">Maklerprovision</div><div class="kosten-desc">selten — meist zahlt Vermieter</div></div>
+<div class="kosten"><span class="kosten-icon">⚡</span><div class="kosten-word">Strom</div><div class="kosten-desc">extra! Eigener Vertrag nötig</div></div>
+<div class="kosten"><span class="kosten-icon">📶</span><div class="kosten-word">Internet</div><div class="kosten-desc">meistens nicht inklusive</div></div>
+<div class="kosten"><span class="kosten-icon">🏛️</span><div class="kosten-word">GEZ-Beitrag</div><div class="kosten-desc">18,36 € / Monat · Rundfunk</div></div>
+</div>
+
+<div class="tip">💡 <strong>Faustregel:</strong> Wenn die Kaltmiete 600 € ist, rechne <u>für die Warmmiete</u> mit ca. 800–900 €. Plus Strom (40 €) und Internet (30 €) — das wahre Monatsbudget für die Wohnung!</div>
+
+<div class="vn-stage">
+<div class="vn-title">Kaltmiete vs. Warmmiete</div>
+<div class="vn-grid">
+<div class="vn-card a"><div class="vn-label">Kaltmiete</div><div class="vn-text">„600 € für die Wohnung — aber Heizung, Wasser und Müll kommen NOCH dazu!"</div></div>
+<div class="vn-arrow">→</div>
+<div class="vn-card b"><div class="vn-label">Warmmiete</div><div class="vn-text">„850 € — alle Nebenkosten sind schon drin. Nur Strom &amp; Internet extra."</div></div>
+</div>
+</div>
+
+<h2 class="section-title">Die <em style="font-style:italic;">9 wichtigsten</em> Begriffe</h2>
+<p class="section-sub">Ohne diese Wörter verstehst du keine deutsche Wohnungsanzeige!</p>
+
+<div class="begriff-grid">
+<div class="begriff"><div class="begriff-icon">📋</div><div class="begriff-name">die Schufa</div><div class="begriff-desc">Bonitäts-Check · zeigt, ob du kreditwürdig bist</div></div>
+<div class="begriff"><div class="begriff-icon">🏠</div><div class="begriff-name">die Besichtigung</div><div class="begriff-desc">Termin, an dem du die Wohnung siehst</div></div>
+<div class="begriff"><div class="begriff-icon">📝</div><div class="begriff-name">der Mietvertrag</div><div class="begriff-desc">offizielles Dokument mit allen Regeln</div></div>
+<div class="begriff"><div class="begriff-icon">🛋️</div><div class="begriff-name">möbliert</div><div class="begriff-desc">mit Möbeln · oft teurer</div></div>
+<div class="begriff"><div class="begriff-icon">📦</div><div class="begriff-name">unmöbliert</div><div class="begriff-desc">leer · du bringst alles selbst</div></div>
+<div class="begriff"><div class="begriff-icon">🏘️</div><div class="begriff-name">die WG</div><div class="begriff-desc">Wohngemeinschaft · mehrere Personen, eine Wohnung</div></div>
+<div class="begriff"><div class="begriff-icon">🔑</div><div class="begriff-name">die Untermiete</div><div class="begriff-desc">jemand mietet von dir, der mietet</div></div>
+<div class="begriff"><div class="begriff-icon">🎫</div><div class="begriff-name">der WBS</div><div class="begriff-desc">Wohnberechtigungsschein · für günstige Wohnungen</div></div>
+<div class="begriff"><div class="begriff-icon">📆</div><div class="begriff-name">die Kündigungsfrist</div><div class="begriff-desc">meist 3 Monate vor Auszug</div></div>
+</div>
+
+<h2 class="section-title">Wo gibt es <em style="font-style:italic;">typische Probleme</em>?</h2>
+<div class="prob-grid">
+<div class="prob"><div class="prob-icon">🦠</div><div class="prob-name">Schimmel</div><div class="prob-text">an Wänden, oft im Bad — Vermieter muss handeln!</div></div>
+<div class="prob"><div class="prob-icon">🔊</div><div class="prob-name">Lärm</div><div class="prob-text">Nachbarn, Baustelle, Hellhörigkeit</div></div>
+<div class="prob"><div class="prob-icon">❄️</div><div class="prob-name">Heizung kaputt</div><div class="prob-text">im Winter ein Notfall — sofort melden!</div></div>
+<div class="prob"><div class="prob-icon">💸</div><div class="prob-name">Nebenkosten-Nachzahlung</div><div class="prob-text">Schock am Jahresende — bis 1000 €!</div></div>
+<div class="prob"><div class="prob-icon">📞</div><div class="prob-name">Hausverwaltung</div><div class="prob-text">reagiert nicht auf Mails &amp; Anrufe</div></div>
+<div class="prob"><div class="prob-icon">📈</div><div class="prob-name">Mieterhöhung</div><div class="prob-text">jährlich möglich — Mietspiegel checken!</div></div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Persönlich</div><div class="qq">Wie wohnst du gerade — allein, in WG, mit Partner oder Familie? Bist du zufrieden?</div><div class="think">💭 Was würdest du gern ändern? Größer? Zentraler? Ruhiger?</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Erfahrung</div><div class="qq">Hattest du schon mal Stress mit einem Vermieter oder einer Hausverwaltung?</div><div class="think">💭 Worum ging es? Wie hast du reagiert? Wer hatte am Ende Recht?</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Geld</div><div class="qq">Wie viel sollte man maximal von seinem Gehalt für Miete ausgeben?</div><div class="think">💭 Faustregel ist 30 % — ist das in deiner Stadt realistisch?</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Heimat-Vergleich</div><div class="qq">Wie funktioniert die Wohnungssuche in deinem Heimatland? Anders als in Deutschland?</div><div class="think">💭 Schufa? Besichtigungen mit 20 Leuten? Kaution? Gibt es das auch?</div></div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So reden Deutsche <em style="font-style:italic;">über Wohnungen</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats — WG-Casting, Besichtigung, Streit mit Vermieter, Bewerbung um Wohnung.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> In Großstädten ist der Wohnungsmarkt <u>brutal</u>. Bei einer Besichtigung sind oft 30+ Bewerber:innen. Du musst dich <strong>verkaufen</strong> — wie bei einer Bewerbung!</div>
+
+<div class="uss-grid">
+<div class="chat">
+<div class="chat-head"><div class="av">👥</div><div><div class="name">WG-Casting</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hi! Wir suchen ne neue Mitbewohnerin. Magst du dich vorstellen?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Klar! Ich bin Anna, 25, Studentin, mag <strong>gemeinsames Kochen</strong> 🍝</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Cool! Kommst du am Sonntag zum <strong>WG-Casting</strong>?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ja gern! Wann passt es euch?</div></div>
+<div class="chat-meaning"><strong>„WG-Casting"</strong> = die WG lädt Kandidat:innen zu einem lockeren Treffen ein und sucht sich aus. Sehr typisch in DE!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🏠</div><div><div class="name">Besichtigung</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Guten Tag, ich interessiere mich für die <strong>3-Zimmer-Wohnung</strong> in der Hauptstr.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hallo! <strong>Besichtigung</strong> am Donnerstag um 17 Uhr. Bringen Sie bitte Schufa &amp; Gehaltsnachweise mit!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Klar, mache ich. Bis Donnerstag!</div></div>
+<div class="chat-meaning"><strong>„Schufa &amp; Gehaltsnachweise"</strong> = Standard-Unterlagen. Ohne diese hast du keine Chance!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😡</div><div><div class="name">Vermieter-Streit</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Die Heizung ist seit 3 Tagen kaputt! Bei -5 Grad! 🥶</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ich kümmere mich… nächste Woche kommt ein Handwerker.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Nächste Woche?? Das ist ein <strong>Notfall</strong> — ich werde die <strong>Miete kürzen</strong>!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Bitte nicht, ich versuche, einen schneller zu bekommen…</div></div>
+<div class="chat-meaning"><strong>„Miete kürzen"</strong> = Mietminderung · dein Recht bei Mängeln. Vermieter haben Angst davor!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📝</div><div><div class="name">Wohnungs-Bewerbung</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Sehr geehrte Frau Meier,<br>vielen Dank für die schöne <strong>Besichtigung</strong> gestern! 🌷</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich bin sehr interessiert: <strong>festes Einkommen</strong>, ruhig, nichtraucherin, keine Haustiere.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Danke! Wir entscheiden bis Freitag.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Super, ich freue mich auf Ihre Rückmeldung! 🤞</div></div>
+<div class="chat-meaning"><strong>„festes Einkommen + Nichtraucher + keine Haustiere"</strong> = die magische Formel, die Vermieter lieben!</div>
+</div>
+</div>
+
+<h2 class="section-title">12 wichtige <em style="font-style:italic;">Wohnungs-Phrasen</em></h2>
+<div class="phrase-grid">
+<div class="phrase"><div class="phrase-icon">🔎</div><div><div class="phrase-de">„Ich bin auf Wohnungssuche."</div><div class="phrase-meaning">Standard-Satz im Smalltalk</div></div></div>
+<div class="phrase"><div class="phrase-icon">📞</div><div><div class="phrase-de">„Ist die Wohnung noch zu haben?"</div><div class="phrase-meaning">erste Frage am Telefon</div></div></div>
+<div class="phrase"><div class="phrase-icon">🏠</div><div><div class="phrase-de">„Wann kann ich vorbeikommen?"</div><div class="phrase-meaning">Besichtigungstermin anfragen</div></div></div>
+<div class="phrase"><div class="phrase-icon">💼</div><div><div class="phrase-de">„Ich habe ein festes Einkommen."</div><div class="phrase-meaning">Vermieter beruhigen</div></div></div>
+<div class="phrase"><div class="phrase-icon">📋</div><div><div class="phrase-de">„Hier ist meine Schufa-Auskunft."</div><div class="phrase-meaning">Unterlagen vorlegen</div></div></div>
+<div class="phrase"><div class="phrase-icon">💶</div><div><div class="phrase-de">„Wie hoch ist die Kaution?"</div><div class="phrase-meaning">wichtige Frage VOR dem Vertrag</div></div></div>
+<div class="phrase"><div class="phrase-icon">🔥</div><div><div class="phrase-de">„Sind die Nebenkosten inklusive?"</div><div class="phrase-meaning">Kalt- oder Warmmiete klären</div></div></div>
+<div class="phrase"><div class="phrase-icon">📆</div><div><div class="phrase-de">„Ab wann ist die Wohnung frei?"</div><div class="phrase-meaning">Einzugsdatum klären</div></div></div>
+<div class="phrase"><div class="phrase-icon">😬</div><div><div class="phrase-de">„Ich muss leider kündigen."</div><div class="phrase-meaning">Mietvertrag beenden</div></div></div>
+<div class="phrase"><div class="phrase-icon">🛠️</div><div><div class="phrase-de">„In der Wohnung ist Schimmel."</div><div class="phrase-meaning">Mangel melden</div></div></div>
+<div class="phrase"><div class="phrase-icon">📈</div><div><div class="phrase-de">„Die Mieterhöhung ist nicht gerechtfertigt."</div><div class="phrase-meaning">sich wehren</div></div></div>
+<div class="phrase"><div class="phrase-icon">🤝</div><div><div class="phrase-de">„Wir haben uns für Sie entschieden!"</div><div class="phrase-meaning">der schönste Satz!</div></div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Wortschatz-Karten</h2>
+<p class="section-sub">Erst denken — dann tippen.</p>
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">💶</div>
+<div class="flip-word" id="flipWord">die Kaltmiete</div>
+<div class="flip-badge" id="flipBadge">Geld</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">nur die Miete für die Wohnung — ohne Nebenkosten</div>
+<div class="flip-ex" id="flipEx">„Die <strong>Kaltmiete</strong> beträgt 600 Euro pro Monat."</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span><button class="lk-btn" id="lkNext">→</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Was passt?</em></h2>
+
+<div class="quiz"><div class="quiz-q">Was ist der Unterschied zwischen Kaltmiete und Warmmiete?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Warmmiete ist nur im Winter</span><span class="quiz-chip">Warmmiete = Kaltmiete + Nebenkosten</span><span class="quiz-chip">Kaltmiete ist immer höher</span></div><div class="quiz-explain">✓ Warmmiete = Kaltmiete plus Nebenkosten (Heizung, Wasser, Müll). Strom ist meist NICHT dabei!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist die Schufa?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Eine deutsche Bank</span><span class="quiz-chip">Ein Möbelhaus</span><span class="quiz-chip">Ein Bonitäts-Check — zeigt, ob du Schulden hast</span></div><div class="quiz-explain">✓ Schufa = Schutzgemeinschaft für allgemeine Kreditsicherung. Vermieter wollen sehen, dass du keine Schulden hast!</div></div>
+
+<div class="quiz"><div class="quiz-q">Wie hoch ist meistens die Kaution?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">eine halbe Monatsmiete</span><span class="quiz-chip">2 bis 3 Monatsmieten (kalt)</span><span class="quiz-chip">ein ganzes Jahresgehalt</span></div><div class="quiz-explain">✓ Maximal 3 Kaltmieten — Gesetz! Bekommst du am Ende zurück, wenn alles ok ist.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet „möbliert"?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">mit Möbeln drin</span><span class="quiz-chip">ohne Heizung</span><span class="quiz-chip">nur für Studenten</span></div><div class="quiz-explain">✓ möbliert = Bett, Tisch, Schrank etc. sind schon da. Praktisch, aber meist teurer!</div></div>
+
+<div class="quiz"><div class="quiz-q">Wer zahlt heute meistens die Maklerprovision?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">immer der Mieter</span><span class="quiz-chip">immer der Staat</span><span class="quiz-chip">meistens der Vermieter (Bestellerprinzip)</span></div><div class="quiz-explain">✓ Seit 2015 gilt das Bestellerprinzip: Wer den Makler bestellt, zahlt. Meistens ist das der Vermieter!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist ein WBS?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">WLAN-Bandbreite-Schein</span><span class="quiz-chip">Wohnberechtigungsschein — für günstige Sozialwohnungen</span><span class="quiz-chip">eine deutsche Versicherung</span></div><div class="quiz-explain">✓ Mit dem WBS bekommst du Zugang zu Sozialwohnungen — bei niedrigem Einkommen.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist die übliche Kündigungsfrist bei Mietern?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">1 Woche</span><span class="quiz-chip">3 Monate</span><span class="quiz-chip">1 Jahr</span></div><div class="quiz-explain">✓ 3 Monate — gesetzlich festgelegt. Schriftlich kündigen, am besten per Einschreiben!</div></div>
+
+<div class="quiz"><div class="quiz-q">Du findest Schimmel an der Wand. Was tust du als Erstes?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Vermieter schriftlich informieren (mit Foto!)</span><span class="quiz-chip">Wohnung sofort kündigen</span><span class="quiz-chip">Nichts — selber wegputzen</span></div><div class="quiz-explain">✓ Erstmal melden, dokumentieren, Reparatur einfordern. Erst danach an Mietminderung denken!</div></div>
+</section>
+
+<!-- LÜCKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext: <em style="font-style:italic;">Mietvertrag-Sätze</em></h2>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Die <select data-sol="Kaltmiete"><option value="">…</option><option>Kaltmiete</option><option>Warmmiete</option><option>Kaution</option></select> beträgt 580 Euro pro Monat.</div>
+<div class="gap-line">2. Bei Vertragsbeginn ist eine <select data-sol="Kaution"><option value="">…</option><option>Steuer</option><option>Kaution</option><option>Gebühr</option></select> in Höhe von drei Monatsmieten zu zahlen.</div>
+<div class="gap-line">3. Die <select data-sol="Nebenkosten"><option value="">…</option><option>Nebenkosten</option><option>Möbel</option><option>Tapeten</option></select> umfassen Heizung, Wasser und Müllabfuhr.</div>
+<div class="gap-line">4. Der Vermieter verlangt eine aktuelle <select data-sol="Schufa-Auskunft"><option value="">…</option><option>Schufa-Auskunft</option><option>Geburtsurkunde</option><option>Postkarte</option></select> nicht älter als drei Monate.</div>
+<div class="gap-line">5. Die <select data-sol="Kündigungsfrist"><option value="">…</option><option>Wartezeit</option><option>Kündigungsfrist</option><option>Mietzeit</option></select> beträgt drei Monate zum Monatsende.</div>
+<div class="gap-line">6. Haustiere sind nur nach <select data-sol="Absprache"><option value="">…</option><option>Absprache</option><option>Mahnung</option><option>Beschwerde</option></select> mit dem Vermieter erlaubt.</div>
+<div class="gap-line">7. Bei Mängeln in der Wohnung ist der Mieter verpflichtet, diese <select data-sol="unverzüglich"><option value="">…</option><option>unverzüglich</option><option>nächstes Jahr</option><option>nie</option></select> zu melden.</div>
+<div class="gap-line">8. Untervermietung ist nur mit schriftlicher <select data-sol="Genehmigung"><option value="">…</option><option>Empfehlung</option><option>Genehmigung</option><option>Einladung</option></select> des Vermieters erlaubt.</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Begriff &harr; <em style="font-style:italic;">Definition</em></h2>
+<p class="section-sub">Ordne den richtigen Begriff der passenden Erklärung zu.</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Begriff</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Definition</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht es!</em></h2>
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div><div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">rund um die Wohnung</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · WG-Casting</div>
+<div class="role-title">👥 Das WG-Casting</div>
+<div class="role-situation">Du gehst zu einem WG-Casting — 3 WG-Bewohner:innen, du bist eine:r von 5 Kandidat:innen. Du musst dich verkaufen, ohne aufdringlich zu wirken!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🤞</div><div><div class="person-label">Kandidat:in</div><div class="person-quote">„Hallo, ich bin… Ich arbeite als… Ich koche gern… Ich bin ordentlich, aber kein Putzfanatiker…"</div></div></div>
+<div class="person b"><div class="person-avatar">🧐</div><div><div class="person-label">WG-Bewohner:in</div><div class="person-quote">„Was machst du am Wochenende? Wie oft hast du Besuch? Was nervt dich in einer WG?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: 5 Fragen beantworten + 3 Gegenfragen stellen. Locker bleiben — nicht zu formal!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Besichtigung</div>
+<div class="role-title">🏠 Besichtigung mit Konkurrenz</div>
+<div class="role-situation">Bei der Besichtigung sind 20 andere Interessenten. Du hast nur 10 Minuten, um den Vermieter zu überzeugen. Stelle die richtigen Fragen!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😊</div><div><div class="person-label">Mietinteressent:in</div><div class="person-quote">„Wie alt ist die Heizung? Wann wurde renoviert? Sind die Nachbarn ruhig? Ist ein Einbau-Schrank möglich?"</div></div></div>
+<div class="person b"><div class="person-avatar">🧑‍💼</div><div><div class="person-label">Vermieter:in</div><div class="person-quote">„Was machen Sie beruflich? Wie viel verdienen Sie? Haben Sie Kinder oder Haustiere?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Höflich, professionell, mit Schufa und Gehaltsnachweis am Ende! Mindestens 6 Fragen pro Seite.</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Vermieter-Streit</div>
+<div class="role-title">❄️ Heizung kaputt — du reklamierst!</div>
+<div class="role-situation">Die Heizung läuft seit einer Woche nicht. Du rufst beim Vermieter an. Er sagt: „Tut mir leid, ich kann nichts machen." Du musst hart bleiben!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😡</div><div><div class="person-label">Mieter:in</div><div class="person-quote">„Es ist seit Tagen eiskalt. Das ist nicht akzeptabel. Ich werde die Miete kürzen, wenn nichts passiert!"</div></div></div>
+<div class="person b"><div class="person-avatar">🤷</div><div><div class="person-label">Vermieter:in</div><div class="person-quote">„Ich finde keinen Handwerker… Bitte haben Sie Geduld… So schlimm ist es doch nicht…"</div></div></div>
+</div>
+<div class="role-goal">🎯 Bleib höflich, aber bestimmt. Nenn deine Rechte: Mietminderung, schriftliche Mahnung, Mieterverein!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Mission:</strong> Suche eine echte Wohnungsanzeige auf immoscout24.de oder wg-gesucht.de und schreibe eine Bewerbungs-Nachricht (mindestens 8 Sätze, mit Schufa-Hinweis und festem Einkommen).<br><br>
+🏆 <strong>Bonus:</strong> Ruf bei einer Anzeige an und stelle 3 Fragen auf Deutsch — live üben! (Nicht echte Bewerbung — nur Übung.)
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Wohnungssuche &amp; Mietvertrag · B1/B2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'💶',word:'die Kaltmiete',badge:'Geld',rule:'nur die Miete — ohne Nebenkosten',ex:'„Die <strong>Kaltmiete</strong> beträgt 600 Euro im Monat."'},
+  {emoji:'🔥',word:'die Warmmiete',badge:'Geld',rule:'Kaltmiete + Nebenkosten zusammen',ex:'„Die <strong>Warmmiete</strong> liegt bei 850 Euro."'},
+  {emoji:'💡',word:'die Nebenkosten',badge:'Geld',rule:'Heizung, Wasser, Müll, Hausmeister',ex:'„Die <strong>Nebenkosten</strong> sind in diesem Monat sehr hoch."'},
+  {emoji:'💰',word:'die Kaution',badge:'Sicherheit',rule:'bis zu 3 Kaltmieten als Sicherheit',ex:'„Die <strong>Kaution</strong> ist 1800 Euro — bekommst du am Ende zurück."'},
+  {emoji:'📋',word:'die Schufa-Auskunft',badge:'Pflicht-Dokument',rule:'zeigt, ob du Schulden hast',ex:'„Ohne <strong>Schufa-Auskunft</strong> bekommst du keine Wohnung."'},
+  {emoji:'🏠',word:'die Wohnungsbesichtigung',badge:'Termin',rule:'du siehst die Wohnung zum ersten Mal',ex:'„Die <strong>Wohnungsbesichtigung</strong> ist am Donnerstag um 17 Uhr."'},
+  {emoji:'🎫',word:'der Wohnberechtigungsschein (WBS)',badge:'Sozial',rule:'für günstige Sozialwohnungen',ex:'„Mit dem <strong>WBS</strong> kannst du dich auf Sozialwohnungen bewerben."'},
+  {emoji:'🛋️',word:'möbliert',badge:'Adjektiv',rule:'mit Möbeln eingerichtet',ex:'„Die Wohnung ist komplett <strong>möbliert</strong> — du brauchst nichts mitbringen!"'},
+  {emoji:'📦',word:'unmöbliert',badge:'Adjektiv',rule:'leer — du bringst alles selbst',ex:'„Die <strong>unmöblierte</strong> Wohnung ist günstiger."'},
+  {emoji:'👥',word:'die WG (Wohngemeinschaft)',badge:'Wohnform',rule:'mehrere Personen, eine Wohnung',ex:'„Ich wohne in einer 4er-<strong>WG</strong> in Kreuzberg."'},
+  {emoji:'🔑',word:'die Untermiete',badge:'Vertragsform',rule:'der Mieter vermietet weiter',ex:'„Sie zieht für ein Jahr ins Ausland — wir suchen einen <strong>Untermieter</strong>."'},
+  {emoji:'📝',word:'der Mietvertrag',badge:'Dokument',rule:'offizielles Dokument mit allen Regeln',ex:'„Bitte den <strong>Mietvertrag</strong> vor der Unterschrift gut lesen!"'},
+  {emoji:'📆',word:'die Kündigungsfrist',badge:'Zeit',rule:'meist 3 Monate vor Auszug',ex:'„Die <strong>Kündigungsfrist</strong> beträgt drei Monate zum Monatsende."'},
+  {emoji:'💼',word:'die Maklerprovision',badge:'Kosten',rule:'Bezahlung für den Makler',ex:'„Die <strong>Maklerprovision</strong> zahlt heute meistens der Vermieter."'},
+  {emoji:'🦠',word:'der Schimmel',badge:'Problem',rule:'schwarze Flecken an Wänden, ungesund',ex:'„Im Bad ist <strong>Schimmel</strong> — der Vermieter muss handeln!"'},
+  {emoji:'📉',word:'die Mietminderung',badge:'Recht',rule:'Miete kürzen wegen Mängeln',ex:'„Bei kaputter Heizung ist <strong>Mietminderung</strong> erlaubt."'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=6?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'Kaltmiete',r:'nur die Miete ohne Nebenkosten'},
+  {l:'Warmmiete',r:'Kaltmiete plus Nebenkosten'},
+  {l:'Kaution',r:'bis zu 3 Monatsmieten als Sicherheit'},
+  {l:'Schufa',r:'Bonitäts-Check für den Vermieter'},
+  {l:'WBS',r:'Schein für eine Sozialwohnung'},
+  {l:'WG',r:'mehrere Personen in einer Wohnung'},
+  {l:'Untermiete',r:'der Mieter vermietet weiter'},
+  {l:'Kündigungsfrist',r:'3 Monate zum Monatsende'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'🔎',cat:'Suche organisieren',q:'Wo suchst du eine Wohnung in Deutschland? Welche Portale kennst du?'},
+  {emoji:'📞',cat:'Anruf',q:'Was sagst du am Telefon, wenn du dich für eine Wohnung interessierst?'},
+  {emoji:'📝',cat:'Unterlagen',q:'Welche Dokumente musst du zur Besichtigung mitbringen? Mache eine Liste!'},
+  {emoji:'🏠',cat:'Besichtigung',q:'Du betrittst zum ersten Mal eine Wohnung. Welche 5 Dinge prüfst du als Erstes?'},
+  {emoji:'❓',cat:'Fragen stellen',q:'Welche Fragen stellst du dem Vermieter bei der Besichtigung? Mindestens 6!'},
+  {emoji:'💰',cat:'Budget',q:'Was kostet die Wohnung wirklich? Rechne Kaltmiete, Nebenkosten, Strom, Internet, GEZ zusammen.'},
+  {emoji:'👥',cat:'WG-Casting',q:'Wie stellst du dich beim WG-Casting vor? Was sagst du in 30 Sekunden?'},
+  {emoji:'💌',cat:'Bewerbung',q:'Schreibe in Worten eine Bewerbungs-Nachricht für eine Wohnung. Mindestens 5 Sätze!'},
+  {emoji:'⚠️',cat:'Problem',q:'In deiner Wohnung ist Schimmel. Wie sprichst du den Vermieter darauf an?'},
+  {emoji:'😡',cat:'Streit',q:'Die Heizung läuft im Winter nicht. Was machst du? Welche Rechte hast du?'},
+  {emoji:'📆',cat:'Kündigung',q:'Wie kündigst du einen Mietvertrag? Was musst du beachten?'},
+  {emoji:'🛋️',cat:'Möbliert oder nicht',q:'Möbliert oder unmöbliert wohnen — was passt besser zu dir? Warum?'},
+  {emoji:'🏘️',cat:'WG vs allein',q:'WG oder allein wohnen? Was sind Vorteile und Nachteile?'},
+  {emoji:'🏙️',cat:'Stadt vs Land',q:'In welcher Stadt würdest du gern wohnen? Warum? Und wo nie?'},
+  {emoji:'🌍',cat:'Heimat-Vergleich',q:'Wie funktioniert die Wohnungssuche in deinem Heimatland? Vergleiche!'},
+  {emoji:'🎯',cat:'Traumwohnung',q:'Beschreibe deine Traumwohnung — Lage, Größe, Ausstattung, Mitbewohner!'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60 bis 90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

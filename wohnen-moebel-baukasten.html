@@ -1,0 +1,769 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Wohnen &amp; Möbel · A2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:400px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}
+.tip em{color:var(--ink);font-style:italic;}
+.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* PRÄP / MÖBEL GRID */
+.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:600px){.prep-grid{grid-template-columns:repeat(2,1fr);}}
+.prep{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.9rem;text-align:center;}
+.prep-icon{font-size:1.8rem;margin-bottom:.3rem;}
+.prep-word{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.05rem;margin-bottom:.2rem;}
+.prep-case{font-size:.7rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.prep-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.82rem;margin-top:.3rem;}
+
+/* VORHER/NACHHER */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.5rem 0;}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+.comp-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.1rem 1.2rem;}
+.comp-card.a{border-color:var(--red);background:#FFF6F5;}
+.comp-card.b{border-color:var(--teal);background:#F1FAF8;}
+.comp-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem;}
+.comp-card.a .comp-tag{background:var(--red);color:white;}
+.comp-card.b .comp-tag{background:var(--teal);color:white;}
+.comp-text{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);line-height:1.5;}
+.comp-text strong{color:var(--red);}
+.comp-card.b .comp-text strong{color:var(--teal);}
+.comp-note{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;}
+
+/* ZIMMER-DIALOG */
+.dialog-grid{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0;}
+.dial{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;}
+.dial.d1{border-left:5px solid var(--red);}
+.dial.d2{border-left:5px solid var(--teal);}
+.dial.d3{border-left:5px solid #B66809;}
+.dial.d4{border-left:5px solid #6A3D9C;}
+.dial-icon{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.dial.d2 .dial-icon{background:var(--teal);}
+.dial.d3 .dial-icon{background:#B66809;}
+.dial.d4 .dial-icon{background:#6A3D9C;}
+.dial-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.02rem;margin-bottom:.3rem;}
+.dial-body ul{list-style:none;padding:0;}
+.dial-body li{padding:.2rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;padding-left:1.1rem;position:relative;}
+.dial-body li::before{content:'\203A';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+
+/* ALLTAG-FRAGEN */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.96rem;margin-top:.6rem;line-height:1.55;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;line-height:1.35;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLES */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}
+.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}
+.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+/* ROOM SVG MAP */
+.room-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.2rem;margin:1.5rem 0;}
+.room-svg{display:block;margin:0 auto;max-width:100%;width:100%;height:auto;}
+.room-legend{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem .8rem;margin-top:.8rem;font-size:.85rem;color:var(--ink-soft);font-family:'Fraunces',serif;font-style:italic;}
+@media(max-width:520px){.room-legend{grid-template-columns:1fr;}}
+.room-legend span{color:var(--red);font-weight:700;font-style:normal;font-family:'Outfit',sans-serif;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="eyebrow">deutschoderwas &middot; A2 Sprechclub &middot; Zuhause</div>
+
+<div class="title-wrap">
+<h1 class="title"><span class="hl">Wohnen</span> &amp; Möbel</h1>
+</div>
+<p class="subtitle">Wo ist mein Schlüssel? &mdash; Auf dem Tisch! Möbel benennen, Zimmer beschreiben &mdash; und endlich verstehen, warum es „auf dem" und nicht „auf den" heißt!</p>
+
+<svg class="hero-svg" viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,25)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="6" font-size="22">🛋️</text><text text-anchor="middle" y="40" fill="#E8302A">Wohnzimmer</text></g>
+<g transform="translate(105,25)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="6" font-size="22">🍳</text><text text-anchor="middle" y="40" fill="#0FB5A6">Küche</text></g>
+<g transform="translate(175,25)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="6" font-size="22">🛁</text><text text-anchor="middle" y="40" fill="#B66809">Bad</text></g>
+<g transform="translate(245,25)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="6" font-size="22">🛏️</text><text text-anchor="middle" y="40" fill="#A04060">Schlafzimmer</text></g>
+<g transform="translate(315,25)"><circle cx="0" cy="0" r="22" fill="#E2EBC9"/><text text-anchor="middle" dy="6" font-size="22">📍</text><text text-anchor="middle" y="40" fill="#5F7A2A">Wo ist...?</text></g>
+<g transform="translate(370,25)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="6" font-size="22">🪑</text><text text-anchor="middle" y="40" fill="#6A3D9C">Möbel</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ============== ÜBERBLICK ============== -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die <em style="font-style:italic;">4 wichtigsten</em> Zimmer</h2>
+<p class="section-sub">Jedes Zimmer hat seine typischen Möbel &mdash; das musst du wissen!</p>
+
+<div class="prep-grid">
+<div class="prep"><div class="prep-icon">🛋️</div><div class="prep-word">das Wohnzimmer</div><div class="prep-case">zum Entspannen</div><div class="prep-ex">Sofa, Sessel, Fernseher, Couchtisch</div></div>
+<div class="prep"><div class="prep-icon">🍳</div><div class="prep-word">die Küche</div><div class="prep-case">zum Kochen</div><div class="prep-ex">Herd, Kühlschrank, Spüle, Tisch</div></div>
+<div class="prep"><div class="prep-icon">🛁</div><div class="prep-word">das Badezimmer</div><div class="prep-case">zum Waschen</div><div class="prep-ex">Dusche, Waschbecken, WC, Spiegel</div></div>
+<div class="prep"><div class="prep-icon">🛏️</div><div class="prep-word">das Schlafzimmer</div><div class="prep-case">zum Schlafen</div><div class="prep-ex">Bett, Schrank, Nachttisch, Lampe</div></div>
+<div class="prep"><div class="prep-icon">📚</div><div class="prep-word">das Arbeitszimmer</div><div class="prep-case">zum Arbeiten</div><div class="prep-ex">Schreibtisch, Stuhl, Regal, Computer</div></div>
+<div class="prep"><div class="prep-icon">🚪</div><div class="prep-word">der Flur</div><div class="prep-case">zum Reinkommen</div><div class="prep-ex">Garderobe, Schuhregal, Spiegel</div></div>
+</div>
+
+<h2 class="section-title">Die <em style="font-style:italic;">8 wichtigsten</em> Möbel</h2>
+
+<div class="prep-grid">
+<div class="prep" style="border-color:var(--red);"><div class="prep-icon">🛋️</div><div class="prep-word">das Sofa</div><div class="prep-case">neutr.</div><div class="prep-ex">„auf dem Sofa sitzen"</div></div>
+<div class="prep" style="border-color:var(--teal);"><div class="prep-icon">🪑</div><div class="prep-word" style="color:var(--teal);">der Stuhl</div><div class="prep-case">mask. &middot; Pl. Stühle</div><div class="prep-ex">„auf dem Stuhl sitzen"</div></div>
+<div class="prep" style="border-color:#B66809;"><div class="prep-icon">🍽️</div><div class="prep-word" style="color:#B66809;">der Tisch</div><div class="prep-case">mask.</div><div class="prep-ex">„auf dem Tisch liegen"</div></div>
+<div class="prep" style="border-color:#A04060;"><div class="prep-icon">🛏️</div><div class="prep-word" style="color:#A04060;">das Bett</div><div class="prep-case">neutr. &middot; Pl. Betten</div><div class="prep-ex">„im Bett liegen"</div></div>
+<div class="prep" style="border-color:#5F7A2A;"><div class="prep-icon">🚪</div><div class="prep-word" style="color:#5F7A2A;">der Schrank</div><div class="prep-case">mask. &middot; Pl. Schränke</div><div class="prep-ex">„im Schrank hängen"</div></div>
+<div class="prep" style="border-color:#6A3D9C;"><div class="prep-icon">📚</div><div class="prep-word" style="color:#6A3D9C;">das Regal</div><div class="prep-case">neutr.</div><div class="prep-ex">„im Regal stehen"</div></div>
+<div class="prep" style="border-color:var(--red);"><div class="prep-icon">💡</div><div class="prep-word">die Lampe</div><div class="prep-case">fem.</div><div class="prep-ex">„an der Decke hängen"</div></div>
+<div class="prep" style="border-color:var(--teal);"><div class="prep-icon">🟫</div><div class="prep-word" style="color:var(--teal);">der Teppich</div><div class="prep-case">mask.</div><div class="prep-ex">„auf dem Teppich liegen"</div></div>
+</div>
+
+<div class="tip">
+💡 <strong>A2-Tipp:</strong> Lern jedes Möbel <u>mit Artikel</u>! „<em>das</em> Sofa" &mdash; nicht nur „Sofa". Das Genus brauchst du gleich für die Präposition (im, auf dem, an der&hellip;).
+</div>
+
+<h2 class="section-title">Wo ist es? <em style="font-style:italic;">Die 9 Präpositionen</em></h2>
+<p class="section-sub">Position beschreiben &mdash; alle mit DATIV (Wo? &rarr; Dativ!)</p>
+
+<div class="prep-grid">
+<div class="prep"><div class="prep-icon">⬇️</div><div class="prep-word">in</div><div class="prep-case">drinnen</div><div class="prep-ex">in dem Schrank = im Schrank</div></div>
+<div class="prep"><div class="prep-icon">⬆️</div><div class="prep-word">auf</div><div class="prep-case">oben drauf</div><div class="prep-ex">auf dem Tisch</div></div>
+<div class="prep"><div class="prep-icon">📌</div><div class="prep-word">an</div><div class="prep-case">direkt dran</div><div class="prep-ex">an der Wand</div></div>
+<div class="prep"><div class="prep-icon">🔽</div><div class="prep-word">unter</div><div class="prep-case">drunter</div><div class="prep-ex">unter dem Bett</div></div>
+<div class="prep"><div class="prep-icon">🔼</div><div class="prep-word">über</div><div class="prep-case">drüber</div><div class="prep-ex">über dem Sofa</div></div>
+<div class="prep"><div class="prep-icon">↔️</div><div class="prep-word">neben</div><div class="prep-case">daneben</div><div class="prep-ex">neben dem Stuhl</div></div>
+<div class="prep"><div class="prep-icon">🔁</div><div class="prep-word">zwischen</div><div class="prep-case">dazwischen</div><div class="prep-ex">zwischen den Betten</div></div>
+<div class="prep"><div class="prep-icon">⬅️</div><div class="prep-word">hinter</div><div class="prep-case">dahinter</div><div class="prep-ex">hinter dem Sofa</div></div>
+<div class="prep"><div class="prep-icon">➡️</div><div class="prep-word">vor</div><div class="prep-case">davor</div><div class="prep-ex">vor dem Regal</div></div>
+</div>
+
+<div class="tip" style="background:var(--teal-soft);border-color:var(--teal);">
+🎯 <strong>Die goldene A2-Regel: Wo? = Dativ!</strong><br>
+1. <u>der/das &rarr; dem</u> &middot; <em>in dem Schrank, auf dem Tisch, an dem Fenster</em><br>
+2. <u>die &rarr; der</u> &middot; <em>an der Wand, auf der Couch, in der Küche</em><br>
+3. <u>die (Plural) &rarr; den + n</u> &middot; <em>zwischen den Betten, auf den Stühlen</em>
+</div>
+
+<h2 class="section-title">Kurzformen: <em style="font-style:italic;">im, am, ins, ans</em></h2>
+
+<div class="compare">
+<div class="comp-card a">
+<span class="comp-tag">Lang 🐢</span>
+<div class="comp-text"><strong>in dem</strong> Wohnzimmer<br><strong>an dem</strong> Fenster</div>
+<div class="comp-note">grammatisch richtig &mdash; aber niemand sagt das so!</div>
+</div>
+<div class="comp-card b">
+<span class="comp-tag">Kurz 🚀</span>
+<div class="comp-text"><strong>im</strong> Wohnzimmer<br><strong>am</strong> Fenster</div>
+<div class="comp-note"><strong>in+dem = im</strong>, <strong>an+dem = am</strong>. So sprechen Deutsche immer!</div>
+</div>
+</div>
+
+<h2 class="section-title">Die <em style="font-style:italic;">4 Schritte</em> &mdash; ein Zimmer beschreiben</h2>
+
+<div class="dialog-grid">
+<div class="dial d1">
+<div class="dial-icon">1</div>
+<div class="dial-body">
+<h4>🏠 Welches Zimmer?</h4>
+<ul>
+<li>„Das ist <strong>mein Wohnzimmer</strong>."</li>
+<li>„Hier seht ihr <strong>die Küche</strong>."</li>
+<li>„Wir sind <strong>im Schlafzimmer</strong>."</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d2">
+<div class="dial-icon">2</div>
+<div class="dial-body">
+<h4>🪑 Welche Möbel?</h4>
+<ul>
+<li>„Es gibt <strong>ein Sofa</strong>, <strong>einen Tisch</strong> und <strong>zwei Stühle</strong>."</li>
+<li>„Hier steht <strong>ein Bett</strong> und <strong>ein Schrank</strong>."</li>
+<li>„An der Wand hängt <strong>ein Spiegel</strong>."</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d3">
+<div class="dial-icon">3</div>
+<div class="dial-body">
+<h4>📍 Wo ist was?</h4>
+<ul>
+<li>„Das Sofa steht <strong>vor dem Fenster</strong>."</li>
+<li>„Der Teppich liegt <strong>unter dem Tisch</strong>."</li>
+<li>„Die Lampe hängt <strong>über dem Bett</strong>."</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d4">
+<div class="dial-icon">4</div>
+<div class="dial-body">
+<h4>😍 Wie findest du es?</h4>
+<ul>
+<li>„Das Zimmer ist <strong>hell und gemütlich</strong>."</li>
+<li>„Mir gefällt <strong>die Farbe</strong>."</li>
+<li>„Es ist ein bisschen <strong>klein</strong>, aber super!"</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2 class="section-title">Mein <em style="font-style:italic;">Wohnzimmer</em> &mdash; alles drin!</h2>
+
+<div class="room-stage">
+<svg class="room-svg" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="10" width="460" height="260" fill="#FBEDD8" stroke="#5C4E3E" stroke-width="3" rx="8"/>
+<rect x="40" y="100" width="140" height="60" fill="#E8302A" rx="8"/>
+<text x="110" y="135" text-anchor="middle" fill="white" font-family="Outfit" font-weight="700" font-size="13">Sofa</text>
+<rect x="210" y="130" width="80" height="40" fill="#B66809" rx="4"/>
+<text x="250" y="155" text-anchor="middle" fill="white" font-family="Outfit" font-weight="700" font-size="12">Tisch</text>
+<circle cx="110" cy="55" r="20" fill="#FFD24A" stroke="#B66809" stroke-width="2"/>
+<text x="110" y="60" text-anchor="middle" fill="#262019" font-family="Outfit" font-weight="700" font-size="11">Lampe</text>
+<rect x="340" y="60" width="100" height="180" fill="#0FB5A6" rx="6"/>
+<text x="390" y="155" text-anchor="middle" fill="white" font-family="Outfit" font-weight="700" font-size="13">Schrank</text>
+<rect x="30" y="240" width="280" height="25" fill="#6A3D9C" rx="3"/>
+<text x="170" y="258" text-anchor="middle" fill="white" font-family="Outfit" font-weight="700" font-size="11">Teppich</text>
+<rect x="195" y="40" width="70" height="50" fill="#5C4E3E" stroke="#A8957D" stroke-width="2"/>
+<text x="230" y="70" text-anchor="middle" fill="white" font-family="Outfit" font-weight="700" font-size="10">Fernseher</text>
+</svg>
+<div class="room-legend">
+<div>Die Lampe hängt <span>über dem Sofa</span>.</div>
+<div>Der Tisch steht <span>vor dem Sofa</span>.</div>
+<div>Der Schrank steht <span>neben dem Sofa</span>.</div>
+<div>Der Teppich liegt <span>unter dem Tisch</span>.</div>
+<div>Der Fernseher hängt <span>an der Wand</span>.</div>
+<div>Wir sitzen <span>auf dem Sofa</span>.</div>
+</div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+
+<div class="alltag-q">
+<div class="ql">Alltag &middot; Schlüssel suchen</div>
+<div class="qq">Du suchst deinen Schlüssel. Wo könnte er liegen? Nenne 5 Orte!</div>
+<div class="think">💭 „Auf dem Tisch &mdash; in der Tasche &mdash; unter dem Sofa &mdash; neben der Tür &mdash; in der Hose."</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);">
+<div class="ql" style="color:var(--teal);">Alltag &middot; Mein Zimmer</div>
+<div class="qq">Beschreibe dein Lieblingszimmer in 3 Sätzen: Was steht wo?</div>
+<div class="think">💭 „In meinem Wohnzimmer steht ein Sofa vor dem Fenster. Auf dem Tisch liegen Bücher. An der Wand hängt ein Bild."</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#B66809;">
+<div class="ql" style="color:#B66809;">Alltag &middot; Umzug</div>
+<div class="qq">Du ziehst um. Welche 3 Möbel nimmst du auf jeden Fall mit? Warum?</div>
+<div class="think">💭 „Mein Bett, weil ich gut schlafen muss &mdash; meinen Schreibtisch fürs Homeoffice &mdash; und den Bücherschrank!"</div>
+</div>
+
+</section>
+
+<!-- ============== UMGANGSSPRACHE ============== -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So sprechen Deutsche <em style="font-style:italic;">zu Hause</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats &mdash; rund um Möbel, Suchen und Wohnen.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Im Alltag fragen Deutsche meistens <strong>„Wo ist denn&hellip;?"</strong> &mdash; das „denn" macht die Frage freundlicher und natürlicher!</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">🔑</div><div><div class="name">Tom &middot; sucht Schlüssel</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Schaaatz, wo ist denn mein Schlüssel? 🥺</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Schau mal <strong>auf dem Tisch</strong> in der Küche!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Nicht da&hellip;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Dann vielleicht <strong>in deiner Jackentasche</strong>? Oder <strong>neben dem Spiegel</strong>?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">JA! <strong>Unter der Zeitung</strong>! Danke 😂❤️</div></div>
+<div class="chat-meaning"><strong>„auf dem", „in der", „neben dem", „unter der"</strong> &mdash; alle mit Dativ! Klassischer Wohnungsalltag.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🛋️</div><div><div class="name">IKEA-Shop</div><div class="stat">Bestätigung</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hallo Lisa! Dein neues <strong>Sofa</strong> wird morgen geliefert 📦</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Mega! Passt es <strong>durch die Tür</strong>?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Maße: 180&times;90 cm &mdash; sollte passen!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Und wo stellen wir es? <strong>An die Wand</strong> oder <strong>vor das Fenster</strong>?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Vor das Fenster &mdash; dann hast du <strong>Licht zum Lesen</strong> ✨</div></div>
+<div class="chat-meaning"><strong>WICHTIG:</strong> „<em>vor das Fenster stellen</em>" = Akkusativ (Bewegung!). Aber „es steht <em>vor dem Fenster</em>" = Dativ (Position).</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🏠</div><div><div class="name">WG-Maria</div><div class="stat">tippt&hellip;</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hey, kannst du bitte mal <strong>im Wohnzimmer</strong> aufräumen? 🙏</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Was meinst du genau?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Deine Bücher liegen <strong>auf dem Sofa</strong> und <strong>auf dem Boden</strong>! Stell sie <strong>ins Regal</strong>!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Sorry 😅 mach ich gleich!</div></div>
+<div class="chat-meaning"><strong>„ins Regal stellen"</strong> = Akkusativ (Bewegung). <strong>„im Regal stehen"</strong> = Dativ (Position). Klassischer WG-Streit!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📦</div><div><div class="name">Umzug-Sebastian</div><div class="stat">stressig</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Yo Bro &mdash; ich ziehe nächste Woche um!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Krass! Was nimmst du alles mit?</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Bett, Schrank, Schreibtisch</strong> &mdash; und meine <strong>Pflanzen</strong> 🌱</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Und das Sofa? Nimmst du das auch mit?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Nö, das ist zu alt. Hol ich mir <strong>bei IKEA ein neues</strong>!</div></div>
+<div class="chat-meaning">Umzugs-Vokabular: <strong>„mitnehmen"</strong>, <strong>„umziehen"</strong>, <strong>„neu kaufen"</strong> &mdash; A2-Standard!</div>
+</div>
+
+</div>
+
+<h2 class="section-title">12 <em style="font-style:italic;">Alltagssätze</em> für zu Hause</h2>
+
+<div class="prep-grid" style="grid-template-columns:1fr;">
+<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Wo ist denn&hellip;?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">freundliche Wo-Frage</div></div>
+<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„Schau mal auf dem Tisch!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">jemandem helfen suchen</div></div>
+<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">„Komm rein, mach&rsquo;s dir bequem!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Gast empfangen</div></div>
+<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">„Setz dich aufs Sofa!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Akk.! (Bewegung)</div></div>
+<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Räum bitte dein Zimmer auf!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">klassischer Mama-Satz</div></div>
+<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„Mach das Licht an!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Lampe einschalten</div></div>
+<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">„Mein Zimmer ist gemütlich."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">deutsches Lieblingswort!</div></div>
+<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">„Ich ziehe nächsten Monat um."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Umzug ankündigen</div></div>
+</div>
+
+</section>
+
+<!-- ============== LERNKARTEN ============== -->
+<section class="section" data-section="2">
+<h2 class="section-title">Lernkarten &middot; <em style="font-style:italic;">Möbel &amp; Position</em></h2>
+<p class="section-sub">Erst Artikel raten &mdash; dann tippen.</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">🛋️</div>
+<div class="flip-word" id="flipWord">das Sofa</div>
+<div class="flip-badge" id="flipBadge">Möbel &middot; neutr.</div>
+<div class="flip-prompt">Welcher Artikel? Wo benutzt man es? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">Sitzmöbel im Wohnzimmer</div>
+<div class="flip-ex" id="flipEx">„Wir sitzen <strong>auf dem Sofa</strong> und schauen einen Film."</div>
+</div>
+</div>
+</div>
+
+<div class="lk-nav">
+<button class="lk-btn" id="lkPrev">&larr;</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span>
+<button class="lk-btn" id="lkNext">&rarr;</button>
+</div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- ============== QUIZ ============== -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Wo ist es?</em></h2>
+
+<div class="quiz"><div class="quiz-q">Wo schläfst du? &mdash; <span class="blank">?</span> Bett!</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">In das</span><span class="quiz-chip">Im</span><span class="quiz-chip">An dem</span></div><div class="quiz-explain">✓ <strong>Im Bett</strong> &mdash; in+dem = im. Position (Wo?) = Dativ!</div></div>
+
+<div class="quiz"><div class="quiz-q">Die Lampe hängt <span class="blank">?</span> Decke.</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">in der</span><span class="quiz-chip">auf der</span><span class="quiz-chip">an der</span></div><div class="quiz-explain">✓ <strong>an der Decke</strong> &mdash; Decke = fem., direkt dran = „an". an+der.</div></div>
+
+<div class="quiz"><div class="quiz-q">Mein Schlüssel liegt <span class="blank">?</span> Tisch.</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">auf dem</span><span class="quiz-chip">auf den</span><span class="quiz-chip">auf der</span></div><div class="quiz-explain">✓ <strong>auf dem Tisch</strong> &mdash; Tisch = mask., oben drauf = „auf". Dativ: auf dem.</div></div>
+
+<div class="quiz"><div class="quiz-q">Welches Wort passt? Wir kochen <span class="blank">?</span> Küche.</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">im</span><span class="quiz-chip">am</span><span class="quiz-chip">in der</span></div><div class="quiz-explain">✓ <strong>in der Küche</strong> &mdash; Küche = fem. → in der (nicht im!).</div></div>
+
+<div class="quiz"><div class="quiz-q">Welches Möbel gehört NICHT ins Schlafzimmer?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">das Bett</span><span class="quiz-chip">der Nachttisch</span><span class="quiz-chip">der Herd</span></div><div class="quiz-explain">✓ <strong>der Herd</strong> gehört in die Küche! Bett und Nachttisch ins Schlafzimmer.</div></div>
+
+<div class="quiz"><div class="quiz-q">Wo hängt ein Bild meistens?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">unter dem Boden</span><span class="quiz-chip">an der Wand</span><span class="quiz-chip">in der Lampe</span></div><div class="quiz-explain">✓ <strong>an der Wand</strong> &mdash; Bilder hängen direkt an der Wand. Wand = fem. → der.</div></div>
+
+<div class="quiz"><div class="quiz-q">Setz dich bitte <span class="blank">?</span> Sessel! <span style="color:var(--ink-mute);font-size:.85em;">(Bewegung!)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">in den</span><span class="quiz-chip">im</span><span class="quiz-chip">in dem</span></div><div class="quiz-explain">✓ <strong>in den Sessel</strong> &mdash; Bewegung (sich setzen wohin?) = Akkusativ! Sessel = mask. → in den.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet <strong>„gemütlich"</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">groß und teuer</span><span class="quiz-chip">warm, schön &amp; behaglich</span><span class="quiz-chip">leer und kalt</span></div><div class="quiz-explain">✓ <strong>warm, schön &amp; behaglich</strong> &mdash; das deutsche Lieblingswort! Eine Wohnung soll gemütlich sein.</div></div>
+
+</section>
+
+<!-- ============== LÜCKENTEXT ============== -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext &middot; <em style="font-style:italic;">Mein Zuhause</em></h2>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Ich schlafe <select data-sol="im"><option value="">…</option><option>in der</option><option>im</option><option>am</option></select> Bett.</div>
+<div class="gap-line">2. Der Fernseher steht <select data-sol="auf dem"><option value="">…</option><option>auf der</option><option>auf dem</option><option>auf den</option></select> Tisch.</div>
+<div class="gap-line">3. Mein Schlüssel liegt <select data-sol="in der"><option value="">…</option><option>in dem</option><option>in der</option><option>auf der</option></select> Tasche.</div>
+<div class="gap-line">4. Die Lampe hängt <select data-sol="über dem"><option value="">…</option><option>auf dem</option><option>in dem</option><option>über dem</option></select> Sofa.</div>
+<div class="gap-line">5. Wir kochen <select data-sol="in der"><option value="">…</option><option>im</option><option>in der</option><option>am</option></select> Küche.</div>
+<div class="gap-line">6. Der Teppich liegt <select data-sol="unter dem"><option value="">…</option><option>unter dem</option><option>auf dem</option><option>neben dem</option></select> Couchtisch.</div>
+<div class="gap-line">7. Hänge bitte das Bild <select data-sol="an die"><option value="">…</option><option>an der</option><option>an die</option><option>auf die</option></select> Wand! <span style="color:var(--ink-mute);font-size:.85em;">(Bewegung!)</span></div>
+<div class="gap-line">8. Die Bücher stehen <select data-sol="im"><option value="">…</option><option>auf dem</option><option>im</option><option>in der</option></select> Regal.</div>
+<div class="gap-actions">
+<button class="btn-secondary" id="gapReset">Neu</button>
+<button class="btn-primary" id="gapCheck">Überprüfen</button>
+</div>
+</div>
+
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ============== ZUORDNEN ============== -->
+<section class="section" data-section="5">
+<h2 class="section-title">Möbel &harr; <em style="font-style:italic;">Wo gehört es hin?</em></h2>
+<p class="section-sub">Verbinde das Möbel mit dem typischen Zimmer!</p>
+
+<div class="match-stage">
+<div class="match-cols">
+<div class="match-col">
+<h4>🪑 Möbel</h4>
+<div class="match-list" id="leftCol"></div>
+</div>
+<div class="match-col">
+<h4>🏠 Wo?</h4>
+<div class="match-list" id="rightCol"></div>
+</div>
+</div>
+<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+</div>
+</section>
+
+<!-- ============== SPRECHEN ============== -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht es!</em></h2>
+<p class="section-sub">Zieh eine Karte. Beschreibe dein Zuhause &mdash; oder spiel die Situation durch!</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div>
+<div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+
+<div class="speak-controls">
+<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">zum Mitmachen</em></h2>
+<p class="section-sub">Übt zu zweit &mdash; jede:r übernimmt eine Rolle!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 &middot; Wohnungsbesichtigung</div>
+<div class="role-title">🔑 „Ich zeige dir die Wohnung!"</div>
+<div class="role-situation">Person A ist Vermieter:in und zeigt die neue Wohnung. Person B ist Interessent:in und stellt Fragen zu jedem Zimmer. Geht durch 4 Zimmer &mdash; beschreibt alles!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🏠</div><div><div class="person-label">Person A &mdash; Vermieter:in</div><div class="person-quote">„Hier ist das Wohnzimmer &mdash; sehr hell! Da drüben steht ein Sofa, davor ein Couchtisch. Die Küche ist nebenan&hellip;"</div></div></div>
+<div class="person b"><div class="person-avatar">🤔</div><div><div class="person-label">Person B &mdash; Interessent:in</div><div class="person-quote">„Schön! Und wo ist das Bad? Ist eine Dusche im Bad? Wie viele Schränke gibt es im Schlafzimmer?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: Person A beschreibt mindestens 8 Möbel mit korrekter Position (auf dem, in der, an der&hellip;)</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 &middot; Möbel-Wunschliste</div>
+<div class="role-title">🛋️ „Was kaufen wir bei IKEA?"</div>
+<div class="role-situation">Ihr seid ein Paar (oder Mitbewohner:innen) und plant einen Einkauf bei IKEA. Eure neue Wohnung ist leer! Diskutiert: Was kommt zuerst? Was ist wichtig? Was wo?</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😍</div><div><div class="person-label">Person A &mdash; praktisch</div><div class="person-quote">„Wir brauchen unbedingt ein Bett &mdash; und einen Esstisch! Den Tisch stellen wir in die Küche."</div></div></div>
+<div class="person b"><div class="person-avatar">🎨</div><div><div class="person-label">Person B &mdash; gemütlich</div><div class="person-quote">„Klar, aber das Sofa ist wichtiger! Und Pflanzen &mdash; eine große Pflanze neben dem Fenster!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Einigt euch auf eine Liste mit 8 Möbeln und Position pro Zimmer!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 &middot; WG-Aufräum-Streit</div>
+<div class="role-title">😤 „Räum endlich auf!"</div>
+<div class="role-situation">Du wohnst in einer WG. Dein:e Mitbewohner:in lässt immer alles liegen: Schuhe im Flur, Bücher auf dem Sofa, Geschirr in der Spüle. Sprich mit ihr/ihm &mdash; höflich aber bestimmt!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😡</div><div><div class="person-label">Person A &mdash; ordentlich</div><div class="person-quote">„Hey, deine Schuhe stehen schon wieder vor der Tür &mdash; und im Wohnzimmer liegen deine Klamotten auf dem Sofa!"</div></div></div>
+<div class="person b"><div class="person-avatar">😅</div><div><div class="person-label">Person B &mdash; chaotisch</div><div class="person-quote">„Sorry! Ich räume gleich auf &mdash; die Schuhe stelle ich in den Schrank, die Klamotten ins Bad."</div></div></div>
+</div>
+<div class="role-goal">🎯 Benutze mindestens 5 Präpositionen mit Dativ (Position!) und 3 mit Akkusativ (Bewegung)!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Mini-Aufgabe:</strong> Beschreibe jeden Tag <strong>ein Zimmer in deiner Wohnung</strong> mit 5 Sätzen! Mo: Wohnzimmer · Di: Küche · Mi: Bad · Do: Schlafzimmer · Fr: dein Lieblingsplatz. Sprich oder schreibe!<br><br>
+🏆 <strong>Bonus-Challenge:</strong> Fotografiere ein Zimmer deiner Wohnung und schicke das Foto + 5 Sätze (mit Präpositionen!) an deine Tandempartner:in. Wer findet die meisten Fehler bei der/dem Anderen?
+</div>
+
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden &middot; Wohnen &amp; Möbel &middot; A2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// LERNKARTEN
+const KARTEN=[
+  {emoji:'🛋️',word:'das Sofa',badge:'Möbel · neutr.',rule:'Sitzmöbel im Wohnzimmer',ex:'„Wir sitzen <strong>auf dem Sofa</strong> und schauen einen Film."'},
+  {emoji:'🪑',word:'der Stuhl',badge:'Möbel · mask. · Pl. Stühle',rule:'zum Sitzen am Tisch',ex:'„Setz dich bitte <strong>auf den Stuhl</strong>!"'},
+  {emoji:'🍽️',word:'der Tisch',badge:'Möbel · mask.',rule:'zum Essen / Arbeiten',ex:'„Das Essen steht <strong>auf dem Tisch</strong>."'},
+  {emoji:'🛏️',word:'das Bett',badge:'Möbel · neutr. · Pl. Betten',rule:'zum Schlafen',ex:'„Ich liege gemütlich <strong>im Bett</strong>."'},
+  {emoji:'🚪',word:'der Schrank',badge:'Möbel · mask. · Pl. Schränke',rule:'für Kleidung / Geschirr',ex:'„Meine Hosen hängen <strong>im Schrank</strong>."'},
+  {emoji:'📚',word:'das Regal',badge:'Möbel · neutr.',rule:'für Bücher / Deko',ex:'„Die Bücher stehen <strong>im Regal</strong>."'},
+  {emoji:'💡',word:'die Lampe',badge:'Möbel · fem.',rule:'gibt Licht',ex:'„Die Lampe hängt <strong>über dem Tisch</strong>."'},
+  {emoji:'🟫',word:'der Teppich',badge:'Möbel · mask.',rule:'liegt auf dem Boden',ex:'„Der Teppich liegt <strong>unter dem Tisch</strong>."'},
+  {emoji:'🛋️',word:'das Wohnzimmer',badge:'Zimmer · neutr.',rule:'zum Entspannen',ex:'„Wir treffen uns <strong>im Wohnzimmer</strong>."'},
+  {emoji:'🍳',word:'die Küche',badge:'Zimmer · fem.',rule:'zum Kochen',ex:'„Mama steht <strong>in der Küche</strong> und kocht."'},
+  {emoji:'🛁',word:'das Badezimmer',badge:'Zimmer · neutr.',rule:'zum Waschen',ex:'„Ich gehe <strong>ins Bad</strong>." (Akkusativ!)'},
+  {emoji:'🛏️',word:'das Schlafzimmer',badge:'Zimmer · neutr.',rule:'zum Schlafen',ex:'„Es ist still <strong>im Schlafzimmer</strong>."'},
+  {emoji:'⬇️',word:'in (+ Dativ)',badge:'Präposition · drinnen',rule:'in dem = im / in der',ex:'„Die Milch ist <strong>im Kühlschrank</strong>."'},
+  {emoji:'⬆️',word:'auf (+ Dativ)',badge:'Präposition · oben drauf',rule:'auf dem / auf der',ex:'„Die Katze sitzt <strong>auf dem Stuhl</strong>."'},
+  {emoji:'📌',word:'an (+ Dativ)',badge:'Präposition · direkt dran',rule:'an dem = am / an der',ex:'„Das Bild hängt <strong>an der Wand</strong>."'},
+  {emoji:'↔️',word:'neben / zwischen',badge:'Präposition · daneben',rule:'+ Dativ für Position',ex:'„Der Stuhl steht <strong>neben dem Tisch</strong>."'},
+];
+let order=KARTEN.map((_,i)=>i);
+let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){
+  const k=KARTEN[order[lkIdx]];
+  document.getElementById('flipEmoji').textContent=k.emoji;
+  document.getElementById('flipWord').textContent=k.word;
+  document.getElementById('flipBadge').textContent=k.badge;
+  document.getElementById('flipRule').textContent=k.rule;
+  document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('lkCur').textContent=lkIdx+1;
+  document.getElementById('lkTot').textContent=KARTEN.length;
+  flipEl.classList.remove('flipped');
+}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+// QUIZ
+document.querySelectorAll('.quiz-opts').forEach(opts=>{
+  const c=parseInt(opts.dataset.c);
+  const chips=opts.querySelectorAll('.quiz-chip');
+  const exp=opts.parentElement.querySelector('.quiz-explain');
+  chips.forEach((chip,i)=>{
+    chip.onclick=()=>{
+      if(opts.dataset.done)return;opts.dataset.done='1';
+      if(i===c)chip.classList.add('correct');
+      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
+      exp.classList.add('show');
+    };
+  });
+});
+
+// GAP
+document.getElementById('gapCheck').onclick=()=>{
+  const sels=document.querySelectorAll('#gapText select');
+  let right=0,total=sels.length;
+  sels.forEach(s=>{
+    s.classList.remove('right','wrong');
+    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    else s.classList.add('wrong');
+  });
+  const score=document.getElementById('gapScore');
+  score.style.display='block';
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');
+};
+document.getElementById('gapReset').onclick=()=>{
+  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  document.getElementById('gapScore').style.display='none';
+};
+
+// MATCH
+const PAIRS=[
+  {l:'das Sofa',r:'Wohnzimmer'},
+  {l:'der Herd',r:'Küche'},
+  {l:'das Bett',r:'Schlafzimmer'},
+  {l:'die Dusche',r:'Badezimmer'},
+  {l:'der Schreibtisch',r:'Arbeitszimmer'},
+  {l:'die Garderobe',r:'Flur'},
+  {l:'der Kühlschrank',r:'Küche'},
+  {l:'der Nachttisch',r:'Schlafzimmer'},
+];
+function buildMatch(){
+  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
+  L.innerHTML='';R.innerHTML='';
+  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
+  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
+  let pick=null;
+  document.querySelectorAll('.match-item').forEach(item=>{
+    item.onclick=()=>{
+      if(item.classList.contains('done'))return;
+      if(!pick){pick=item;item.classList.add('selected');return;}
+      if(pick===item){item.classList.remove('selected');pick=null;return;}
+      const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;
+      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
+      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
+      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
+    };
+  });
+}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
+
+// SPEAK
+const SPEAK=[
+  {emoji:'🛋️',cat:'Wohnzimmer beschreiben',q:'Beschreibe dein Wohnzimmer in 5 Sätzen: Welche Möbel? Wo stehen sie? Welche Farbe?'},
+  {emoji:'🔑',cat:'Schlüssel suchen',q:'Du suchst deinen Hausschlüssel. Nenne 7 mögliche Orte mit Präpositionen!'},
+  {emoji:'🛏️',cat:'Mein Bett',q:'Beschreibe dein Bett: Wo steht es? Was ist daneben? Was hängt darüber?'},
+  {emoji:'🍳',cat:'In der Küche',q:'Was steht alles in deiner Küche? Nenne 8 Dinge mit „in der" oder „auf dem"!'},
+  {emoji:'🚪',cat:'Mein Schrank',q:'Was hängt in deinem Schrank? Was liegt drin? Beschreibe in 4 Sätzen!'},
+  {emoji:'🛁',cat:'Im Bad',q:'Beschreibe dein Bad: Dusche? Wanne? Was steht auf dem Waschbecken?'},
+  {emoji:'🏠',cat:'Lieblingszimmer',q:'Welches ist dein Lieblingszimmer und warum? Beschreibe es mit 6 Sätzen!'},
+  {emoji:'📦',cat:'Umzug',q:'Du ziehst um. Welche 5 Möbel nimmst du mit? Was lässt du da? Warum?'},
+  {emoji:'🛋️',cat:'IKEA-Wunsch',q:'Was würdest du bei IKEA kaufen, wenn du 500 € hättest? Begründe!'},
+  {emoji:'🪞',cat:'Wo hängt was?',q:'Wo hängen in deiner Wohnung Spiegel, Bilder, Lampen? Beschreibe!'},
+  {emoji:'😌',cat:'Gemütlichkeit',q:'Was ist für dich „gemütlich"? Wie machst du dein Zuhause gemütlich?'},
+  {emoji:'🌱',cat:'Pflanzen',q:'Hast du Pflanzen zu Hause? Wo stehen sie? Beschreibe mindestens 3!'},
+  {emoji:'🛌',cat:'Morgen-Routine',q:'Beschreibe deine Morgen-Routine: Wo bist du wann? (im Bad, in der Küche&hellip;)'},
+  {emoji:'🛒',cat:'Möbel kaufen',q:'Du brauchst einen neuen Schrank. Was muss er können? Wo soll er stehen?'},
+  {emoji:'👥',cat:'WG vs. allein',q:'Wohnst du allein, in einer WG oder mit Familie? Beschreibe Vor- und Nachteile!'},
+  {emoji:'🏡',cat:'Traumhaus',q:'Beschreibe dein Traumhaus: Wie viele Zimmer? Wo steht es? Was ist drin?'},
+];
+let lastSpeak=-1;
+document.getElementById('speakNew').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
+  lastSpeak=i;const k=SPEAK[i];
+  const c=document.getElementById('speakCard');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei &mdash; 60-90 Sekunden!</div>';
+    c.style.opacity='1';
+  },200);
+};
+</script>
+</body></html>

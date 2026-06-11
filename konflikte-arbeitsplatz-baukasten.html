@@ -1,0 +1,511 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Konflikte am Arbeitsplatz &middot; B1/B2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.8rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* KONFLIKT-TYPEN */
+.kt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:700px){.kt-grid{grid-template-columns:repeat(2,1fr);}}
+.kt{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem .8rem;text-align:center;border-top:5px solid var(--red);}
+.kt:nth-child(4n+2){border-top-color:var(--teal);}
+.kt:nth-child(4n+3){border-top-color:#B66809;}
+.kt:nth-child(4n){border-top-color:#6A3D9C;}
+.kt-icon{font-size:2rem;margin-bottom:.3rem;display:block;}
+.kt-word{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1rem;margin-bottom:.2rem;}
+.kt-desc{color:var(--ink-soft);font-size:.78rem;line-height:1.4;}
+
+/* DIPLOMAT-SAETZE */
+.dip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:600px){.dip-grid{grid-template-columns:1fr;}}
+.dip{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.1rem;border-left:5px solid var(--teal);}
+.dip-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.98rem;font-style:italic;}
+.dip-why{color:var(--ink-soft);font-size:.78rem;margin-top:.3rem;}
+
+/* ESKALATIONS-STUFEN */
+.esk-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
+.esk-row{display:grid;grid-template-columns:60px 1fr;gap:.9rem;padding:.7rem 0;border-bottom:1px dashed var(--sand);}
+.esk-row:last-child{border-bottom:0;}
+.esk-num{background:var(--red);color:white;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;}
+.esk-row:nth-child(2) .esk-num{background:#5F7A2A;}
+.esk-row:nth-child(3) .esk-num{background:var(--teal);}
+.esk-row:nth-child(4) .esk-num{background:#B66809;}
+.esk-row:nth-child(5) .esk-num{background:var(--red);}
+.esk-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.05rem;}
+.esk-desc{color:var(--ink-soft);font-size:.85rem;margin-top:.2rem;line-height:1.5;}
+
+/* ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* PHRASE */
+.phrase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+@media(max-width:600px){.phrase-grid{grid-template-columns:1fr;}}
+.phrase{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;align-items:center;}
+.phrase-icon{font-size:2rem;text-align:center;}
+.phrase-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;font-style:italic;}
+.phrase-meaning{color:var(--ink-soft);font-size:.8rem;margin-top:.2rem;}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person.c{border-color:#B66809;background:#FFF5E8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person.c .person-avatar{border-color:#B66809;}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas &middot; Beruf B1/B2 Sprechclub</div>
+<div class="title-wrap"><h1 class="title">Konflikte am <span class="hl">Arbeitsplatz</span></h1></div>
+<p class="subtitle">Ansprechen, l&ouml;sen, eskalieren &mdash; diplomatische Sprache, Konflikt-Typen und der Weg zur L&ouml;sung. Ohne Stress, aber klar.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">&#128561;</text><text y="40" text-anchor="middle" fill="#E8302A">Mobbing</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">&#9878;&#65039;</text><text y="40" text-anchor="middle" fill="#0FB5A6">Unfair</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">&#128221;</text><text y="40" text-anchor="middle" fill="#B66809">Aufgaben</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">&#128081;</text><text y="40" text-anchor="middle" fill="#A04060">Hierarchie</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">&#129309;</text><text y="40" text-anchor="middle" fill="#5F7A2A">Kompromiss</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">&#9878;&#65039;</text><text y="40" text-anchor="middle" fill="#6A3D9C">Mediation</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">&#128214; &Uuml;berblick</button>
+<button class="tab" data-tab="1">&#128172; Umgangssprache</button>
+<button class="tab" data-tab="2">&#127183; Lernkarten</button>
+<button class="tab" data-tab="3">&#9989; Quiz</button>
+<button class="tab" data-tab="4">&#9997;&#65039; L&uuml;ckentext</button>
+<button class="tab" data-tab="5">&#129513; Zuordnen</button>
+<button class="tab" data-tab="6">&#128483;&#65039; Sprechen</button>
+</nav>
+
+<!-- UEBERBLICK -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">4 typische <em style="font-style:italic;">Konflikt-Typen</em></h2>
+<p class="section-sub">Konflikte am Arbeitsplatz sind normal &mdash; wichtig ist, sie richtig zu erkennen und zu benennen.</p>
+
+<div class="kt-grid">
+<div class="kt"><span class="kt-icon">&#128561;</span><div class="kt-word">Mobbing</div><div class="kt-desc">Systematisches Schikanieren &uuml;ber l&auml;ngere Zeit</div></div>
+<div class="kt"><span class="kt-icon">&#9878;&#65039;</span><div class="kt-word">Unfaire Behandlung</div><div class="kt-desc">Ungleiches Gehalt, &Uuml;bergehung bei Bef&ouml;rderung</div></div>
+<div class="kt"><span class="kt-icon">&#128221;</span><div class="kt-word">Aufgabenstreit</div><div class="kt-desc">&bdquo;Das ist nicht mein Job!&ldquo; &mdash; unklare Zust&auml;ndigkeiten</div></div>
+<div class="kt"><span class="kt-icon">&#128081;</span><div class="kt-word">Hierarchie-Reibung</div><div class="kt-desc">Konflikt mit Chef:in oder &auml;lteren Kolleg:innen</div></div>
+<div class="kt"><span class="kt-icon">&#128176;</span><div class="kt-word">Gehaltsneid</div><div class="kt-desc">Wenn jemand mehr verdient bei gleicher Arbeit</div></div>
+<div class="kt"><span class="kt-icon">&#128587;</span><div class="kt-word">Pers&ouml;nliche Antipathie</div><div class="kt-desc">Man kann sich einfach nicht riechen</div></div>
+<div class="kt"><span class="kt-icon">&#128075;</span><div class="kt-word">Kommunikations-Stil</div><div class="kt-desc">Laut vs. leise, direkt vs. h&ouml;flich</div></div>
+<div class="kt"><span class="kt-icon">&#127968;</span><div class="kt-word">Homeoffice-Streit</div><div class="kt-desc">Wer darf wann von zu Hause arbeiten?</div></div>
+</div>
+
+<div class="tip">&#128161; <strong>Tipp:</strong> In Deutschland gilt das Prinzip <u>&bdquo;Sachlich bleiben&ldquo;</u>. Egal wie wuetend du bist &mdash; trenne <em>Problem</em> von <em>Person</em>. Sage nie &bdquo;Du bist faul&ldquo;, sondern &bdquo;Mir ist aufgefallen, dass die Aufgabe X nicht erledigt wurde&ldquo;.</div>
+
+<h2 class="section-title">Diplomatische <em style="font-style:italic;">S&auml;tze</em></h2>
+<p class="section-sub">Diese Formulierungen retten dich in jedem Konfliktgespr&auml;ch &mdash; sie sind h&ouml;flich, aber klar.</p>
+
+<div class="dip-grid">
+<div class="dip"><div class="dip-de">&bdquo;Mir ist aufgefallen, dass&hellip;&ldquo;</div><div class="dip-why">Statt Vorwurf: beobachten und benennen.</div></div>
+<div class="dip"><div class="dip-de">&bdquo;Ich habe das Gef&uuml;hl, dass&hellip;&ldquo;</div><div class="dip-why">Ich-Botschaft &mdash; nicht angreifbar.</div></div>
+<div class="dip"><div class="dip-de">&bdquo;K&ouml;nnen wir das in Ruhe besprechen?&ldquo;</div><div class="dip-why">Termin vorschlagen statt im Affekt streiten.</div></div>
+<div class="dip"><div class="dip-de">&bdquo;Vielleicht habe ich es falsch verstanden, aber&hellip;&ldquo;</div><div class="dip-why">L&auml;sst Raum f&uuml;r Missverst&auml;ndnis.</div></div>
+<div class="dip"><div class="dip-de">&bdquo;Aus meiner Sicht&hellip;&ldquo;</div><div class="dip-why">Subjektivit&auml;t markieren &mdash; keine Anklage.</div></div>
+<div class="dip"><div class="dip-de">&bdquo;Wie sehen Sie das?&ldquo;</div><div class="dip-why">Andere Perspektive einladen.</div></div>
+<div class="dip"><div class="dip-de">&bdquo;Lassen Sie uns einen Kompromiss finden.&ldquo;</div><div class="dip-why">L&ouml;sungsorientiert auftreten.</div></div>
+<div class="dip"><div class="dip-de">&bdquo;Mir ist wichtig, dass wir respektvoll bleiben.&ldquo;</div><div class="dip-why">Grenze setzen, ohne anzugreifen.</div></div>
+</div>
+
+<h2 class="section-title">5 <em style="font-style:italic;">Eskalations-Stufen</em></h2>
+<p class="section-sub">Von &bdquo;direkt ansprechen&ldquo; bis &bdquo;Anwalt&ldquo; &mdash; mache es Schritt f&uuml;r Schritt!</p>
+
+<div class="esk-stage">
+<div class="esk-row"><div class="esk-num">1</div><div><div class="esk-name">Direktes Gespr&auml;ch unter vier Augen</div><div class="esk-desc">Sprich die Person ruhig und privat an. &bdquo;Hast du kurz Zeit? Ich m&ouml;chte etwas mit dir besprechen.&ldquo;</div></div></div>
+<div class="esk-row"><div class="esk-num">2</div><div><div class="esk-name">Vertrauensperson einbeziehen</div><div class="esk-desc">Eine neutrale Kolleg:in oder Mentor:in fragen &mdash; oft hilft schon Reden.</div></div></div>
+<div class="esk-row"><div class="esk-num">3</div><div><div class="esk-name">Gespr&auml;ch mit der/dem Vorgesetzten</div><div class="esk-desc">Wenn 1 + 2 nicht helfen: Termin mit Chef:in. Argumente und Beispiele vorbereiten!</div></div></div>
+<div class="esk-row"><div class="esk-num">4</div><div><div class="esk-name">Betriebsrat oder HR einschalten</div><div class="esk-desc">Bei strukturellen Problemen oder Mobbing &mdash; offizielle Stellen sind anonym!</div></div></div>
+<div class="esk-row"><div class="esk-num">5</div><div><div class="esk-name">Mediation oder Anwalt</div><div class="esk-desc">Externe Mediator:in oder Arbeitsrechtsanwalt &mdash; letzter Schritt vor K&uuml;ndigung.</div></div></div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Pers&ouml;nlich</div><div class="qq">Hattest du schon mal einen Konflikt im Job? Wie ist er ausgegangen?</div><div class="think">&#128173; &bdquo;Ja, vor einem Jahr&hellip;&ldquo; / &bdquo;Nein, zum Gl&uuml;ck nicht&hellip;&ldquo;</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Vergleich</div><div class="qq">In welchem Land ist die Konflikt-Kultur &bdquo;direkter&ldquo; &mdash; Deutschland oder dein Heimatland?</div><div class="think">&#128173; Deutsche sagen oft direkt, was sie denken. Wie ist das bei euch?</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Strategie</div><div class="qq">Was machst du, wenn ein Kollege immer dich unterbricht? Direkt sagen oder ignorieren?</div><div class="think">&#128173; Es gibt mehrere Wege &mdash; was passt zu dir?</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Provokant</div><div class="qq">Ist es Mobbing oder &bdquo;einfach nur Stress&ldquo;? Wo ist die Grenze?</div><div class="think">&#128173; Definition von Mobbing: systematisch, &uuml;ber Wochen, von einer Person ausgehend&hellip;</div></div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">&#128172; So reden Deutsche <em style="font-style:italic;">&uuml;ber Konflikte</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats &mdash; vom Kollegen-L&auml;stern bis zur Vorbereitung des Chef-Gespr&auml;chs.</p>
+
+<div class="tip">&#128293; <strong>Tipp:</strong> Unter Kolleg:innen redet man oft <u>emotional und direkt</u> (&bdquo;Hast du gesehen, was er gemacht hat?!&ldquo;). Im offiziellen Gespr&auml;ch mit Chef:in oder HR <em>sachlich und neutral</em>.</div>
+
+<div class="uss-grid">
+<div class="chat">
+<div class="chat-head"><div class="av">&#128548;</div><div><div class="name">L&auml;stern mit Kolleg:in</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hast du gesehen, was Markus heute wieder <strong>abgezogen</strong> hat?! &#128561;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Nee, was denn? Erz&auml;hl!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Er hat mein Projekt vor dem Chef als <strong>seines</strong> verkauft. Wieder mal.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Krass! Das geht so nicht. Du musst das <strong>ansprechen</strong>!</div></div>
+<div class="chat-meaning"><strong>&bdquo;abziehen&ldquo;</strong> = umgangssprachlich f&uuml;r &bdquo;etwas Unfaires tun&ldquo; &middot; <strong>&bdquo;ansprechen&ldquo;</strong> = das Problem offen ben.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#129303;</div><div><div class="name">Vertrauens&shy;person fragen</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Sandra, hast du kurz Zeit? Ich brauche deinen <strong>Rat</strong>.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Klar, was ist los?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich glaub, ich werde im Team <strong>&uuml;bergangen</strong>. Bin ich paranoid?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Lass uns morgen Mittag dr&uuml;ber reden. <strong>Unter vier Augen.</strong></div></div>
+<div class="chat-meaning"><strong>&bdquo;&uuml;bergangen werden&ldquo;</strong> = nicht ber&uuml;cksichtigt &middot; <strong>&bdquo;unter vier Augen&ldquo;</strong> = privat, ohne andere</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128106;</div><div><div class="name">Chef-Gespr&auml;ch vorbereiten</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hab morgen das <strong>Gespr&auml;ch</strong> mit dem Chef. Bin so nerv&ouml;s &#128557;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ruhig bleiben! Hast du konkrete Beispiele?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ja, 3 Situationen aus dem letzten Monat. Mit Datum.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Perfekt. <strong>Sachlich bleiben</strong>, nicht emotional werden!</div></div>
+<div class="chat-meaning"><strong>&bdquo;sachlich bleiben&ldquo;</strong> = Fakten statt Gef&uuml;hle &mdash; SUPER wichtig im deutschen Berufsleben!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128176;</div><div><div class="name">Gehaltsneid</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hab erfahren, dass Tim 500 Euro mehr verdient als ich. Selbe Position!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wow. Hast du jemals nach einer <strong>Geh.erh&ouml;hung</strong> gefragt?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Nein&hellip; Ich trau mich nicht.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Bereite Argumente vor und sprich es an! Du hast Recht auf <strong>faire Bezahlung</strong>.</div></div>
+<div class="chat-meaning"><strong>&bdquo;Gehaltserh&ouml;hung&ldquo;</strong> = mehr Lohn &middot; in DE wird ungern &uuml;bers Gehalt gesprochen &mdash; aber immer mehr Leute machen es!</div>
+</div>
+</div>
+
+<h2 class="section-title">12 wichtige <em style="font-style:italic;">Konflikt-Phrasen</em></h2>
+<div class="phrase-grid">
+<div class="phrase"><div class="phrase-icon">&#128173;</div><div><div class="phrase-de">&bdquo;Das m&uuml;ssen wir mal in Ruhe besprechen.&ldquo;</div><div class="phrase-meaning">Termin vorschlagen statt Drama</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#129309;</div><div><div class="phrase-de">&bdquo;Lass uns einen Kompromiss finden.&ldquo;</div><div class="phrase-meaning">l&ouml;sungsorientiert</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128064;</div><div><div class="phrase-de">&bdquo;Mir ist aufgefallen, dass&hellip;&ldquo;</div><div class="phrase-meaning">beobachten statt anklagen</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#10024;</div><div><div class="phrase-de">&bdquo;Ich habe das Gef&uuml;hl, dass&hellip;&ldquo;</div><div class="phrase-meaning">Ich-Botschaft, weniger Angriff</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128075;</div><div><div class="phrase-de">&bdquo;Wie siehst du das?&ldquo;</div><div class="phrase-meaning">offene Frage, andere Sicht einladen</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#9888;&#65039;</div><div><div class="phrase-de">&bdquo;Das ist f&uuml;r mich nicht akzeptabel.&ldquo;</div><div class="phrase-meaning">klare Grenze setzen</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#129488;</div><div><div class="phrase-de">&bdquo;Vielleicht habe ich es falsch verstanden&hellip;&ldquo;</div><div class="phrase-meaning">diplomatisch Raum lassen</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128221;</div><div><div class="phrase-de">&bdquo;Ich m&ouml;chte das gerne kl&auml;ren.&ldquo;</div><div class="phrase-meaning">l&ouml;sungsorientiert ans Problem</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#9203;</div><div><div class="phrase-de">&bdquo;K&ouml;nnen wir kurz zur Seite gehen?&ldquo;</div><div class="phrase-meaning">privat reden, nicht vor allen</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128587;</div><div><div class="phrase-de">&bdquo;Mir ist wichtig, dass&hellip;&ldquo;</div><div class="phrase-meaning">eigene Bed&uuml;rfnisse benennen</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128106;</div><div><div class="phrase-de">&bdquo;Ich wende mich an den Betriebsrat.&ldquo;</div><div class="phrase-meaning">offizielle Eskalation</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128293;</div><div><div class="phrase-de">&bdquo;So kann es nicht weitergehen.&ldquo;</div><div class="phrase-meaning">klar machen: Status quo geht nicht</div></div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Wortschatz-Karten</h2>
+<p class="section-sub">Erst denken &mdash; dann tippen.</p>
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">&#129309;</div>
+<div class="flip-word" id="flipWord">der Kompromiss</div>
+<div class="flip-badge" id="flipBadge">L&ouml;sung</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">compromise &mdash; beide geben etwas nach</div>
+<div class="flip-ex" id="flipEx">&bdquo;Lass uns einen <strong>Kompromiss</strong> finden.&ldquo;</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">&larr;</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span><button class="lk-btn" id="lkNext">&rarr;</button></div>
+<button class="lk-shuffle" id="lkShuffle">&#128256; Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Was ist die beste Reaktion?</em></h2>
+
+<div class="quiz"><div class="quiz-q">Kollege Markus unterbricht dich st&auml;ndig im Meeting. Was sagst du?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">&bdquo;Halt&rsquo;s Maul, Markus!&ldquo;</span><span class="quiz-chip">Gar nichts &mdash; ignorieren</span><span class="quiz-chip">&bdquo;Lass mich bitte ausreden, dann h&ouml;re ich gerne deine Sicht.&ldquo;</span></div><div class="quiz-explain">Diplomatisch, aber klar &mdash; Grenze setzen ohne Eskalation.</div></div>
+
+<div class="quiz"><div class="quiz-q">Du hast den Verdacht, dass du gemobbt wirst. An wen wendest du dich ZUERST?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Anwalt</span><span class="quiz-chip">Vertrauensperson oder Betriebsrat</span><span class="quiz-chip">Polizei</span></div><div class="quiz-explain">Erst intern kl&auml;ren! Betriebsrat ist anonym und kennt den Betrieb.</div></div>
+
+<div class="quiz"><div class="quiz-q">Welcher Satz ist am DIPLOMATISCHSTEN?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">&bdquo;Du bist faul!&ldquo;</span><span class="quiz-chip">&bdquo;Du machst nie was!&ldquo;</span><span class="quiz-chip">&bdquo;Mir ist aufgefallen, dass die Aufgabe X nicht erledigt wurde.&ldquo;</span></div><div class="quiz-explain">Trenne Problem von Person &mdash; das ist die goldene Regel!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist ein &bdquo;Betriebsrat&ldquo;?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Der Chef der Firma</span><span class="quiz-chip">Eine Arbeitnehmer-Vertretung im Betrieb</span><span class="quiz-chip">Eine Versicherung</span></div><div class="quiz-explain">Der Betriebsrat vertritt die Interessen der Arbeitnehmer:innen &mdash; gew&auml;hlt, nicht ernannt!</div></div>
+
+<div class="quiz"><div class="quiz-q">Kollegin Anna verbreitet ein Ger&uuml;cht &uuml;ber dich. Was tust du?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Auch ein Ger&uuml;cht &uuml;ber sie verbreiten</span><span class="quiz-chip">Schweigen und hoffen</span><span class="quiz-chip">Sie direkt ansprechen: &bdquo;Hast du das gesagt? Lass uns reden.&ldquo;</span></div><div class="quiz-explain">Direkt klarmachen &mdash; ohne Aggression. Konflikt klein halten!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet &bdquo;sachlich bleiben&ldquo;?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Fakten statt Emotionen sprechen lassen</span><span class="quiz-chip">Ein Sachgeschenk machen</span><span class="quiz-chip">Material reparieren</span></div><div class="quiz-explain">&bdquo;Sachlich&ldquo; = objektiv, ruhig, faktenbasiert &mdash; im deutschen Berufsleben sehr wichtig!</div></div>
+
+<div class="quiz"><div class="quiz-q">Wie startest du am besten ein Konfliktgespr&auml;ch mit der Chefin?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">&bdquo;Wir m&uuml;ssen JETZT reden!&ldquo;</span><span class="quiz-chip">&bdquo;Haben Sie diese Woche kurz Zeit f&uuml;r ein Gespr&auml;ch?&ldquo;</span><span class="quiz-chip">&bdquo;Sie haben Mist gebaut!&ldquo;</span></div><div class="quiz-explain">Termin vorschlagen &mdash; nie im Affekt eskalieren. Vorbereitung ist alles!</div></div>
+
+<div class="quiz"><div class="quiz-q">Welche Rolle hat eine &bdquo;Mediator:in&ldquo;?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Neutrale dritte Person, die den Konflikt moderiert</span><span class="quiz-chip">Ein Anwalt der einen verklagt</span><span class="quiz-chip">Der Chef der Firma</span></div><div class="quiz-explain">Mediation = neutrale Vermittlung. Keine Seite. Hilft beim Kompromiss!</div></div>
+</section>
+
+<!-- LUECKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">L&uuml;ckentext: <em style="font-style:italic;">Konflikt-Gespr&auml;che</em></h2>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Mir ist <select data-sol="aufgefallen"><option value="">&hellip;</option><option>aufgefallen</option><option>aufgegangen</option><option>weggegangen</option></select>, dass die Aufgabe nicht erledigt wurde.</div>
+<div class="gap-line">2. Ich habe das <select data-sol="Gef&uuml;hl">&#10;<option value="">&hellip;</option><option>Gef&uuml;hl</option><option>Glas</option><option>Geld</option></select>, dass wir uns missverstehen.</div>
+<div class="gap-line">3. K&ouml;nnen wir das in Ruhe <select data-sol="besprechen"><option value="">&hellip;</option><option>besprechen</option><option>vergessen</option><option>essen</option></select>?</div>
+<div class="gap-line">4. Lass uns einen <select data-sol="Kompromiss"><option value="">&hellip;</option><option>Kompromiss</option><option>Krieg</option><option>Krimi</option></select> finden, der f&uuml;r beide passt.</div>
+<div class="gap-line">5. Ich wende mich an den <select data-sol="Betriebsrat"><option value="">&hellip;</option><option>Betriebsrat</option><option>Bahnhof</option><option>Brunnen</option></select>, wenn sich nichts &auml;ndert.</div>
+<div class="gap-line">6. Mir ist <select data-sol="wichtig"><option value="">&hellip;</option><option>wichtig</option><option>witzig</option><option>weich</option></select>, dass wir respektvoll miteinander umgehen.</div>
+<div class="gap-line">7. Vielleicht habe ich es falsch <select data-sol="verstanden"><option value="">&hellip;</option><option>verstanden</option><option>vergessen</option><option>verloren</option></select>, aber das wirkte unfair.</div>
+<div class="gap-line">8. Das ist f&uuml;r mich nicht <select data-sol="akzeptabel"><option value="">&hellip;</option><option>akzeptabel</option><option>aktiv</option><option>aktuell</option></select> &mdash; so kann es nicht weitergehen.</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">&Uuml;berpr&uuml;fen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Problem &harr; <em style="font-style:italic;">L&ouml;sungsansatz</em> zuordnen</h2>
+<p class="section-sub">Welcher Schritt passt zu welchem Konflikt?</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Problem</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>L&ouml;sungsansatz</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">&#128260; Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht\'s!</em></h2>
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">&#127922;</div><div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf &bdquo;Neue Karte&ldquo; und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">&#127922; Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">aus dem Berufsalltag</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 &middot; Kolleg:in ansprechen</div>
+<div class="role-title">&#128172; &bdquo;Kannst du kurz?&ldquo; &mdash; Direktes Gespr&auml;ch</div>
+<div class="role-situation">Kollege Tom verschickt st&auml;ndig E-Mails mit dir in CC, in denen er dich subtil schlecht aussehen l&auml;sst. Du sprichst ihn an &mdash; ohne Drama, aber klar.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">&#128107;</div><div><div class="person-label">Du (Kolleg:in)</div><div class="person-quote">&bdquo;Tom, hast du kurz? Mir ist aufgefallen, dass in deinen letzten Mails&hellip; Wie siehst du das?&ldquo;</div></div></div>
+<div class="person b"><div class="person-avatar">&#129320;</div><div><div class="person-label">Tom</div><div class="person-quote">&bdquo;Was meinst du? Ich verstehe nicht ganz&hellip; Das war nicht so gemeint.&ldquo;</div></div></div>
+</div>
+<div class="role-goal">&#127919; Ziel: Beobachtung benennen, Ich-Botschaften nutzen, L&ouml;sung vorschlagen &mdash; mind. 8 S&auml;tze pro Person!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 &middot; Mit Chef:in &uuml;ber Mobbing</div>
+<div class="role-title">&#128081; Schweres Gespr&auml;ch mit der Vorgesetzten</div>
+<div class="role-situation">Eine Kollegin schikaniert dich seit Wochen &mdash; vor anderen kleinmachen, Aufgaben sabotieren, Ger&uuml;chte. Du suchst das Gespr&auml;ch mit deiner Chefin und schilderst es sachlich mit Beispielen.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">&#128557;</div><div><div class="person-label">Du (Betroffene:r)</div><div class="person-quote">&bdquo;Frau M&uuml;ller, ich muss etwas mit Ihnen besprechen. Es geht um die Zusammenarbeit mit Frau X. Konkret: am 3. Mai&hellip;&ldquo;</div></div></div>
+<div class="person b"><div class="person-avatar">&#128104;&#8205;&#128188;</div><div><div class="person-label">Chefin</div><div class="person-quote">&bdquo;Danke, dass Sie kommen. Erz&auml;hlen Sie mir genau, was passiert ist. Haben Sie Beispiele?&ldquo;</div></div></div>
+</div>
+<div class="role-goal">&#127919; Sachlich + konkret + Daten/Beispiele. Keine Anklage, sondern Bitte um Hilfe!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 &middot; Mediation zu dritt</div>
+<div class="role-title">&#9878;&#65039; Mediation mit drei Personen</div>
+<div class="role-situation">Zwei Kolleg:innen streiten seit Monaten um die Verantwortung f&uuml;r ein Projekt. Eine Mediator:in (HR) f&uuml;hrt das Gespr&auml;ch. Ziel: Kompromiss finden!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">&#128548;</div><div><div class="person-label">Kollege A</div><div class="person-quote">&bdquo;Ich habe die Idee gehabt! Das Projekt geh&ouml;rt mir.&ldquo;</div></div></div>
+<div class="person b"><div class="person-avatar">&#128545;</div><div><div class="person-label">Kollegin B</div><div class="person-quote">&bdquo;Aber ich mache 80% der Arbeit! Das ist unfair.&ldquo;</div></div></div>
+</div>
+<div class="role-people" style="margin-top:.6rem;">
+<div class="person c" style="grid-column:span 2;"><div class="person-avatar">&#129489;&#8205;&#9878;&#65039;</div><div><div class="person-label">Mediator:in (HR)</div><div class="person-quote">&bdquo;Bitte lassen Sie uns einander ausreden. A, was ist Ihr Anliegen? B, wie sehen Sie das? Wo k&ouml;nnen wir uns treffen?&ldquo;</div></div></div>
+</div>
+<div class="role-goal">&#127919; Jeder darf ausreden, neutrale Sprache, am Ende KONKRETER Kompromiss (z.B. Co-Leitung, klare Rollen)!</div>
+</div>
+</div>
+
+<h2 class="section-title">&#127919; Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Mission:</strong> &Uuml;berlege diese Woche eine Situation aus deinem Job (oder fr&uuml;her), in der du einen Konflikt hattest. Schreibe 3 diplomatische S&auml;tze auf, mit denen du es heute besser machen w&uuml;rdest &mdash; z.B. mit &bdquo;Mir ist aufgefallen&hellip;&ldquo; oder &bdquo;Ich habe das Gef&uuml;hl&hellip;&ldquo;.<br><br>
+&#127942; <strong>Bonus:</strong> Spiele zu Hause ein 5-Minuten-Rollenspiel mit Familie oder Freund:in. Du = unfair behandelter Mitarbeiter, sie = Chef:in. Schicke mir, was du gesagt hast!
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch f&uuml;r den Beruf<br>Erstellt mit Liebe f&uuml;r meine Sprechclub-Lernenden &middot; Konflikte am Arbeitsplatz &middot; B1/B2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'\u{1F91D}',word:'der Kompromiss',badge:'Lösung',rule:'compromise — beide geben etwas nach',ex:'„Lass uns einen <strong>Kompromiss</strong> finden.“'},
+  {emoji:'⚖️',word:'die Mediation',badge:'Vermittlung',rule:'mediation — neutrale dritte Person',ex:'„Wir machen eine <strong>Mediation</strong> mit HR.“'},
+  {emoji:'\u{1F465}',word:'der Betriebsrat',badge:'Vertretung',rule:'works council — Arbeitnehmer-Vertretung',ex:'„Ich wende mich an den <strong>Betriebsrat</strong>.“'},
+  {emoji:'\u{1F4BC}',word:'die Vertrauensperson',badge:'Hilfe',rule:'confidant — jemand zum Reden',ex:'„Meine <strong>Vertrauensperson</strong> hat mir Mut gemacht.“'},
+  {emoji:'\u{1F4A5}',word:'die Konfrontation',badge:'direkt',rule:'confrontation — direktes Ansprechen',ex:'„Ich suche die <strong>Konfrontation</strong> nicht, aber…“'},
+  {emoji:'\u{1F633}',word:'das Mobbing',badge:'Mobbing',rule:'bullying — systematisches Schikanieren',ex:'„Das ist klar <strong>Mobbing</strong>!“'},
+  {emoji:'\u{1F60E}',word:'sachlich bleiben',badge:'Verhalten',rule:'to stay objective — Fakten statt Gefühle',ex:'„Bitte <strong>sachlich bleiben</strong>!“'},
+  {emoji:'\u{1F4DD}',word:'eskalieren',badge:'Verb',rule:'to escalate — eine Stufe höher',ex:'„So wird das <strong>eskalieren</strong> — lass uns reden!“'},
+  {emoji:'\u{1F64C}',word:'ansprechen',badge:'Verb',rule:'to address — ein Thema beginnen',ex:'„Das musst du <strong>ansprechen</strong>!“'},
+  {emoji:'\u{1F4AC}',word:'die Ich-Botschaft',badge:'Sprache',rule:'I-statement — „Ich fühle…“ statt „Du bist…“',ex:'„Nutze <strong>Ich-Botschaften</strong>!“'},
+  {emoji:'\u{1F476}',word:'die HR-Abteilung',badge:'Firma',rule:'human resources — Personalabteilung',ex:'„Ich habe einen Termin bei <strong>HR</strong>.“'},
+  {emoji:'\u{1F44A}',word:'die Schikane',badge:'Verhalten',rule:'harassment — absichtliches Ärgern',ex:'„Das ist <strong>Schikane</strong>!“'},
+  {emoji:'\u{1F4B0}',word:'die Gehaltsverhandlung',badge:'Geld',rule:'salary negotiation',ex:'„Bald habe ich meine <strong>Gehaltsverhandlung</strong>.“'},
+  {emoji:'\u{1F914}',word:'unter vier Augen',badge:'privat',rule:'privately — nur zwei Personen',ex:'„Lass uns das <strong>unter vier Augen</strong> klären.“'},
+  {emoji:'\u{1F44E}',word:'unfaire Behandlung',badge:'Problem',rule:'unfair treatment',ex:'„Das ist klare <strong>unfaire Behandlung</strong>.“'},
+  {emoji:'⚡',word:'der Aufgabenstreit',badge:'Streit',rule:'task dispute — „Das ist nicht mein Job!“',ex:'„Wir hatten wieder einen <strong>Aufgabenstreit</strong>.“'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=6?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'Kollege unterbricht ständig',r:'Direkt ansprechen: „Lass mich ausreden“'},
+  {l:'Systematisches Mobbing',r:'Betriebsrat oder HR einschalten'},
+  {l:'„Das ist nicht mein Job!“',r:'Aufgaben-Klarstellung mit Chef:in'},
+  {l:'Streit um Verantwortung',r:'Mediation mit neutraler Person'},
+  {l:'Ungleiches Gehalt entdeckt',r:'Gehaltsverhandlung vorbereiten'},
+  {l:'Gerücht im Team',r:'Direkt mit Person sprechen, „unter vier Augen“'},
+  {l:'Schwerer Konflikt mit Chef:in',r:'Vertrauensperson + Termin vorbereiten'},
+  {l:'Beförderung übergangen',r:'Sachliches Feedback-Gespräch verlangen'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'\u{1F4AC}',cat:'Persönlich',q:'Hattest du schon mal einen Konflikt im Job? Erzähle in 3 Sätzen!'},
+  {emoji:'\u{1F633}',cat:'Mobbing',q:'Was ist für dich der Unterschied zwischen „Stress“ und „Mobbing“?'},
+  {emoji:'\u{1F91D}',cat:'Kompromiss',q:'Beschreibe einen Kompromiss, den du in deinem Leben geschlossen hast.'},
+  {emoji:'\u{1F60E}',cat:'Sachlich',q:'Wie schaffst du es, „sachlich zu bleiben“, wenn du wirklich wütend bist?'},
+  {emoji:'\u{1F4B0}',cat:'Gehalt',q:'Findest du es OK, in einem Team über Gehalt zu sprechen? Warum (nicht)?'},
+  {emoji:'\u{1F465}',cat:'Hierarchie',q:'Wie ist die Hierarchie in deinem (Wunsch-)Beruf? Sehr flach oder sehr steil?'},
+  {emoji:'\u{1F4DD}',cat:'Eskalation',q:'Wann ist es Zeit, einen Konflikt zu eskalieren — und wann sollte man besser schweigen?'},
+  {emoji:'\u{1F4BC}',cat:'Chef:in',q:'Was ist dein bester Tipp für ein Gespräch mit dem Chef über ein Problem?'},
+  {emoji:'\u{1F30D}',cat:'Heimat',q:'Wie lösen Menschen in deinem Heimatland typische Job-Konflikte?'},
+  {emoji:'\u{1F914}',cat:'Strategie',q:'Direkt ansprechen oder erstmal abwarten — was ist deine Taktik?'},
+  {emoji:'\u{1F44A}',cat:'Schikane',q:'Was würdest du tun, wenn ein Kollege dich systematisch ärgert?'},
+  {emoji:'\u{1F4A1}',cat:'Lernen',q:'Was hast du aus einem Konflikt am meisten gelernt?'},
+  {emoji:'\u{1F308}',cat:'Ideal',q:'Wie sieht für dich die ideale Konflikt-Kultur am Arbeitsplatz aus?'},
+  {emoji:'\u{1F3AD}',cat:'Rolle',q:'Spielst du „Frieden“ oder bist du eher „direkt“? Warum?'},
+  {emoji:'⚡',cat:'Schnell-Reaktion',q:'Was sagst du, wenn jemand vor allen Kollegen einen Fehler nennt, den du nicht gemacht hast?'},
+  {emoji:'\u{1F3AF}',cat:'Freestyle',q:'Wenn du Chef:in wärst — wie würdest du Konflikte im Team lösen?'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

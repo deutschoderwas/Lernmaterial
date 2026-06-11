@@ -1,0 +1,524 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gesundheit &amp; Vorsorge · B1/B2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.8rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* WORTSCHATZ-GRID */
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:700px){.shop-grid{grid-template-columns:repeat(2,1fr);}}
+.shop{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem .8rem;text-align:center;border-top:5px solid var(--red);}
+.shop:nth-child(4n+2){border-top-color:var(--teal);}
+.shop:nth-child(4n+3){border-top-color:#B66809;}
+.shop:nth-child(4n){border-top-color:#6A3D9C;}
+.shop-icon{font-size:2rem;margin-bottom:.3rem;display:block;}
+.shop-word{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1rem;margin-bottom:.2rem;}
+.shop-desc{color:var(--ink-soft);font-size:.78rem;line-height:1.4;}
+
+/* PROBLEM-CARDS */
+.prob-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:600px){.prob-grid{grid-template-columns:1fr;}}
+.prob{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;align-items:center;border-left:5px solid var(--red);}
+.prob-icon{font-size:1.8rem;text-align:center;}
+.prob-name{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;}
+.prob-desc{color:var(--ink-soft);font-size:.78rem;margin-top:.2rem;}
+
+/* E-MAIL */
+.email{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Outfit',sans-serif;}
+.email-head{border-bottom:1.5px solid var(--sand);padding-bottom:.6rem;margin-bottom:.8rem;font-size:.85rem;color:var(--ink-soft);}
+.email-head strong{color:var(--ink);font-weight:700;}
+.email-body{font-family:'Fraunces',serif;color:var(--ink);font-size:.95rem;line-height:1.7;}
+.email-body strong{background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;color:var(--ink);font-weight:700;}
+
+/* ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* PHRASE */
+.phrase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+@media(max-width:600px){.phrase-grid{grid-template-columns:1fr;}}
+.phrase{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;align-items:center;}
+.phrase-icon{font-size:2rem;text-align:center;}
+.phrase-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;font-style:italic;}
+.phrase-meaning{color:var(--ink-soft);font-size:.8rem;margin-top:.2rem;}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.person-quote strong{color:var(--red);font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Alltag B1/B2 Sprechclub</div>
+<div class="title-wrap"><h1 class="title">Gesundheit &amp; <span class="hl">Vorsorge</span></h1></div>
+<p class="subtitle">Hausarzt, Facharzt, Krankschreibung, Vorsorge — vom „Mir geht\'s nicht gut" bis zum Rezept beim Spezialisten. Der komplette Gesundheits-Wortschatz auf Deutsch.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">👨‍⚕️</text><text y="40" text-anchor="middle" fill="#E8302A">Hausarzt</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">🩺</text><text y="40" text-anchor="middle" fill="#0FB5A6">Facharzt</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">💊</text><text y="40" text-anchor="middle" fill="#B66809">Rezept</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">🤒</text><text y="40" text-anchor="middle" fill="#A04060">Krank</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">💉</text><text y="40" text-anchor="middle" fill="#5F7A2A">Vorsorge</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">🥗</text><text y="40" text-anchor="middle" fill="#6A3D9C">Lifestyle</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ÜBERBLICK -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Der <em style="font-style:italic;">Arzt-Wortschatz</em></h2>
+<p class="section-sub">Diese Wörter brauchst du beim Hausarzt, Facharzt und in der Apotheke.</p>
+
+<div class="shop-grid">
+<div class="shop"><span class="shop-icon">👨‍⚕️</span><div class="shop-word">der Hausarzt</div><div class="shop-desc">erste Anlaufstelle bei allen Problemen</div></div>
+<div class="shop"><span class="shop-icon">🩺</span><div class="shop-word">der Facharzt</div><div class="shop-desc">Spezialist (HNO, Kardiologe, etc.)</div></div>
+<div class="shop"><span class="shop-icon">📄</span><div class="shop-word">die Überweisung</div><div class="shop-desc">Hausarzt schickt dich zum Facharzt</div></div>
+<div class="shop"><span class="shop-icon">💊</span><div class="shop-word">das Rezept</div><div class="shop-desc">Papier für Medikamente in der Apotheke</div></div>
+<div class="shop"><span class="shop-icon">📋</span><div class="shop-word">die Krankschreibung</div><div class="shop-desc">offiziell krank für die Arbeit</div></div>
+<div class="shop"><span class="shop-icon">🏥</span><div class="shop-word">die Praxis</div><div class="shop-desc">wo der Arzt arbeitet</div></div>
+<div class="shop"><span class="shop-icon">⏰</span><div class="shop-word">der Termin</div><div class="shop-desc">Verabredung mit dem Arzt</div></div>
+<div class="shop"><span class="shop-icon">🩹</span><div class="shop-word">die Untersuchung</div><div class="shop-desc">Arzt schaut dich genau an</div></div>
+<div class="shop"><span class="shop-icon">🔬</span><div class="shop-word">die Diagnose</div><div class="shop-desc">was du hast — die Befundung</div></div>
+<div class="shop"><span class="shop-icon">💉</span><div class="shop-word">die Impfung</div><div class="shop-desc">Schutz vor Krankheiten (Spritze)</div></div>
+<div class="shop"><span class="shop-icon">🩸</span><div class="shop-word">das Blutbild</div><div class="shop-desc">Blutuntersuchung im Labor</div></div>
+<div class="shop"><span class="shop-icon">💳</span><div class="shop-word">die Versichertenkarte</div><div class="shop-desc">deine Karte der Krankenkasse</div></div>
+</div>
+
+<div class="tip">💡 <strong>So funktioniert\'s in Deutschland:</strong> Bei jedem Gesundheitsproblem gehst du ZUERST zum <u>Hausarzt</u>. Der gibt dir eine <u>Überweisung</u> zum <u>Facharzt</u> (Spezialist). Ohne Überweisung zahlt die Kasse manche Behandlungen nicht!</div>
+
+<h2 class="section-title">8 typische <em style="font-style:italic;">Beschwerden</em></h2>
+<p class="section-sub">Was sagst du dem Arzt? Die häufigsten Symptome auf Deutsch:</p>
+
+<div class="prob-grid">
+<div class="prob"><div class="prob-icon">🤒</div><div><div class="prob-name">Ich habe Fieber.</div><div class="prob-desc">über 38°C — der Körper ist warm</div></div></div>
+<div class="prob"><div class="prob-icon">🤧</div><div><div class="prob-name">Ich habe Husten / Schnupfen.</div><div class="prob-desc">Erkältung — die Nase läuft</div></div></div>
+<div class="prob"><div class="prob-icon">😖</div><div><div class="prob-name">Mir tut der Kopf weh.</div><div class="prob-desc">Kopfschmerzen / Migräne</div></div></div>
+<div class="prob"><div class="prob-icon">🤢</div><div><div class="prob-name">Mir ist übel.</div><div class="prob-desc">Übelkeit — vielleicht muss ich brechen</div></div></div>
+<div class="prob"><div class="prob-icon">😣</div><div><div class="prob-name">Ich habe Rückenschmerzen.</div><div class="prob-desc">der Rücken tut weh — Bürojob-Klassiker</div></div></div>
+<div class="prob"><div class="prob-icon">😴</div><div><div class="prob-name">Ich kann nicht schlafen.</div><div class="prob-desc">Schlafstörungen — sehr häufig!</div></div></div>
+<div class="prob"><div class="prob-icon">😰</div><div><div class="prob-name">Ich fühle mich gestresst.</div><div class="prob-desc">Burnout, Angst, Depression</div></div></div>
+<div class="prob"><div class="prob-icon">🦴</div><div><div class="prob-name">Mein Knie / Bein tut weh.</div><div class="prob-desc">orthopädisches Problem</div></div></div>
+</div>
+
+<h2 class="section-title">5 wichtige <em style="font-style:italic;">Vorsorge-Untersuchungen</em></h2>
+<p class="section-sub">Krankenkassen zahlen diese Check-ups in Deutschland — nutze sie!</p>
+
+<div class="shop-grid" style="grid-template-columns:repeat(5,1fr);">
+<div class="shop"><span class="shop-icon">🦷</span><div class="shop-word">Zahnvorsorge</div><div class="shop-desc">2x pro Jahr (gratis)</div></div>
+<div class="shop"><span class="shop-icon">🩸</span><div class="shop-word">Check-up 35+</div><div class="shop-desc">alle 3 Jahre</div></div>
+<div class="shop"><span class="shop-icon">🎗️</span><div class="shop-word">Krebs-Vorsorge</div><div class="shop-desc">je nach Alter + Geschlecht</div></div>
+<div class="shop"><span class="shop-icon">💉</span><div class="shop-word">Grippe-Impfung</div><div class="shop-desc">jährlich im Herbst</div></div>
+<div class="shop"><span class="shop-icon">👁️</span><div class="shop-word">Augen-Check</div><div class="shop-desc">alle 2 Jahre</div></div>
+</div>
+
+<h2 class="section-title">Krankschreibung-<em style="font-style:italic;">Vorlage</em></h2>
+<p class="section-sub">So mailst du deinem Chef, wenn du krank bist.</p>
+
+<div class="email">
+<div class="email-head"><strong>An:</strong> chef@firma.de<br><strong>Betreff:</strong> Krankmeldung Anna Müller</div>
+<div class="email-body">
+Sehr geehrter Herr Schmidt,<br><br>
+hiermit möchte ich mich für heute krankmelden. Ich habe seit gestern Abend <strong>hohes Fieber</strong> und <strong>starke Halsschmerzen</strong>.<br><br>
+Ich werde heute Vormittag zum Arzt gehen und Ihnen die <strong>Arbeitsunfähigkeitsbescheinigung</strong> (AU) zukommen lassen.<br><br>
+Ich hoffe, dass es mir bald wieder besser geht und ich spätestens am Freitag wieder im Büro bin.<br><br>
+Mit freundlichen Grüßen,<br>
+Anna Müller
+</div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Persönlich</div><div class="qq">Wann warst du das letzte Mal beim Arzt? Was war los?</div><div class="think">💭 „Ich war vor… beim Arzt, weil ich… hatte."</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Vorsorge</div><div class="qq">Gehst du regelmäßig zur Vorsorge? Warum (nicht)?</div><div class="think">💭 Zahnarzt, Hautarzt, Frauenarzt, Augenarzt — wie oft?</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Lifestyle</div><div class="qq">Was machst du, um gesund zu bleiben? 3 konkrete Dinge!</div><div class="think">💭 Sport, Schlaf, Ernährung, Stressabbau, Meditation?</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Provokant</div><div class="qq">Bist du eher Hypochonder oder ignorierst du Symptome zu lange?</div><div class="think">💭 Manche rennen bei jedem Schnupfen zum Arzt, andere warten zu lange — wo bist du?</div></div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So reden Deutsche <em style="font-style:italic;">über Gesundheit</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats — von „Mir geht\'s schlecht" bis zum Vorsorge-Reminder.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> „Wie geht\'s?" ist Smalltalk — Deutsche erzählen nicht alle Symptome! Bei der Arbeit reicht <u>„Mir geht\'s nicht so gut"</u>. Beim Arzt aber: ALLES erzählen!</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">🤒</div><div><div class="name">Lisa · Freundin</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hey, <strong>mir geht\'s nicht gut</strong>… 😩 Halsschmerzen + Fieber</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Oh nein! <strong>Hast du dich krankgemeldet</strong>?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Noch nicht. Muss erst <strong>einen Termin beim Hausarzt</strong> bekommen.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Probier die Notfall-Sprechstunde — die nehmen oft ohne Termin!</div></div>
+<div class="chat-meaning"><strong>„Sich krankmelden"</strong> = beim Chef anrufen, dass man krank ist · <strong>Notfall-Sprechstunde</strong> = ohne Termin morgens</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📞</div><div><div class="name">Arzttermin</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Praxis Dr. Müller, was kann ich für Sie tun?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hallo, ich brauche dringend einen <strong>Termin</strong>. Ich habe seit 3 Tagen <strong>hohes Fieber</strong>.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Kommen Sie heute um 10 Uhr in die <strong>Notfall-Sprechstunde</strong>. Versichertenkarte mitbringen!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Perfekt, vielen Dank!</div></div>
+<div class="chat-meaning"><strong>„Notfall-Sprechstunde"</strong> oder „offene Sprechstunde" = ohne Termin · ABER lange Wartezeiten!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😰</div><div><div class="name">Diagnose-Schock</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hab heute die Diagnose bekommen… <strong>Burnout</strong> 😔</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Oh… Wie geht\'s dir damit? Was sagt der Arzt?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Er <strong>schreibt mich für 4 Wochen krank</strong>. Und empfiehlt eine <strong>Reha</strong>.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Das ist das Beste! Nimm dir die Zeit — Gesundheit geht vor!</div></div>
+<div class="chat-meaning"><strong>„Krankschreiben"</strong> = offiziell krank für die Arbeit · <strong>Reha</strong> = mehrwöchige Erholungs-Kur, Kasse zahlt!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">💉</div><div><div class="name">Mama · Vorsorge-Reminder</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Schatz, hast du dich schon zur <strong>Grippe-Impfung</strong> angemeldet?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Nein, mache ich nächste Woche, Mama.</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Und der <strong>Check-up</strong> mit 35? Du hast schon Geburtstag gehabt!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ja Mama, weiß ich… vergesse ich immer 😅</div></div>
+<div class="chat-meaning"><strong>„Vorsorge"</strong> = check-up — JEDES Jahr werden Deutsche von Familie und Kasse erinnert!</div>
+</div>
+
+</div>
+
+<h2 class="section-title">12 wichtige <em style="font-style:italic;">Gesundheits-Phrasen</em></h2>
+<div class="phrase-grid">
+<div class="phrase"><div class="phrase-icon">🤒</div><div><div class="phrase-de">„Mir geht\'s nicht gut."</div><div class="phrase-meaning">Standard-Antwort bei Krankheit</div></div></div>
+<div class="phrase"><div class="phrase-icon">📞</div><div><div class="phrase-de">„Ich brauche einen Termin."</div><div class="phrase-meaning">Anruf in der Praxis</div></div></div>
+<div class="phrase"><div class="phrase-icon">📋</div><div><div class="phrase-de">„Ich muss mich krankmelden."</div><div class="phrase-meaning">beim Chef anrufen</div></div></div>
+<div class="phrase"><div class="phrase-icon">😖</div><div><div class="phrase-de">„Mir tut … weh."</div><div class="phrase-meaning">Schmerzen beschreiben (Kopf, Bauch, Hals…)</div></div></div>
+<div class="phrase"><div class="phrase-icon">🤧</div><div><div class="phrase-de">„Ich habe mich erkältet."</div><div class="phrase-meaning">leichte Erkältung — Schnupfen, Husten</div></div></div>
+<div class="phrase"><div class="phrase-icon">💊</div><div><div class="phrase-de">„Brauche ich ein Rezept?"</div><div class="phrase-meaning">für Medikamente</div></div></div>
+<div class="phrase"><div class="phrase-icon">📄</div><div><div class="phrase-de">„Kann ich eine Überweisung bekommen?"</div><div class="phrase-meaning">zum Facharzt</div></div></div>
+<div class="phrase"><div class="phrase-icon">🩺</div><div><div class="phrase-de">„Was haben Sie für eine Diagnose?"</div><div class="phrase-meaning">höflich nach der Diagnose fragen</div></div></div>
+<div class="phrase"><div class="phrase-icon">💉</div><div><div class="phrase-de">„Ich möchte mich impfen lassen."</div><div class="phrase-meaning">Standard-Anfrage in der Praxis</div></div></div>
+<div class="phrase"><div class="phrase-icon">⏰</div><div><div class="phrase-de">„Wann ist die nächste Vorsorge fällig?"</div><div class="phrase-meaning">Check-up-Frage</div></div></div>
+<div class="phrase"><div class="phrase-icon">😴</div><div><div class="phrase-de">„Gute Besserung!"</div><div class="phrase-meaning">Standard-Genesungs-Wunsch</div></div></div>
+<div class="phrase"><div class="phrase-icon">💪</div><div><div class="phrase-de">„Ich achte auf meine Gesundheit."</div><div class="phrase-meaning">gesund leben — Sport, Ernährung, Schlaf</div></div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Gesundheits-Karten</h2>
+<p class="section-sub">Erst denken — dann tippen.</p>
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">👨‍⚕️</div>
+<div class="flip-word" id="flipWord">der Hausarzt</div>
+<div class="flip-badge" id="flipBadge">Arzt</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">general practitioner — erste Anlaufstelle</div>
+<div class="flip-ex" id="flipEx">„Ich gehe zuerst zu meinem <strong>Hausarzt</strong>."</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span><button class="lk-btn" id="lkNext">→</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Gesundheits-Wissen</em></h2>
+
+<div class="quiz"><div class="quiz-q">Zu wem gehst du in Deutschland ZUERST mit einem Gesundheitsproblem?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Hausarzt</span><span class="quiz-chip">Facharzt</span><span class="quiz-chip">Notarzt</span></div><div class="quiz-explain">Hausarzt ist die erste Anlaufstelle. Er entscheidet, ob du zum Facharzt musst!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist eine „Überweisung"?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Geld auf ein Konto schicken</span><span class="quiz-chip">Papier vom Hausarzt zum Facharzt</span><span class="quiz-chip">Krankenhaus-Aufnahme</span></div><div class="quiz-explain">Überweisung = das Schreiben, mit dem dich der Hausarzt zum Spezialisten schickt.</div></div>
+
+<div class="quiz"><div class="quiz-q">Wie sagst du in der Praxis, dass du Kopfschmerzen hast?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">„Mein Kopf ist krank."</span><span class="quiz-chip">„Ich habe Kopf-Sache."</span><span class="quiz-chip">„Mir tut der Kopf weh." / „Ich habe Kopfschmerzen."</span></div><div class="quiz-explain">Standard-Konstruktion: „Mir tut … weh" oder „Ich habe …-schmerzen"</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist eine „Krankschreibung" (AU)?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Liste mit Krankheiten</span><span class="quiz-chip">Offizieller Schein für die Arbeit, dass du krank bist</span><span class="quiz-chip">Krankenhaus-Bericht</span></div><div class="quiz-explain">AU = Arbeitsunfähigkeitsbescheinigung. Ohne AU darfst du nicht zu Hause bleiben!</div></div>
+
+<div class="quiz"><div class="quiz-q">Wofür brauchst du ein „Rezept"?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Verschreibungspflichtige Medikamente in der Apotheke</span><span class="quiz-chip">Zum Kochen</span><span class="quiz-chip">Für eine Massage</span></div><div class="quiz-explain">Rezept (medizinisch) = das Papier vom Arzt, mit dem du Medikamente in der Apotheke bekommst.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist die typische Antwort, wenn jemand krank ist?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">„Schöne Reise!"</span><span class="quiz-chip">„Viel Glück!"</span><span class="quiz-chip">„Gute Besserung!"</span></div><div class="quiz-explain">„Gute Besserung!" = standard wish for recovery — sehr typisch deutsch.</div></div>
+
+<div class="quiz"><div class="quiz-q">Welche Vorsorge bezahlt die Krankenkasse JÄHRLICH?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Zahnarzt-Kontrolle (2x)</span><span class="quiz-chip">Hautkrebs-Screening (jedes Jahr)</span><span class="quiz-chip">Gehirn-MRT</span></div><div class="quiz-explain">Zahnarzt-Vorsorge 2x pro Jahr ist Standard — wichtig für Bonusheft und Zuzahlung!</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich fühle mich nicht wohl." — Was bedeutet das?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ich habe keine Wohnung.</span><span class="quiz-chip">Mir geht es nicht gut (allgemein).</span><span class="quiz-chip">Mir ist kalt.</span></div><div class="quiz-explain">„Sich nicht wohl fühlen" = sich krank/schlecht fühlen — höfliche Standardphrase.</div></div>
+</section>
+
+<!-- LÜCKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext: <em style="font-style:italic;">Beim Arzt</em></h2>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Guten Tag, ich möchte einen <select data-sol="Termin"><option value="">…</option><option>Termin</option><option>Brief</option><option>Tee</option></select> beim Hausarzt machen.</div>
+<div class="gap-line">2. Mir geht es seit Tagen nicht gut — ich habe <select data-sol="Fieber"><option value="">…</option><option>Fieber</option><option>Hunger</option><option>Durst</option></select> und Halsschmerzen.</div>
+<div class="gap-line">3. Bitte bringen Sie Ihre <select data-sol="Versichertenkarte"><option value="">…</option><option>Versichertenkarte</option><option>Kreditkarte</option><option>Bordkarte</option></select> zum Termin mit.</div>
+<div class="gap-line">4. Der Arzt schreibt mich für 5 Tage <select data-sol="krank"><option value="">…</option><option>krank</option><option>fit</option><option>gesund</option></select> — ich darf zu Hause bleiben.</div>
+<div class="gap-line">5. Ich brauche ein <select data-sol="Rezept"><option value="">…</option><option>Rezept</option><option>Brief</option><option>Foto</option></select> für die Antibiotika.</div>
+<div class="gap-line">6. Für den Facharzt bekomme ich eine <select data-sol="Überweisung"><option value="">…</option><option>Überweisung</option><option>Einladung</option><option>Erinnerung</option></select> vom Hausarzt.</div>
+<div class="gap-line">7. Ich möchte mich gegen Grippe <select data-sol="impfen"><option value="">…</option><option>impfen</option><option>operieren</option><option>untersuchen</option></select> lassen — bitte heute noch!</div>
+<div class="gap-line">8. Vergiss nicht: Jährliche <select data-sol="Vorsorge"><option value="">…</option><option>Vorsorge</option><option>Vorbereitung</option><option>Vorbestellung</option></select> ist sehr wichtig — die Kasse zahlt!</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Symptom &harr; <em style="font-style:italic;">richtiger Arzt</em></h2>
+<p class="section-sub">Bei welchem Spezialisten bist du richtig?</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Symptom / Problem</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Richtiger Arzt</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht\'s!</em></h2>
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div><div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">rund um Gesundheit</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Arztpraxis</div>
+<div class="role-title">🩺 In der Hausarzt-Praxis</div>
+<div class="role-situation">Du gehst zum Hausarzt — du hast seit einer Woche Husten, Fieber und Halsschmerzen. Beschreibe genau die Symptome und frage nach Krankschreibung + Rezept!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🤒</div><div><div class="person-label">Patient:in</div><div class="person-quote">„Guten Tag, Frau Doktor. Seit einer Woche habe ich <strong>Husten</strong>, <strong>Fieber</strong> und mein Hals tut weh. Können Sie mir helfen? <strong>Brauche ich Antibiotika</strong>?"</div></div></div>
+<div class="person b"><div class="person-avatar">👩‍⚕️</div><div><div class="person-label">Ärztin</div><div class="person-quote">„Setzen Sie sich. Bitte machen Sie den Mund auf, ich untersuche Sie. Es ist eine <strong>bakterielle Infektion</strong> — ich verschreibe Ihnen Antibiotika und <strong>schreibe Sie 5 Tage krank</strong>."</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: Symptome präzise nennen + Krankschreibung + Rezept verlangen — mindestens 10 Sätze!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Vorsorge</div>
+<div class="role-title">💉 Beim Check-up — Vorsorge-Empfehlung</div>
+<div class="role-situation">Du bist beim Check-up 35+. Der Arzt empfiehlt dir verschiedene Vorsorge-Untersuchungen. Du bist skeptisch und stellst kritische Fragen!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🤔</div><div><div class="person-label">Patient:in</div><div class="person-quote">„<strong>Brauche ich das wirklich</strong>? Ich fühle mich doch gut! Was kostet das? <strong>Zahlt die Kasse</strong> das?"</div></div></div>
+<div class="person b"><div class="person-avatar">👨‍⚕️</div><div><div class="person-label">Arzt</div><div class="person-quote">„Vorsorge ist die beste Investition in Ihre Gesundheit. Die Kasse <strong>übernimmt</strong> alle 3 Jahre den Check-up. Ich empfehle dringend <strong>Hautkrebs-Screening</strong> und eine <strong>Grippe-Impfung</strong>!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Patient: kritisch fragen · Arzt: überzeugen + Vorteile erklären — mindestens 8 Sätze pro Person!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Freundinnen-Talk</div>
+<div class="role-title">🥗 Mit Freundin über Lifestyle</div>
+<div class="role-situation">Du triffst eine Freundin im Café. Sie ist gestresst, schläft schlecht und ernährt sich ungesund. Du gibst ihr (gute!) Tipps für einen gesunden Lebensstil — sie hat aber viele Ausreden!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😴</div><div><div class="person-label">Freundin (gestresst)</div><div class="person-quote">„Ich bin so erschöpft! Ich <strong>schlafe nur 5 Stunden</strong>, esse nur Fast Food, mache keinen Sport. Aber ich habe einfach <strong>keine Zeit</strong>!"</div></div></div>
+<div class="person b"><div class="person-avatar">💪</div><div><div class="person-label">Du (gibst Tipps)</div><div class="person-quote">„Du <strong>musst auf dich aufpassen</strong>! Probier doch mal 20 Min. Spaziergang täglich. Und <strong>Meditation</strong> vor dem Schlafen — das hilft!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Freundin: Probleme + Ausreden · Du: 5 konkrete Tipps zu Schlaf, Sport, Ernährung, Stress!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Mission:</strong> Beschreibe DEINEN Gesundheitszustand jeden Tag in 3 Sätzen — Morgen, Mittag, Abend. Wie geht\'s? Was tut weh? Was hast du gegessen? Schlafstunden? Notiere alles auf Deutsch!<br><br>
+🏆 <strong>Bonus-Challenge:</strong> Buche fiktiv einen Arzttermin — schreibe eine Mail an die Praxis. Beschreibe Symptome konkret in mindestens 8 Sätzen. Schicke sie mir zur Korrektur!
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Gesundheit &amp; Vorsorge · B1/B2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'👨‍⚕️',word:'der Hausarzt',badge:'Arzt',rule:'general practitioner — erste Anlaufstelle',ex:'„Ich gehe zuerst zu meinem <strong>Hausarzt</strong>."'},
+  {emoji:'🩺',word:'der Facharzt',badge:'Spezialist',rule:'specialist (z.B. HNO, Kardiologe)',ex:'„Mein Hausarzt schickt mich zum <strong>Facharzt</strong>."'},
+  {emoji:'📄',word:'die Überweisung',badge:'Schein',rule:'referral — vom Hausarzt zum Facharzt',ex:'„Ich brauche eine <strong>Überweisung</strong> zum Orthopäden."'},
+  {emoji:'💊',word:'das Rezept',badge:'Medikamente',rule:'prescription — für Apotheke',ex:'„Hier ist Ihr <strong>Rezept</strong> für die Antibiotika."'},
+  {emoji:'📋',word:'die Krankschreibung',badge:'AU',rule:'sick note — offiziell für die Arbeit',ex:'„Der Arzt gibt mir eine <strong>Krankschreibung</strong> für 3 Tage."'},
+  {emoji:'⏰',word:'der Termin',badge:'Verabredung',rule:'appointment',ex:'„Ich habe einen <strong>Termin</strong> um 10 Uhr."'},
+  {emoji:'🤒',word:'das Fieber',badge:'Symptom',rule:'fever — über 38°C',ex:'„Ich habe <strong>Fieber</strong> — 39 Grad!"'},
+  {emoji:'🤧',word:'die Erkältung',badge:'Krankheit',rule:'cold — Husten + Schnupfen',ex:'„Ich habe mich <strong>erkältet</strong>."'},
+  {emoji:'😖',word:'die Kopfschmerzen',badge:'Schmerzen',rule:'headache — Plural!',ex:'„Mir tut der Kopf weh — <strong>Kopfschmerzen</strong>!"'},
+  {emoji:'🔬',word:'die Diagnose',badge:'Befund',rule:'diagnosis — was du hast',ex:'„Die <strong>Diagnose</strong> ist: Burnout."'},
+  {emoji:'💉',word:'die Impfung',badge:'Schutz',rule:'vaccination — Spritze gegen Krankheiten',ex:'„Hast du die <strong>Grippe-Impfung</strong>?"'},
+  {emoji:'🩸',word:'das Blutbild',badge:'Labor',rule:'blood test results',ex:'„Das <strong>Blutbild</strong> ist normal!"'},
+  {emoji:'🏥',word:'die Praxis',badge:'Arzt-Büro',rule:'doctor\'s office',ex:'„Die <strong>Praxis</strong> ist heute geschlossen."'},
+  {emoji:'💳',word:'die Versichertenkarte',badge:'Kasse',rule:'health insurance card',ex:'„Bitte zeigen Sie Ihre <strong>Versichertenkarte</strong>."'},
+  {emoji:'🛏️',word:'die Vorsorge',badge:'Prävention',rule:'check-up / preventive care',ex:'„Jährliche <strong>Vorsorge</strong> ist wichtig!"'},
+  {emoji:'😴',word:'die Schlafstörung',badge:'Problem',rule:'insomnia — kann nicht schlafen',ex:'„Ich habe <strong>Schlafstörungen</strong> seit Monaten."'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=6?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'Zahnschmerzen',r:'Zahnarzt'},
+  {l:'Hautausschlag',r:'Hautarzt (Dermatologe)'},
+  {l:'Herzrasen',r:'Kardiologe'},
+  {l:'Rückenschmerzen',r:'Orthopäde'},
+  {l:'Schlechtes Sehen',r:'Augenarzt'},
+  {l:'Halsschmerzen + Husten',r:'Hausarzt zuerst!'},
+  {l:'Schlafstörungen / Stress',r:'Psychotherapeut'},
+  {l:'Ohrenschmerzen',r:'HNO-Arzt'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'🤒',cat:'Befinden',q:'Wann warst du das letzte Mal richtig krank? Was war es und wie hast du dich gefühlt?'},
+  {emoji:'👨‍⚕️',cat:'Arzt',q:'Hast du einen festen Hausarzt? Wie wichtig ist das deiner Meinung nach?'},
+  {emoji:'📋',cat:'Krankschreibung',q:'Wie ist das System in deinem Land? Bekommst du leicht eine Krankschreibung?'},
+  {emoji:'💉',cat:'Impfung',q:'Wie stehst du zu Impfungen — alle bekommen, nur wichtige, oder gar nicht?'},
+  {emoji:'🥗',cat:'Ernährung',q:'Wie isst du normalerweise? Gesund oder eher Fast Food? Was würdest du gerne ändern?'},
+  {emoji:'🏃',cat:'Sport',q:'Treibst du regelmäßig Sport? Welche Sportart und wie oft pro Woche?'},
+  {emoji:'😴',cat:'Schlaf',q:'Wie viele Stunden schläfst du pro Nacht? Ist das genug?'},
+  {emoji:'😰',cat:'Stress',q:'Wie stressig ist dein Alltag? Was machst du gegen Stress?'},
+  {emoji:'💊',cat:'Medikamente',q:'Nimmst du regelmäßig Medikamente? Wie wichtig ist Selbstmedikation für dich?'},
+  {emoji:'💉',cat:'Vorsorge',q:'Gehst du regelmäßig zur Vorsorge (Zahnarzt, Check-up)? Warum (nicht)?'},
+  {emoji:'🌿',cat:'Alternativ',q:'Was hältst du von alternativer Medizin (Homöopathie, Heilpraktiker)?'},
+  {emoji:'🍔',cat:'Diskussion',q:'„Junkfood-Werbung sollte verboten werden." — Stimmst du zu?'},
+  {emoji:'🧘',cat:'Mental',q:'Wie wichtig ist dir mentale Gesundheit? Würdest du zum Psychotherapeuten gehen?'},
+  {emoji:'🚭',cat:'Lifestyle',q:'Welche schlechten Gewohnheiten möchtest du loswerden? Wie?'},
+  {emoji:'🌍',cat:'Heimat',q:'Wie unterscheidet sich das Gesundheitssystem in deinem Land vom deutschen?'},
+  {emoji:'🎯',cat:'Freestyle',q:'Wenn du eine perfekte Gesundheits-App entwickeln würdest — was wäre dort drin?'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

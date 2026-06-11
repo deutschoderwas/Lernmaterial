@@ -1,0 +1,762 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Familie &amp; Verwandte · A2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}
+.tip em{color:var(--ink);font-style:italic;}
+.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* VERWANDTE-CARDS */
+.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:600px){.prep-grid{grid-template-columns:repeat(2,1fr);}}
+.prep{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.9rem;text-align:center;}
+.prep-icon{font-size:1.8rem;margin-bottom:.3rem;}
+.prep-word{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.05rem;margin-bottom:.2rem;}
+.prep-case{font-size:.7rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.prep-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.82rem;margin-top:.3rem;}
+
+/* POSSESSIV-TABELLE */
+.akk-table{background:var(--paper);border:2px solid var(--sand);border-radius:18px;overflow:hidden;margin:1.5rem 0;}
+.akk-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;}
+.akk-row.head{background:var(--ink);color:white;font-weight:700;}
+.akk-cell{padding:.8rem .6rem;border-right:1px solid var(--sand);border-bottom:1px solid var(--sand);text-align:center;font-size:.92rem;}
+.akk-row.head .akk-cell{border-color:#444;color:white;font-family:'Outfit',sans-serif;}
+.akk-cell:last-child{border-right:0;}
+.akk-row:last-child .akk-cell{border-bottom:0;}
+.akk-cell .gen{font-size:.7rem;text-transform:uppercase;color:var(--ink-mute);letter-spacing:.05em;margin-bottom:.2rem;font-weight:700;}
+.akk-row.head .akk-cell .gen{color:#FFD24A;}
+.akk-cell .form{font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1.05rem;}
+.akk-cell.label{background:var(--cream-warm);font-weight:700;font-family:'Fraunces',serif;color:var(--ink);}
+.akk-cell .arrow{color:var(--teal);font-size:.85rem;margin:.15rem 0;}
+.akk-cell .new{font-family:'Fraunces',serif;font-weight:900;color:var(--teal);font-size:1.1rem;}
+@media(max-width:600px){.akk-cell{font-size:.78rem;padding:.5rem .35rem;}.akk-cell .form,.akk-cell .new{font-size:.92rem;}}
+
+/* VORHER/NACHHER */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.5rem 0;}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+.comp-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.1rem 1.2rem;}
+.comp-card.a{border-color:var(--red);background:#FFF6F5;}
+.comp-card.b{border-color:var(--teal);background:#F1FAF8;}
+.comp-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem;}
+.comp-card.a .comp-tag{background:var(--red);color:white;}
+.comp-card.b .comp-tag{background:var(--teal);color:white;}
+.comp-text{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);line-height:1.5;}
+.comp-text strong{color:var(--red);}
+.comp-card.b .comp-text strong{color:var(--teal);}
+.comp-note{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;}
+
+/* DIALOG STEPS */
+.dialog-grid{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0;}
+.dial{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;}
+.dial.d1{border-left:5px solid var(--red);}
+.dial.d2{border-left:5px solid var(--teal);}
+.dial.d3{border-left:5px solid #B66809;}
+.dial.d4{border-left:5px solid #6A3D9C;}
+.dial-icon{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.dial.d2 .dial-icon{background:var(--teal);}
+.dial.d3 .dial-icon{background:#B66809;}
+.dial.d4 .dial-icon{background:#6A3D9C;}
+.dial-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.02rem;margin-bottom:.3rem;}
+.dial-body ul{list-style:none;padding:0;}
+.dial-body li{padding:.2rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;padding-left:1.1rem;position:relative;}
+.dial-body li::before{content:'›';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+
+/* ALLTAG-FRAGEN */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:340px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.96rem;margin-top:.6rem;line-height:1.55;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLES */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}
+.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}
+.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+/* STAMMBAUM */
+.tree{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.2rem 1.4rem;margin:1.2rem 0;}
+.tree-row{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin:.5rem 0;}
+.tree-node{background:var(--cream-warm);border:2px solid var(--sand);border-radius:12px;padding:.5rem .8rem;text-align:center;min-width:90px;}
+.tree-node.gen1{border-color:var(--red);background:#FFF6F5;}
+.tree-node.gen2{border-color:var(--teal);background:#F1FAF8;}
+.tree-node.gen3{border-color:#6A3D9C;background:#F0E8F8;}
+.tree-emoji{font-size:1.4rem;}
+.tree-name{font-family:'Fraunces',serif;font-weight:700;font-size:.88rem;color:var(--ink);margin-top:.15rem;}
+.tree-rel{font-size:.7rem;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.tree-line{color:var(--ink-mute);font-size:.9rem;text-align:center;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="eyebrow">deutschoderwas &middot; A2 Sprechclub &middot; Alltag</div>
+
+<div class="title-wrap">
+<h1 class="title">Meine <span class="hl">Familie</span> auf Deutsch</h1>
+</div>
+<p class="subtitle">Verwandte vorstellen, Familien beschreiben, Smalltalk &uuml;ber Geschwister &mdash; und das alles mit den richtigen Possessivpronomen!</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="5" font-size="22">👩</text><text text-anchor="middle" y="40" fill="#E8302A">Mutter</text></g>
+<g transform="translate(95,20)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="5" font-size="22">👨</text><text text-anchor="middle" y="40" fill="#0FB5A6">Vater</text></g>
+<g transform="translate(155,20)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="5" font-size="22">👦</text><text text-anchor="middle" y="40" fill="#B66809">Bruder</text></g>
+<g transform="translate(215,20)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="5" font-size="22">👧</text><text text-anchor="middle" y="40" fill="#A04060">Schwester</text></g>
+<g transform="translate(275,20)"><circle cx="0" cy="0" r="22" fill="#E2EBC9"/><text text-anchor="middle" dy="5" font-size="22">👵</text><text text-anchor="middle" y="40" fill="#5F7A2A">Oma</text></g>
+<g transform="translate(335,20)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="5" font-size="22">👴</text><text text-anchor="middle" y="40" fill="#6A3D9C">Opa</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ============== ÜBERBLICK ============== -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die wichtigsten <em style="font-style:italic;">Verwandten</em></h2>
+<p class="section-sub">Wer geh&ouml;rt zur Familie? Hier sind die A2-Basics!</p>
+
+<div class="prep-grid">
+<div class="prep"><div class="prep-icon">👩</div><div class="prep-word">die Mutter</div><div class="prep-case">Mama</div><div class="prep-ex">Mutti, Mama, Mami</div></div>
+<div class="prep"><div class="prep-icon">👨</div><div class="prep-word">der Vater</div><div class="prep-case">Papa</div><div class="prep-ex">Vati, Papa, Papi</div></div>
+<div class="prep"><div class="prep-icon">👦</div><div class="prep-word">der Bruder</div><div class="prep-case">m / Pl. Br&uuml;der</div><div class="prep-ex">mein gro&szlig;er Bruder</div></div>
+<div class="prep"><div class="prep-icon">👧</div><div class="prep-word">die Schwester</div><div class="prep-case">w / Pl. Schwestern</div><div class="prep-ex">meine kleine Schwester</div></div>
+<div class="prep"><div class="prep-icon">👵</div><div class="prep-word">die Gro&szlig;mutter</div><div class="prep-case">Oma</div><div class="prep-ex">meine Oma backt Kuchen</div></div>
+<div class="prep"><div class="prep-icon">👴</div><div class="prep-word">der Gro&szlig;vater</div><div class="prep-case">Opa</div><div class="prep-ex">mein Opa erz&auml;hlt gern</div></div>
+<div class="prep"><div class="prep-icon">👩‍🦰</div><div class="prep-word">die Tante</div><div class="prep-case">Schwester der Eltern</div><div class="prep-ex">Tante Anna kommt heute</div></div>
+<div class="prep"><div class="prep-icon">👨‍🦱</div><div class="prep-word">der Onkel</div><div class="prep-case">Bruder der Eltern</div><div class="prep-ex">Onkel Max wohnt in Wien</div></div>
+<div class="prep"><div class="prep-icon">👩‍🎓</div><div class="prep-word">die Cousine</div><div class="prep-case">Kind von Tante/Onkel</div><div class="prep-ex">meine Cousine ist 18</div></div>
+<div class="prep"><div class="prep-icon">👨‍🎓</div><div class="prep-word">der Cousin</div><div class="prep-case">[ku-zaeng]</div><div class="prep-ex">mein Cousin spielt Gitarre</div></div>
+<div class="prep"><div class="prep-icon">👶</div><div class="prep-word">das Kind</div><div class="prep-case">n / Pl. Kinder</div><div class="prep-ex">mein Kind ist klein</div></div>
+<div class="prep"><div class="prep-icon">👨‍👩‍👧</div><div class="prep-word">die Eltern</div><div class="prep-case">nur Plural!</div><div class="prep-ex">meine Eltern leben in Polen</div></div>
+</div>
+
+<h2 class="section-title">Ein kleiner <em style="font-style:italic;">Stammbaum</em></h2>
+<p class="section-sub">So h&auml;ngt alles zusammen!</p>
+
+<div class="tree">
+<div class="tree-row">
+<div class="tree-node gen3"><div class="tree-emoji">👵</div><div class="tree-name">Oma Eva</div><div class="tree-rel">Gro&szlig;mutter</div></div>
+<div class="tree-node gen3"><div class="tree-emoji">👴</div><div class="tree-name">Opa Karl</div><div class="tree-rel">Gro&szlig;vater</div></div>
+</div>
+<div class="tree-line">│</div>
+<div class="tree-row">
+<div class="tree-node gen1"><div class="tree-emoji">👩</div><div class="tree-name">Mama Anna</div><div class="tree-rel">Mutter</div></div>
+<div class="tree-node gen1"><div class="tree-emoji">👨</div><div class="tree-name">Papa Tom</div><div class="tree-rel">Vater</div></div>
+<div class="tree-node gen1"><div class="tree-emoji">👩‍🦰</div><div class="tree-name">Tante Lisa</div><div class="tree-rel">Tante</div></div>
+</div>
+<div class="tree-line">│</div>
+<div class="tree-row">
+<div class="tree-node gen2"><div class="tree-emoji">👦</div><div class="tree-name">Max (ich!)</div><div class="tree-rel">Sohn</div></div>
+<div class="tree-node gen2"><div class="tree-emoji">👧</div><div class="tree-name">Mia</div><div class="tree-rel">Schwester</div></div>
+<div class="tree-node gen2"><div class="tree-emoji">👨‍🎓</div><div class="tree-name">Leon</div><div class="tree-rel">Cousin</div></div>
+</div>
+</div>
+
+<div class="tip">
+💡 <strong>Wichtig A2:</strong> <em>die Eltern</em> und <em>die Geschwister</em> gibt es nur im Plural! Du sagst nicht &bdquo;mein Eltern&ldquo; &mdash; richtig: <u>meine Eltern</u>, <u>meine Geschwister</u>.
+</div>
+
+<h2 class="section-title">Possessivpronomen &mdash; <em style="font-style:italic;">wem geh&ouml;rt was?</em></h2>
+<p class="section-sub">Das wichtigste Grammatik-Tool: mein, dein, sein, ihr&hellip;</p>
+
+<div class="akk-table">
+<div class="akk-row head">
+<div class="akk-cell"><div class="gen">Person</div></div>
+<div class="akk-cell"><div class="gen">m / n</div></div>
+<div class="akk-cell"><div class="gen">w / Pl.</div></div>
+<div class="akk-cell"><div class="gen">Beispiel</div></div>
+</div>
+<div class="akk-row">
+<div class="akk-cell label">ich</div>
+<div class="akk-cell"><div class="form">mein</div></div>
+<div class="akk-cell"><div class="form">meine</div></div>
+<div class="akk-cell"><div class="new">mein Bruder</div></div>
+</div>
+<div class="akk-row">
+<div class="akk-cell label">du</div>
+<div class="akk-cell"><div class="form">dein</div></div>
+<div class="akk-cell"><div class="form">deine</div></div>
+<div class="akk-cell"><div class="new">deine Mutter</div></div>
+</div>
+<div class="akk-row">
+<div class="akk-cell label">er / es</div>
+<div class="akk-cell"><div class="form">sein</div></div>
+<div class="akk-cell"><div class="form">seine</div></div>
+<div class="akk-cell"><div class="new">sein Opa</div></div>
+</div>
+<div class="akk-row">
+<div class="akk-cell label">sie (sg.)</div>
+<div class="akk-cell"><div class="form">ihr</div></div>
+<div class="akk-cell"><div class="form">ihre</div></div>
+<div class="akk-cell"><div class="new">ihre Tante</div></div>
+</div>
+<div class="akk-row">
+<div class="akk-cell label">wir</div>
+<div class="akk-cell"><div class="form">unser</div></div>
+<div class="akk-cell"><div class="form">unsere</div></div>
+<div class="akk-cell"><div class="new">unsere Eltern</div></div>
+</div>
+<div class="akk-row">
+<div class="akk-cell label">ihr</div>
+<div class="akk-cell"><div class="form">euer</div></div>
+<div class="akk-cell"><div class="form">eure</div></div>
+<div class="akk-cell"><div class="new">eure Oma</div></div>
+</div>
+<div class="akk-row">
+<div class="akk-cell label">sie / Sie</div>
+<div class="akk-cell"><div class="form">ihr / Ihr</div></div>
+<div class="akk-cell"><div class="form">ihre / Ihre</div></div>
+<div class="akk-cell"><div class="new">ihre Kinder</div></div>
+</div>
+</div>
+
+<h2 class="section-title">Nominativ vs. <em style="font-style:italic;">Akkusativ</em></h2>
+<p class="section-sub">Bei <em>der</em>-Verwandten (m) &auml;ndert sich das Possessiv im Akkusativ!</p>
+
+<div class="compare">
+<div class="comp-card a">
+<span class="comp-tag">Nominativ (wer?)</span>
+<div class="comp-text"><strong>Mein</strong> Bruder hei&szlig;t Max.<br><strong>Dein</strong> Onkel ist nett.<br><strong>Sein</strong> Opa wohnt in Berlin.</div>
+<div class="comp-note">Subjekt &mdash; bei <em>der</em>-W&ouml;rtern: kein -en!</div>
+</div>
+<div class="comp-card b">
+<span class="comp-tag">Akkusativ (wen?)</span>
+<div class="comp-text">Ich liebe <strong>meinen</strong> Bruder.<br>Ich besuche <strong>deinen</strong> Onkel.<br>Ich kenne <strong>seinen</strong> Opa.</div>
+<div class="comp-note">Bei <em>der</em>-W&ouml;rtern (m): immer <strong>-en</strong> am Ende!</div>
+</div>
+</div>
+
+<div class="tip" style="border-color:var(--teal);background:var(--teal-soft);border-style:solid;">
+✨ <strong>Merkregel A2:</strong> Bei <em>die</em>-W&ouml;rtern (w/Pl.) und <em>das</em>-W&ouml;rtern: Nominativ = Akkusativ! Nur bei <em>der</em>-W&ouml;rtern (m) kommt im Akkusativ ein <u>-en</u> dazu: <em>mein Bruder &rarr; meinen Bruder</em>.
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+
+<div class="alltag-q">
+<div class="ql">Alltag &middot; Smalltalk</div>
+<div class="qq">Eine Kollegin fragt: &bdquo;Hast du Geschwister?&ldquo; Wie antwortest du auf Deutsch?</div>
+<div class="think">💭 &bdquo;Ja, ich habe einen Bruder und eine Schwester&ldquo; oder &bdquo;Nein, ich bin Einzelkind!&ldquo;</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);">
+<div class="ql" style="color:var(--teal);">Alltag &middot; Familienfest</div>
+<div class="qq">Du stellst dein Familienfoto vor: &bdquo;Das ist ___ Mutter, das ist ___ Vater.&ldquo;</div>
+<div class="think">💭 <strong>meine</strong> Mutter (die!) &mdash; <strong>mein</strong> Vater (der!). Das Possessiv folgt dem Artikel!</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#B66809;">
+<div class="ql" style="color:#B66809;">Alltag &middot; Familienherkunft</div>
+<div class="qq">Du erkl&auml;rst: &bdquo;Meine Oma kommt aus Polen.&ldquo; Wie sagst du das &uuml;ber DEINEN Vater?</div>
+<div class="think">💭 &bdquo;Mein Vater kommt aus &hellip;&ldquo; &mdash; bei <em>der</em>-Verwandten ohne -e!</div>
+</div>
+
+</section>
+
+<!-- ============== UMGANGSSPRACHE ============== -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So reden Deutsche <em style="font-style:italic;">&uuml;ber Familie</em></h2>
+<p class="section-sub">Echte Chats &mdash; Smalltalk, Familienfeste, Verabredungen.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Im Alltag h&ouml;rst du oft <strong>&bdquo;meine Geschwister&ldquo;</strong>, <strong>&bdquo;meine Leute&ldquo;</strong> (= Familie) oder <strong>&bdquo;bei uns zu Hause&ldquo;</strong> &mdash; viel l&auml;ssiger als &bdquo;meine Familienmitglieder&ldquo;!</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">👋</div><div><div class="name">Sarah &middot; Smalltalk</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hey, wie viele <strong>Geschwister</strong> hast du eigentlich?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Zwei! <strong>Mein Bruder</strong> ist 25 und <strong>meine Schwester</strong> 19</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Cool! Ich bin <strong>Einzelkind</strong> 😅</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Krass! Hattest du nie Stress mit Geschwistern?</div></div>
+<div class="chat-meaning"><strong>&bdquo;Geschwister&ldquo;</strong> (immer Plural!) &middot; <strong>&bdquo;Einzelkind&ldquo;</strong> = ohne Bruder/Schwester. Total &uuml;blicher Smalltalk!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🇵🇱</div><div><div class="name">Mia &middot; Herkunft</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Meine Oma ist Polin</strong>, sie spricht kein Deutsch 😄</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Oh wow! Und <strong>dein Opa</strong>?</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Mein Opa</strong> ist Deutscher, sie haben sich in Berlin kennengelernt 💕</div></div>
+<div class="chat-msg out"><div class="chat-bubble">S&uuml;&szlig;! Sprichst du auch Polnisch?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Nur ein bisschen &mdash; mit <strong>meiner Tante</strong> halt</div></div>
+<div class="chat-meaning">Achte auf <strong>mein</strong> Opa / <strong>meine</strong> Oma / <strong>meiner</strong> Tante &mdash; das Possessiv passt sich an!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🎓</div><div><div class="name">Tom &middot; Familie-Update</div><div class="stat">tippt&hellip;</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Was macht <strong>dein Bruder</strong> jetzt eigentlich?</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Mein Bruder studiert in Berlin</strong>, Informatik!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Und <strong>deine Eltern</strong>?</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Meine Eltern</strong> sind noch in M&uuml;nchen, ganz normal 😊</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Gr&uuml;&szlig; sie von mir!</div></div>
+<div class="chat-meaning"><strong>&bdquo;Was macht dein/e &hellip;?&ldquo;</strong> = Standardfrage f&uuml;r Familien-Updates. <strong>&bdquo;Gr&uuml;&szlig; sie&ldquo;</strong> = h&ouml;flich!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🎂</div><div><div class="name">Lena &middot; Geburtstag</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hey, wir feiern morgen <strong>Geburtstag</strong> bei <strong>meiner Oma</strong> 🎂</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Oh sch&ouml;n! Wer hat denn Geburtstag?</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Meine Tante</strong> wird 50! Kommt <strong>deine ganze Familie</strong>?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Klar, <strong>meine Eltern</strong> und <strong>mein Bruder</strong> auch</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Perfekt, bis morgen! 💐</div></div>
+<div class="chat-meaning"><strong>&bdquo;bei meiner Oma&ldquo;</strong> = Treffpunkt. <strong>&bdquo;wird 50&ldquo;</strong> = Geburtstag haben &mdash; typisch Familienfeier!</div>
+</div>
+
+</div>
+
+<h2 class="section-title">10 <em style="font-style:italic;">Familien-S&auml;tze</em></h2>
+
+<div class="prep-grid" style="grid-template-columns:1fr;">
+<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">&bdquo;Hast du Geschwister?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Standard-Smalltalk-Frage</div></div>
+<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">&bdquo;Ich bin Einzelkind.&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">= kein Bruder, keine Schwester</div></div>
+<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">&bdquo;Meine Eltern wohnen in&hellip;&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Familien-Standort erkl&auml;ren</div></div>
+<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">&bdquo;Wir sehen uns oft.&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">enge Familien-Beziehung</div></div>
+<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">&bdquo;Mein Bruder ist &auml;lter / j&uuml;nger.&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Alter vergleichen</div></div>
+<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">&bdquo;Wir feiern bei meinen Eltern.&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Treffpunkt bei Familie</div></div>
+<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">&bdquo;Das ist meine Familie.&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Familienfoto zeigen</div></div>
+<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">&bdquo;Gr&uuml;&szlig; deine Eltern!&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">h&ouml;fliche Verabschiedung</div></div>
+</div>
+
+</section>
+
+<!-- ============== LERNKARTEN ============== -->
+<section class="section" data-section="2">
+<h2 class="section-title">Lernkarten &middot; <em style="font-style:italic;">Familie &amp; Possessiv</em></h2>
+<p class="section-sub">Erst denken &mdash; dann tippen.</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">👩</div>
+<div class="flip-word" id="flipWord">die Mutter</div>
+<div class="flip-badge" id="flipBadge">Verwandte</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">die weibliche Person, die dich geboren hat</div>
+<div class="flip-ex" id="flipEx">&bdquo;<strong>Meine Mutter</strong> hei&szlig;t Anna.&ldquo;</div>
+</div>
+</div>
+</div>
+
+<div class="lk-nav">
+<button class="lk-btn" id="lkPrev">←</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span>
+<button class="lk-btn" id="lkNext">→</button>
+</div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- ============== QUIZ ============== -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Familie &amp; Possessiv</em></h2>
+
+<div class="quiz"><div class="quiz-q">Wie sagst du: &bdquo;___ Mutter hei&szlig;t Anna.&ldquo; (ich)</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Mein</span><span class="quiz-chip">Meine</span><span class="quiz-chip">Meiner</span></div><div class="quiz-explain">✓ <strong>Meine</strong> Mutter &mdash; &bdquo;die Mutter&ldquo; ist feminin, also <em>meine</em>!</div></div>
+
+<div class="quiz"><div class="quiz-q">Welcher Verwandte ist der Bruder deiner Mutter?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">der Cousin</span><span class="quiz-chip">der Vater</span><span class="quiz-chip">der Onkel</span></div><div class="quiz-explain">✓ Der <strong>Onkel</strong>! Bruder von Mama oder Papa = Onkel.</div></div>
+
+<div class="quiz"><div class="quiz-q">&bdquo;Ich liebe ___ Bruder.&ldquo; (ich, Akkusativ!)</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">mein</span><span class="quiz-chip">meinen</span><span class="quiz-chip">meine</span></div><div class="quiz-explain">✓ <strong>meinen</strong> Bruder &mdash; &bdquo;der Bruder&ldquo; im Akkusativ bekommt <em>-en</em>!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist eine &bdquo;Cousine&ldquo;?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Tochter von Tante oder Onkel</span><span class="quiz-chip">Schwester von Mama</span><span class="quiz-chip">Mutter vom Vater</span></div><div class="quiz-explain">✓ Die <strong>Cousine</strong> ist die Tochter deiner Tante oder deines Onkels.</div></div>
+
+<div class="quiz"><div class="quiz-q">Anna sagt: &bdquo;Das ist ___ Tante.&ldquo; (sie, also Annas Tante)</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">ihre</span><span class="quiz-chip">seine</span><span class="quiz-chip">deine</span></div><div class="quiz-explain">✓ <strong>ihre</strong> Tante &mdash; weil Anna (sie) spricht. Bei feminin/Plural: <em>ihre</em>!</div></div>
+
+<div class="quiz"><div class="quiz-q">Wie hei&szlig;t der Plural von &bdquo;Bruder&ldquo;?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">die Bruders</span><span class="quiz-chip">die Br&uuml;der</span><span class="quiz-chip">die Brudere</span></div><div class="quiz-explain">✓ Die <strong>Br&uuml;der</strong> &mdash; mit Umlaut! Auch: die V&auml;ter, die M&uuml;tter.</div></div>
+
+<div class="quiz"><div class="quiz-q">Tom &amp; Lisa &uuml;ber sich: &bdquo;___ Eltern wohnen in Hamburg.&ldquo;</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Meine</span><span class="quiz-chip">Ihre</span><span class="quiz-chip">Unsere</span></div><div class="quiz-explain">✓ <strong>Unsere</strong> Eltern &mdash; wir (zwei!) &rarr; unser/unsere.</div></div>
+
+<div class="quiz"><div class="quiz-q">&bdquo;Hast du Geschwister?&ldquo; &mdash; Wann sagst du das?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Beim Kennenlernen / Smalltalk</span><span class="quiz-chip">Beim Bezahlen</span><span class="quiz-chip">Bei der Begr&uuml;&szlig;ung</span></div><div class="quiz-explain">✓ Beim <strong>Kennenlernen</strong> &mdash; das ist eine Klassiker-Smalltalk-Frage!</div></div>
+
+</section>
+
+<!-- ============== LÜCKENTEXT ============== -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext &middot; <em style="font-style:italic;">Possessivpronomen</em></h2>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Ich sage: &bdquo;<select data-sol="Meine"><option value="">…</option><option>Mein</option><option>Meine</option><option>Meiner</option></select> Mutter hei&szlig;t Anna.&ldquo;</div>
+<div class="gap-line">2. Du fragst: &bdquo;Wie hei&szlig;t <select data-sol="dein"><option value="">…</option><option>dein</option><option>deine</option><option>deinen</option></select> Bruder?&ldquo;</div>
+<div class="gap-line">3. Max erz&auml;hlt: &bdquo;<select data-sol="Mein"><option value="">…</option><option>Meine</option><option>Mein</option><option>Meinen</option></select> Vater arbeitet bei BMW.&ldquo;</div>
+<div class="gap-line">4. Lisa sagt &uuml;ber sich: &bdquo;<select data-sol="Meine"><option value="">…</option><option>Mein</option><option>Meine</option><option>Unsere</option></select> Eltern wohnen in K&ouml;ln.&ldquo;</div>
+<div class="gap-line">5. Akkusativ: &bdquo;Ich besuche <select data-sol="meinen"><option value="">…</option><option>mein</option><option>meine</option><option>meinen</option></select> Opa am Sonntag.&ldquo;</div>
+<div class="gap-line">6. Anna &uuml;ber Tom: &bdquo;<select data-sol="Seine"><option value="">…</option><option>Ihre</option><option>Seine</option><option>Sein</option></select> Schwester ist Lehrerin.&ldquo;</div>
+<div class="gap-line">7. Du und dein Freund: &bdquo;<select data-sol="Unsere"><option value="">…</option><option>Meine</option><option>Ihre</option><option>Unsere</option></select> Oma kommt aus Polen.&ldquo;</div>
+<div class="gap-line">8. Akkusativ-Frage: &bdquo;Kennst du <select data-sol="meinen"><option value="">…</option><option>mein</option><option>meinen</option><option>meine</option></select> Cousin?&ldquo;</div>
+<div class="gap-actions">
+<button class="btn-secondary" id="gapReset">Neu</button>
+<button class="btn-primary" id="gapCheck">Überprüfen</button>
+</div>
+</div>
+
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ============== ZUORDNEN ============== -->
+<section class="section" data-section="5">
+<h2 class="section-title">Verwandte &harr; <em style="font-style:italic;">Beziehung</em></h2>
+<p class="section-sub">Wer ist wer? Verbinde die Verwandtschaft mit der Erkl&auml;rung!</p>
+
+<div class="match-stage">
+<div class="match-cols">
+<div class="match-col">
+<h4>👨‍👩‍👧 Verwandte:r</h4>
+<div class="match-list" id="leftCol"></div>
+</div>
+<div class="match-col">
+<h4>💡 Wer ist das?</h4>
+<div class="match-list" id="rightCol"></div>
+</div>
+</div>
+<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+</div>
+</section>
+
+<!-- ============== SPRECHEN ============== -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">deine Familie!</em></h2>
+<p class="section-sub">Zieh eine Karte. Erz&auml;hl &uuml;ber deine eigenen Verwandten &mdash; oder spiel die Situation mit deinem Partner!</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div>
+<div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf &bdquo;Neue Karte&ldquo; und leg los!</div>
+</div>
+
+<div class="speak-controls">
+<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">zum Mitmachen</em></h2>
+<p class="section-sub">Übt zu zweit &mdash; jede:r &uuml;bernimmt eine Rolle!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 &middot; Familienfest planen</div>
+<div class="role-title">🎂 Wer kommt zu Omas 70.?</div>
+<div class="role-situation">Person A plant die Geburtstagsfeier von Oma. Person B ist die Cousine und hilft. Geht durch: Wer kommt? Wann? Wo? &mdash; mit allen Verwandten!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">📅</div><div><div class="person-label">Person A &mdash; Organisator:in</div><div class="person-quote">&bdquo;Also: meine Eltern kommen, mein Bruder auch. Aber kommt deine Tante?&ldquo;</div></div></div>
+<div class="person b"><div class="person-avatar">✏️</div><div><div class="person-label">Person B &mdash; Cousine</div><div class="person-quote">&bdquo;Ja, meine Mutter kommt sicher &mdash; und mein Onkel vielleicht!&ldquo;</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: Mindestens 8 verschiedene Possessivpronomen verwenden (mein/dein/sein/ihr&hellip;)!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 &middot; Stammbaum erkl&auml;ren</div>
+<div class="role-title">🌳 Wer ist wer auf dem Foto?</div>
+<div class="role-situation">Person A zeigt ein altes Familienfoto. Person B fragt zu jedem Verwandten: Wer ist das? Wie alt? Was macht er/sie? Mit den richtigen Possessivpronomen!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">📸</div><div><div class="person-label">Person A &mdash; Foto-Besitzer:in</div><div class="person-quote">&bdquo;Das hier ist meine Oma, daneben mein Opa &mdash; und das ist meine Tante Lisa.&ldquo;</div></div></div>
+<div class="person b"><div class="person-avatar">🔍</div><div><div class="person-label">Person B &mdash; Neugierig</div><div class="person-quote">&bdquo;Wie alt ist deine Oma? Und wo wohnt dein Opa heute?&ldquo;</div></div></div>
+</div>
+<div class="role-goal">🎯 Beschreibt mindestens 6 Personen auf dem Foto &mdash; jeweils 2 S&auml;tze pro Person!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 &middot; Familienfoto vorstellen</div>
+<div class="role-title">📷 &bdquo;Das ist meine Familie!&ldquo;</div>
+<div class="role-situation">Person A trifft Person B (neuer Kollege/neue Kollegin) und zeigt das Familienfoto vom Handy. Stell jede Person vor: Name, Alter, Beruf, was sie gerne macht.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">📱</div><div><div class="person-label">Person A &mdash; Stolze:r Erz&auml;hler:in</div><div class="person-quote">&bdquo;Schau, das ist meine Familie! Meine Mutter ist &Auml;rztin, mein Vater ist Lehrer&hellip;&ldquo;</div></div></div>
+<div class="person b"><div class="person-avatar">😊</div><div><div class="person-label">Person B &mdash; Neue:r Kolleg:in</div><div class="person-quote">&bdquo;Sch&ouml;n! Und wer ist die Frau mit dem roten Pulli? Deine Schwester?&ldquo;</div></div></div>
+</div>
+<div class="role-goal">🎯 Beide stellen ihre Familie vor &mdash; und reagiert auf das, was der andere sagt!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Mini-Aufgabe:</strong> Schick jeden Tag jemandem auf Deutsch eine Sprachnachricht oder Text &uuml;ber EIN Familienmitglied: &bdquo;Mein/e ___ ist&hellip;&ldquo;, &bdquo;Meine ___ wohnt&hellip;&ldquo;, &bdquo;Mein/e ___ arbeitet als&hellip;&ldquo;. 7 Tage, 7 verschiedene Verwandte!<br><br>
+🏆 <strong>Bonus-Challenge:</strong> Mal einen kleinen Stammbaum mit 8 Verwandten und beschrifte jeden auf Deutsch (mit Artikel!). Schick das Foto an deine Lehrerin &mdash; oder erkl&auml;re jemandem deine Familie laut auf Deutsch in 2 Minuten!
+</div>
+
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch f&uuml;r den Alltag<br>Erstellt mit ❤️ f&uuml;r meine Sprechclub-Lernenden &middot; Familie &amp; Verwandte &middot; A2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// LERNKARTEN
+const KARTEN=[
+  {emoji:'👩',word:'die Mutter',badge:'Verwandte',rule:'die weibliche Person, die dich geboren hat',ex:'„Meine <strong>Mutter</strong> heißt Anna.“'},
+  {emoji:'👨',word:'der Vater',badge:'Verwandter',rule:'der männliche Elternteil',ex:'„Mein <strong>Vater</strong> arbeitet bei BMW.“'},
+  {emoji:'👦',word:'der Bruder',badge:'Pl. Brüder',rule:'männliches Geschwister',ex:'„Ich habe <strong>einen Bruder</strong> und eine Schwester.“'},
+  {emoji:'👧',word:'die Schwester',badge:'Pl. Schwestern',rule:'weibliches Geschwister',ex:'„Meine <strong>Schwester</strong> ist 18 Jahre alt.“'},
+  {emoji:'👵',word:'die Oma / Großmutter',badge:'Verwandte',rule:'die Mutter deiner Mutter / deines Vaters',ex:'„Meine <strong>Oma</strong> backt den besten Kuchen!“'},
+  {emoji:'👴',word:'der Opa / Großvater',badge:'Verwandter',rule:'der Vater deiner Eltern',ex:'„Mein <strong>Opa</strong> erzählt gern alte Geschichten.“'},
+  {emoji:'👩‍🦰',word:'die Tante',badge:'Verwandte',rule:'die Schwester deiner Mutter oder deines Vaters',ex:'„<strong>Tante</strong> Lisa kommt morgen zu Besuch.“'},
+  {emoji:'👨‍🦱',word:'der Onkel',badge:'Verwandter',rule:'der Bruder deiner Mutter oder deines Vaters',ex:'„<strong>Onkel</strong> Max wohnt in Wien.“'},
+  {emoji:'👩‍🎓',word:'die Cousine',badge:'Verwandte',rule:'die Tochter deiner Tante oder deines Onkels',ex:'„Meine <strong>Cousine</strong> studiert in Berlin.“'},
+  {emoji:'👨‍🎓',word:'der Cousin',badge:'[ku-zäng]',rule:'der Sohn deiner Tante oder deines Onkels',ex:'„Mein <strong>Cousin</strong> spielt sehr gut Gitarre.“'},
+  {emoji:'👪',word:'die Eltern',badge:'nur Plural!',rule:'Mutter UND Vater zusammen',ex:'„Meine <strong>Eltern</strong> leben in Polen.“'},
+  {emoji:'👫',word:'die Geschwister',badge:'nur Plural!',rule:'Brüder und Schwestern zusammen',ex:'„Hast du <strong>Geschwister</strong>? — Ja, zwei!“'},
+  {emoji:'✨',word:'mein / meine',badge:'1. Person (ich)',rule:'Possessivpronomen: mein (m/n), meine (w/Pl.)',ex:'„<strong>Mein</strong> Bruder, <strong>meine</strong> Schwester.“'},
+  {emoji:'👋',word:'dein / deine',badge:'2. Person (du)',rule:'Possessivpronomen: dein (m/n), deine (w/Pl.)',ex:'„Wie heißt <strong>deine</strong> Mutter?“'},
+  {emoji:'👬',word:'sein / seine vs. ihr / ihre',badge:'er / sie',rule:'sein = von ihm (er) • ihr = von ihr (sie)',ex:'„Tom + <strong>sein</strong> Bruder • Anna + <strong>ihre</strong> Schwester.“'},
+  {emoji:'⚡',word:'meinen Bruder (Akk.)',badge:'Akkusativ -en',rule:'bei der-Wörtern (m) kommt im Akkusativ -en dran!',ex:'„Ich liebe <strong>meinen Bruder</strong>.“ (nicht: mein Bruder!)'},
+];
+let order=KARTEN.map((_,i)=>i);
+let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){
+  const k=KARTEN[order[lkIdx]];
+  document.getElementById('flipEmoji').textContent=k.emoji;
+  document.getElementById('flipWord').textContent=k.word;
+  document.getElementById('flipBadge').textContent=k.badge;
+  document.getElementById('flipRule').textContent=k.rule;
+  document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('lkCur').textContent=lkIdx+1;
+  document.getElementById('lkTot').textContent=KARTEN.length;
+  flipEl.classList.remove('flipped');
+}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+// QUIZ
+document.querySelectorAll('.quiz-opts').forEach(opts=>{
+  const c=parseInt(opts.dataset.c);
+  const chips=opts.querySelectorAll('.quiz-chip');
+  const exp=opts.parentElement.querySelector('.quiz-explain');
+  chips.forEach((chip,i)=>{
+    chip.onclick=()=>{
+      if(opts.dataset.done)return;opts.dataset.done='1';
+      if(i===c)chip.classList.add('correct');
+      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
+      exp.classList.add('show');
+    };
+  });
+});
+
+// GAP
+document.getElementById('gapCheck').onclick=()=>{
+  const sels=document.querySelectorAll('#gapText select');
+  let right=0,total=sels.length;
+  sels.forEach(s=>{
+    s.classList.remove('right','wrong');
+    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    else s.classList.add('wrong');
+  });
+  const score=document.getElementById('gapScore');
+  score.style.display='block';
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');
+};
+document.getElementById('gapReset').onclick=()=>{
+  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  document.getElementById('gapScore').style.display='none';
+};
+
+// MATCH
+const PAIRS=[
+  {l:'die Mutter',r:'die Frau, die dich geboren hat'},
+  {l:'der Onkel',r:'Bruder von Mama oder Papa'},
+  {l:'die Cousine',r:'Tochter deiner Tante oder deines Onkels'},
+  {l:'die Oma',r:'Mutter deiner Eltern'},
+  {l:'die Geschwister',r:'Brüder und Schwestern zusammen'},
+  {l:'die Eltern',r:'Mutter und Vater zusammen'},
+  {l:'der Cousin',r:'Sohn deiner Tante oder deines Onkels'},
+  {l:'die Tante',r:'Schwester von Mama oder Papa'},
+];
+function buildMatch(){
+  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
+  L.innerHTML='';R.innerHTML='';
+  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
+  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
+  let pick=null;
+  document.querySelectorAll('.match-item').forEach(item=>{
+    item.onclick=()=>{
+      if(item.classList.contains('done'))return;
+      if(!pick){pick=item;item.classList.add('selected');return;}
+      if(pick===item){item.classList.remove('selected');pick=null;return;}
+      const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;
+      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
+      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
+      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
+    };
+  });
+}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
+
+// SPEAK
+const SPEAK=[
+  {emoji:'👪',cat:'Familie vorstellen',q:'Stelle deine Familie in 1 Minute vor: Wer gehört dazu? Wer wohnt wo?'},
+  {emoji:'👦',cat:'Geschwister',q:'Erzähle über deine(n) Bruder/Schwester — oder warum du Einzelkind bist!'},
+  {emoji:'👵',cat:'Großeltern',q:'Beschreibe deine Oma oder deinen Opa: Wie sehen sie aus? Was machen sie gern?'},
+  {emoji:'🎂',cat:'Familienfest',q:'Wann hat deine Familie zuletzt gefeiert? Wer war da? Was habt ihr gegessen?'},
+  {emoji:'📞',cat:'Wie oft Kontakt?',q:'Wie oft telefonierst du mit deinen Eltern oder Geschwistern? Persönlich oder per Video?'},
+  {emoji:'✨',cat:'Possessivpronomen',q:'Bilde 6 Sätze mit: mein, meine, dein, sein, ihr, unsere. Je ein Familienmitglied!'},
+  {emoji:'🌍',cat:'Familienherkunft',q:'Woher kommt deine Familie? Wo wohnen heute deine Verwandten? Mehrere Länder?'},
+  {emoji:'👬',cat:'Wer ist ähnlich?',q:'Wem siehst du am ähnlichsten in deiner Familie? Mama, Papa, Oma? Warum?'},
+  {emoji:'🏡',cat:'Wer wohnt wo?',q:'Wo wohnen deine Eltern, deine Geschwister, deine Großeltern? Erzähle das mit Possessiv!'},
+  {emoji:'💗',cat:'Lieblingsverwandte',q:'Wer ist dein/e Lieblingsverwandte? Warum genau diese Person?'},
+  {emoji:'🎁',cat:'Geschenke',q:'Was schenkst du deiner Mutter, deinem Vater, deiner Oma zum Geburtstag? — Akkusativ üben!'},
+  {emoji:'📷',cat:'Familienfoto',q:'Beschreibe dein Lieblingsfamilienfoto. Wer ist drauf? Wo wurde es aufgenommen?'},
+  {emoji:'🐶',cat:'Haustiere?',q:'Hat deine Familie Haustiere? Erzähle über den Hund/die Katze deiner Eltern oder deiner Geschwister!'},
+  {emoji:'🏫',cat:'Beruf in der Familie',q:'Was arbeiten deine Eltern und Geschwister? Beschreibe 3 Berufe mit „mein/e… ist…“'},
+  {emoji:'🍽️',cat:'Familienessen',q:'Was ist das typische Essen bei euch zu Hause? Wer kocht? Was kocht deine Oma am besten?'},
+  {emoji:'💬',cat:'Familien-Smalltalk',q:'Stelle 5 Fragen über die Familie deines Partners! „Hast du…?“ „Wohnen deine…?“'},
+];
+let lastSpeak=-1;
+document.getElementById('speakNew').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
+  lastSpeak=i;const k=SPEAK[i];
+  const c=document.getElementById('speakCard');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60-90 Sekunden!</div>';
+    c.style.opacity='1';
+  },200);
+};
+</script>
+</body></html>

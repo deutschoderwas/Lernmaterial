@@ -1,0 +1,544 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>KI im Alltag - Debatte - B2/C1 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* ANWENDUNGEN-CARDS */
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:700px){.app-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.app-grid{grid-template-columns:1fr;}}
+.app{background:var(--paper);border:1.5px solid var(--sand);border-radius:16px;padding:1rem;border-top:5px solid var(--red);text-align:center;}
+.app:nth-child(2){border-top-color:var(--teal);}
+.app:nth-child(3){border-top-color:#B66809;}
+.app:nth-child(4){border-top-color:#6A3D9C;}
+.app:nth-child(5){border-top-color:#A04060;}
+.app:nth-child(6){border-top-color:#5F7A2A;}
+.app-icon{font-size:1.9rem;margin-bottom:.3rem;}
+.app-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1rem;margin-bottom:.3rem;}
+.app-desc{color:var(--ink-soft);font-size:.82rem;line-height:1.5;}
+
+/* ETHIK-Reihen */
+.ethik-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.5rem 0;}
+@media(max-width:600px){.ethik-grid{grid-template-columns:1fr;}}
+.ethik{background:var(--paper);border:1.5px solid var(--sand);border-radius:16px;padding:1.2rem 1.3rem;border-left:5px solid #C44569;}
+.ethik:nth-child(2){border-left-color:#6A3D9C;}
+.ethik:nth-child(3){border-left-color:#B66809;}
+.ethik:nth-child(4){border-left-color:#5F7A2A;}
+.ethik-icon{font-size:1.7rem;margin-bottom:.3rem;}
+.ethik-name{font-family:'Fraunces',serif;font-weight:900;color:#C44569;font-size:1.05rem;margin-bottom:.3rem;}
+.ethik:nth-child(2) .ethik-name{color:#6A3D9C;}
+.ethik:nth-child(3) .ethik-name{color:#B66809;}
+.ethik:nth-child(4) .ethik-name{color:#5F7A2A;}
+.ethik-text{font-size:.88rem;color:var(--ink-soft);line-height:1.55;}
+.ethik-text strong{color:var(--ink);font-weight:700;background:var(--yellow-soft);padding:.05em .3em;border-radius:4px;}
+
+/* STATISTIK CARDS */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:760px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+.stat{background:var(--paper);border:2px solid var(--red);border-radius:14px;padding:1rem .8rem;text-align:center;}
+.stat:nth-child(2){border-color:var(--teal);}.stat:nth-child(3){border-color:#B66809;}.stat:nth-child(4){border-color:#6A3D9C;}
+.stat-num{font-family:'Fraunces',serif;font-weight:900;font-size:1.9rem;color:var(--red);margin-bottom:.2rem;}
+.stat:nth-child(2) .stat-num{color:var(--teal);}.stat:nth-child(3) .stat-num{color:#B66809;}.stat:nth-child(4) .stat-num{color:#6A3D9C;}
+.stat-label{font-size:.78rem;color:var(--ink-soft);}
+
+/* WORTSCHATZ */
+.w-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.w-grid{grid-template-columns:1fr;}}
+.w{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.85rem 1.1rem;}
+.w-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;}
+.w-en{color:var(--ink-soft);font-size:.78rem;margin-top:.2rem;}
+
+/* ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.6rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE + DEBATE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person.c{border-color:#6A3D9C;background:#F4EEFA;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}.person.c .person-avatar{border-color:#6A3D9C;}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
+.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
+.debate:nth-child(2){border-left-color:var(--teal);}
+.debate:nth-child(3){border-left-color:var(--yellow);}
+.debate:nth-child(4){border-left-color:var(--pink);}
+.debate:nth-child(5){border-left-color:#6A3D9C;}
+.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.debate:nth-child(2) .debate-num{color:var(--teal);}.debate:nth-child(3) .debate-num{color:#B66809;}.debate:nth-child(4) .debate-num{color:#A04060;}.debate:nth-child(5) .debate-num{color:#6A3D9C;}
+.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas - Sprechclub B2/C1</div>
+<div class="title-wrap"><h1 class="title">KI im Alltag - <span class="hl">Debatte</span></h1></div>
+<p class="subtitle">ChatGPT, Deepfakes, autonomes Fahren, EU AI Act - diskutiert die ethischen und gesellschaftlichen Folgen der KI-Revolution auf B2/C1-Niveau.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">🤖</text><text y="40" text-anchor="middle" fill="#E8302A">Algorithmus</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">💬</text><text y="40" text-anchor="middle" fill="#0FB5A6">Chatbot</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">🎭</text><text y="40" text-anchor="middle" fill="#B66809">Deepfake</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">🚗</text><text y="40" text-anchor="middle" fill="#A04060">Autonom</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">⚖️</text><text y="40" text-anchor="middle" fill="#5F7A2A">AI Act</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">💼</text><text y="40" text-anchor="middle" fill="#6A3D9C">Jobs</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">🤖 KI &amp; Ethik</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Wortschatz</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ÜBERBLICK -->
+<section class="section active" data-section="0">
+<h2 class="section-title">📊 KI in <em style="font-style:italic;">Zahlen</em></h2>
+<p class="section-sub">Wie tief steckt KI bereits in unserem Alltag?</p>
+
+<div class="stats-grid">
+<div class="stat"><div class="stat-num">73%</div><div class="stat-label">der Deutschen haben ChatGPT genutzt</div></div>
+<div class="stat"><div class="stat-num">300 Mio.</div><div class="stat-label">Jobs weltweit durch KI bedroht</div></div>
+<div class="stat"><div class="stat-num">82%</div><div class="stat-label">der Schueler nutzen KI fuer Hausaufgaben</div></div>
+<div class="stat"><div class="stat-num">2024</div><div class="stat-label">Jahr des EU AI Acts</div></div>
+</div>
+
+<div class="tip">💡 <strong>Was zeigt das?</strong> KI ist kein Zukunftsthema mehr - sie ist mitten im Alltag angekommen. Die Frage ist nicht mehr „ob", sondern „wie" wir damit umgehen.</div>
+
+<h2 class="section-title">🛠️ Wo <em style="font-style:italic;">KI</em> heute ueberall steckt</h2>
+<div class="app-grid">
+<div class="app"><div class="app-icon">💬</div><div class="app-name">ChatGPT &amp; Co.</div><div class="app-desc">Sprachmodelle schreiben Mails, Codes, Hausarbeiten</div></div>
+<div class="app"><div class="app-icon">📸</div><div class="app-name">Bilderkennung</div><div class="app-desc">Gesichtserkennung im Handy, Pflanzen-Apps, Diagnose</div></div>
+<div class="app"><div class="app-icon">🏠</div><div class="app-name">Smart Home</div><div class="app-desc">Alexa, Siri, Google - sie hoeren immer mit</div></div>
+<div class="app"><div class="app-icon">🚗</div><div class="app-name">Autonomes Fahren</div><div class="app-desc">Tesla, Waymo - Autos fahren ohne Mensch</div></div>
+<div class="app"><div class="app-icon">🎬</div><div class="app-name">Netflix &amp; Spotify</div><div class="app-desc">Algorithmen entscheiden, was du siehst und hoerst</div></div>
+<div class="app"><div class="app-icon">🏥</div><div class="app-name">Medizin</div><div class="app-desc">KI erkennt Krebs in Roentgenbildern besser als viele Aerzte</div></div>
+</div>
+
+<h2 class="section-title">⚠️ Die <em style="font-style:italic;">ethischen</em> Fragen</h2>
+<div class="ethik-grid">
+<div class="ethik">
+<div class="ethik-icon">🔒</div>
+<div class="ethik-name">Datenschutz</div>
+<div class="ethik-text">KI braucht <strong>Milliarden Datenpunkte</strong> zum Lernen. Wer sammelt was - und mit welcher Erlaubnis? Dein ChatGPT-Verlauf wird zum Training verwendet!</div>
+</div>
+<div class="ethik">
+<div class="ethik-icon">🎭</div>
+<div class="ethik-name">Manipulation &amp; Deepfakes</div>
+<div class="ethik-text">Mit KI lassen sich <strong>perfekte Fake-Videos</strong> erzeugen. Politiker sagen Dinge, die sie nie gesagt haben. Was bedeutet das fuer Wahlen?</div>
+</div>
+<div class="ethik">
+<div class="ethik-icon">⚖️</div>
+<div class="ethik-name">Verantwortung</div>
+<div class="ethik-text">Wenn ein autonomes Auto einen Unfall verursacht - <strong>wer haftet</strong>? Der Fahrer, der Hersteller, der Programmierer? Bisher: rechtliche Grauzone.</div>
+</div>
+<div class="ethik">
+<div class="ethik-icon">🧠</div>
+<div class="ethik-name">Bias &amp; Diskriminierung</div>
+<div class="ethik-text">KI uebernimmt <strong>Vorurteile aus den Trainingsdaten</strong>. Frauen werden bei Bewerbungs-KI haeufiger aussortiert. Dunklere Hautfarbe? Schlechtere Gesichtserkennung.</div>
+</div>
+</div>
+
+<h2 class="section-title">🇪🇺 Der <em style="font-style:italic;">EU AI Act</em> (2024)</h2>
+<div class="tip" style="background:var(--teal-soft);border-color:var(--teal);border-style:solid;">⚖️ Die <strong>EU hat 2024 das weltweit erste umfassende KI-Gesetz</strong> verabschiedet. Es teilt KI-Anwendungen in <strong>Risikoklassen</strong> ein:<br>
+• <strong>Verboten:</strong> Social Scoring, manipulative KI fuer Kinder<br>
+• <strong>Hochrisiko:</strong> KI fuer Bewerbung, Kreditvergabe, Medizin (muss zertifiziert sein)<br>
+• <strong>Niedriges Risiko:</strong> Chatbots wie ChatGPT (Transparenzpflicht)<br><br>
+Deutschland setzt das Gesetz aktuell um - der Streit ueber konkrete Regeln laeuft!</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<div class="alltag-q"><div class="ql">Persoenlich</div><div class="qq">Wie oft am Tag nutzt du KI - bewusst oder unbewusst (Spotify-Algorithmus, Auto-Vervollstaendigung, Maps...)?</div><div class="think">💭 Eine Schaetzung - dann zaehle einen Tag lang ehrlich!</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Provokant</div><div class="qq">Wuerdest du dich von einer KI behandeln lassen, wenn sie bessere Diagnosen stellt als ein Arzt?</div><div class="think">💭 Was waeren deine Bedingungen?</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Beruflich</div><div class="qq">Welche Faehigkeiten werden in 10 Jahren noch wertvoll sein, die KI nicht ersetzen kann?</div><div class="think">💭 Empathie, Kreativitaet, Handwerk - oder mehr?</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Gesellschaft</div><div class="qq">Wenn KI 30% der Jobs ersetzt - was passiert mit den Menschen? Brauchen wir ein Grundeinkommen?</div><div class="think">💭 Wer profitiert, wer verliert?</div></div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So diskutieren <em style="font-style:italic;">Deutsche</em></h2>
+<p class="section-sub">Echte Chat-Diskussionen ueber KI - in Familien, an Schulen, am Arbeitsplatz.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Deutschland ist KI gegenueber oft <strong>skeptischer</strong> als die USA. Die Sorge um Datenschutz und Arbeitsplaetze sitzt tief. Auf der anderen Seite gibt es viel Begeisterung bei jungen Leuten!</div>
+
+<div class="uss-grid">
+<div class="chat">
+<div class="chat-head"><div class="av">🎓</div><div><div class="name">Studi-Gruppe</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Krass - <strong>ChatGPT</strong> hat mir die ganze Hausarbeit geschrieben!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ist das nicht Betrug? Was, wenn die Uni das merkt?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Es gibt jetzt KI-Erkennungs-Tools. Aber die <strong>halluzinieren</strong> auch oft 😅</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ich nutze KI zum <strong>Brainstormen</strong>, aber schreiben muss ich selbst!</div></div>
+<div class="chat-meaning"><strong>„halluzinieren"</strong> = KI erfindet Fakten, die nicht stimmen. Wichtiger Fachbegriff im KI-Diskurs!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😰</div><div><div class="name">Job-Verlust-Angst</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Mein Chef hat gesagt: 5 Kollegen werden durch KI ersetzt 😨</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Welche Branche?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Buchhaltung und Kundenservice. <strong>Jobverlust</strong> wird real!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Es entstehen aber auch neue Jobs - <strong>Prompt Engineer</strong>, KI-Trainer...</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Klar, aber nicht jeder kann sich umschulen 😔</div></div>
+<div class="chat-meaning">Die Angst vor <strong>Jobverlust</strong> ist real - aber laut Studien entstehen auch viele neue Berufe rund um KI.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">👨‍👧</div><div><div class="name">Eltern-Kind · Schule</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Mama, alle in meiner Klasse nutzen ChatGPT. Darf ich auch?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hmm, das ist nicht so einfach. Kannst du dann noch selbst denken? 🤔</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Es ist wie ein Taschenrechner - ein Tool!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Vielleicht. Aber lerne erst das <strong>kritische Denken</strong>. Sonst verlernst du es!</div></div>
+<div class="chat-meaning">Klassisches Generationenthema. Eltern fuerchten <strong>Verdummung</strong>, Jugendliche sehen KI als selbstverstaendlich.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🤨</div><div><div class="name">Der KI-Skeptiker</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ich nutze nie KI. Das ist alles Hype und Manipulation!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Nutzt du Google Maps? Spotify? Auto-Korrektur?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ja, schon... aber das ist was anderes!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ist es nicht - das sind alles <strong>Algorithmen</strong>. Du nutzt KI taeglich 😉</div></div>
+<div class="chat-meaning">Viele Menschen unterschaetzen, wie viel KI bereits in Alltagsprodukten steckt. Der Begriff <strong>Algorithmus</strong> ist im Diskurs zentral!</div>
+</div>
+</div>
+
+<h2 class="section-title">10 Woerter, die JEDE:R kennen sollte</h2>
+<div class="w-grid">
+<div class="w"><div class="w-de">die Künstliche Intelligenz (KI)</div><div class="w-en">artificial intelligence - lernende Maschinen</div></div>
+<div class="w"><div class="w-de">der Algorithmus</div><div class="w-en">Berechnungsvorschrift, die KI steuert</div></div>
+<div class="w"><div class="w-de">das Sprachmodell</div><div class="w-en">large language model - z.B. ChatGPT, Claude</div></div>
+<div class="w"><div class="w-de">das maschinelle Lernen</div><div class="w-en">machine learning - KI lernt aus Daten</div></div>
+<div class="w"><div class="w-de">der Bias</div><div class="w-en">Vorurteil in KI-Systemen</div></div>
+<div class="w"><div class="w-de">der Deepfake</div><div class="w-en">KI-erzeugte Fake-Videos/Audios</div></div>
+<div class="w"><div class="w-de">das autonome Fahren</div><div class="w-en">selbstfahrendes Auto</div></div>
+<div class="w"><div class="w-de">der EU AI Act</div><div class="w-en">EU-Gesetz zur KI-Regulierung (seit 2024)</div></div>
+<div class="w"><div class="w-de">der Datenschutz</div><div class="w-en">data privacy - Schutz persoenlicher Daten</div></div>
+<div class="w"><div class="w-de">der Jobverlust durch KI</div><div class="w-en">technologische Arbeitslosigkeit</div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Wortschatz-Karten</h2>
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">🤖</div>
+<div class="flip-word" id="flipWord">die Künstliche Intelligenz</div>
+<div class="flip-badge" id="flipBadge">Substantiv f.</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">lernende Maschinen, die Aufgaben loesen</div>
+<div class="flip-ex" id="flipEx">„<strong>Künstliche Intelligenz</strong> veraendert unseren Alltag rasant."</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span><button class="lk-btn" id="lkNext">→</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Was bedeutet das?</em></h2>
+
+<div class="quiz"><div class="quiz-q">Was ist ein <strong>Sprachmodell</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Eine App zum Sprachenlernen</span><span class="quiz-chip">Eine KI, die Texte erzeugt (z.B. ChatGPT)</span><span class="quiz-chip">Ein Diktiergeraet</span></div><div class="quiz-explain">✓ Ein Sprachmodell (LLM) wie ChatGPT oder Claude wurde auf Milliarden Texten trainiert und kann Sprache verstehen und generieren.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet <strong>Bias</strong> in der KI?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Eine Programmiersprache</span><span class="quiz-chip">Ein Datenformat</span><span class="quiz-chip">Vorurteile in KI-Systemen</span></div><div class="quiz-explain">✓ Bias = systematische Verzerrungen. KI uebernimmt Vorurteile aus Trainingsdaten - z.B. Diskriminierung von Frauen bei Bewerbungs-KI.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist ein <strong>Deepfake</strong>?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">KI-erzeugte Fake-Videos/Bilder</span><span class="quiz-chip">Ein tiefes Schwimmbecken</span><span class="quiz-chip">Ein Computer-Virus</span></div><div class="quiz-explain">✓ Deepfakes sind taeuschend echte, von KI erzeugte Inhalte - eine grosse Gefahr fuer Demokratie und Vertrauen!</div></div>
+
+<div class="quiz"><div class="quiz-q">Seit wann gilt der <strong>EU AI Act</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">2010</span><span class="quiz-chip">2019</span><span class="quiz-chip">2024</span></div><div class="quiz-explain">✓ Der EU AI Act trat 2024 in Kraft - das weltweit erste umfassende KI-Gesetz mit Risikoklassen.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was passiert beim <strong>maschinellen Lernen</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Maschinen werden gewartet</span><span class="quiz-chip">KI lernt aus grossen Datenmengen</span><span class="quiz-chip">Lehrer benutzen Roboter</span></div><div class="quiz-explain">✓ Machine Learning = KI verbessert sich selbst durch Analyse von Daten - ohne explizite Programmierung jeder Regel.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was meint man, wenn KI „<strong>halluziniert</strong>"?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Sie erfindet Fakten, die nicht stimmen</span><span class="quiz-chip">Sie sieht Bilder im Code</span><span class="quiz-chip">Sie braucht eine Pause</span></div><div class="quiz-explain">✓ KI „halluziniert" = sie generiert plausibel klingende, aber falsche Informationen. Klassisches Problem von Sprachmodellen!</div></div>
+
+<div class="quiz"><div class="quiz-q">Welche KI-Anwendung gilt laut EU AI Act als <strong>Hochrisiko</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Spotify-Empfehlungen</span><span class="quiz-chip">KI fuer Kreditvergabe oder Bewerbungen</span><span class="quiz-chip">Auto-Vervollstaendigung</span></div><div class="quiz-explain">✓ Hochrisiko = KI, die ueber Lebenschancen entscheidet (Job, Kredit, Medizin) - muss streng reguliert und zertifiziert werden.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist die groesste Sorge beim <strong>autonomen Fahren</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Hohe Spritkosten</span><span class="quiz-chip">Langsamkeit</span><span class="quiz-chip">Wer haftet bei Unfaellen?</span></div><div class="quiz-explain">✓ Die Haftungsfrage ist rechtlich noch ungeloest - Fahrer, Hersteller oder Programmierer? Eine grosse ethische Herausforderung!</div></div>
+</section>
+
+<!-- LÜCKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext</h2>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. ChatGPT und Claude sind beruehmte <select data-sol="Sprachmodelle"><option value="">…</option><option>Sprachmodelle</option><option>Suchmaschinen</option><option>Apps</option></select>.</div>
+<div class="gap-line">2. Wenn eine KI Vorurteile uebernimmt, spricht man von <select data-sol="Bias"><option value="">…</option><option>Bias</option><option>Hype</option><option>Cache</option></select>.</div>
+<div class="gap-line">3. Taeuschend echte KI-Fake-Videos heissen <select data-sol="Deepfakes"><option value="">…</option><option>Deepfakes</option><option>Memes</option><option>Reels</option></select>.</div>
+<div class="gap-line">4. Tesla und Waymo entwickeln das <select data-sol="autonome Fahren"><option value="">…</option><option>autonome Fahren</option><option>Carsharing</option><option>E-Bike</option></select>.</div>
+<div class="gap-line">5. Seit 2024 regelt der <select data-sol="EU AI Act"><option value="">…</option><option>EU AI Act</option><option>DSGVO</option><option>Grundgesetz</option></select> die KI in Europa.</div>
+<div class="gap-line">6. Wenn KI plausibel klingende Falschinformationen erfindet, sagt man, sie <select data-sol="halluziniert"><option value="">…</option><option>halluziniert</option><option>traeumt</option><option>schlaeft</option></select>.</div>
+<div class="gap-line">7. Eine Berechnungsvorschrift, die KI steuert, heisst <select data-sol="Algorithmus"><option value="">…</option><option>Algorithmus</option><option>Programm</option><option>Formel</option></select>.</div>
+<div class="gap-line">8. Die groesste Sorge vieler Arbeitnehmer ist der <select data-sol="Jobverlust"><option value="">…</option><option>Urlaub</option><option>Jobverlust</option><option>Aufstieg</option></select> durch KI.</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Begriff &harr; <em style="font-style:italic;">Bedeutung</em></h2>
+<p class="section-sub">Ordne jedem KI-Begriff die richtige Definition zu!</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Begriff</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Bedeutung</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen - <em style="font-style:italic;">los geht's!</em></h2>
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div><div class="speak-cat">Diskussions-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele aus der <em style="font-style:italic;">KI-Welt</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 - Bildungs-Panel</div>
+<div class="role-title">🎓 Sollen Schulen KI verbieten?</div>
+<div class="role-situation">Podiumsdiskussion an einer Schule: Eine Lehrerin und eine Schuelerin streiten ueber die Rolle von ChatGPT im Unterricht. Die Eltern sitzen im Publikum und stellen Fragen.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">📚</div><div><div class="person-label">Person A - Lehrerin</div><div class="person-quote">„Wenn die Schueler ChatGPT nutzen, lernen sie nichts mehr. Wir muessen KI verbieten!"</div></div></div>
+<div class="person b"><div class="person-avatar">🎓</div><div><div class="person-label">Person B - Schuelerin</div><div class="person-quote">„KI ist die Zukunft! Wer nicht lernt, sie zu nutzen, verliert spaeter im Beruf."</div></div></div>
+</div>
+<div class="role-goal">🎯 Findet 3 Kompromiss-Vorschlaege - wie kann KI sinnvoll in Schulen integriert werden?</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 - Eltern-Kind-Streit</div>
+<div class="role-title">💔 „Mein bester Freund ist eine KI"</div>
+<div class="role-situation">Eine 16-jaehrige verbringt taeglich Stunden mit einem KI-Chatbot („Replika"). Sie sagt, er versteht sie besser als ihre Eltern. Die Mutter ist besorgt und konfrontiert sie.</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">👩</div><div><div class="person-label">Person A - Mutter</div><div class="person-quote">„Du redest mehr mit einer Maschine als mit echten Menschen! Das ist ungesund!"</div></div></div>
+<div class="person b"><div class="person-avatar">👧</div><div><div class="person-label">Person B - Tochter</div><div class="person-quote">„Die KI hoert mir wenigstens zu - ohne zu urteilen! Du verstehst das nicht."</div></div></div>
+</div>
+<div class="role-goal">🎯 Nutzt Konjunktiv II („koennte", „wuerde") und sprecht ueber Einsamkeit, Empathie und digitale Sucht!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 - Tech-Konferenz</div>
+<div class="role-title">🏛️ Die KI-Regulierung der Zukunft</div>
+<div class="role-situation">Internationale Konferenz: Drei Positionen treffen aufeinander. Ihr verhandelt ueber globale KI-Regeln. Wer setzt sich durch?</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🇪🇺</div><div><div class="person-label">Person A - EU-Politikerin</div><div class="person-quote">„Wir brauchen strenge globale Regeln - der EU AI Act ist die Blaupause!"</div></div></div>
+<div class="person b"><div class="person-avatar">💻</div><div><div class="person-label">Person B - Tech-CEO</div><div class="person-quote">„Zu viel Regulierung erstickt Innovation. Wir muessen schneller sein als China!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Person C (Buergerrechtler) kann eingreifen. Findet eine Mehrheit fuer ein internationales KI-Abkommen!</div>
+</div>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">5 Thesen <em style="font-style:italic;">zum Debattieren</em></h2>
+<div class="debate-grid">
+<div class="debate"><div class="debate-num">These 1</div><div class="debate-q">„Schulen sollten KI komplett verbieten - bis Schueler kritisch denken koennen."</div></div>
+<div class="debate"><div class="debate-num">These 2</div><div class="debate-q">„KI sollte Richter ersetzen - sie ist objektiver und schneller."</div></div>
+<div class="debate"><div class="debate-num">These 3</div><div class="debate-q">„KI-Therapeuten sind besser als Menschen - sie urteilen nicht und sind immer verfuegbar."</div></div>
+<div class="debate"><div class="debate-num">These 4</div><div class="debate-q">„Wir brauchen eine globale KI-Regulierung - nationale Gesetze reichen nicht."</div></div>
+<div class="debate"><div class="debate-num">These 5</div><div class="debate-q">„Kuenstler werden durch KI ersetzt - das ist das Ende der Kunst, wie wir sie kennen."</div></div>
+</div>
+<div class="tip" style="margin-top:1.5rem;">🎯 <strong>Wichtig:</strong> Diese Thesen sind PROVOKANT! Uebe Argumente - auch wenn du die These nicht persoenlich vertrittst!</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>KI-Tagebuch:</strong> Notiere 5 Tage lang, wann und wofuer du KI nutzt - bewusst und unbewusst (Maps, Spotify, ChatGPT, Auto-Korrektur, Bildbearbeitung...). Du wirst ueberrascht sein!<br><br>
+🏆 <strong>Bonus:</strong> Lies einen deutschen Artikel zum „EU AI Act" (Spiegel, Zeit, FAZ) und formuliere muendlich 5 Pro- und 5 Contra-Argumente zur EU-Regulierung!
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> - authentisches Deutsch fuer den Alltag<br>Erstellt mit Liebe fuer meine Sprechclub-Lernenden - KI im Alltag - B2/C1</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'🤖',word:'die Künstliche Intelligenz',badge:'Substantiv f.',rule:'lernende Maschinen, die Aufgaben loesen',ex:'„<strong>Künstliche Intelligenz</strong> veraendert unseren Alltag."'},
+  {emoji:'🧮',word:'der Algorithmus',badge:'Substantiv m.',rule:'Berechnungsvorschrift, die KI steuert',ex:'„Spotify nutzt einen <strong>Algorithmus</strong>, der deinen Geschmack kennt."'},
+  {emoji:'💬',word:'das Sprachmodell',badge:'Substantiv n.',rule:'KI, die Texte versteht und erzeugt',ex:'„ChatGPT ist das bekannteste <strong>Sprachmodell</strong>."'},
+  {emoji:'📚',word:'das maschinelle Lernen',badge:'B2/C1 Tech',rule:'KI lernt selbst aus Datenmengen',ex:'„<strong>Maschinelles Lernen</strong> braucht riesige Datenmengen."'},
+  {emoji:'⚠️',word:'der Bias',badge:'engl. Begriff',rule:'Vorurteil im KI-System',ex:'„Bewerbungs-KIs haben oft einen Frauen-<strong>Bias</strong>."'},
+  {emoji:'🎭',word:'der Deepfake',badge:'engl. Begriff',rule:'KI-erzeugte Fake-Videos/Audios',ex:'„<strong>Deepfakes</strong> bedrohen die Demokratie."'},
+  {emoji:'🚗',word:'das autonome Fahren',badge:'B2 Begriff',rule:'selbstfahrende Autos',ex:'„Beim <strong>autonomen Fahren</strong> ist die Haftung ungeloest."'},
+  {emoji:'⚖️',word:'der EU AI Act',badge:'seit 2024',rule:'EU-Gesetz zur KI-Regulierung',ex:'„Der <strong>EU AI Act</strong> ist weltweit Vorreiter."'},
+  {emoji:'🔒',word:'der Datenschutz',badge:'Substantiv m.',rule:'Schutz persoenlicher Daten',ex:'„KI und <strong>Datenschutz</strong> sind oft im Konflikt."'},
+  {emoji:'💼',word:'der Jobverlust durch KI',badge:'B2 Sozialthema',rule:'technologische Arbeitslosigkeit',ex:'„Die Angst vor <strong>Jobverlust durch KI</strong> waechst."'},
+  {emoji:'🌀',word:'halluzinieren',badge:'Verb (KI)',rule:'KI erfindet falsche Fakten',ex:'„ChatGPT <strong>halluziniert</strong> oft Quellen, die nicht existieren."'},
+  {emoji:'🎯',word:'der Prompt',badge:'engl. Begriff',rule:'Eingabe an die KI',ex:'„Ein guter <strong>Prompt</strong> macht den Unterschied!"'},
+  {emoji:'🧠',word:'das neuronale Netz',badge:'Substantiv n.',rule:'KI-Architektur nach Vorbild des Gehirns',ex:'„<strong>Neuronale Netze</strong> sind die Basis moderner KI."'},
+  {emoji:'⚙️',word:'die Automatisierung',badge:'Substantiv f.',rule:'Ersetzen menschlicher Arbeit durch Technik',ex:'„Die <strong>Automatisierung</strong> in Fabriken schreitet voran."'},
+  {emoji:'🔍',word:'die Transparenzpflicht',badge:'B2/C1 Recht',rule:'Pflicht, KI offenzulegen',ex:'„Der EU AI Act fuehrt eine <strong>Transparenzpflicht</strong> ein."'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter ueben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'Algorithmus',r:'Berechnungsvorschrift, die KI steuert'},
+  {l:'Sprachmodell',r:'KI fuer Texte (z.B. ChatGPT)'},
+  {l:'Bias',r:'Vorurteil im KI-System'},
+  {l:'Deepfake',r:'KI-erzeugtes Fake-Video'},
+  {l:'EU AI Act',r:'KI-Gesetz der EU seit 2024'},
+  {l:'autonomes Fahren',r:'Auto faehrt ohne Mensch'},
+  {l:'halluzinieren',r:'KI erfindet falsche Fakten'},
+  {l:'Datenschutz',r:'Schutz persoenlicher Daten'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.innerHTML=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'💬',cat:'Persoenlich',q:'Wie oft pro Tag nutzt du ChatGPT oder eine andere KI? Wofuer hauptsaechlich?'},
+  {emoji:'🎓',cat:'Schule',q:'Sollte KI in Schulen erlaubt sein? Mit welchen Regeln? Begruende!'},
+  {emoji:'💼',cat:'Beruf',q:'Wuerde dein Job in 10 Jahren noch existieren? Welche Aufgaben koennte KI uebernehmen?'},
+  {emoji:'⚖️',cat:'Recht',q:'Wer haftet, wenn ein autonomes Auto einen Menschen toetet? Begruende mit 3 Argumenten!'},
+  {emoji:'🎭',cat:'Deepfakes',q:'Hast du schon mal ein Deepfake gesehen? Wie kann man sich davor schuetzen?'},
+  {emoji:'🇪🇺',cat:'Regulierung',q:'Ist der EU AI Act zu streng oder zu lax? Was wuerdest du aendern?'},
+  {emoji:'🏥',cat:'Medizin',q:'Wuerdest du eine KI-Diagnose einer Arzt-Diagnose vorziehen? Unter welchen Bedingungen?'},
+  {emoji:'❤️',cat:'Beziehungen',q:'Kann eine KI ein echter Freund sein? Was fehlt im Vergleich zu Menschen?'},
+  {emoji:'🎨',cat:'Kunst',q:'Ist KI-generierte Kunst „echte" Kunst? Wer ist der Kuenstler - der Mensch oder die KI?'},
+  {emoji:'🔒',cat:'Datenschutz',q:'Liest du AGBs von KI-Apps? Wuerdest du fuer mehr Datenschutz Geld zahlen?'},
+  {emoji:'😱',cat:'Angst',q:'Was ist deine groesste Sorge bei KI - und was das groesste Versprechen?'},
+  {emoji:'👶',cat:'Kindheit',q:'Sollten Kinder unter 10 Jahren KI nutzen duerfen? Welche Regeln?'},
+  {emoji:'🌍',cat:'Global',q:'Welches Land wird KI-Weltmacht: USA, China oder Europa? Warum?'},
+  {emoji:'🛡️',cat:'Sicherheit',q:'Soll KI in der Armee eingesetzt werden? Wo ist die rote Linie?'},
+  {emoji:'💰',cat:'Wirtschaft',q:'Wenn KI alle Jobs ersetzt - brauchen wir ein bedingungsloses Grundeinkommen?'},
+  {emoji:'🚀',cat:'Zukunft',q:'Wie sieht dein Alltag mit KI in 20 Jahren aus? Optimistisch oder dystopisch?'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei - 90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Das Verb GEHEN · Wortschatzboost B1 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.2rem,5.5vw,4.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+/* MEANING CARDS mit SVG */
+.mean-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin:1.5rem 0;}
+@media(max-width:520px){.mean-grid{grid-template-columns:1fr;}}
+.mean{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:0;box-shadow:0 4px 16px rgba(38,32,25,.05);transition:.2s;overflow:hidden;}
+.mean:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(38,32,25,.12);}
+.mean-svg{background:linear-gradient(135deg,#FFE8E3,#FBEDD8);height:120px;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--sand);font-size:2.4rem;}
+.mean.m2 .mean-svg{background:linear-gradient(135deg,#D7F0EC,#E8F8F4);}
+.mean.m3 .mean-svg{background:linear-gradient(135deg,#FFF1C2,#FFE8E3);}
+.mean.m4 .mean-svg{background:linear-gradient(135deg,#FAE0EA,#FFE8E3);}
+.mean.m5 .mean-svg{background:linear-gradient(135deg,#E2EBC9,#FBEDD8);}
+.mean.m6 .mean-svg{background:linear-gradient(135deg,#E5D8F2,#FAE0EA);}
+.mean-body{padding:1.1rem 1.3rem 1.4rem;}
+.mean-num{display:inline-block;background:var(--red-soft);color:var(--red);font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;}
+.mean.m2 .mean-num{background:var(--teal-soft);color:var(--teal);}
+.mean.m3 .mean-num{background:var(--yellow-soft);color:#B66809;}
+.mean.m4 .mean-num{background:#FAE0EA;color:#A04060;}
+.mean.m5 .mean-num{background:#E2EBC9;color:#5F7A2A;}
+.mean.m6 .mean-num{background:#E5D8F2;color:#6A3D9C;}
+.mean-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.35rem;}
+.mean-meaning{color:var(--red);font-weight:700;font-size:.9rem;margin-bottom:.6rem;}
+.mean.m2 .mean-meaning{color:var(--teal);}.mean.m3 .mean-meaning{color:#B66809;}
+.mean.m4 .mean-meaning{color:#A04060;}.mean.m5 .mean-meaning{color:#5F7A2A;}.mean.m6 .mean-meaning{color:#6A3D9C;}
+.mean-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;padding-top:.7rem;border-top:1px dashed var(--sand);}
+.mean-ex strong{color:var(--ink);background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+
+/* VORHER/NACHHER */
+.vn-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
+.vn-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.2rem;margin-bottom:1rem;text-align:center;}
+.vn-grid{display:grid;grid-template-columns:1fr 60px 1fr;gap:.7rem;align-items:center;}
+@media(max-width:600px){.vn-grid{grid-template-columns:1fr;}.vn-arrow{display:none;}}
+.vn-card{background:var(--cream);border-radius:14px;padding:1rem;text-align:center;border:1.5px solid var(--sand);}
+.vn-card.b{background:var(--yellow-soft);border-color:var(--yellow);}
+.vn-svg{height:60px;display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;font-size:2rem;}
+.vn-label{font-size:.72rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.vn-card.b .vn-label{color:#B66809;}
+.vn-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.3rem;}
+.vn-text strong{color:var(--red);background:var(--paper);padding:.05em .25em;border-radius:4px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.vn-arrow{text-align:center;font-size:2rem;color:var(--red);font-weight:900;}
+
+/* ALLTAG */
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* IDIOM */
+.idiom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+@media(max-width:600px){.idiom-grid{grid-template-columns:1fr;}}
+.idiom{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;align-items:center;}
+.idiom-icon{font-size:2rem;text-align:center;}
+.idiom-de{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;font-style:italic;}
+.idiom-meaning{color:var(--ink-soft);font-size:.8rem;margin-top:.2rem;}
+
+/* CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP */
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+/* GAP */
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+/* MATCH */
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+/* SPEAK + ROLE */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.person-quote strong{color:var(--red);font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+<div class="eyebrow">deutschoderwas · Wortschatzboost B1</div>
+<div class="title-wrap"><h1 class="title">Das Verb <span class="hl">gehen</span></h1></div>
+<p class="subtitle">„Wie geht\'s?" — „Geht so." Das kleinste Wort mit der größten Reichweite im deutschen Alltag. Sechs Gesichter, hundert Möglichkeiten.</p>
+
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">🚶</text><text y="40" text-anchor="middle" fill="#E8302A">Laufen</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">😊</text><text y="40" text-anchor="middle" fill="#0FB5A6">Befinden</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">✅</text><text y="40" text-anchor="middle" fill="#B66809">Klappen</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">❓</text><text y="40" text-anchor="middle" fill="#A04060">Thema</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">🔌</text><text y="40" text-anchor="middle" fill="#5F7A2A">Funktion</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">🚪</text><text y="40" text-anchor="middle" fill="#6A3D9C">Trennbar</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ÜBERBLICK -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die <em style="font-style:italic;">6 Gesichter</em> von „gehen"</h2>
+<p class="section-sub">Vom wörtlichen Spazieren bis zum übertragenen „Geht klar!".</p>
+
+<div class="tip">💡 <strong>Der goldene Trick:</strong> „gehen" hat in Deutschland fast nichts mit Füßen zu tun! Es bedeutet meistens <u>funktionieren, klappen, sich fühlen</u>. Lerne die Wendungen — sie kommen JEDEN Tag vor!</div>
+
+<div class="mean-grid">
+
+<div class="mean m1">
+<div class="mean-svg">🚶‍♀️🚶</div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 1 · wörtlich</div>
+<div class="mean-name">zu Fuß / sich fortbewegen</div>
+<div class="mean-meaning">die Original-Bedeutung</div>
+<div class="mean-ex">„Ich <strong>gehe</strong> jeden Tag zur Arbeit." <br>„Wir <strong>gehen</strong> ins Kino." <br>„Sie <strong>geht</strong> nach Hause."</div>
+</div>
+</div>
+
+<div class="mean m2">
+<div class="mean-svg">😊💭</div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 2 · WICHTIG!</div>
+<div class="mean-name">sich fühlen / Befinden</div>
+<div class="mean-meaning">„Es geht mir…"</div>
+<div class="mean-ex">„Wie <strong>geht</strong> es dir?" — „Mir <strong>geht</strong> es gut!" <br>„<strong>Geht</strong>\'s noch?" <em>(= alles okay?)</em> <br>„Ihm <strong>geht</strong> es schlecht."</div>
+</div>
+</div>
+
+<div class="mean m3">
+<div class="mean-svg">✅👍</div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 3 · Alltag pur</div>
+<div class="mean-name">klappen / möglich sein</div>
+<div class="mean-meaning">„Das geht!" = das ist machbar</div>
+<div class="mean-ex">„<strong>Geht</strong> das morgen um 10?" <br>„<strong>Geht klar</strong>!" <em>(= alles klar, mach ich)</em> <br>„Das <strong>geht</strong> nicht."</div>
+</div>
+</div>
+
+<div class="mean m4">
+<div class="mean-svg">❓📌</div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 4 · Thema</div>
+<div class="mean-name">Es geht um…</div>
+<div class="mean-meaning">„um etwas drehen / Thema sein"</div>
+<div class="mean-ex">„Worum <strong>geht</strong> es?" <br>„Es <strong>geht um</strong> die Miete." <br>„In dem Film <strong>geht</strong> es um Liebe."</div>
+</div>
+</div>
+
+<div class="mean m5">
+<div class="mean-svg">🔌⚡</div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 5</div>
+<div class="mean-name">funktionieren (Maschinen)</div>
+<div class="mean-meaning">Geräte, Türen, Pläne</div>
+<div class="mean-ex">„Der Aufzug <strong>geht</strong> nicht." <em>(= ist kaputt)</em> <br>„Das WLAN <strong>geht</strong> wieder!" <br>„Mein Handy <strong>geht</strong> nicht mehr."</div>
+</div>
+</div>
+
+<div class="mean m6">
+<div class="mean-svg">🚪➡️</div>
+<div class="mean-body">
+<div class="mean-num">Bedeutung 6 · trennbar</div>
+<div class="mean-name">mit Vorsilben kombiniert</div>
+<div class="mean-meaning">mitgehen, weggehen, vorbeigehen…</div>
+<div class="mean-ex">„<strong>Gehst</strong> du <strong>mit</strong>?" <br>„Sie ist schon <strong>weggegangen</strong>." <br>„Ich <strong>komme</strong> kurz <strong>vorbei</strong>."</div>
+</div>
+</div>
+
+</div>
+
+<!-- VORHER/NACHHER -->
+<h2 class="section-title">Wörtlich <em style="font-style:italic;">vs.</em> übertragen</h2>
+<p class="section-sub">Achtung — „gehen" hat oft NICHTS mit Füßen zu tun!</p>
+
+<div class="vn-stage">
+<div class="vn-title">🚶 „Ich gehe"</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-svg">🦶🚶</div>
+<div class="vn-label">Wörtlich</div>
+<div class="vn-text">„Ich <strong>gehe</strong> zur Bushaltestelle."</div>
+</div>
+<div class="vn-arrow">vs.</div>
+<div class="vn-card b">
+<div class="vn-svg">😊💭</div>
+<div class="vn-label">Übertragen</div>
+<div class="vn-text">„Es <strong>geht</strong> mir nicht so gut heute."</div>
+</div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">✅ „Das geht"</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-svg">🚶📍</div>
+<div class="vn-label">Wörtlich (selten)</div>
+<div class="vn-text">„Der Weg <strong>geht</strong> nach links."</div>
+</div>
+<div class="vn-arrow">vs.</div>
+<div class="vn-card b">
+<div class="vn-svg">👍✨</div>
+<div class="vn-label">Übertragen (oft!)</div>
+<div class="vn-text">„<strong>Geht klar</strong>! Mache ich!"</div>
+</div>
+</div>
+</div>
+
+<div class="vn-stage">
+<div class="vn-title">❌ „Geht nicht"</div>
+<div class="vn-grid">
+<div class="vn-card">
+<div class="vn-svg">🚶🚫</div>
+<div class="vn-label">Wörtlich</div>
+<div class="vn-text">„Ich <strong>gehe</strong> nicht mehr." <em>(zu Fuß)</em></div>
+</div>
+<div class="vn-arrow">vs.</div>
+<div class="vn-card b">
+<div class="vn-svg">📵⚙️</div>
+<div class="vn-label">Übertragen</div>
+<div class="vn-text">„Das WLAN <strong>geht</strong> nicht." <em>(funktioniert nicht)</em></div>
+</div>
+</div>
+</div>
+
+<!-- ALLTAGSFRAGEN -->
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<p class="section-sub">Denk kurz nach — und formuliere eine Antwort mit „gehen".</p>
+
+<div class="alltag-q"><div class="ql">Befinden</div><div class="qq">Wie geht es dir heute? — Beschreibe es mit 3 verschiedenen „gehen"-Sätzen!</div><div class="think">💭 „Mir geht es…" / „Es geht so…" / „Mir geht es heute besser als gestern…"</div></div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Möglich?</div><div class="qq">Was geht in deinem Leben gerade super — und was geht GAR NICHT?</div><div class="think">💭 „Die Arbeit geht gut, aber das Aufstehen um 6 Uhr — das geht nicht!"</div></div>
+
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Plan</div><div class="qq">Geht morgen um 18 Uhr ein Treffen mit Freunden? Sag „Geht klar" oder „Geht nicht — weil…"</div><div class="think">💭 „Geht klar!" oder „Geht leider nicht, ich muss …"</div></div>
+
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Thema</div><div class="qq">Worum geht es in deinem Lieblingsfilm / -buch / -lied?</div><div class="think">💭 „In dem Film geht es um …"</div></div>
+
+<!-- IDIOME / TRENNBARE -->
+<h2 class="section-title">Trennbare <em style="font-style:italic;">„gehen"-Verben</em></h2>
+<p class="section-sub">Die wichtigsten Kombinationen — alle sehr alltagstauglich!</p>
+
+<div class="idiom-grid">
+<div class="idiom"><div class="idiom-icon">👫</div><div><div class="idiom-de">mitgehen</div><div class="idiom-meaning">mit jemandem zusammen gehen („Gehst du mit?")</div></div></div>
+<div class="idiom"><div class="idiom-icon">🚪</div><div><div class="idiom-de">weggehen</div><div class="idiom-meaning">einen Ort verlassen / abhauen</div></div></div>
+<div class="idiom"><div class="idiom-icon">👋</div><div><div class="idiom-de">vorbeigehen</div><div class="idiom-meaning">kurz besuchen — „Ich gehe bei dir vorbei"</div></div></div>
+<div class="idiom"><div class="idiom-icon">⬆️</div><div><div class="idiom-de">hochgehen / raufgehen</div><div class="idiom-meaning">nach oben gehen (Treppe, Berg)</div></div></div>
+<div class="idiom"><div class="idiom-icon">⬇️</div><div><div class="idiom-de">runtergehen / runter</div><div class="idiom-meaning">Preise gehen runter / nach unten</div></div></div>
+<div class="idiom"><div class="idiom-icon">🚶‍♂️</div><div><div class="idiom-de">losgehen</div><div class="idiom-meaning">starten — „Wann geht\'s los?"</div></div></div>
+<div class="idiom"><div class="idiom-icon">🔚</div><div><div class="idiom-de">zu Ende gehen / ausgehen</div><div class="idiom-meaning">enden / weniger werden („Das Geld geht aus")</div></div></div>
+<div class="idiom"><div class="idiom-icon">🤝</div><div><div class="idiom-de">sich gehen lassen</div><div class="idiom-meaning">sich nicht zusammenreißen / sich vernachlässigen</div></div></div>
+<div class="idiom"><div class="idiom-icon">📞</div><div><div class="idiom-de">rangehen (ans Telefon)</div><div class="idiom-meaning">den Anruf annehmen</div></div></div>
+<div class="idiom"><div class="idiom-icon">😡</div><div><div class="idiom-de">hochgehen (Umgang)</div><div class="idiom-meaning">explodieren / sehr wütend werden</div></div></div>
+</div>
+
+</section>
+
+<!-- UMGANGSSPRACHE -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So reden Deutsche <em style="font-style:italic;">mit „gehen"</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats — „Geht so", „Geht klar", „Geht\'s noch?"</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> „Wie geht\'s?" ist die wichtigste Frage. Aber Achtung — Deutsche erwarten meistens NICHT eine ausführliche Antwort. <u>„Gut, danke!"</u> oder <u>„Geht so"</u> reichen oft!</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">👋</div><div><div class="name">Lisa · Kollegin</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Heyy, <strong>wie geht\'s</strong>? Lange nicht gehört! 🙃</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Geht so</strong>… viel Stress in der Arbeit 😩</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Oh nein. <strong>Lass uns mal was trinken gehen</strong>!</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Geht klar</strong>! Freitag? 🍷</div></div>
+<div class="chat-meaning"><strong>„Geht so"</strong> = naja, mittelmäßig · <strong>„Geht klar!"</strong> = ja gerne, alles klar!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📅</div><div><div class="name">Tom · Tandempartner</div><div class="stat">tippt…</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>Geht</strong> das morgen um 17 Uhr?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hmm, 17 Uhr <strong>geht</strong> leider nicht. <strong>Geht</strong> 18:30?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ja, <strong>geht</strong> auch! Wo treffen wir uns?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Im Café um die Ecke — <strong>geht das</strong>?</div></div>
+<div class="chat-meaning"><strong>„Geht das?"</strong> = passt das? funktioniert das? — die Standard-Frage für Termine</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😤</div><div><div class="name">Mitbewohner</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Du hast schon wieder das Geschirr nicht abgewaschen 😤</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Sorry, ich war müde…</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Geht\'s noch?</strong> Das war DEINE Woche!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Okay okay, mache ich gleich!</div></div>
+<div class="chat-meaning"><strong>„Geht\'s noch?!"</strong> = sehr genervt: Spinnst du? / Hast du sie noch alle? (Achtung — emotional!)</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">😊</div><div><div class="name">Mama ❤️</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wie <strong>geht</strong> es dir, Schatz?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Mir <strong>geht</strong>\'s gut, Mama! Und dir?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Auch gut. Worum <strong>geht</strong> es in deiner neuen Arbeit?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Es <strong>geht</strong> hauptsächlich um Marketing.</div></div>
+<div class="chat-meaning"><strong>„Wie geht\'s?"</strong> = Standard-Begrüßung · <strong>„Worum geht es?"</strong> = Was ist das Thema?</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🎉</div><div><div class="name">Marco · Party-Plan</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Heute Abend Party bei Sara! <strong>Gehst du mit</strong>?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Klar, ich <strong>komme mit</strong>! Wann <strong>geht\'s los</strong>?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">So gegen 21 Uhr! Anna will auch <strong>vorbeikommen</strong>.</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Cool, dann <strong>gehen</strong> wir alle zusammen!</div></div>
+<div class="chat-meaning"><strong>„Gehst du mit?"</strong> = Kommst du mit? · <strong>„Wann geht\'s los?"</strong> = Wann fangen wir an?</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">📵</div><div><div class="name">Anna · IT-Problem</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hilfe, mein WLAN <strong>geht</strong> nicht 😩</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Router neu starten — meistens <strong>geht</strong>\'s dann wieder!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich probier\'s… Moment…</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Und? <strong>Geht</strong>\'s wieder?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Yesss, <strong>geht</strong> wieder! Danke! 🙌</div></div>
+<div class="chat-meaning"><strong>„Das geht (nicht)"</strong> = funktioniert (nicht) — bei Geräten, WLAN, Apps etc.</div>
+</div>
+
+</div>
+
+<h2 class="section-title">12 weitere <em style="font-style:italic;">„gehen"-Phrasen</em></h2>
+<div class="idiom-grid">
+<div class="idiom"><div class="idiom-icon">✅</div><div><div class="idiom-de">„Geht klar!"</div><div class="idiom-meaning">alles okay / mach ich</div></div></div>
+<div class="idiom"><div class="idiom-icon">😐</div><div><div class="idiom-de">„Geht so."</div><div class="idiom-meaning">naja, mittelmäßig / nicht super</div></div></div>
+<div class="idiom"><div class="idiom-icon">😱</div><div><div class="idiom-de">„Geht\'s noch?"</div><div class="idiom-meaning">Spinnst du?! (sehr genervt)</div></div></div>
+<div class="idiom"><div class="idiom-icon">❤️</div><div><div class="idiom-de">„Wie geht\'s dir?"</div><div class="idiom-meaning">die wichtigste Smalltalk-Frage</div></div></div>
+<div class="idiom"><div class="idiom-icon">🚀</div><div><div class="idiom-de">„Es geht los!"</div><div class="idiom-meaning">wir starten / es beginnt</div></div></div>
+<div class="idiom"><div class="idiom-icon">⏰</div><div><div class="idiom-de">„Mir geht die Zeit aus."</div><div class="idiom-meaning">ich habe keine Zeit mehr</div></div></div>
+<div class="idiom"><div class="idiom-icon">💸</div><div><div class="idiom-de">„Das Geld geht mir aus."</div><div class="idiom-meaning">ich habe bald kein Geld mehr</div></div></div>
+<div class="idiom"><div class="idiom-icon">🤔</div><div><div class="idiom-de">„Es geht um…"</div><div class="idiom-meaning">das Thema ist…</div></div></div>
+<div class="idiom"><div class="idiom-icon">🤷</div><div><div class="idiom-de">„Es geht nicht anders."</div><div class="idiom-meaning">es gibt keine andere Möglichkeit</div></div></div>
+<div class="idiom"><div class="idiom-icon">🙏</div><div><div class="idiom-de">„Geht das in Ordnung?"</div><div class="idiom-meaning">höflich: ist das okay so?</div></div></div>
+<div class="idiom"><div class="idiom-icon">💪</div><div><div class="idiom-de">„Da geht noch was!"</div><div class="idiom-meaning">du kannst mehr / streng dich an</div></div></div>
+<div class="idiom"><div class="idiom-icon">🛏️</div><div><div class="idiom-de">„Ich gehe schlafen."</div><div class="idiom-meaning">Standard-Phrase abends</div></div></div>
+</div>
+</section>
+
+<!-- LERNKARTEN -->
+<section class="section" data-section="2">
+<h2 class="section-title">Lernkarten · <em style="font-style:italic;">„gehen"-Wendungen</em></h2>
+<p class="section-sub">Errätst du die Bedeutung? Erst denken — dann tippen.</p>
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">😊</div>
+<div class="flip-word" id="flipWord">Wie geht\'s?</div>
+<div class="flip-badge" id="flipBadge">Befinden</div>
+<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">How are you? — die Smalltalk-Standardfrage</div>
+<div class="flip-ex" id="flipEx">„Hey, <strong>wie geht\'s</strong> dir? — Danke, gut!"</div>
+</div>
+</div>
+</div>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span><button class="lk-btn" id="lkNext">→</button></div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- QUIZ -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Welches „gehen"?</em></h2>
+
+<div class="quiz"><div class="quiz-q">„Wie geht es dir?" — Was ist die typische Kurz-Antwort?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">„Ich gehe nach Hause."</span><span class="quiz-chip">„Geht so, danke!"</span><span class="quiz-chip">„Das geht nicht."</span></div><div class="quiz-explain">✓ „Geht so" = mittelmäßig — sehr typische Antwort im Alltag!</div></div>
+
+<div class="quiz"><div class="quiz-q">Dein Freund fragt: „Geht das morgen um 19 Uhr?" Du sagst zu — wie?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">„Geht klar!"</span><span class="quiz-chip">„Geht so."</span><span class="quiz-chip">„Geht\'s noch?"</span></div><div class="quiz-explain">✓ „Geht klar!" = alles okay, mach ich — die typische Zusage.</div></div>
+
+<div class="quiz"><div class="quiz-q">„In dem Film geht es um…" — was kommt jetzt?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">eine Person</span><span class="quiz-chip">ein Ort</span><span class="quiz-chip">das Thema (z.B. Liebe, Krieg)</span></div><div class="quiz-explain">✓ „Es geht um X" = das Thema ist X — bei Filmen, Büchern, Diskussionen.</div></div>
+
+<div class="quiz"><div class="quiz-q">„Mein Handy geht nicht." — Was heißt das?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ich gehe ohne Handy.</span><span class="quiz-chip">Das Handy ist kaputt / funktioniert nicht.</span><span class="quiz-chip">Das Handy läuft weg.</span></div><div class="quiz-explain">✓ „geht nicht" = funktioniert nicht (Geräte, WLAN, Türen…)</div></div>
+
+<div class="quiz"><div class="quiz-q">Dein Mitbewohner ruft schreiend: „Geht\'s noch?!" — Was meint er?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Geht es dir gut?</span><span class="quiz-chip">Brauchst du noch was?</span><span class="quiz-chip">Spinnst du? / Bist du verrückt?</span></div><div class="quiz-explain">✓ „Geht\'s noch?!" = sehr genervt: Spinnst du?! (Achtung: emotional aufgeladen!)</div></div>
+
+<div class="quiz"><div class="quiz-q">„Ich ____ heute Abend mit Freunden ins Kino." — Welches Wort fehlt?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">gehe</span><span class="quiz-chip">geht</span><span class="quiz-chip">gehst</span></div><div class="quiz-explain">✓ „ich gehe" — 1. Person Singular (wörtliche Bedeutung).</div></div>
+
+<div class="quiz"><div class="quiz-q">„Gehst du heute Abend ____?" (= verlässt du die Wohnung um Spaß zu haben)</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">aufgehen</span><span class="quiz-chip">aus</span><span class="quiz-chip">mit</span></div><div class="quiz-explain">✓ „ausgehen" = abends weggehen um zu feiern. „Gehst du heute aus?" — typische Wochenend-Frage.</div></div>
+
+<div class="quiz"><div class="quiz-q">„Wann ____ es los?" (= Wann starten wir?)</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">gehen</span><span class="quiz-chip">geht\'s</span><span class="quiz-chip">geht</span></div><div class="quiz-explain">✓ „Wann geht\'s los?" = Wann fangen wir an? — „es" wird zu „\'s" verkürzt!</div></div>
+</section>
+
+<!-- LÜCKENTEXT -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext: <em style="font-style:italic;">„gehen" im Alltag</em></h2>
+<p class="section-sub">Wähle pro Satz die passende „gehen"-Form oder Wendung.</p>
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. Wie <select data-sol="geht"><option value="">…</option><option>gehst</option><option>geht</option><option>gehen</option></select> es dir heute, Lena?</div>
+<div class="gap-line">2. Mir <select data-sol="geht"><option value="">…</option><option>geht</option><option>gehe</option><option>gehst</option></select> es gut, danke der Nachfrage!</div>
+<div class="gap-line">3. <select data-sol="Geht"><option value="">…</option><option>Geht</option><option>Gehen</option><option>Gehst</option></select> das morgen um 15 Uhr — oder hast du keine Zeit?</div>
+<div class="gap-line">4. Klar, <select data-sol="geht klar"><option value="">…</option><option>geht klar</option><option>geht so</option><option>geht\'s noch</option></select>! Ich freue mich!</div>
+<div class="gap-line">5. Das WLAN <select data-sol="geht"><option value="">…</option><option>geht</option><option>läuft</option><option>fährt</option></select> wieder! Endlich!</div>
+<div class="gap-line">6. Worum <select data-sol="geht"><option value="">…</option><option>handelt</option><option>geht</option><option>kommt</option></select> es eigentlich in deinem neuen Buch?</div>
+<div class="gap-line">7. <select data-sol="Gehst"><option value="">…</option><option>Gehst</option><option>Geht</option><option>Gehe</option></select> du heute Abend mit ins Kino?</div>
+<div class="gap-line">8. Es <select data-sol="geht"><option value="">…</option><option>geht</option><option>läuft</option><option>kommt</option></select> mir die Zeit aus — ich muss los!</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+</div>
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ZUORDNEN -->
+<section class="section" data-section="5">
+<h2 class="section-title">Wendung &harr; <em style="font-style:italic;">Bedeutung</em></h2>
+<p class="section-sub">Tippe links auf eine „gehen"-Wendung — dann rechts die Bedeutung. Richtige Paare werden grün.</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>🗣️ Wendung</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>💭 Bedeutung</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+</section>
+
+<!-- SPRECHEN -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht\'s!</em></h2>
+<p class="section-sub">Allein, mit Partner oder in der Gruppe. Zieh eine Karte und sprich frei.</p>
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div><div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">mit „gehen"</em></h2>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 · Verabredung</div>
+<div class="role-title">📅 Termin finden — „Geht das?"</div>
+<div class="role-situation">Zwei Freunde wollen sich in der Woche treffen. Beide haben volle Kalender. Findet einen Termin, der für beide „geht" — nutzt mindestens 6× das Verb „gehen"!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🙋‍♀️</div><div><div class="person-label">Person A</div><div class="person-quote">„<strong>Geht</strong> Montag um 19 Uhr? — Oh, doch nicht? Dann <strong>geht</strong> vielleicht Dienstag? <strong>Wie geht\'s</strong> dir mit Mittwoch?"</div></div></div>
+<div class="person b"><div class="person-avatar">🙆‍♂️</div><div><div class="person-label">Person B</div><div class="person-quote">„Montag <strong>geht</strong> leider nicht. Mittwoch <strong>geht klar</strong>! Wo treffen wir uns? Das Café um die Ecke — <strong>geht das</strong>?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Ziel: 6× „gehen" verwenden (geht das? — geht nicht — geht klar — wie geht\'s dir mit…)</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 · Befinden</div>
+<div class="role-title">😊 Smalltalk — „Wie geht\'s?"</div>
+<div class="role-situation">Du triffst eine alte Bekannte im Supermarkt. Ihr habt euch lange nicht gesehen. Macht 2 Minuten Smalltalk: Befinden, Job, Familie — alles mit „gehen"!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🛒</div><div><div class="person-label">Person A</div><div class="person-quote">„Hey! <strong>Wie geht\'s</strong> dir denn? Lange nicht gesehen! Und wie <strong>geht\'s</strong> deiner Familie? Was <strong>geht</strong> bei dir gerade so beruflich?"</div></div></div>
+<div class="person b"><div class="person-avatar">😊</div><div><div class="person-label">Person B</div><div class="person-quote">„Hi! Mir <strong>geht</strong>\'s super, danke! Der Familie <strong>geht</strong> es auch gut. Bei der Arbeit <strong>geht</strong> es um ein neues Projekt — sehr spannend!"</div></div></div>
+</div>
+<div class="role-goal">🎯 Mindestens 8× „gehen" für Befinden + Aktivitäten + Themen!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 · Plan ändern</div>
+<div class="role-title">🔄 „Geht doch nicht!" — Termin absagen</div>
+<div class="role-situation">Du musst eine Verabredung kurzfristig absagen. Dein Freund ist enttäuscht. Erkläre, warum es heute nicht „geht" — und schlage einen neuen Termin vor!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😅</div><div><div class="person-label">Du (sagst ab)</div><div class="person-quote">„Sorry, heute <strong>geht\'s</strong> doch nicht. Mir <strong>geht</strong> es nicht so gut. Aber morgen <strong>geht</strong> bestimmt! <strong>Geht klar</strong> für dich?"</div></div></div>
+<div class="person b"><div class="person-avatar">😤</div><div><div class="person-label">Freund/in (enttäuscht)</div><div class="person-quote">„<strong>Geht\'s noch?</strong> Du hast schon zum dritten Mal abgesagt! So <strong>geht</strong> das nicht weiter! Was <strong>geht</strong> bei dir los?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Person A: höflich erklären · Person B: emotional reagieren („Geht\'s noch?!") — mind. 8× „gehen"!</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Mission:</strong> Sage diese Woche jeden Tag mindestens 5 Sätze mit „gehen" laut — beim Aufwachen, beim Kaffee, vor dem Schlafen. Wechsle die Bedeutungen ab: Befinden, Klappen, Thema, Funktion!<br><br>
+🏆 <strong>Bonus-Challenge:</strong> Frage 3 verschiedene Personen „Wie geht\'s?" — und antworte selbst NIE mit „gut", sondern mit 3 verschiedenen Antworten („Geht so", „Mir geht\'s ausgezeichnet", „Naja, es geht…").
+</div>
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Das Verb GEHEN · Wortschatzboost B1</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+
+const KARTEN=[
+  {emoji:'😊',word:'Wie geht\'s?',badge:'Befinden',rule:'How are you? — Smalltalk-Standardfrage',ex:'„Hey, <strong>wie geht\'s</strong> dir? — Danke, gut!"'},
+  {emoji:'😐',word:'Geht so.',badge:'mittelmäßig',rule:'naja, mittelmäßig (nicht super, nicht schlecht)',ex:'„Wie war der Film? — <strong>Geht so</strong>."'},
+  {emoji:'✅',word:'Geht klar!',badge:'Zusage',rule:'alles okay / mach ich / ja',ex:'„Treffen wir uns um 18? — <strong>Geht klar</strong>!"'},
+  {emoji:'❓',word:'Geht das?',badge:'Möglichkeit',rule:'ist das möglich? / passt das?',ex:'„Morgen um 19 Uhr — <strong>geht das</strong>?"'},
+  {emoji:'😱',word:'Geht\'s noch?',badge:'genervt!',rule:'Spinnst du?! (sehr emotional, genervt)',ex:'„Du nimmst MEIN Auto?! <strong>Geht\'s noch</strong>?!"'},
+  {emoji:'🎯',word:'Es geht um…',badge:'Thema',rule:'das Thema ist… / it\'s about…',ex:'„In dem Film <strong>geht es um</strong> Liebe."'},
+  {emoji:'🚀',word:'Es geht los!',badge:'Start',rule:'wir starten / es beginnt',ex:'„Endlich Wochenende — <strong>es geht los</strong>!"'},
+  {emoji:'📵',word:'geht nicht',badge:'kaputt',rule:'funktioniert nicht (Geräte, Pläne)',ex:'„Mein Handy <strong>geht nicht</strong> mehr."'},
+  {emoji:'👫',word:'mitgehen',badge:'trennbar',rule:'mit jemandem zusammen gehen',ex:'„<strong>Gehst</strong> du heute Abend <strong>mit</strong>?"'},
+  {emoji:'🚪',word:'weggehen',badge:'trennbar',rule:'einen Ort verlassen',ex:'„Sie ist schon <strong>weggegangen</strong>."'},
+  {emoji:'👋',word:'vorbeigehen',badge:'trennbar',rule:'kurz besuchen',ex:'„Ich <strong>gehe</strong> kurz bei Oma <strong>vorbei</strong>."'},
+  {emoji:'🎉',word:'ausgehen',badge:'trennbar',rule:'abends weggehen zum Feiern',ex:'„Wir <strong>gehen</strong> heute Abend <strong>aus</strong>!"'},
+  {emoji:'😣',word:'sich gehen lassen',badge:'reflexiv',rule:'sich vernachlässigen / nicht zusammenreißen',ex:'„Nach der Trennung hat er <strong>sich gehen lassen</strong>."'},
+  {emoji:'💸',word:'Geld geht aus',badge:'aufbrauchen',rule:'es wird weniger / es ist bald weg',ex:'„Mir <strong>geht</strong> langsam das Geld <strong>aus</strong>."'},
+  {emoji:'💪',word:'Da geht noch was!',badge:'Motivation',rule:'du kannst mehr! / streng dich an!',ex:'„Komm, <strong>da geht noch was</strong>!"'},
+  {emoji:'🛏️',word:'schlafen gehen',badge:'Alltag',rule:'ins Bett gehen',ex:'„Ich <strong>gehe schlafen</strong>, gute Nacht!"'},
+];
+let order=KARTEN.map((_,i)=>i);let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
+
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=6?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');};
+document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
+
+const PAIRS=[
+  {l:'„Geht klar!"',r:'Ja, mache ich / alles okay'},
+  {l:'„Geht so."',r:'Naja, mittelmäßig'},
+  {l:'„Geht\'s noch?!"',r:'Spinnst du? (sehr genervt)'},
+  {l:'„Es geht um…"',r:'Das Thema ist…'},
+  {l:'„Es geht los!"',r:'Wir starten / es beginnt'},
+  {l:'„Geht nicht."',r:'Funktioniert nicht / unmöglich'},
+  {l:'„Ausgehen"',r:'Abends weggehen zum Feiern'},
+  {l:'„Sich gehen lassen"',r:'Sich vernachlässigen'},
+];
+function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+
+const SPEAK=[
+  {emoji:'😊',cat:'Befinden',q:'Wie geht es dir HEUTE wirklich? Beschreibe es ohne „gut" zu sagen!'},
+  {emoji:'📅',cat:'Termin',q:'Schlag deinem Tandempartner 3 Termine für ein Treffen vor — mit „Geht das…?"'},
+  {emoji:'🎬',cat:'Thema',q:'Worum geht es in deinem Lieblingsfilm? Erzähle in 5 Sätzen.'},
+  {emoji:'✅',cat:'Zusage',q:'Erfinde 5 Situationen, in denen du „Geht klar!" sagen würdest.'},
+  {emoji:'😱',cat:'Genervt!',q:'Wann sagst du „Geht\'s noch?!" — Erzähle eine Situation, in der du sehr genervt warst!'},
+  {emoji:'📵',cat:'Kaputt',q:'Was funktioniert in deinem Leben gerade NICHT? (Geräte, Pläne, Beziehungen…) — alles mit „geht nicht"!'},
+  {emoji:'🚪',cat:'Weggehen',q:'Wie oft gehst du abends aus? Was machst du, wenn du ausgehst?'},
+  {emoji:'👫',cat:'Mitgehen',q:'Was war das Letzte, wo dich jemand gefragt hat: „Gehst du mit?"'},
+  {emoji:'💸',cat:'Ausgehen',q:'„Mir geht ___ aus." — Was geht dir im Leben aus? (Zeit, Geld, Geduld…) — erkläre warum!'},
+  {emoji:'🏃',cat:'Alltag',q:'Gehst du gerne zu Fuß? Wie viele Kilometer gehst du pro Tag?'},
+  {emoji:'🛏️',cat:'Tagesplan',q:'Wie sieht dein typischer Tag aus? Beginne 5 Sätze mit „Ich gehe…"'},
+  {emoji:'💪',cat:'Motivation',q:'Wo geht in deinem Leben „noch was"? Wo könntest du besser werden?'},
+  {emoji:'🤔',cat:'Provokant',q:'„Wie geht\'s?" — Findest du diese Frage ehrlich, höflich oder nervig? Warum?'},
+  {emoji:'🌍',cat:'Heimat',q:'Gibt es in deiner Muttersprache ein ähnliches Wort wie „gehen" mit so vielen Bedeutungen?'},
+  {emoji:'🎲',cat:'Freestyle',q:'Erfinde einen kurzen Dialog — mit mindestens 6× „gehen" in verschiedenen Bedeutungen!'},
+  {emoji:'🚀',cat:'Plan',q:'Was geht bei dir diese Woche? Erzähle deine Pläne von Montag bis Sonntag!'},
+];
+let lastS=-1;
+document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';c.style.opacity='1';},200);};
+</script>
+</body></html>
