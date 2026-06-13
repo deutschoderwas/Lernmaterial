@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="de"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Konnektoren · Das Baukasten-System | deutschoderwas</title>
+<title>Konnektoren · ab B1 · DELUXE | deutschoderwas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -8,622 +8,880 @@
 :root{
   --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
   --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
-  --red:#E8302A; --red-soft:#FCE5E3;
+  --red:#E8302A; --red-soft:#FCE5E3; --red-dark:#C8211D;
   --teal:#0FB5A6; --teal-soft:#D7F0EC;
   --yellow:#FFD24A; --yellow-soft:#FFF1C2;
   --pink:#E69CB3;
   --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+  --deluxe:linear-gradient(135deg,#E8302A,#FFD24A);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{
-  background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);
-  color:var(--ink); font-family:'Outfit',sans-serif; line-height:1.55;
-  min-height:100vh;
-}
-.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
-
-/* HEADER */
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:980px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
 .eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
-.eyebrow .was{color:var(--teal);}
+.eyebrow .badge{display:inline-block;background:var(--deluxe);color:#fff;padding:.18em .8em;border-radius:999px;margin-left:.6em;font-size:.7rem;letter-spacing:.15em;}
 .title-wrap{text-align:center;margin-bottom:1rem;}
-h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.2rem,5.5vw,4.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
-h1.title .flag{display:inline-block;margin-right:.1em;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.4rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
 h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
 h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
-.subtitle{text-align:center;max-width:580px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
-
-/* TAB-NAV */
-.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
+.subtitle{text-align:center;max-width:680px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:520px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;position:sticky;top:.5rem;z-index:50;box-shadow:0 4px 12px rgba(38,32,25,.08);}
 .tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
 .tab:hover{border-color:var(--ink);transform:translateY(-1px);}
 .tab.active{background:var(--red);color:white;border-color:var(--red);}
-
-/* SECTION */
 .section{display:none;animation:fade .35s ease;}
 .section.active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
 .section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
-
-/* TIP BOX */
 .tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
 .tip strong{color:var(--red);font-weight:700;}
-.tip em{color:var(--ink);font-style:italic;}
-.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
 
-/* FAMILY CARDS (Überblick) */
+/* KONNEKTOR-GRUPPEN GRID — 3 Familien */
 .fam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:1.5rem 0;}
 @media(max-width:760px){.fam-grid{grid-template-columns:1fr;}}
-.fam{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:1.4rem 1.4rem 1.6rem;box-shadow:0 4px 16px rgba(38,32,25,.05);transition:.2s;cursor:pointer;position:relative;}
+.fam{background:var(--paper);border:2.5px solid var(--sand);border-radius:18px;padding:1.4rem 1.4rem 1.6rem;box-shadow:0 4px 16px rgba(38,32,25,.05);transition:.2s;position:relative;}
 .fam:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(38,32,25,.1);}
+.fam.f1{border-color:var(--teal);background:#F1FAF8;}
+.fam.f2{border-color:var(--red);background:#FFF6F5;}
+.fam.f3{border-color:#5F7A2A;background:#F6F9EC;}
 .fam-icon{font-size:2.4rem;margin-bottom:.7rem;display:block;}
-.fam-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin-bottom:.3rem;}
-.fam-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.7rem;}
+.fam-name{font-family:\'Fraunces\',serif;font-weight:700;font-size:1.3rem;color:var(--ink);margin-bottom:.3rem;}
+.fam-badge{display:inline-block;font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.7rem;}
+.fam.f1 .fam-badge{background:var(--teal-soft);color:var(--teal);}
 .fam.f2 .fam-badge{background:var(--red-soft);color:var(--red);}
 .fam.f3 .fam-badge{background:#E2EBC9;color:#5F7A2A;}
-.fam-rule{color:var(--red);font-weight:700;font-size:.94rem;margin-bottom:.5rem;}
-.fam.f2 .fam-rule{color:#B66809;}
+.fam-rule{font-weight:700;font-size:.94rem;margin-bottom:.5rem;}
+.fam.f1 .fam-rule{color:var(--teal);}
+.fam.f2 .fam-rule{color:var(--red);}
 .fam.f3 .fam-rule{color:#5F7A2A;}
 .fam-words{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.7rem;}
-.fam-words span{background:var(--cream-warm);font-family:'Fraunces',serif;font-style:italic;color:var(--ink);padding:.15rem .55rem;border-radius:8px;font-size:.86rem;}
-.fam-ex{margin-top:.9rem;padding-top:.9rem;border-top:1px dashed var(--sand);font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;line-height:1.5;}
-.fam-ex strong{color:var(--red);font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
-.fam.f2 .fam-ex strong{color:#B66809;}
+.fam-words span{background:var(--paper);font-family:\'Fraunces\',serif;font-style:italic;color:var(--ink);padding:.18rem .6rem;border-radius:8px;font-size:.86rem;border:1px solid var(--sand);}
+.fam-ex{margin-top:.9rem;padding-top:.9rem;border-top:1px dashed var(--sand);font-family:\'Fraunces\',serif;font-style:italic;color:var(--ink);font-size:.92rem;line-height:1.55;}
+.fam-ex strong{font-style:normal;font-family:\'Outfit\',sans-serif;font-weight:700;background:var(--yellow-soft);padding:.05em .3em;border-radius:4px;}
+.fam.f1 .fam-ex strong{color:var(--teal);}
+.fam.f2 .fam-ex strong{color:var(--red);}
 .fam.f3 .fam-ex strong{color:#5F7A2A;}
+.fam-pos{margin-top:.7rem;font-size:.82rem;color:var(--ink-soft);font-weight:600;background:#fff;border-radius:8px;padding:.4rem .6rem;}
+.fam-pos b{color:var(--ink);}
 
-/* THEORY ALLTAG */
-.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
-.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
-.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
-.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+/* WORTSTELLUNG VISUAL — Bausteine pro Gruppe */
+.ws-vis{background:var(--paper);border:2px solid var(--sand);border-radius:16px;padding:1.2rem;margin:1rem 0;}
+.ws-vis h4{font-family:\'Fraunces\',serif;font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:.7rem;}
+.ws-line{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0;align-items:center;font-family:\'Fraunces\',serif;}
+.ws-block{display:inline-flex;align-items:center;gap:.25rem;padding:.4rem .7rem;border-radius:8px;font-size:.92rem;font-weight:600;border:1.5px solid;}
+.ws-block.subj{background:#F1FAF8;border-color:var(--teal);color:var(--teal);}
+.ws-block.verb{background:var(--red-soft);border-color:var(--red);color:var(--red-dark);}
+.ws-block.obj{background:var(--cream-warm);border-color:var(--sand);color:var(--ink-soft);}
+.ws-block.konn{background:var(--yellow-soft);border-color:var(--yellow);color:#8a5a00;}
+.ws-block.rest{background:var(--paper);border-color:var(--ink-mute);color:var(--ink-soft);font-style:italic;}
+.ws-arrow{font-size:1.2rem;color:var(--ink-mute);}
+.ws-note{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;font-style:italic;}
 
-/* FLIP CARDS */
-.lk-controls{text-align:center;margin:1rem 0;color:var(--ink-soft);font-size:.92rem;}
-.flip{perspective:1000px;width:100%;max-width:420px;height:340px;margin:1.5rem auto;cursor:pointer;}
+/* ALLTAG-FRAGEN */
+.alltag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;margin:1.5rem 0;}
+@media(max-width:700px){.alltag-grid{grid-template-columns:1fr;}}
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;}
+.alltag-q .qq{font-family:\'Fraunces\',serif;font-size:1rem;color:var(--ink);font-style:italic;line-height:1.45;}
+.alltag-q .think{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;}
+
+/* COMPARE — A2 vs B1+ */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.5rem 0;}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+.comp-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.1rem 1.2rem;}
+.comp-card.a{border-color:var(--red);background:#FFF6F5;}
+.comp-card.b{border-color:var(--teal);background:#F1FAF8;}
+.comp-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem;}
+.comp-card.a .comp-tag{background:var(--red);color:white;}
+.comp-card.b .comp-tag{background:var(--teal);color:white;}
+.comp-text{font-family:\'Fraunces\',serif;font-size:1rem;color:var(--ink);line-height:1.5;font-style:italic;}
+.comp-text strong{color:var(--red);font-style:normal;}
+.comp-card.b .comp-text strong{color:var(--teal);}
+
+/* WHATSAPP-CHAT */
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-msg.in .speaker{font-size:.7rem;color:var(--ink-mute);margin-right:.4rem;align-self:flex-end;font-weight:600;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-voice{background:var(--wa-in);border-bottom-left-radius:4px;padding:.6rem 1rem;display:flex;align-items:center;gap:.6rem;}
+.chat-msg.out .chat-voice{background:var(--wa-out);border-bottom-right-radius:4px;border-bottom-left-radius:14px;}
+.chat-voice .play{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+.chat-voice .wave{flex:1;height:18px;background:repeating-linear-gradient(90deg,var(--ink-mute) 0 2px,transparent 2px 5px);opacity:.5;}
+.chat-voice .dur{font-size:.75rem;color:var(--ink-soft);}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+/* FLIP-KARTEN */
+.flip{perspective:1000px;width:100%;max-width:480px;height:400px;margin:1.5rem auto;cursor:pointer;}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
 .flip.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
 .flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
-.flip-emoji{font-size:3.2rem;margin-bottom:.7rem;}
-.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;color:var(--ink);margin-bottom:.3rem;}
+.flip-emoji{font-size:2.6rem;margin-bottom:.4rem;}
+.flip-word{font-family:\'Fraunces\',serif;font-weight:700;font-size:1.7rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
 .flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
-.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
-.flip-rule{color:var(--red);font-weight:700;font-size:1rem;}
-.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:1rem;margin-top:.6rem;line-height:1.55;}
-.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
-
+.flip-prompt{font-size:.78rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.92rem;margin-bottom:.4rem;}
+.flip-ex{font-family:\'Fraunces\',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.4rem;line-height:1.5;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:\'Outfit\',sans-serif;font-weight:700;}
+.flip-syn{font-size:.78rem;color:var(--ink-soft);margin-top:.5rem;border-top:1px dashed var(--sand);padding-top:.4rem;}
+.flip-syn b{color:var(--ink);}
 .lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
-.lk-btn{font-family:'Outfit',sans-serif;font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);transition:.15s;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
 .lk-btn:hover{background:var(--ink);color:white;}
-.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
-.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.lk-shuffle:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:\'Fraunces\',serif;font-weight:700;color:var(--ink);}
 
 /* QUIZ */
-.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
-.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
-.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
-.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
-.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;transition:.15s;}
-.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
-.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
-.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
-.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
-.quiz-explain.show{display:block;}
+.quiz{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:1.2rem 1.4rem;margin:1rem 0;}
+.quiz-q{font-family:\'Fraunces\',serif;font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:.7rem;}
+.quiz-opts{display:flex;flex-direction:column;gap:.4rem;}
+.quiz-chip{background:var(--cream);border:1.5px solid var(--sand);border-radius:10px;padding:.55rem .9rem;cursor:pointer;font-size:.92rem;transition:.15s;text-align:left;}
+.quiz-chip:hover{border-color:var(--ink);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);font-weight:600;}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);text-decoration:line-through;}
+.quiz-explain{display:none;margin-top:.7rem;padding:.7rem .9rem;background:var(--yellow-soft);border-radius:10px;font-size:.85rem;color:var(--ink);border-left:3px solid var(--yellow);}
+.quiz.answered .quiz-explain{display:block;}
 
 /* LÜCKENTEXT */
-.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
-.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
-.gap-text .gap-line:last-of-type{border-bottom:0;}
-.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
-.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
-.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
-.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
-.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
-.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.btn-secondary:hover{background:var(--ink);color:white;}
+.gap-row{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.2rem;margin:.6rem 0;font-family:\'Fraunces\',serif;font-size:1rem;color:var(--ink);line-height:1.7;}
+.gap-row select{font-family:\'Outfit\',sans-serif;font-size:.95rem;background:var(--cream-warm);border:1.5px solid var(--ink);border-radius:8px;padding:.2rem .5rem;font-weight:600;color:var(--red);cursor:pointer;}
+.gap-row select.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.gap-row select.wrong{background:var(--red-soft);border-color:var(--red);}
+.gap-score{text-align:center;margin-top:1rem;font-family:\'Fraunces\',serif;font-weight:700;color:var(--ink);font-size:1.1rem;}
+.gap-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:.55rem 1.4rem;font-weight:700;cursor:pointer;font-family:\'Outfit\',sans-serif;font-size:.92rem;margin:1rem auto;display:block;}
 
 /* ZUORDNEN */
-.match-stage{margin:1.5rem 0;}
-.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
-.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
-.match-list{display:flex;flex-direction:column;gap:.45rem;}
-.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;color:var(--ink);font-size:.94rem;transition:.15s;text-align:center;}
-.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0;}
+@media(max-width:600px){.match{grid-template-columns:1fr;}}
+.match-col h4{font-family:\'Fraunces\',serif;font-weight:700;color:var(--red);margin-bottom:.6rem;text-align:center;font-size:.92rem;}
+.match-item{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.65rem .9rem;margin:.35rem 0;cursor:pointer;font-size:.88rem;transition:.15s;}
 .match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
-.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
-.match-restart{display:block;margin:1.2rem auto 0;}
+.match-item.matched{background:var(--teal-soft);border-color:var(--teal);cursor:default;opacity:.7;}
+.match-item.wrong{animation:shake .35s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
 
-/* SPRECHEN */
-.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
-.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
-.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
-.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
-.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
-.speak-controls{text-align:center;margin-top:1rem;}
+/* SPRECHKARTEN */
+.speak-card{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;animation:fade .35s;}
+.speak-card .cat{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.speak-card .q{font-family:\'Fraunces\',serif;font-size:1.1rem;color:var(--ink);margin-top:.4rem;font-style:italic;line-height:1.5;}
+.speak-nav{text-align:center;margin-top:1rem;}
+.speak-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:.7rem 1.6rem;font-weight:700;cursor:pointer;font-family:\'Outfit\',sans-serif;font-size:.95rem;}
+.speak-btn:hover{background:var(--red-dark);}
 
-/* ROLLENSPIELE */
-.role-section{margin-top:2.5rem;}
-.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
-.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
-.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
-.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
-.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
-@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
-.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;}
-.person.a{border-color:var(--red);background:#FFF6F5;}
-.person.b{border-color:var(--teal);background:#F1FAF8;}
-.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.4rem;}
-.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
-.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+/* ROLLENSPIEL — DELUXE mit Hilfestellung */
+.rolle{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1.5rem 0;box-shadow:0 4px 18px rgba(38,32,25,.06);}
+.rolle h3{font-family:\'Fraunces\',serif;font-weight:700;font-size:1.25rem;color:var(--ink);margin-bottom:.8rem;}
+.rolle h3 .ico{display:inline-block;margin-right:.4rem;}
+.rolle .row{display:flex;gap:.6rem;margin:.6rem 0;align-items:flex-start;}
+.rolle .row .lbl{font-weight:700;color:var(--red);font-size:.85rem;min-width:140px;}
+.rolle .row .val{font-size:.94rem;color:var(--ink);line-height:1.55;}
+.rolle .val em{font-style:normal;font-family:\'Fraunces\',serif;font-weight:600;color:var(--ink);}
+.rolle .keys{background:var(--teal-soft);border-radius:10px;padding:.7rem .9rem;margin:.6rem 0;}
+.rolle .keys .lbl-k{display:block;font-weight:700;color:var(--teal);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;}
+.rolle .keys .words{font-size:.9rem;color:var(--ink);}
+.rolle .keys .words span{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--ink);padding:.15rem .55rem;border-radius:999px;margin:.18rem .14rem;font-size:.82rem;font-weight:500;}
+.rolle .phrases{background:var(--yellow-soft);border-radius:10px;padding:.7rem .9rem;margin:.6rem 0;}
+.rolle .phrases .lbl-k{display:block;font-weight:700;color:#B66809;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;}
+.rolle .phrases ul{list-style:none;padding:0;}
+.rolle .phrases li{font-family:\'Fraunces\',serif;font-style:italic;color:var(--ink);font-size:.92rem;padding:.18rem 0 .18rem 1.1rem;position:relative;line-height:1.55;}
+.rolle .phrases li::before{content:\'\201E\';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:\'Outfit\',sans-serif;font-size:1.1rem;line-height:.9;}
+.rolle .phrases li::after{content:\'\201C\';color:var(--red);font-weight:900;font-style:normal;font-family:\'Outfit\',sans-serif;}
+.rolle .strategy{background:var(--cream-warm);border-left:4px solid var(--red);padding:.6rem .9rem;border-radius:10px;margin:.6rem 0;font-size:.88rem;color:var(--ink);line-height:1.55;}
+.rolle .strategy b{color:var(--red);}
+.rolle .answer-struct{background:#F1FAF8;border:1.5px dashed var(--teal);padding:.6rem .9rem;border-radius:10px;margin:.6rem 0;font-size:.86rem;color:var(--ink);}
+.rolle .answer-struct b{color:var(--teal);}
 
-/* DEBATTEN */
-.debate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
-@media(max-width:600px){.debate-grid{grid-template-columns:1fr;}}
-.debate{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.95rem 1.15rem;border-left:5px solid var(--red);}
-.debate:nth-child(2){border-left-color:var(--teal);}
-.debate:nth-child(3){border-left-color:var(--yellow);}
-.debate:nth-child(4){border-left-color:var(--pink);}
-.debate-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
-.debate:nth-child(2) .debate-num{color:var(--teal);}
-.debate:nth-child(3) .debate-num{color:#B66809;}
-.debate:nth-child(4) .debate-num{color:#A04060;}
-.debate-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.3rem;}
-
-footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
-footer strong{color:var(--ink);}
+/* MISSION */
+.mission{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-radius:20px;padding:1.5rem 1.7rem;margin:2rem 0;}
+.mission h3{font-family:\'Fraunces\',serif;font-size:1.4rem;margin-bottom:.6rem;}
+.mission p{font-size:.95rem;margin:.4rem 0;line-height:1.6;}
+.mission .bonus{background:rgba(255,255,255,.18);border-radius:12px;padding:.7rem 1rem;margin-top:.8rem;font-size:.88rem;}
+.mission .bonus b{color:var(--yellow);}
+footer{text-align:center;color:var(--ink-mute);font-size:.78rem;margin-top:3rem;padding:1rem;}
 </style>
 </head>
 <body>
 <div class="wrapper">
 
-<div class="eyebrow">deutschoderwas · Grammatik für den Alltag</div>
-
+<div class="eyebrow">ab B1 · Grammatik die alles ändert <span class="badge">Deluxe</span></div>
 <div class="title-wrap">
-<h1 class="title"><span class="flag">🔗</span>Das große <span class="hl">Konnektoren</span>-Buch</h1>
-</div>
-<p class="subtitle">Drei Familien, glasklare Regeln. Hier verstehst du endlich, <em>wo das Verb steht</em> – mit Alltagsbeispielen, Lernkarten und richtigen Sprechübungen.</p>
-
-<!-- TAB NAV -->
-<nav class="tabs">
-<button class="tab active" data-tab="0">📖 Überblick</button>
-<button class="tab" data-tab="1">🃏 Lernkarten</button>
-<button class="tab" data-tab="2">✅ Quiz</button>
-<button class="tab" data-tab="3">✍️ Lückentext</button>
-<button class="tab" data-tab="4">🧩 Zuordnen</button>
-<button class="tab" data-tab="5">🗣️ Sprechen</button>
-</nav>
-
-<!-- ============== ÜBERBLICK ============== -->
-<section class="section active" data-section="0">
-
-<h2 class="section-title">Die <em style="font-style:italic;">drei Familien</em> auf einen Blick</h2>
-<p class="section-sub">Tipp auf eine Karte 👆 — und du siehst Alltagsbeispiele.</p>
-
-<div class="tip">
-💡 <strong>Die einzige Regel, die du wirklich brauchst:</strong> Frag dich immer „<u>Wo steht das Verb?</u>" Das Verb verrät dir die Familie. Pos 2? <em>aber/denn/oder</em>. Inversion? <em>deshalb/trotzdem</em>. Am Ende? <em>weil/obwohl/wenn</em>.
+  <h1 class="title"><span class="hl">Konnektoren</span> — das Bindeglied</h1>
+  <p class="subtitle">Wer Konnektoren beherrscht, klingt nicht mehr wie ein A2-Anfänger. Drei Gruppen, drei Wortstellungen — und du redest endlich wie ein Erwachsener auf Deutsch.</p>
 </div>
 
-<div class="fam-grid">
+<svg class="hero-svg" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="100" r="44" fill="#D7F0EC"/><text x="80" y="113" font-size="34" text-anchor="middle">🧱</text>
+  <text x="155" y="108" font-size="36" fill="#0FB5A6" font-family="Fraunces" font-style="italic">und</text>
+  <circle cx="260" cy="100" r="44" fill="#FCE5E3"/><text x="260" y="113" font-size="34" text-anchor="middle">🔗</text>
+  <text x="335" y="108" font-size="36" fill="#E8302A" font-family="Fraunces" font-style="italic">weil</text>
+  <circle cx="440" cy="100" r="44" fill="#FFF1C2"/><text x="440" y="113" font-size="34" text-anchor="middle">🪢</text>
+</svg>
 
-<div class="fam f1">
-<span class="fam-icon">🌸</span>
-<div class="fam-name">Konjunktionen</div>
-<div class="fam-badge">Familie 1 · Pos 0</div>
-<div class="fam-rule">Verb bleibt auf Position 2 — alles normal!</div>
-<div class="fam-words"><span>und</span><span>aber</span><span>oder</span><span>denn</span><span>sondern</span></div>
-<div class="fam-ex">„Es regnet, <strong>aber</strong> ich gehe raus." <br>„Ich bleibe zu Hause, <strong>denn</strong> ich bin müde."</div>
+<div class="tabs">
+  <button class="tab active" data-s="0">📖 Überblick</button>
+  <button class="tab" data-s="1">🃏 Lernkarten</button>
+  <button class="tab" data-s="2">✅ Quiz</button>
+  <button class="tab" data-s="3">✍️ Lückentext</button>
+  <button class="tab" data-s="4">🧩 Zuordnen</button>
+  <button class="tab" data-s="5">🗣️ Sprechen</button>
+  <button class="tab" data-s="6">💬 Umgangssprache</button>
 </div>
 
-<div class="fam f2">
-<span class="fam-icon">🌊</span>
-<div class="fam-name">Adverbien</div>
-<div class="fam-badge">Familie 2 · Pos 1</div>
-<div class="fam-rule">INVERSION — Verb springt nach vorne!</div>
-<div class="fam-words"><span>deshalb</span><span>deswegen</span><span>darum</span><span>trotzdem</span><span>dann</span><span>jedoch</span></div>
-<div class="fam-ex">„Es regnet, <strong>deshalb bleibe ich</strong> zu Hause." <br>„Ich bin müde, <strong>trotzdem gehe ich</strong> joggen."</div>
-</div>
+<!-- ÜBERBLICK -->
+<section class="section active">
+  <h2 class="section-title">Die 3 Konnektoren-Gruppen</h2>
+  <p class="section-sub">Drei Familien — drei Wortstellungs-Regeln. Wenn du das siehst, kannst du es.</p>
 
-<div class="fam f3">
-<span class="fam-icon">🍃</span>
-<div class="fam-name">Subjunktionen</div>
-<div class="fam-badge">Familie 3 · Nebensatz</div>
-<div class="fam-rule">Verb springt ans ENDE!</div>
-<div class="fam-words"><span>weil</span><span>obwohl</span><span>damit</span><span>wenn</span><span>dass</span><span>ob</span><span>als</span><span>falls</span></div>
-<div class="fam-ex">„Ich bleibe zu Hause, <strong>weil</strong> es <strong>regnet</strong>." <br>„Ich frage, <strong>ob</strong> er <strong>kommt</strong>."</div>
-</div>
+  <div class="fam-grid">
+    <div class="fam f1">
+      <span class="fam-icon">🧱</span>
+      <div class="fam-name">Hauptsatz-Konnektoren</div>
+      <span class="fam-badge">Position 0 · keine Änderung</span>
+      <div class="fam-rule">→ Verb bleibt auf Position 2</div>
+      <div class="fam-words">
+        <span>und</span><span>aber</span><span>oder</span><span>denn</span><span>sondern</span>
+      </div>
+      <div class="fam-ex">„Ich bin müde, <strong>aber</strong> ich muss noch arbeiten."</div>
+      <div class="fam-pos"><b>Position 0:</b> Subjekt — Verb — Rest, <b>aber</b>, Subjekt — Verb — Rest</div>
+    </div>
 
-</div>
+    <div class="fam f2">
+      <span class="fam-icon">🔗</span>
+      <div class="fam-name">Nebensatz-Konnektoren</div>
+      <span class="fam-badge">Verb ans Ende!</span>
+      <div class="fam-rule">→ Verb wandert ganz nach hinten</div>
+      <div class="fam-words">
+        <span>weil</span><span>dass</span><span>wenn</span><span>obwohl</span><span>damit</span><span>ob</span><span>falls</span><span>während</span><span>nachdem</span><span>bevor</span>
+      </div>
+      <div class="fam-ex">„Ich komme nicht, <strong>weil</strong> ich krank <strong>bin</strong>."</div>
+      <div class="fam-pos"><b>Hauptsatz</b>, <b>weil</b> + Subjekt + ... + <b>Verb (ENDE)</b></div>
+    </div>
 
-<!-- THEORY mit ALLTAGSFRAGEN -->
-<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
-<p class="section-sub">Denk kurz nach — schreib innerlich einen Satz.</p>
+    <div class="fam f3">
+      <span class="fam-icon">🪢</span>
+      <div class="fam-name">Adverbiale Konnektoren</div>
+      <span class="fam-badge">Inversion: Verb vor Subjekt</span>
+      <div class="fam-rule">→ Konnektor — Verb — Subjekt</div>
+      <div class="fam-words">
+        <span>deshalb</span><span>trotzdem</span><span>außerdem</span><span>allerdings</span><span>jedoch</span><span>dennoch</span><span>sonst</span>
+      </div>
+      <div class="fam-ex">„Ich bin müde, <strong>trotzdem gehe ich</strong> zur Party."</div>
+      <div class="fam-pos"><b>Hauptsatz</b>, <b>deshalb</b> + Verb + Subjekt + Rest</div>
+    </div>
+  </div>
 
-<div class="alltag-q">
-<div class="ql">Alltag · Familie 1</div>
-<div class="qq">Warum bist du heute Morgen aufgestanden — und was hast du <em>direkt danach</em> gemacht?</div>
-<div class="think">💭 Verbinde 2 Sätze mit <strong>UND</strong> oder <strong>DANN</strong> — sieh, wo dein Verb landet!</div>
-</div>
+  <h2 class="section-title">Wortstellung — der Trick</h2>
+  <p class="section-sub">Schau dir die Bausteine an. Pro Gruppe ein Schema.</p>
 
-<div class="alltag-q" style="border-left-color:#B66809;">
-<div class="ql" style="color:#B66809;">Alltag · Familie 2 (Inversion!)</div>
-<div class="qq">Heute regnet es. Was änderst du an deinem Tag?</div>
-<div class="think">💭 Versuch's mit <strong>DESHALB</strong>: „Es regnet, deshalb …" Achtung — Verb VOR Subjekt!</div>
-</div>
+  <div class="ws-vis">
+    <h4>🧱 Gruppe 1 — Hauptsatz (und, aber, oder, denn, sondern)</h4>
+    <div class="ws-line">
+      <span class="ws-block subj">Ich</span>
+      <span class="ws-block verb">bin</span>
+      <span class="ws-block rest">müde</span>
+      <span class="ws-arrow">,</span>
+      <span class="ws-block konn">aber</span>
+      <span class="ws-block subj">ich</span>
+      <span class="ws-block verb">muss</span>
+      <span class="ws-block rest">noch arbeiten</span>
+      <span class="ws-block verb">.</span>
+    </div>
+    <div class="ws-note">Verb bleibt auf Position 2 — wie in jedem normalen Hauptsatz. Einfach.</div>
+  </div>
 
-<div class="alltag-q" style="border-left-color:#5F7A2A;">
-<div class="ql" style="color:#5F7A2A;">Alltag · Familie 3 (Verb am Ende!)</div>
-<div class="qq">Warum lernst du eigentlich Deutsch?</div>
-<div class="think">💭 Antworte mit <strong>WEIL</strong>: „Ich lerne Deutsch, weil ich …" Wohin wandert das Verb?</div>
-</div>
+  <div class="ws-vis">
+    <h4>🔗 Gruppe 2 — Nebensatz (weil, dass, wenn, obwohl …)</h4>
+    <div class="ws-line">
+      <span class="ws-block subj">Ich</span>
+      <span class="ws-block verb">komme</span>
+      <span class="ws-block rest">nicht</span>
+      <span class="ws-arrow">,</span>
+      <span class="ws-block konn">weil</span>
+      <span class="ws-block subj">ich</span>
+      <span class="ws-block rest">krank</span>
+      <span class="ws-block verb">bin</span>
+      <span class="ws-block verb">.</span>
+    </div>
+    <div class="ws-note">Verb wandert ganz ans Ende! Das ist die Regel, die alle vergessen.</div>
+  </div>
 
-<!-- Vergleichs-Box -->
-<h2 class="section-title">Gleiche <em style="font-style:italic;">Bedeutung</em>, drei Wege</h2>
-<p class="section-sub">Wie sagt man „weil es regnet, bleibe ich zu Hause" auf 3 Arten?</p>
+  <div class="ws-vis">
+    <h4>🪢 Gruppe 3 — Adverbial (deshalb, trotzdem, außerdem …)</h4>
+    <div class="ws-line">
+      <span class="ws-block subj">Ich</span>
+      <span class="ws-block verb">bin</span>
+      <span class="ws-block rest">müde</span>
+      <span class="ws-arrow">,</span>
+      <span class="ws-block konn">trotzdem</span>
+      <span class="ws-block verb">gehe</span>
+      <span class="ws-block subj">ich</span>
+      <span class="ws-block rest">zur Party</span>
+      <span class="ws-block verb">.</span>
+    </div>
+    <div class="ws-note">Inversion! Verb kommt VOR das Subjekt. Klingt komisch — ist aber Pflicht.</div>
+  </div>
 
-<div class="fam-grid" style="margin-top:1rem;">
-<div class="fam f3">
-<div class="fam-badge">WEIL · F3</div>
-<div class="fam-ex" style="margin-top:0;padding-top:0;border:0;">„Ich bleibe zu Hause, <strong>weil</strong> es <strong>regnet</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">→ Verb am Ende</span></div>
-</div>
-<div class="fam f1">
-<div class="fam-badge">DENN · F1</div>
-<div class="fam-ex" style="margin-top:0;padding-top:0;border:0;">„Ich bleibe zu Hause, <strong>denn</strong> es <strong>regnet</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">→ Verb auf Pos. 2</span></div>
-</div>
-<div class="fam f2">
-<div class="fam-badge">DESHALB · F2</div>
-<div class="fam-ex" style="margin-top:0;padding-top:0;border:0;">„Es <strong>regnet</strong>, <strong>deshalb bleibe</strong> ich zu Hause."<br><span style="font-size:.78rem;color:var(--ink-mute);">→ Inversion</span></div>
-</div>
-</div>
+  <h2 class="section-title">A2 vs. ab B1</h2>
+  <p class="section-sub">Genau so klingst du, wenn du Konnektoren nutzt (oder nicht).</p>
+  <div class="compare">
+    <div class="comp-card a">
+      <div class="comp-tag">❌ A2-Stil (kurze Sätze)</div>
+      <div class="comp-text">„Ich war müde. <strong>Ich bin trotzdem gegangen.</strong> Es war schön. <strong>Ich kam spät heim.</strong>"</div>
+    </div>
+    <div class="comp-card b">
+      <div class="comp-tag">✓ B1-Stil (verbunden)</div>
+      <div class="comp-text">„Ich war müde, <strong>aber</strong> ich bin trotzdem gegangen, <strong>weil</strong> es schön werden sollte — <strong>obwohl</strong> ich wusste, dass ich spät heimkomme."</div>
+    </div>
+    <div class="comp-card a">
+      <div class="comp-tag">❌ A2-Stil</div>
+      <div class="comp-text">„Ich komme nicht. <strong>Ich bin krank.</strong>"</div>
+    </div>
+    <div class="comp-card b">
+      <div class="comp-tag">✓ B1-Stil</div>
+      <div class="comp-text">„Ich komme nicht, <strong>weil</strong> ich krank bin — <strong>außerdem</strong> habe ich morgen früh einen Arzttermin."</div>
+    </div>
+    <div class="comp-card a">
+      <div class="comp-tag">❌ A2-Stil</div>
+      <div class="comp-text">„Es regnet. <strong>Ich nehme einen Schirm.</strong>"</div>
+    </div>
+    <div class="comp-card b">
+      <div class="comp-tag">✓ B1-Stil</div>
+      <div class="comp-text">„Es regnet, <strong>deshalb</strong> nehme ich einen Schirm — <strong>sonst</strong> werde ich nass."</div>
+    </div>
+  </div>
 
-<div class="tip" style="margin-top:1.5rem;">
-🎯 <strong>Häufigster Fehler bei B1:</strong> „Es regnet, <em>trotzdem ich gehe raus</em>." ❌ — Inversion vergessen! Richtig: „<em>trotzdem gehe ich raus</em>." ✓
-</div>
+  <h2 class="section-title">Stell dir vor …</h2>
+  <p class="section-sub">Konkrete Alltagssituationen. Wie würdest du es sagen — MIT Konnektoren?</p>
+  <div class="alltag-grid">
+    <div class="alltag-q"><div class="ql">Frage 1</div><div class="qq">Du musst der Arbeit absagen, weil du krank bist. Erklär\'s dem Chef in 2 Sätzen MIT „weil" und „deshalb".</div><div class="think">💭 Welche Reihenfolge: erst Grund oder erst Folge?</div></div>
+    <div class="alltag-q"><div class="ql">Frage 2</div><div class="qq">Dein Freund fragt: „Kommst du heute Abend mit?" Du willst nicht — sag es höflich mit „eigentlich gerne, aber" + „weil".</div><div class="think">💭 „Aber" macht\'s weicher als ein direktes „Nein".</div></div>
+    <div class="alltag-q"><div class="ql">Frage 3</div><div class="qq">Du erklärst: „Ich bin müde — gehe aber trotzdem laufen." Bau den Satz mit „obwohl" UND mit „trotzdem".</div><div class="think">💭 Gleiche Bedeutung, zwei verschiedene Wortstellungen!</div></div>
+    <div class="alltag-q"><div class="ql">Frage 4</div><div class="qq">Du machst Pläne fürs Wochenende: „Wenn es regnet, … Falls die Sonne scheint, … Sonst …" — bau drei Sätze.</div><div class="think">💭 „Wenn" + „falls" + „sonst" — drei verschiedene Konnektoren, ähnliche Logik.</div></div>
+    <div class="alltag-q"><div class="ql">Frage 5</div><div class="qq">Erzähl chronologisch, wie dein Morgen war — mit „nachdem" und „bevor".</div><div class="think">💭 „Nachdem ich geduscht habe, …" + „Bevor ich aus dem Haus ging, …"</div></div>
+    <div class="alltag-q"><div class="ql">Frage 6</div><div class="qq">Du bist gestern in der Stadt jemandem begegnet. Erzähl die Geschichte — mit MINDESTENS 4 verschiedenen Konnektoren.</div><div class="think">💭 „und", „aber", „weil", „dann"/„danach" — das reicht schon für B1-Niveau.</div></div>
+  </div>
 
+  <div class="tip">
+    <strong>Goldene Regel:</strong> Vor jedem Konnektor kommt ein <strong>Komma</strong> (außer vor „und"/„oder", wenn der zweite Teil kein eigenes Subjekt hat). Und merk dir den Spruch: <em>„weil → Verb hinten"</em>, <em>„deshalb → Verb vorne"</em>, <em>„aber → ändert nix"</em>.
+  </div>
 </section>
 
-<!-- ============== LERNKARTEN ============== -->
-<section class="section" data-section="1">
-
-<h2 class="section-title">Lernkarten</h2>
-<p class="section-sub">Errätst du die Funktion? Erst denken — dann tippen.</p>
-
-<div class="flip" id="flip">
-<div class="flip-inner">
-<div class="flip-side front">
-<div class="flip-emoji" id="flipEmoji">🌸</div>
-<div class="flip-word" id="flipWord">aber</div>
-<div class="flip-badge" id="flipBadge">Familie 1</div>
-<div class="flip-prompt">Was bedeutet das? Wo steht das Verb? <br>(zum Umdrehen tippen)</div>
-</div>
-<div class="flip-side back">
-<div class="flip-rule" id="flipRule">Gegensatz · Verb bleibt auf Pos. 2</div>
-<div class="flip-ex" id="flipEx">„Es regnet, <strong>aber</strong> ich gehe raus."</div>
-</div>
-</div>
-</div>
-
-<div class="lk-nav">
-<button class="lk-btn" id="lkPrev">←</button>
-<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span>
-<button class="lk-btn" id="lkNext">→</button>
-</div>
-<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
-
+<!-- LERNKARTEN -->
+<section class="section">
+  <h2 class="section-title">23 Konnektoren-Karten</h2>
+  <p class="section-sub">Klick zum Umdrehen. Pfeile für nächste Karte. Shuffle für Zufallsreihenfolge.</p>
+  <div class="flip" id="flipCard">
+    <div class="flip-inner">
+      <div class="flip-side front">
+        <div class="flip-emoji" id="fEmoji">➕</div>
+        <div class="flip-word" id="fWord">und</div>
+        <div class="flip-badge" id="fBadge">Hauptsatz · Pos. 0</div>
+        <div class="flip-prompt">→ Klick zum Umdrehen</div>
+      </div>
+      <div class="flip-side back">
+        <div class="flip-rule" id="fRule">Verbindet zwei gleichwertige Sätze — nichts ändert sich.</div>
+        <div class="flip-ex" id="fEx">„Ich koche, <strong>und</strong> du deckst den Tisch."</div>
+        <div class="flip-syn" id="fSyn"><b>Synonyme/Verwandt:</b> sowie · außerdem (adv.)</div>
+      </div>
+    </div>
+  </div>
+  <div class="lk-nav">
+    <button class="lk-btn" onclick="prevCard()">◀</button>
+    <span class="lk-counter"><span id="cardNr">1</span> / <span id="cardTotal">23</span></span>
+    <button class="lk-btn" onclick="nextCard()">▶</button>
+    <button class="lk-btn" onclick="shuffleCards()" title="Mischen">🔀</button>
+  </div>
 </section>
 
-<!-- ============== QUIZ ============== -->
-<section class="section" data-section="2">
-
-<h2 class="section-title">Quiz: <em style="font-style:italic;">Welcher Konnektor?</em></h2>
-<p class="section-sub">Achte auf die Wortstellung — sie verrät die Familie.</p>
-
-<div class="quiz"><div class="quiz-q">„Ich bleibe zu Hause, <span class="blank">?</span> es regnet." <span style="color:var(--ink-mute);font-size:.85em;">(Grund · Verb am Ende)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">weil</span><span class="quiz-chip">deshalb</span><span class="quiz-chip">aber</span></div><div class="quiz-explain">✓ <strong>weil</strong> — Subjunktion, Verb am Ende</div></div>
-
-<div class="quiz"><div class="quiz-q">„Es ist spät, <span class="blank">?</span> gehe ich ins Bett." <span style="color:var(--ink-mute);font-size:.85em;">(Folge · Inversion!)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">weil</span><span class="quiz-chip">aber</span><span class="quiz-chip">deshalb</span></div><div class="quiz-explain">✓ <strong>deshalb</strong> — Adverb F2, Verb springt nach vorne</div></div>
-
-<div class="quiz"><div class="quiz-q">„Er bleibt zu Hause, <span class="blank">?</span> er eigentlich gehen will." <span style="color:var(--ink-mute);font-size:.85em;">(Gegensatz · Verb am Ende)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">obwohl</span><span class="quiz-chip">trotzdem</span><span class="quiz-chip">aber</span></div><div class="quiz-explain">✓ <strong>obwohl</strong> — Subjunktion, Verb am Ende</div></div>
-
-<div class="quiz"><div class="quiz-q">„Ich frage mich, <span class="blank">?</span> er heute kommt." <span style="color:var(--ink-mute);font-size:.85em;">(indirekte Ja/Nein-Frage)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">dass</span><span class="quiz-chip">ob</span><span class="quiz-chip">wenn</span></div><div class="quiz-explain">✓ <strong>ob</strong> — für indirekte Ja/Nein-Fragen</div></div>
-
-<div class="quiz"><div class="quiz-q">„<span class="blank">?</span> ich klein war, habe ich Geige gespielt." <span style="color:var(--ink-mute);font-size:.85em;">(Vergangenheit · einmalig)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Wenn</span><span class="quiz-chip">Als</span><span class="quiz-chip">Während</span></div><div class="quiz-explain">✓ <strong>Als</strong> — einmalige Ereignisse in der Vergangenheit</div></div>
-
-<div class="quiz"><div class="quiz-q">„<span class="blank">?</span> du krank wirst, ruf mich bitte an." <span style="color:var(--ink-mute);font-size:.85em;">(unsicher · hoffentlich nicht!)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Wenn</span><span class="quiz-chip">Falls</span><span class="quiz-chip">Bevor</span></div><div class="quiz-explain">✓ <strong>Falls</strong> — bei unsicherer Bedingung</div></div>
-
-<div class="quiz"><div class="quiz-q">„Sie lernt fleißig, <span class="blank">?</span> besser <span class="blank">?</span> werden." <span style="color:var(--ink-mute);font-size:.85em;">(Zweck · gleiches Subjekt SIE→SIE)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">damit</span><span class="quiz-chip">um…zu</span><span class="quiz-chip">weil</span></div><div class="quiz-explain">✓ <strong>um…zu</strong> — bei gleichem Subjekt: kürzer & eleganter</div></div>
-
-<div class="quiz"><div class="quiz-q">„Ich rufe an, <span class="blank">?</span> du nach Hause kommst." <span style="color:var(--ink-mute);font-size:.85em;">(Zeitpunkt · ab dem Moment)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">während</span><span class="quiz-chip">bevor</span><span class="quiz-chip">sobald</span></div><div class="quiz-explain">✓ <strong>sobald</strong> — ab diesem Zeitpunkt</div></div>
-
+<!-- QUIZ -->
+<section class="section">
+  <h2 class="section-title">12 Quiz-Fragen</h2>
+  <p class="section-sub">Welcher Konnektor? Welche Wortstellung? Klick eine Option.</p>
+  <div id="quizContainer"></div>
 </section>
 
-<!-- ============== LÜCKENTEXT ============== -->
-<section class="section" data-section="3">
-
-<h2 class="section-title">Lückentext</h2>
-<p class="section-sub">Wähle pro Satz das passende Verbindungswort. Dann auf „Überprüfen" tippen.</p>
-
-<div class="gap-text" id="gapText">
-<div class="gap-line">1. Ich bleibe heute zu Hause, <select data-sol="weil"><option value="">…</option><option>weil</option><option>aber</option><option>deshalb</option></select> ich krank bin.</div>
-<div class="gap-line">2. Es regnet stark, <select data-sol="trotzdem"><option value="">…</option><option>weil</option><option>denn</option><option>trotzdem</option></select> gehe ich joggen.</div>
-<div class="gap-line">3. Ich lerne Deutsch, <select data-sol="um"><option value="">…</option><option>damit</option><option>um</option><option>weil</option></select> in Deutschland zu arbeiten.</div>
-<div class="gap-line">4. Ich frage meinen Lehrer, <select data-sol="ob"><option value="">…</option><option>dass</option><option>ob</option><option>wenn</option></select> die Prüfung schwer ist.</div>
-<div class="gap-line">5. <select data-sol="Als"><option value="">…</option><option>Wenn</option><option>Als</option><option>Während</option></select> ich Kind war, habe ich oft im Garten gespielt.</div>
-<div class="gap-line">6. <select data-sol="Falls"><option value="">…</option><option>Wenn</option><option>Falls</option><option>Bevor</option></select> du Hilfe brauchst, ruf mich bitte an.</div>
-<div class="gap-line">7. Ich gehe ins Bett, <select data-sol="sobald"><option value="">…</option><option>sobald</option><option>während</option><option>bevor</option></select> ich nach Hause komme.</div>
-<div class="gap-line">8. Es ist sehr kalt, <select data-sol="deshalb"><option value="">…</option><option>weil</option><option>obwohl</option><option>deshalb</option></select> ziehe ich einen Mantel an.</div>
-<div class="gap-actions">
-<button class="btn-secondary" id="gapReset">Neu</button>
-<button class="btn-primary" id="gapCheck">Überprüfen</button>
-</div>
-</div>
-
-<div class="tip" id="gapScore" style="display:none;"></div>
-
+<!-- LÜCKENTEXT -->
+<section class="section">
+  <h2 class="section-title">10 Lückentext-Sätze</h2>
+  <p class="section-sub">Wähl den passenden Konnektor. Dann „Auswerten".</p>
+  <div id="gapContainer"></div>
+  <button class="gap-btn" onclick="evalGap()">Auswerten</button>
+  <div class="gap-score" id="gapScore"></div>
 </section>
 
-<!-- ============== ZUORDNEN ============== -->
-<section class="section" data-section="4">
-
-<h2 class="section-title">Konnektor &amp; <em style="font-style:italic;">Funktion</em> zuordnen</h2>
-<p class="section-sub">Tippe links einen Konnektor — dann rechts die passende Funktion. Richtige Paare werden grün.</p>
-
-<div class="match-stage">
-<div class="match-cols">
-<div class="match-col">
-<h4>🔗 Konnektor</h4>
-<div class="match-list" id="leftCol"></div>
-</div>
-<div class="match-col">
-<h4>🎯 Funktion</h4>
-<div class="match-list" id="rightCol"></div>
-</div>
-</div>
-<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
-</div>
-
+<!-- ZUORDNEN -->
+<section class="section">
+  <h2 class="section-title">10 Hauptsätze + passender Konnektor-Satz</h2>
+  <p class="section-sub">Welcher zweite Satz passt zu welchem ersten? Klick links, dann rechts.</p>
+  <div class="match" id="matchContainer"></div>
+  <div class="gap-score" id="matchScore"></div>
 </section>
 
-<!-- ============== SPRECHEN ============== -->
-<section class="section" data-section="5">
+<!-- SPRECHEN — DELUXE -->
+<section class="section">
+  <h2 class="section-title">Sprechen üben</h2>
+  <p class="section-sub">24 Sprechkarten · 5 Rollenspiele mit Hilfestellung · Mission</p>
 
-<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht's!</em></h2>
-<p class="section-sub">Allein, mit Partner oder in der Gruppe. Zieh eine Karte und sprich frei.</p>
+  <h3 style="font-family:\'Fraunces\',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin:1.5rem 0 .8rem;">🃏 Sprechkarten</h3>
+  <div id="speakCard" class="speak-card"></div>
+  <div class="speak-nav"><button class="speak-btn" onclick="nextSpeak()">▶ Nächste Karte</button></div>
 
-<div class="speak-card" id="speakCard">
-<div class="speak-emoji">🎲</div>
-<div class="speak-cat">Sprechclub-Karte</div>
-<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
-</div>
+  <h3 style="font-family:\'Fraunces\',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin:2.5rem 0 .8rem;">🎭 5 Rollenspiele · MIT HILFESTELLUNG</h3>
+  <p class="section-sub" style="text-align:left;margin-bottom:.6rem;color:var(--ink-soft);">Jedes Rollenspiel hat <strong style="color:var(--teal);">🔑 Schlüssel-Vokabular</strong>, <strong style="color:#B66809;">💬 Beispiel-Phrasen</strong>, <strong style="color:var(--red);">💡 Strategie</strong> und <strong style="color:var(--teal);">✅ Antwort-Struktur</strong>.</p>
 
-<div class="speak-controls">
-<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
-</div>
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 1) Beschwerde mit „weil" + „obwohl" — Lieferung kaputt</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du hast online ein <em>Sofa</em> bestellt. Es kam beschädigt an — der Stoff ist gerissen. Du rufst beim Kundenservice an.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du bist genervt, willst aber sachlich bleiben. Du erklärst den Schaden mit „weil" und schiebst „obwohl" nach, um die Sonderbehandlung der Lieferung zu betonen.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular (mit Konnektoren!)</span>
+      <div class="words">
+        <span>weil der Stoff gerissen ist</span><span>obwohl ich extra dabei war</span><span>dass es beschädigt ankam</span><span>damit Sie verstehen</span><span>wenn das nicht klappt</span><span>nachdem ich ausgepackt hatte</span><span>bevor ich unterschrieben habe</span><span>falls Sie Fotos brauchen</span><span>außerdem</span><span>trotzdem</span><span>deshalb erwarte ich</span><span>sonst muss ich</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Guten Tag, ich rufe an, weil meine Lieferung beschädigt angekommen ist.</li>
+        <li>Nachdem ich das Sofa ausgepackt habe, habe ich gesehen, dass der Stoff gerissen ist.</li>
+        <li>Obwohl ich extra zu Hause war und alles geprüft habe, war der Schaden nicht außen sichtbar.</li>
+        <li>Ich möchte gerne, dass Sie mir entweder ein neues Sofa schicken oder den Kaufpreis zurückerstatten.</li>
+        <li>Falls Sie Fotos brauchen, schicke ich sie Ihnen sofort.</li>
+        <li>Deshalb erwarte ich eine schnelle Lösung — sonst muss ich leider rechtliche Schritte prüfen.</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> Beginne mit <b>„weil"</b> (Verb ans Ende!) für den Grund. Dann <b>„obwohl"</b> für den Widerspruch („obwohl ich aufgepasst habe"). „Falls" + „sonst" am Ende zeigen, dass du Konsequenzen ziehst — höflich, aber bestimmt.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Anruf-Grund mit „weil" + 2) Hergang mit „nachdem"/„bevor" + 3) Widerspruch mit „obwohl" + 4) Forderung mit „dass" + 5) Folge mit „sonst".</div>
+  </div>
 
-<!-- ROLLENSPIELE -->
-<div class="role-section">
-<h2 class="section-title">2 Rollenspiele</h2>
-<p class="section-sub">Übt zu zweit — nutzt möglichst viele Konnektoren!</p>
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 2) Pläne machen mit „falls" + „sonst" — Wochenend-Trip</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du planst mit deiner Freundin/deinem Freund <em>Lena</em> einen Wochenend-Trip — aber die Wetter-Prognose ist unsicher. Ihr klärt am Telefon, was ihr macht.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du bist flexibel, willst aber einen Plan B haben. Du nutzt „falls" für die Möglichkeit und „sonst" für die Alternative.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular (mit Konnektoren!)</span>
+      <div class="words">
+        <span>falls es regnet</span><span>wenn die Sonne scheint</span><span>sonst gehen wir</span><span>damit wir flexibel sind</span><span>außerdem könnten wir</span><span>trotzdem fahren</span><span>denn ich freue mich</span><span>aber nur wenn</span><span>oder wir bleiben</span><span>nachdem wir gefrühstückt haben</span><span>bevor wir losfahren</span><span>deshalb pack ich</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Lena, lass uns kurz die Pläne durchgehen — falls das Wetter mitspielt.</li>
+        <li>Falls es Samstag regnet, schlage ich vor, dass wir ins Museum gehen.</li>
+        <li>Wenn die Sonne scheint, machen wir die Wanderung, denn ich freu mich schon richtig.</li>
+        <li>Sonst bleiben wir gemütlich im Hotel und kochen zusammen — auch okay, oder?</li>
+        <li>Bevor wir losfahren, checken wir nochmal die Vorhersage, damit wir nicht im Regen stehen.</li>
+        <li>Außerdem sollten wir Regenjacken einpacken — sonst werden wir nass, falls es doch losgeht.</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> <b>„Falls"</b> = wenn etwas eintreten KÖNNTE (unsicher). <b>„Wenn"</b> = wenn es sicher passiert. <b>„Sonst"</b> = die Alternative, falls es NICHT klappt. Diese drei machen Pläne erwachsen!</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Plan A mit „wenn" + 2) Plan B mit „falls" + 3) Alternative mit „sonst" + 4) Begründung mit „denn"/„weil" + 5) Vorbereitung mit „damit".</div>
+  </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 1</div>
-<div class="role-title">🛋️ Faules Wochenende vs. Aktivurlaub</div>
-<div class="role-situation">Ihr seid ein Paar und plant das Wochenende. Einer will zu Hause bleiben und chillen, der andere will wandern. Findet einen Kompromiss!</div>
-<div class="role-people">
-<div class="person a">
-<div class="person-label">🙋‍♀️ Person A — möchte chillen</div>
-<div class="person-quote">„Ich will zu Hause bleiben, <strong>weil</strong> ich müde bin. <strong>Trotzdem</strong> könnten wir abends ins Kino gehen, <strong>wenn</strong> du magst."</div>
-</div>
-<div class="person b">
-<div class="person-label">🧗 Person B — möchte wandern</div>
-<div class="person-quote">„Wir waren schon 3 Wochenenden nicht draußen, <strong>deshalb</strong> wäre Wandern jetzt perfekt. <strong>Obwohl</strong> ich verstehe, dass du müde bist…"</div>
-</div>
-</div>
-<div class="role-goal">🎯 Ziel: Mindestens <strong>8 verschiedene Konnektoren</strong> aus allen 3 Familien verwenden!</div>
-</div>
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 3) Etwas erklären mit „nämlich" + „nachdem" + „bevor" — Rezept</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Eine Freundin fragt: „Wie machst du eigentlich diese super Pasta?" Du erklärst chronologisch das Rezept.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du bist stolz auf dein Rezept und willst es klar Schritt-für-Schritt erklären. Chronologische Konnektoren sind dein Werkzeug: „zuerst", „nachdem", „bevor", „danach".</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular (mit Konnektoren!)</span>
+      <div class="words">
+        <span>zuerst</span><span>nachdem ich aufgesetzt habe</span><span>bevor das Wasser kocht</span><span>danach</span><span>während die Pasta kocht</span><span>weil es sonst zu trocken wird</span><span>damit es würzig wird</span><span>außerdem gebe ich dazu</span><span>denn das ist der Trick</span><span>obwohl es einfach klingt</span><span>nämlich</span><span>und zwar</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Also, das geht eigentlich super schnell, und zwar so: …</li>
+        <li>Zuerst setze ich Wasser auf — und zwar mit ordentlich Salz, damit die Pasta richtig würzig wird.</li>
+        <li>Bevor das Wasser kocht, schneide ich Knoblauch und Tomaten.</li>
+        <li>Nachdem ich die Pasta in den Topf geworfen habe, mache ich die Pfanne heiß.</li>
+        <li>Während die Pasta kocht, brate ich den Knoblauch — nämlich nur kurz, weil er sonst bitter wird.</li>
+        <li>Danach gieße ich die Pasta ab und gebe sie in die Pfanne, obwohl manche Leute es anders machen.</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> <b>Chronologie</b> ist der Schlüssel beim Erklären. Nutze „zuerst" → „nachdem" → „während" → „danach". <b>„Nämlich"</b> und <b>„und zwar"</b> liefern Details nach. <b>„Damit"</b> erklärt den Zweck.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Einleitung mit „und zwar"/„also" + 2) Schritt 1 mit „zuerst" + 3) Übergang mit „nachdem"/„bevor" + 4) Detail mit „nämlich" + 5) Begründung mit „damit"/„weil".</div>
+  </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 2</div>
-<div class="role-title">📱 Handy am Esstisch?</div>
-<div class="role-situation">Eltern und Teenager diskutieren: Soll das Handy beim Essen verboten sein? Der Teenager findet das übertrieben, die Eltern bestehen darauf.</div>
-<div class="role-people">
-<div class="person a">
-<div class="person-label">👨‍👩 Eltern — Handy weg</div>
-<div class="person-quote">„<strong>Während</strong> wir essen, soll das Handy weg sein, <strong>damit</strong> wir miteinander reden. <strong>Bevor</strong> du nach dem Essen aufstehst, hilfst du beim Abräumen!"</div>
-</div>
-<div class="person b">
-<div class="person-label">🧑 Teenager — bisschen okay</div>
-<div class="person-quote">„Das ist nicht fair! <strong>Falls</strong> ich eine wichtige Nachricht bekomme, muss ich antworten. <strong>Wenn</strong> ihr selbst checkt, darf ich es auch."</div>
-</div>
-</div>
-<div class="role-goal">🎯 Ziel: Nutzt mindestens <strong>WEIL · DAMIT · WENN · TROTZDEM · OBWOHL · FALLS</strong>!</div>
-</div>
-</div>
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 4) Argumentieren mit „dennoch" + „allerdings" + „trotzdem" — Gehaltsverhandlung</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du sitzt in einem Mitarbeitergespräch mit deinem <em>Chef</em>. Er sagt: „Das Budget ist dieses Jahr knapp." Du willst trotzdem mehr Gehalt — und musst argumentieren.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du bist sachlich, aber nicht weich. Du nutzt adversative Konnektoren („dennoch", „allerdings", „trotzdem"), um Einwände zu entkräften — ohne aggressiv zu wirken.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular (mit Konnektoren!)</span>
+      <div class="words">
+        <span>dennoch möchte ich</span><span>trotzdem ist es so</span><span>allerdings sehe ich</span><span>jedoch zeigen die Zahlen</span><span>obwohl ich verstehe</span><span>weil ich seit zwei Jahren</span><span>außerdem habe ich</span><span>damit Sie sehen</span><span>deshalb bitte ich</span><span>nämlich</span><span>einerseits … andererseits</span><span>sonst muss ich überlegen</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Ich verstehe, dass das Budget knapp ist — trotzdem möchte ich heute über mein Gehalt sprechen.</li>
+        <li>Obwohl die Lage schwierig ist, glaube ich, dass meine Leistung honoriert werden sollte.</li>
+        <li>Ich habe nämlich seit Februar zwei zusätzliche Projekte übernommen, ohne dass das im Vertrag steht.</li>
+        <li>Allerdings sehe ich auch, dass nicht alles auf einmal geht — deshalb schlage ich einen Stufenplan vor.</li>
+        <li>Einerseits verstehe ich Ihre Situation, andererseits muss ich auch an meine Zukunft denken.</li>
+        <li>Dennoch hoffe ich, dass wir eine Lösung finden — sonst muss ich leider andere Optionen prüfen.</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> <b>„Trotzdem", „dennoch", „allerdings"</b> sind die Werkzeuge des Verhandelns. Sie zeigen: „Ich höre dich — UND ich bleibe bei meiner Position." <b>„Einerseits … andererseits"</b> zeigt Reife. Adverbiale Konnektoren = Inversion! („trotzdem MÖCHTE ich")</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Verständnis zeigen mit „obwohl" + 2) Position halten mit „trotzdem"/„dennoch" + 3) Argument mit „nämlich"/„weil" + 4) Differenzieren mit „allerdings" + 5) Forderung mit „deshalb".</div>
+  </div>
 
-<!-- DEBATTEN -->
-<div class="role-section">
-<h2 class="section-title">4 Thesen <em style="font-style:italic;">zum Debattieren</em></h2>
-<p class="section-sub">4 Gruppen — jede verteidigt eine These. 5 Min Vorbereitung, dann argumentieren!</p>
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 5) Höflich nachfragen mit „ob" + „wenn" + „dass" — Mietkaution</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du bist vor 3 Monaten ausgezogen, aber dein <em>Vermieter</em> hat dir die Kaution noch nicht zurückgegeben. Du rufst ihn höflich an.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du willst freundlich bleiben, aber klar nachfragen. Indirekte Fragen mit „ob" und Konditionalsätze mit „wenn" machen es höflich — ohne Druck zu verlieren.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular (mit Konnektoren!)</span>
+      <div class="words">
+        <span>ob Sie schon</span><span>ob es ein Problem gibt</span><span>wenn Sie kurz Zeit haben</span><span>dass ich sie nicht erhalten habe</span><span>damit das geklärt ist</span><span>falls noch Unterlagen fehlen</span><span>weil drei Monate vergangen sind</span><span>nachdem ich ausgezogen bin</span><span>bevor ich rechtliche Schritte</span><span>außerdem hatte ich</span><span>deshalb wollte ich fragen</span><span>sonst</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Guten Tag Herr Schmidt, ich wollte fragen, ob Sie kurz Zeit haben.</li>
+        <li>Es geht darum, dass ich die Kaution nach meinem Auszug noch nicht zurückbekommen habe.</li>
+        <li>Können Sie mir sagen, ob es da ein Problem gibt — oder ob Sie noch Unterlagen brauchen?</li>
+        <li>Nachdem ich vor drei Monaten ausgezogen bin, ist nun einiges an Zeit vergangen.</li>
+        <li>Wenn Sie mir mitteilen könnten, wann ich mit der Überweisung rechnen kann, wäre das super.</li>
+        <li>Falls noch etwas offen ist, schicke ich Ihnen alles, damit es schnell geklärt ist.</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> <b>„Ob"</b> macht Fragen indirekt und höflich („Ich wollte fragen, ob …"). <b>„Wenn"</b> macht Bitten weicher („Wenn Sie mir sagen könnten …"). <b>„Dass"</b> klärt die Sache („Es geht darum, dass …"). Drei Höflichkeits-Werkzeuge in einem Gespräch.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Eröffnung mit „ob Sie Zeit haben" + 2) Anliegen mit „dass" + 3) Klärungs-Frage mit „ob" + 4) Begründung mit „weil"/„nachdem" + 5) Lösung mit „falls" + „damit".</div>
+  </div>
 
-<div class="debate-grid">
-<div class="debate"><div class="debate-num">These 1</div><div class="debate-q">„Smartphones machen unsere Gesellschaft einsamer."</div></div>
-<div class="debate"><div class="debate-num">These 2</div><div class="debate-q">„Hausaufgaben gehören abgeschafft — sie sind ineffektiv."</div></div>
-<div class="debate"><div class="debate-num">These 3</div><div class="debate-q">„Eine 4-Tage-Woche wäre besser für alle."</div></div>
-<div class="debate"><div class="debate-num">These 4</div><div class="debate-q">„Fernsehen bildet nicht — Bücher dagegen schon."</div></div>
-</div>
-
-<div class="tip" style="margin-top:1.5rem;">
-🎯 <strong>Pflicht in deiner Argumentation:</strong> Mindestens <strong>WEIL</strong> (Grund), <strong>OBWOHL</strong> (Einwand), <strong>DESHALB</strong> (Folge) und <strong>WENN/FALLS</strong> (Bedingung) verwenden — jede Familie kommt vor!
-</div>
-</div>
-
-<!-- MISSION -->
-<h2 class="section-title">🎯 Mission der Woche</h2>
-<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
-<strong>Tägliche Mini-Aufgabe:</strong> Notiere jeden Tag <strong>5 Sätze mit verschiedenen Konnektoren</strong> — jeden Tag eine andere Familie! Mo: nur F1, Di: nur F2, Mi: nur F3… <br><br>
-🏆 <strong>Bonus-Challenge:</strong> Diskutiere mit einem Freund über ein freies Thema (Klimawandel, Social Media, Beziehungen…) mit <strong>10 verschiedenen Konnektoren</strong>, ohne dich zu wiederholen!
-</div>
-
+  <div class="mission">
+    <h3>🎯 Mission der Woche</h3>
+    <p>Schreib jeden Tag <strong>5 Texte mit mindestens 3 Konnektoren</strong> — auf WhatsApp, in der Arbeit, im Notizbuch. Eine Woche lang. Du wirst merken: Deine Sätze werden plötzlich erwachsen.</p>
+    <div class="bonus"><b>Bonus-Challenge:</b> Sprich morgens beim Kaffee laut 5 Sätze über deinen Tag — und nutze in jedem ZWEI verschiedene Konnektoren. „Heute muss ich arbeiten, obwohl ich müde bin, weil ich gestern spät ins Bett bin." So wird\'s automatisch.</div>
+  </div>
 </section>
 
-</div>
+<!-- UMGANGSSPRACHE — AM ENDE! -->
+<section class="section">
+  <h2 class="section-title">Wie Konnektoren wirklich klingen</h2>
+  <p class="section-sub">So tippen echte Menschen — kein Lehrbuch. Konnektoren sind <strong>hervorgehoben</strong>.</p>
 
-<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit ❤️ für meine Sprechclub-Lernenden · Konnektoren-Baukasten</footer>
+  <div class="uss-grid">
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">😷</div><div><div class="name">Lara 💬 Chefin</div><div class="stat">heute, 08:12</div></div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Hi Frau Berger, kann heute leider nicht kommen, <strong>weil</strong> ich Fieber hab 🤒</div></div>
+      <div class="chat-msg in"><span class="speaker">Chefin</span><div class="chat-bubble">Oh nein, gute Besserung! Brauchen Sie ein Attest?</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Ja, ich geh nachher zum Arzt, <strong>damit</strong> ich eins bekomme.</div></div>
+      <div class="chat-msg out"><div class="chat-bubble"><strong>Falls</strong> ich morgen auch ausfalle, melde ich mich gleich früh.</div></div>
+      <div class="chat-msg in"><span class="speaker">Chefin</span><div class="chat-bubble">Alles klar. Werden Sie gesund — der Rest kann warten.</div></div>
+      <div class="chat-meaning"><strong>„weil"</strong> = Grund (Verb ans Ende: „Fieber hab"). <strong>„damit"</strong> = Zweck. <strong>„falls"</strong> = Möglichkeit. Drei Konnektoren, drei verschiedene Funktionen — total normal im Job-Chat.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🍕</div><div><div class="name">Tim 💬 Max</div><div class="stat">tippt …</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Tim</span><div class="chat-bubble">Bock heut auf Pizza? 🍕</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Eigentlich ja, <strong>aber</strong> ich bin mega kaputt</div></div>
+      <div class="chat-msg in"><span class="speaker">Tim</span><div class="chat-bubble">Komm schon, nur kurz. <strong>Außerdem</strong> hast du gestern auch abgesagt 🙄</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Ok ok 😅 <strong>trotzdem</strong> muss ich um 10 daheim sein, <strong>sonst</strong> sterbe ich morgen im Meeting</div></div>
+      <div class="chat-msg in"><span class="speaker">Tim</span><div class="chat-bubble">Deal. 19 Uhr bei Luigi?</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Bin da</div></div>
+      <div class="chat-meaning"><strong>„aber"</strong> = Hauptsatz-Konnektor (keine Inversion). <strong>„außerdem"</strong>, <strong>„trotzdem"</strong>, <strong>„sonst"</strong> = adverbiale (Verb VOR Subjekt: „trotzdem muss ich"!). Vier Konnektoren in einem Mini-Chat.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">💔</div><div><div class="name">Mia 💬 Mama</div><div class="stat">online</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">Mama, Jan und ich haben uns getrennt 😞</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Oh Schatz… was ist passiert?</div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-voice"><div class="play">▶</div><div class="wave"></div><div class="dur">🎙️ 1:23</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">Kurz gesagt: <strong>obwohl</strong> wir noch gute Tage hatten, war klar, <strong>dass</strong> es nicht mehr passt</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Komm doch am Wochenende, <strong>wenn</strong> du magst</div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">Ja gerne. <strong>Nachdem</strong> ich die Wohnung geräumt hab, fahr ich runter</div></div>
+      <div class="chat-meaning"><strong>„obwohl"</strong>, <strong>„dass"</strong>, <strong>„wenn"</strong>, <strong>„nachdem"</strong> = alles Nebensatz-Konnektoren → <strong>Verb am Ende!</strong> („wenn du magst", „nachdem ich geräumt hab"). Diese Gruppe ist die wichtigste für B1.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">📦</div><div><div class="name">Felix 💬 DHL-Service</div><div class="stat">heute, 14:08</div></div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Hallo, ich frage, <strong>ob</strong> mein Paket schon unterwegs ist?</div></div>
+      <div class="chat-msg in"><span class="speaker">DHL</span><div class="chat-bubble">Guten Tag! Können Sie mir die Sendungsnummer geben?</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Klar: 4789-2233-XY. <strong>Falls</strong> es Probleme gibt, sagen Sie Bescheid, <strong>damit</strong> ich planen kann.</div></div>
+      <div class="chat-msg in"><span class="speaker">DHL</span><div class="chat-bubble">Sehe gerade: Es ist heute Abend bei Ihnen, <strong>sofern</strong> niemand abwesend ist.</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Super, danke! <strong>Bevor</strong> ich auflege: kann der Fahrer es auch beim Nachbarn lassen?</div></div>
+      <div class="chat-meaning"><strong>„ob"</strong> = indirekte Frage (höflich!). <strong>„falls"</strong> = Bedingung. <strong>„damit"</strong> = Zweck. <strong>„sofern"</strong> = formaler als „wenn". <strong>„bevor"</strong> = Zeit. Formaler Ton braucht mehr Nebensatz-Konnektoren.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🎉</div><div><div class="name">WG-Chat „Rosenheimer 12"</div><div class="stat">3 Personen</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Anna</span><div class="chat-bubble">Leute, wer kocht heute? 🍝</div></div>
+      <div class="chat-msg in"><span class="speaker">Ben</span><div class="chat-bubble">Ich kann, <strong>aber</strong> erst nach 8, <strong>weil</strong> ich noch Sport hab</div></div>
+      <div class="chat-msg in"><span class="speaker">Anna</span><div class="chat-bubble">Ok, <strong>dann</strong> mach ich Vorspeise, <strong>damit</strong> wir nicht so spät essen 😄</div></div>
+      <div class="chat-msg in"><span class="speaker">Ben</span><div class="chat-bubble">Top! <strong>Außerdem</strong> hab ich noch Wein da von gestern</div></div>
+      <div class="chat-msg in"><span class="speaker">Tom</span><div class="chat-bubble">Ich bin spät dran, <strong>trotzdem</strong> bring ich Eis mit, <strong>falls</strong> ihr Lust habt</div></div>
+      <div class="chat-meaning">Echter WG-Chat: <strong>„aber"</strong>, <strong>„weil"</strong>, <strong>„damit"</strong>, <strong>„außerdem"</strong>, <strong>„trotzdem"</strong>, <strong>„falls"</strong> — sechs verschiedene Konnektoren, alle aus 3 Gruppen. SO klingt natürliches Deutsch.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🤔</div><div><div class="name">Sophie 💬 Bestie</div><div class="stat">vor 2 Min</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Sophie</span><div class="chat-bubble">Soll ich dem Typ schreiben oder nicht 😩</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Was hindert dich?</div></div>
+      <div class="chat-msg in"><span class="speaker">Sophie</span><div class="chat-bubble"><strong>Einerseits</strong> war\'s super gestern, <strong>andererseits</strong> hat er ewig fürs Antworten gebraucht</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Schreib trotzdem. <strong>Wenn</strong> er antwortet, weißt du Bescheid. <strong>Wenn</strong> nicht, auch.</div></div>
+      <div class="chat-msg in"><span class="speaker">Sophie</span><div class="chat-bubble">Stimmt. <strong>Dennoch</strong> wart ich bis morgen, <strong>sonst</strong> wirk ich verzweifelt 🙈</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Lol ok. <strong>Nachdem</strong> du geschrieben hast, willst du nicht 5x checken — versprochen?</div></div>
+      <div class="chat-meaning">Drama-Chat MIT Konnektor-Power: <strong>„einerseits … andererseits"</strong> = Abwägen. <strong>„dennoch"</strong>, <strong>„sonst"</strong> = adverbial (Inversion!). <strong>„wenn", „nachdem"</strong> = Nebensatz (Verb ans Ende). Profi-Niveau in einem WhatsApp-Chat.</div>
+    </div>
+
+  </div>
+
+  <div class="tip">
+    <strong>Tipp:</strong> Im Chat schreiben Leute oft schludrig (Kleinbuchstaben, keine Kommas). <strong>Aber:</strong> die Wortstellung ist immer korrekt! Selbst „weil ich krank bin" (mit Verb hinten) — das ist tief drin. Achte mal drauf im nächsten Chat.
+  </div>
+</section>
+
+<footer>deutschoderwas · Sprechclub · Konnektoren · ab B1 · <strong>Deluxe-Version</strong> · 13.06.2026</footer>
+
+</div>
 
 <script>
-// ===== TAB NAV =====
-document.querySelectorAll('.tab').forEach(b=>{
-  b.onclick=()=>{
+// ============= TAB-NAVI =============
+document.querySelectorAll('.tab').forEach((t,i)=>{
+  t.addEventListener('click',()=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
     document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    t.classList.add('active');
+    document.querySelectorAll('.section')[i].classList.add('active');
     window.scrollTo({top:0,behavior:'smooth'});
-  };
+  });
 });
 
-// ===== LERNKARTEN =====
-const KARTEN=[
-  {emoji:'🌸',word:'aber',badge:'Familie 1 · Konjunktion',rule:'Gegensatz · Verb bleibt auf Pos. 2',ex:'„Es regnet, <strong>aber</strong> ich gehe raus."'},
-  {emoji:'🌸',word:'denn',badge:'Familie 1 · Konjunktion',rule:'Grund · Verb bleibt auf Pos. 2',ex:'„Ich bleibe zu Hause, <strong>denn</strong> ich bin müde."'},
-  {emoji:'🌸',word:'oder',badge:'Familie 1 · Konjunktion',rule:'Alternative · Verb auf Pos. 2',ex:'„Möchtest du Tee <strong>oder</strong> Kaffee?"'},
-  {emoji:'🌸',word:'sondern',badge:'Familie 1 · Konjunktion',rule:'Korrektur (nach Verneinung!)',ex:'„Es ist nicht warm, <strong>sondern</strong> kalt."'},
-  {emoji:'🌊',word:'deshalb',badge:'Familie 2 · Adverb',rule:'Folge · INVERSION — Verb vor Subjekt',ex:'„Es regnet, <strong>deshalb bleibe ich</strong> zu Hause."'},
-  {emoji:'🌊',word:'trotzdem',badge:'Familie 2 · Adverb',rule:'Gegensatz-Folge · INVERSION',ex:'„Ich bin müde, <strong>trotzdem gehe ich</strong> joggen."'},
-  {emoji:'🌊',word:'dann',badge:'Familie 2 · Adverb',rule:'Zeitliche Folge · INVERSION',ex:'„Wir essen, <strong>dann sehen wir</strong> einen Film."'},
-  {emoji:'🌊',word:'jedoch',badge:'Familie 2 · Adverb (formell)',rule:'Gegensatz (formell) · INVERSION',ex:'„Ich liebe sie, <strong>jedoch habe ich</strong> Angst."'},
-  {emoji:'🍃',word:'weil',badge:'Familie 3 · Subjunktion',rule:'Grund · Verb am ENDE!',ex:'„Ich bleibe, <strong>weil</strong> es <strong>regnet</strong>."'},
-  {emoji:'🍃',word:'obwohl',badge:'Familie 3 · Subjunktion',rule:'Gegensatz · Verb am ENDE!',ex:'„Ich gehe raus, <strong>obwohl</strong> es <strong>regnet</strong>."'},
-  {emoji:'🍃',word:'damit',badge:'Familie 3 · Subjunktion',rule:'Zweck (verschiedene Subjekte) · Verb am ENDE',ex:'„Ich lerne, <strong>damit</strong> mein Vater stolz <strong>ist</strong>."'},
-  {emoji:'🍃',word:'um … zu',badge:'Familie 3 · Infinitivsatz',rule:'Zweck (gleiches Subjekt) · kürzer & eleganter',ex:'„Ich lerne, <strong>um</strong> besser <strong>zu sprechen</strong>."'},
-  {emoji:'🍃',word:'wenn',badge:'Familie 3 · Subjunktion',rule:'Bedingung / Wiederholung · Verb am ENDE',ex:'„<strong>Wenn</strong> es <strong>regnet</strong>, bleibe ich zu Hause."'},
-  {emoji:'🍃',word:'als',badge:'Familie 3 · Subjunktion',rule:'einmalige Vergangenheit · Verb am ENDE',ex:'„<strong>Als</strong> ich Kind <strong>war</strong>, spielte ich Geige."'},
-  {emoji:'🍃',word:'falls',badge:'Familie 3 · Subjunktion',rule:'unsichere Bedingung · Verb am ENDE',ex:'„<strong>Falls</strong> du krank <strong>wirst</strong>, ruf an."'},
-  {emoji:'🍃',word:'sobald',badge:'Familie 3 · Subjunktion',rule:'Zeitpunkt (sofort wenn) · Verb am ENDE',ex:'„Ich rufe an, <strong>sobald</strong> ich da <strong>bin</strong>."'},
+// ============= LERNKARTEN (23) =============
+const CARDS = [
+  {e:'➕',w:'und',b:'Hauptsatz · Pos. 0',r:'Verbindet zwei gleichwertige Sätze — nichts ändert sich.',ex:'„Ich koche, <strong>und</strong> du deckst den Tisch."',syn:'sowie · außerdem (adv.)'},
+  {e:'↔️',w:'aber',b:'Hauptsatz · Pos. 0',r:'Drückt einen Gegensatz aus — Wortstellung bleibt normal.',ex:'„Ich bin müde, <strong>aber</strong> ich mache weiter."',syn:'jedoch (adv.) · allerdings (adv.)'},
+  {e:'⚖️',w:'oder',b:'Hauptsatz · Pos. 0',r:'Zeigt eine Alternative — entweder das eine oder das andere.',ex:'„Trinkst du Tee, <strong>oder</strong> nimmst du Kaffee?"',syn:'entweder … oder · beziehungsweise'},
+  {e:'💡',w:'denn',b:'Hauptsatz · Pos. 0',r:'Begründung im Hauptsatz — wie „weil", aber ohne Verb-Endstellung.',ex:'„Ich bleib daheim, <strong>denn</strong> ich bin müde."',syn:'weil (Nebensatz!) · nämlich (adv.)'},
+  {e:'🚫',w:'sondern',b:'Hauptsatz · Pos. 0',r:'Korrektur nach Negation: nicht X, SONDERN Y.',ex:'„Ich will keinen Kaffee, <strong>sondern</strong> einen Tee."',syn:'(nicht/kein …,) sondern'},
+  {e:'🎯',w:'weil',b:'Nebensatz · Verb ans Ende',r:'Begründung — Verb wandert nach hinten.',ex:'„Ich komme nicht, <strong>weil</strong> ich krank <strong>bin</strong>."',syn:'da (formaler) · denn (Hauptsatz)'},
+  {e:'📌',w:'dass',b:'Nebensatz · Verb ans Ende',r:'Leitet einen Inhaltssatz ein — „Ich weiß, dass …"',ex:'„Ich glaube, <strong>dass</strong> du recht <strong>hast</strong>."',syn:'(kein direktes Synonym)'},
+  {e:'⏰',w:'wenn',b:'Nebensatz · Verb ans Ende',r:'Bedingung oder Zeit (wiederholt). Verb hinten!',ex:'„Ruf mich an, <strong>wenn</strong> du Zeit <strong>hast</strong>."',syn:'falls (nur Bedingung) · sobald (Zeit)'},
+  {e:'🌪️',w:'obwohl',b:'Nebensatz · Verb ans Ende',r:'Konzession — etwas passiert TROTZ Hindernis.',ex:'„Ich gehe joggen, <strong>obwohl</strong> es <strong>regnet</strong>."',syn:'obgleich · obschon (literarisch)'},
+  {e:'🎯',w:'damit',b:'Nebensatz · Verb ans Ende',r:'Zweck oder Absicht — „um etwas zu erreichen".',ex:'„Ich lerne Deutsch, <strong>damit</strong> ich besser <strong>verstehe</strong>."',syn:'um … zu (mit gleichem Subjekt) · sodass'},
+  {e:'❓',w:'ob',b:'Nebensatz · Verb ans Ende',r:'Indirekte Ja/Nein-Frage — höflicher als direkte Frage.',ex:'„Ich frage, <strong>ob</strong> du Zeit <strong>hast</strong>."',syn:'(nur „ob" für Ja/Nein-Fragen)'},
+  {e:'🌧️',w:'falls',b:'Nebensatz · Verb ans Ende',r:'Bedingung mit Unsicherheit — „falls es passiert".',ex:'„<strong>Falls</strong> es <strong>regnet</strong>, bleibe ich daheim."',syn:'wenn · sofern (formaler)'},
+  {e:'⏳',w:'während',b:'Nebensatz · Verb ans Ende',r:'Gleichzeitigkeit ODER Gegensatz — Verb ans Ende.',ex:'„<strong>Während</strong> du <strong>kochst</strong>, deck ich den Tisch."',syn:'als (einmalige Vergangenheit)'},
+  {e:'⏭️',w:'nachdem',b:'Nebensatz · Verb ans Ende',r:'Zeitlich DANACH — meist mit Perfekt/Plusquamperfekt.',ex:'„<strong>Nachdem</strong> ich gefrühstückt <strong>habe</strong>, fahre ich los."',syn:'als (einmal in Vergangenheit)'},
+  {e:'⏮️',w:'bevor',b:'Nebensatz · Verb ans Ende',r:'Zeitlich DAVOR — Verb am Ende des Nebensatzes.',ex:'„<strong>Bevor</strong> ich <strong>schlafe</strong>, lese ich noch."',syn:'ehe (literarisch)'},
+  {e:'➡️',w:'deshalb',b:'Adverbial · Inversion!',r:'Folge/Konsequenz — Verb kommt VOR Subjekt!',ex:'„Es regnet, <strong>deshalb nehme ich</strong> einen Schirm."',syn:'deswegen · daher · darum'},
+  {e:'🔄',w:'trotzdem',b:'Adverbial · Inversion!',r:'Konzession (wie „obwohl"), aber adverbial — Inversion!',ex:'„Ich bin müde, <strong>trotzdem gehe ich</strong> raus."',syn:'dennoch · gleichwohl (formal)'},
+  {e:'➕',w:'außerdem',b:'Adverbial · Inversion!',r:'Hinzufügung — „und zusätzlich". Verb vor Subjekt!',ex:'„Sie singt gut, <strong>außerdem tanzt sie</strong> super."',syn:'zudem · darüber hinaus · ferner (formal)'},
+  {e:'⚠️',w:'allerdings',b:'Adverbial · Inversion!',r:'Einschränkung — „aber das eine Detail …" Höflicher als „aber".',ex:'„Das ist eine gute Idee, <strong>allerdings ist sie</strong> teuer."',syn:'jedoch · freilich · indes (literarisch)'},
+  {e:'🛑',w:'jedoch',b:'Adverbial · Inversion!',r:'Förmlicher als „aber" — Inversion bei Position 1!',ex:'„Wir wollten kommen, <strong>jedoch hatten wir</strong> keine Zeit."',syn:'allerdings · doch · indes'},
+  {e:'⛔',w:'dennoch',b:'Adverbial · Inversion!',r:'„Trotzdem" auf erwachsen — formal, klar.',ex:'„Es war schwer, <strong>dennoch haben wir</strong> es geschafft."',syn:'trotzdem · gleichwohl · nichtsdestotrotz'},
+  {e:'🚨',w:'sonst',b:'Adverbial · Inversion!',r:'„Andernfalls" — Konsequenz, wenn etwas NICHT passiert.',ex:'„Beeil dich, <strong>sonst verpassen wir</strong> den Zug."',syn:'andernfalls · ansonsten'},
+  {e:'💬',w:'nämlich',b:'Adverbial · Position 3+',r:'Liefert Details nach — steht meistens nach dem Verb.',ex:'„Ich kann nicht, ich bin <strong>nämlich</strong> krank."',syn:'und zwar · weil … (Nebensatz)'}
 ];
-let order=KARTEN.map((_,i)=>i);
-let lkIdx=0;
-const flipEl=document.getElementById('flip');
+let cardIdx = 0;
 function showCard(){
-  const k=KARTEN[order[lkIdx]];
-  document.getElementById('flipEmoji').textContent=k.emoji;
-  document.getElementById('flipWord').textContent=k.word;
-  document.getElementById('flipBadge').textContent=k.badge;
-  document.getElementById('flipRule').textContent=k.rule;
-  document.getElementById('flipEx').innerHTML=k.ex;
-  document.getElementById('lkCur').textContent=lkIdx+1;
-  document.getElementById('lkTot').textContent=KARTEN.length;
-  flipEl.classList.remove('flipped');
+  const c = CARDS[cardIdx];
+  document.getElementById('fEmoji').textContent = c.e;
+  document.getElementById('fWord').textContent = c.w;
+  document.getElementById('fBadge').textContent = c.b;
+  document.getElementById('fRule').textContent = c.r;
+  document.getElementById('fEx').innerHTML = c.ex;
+  document.getElementById('fSyn').innerHTML = '<b>Synonyme/Verwandt:</b> ' + c.syn;
+  document.getElementById('cardNr').textContent = cardIdx + 1;
+  document.getElementById('flipCard').classList.remove('flipped');
 }
-flipEl.onclick=()=>flipEl.classList.toggle('flipped');
-document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
-document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
-document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+function nextCard(){ cardIdx = (cardIdx + 1) % CARDS.length; showCard(); }
+function prevCard(){ cardIdx = (cardIdx - 1 + CARDS.length) % CARDS.length; showCard(); }
+function shuffleCards(){
+  for(let i = CARDS.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [CARDS[i], CARDS[j]] = [CARDS[j], CARDS[i]];
+  }
+  cardIdx = 0;
+  showCard();
+}
+document.getElementById('flipCard').addEventListener('click', () => {
+  document.getElementById('flipCard').classList.toggle('flipped');
+});
+document.getElementById('cardTotal').textContent = CARDS.length;
 showCard();
 
-// ===== QUIZ =====
-document.querySelectorAll('.quiz-opts').forEach(opts=>{
-  const c=parseInt(opts.dataset.c);
-  const chips=opts.querySelectorAll('.quiz-chip');
-  const exp=opts.parentElement.querySelector('.quiz-explain');
-  chips.forEach((chip,i)=>{
-    chip.onclick=()=>{
-      if(opts.dataset.done)return;
-      opts.dataset.done='1';
-      if(i===c)chip.classList.add('correct');
-      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
-      exp.classList.add('show');
-    };
+// ============= QUIZ (12 Fragen) =============
+const QUIZ = [
+  {q:'Welcher Satz ist grammatikalisch RICHTIG?',opts:['Ich komme nicht, weil ich bin krank.','Ich komme nicht, weil ich krank bin.','Ich komme nicht, weil bin ich krank.'],correct:1,exp:'Bei „weil" wandert das Verb ans <b>Ende</b> des Nebensatzes. „weil ich krank <b>bin</b>" — nicht „weil ich <b>bin</b> krank".'},
+  {q:'„Es regnet, ___ nehme ich einen Schirm." Was passt?',opts:['weil','deshalb','obwohl'],correct:1,exp:'„Deshalb" = Folge (adverbial, mit Inversion: „deshalb <b>nehme ich</b>"). „Weil" + „obwohl" wären Nebensatz-Konnektoren (Verb hinten).'},
+  {q:'Welche Wortstellung ist bei „trotzdem" KORREKT?',opts:['Ich bin müde, trotzdem ich gehe.','Ich bin müde, trotzdem gehe ich.','Ich bin müde, gehe ich trotzdem.'],correct:1,exp:'„Trotzdem" ist adverbial → <b>Inversion</b>! Verb kommt VOR das Subjekt: „trotzdem <b>gehe ich</b>".'},
+  {q:'Wann nutzt du „falls" statt „wenn"?',opts:['Immer austauschbar','„Falls" nur wenn die Bedingung unsicher ist','„Falls" nur für Vergangenheit'],correct:1,exp:'„Wenn" geht für sichere Bedingungen UND Zeit. „Falls" = nur Bedingung, und betont die <b>Unsicherheit</b> („falls es regnet — kann sein").'},
+  {q:'„Ich frage dich, ___ du Zeit hast." Was passt?',opts:['dass','ob','wenn'],correct:1,exp:'„Ob" = indirekte Ja/Nein-Frage. „Ich frage, ob …" Höflicher als die direkte Frage. „Dass" wäre ein Aussagesatz.'},
+  {q:'Was ist der Unterschied zwischen „denn" und „weil"?',opts:['Bedeutung ist verschieden','„Denn" = Hauptsatz (Verb auf Pos. 2), „weil" = Nebensatz (Verb hinten)','„Denn" ist veraltet'],correct:1,exp:'Gleiche Bedeutung, aber: „Ich bleibe daheim, <b>denn</b> ich bin müde." vs. „Ich bleibe daheim, <b>weil</b> ich müde <b>bin</b>." Wortstellung ist anders!'},
+  {q:'Welcher Satz nutzt „nachdem" korrekt?',opts:['Nachdem ich frühstücke, ich gehe.','Nachdem ich gefrühstückt habe, gehe ich.','Nachdem ich habe gefrühstückt, gehe ich.'],correct:1,exp:'„Nachdem" → Verb am Ende des Nebensatzes (Perfekt!). Im Hauptsatz danach: Inversion („gehe ich"), weil der Nebensatz auf Position 1 steht.'},
+  {q:'Wie verbindest du „Ich bin müde." + „Ich gehe trotzdem zur Party." mit „obwohl"?',opts:['Obwohl ich bin müde, ich gehe zur Party.','Ich gehe zur Party, obwohl ich müde bin.','Obwohl ich müde, gehe ich zur Party.'],correct:1,exp:'„Obwohl" + Subjekt + ... + Verb am Ende: „obwohl ich müde <b>bin</b>". Verb darf nicht fehlen, muss aber hinten stehen.'},
+  {q:'„Beeil dich, ___ verpassen wir den Zug!" Was passt?',opts:['sonst','denn','obwohl'],correct:0,exp:'„Sonst" = andernfalls — adverbial mit Inversion („sonst <b>verpassen wir</b>"). Die negative Konsequenz, wenn man sich nicht beeilt.'},
+  {q:'Welcher Konnektor verlangt KEINE Veränderung der Wortstellung?',opts:['weil','deshalb','aber'],correct:2,exp:'„Aber" ist Hauptsatz-Konnektor auf <b>Position 0</b> — der nächste Hauptsatz bleibt normal (Subjekt → Verb). „Weil" verlangt Verb-Ende, „deshalb" verlangt Inversion.'},
+  {q:'„Ich lerne Deutsch, ___ ich besser verstehe." Welcher Konnektor passt — und mit welcher Wortstellung?',opts:['damit + Verb am Ende','damit + Verb auf Pos. 2','um … zu'],correct:0,exp:'„Damit" leitet einen Nebensatz ein → Verb wandert ans <b>Ende</b>: „damit ich besser <b>verstehe</b>". (Alternativ ginge „um … zu" — aber nur bei gleichem Subjekt.)'},
+  {q:'„Sie ist klug, ___ ist sie auch fleißig." Welcher Konnektor und welche Wortstellung?',opts:['außerdem (mit Inversion)','und (ohne Änderung)','weil (Verb hinten)'],correct:0,exp:'„Außerdem" ist adverbial → Inversion! „außerdem <b>ist sie</b>". „Und" würde gehen, aber ohne Inversion: „und sie ist auch …".'}
+];
+const quizCont = document.getElementById('quizContainer');
+QUIZ.forEach((q, i) => {
+  const div = document.createElement('div');
+  div.className = 'quiz';
+  div.innerHTML = '<div class="quiz-q">' + (i+1) + '. ' + q.q + '</div>' +
+    '<div class="quiz-opts">' +
+    q.opts.map((o, j) => '<button class="quiz-chip" data-i="' + j + '">' + o + '</button>').join('') +
+    '</div>' +
+    '<div class="quiz-explain"><b>Erklärung:</b> ' + q.exp + '</div>';
+  div.querySelectorAll('.quiz-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (div.classList.contains('answered')) return;
+      const sel = parseInt(chip.dataset.i);
+      div.querySelectorAll('.quiz-chip').forEach((c, ci) => {
+        if (ci === q.correct) c.classList.add('correct');
+        else if (ci === sel) c.classList.add('wrong');
+      });
+      div.classList.add('answered');
+    });
+  });
+  quizCont.appendChild(div);
+});
+
+// ============= LÜCKENTEXT (10 Sätze) =============
+const GAPS = [
+  {t:'Ich komme nicht zur Arbeit, ___ ich krank bin.',opts:['weil','denn','obwohl'],c:0},
+  {t:'Es regnet, ___ nehme ich einen Schirm mit.',opts:['weil','deshalb','dass'],c:1},
+  {t:'Beeil dich, ___ verpassen wir den Bus!',opts:['sonst','weil','obwohl'],c:0},
+  {t:'Ich frage mich, ___ er heute kommt.',opts:['dass','ob','wenn'],c:1},
+  {t:'Ich gehe joggen, ___ es regnet.',opts:['obwohl','weil','damit'],c:0},
+  {t:'Ich lerne Deutsch, ___ ich in Berlin arbeiten kann.',opts:['damit','weil','obwohl'],c:0},
+  {t:'Ich bin müde, ___ gehe ich trotzdem aus.',opts:['weil','aber','jedoch'],c:2},
+  {t:'___ ich gefrühstückt habe, fahre ich ins Büro.',opts:['Bevor','Während','Nachdem'],c:2},
+  {t:'Sie ist sehr talentiert, ___ arbeitet sie sehr hart.',opts:['außerdem','weil','obwohl'],c:0},
+  {t:'___ es morgen regnet, bleiben wir daheim.',opts:['Wenn','Falls','Dass'],c:1}
+];
+const gapCont = document.getElementById('gapContainer');
+GAPS.forEach((g, i) => {
+  const div = document.createElement('div');
+  div.className = 'gap-row';
+  div.innerHTML = (i+1) + '. ' + g.t.replace('___', '<select data-i="' + i + '"><option value="-1">— wählen —</option>' +
+    g.opts.map((o, j) => '<option value="' + j + '">' + o + '</option>').join('') + '</select>');
+  gapCont.appendChild(div);
+});
+function evalGap(){
+  let correct = 0;
+  document.querySelectorAll('#gapContainer select').forEach(sel => {
+    const i = parseInt(sel.dataset.i);
+    const v = parseInt(sel.value);
+    sel.classList.remove('correct', 'wrong');
+    if (v === GAPS[i].c){ sel.classList.add('correct'); correct++; }
+    else if (v >= 0) sel.classList.add('wrong');
+  });
+  document.getElementById('gapScore').textContent = '🎯 ' + correct + ' von ' + GAPS.length + ' richtig!';
+}
+
+// ============= ZUORDNEN (10 Paare) =============
+const MATCH = [
+  {l:'Ich gehe nicht ins Konzert,',r:'… weil ich morgen früh raus muss.'},
+  {l:'Es ist kalt draußen,',r:'… deshalb ziehe ich eine Jacke an.'},
+  {l:'Ich bin müde,',r:'… trotzdem gehe ich noch joggen.'},
+  {l:'Beeil dich,',r:'… sonst verpassen wir den letzten Zug.'},
+  {l:'Ich glaube,',r:'… dass er heute zu spät kommt.'},
+  {l:'Ich frage dich,',r:'… ob du am Wochenende Zeit hast.'},
+  {l:'Ich lerne fleißig,',r:'… damit ich die Prüfung bestehe.'},
+  {l:'Sie ist nett,',r:'… außerdem ist sie sehr klug.'},
+  {l:'Bevor ich ins Bett gehe,',r:'… lese ich noch ein Kapitel.'},
+  {l:'Ich gehe spazieren,',r:'… obwohl es regnet.'}
+];
+const mc = document.getElementById('matchContainer');
+const lefts = MATCH.map((m, i) => ({ ...m, idx: i }));
+const rights = [...MATCH].map((m, i) => ({ r: m.r, originalIdx: i }))
+  .sort(() => Math.random() - 0.5);
+mc.innerHTML = '<div class="match-col"><h4>📋 Hauptsatz</h4>' +
+  lefts.map((m, i) => '<div class="match-item left" data-i="' + i + '">' + m.l + '</div>').join('') +
+  '</div>' +
+  '<div class="match-col"><h4>✅ Passende Fortsetzung</h4>' +
+  rights.map((m, i) => '<div class="match-item right" data-i="' + i + '" data-orig="' + m.originalIdx + '">' + m.r + '</div>').join('') +
+  '</div>';
+let selL = null;
+let matchCount = 0;
+mc.querySelectorAll('.match-item.left').forEach(el => {
+  el.addEventListener('click', () => {
+    if (el.classList.contains('matched')) return;
+    mc.querySelectorAll('.match-item.left').forEach(x => x.classList.remove('selected'));
+    el.classList.add('selected');
+    selL = parseInt(el.dataset.i);
+  });
+});
+mc.querySelectorAll('.match-item.right').forEach(el => {
+  el.addEventListener('click', () => {
+    if (el.classList.contains('matched') || selL === null) return;
+    const orig = parseInt(el.dataset.orig);
+    if (orig === selL){
+      el.classList.add('matched');
+      mc.querySelector('.match-item.left[data-i="' + selL + '"]').classList.add('matched');
+      matchCount++;
+      if (matchCount === MATCH.length) document.getElementById('matchScore').textContent = '🎉 Super — alle 10 Paare zugeordnet!';
+    } else {
+      el.classList.add('wrong');
+      setTimeout(() => el.classList.remove('wrong'), 400);
+    }
+    selL = null;
+    mc.querySelectorAll('.match-item.left').forEach(x => x.classList.remove('selected'));
   });
 });
 
-// ===== LÜCKENTEXT =====
-document.getElementById('gapCheck').onclick=()=>{
-  const sels=document.querySelectorAll('#gapText select');
-  let right=0,total=sels.length;
-  sels.forEach(s=>{
-    s.classList.remove('right','wrong');
-    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
-    else s.classList.add('wrong');
-  });
-  const score=document.getElementById('gapScore');
-  score.style.display='block';
-  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');
-};
-document.getElementById('gapReset').onclick=()=>{
-  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
-  document.getElementById('gapScore').style.display='none';
-};
-
-// ===== ZUORDNEN =====
-const PAIRS=[
-  {l:'weil',r:'Grund (Verb am Ende)'},
-  {l:'deshalb',r:'Folge (Inversion)'},
-  {l:'obwohl',r:'Gegensatz (Verb am Ende)'},
-  {l:'trotzdem',r:'Gegensatz (Inversion)'},
-  {l:'damit',r:'Zweck — verschiedene Subjekte'},
-  {l:'um…zu',r:'Zweck — gleiches Subjekt'},
-  {l:'ob',r:'indirekte Ja/Nein-Frage'},
-  {l:'falls',r:'unsichere Bedingung'},
+// ============= SPRECHKARTEN (24) =============
+const SPEAK = [
+  {c:'Mit „weil"',q:'Erzähl in 2 Sätzen, warum du gestern müde warst — nutze „weil" (Verb ans Ende!).'},
+  {c:'Mit „obwohl"',q:'Erzähl von etwas, was du gemacht hast, obwohl du es eigentlich nicht wolltest.'},
+  {c:'Mit „deshalb"',q:'Sag drei Folgen aus deinem Alltag mit „deshalb" (Inversion: „deshalb mache ich …").'},
+  {c:'Mit „trotzdem"',q:'Beschreib eine Situation, in der du etwas trotzdem getan hast — drei Sätze.'},
+  {c:'Mit „damit"',q:'Warum lernst du Deutsch? Antworte mit drei „damit"-Sätzen.'},
+  {c:'Mit „wenn" + „falls"',q:'Sag jeweils einen Satz mit „wenn" (sicher) und einen mit „falls" (unsicher) für dein Wochenende.'},
+  {c:'Chronologie',q:'Erzähl deinen Morgen mit „zuerst" → „nachdem" → „während" → „danach".'},
+  {c:'Mit „dass"',q:'Sag drei Sätze: „Ich glaube, dass …" — über Politik, deine Familie, dein Job.'},
+  {c:'Mit „ob"',q:'Stell drei höfliche indirekte Fragen mit „ob …" an einen Fremden.'},
+  {c:'Mit „außerdem"',q:'Lobe einen Freund/eine Freundin — drei Komplimente mit „außerdem" (Inversion!).'},
+  {c:'Mit „allerdings"',q:'Beschreib etwas, das du magst, und schwäche es mit „allerdings" ab.'},
+  {c:'Mit „sonst"',q:'Sag drei Warnungen mit „sonst" — z.B. an Kinder oder Mitbewohner.'},
+  {c:'Mit „denn"',q:'Erklär drei Entscheidungen aus deiner Woche mit „denn".'},
+  {c:'Mit „sondern"',q:'Korrigier drei falsche Annahmen über dich — „Ich bin nicht …, sondern …".'},
+  {c:'Argumentieren',q:'Bau ein Mini-Argument: 1 These + 1 Grund mit „weil" + 1 Einschränkung mit „allerdings".'},
+  {c:'Erzählen',q:'Erzähl eine kurze Geschichte aus deiner Jugend — mit MINDESTENS 4 verschiedenen Konnektoren.'},
+  {c:'Pläne',q:'Beschreib deinen perfekten Sonntag — nutze „zuerst", „danach", „außerdem" und „bevor".'},
+  {c:'Diskutieren',q:'Sind Hunde besser als Katzen? Antworte mit „einerseits … andererseits … dennoch …".'},
+  {c:'Beschreiben',q:'Beschreib eine Person, die du magst — drei „Adjektiv + außerdem …"-Sätze.'},
+  {c:'Konditional',q:'„Wenn ich reich wäre, würde ich …" — drei Sätze.'},
+  {c:'Spontan',q:'Nenn etwas, was du gemacht hast, obwohl deine Eltern nein gesagt haben.'},
+  {c:'Reflexion',q:'Welcher Konnektor ist für DICH am schwersten — und warum (mit „weil"!)?'},
+  {c:'Job',q:'Erklär deinem Chef in 3 Sätzen, warum du heute zu spät warst — mit „weil", „nachdem" und „deshalb".'},
+  {c:'Reise',q:'Erzähl von einer Reise: 1× Grund mit „weil", 1× Folge mit „deshalb", 1× Kontrast mit „obwohl".'}
 ];
-function buildMatch(){
-  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
-  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
-  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
-  L.innerHTML='';R.innerHTML='';
-  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
-  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
-  let pick=null;
-  document.querySelectorAll('.match-item').forEach(item=>{
-    item.onclick=()=>{
-      if(item.classList.contains('done'))return;
-      if(!pick){pick=item;item.classList.add('selected');return;}
-      if(pick===item){item.classList.remove('selected');pick=null;return;}
-      // need one from each column
-      const pickCol=pick.parentElement.id;
-      const itemCol=item.parentElement.id;
-      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
-      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
-      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
-    };
-  });
+let speakIdx = 0;
+function showSpeak(){
+  const s = SPEAK[speakIdx];
+  document.getElementById('speakCard').innerHTML =
+    '<div class="cat">' + s.c + ' · Karte ' + (speakIdx+1) + ' / ' + SPEAK.length + '</div>' +
+    '<div class="q">' + s.q + '</div>';
 }
-buildMatch();
-document.getElementById('matchRestart').onclick=buildMatch;
-// add wrong shake style
-const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
-
-// ===== SPRECHKARTEN =====
-const SPEAK=[
-  {emoji:'🌧️',cat:'Familie 1 · UND/ABER',q:'Erzähle dein heutiges Wetter — und was du trotzdem (oder deswegen) machen wirst.'},
-  {emoji:'🎬',cat:'Familie 2 · DESHALB',q:'Du hast einen ganz schlechten Film gesehen. Erkläre WARUM — und was DESHALB folgte.'},
-  {emoji:'🧗',cat:'Familie 3 · WEIL',q:'Beschreibe dein letztes Wochenende mit mindestens 5 WEIL-Sätzen.'},
-  {emoji:'💡',cat:'OBWOHL · Mut',q:'Wann hast du etwas getan, OBWOHL es gefährlich oder dumm war? Erzähle!'},
-  {emoji:'🎁',cat:'DAMIT · Zweck',q:'Was tust du jeden Tag, DAMIT andere Menschen glücklich sind?'},
-  {emoji:'🎓',cat:'UM…ZU · Ziel',q:'Nenne 5 Dinge, die du tust, UM besser Deutsch zu lernen.'},
-  {emoji:'⏰',cat:'BEVOR/NACHDEM · Routine',q:'Beschreibe deine Morgenroutine mit BEVOR und NACHDEM.'},
-  {emoji:'🌍',cat:'WENN · Träume',q:'WENN ich Millionär wäre… (mind. 3 Sätze mit Konjunktiv II!)'},
-  {emoji:'🎒',cat:'FALLS · Unsicherheit',q:'FALLS du morgen krank wirst — was machst du? Erzähle deinen Notfallplan!'},
-  {emoji:'☕',cat:'TROTZDEM · Sturheit',q:'Wann warst du stur? Sag 3 Mal: „Alle sagten X, TROTZDEM machte ich Y."'},
-  {emoji:'❓',cat:'OB · Unsicherheit',q:'Was fragst du dich oft? Stelle 3 indirekte Fragen mit OB.'},
-  {emoji:'🚗',cat:'SOBALD · Plan',q:'Was machst du SOBALD du nach Hause kommst? Erzähle 5 Aktionen!'},
-  {emoji:'🏖️',cat:'ALS · Erinnerung',q:'ALS ich klein war… — erzähle eine schöne Kindheitserinnerung.'},
-  {emoji:'🍕',cat:'WÄHREND · Multitasking',q:'Was machst du gerne WÄHREND du isst, kochst, lernst?'},
-  {emoji:'😴',cat:'SEITDEM · Veränderung',q:'SEITDEM ich Deutsch lerne, hat sich etwas verändert. Was?'},
-  {emoji:'🎲',cat:'FREESTYLE · Alle Familien',q:'Erzähle 1 Minute lang — und nutze MINDESTENS 3 verschiedene Konnektoren-Familien!'},
-];
-let lastSpeak=-1;
-document.getElementById('speakNew').onclick=()=>{
-  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
-  lastSpeak=i;const k=SPEAK[i];
-  const c=document.getElementById('speakCard');
-  c.style.opacity='0';
-  setTimeout(()=>{
-    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';
-    c.style.opacity='1';
-  },200);
-};
+function nextSpeak(){
+  speakIdx = (speakIdx + 1) % SPEAK.length;
+  showSpeak();
+}
+showSpeak();
 </script>
 </body></html>

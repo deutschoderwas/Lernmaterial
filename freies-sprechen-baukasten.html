@@ -1,492 +1,970 @@
 <!DOCTYPE html><html lang="de"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Freies Sprechen · Pro & Contra · B1/B2 | deutschoderwas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Freies Sprechen · B1/B2 · DELUXE | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
-*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3; --red-dark:#C8211D;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+  --deluxe:linear-gradient(135deg,#E8302A,#FFD24A);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
 body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
-.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.wrapper{max-width:980px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
 .eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.eyebrow .badge{display:inline-block;background:var(--deluxe);color:#fff;padding:.18em .8em;border-radius:999px;margin-left:.6em;font-size:.7rem;letter-spacing:.15em;}
 .title-wrap{text-align:center;margin-bottom:1rem;}
-h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,4rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.4rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
 h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
 h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
-.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
-.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
-.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
-.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;}
+.subtitle{text-align:center;max-width:680px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:480px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;position:sticky;top:.5rem;z-index:50;box-shadow:0 4px 12px rgba(38,32,25,.08);}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
 .tab:hover{border-color:var(--ink);transform:translateY(-1px);}
 .tab.active{background:var(--red);color:white;border-color:var(--red);}
-.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
 .section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
 .tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
-.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+.tip strong{color:var(--red);font-weight:700;}
 
-/* THESE CARDS */
-.these-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin:1.5rem 0;}
-@media(max-width:600px){.these-grid{grid-template-columns:1fr;}}
-.these-card{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:1.3rem 1.4rem;border-left:6px solid var(--red);}
-.these-card:nth-child(2){border-left-color:var(--teal);}
-.these-card:nth-child(3){border-left-color:#B66809;}
-.these-card:nth-child(4){border-left-color:#6A3D9C;}
-.these-card:nth-child(5){border-left-color:var(--pink);}
-.these-card:nth-child(6){border-left-color:#5F7A2A;}
-.these-num{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
-.these-card:nth-child(2) .these-num{color:var(--teal);}
-.these-card:nth-child(3) .these-num{color:#B66809;}
-.these-card:nth-child(4) .these-num{color:#6A3D9C;}
-.these-card:nth-child(5) .these-num{color:#A04060;}
-.these-card:nth-child(6) .these-num{color:#5F7A2A;}
-.these-q{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:1.05rem;margin:.3rem 0 .6rem;}
-.these-args{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.5rem;}
-@media(max-width:500px){.these-args{grid-template-columns:1fr;}}
-.these-side{padding:.6rem .8rem;border-radius:10px;font-size:.82rem;}
-.these-side.pro{background:#D7F0EC;color:#1A5048;}
-.these-side.contra{background:#FCE5E3;color:#7A1A14;}
-.these-side strong{font-family:'Outfit',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:.2rem;}
+/* SPRECH-RAUM GRID */
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.5rem 0;}
+@media(max-width:700px){.types-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.types-grid{grid-template-columns:1fr;}}
+.type-card{background:var(--paper);border:2px solid var(--sand);border-radius:16px;padding:1.2rem;text-align:left;display:flex;flex-direction:column;gap:.5rem;}
+.type-card.t1{border-color:var(--red);background:#FFF6F5;}
+.type-card.t2{border-color:var(--teal);background:#F1FAF8;}
+.type-card.t3{border-color:#B66809;background:#FFF8E8;}
+.type-card.t4{border-color:#6A3D9C;background:#F5F0FA;}
+.type-card.t5{border-color:#0E7C7B;background:#EFFAF9;}
+.type-card.t6{border-color:#E69CB3;background:#FFF0F5;}
+.type-card .ico{font-size:1.8rem;}
+.type-card h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;color:var(--ink);}
+.type-card .ex{font-size:.85rem;color:var(--ink-soft);font-style:italic;line-height:1.4;}
 
-/* STRATEGIE */
-.strat-grid{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0;}
-.strat{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.2rem;display:grid;grid-template-columns:50px 1fr;gap:.8rem;border-left:5px solid var(--red);}
-.strat.s2{border-left-color:var(--teal);}.strat.s3{border-left-color:#B66809;}.strat.s4{border-left-color:#6A3D9C;}
-.strat-num{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:900;font-size:1.2rem;}
-.strat.s2 .strat-num{background:var(--teal);}.strat.s3 .strat-num{background:#B66809;}.strat.s4 .strat-num{background:#6A3D9C;}
-.strat-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;margin-bottom:.3rem;}
-.strat-body p{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.92rem;}
-.strat-body p strong{color:var(--red);font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;}
+/* STRATEGIE-LEISTE */
+.escalation{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;margin:1.5rem 0;}
+@media(max-width:700px){.escalation{grid-template-columns:repeat(2,1fr);}}
+.esc-step{background:var(--paper);border-left:5px solid var(--teal);border-radius:12px;padding:.8rem 1rem;}
+.esc-step:nth-child(2){border-left-color:#80B060;}
+.esc-step:nth-child(3){border-left-color:var(--yellow);}
+.esc-step:nth-child(4){border-left-color:#E07060;}
+.esc-step:nth-child(5){border-left-color:var(--red);}
+.esc-step .num{font-family:'Fraunces',serif;font-weight:900;color:var(--ink-mute);font-size:1.4rem;}
+.esc-step h4{font-weight:700;font-size:.95rem;color:var(--ink);margin:.3rem 0 .2rem;}
+.esc-step .desc{font-size:.8rem;color:var(--ink-soft);line-height:1.4;}
 
-/* ALLTAG */
-.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
-.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
-.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
-.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+/* ALLTAG-FRAGEN */
+.alltag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;margin:1.5rem 0;}
+@media(max-width:700px){.alltag-grid{grid-template-columns:1fr;}}
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);font-style:italic;line-height:1.45;}
+.alltag-q .think{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;}
 
-/* CHAT */
+/* DISKURS-VERGLEICH */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.5rem 0;}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+.comp-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.1rem 1.2rem;}
+.comp-card.a{border-color:var(--red);background:#FFF6F5;}
+.comp-card.b{border-color:var(--teal);background:#F1FAF8;}
+.comp-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem;}
+.comp-card.a .comp-tag{background:var(--red);color:white;}
+.comp-card.b .comp-tag{background:var(--teal);color:white;}
+.comp-text{font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);line-height:1.5;font-style:italic;}
+.comp-text strong{color:var(--red);font-style:normal;}
+.comp-card.b .comp-text strong{color:var(--teal);}
+
+/* WHATSAPP-CHAT */
 .chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
 .chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
 .chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
 .chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
 .chat-head .stat{font-size:.7rem;opacity:.85;}
-.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-msg.in .speaker{font-size:.7rem;color:var(--ink-mute);margin-right:.4rem;align-self:flex-end;font-weight:600;}
 .chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
 .chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
 .chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
 .chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-voice{background:var(--wa-in);border-bottom-left-radius:4px;padding:.6rem 1rem;display:flex;align-items:center;gap:.6rem;}
+.chat-msg.out .chat-voice{background:var(--wa-out);border-bottom-right-radius:4px;border-bottom-left-radius:14px;}
+.chat-voice .play{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+.chat-voice .wave{flex:1;height:18px;background:repeating-linear-gradient(90deg,var(--ink-mute) 0 2px,transparent 2px 5px);opacity:.5;}
+.chat-voice .dur{font-size:.75rem;color:var(--ink-soft);}
 .chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
 .chat-meaning strong{color:#B66809;}
 .uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
 
-/* REDEMITTEL */
-.rm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem;margin:1rem 0;}
-@media(max-width:600px){.rm-grid{grid-template-columns:1fr;}}
-.rm{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.85rem 1.1rem;border-left:4px solid var(--red);}
-.rm.t2{border-left-color:var(--teal);}.rm.t3{border-left-color:#B66809;}.rm.t4{border-left-color:#6A3D9C;}.rm.t5{border-left-color:var(--pink);}
-.rm-tag{font-size:.68rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;}
-.rm.t2 .rm-tag{color:var(--teal);}.rm.t3 .rm-tag{color:#B66809;}.rm.t4 .rm-tag{color:#6A3D9C;}.rm.t5 .rm-tag{color:#A04060;}
-.rm-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.2rem;}
-
-/* FLIP */
-.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+/* FLIP-KARTEN */
+.flip{perspective:1000px;width:100%;max-width:480px;height:380px;margin:1.5rem auto;cursor:pointer;}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
 .flip.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
 .flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
-.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
-.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);line-height:1.3;}
+.flip-emoji{font-size:2.6rem;margin-bottom:.4rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
 .flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
-.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
-.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
-.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;line-height:1.55;}
+.flip-prompt{font-size:.78rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.92rem;margin-bottom:.4rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.9rem;margin-top:.4rem;line-height:1.5;}
 .flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.flip-syn{font-size:.78rem;color:var(--ink-soft);margin-top:.5rem;border-top:1px dashed var(--sand);padding-top:.4rem;}
+.flip-syn b{color:var(--ink);}
 .lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
 .lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
 .lk-btn:hover{background:var(--ink);color:white;}
-.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
-.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);}
 
 /* QUIZ */
-.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
-.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
-.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
-.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
-.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
-.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
-.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
-.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
-.quiz-explain.show{display:block;}
+.quiz{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:1.2rem 1.4rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:.7rem;}
+.quiz-opts{display:flex;flex-direction:column;gap:.4rem;}
+.quiz-chip{background:var(--cream);border:1.5px solid var(--sand);border-radius:10px;padding:.55rem .9rem;cursor:pointer;font-size:.92rem;transition:.15s;text-align:left;}
+.quiz-chip:hover{border-color:var(--ink);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);font-weight:600;}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);text-decoration:line-through;}
+.quiz-explain{display:none;margin-top:.7rem;padding:.7rem .9rem;background:var(--yellow-soft);border-radius:10px;font-size:.85rem;color:var(--ink);border-left:3px solid var(--yellow);}
+.quiz.answered .quiz-explain{display:block;}
 
-/* GAP */
-.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
-.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
-.gap-text .gap-line:last-of-type{border-bottom:0;}
-.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
-.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
-.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
-.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
-.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
-.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.btn-secondary:hover{background:var(--ink);color:white;}
+/* LÜCKENTEXT */
+.gap-row{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.2rem;margin:.6rem 0;font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);line-height:1.7;}
+.gap-row select{font-family:'Outfit',sans-serif;font-size:.95rem;background:var(--cream-warm);border:1.5px solid var(--ink);border-radius:8px;padding:.2rem .5rem;font-weight:600;color:var(--red);cursor:pointer;}
+.gap-row select.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.gap-row select.wrong{background:var(--red-soft);border-color:var(--red);}
+.gap-score{text-align:center;margin-top:1rem;font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.1rem;}
+.gap-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:.55rem 1.4rem;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;font-size:.92rem;margin:1rem auto;display:block;}
 
-/* MATCH */
-.match-stage{margin:1.5rem 0;}
-.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
-.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
-.match-list{display:flex;flex-direction:column;gap:.45rem;}
-.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
-.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+/* ZUORDNEN */
+.match{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0;}
+@media(max-width:600px){.match{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--red);margin-bottom:.6rem;text-align:center;font-size:.92rem;}
+.match-item{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.65rem .9rem;margin:.35rem 0;cursor:pointer;font-size:.88rem;transition:.15s;}
 .match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
-.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
-.match-restart{display:block;margin:1.2rem auto 0;}
+.match-item.matched{background:var(--teal-soft);border-color:var(--teal);cursor:default;opacity:.7;}
+.match-item.wrong{animation:shake .35s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
 
-/* SPEAK + ROLE */
-.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
-.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
-.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
-.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
-.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
-.speak-controls{text-align:center;margin-top:1rem;}
-.role-section{margin-top:2.5rem;}
-.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
-.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
-.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
-.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
-.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
-@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
-.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
-.person.a{border-color:var(--red);background:#FFF6F5;}
-.person.b{border-color:var(--teal);background:#F1FAF8;}
-.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
-.person.a .person-avatar{border-color:var(--red);}
-.person.b .person-avatar{border-color:var(--teal);}
-.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
-.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
-.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+/* SPRECHKARTEN */
+.speak-card{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;animation:fade .35s;}
+.speak-card .cat{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.speak-card .q{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);margin-top:.4rem;font-style:italic;line-height:1.5;}
+.speak-nav{text-align:center;margin-top:1rem;}
+.speak-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:.7rem 1.6rem;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;font-size:.95rem;}
+.speak-btn:hover{background:var(--red-dark);}
 
-footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
-footer strong{color:var(--ink);}
+/* ROLLENSPIEL — DELUXE mit Hilfestellung */
+.rolle{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1.5rem 0;box-shadow:0 4px 18px rgba(38,32,25,.06);}
+.rolle h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--ink);margin-bottom:.8rem;}
+.rolle h3 .ico{display:inline-block;margin-right:.4rem;}
+.rolle .row{display:flex;gap:.6rem;margin:.6rem 0;align-items:flex-start;}
+.rolle .row .lbl{font-weight:700;color:var(--red);font-size:.85rem;min-width:140px;}
+.rolle .row .val{font-size:.94rem;color:var(--ink);line-height:1.55;}
+.rolle .val em{font-style:normal;font-family:'Fraunces',serif;font-weight:600;color:var(--ink);}
+.rolle .keys{background:var(--teal-soft);border-radius:10px;padding:.7rem .9rem;margin:.6rem 0;}
+.rolle .keys .lbl-k{display:block;font-weight:700;color:var(--teal);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;}
+.rolle .keys .words{font-size:.9rem;color:var(--ink);}
+.rolle .keys .words span{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--ink);padding:.15rem .55rem;border-radius:999px;margin:.18rem .14rem;font-size:.82rem;font-weight:500;}
+.rolle .phrases{background:var(--yellow-soft);border-radius:10px;padding:.7rem .9rem;margin:.6rem 0;}
+.rolle .phrases .lbl-k{display:block;font-weight:700;color:#B66809;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;}
+.rolle .phrases ul{list-style:none;padding:0;}
+.rolle .phrases li{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;padding:.18rem 0 .18rem 1.1rem;position:relative;line-height:1.55;}
+.rolle .phrases li::before{content:'\201E';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;font-size:1.1rem;line-height:.9;}
+.rolle .phrases li::after{content:'\201C';color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+.rolle .strategy{background:var(--cream-warm);border-left:4px solid var(--red);padding:.6rem .9rem;border-radius:10px;margin:.6rem 0;font-size:.88rem;color:var(--ink);line-height:1.55;}
+.rolle .strategy b{color:var(--red);}
+.rolle .answer-struct{background:#F1FAF8;border:1.5px dashed var(--teal);padding:.6rem .9rem;border-radius:10px;margin:.6rem 0;font-size:.86rem;color:var(--ink);}
+.rolle .answer-struct b{color:var(--teal);}
+
+/* DEBATTEN-THESEN */
+.these{background:var(--paper);border-left:5px solid #2D6BB5;border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;}
+.these .nr{font-size:.72rem;font-weight:700;color:#2D6BB5;letter-spacing:.1em;text-transform:uppercase;}
+.these h4{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.these .sides{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.7rem;}
+@media(max-width:600px){.these .sides{grid-template-columns:1fr;}}
+.these-side{padding:.6rem .8rem;border-radius:10px;font-size:.85rem;}
+.these-side.pro{background:#F1FAF8;border-left:3px solid var(--teal);}
+.these-side.con{background:var(--red-soft);border-left:3px solid var(--red);}
+.these-side b{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;}
+.these-side.pro b{color:var(--teal);}
+.these-side.con b{color:var(--red);}
+.these-side .ks{margin-top:.3rem;font-style:italic;font-family:'Fraunces',serif;color:var(--ink-soft);font-size:.82rem;}
+.these-side .ph{margin-top:.3rem;font-style:italic;font-family:'Fraunces',serif;color:var(--ink);font-size:.85rem;}
+
+/* STORY-WÜRFEL */
+.dice-wrap{background:var(--paper);border:2px dashed var(--ink);border-radius:18px;padding:1.4rem 1.5rem;margin:1.5rem 0;text-align:center;}
+.dice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:1rem 0;}
+@media(max-width:520px){.dice-grid{grid-template-columns:1fr;}}
+.dice{background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border:2px solid var(--yellow);border-radius:14px;padding:.9rem .6rem;min-height:90px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.3rem;}
+.dice .dl{font-size:.7rem;font-weight:700;color:#B66809;letter-spacing:.1em;text-transform:uppercase;}
+.dice .dv{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--ink);line-height:1.25;}
+.dice-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:.65rem 1.5rem;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;font-size:.95rem;margin-top:.5rem;}
+
+/* MISSION */
+.mission{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-radius:20px;padding:1.5rem 1.7rem;margin:2rem 0;}
+.mission h3{font-family:'Fraunces',serif;font-size:1.4rem;margin-bottom:.6rem;}
+.mission p{font-size:.95rem;margin:.4rem 0;line-height:1.6;}
+.mission .bonus{background:rgba(255,255,255,.18);border-radius:12px;padding:.7rem 1rem;margin-top:.8rem;font-size:.88rem;}
+.mission .bonus b{color:var(--yellow);}
+footer{text-align:center;color:var(--ink-mute);font-size:.78rem;margin-top:3rem;padding:1rem;}
 </style>
 </head>
 <body>
 <div class="wrapper">
-<div class="eyebrow">deutschoderwas · Sprechclub B1/B2</div>
-<div class="title-wrap"><h1 class="title">Freies <span class="hl">Sprechen</span></h1></div>
-<p class="subtitle">12 provokante Thesen, klare Redemittel und Strategien für Diskussionen — du lernst zu argumentieren, zu widersprechen und zu überzeugen.</p>
 
-<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
-<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
-<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">💬</text><text y="40" text-anchor="middle" fill="#E8302A">Meinung</text></g>
-<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">✅</text><text y="40" text-anchor="middle" fill="#0FB5A6">Zustimmen</text></g>
-<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">❌</text><text y="40" text-anchor="middle" fill="#B66809">Widersprechen</text></g>
-<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">💡</text><text y="40" text-anchor="middle" fill="#A04060">Argumente</text></g>
-<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">🤝</text><text y="40" text-anchor="middle" fill="#5F7A2A">Kompromiss</text></g>
-<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">🏆</text><text y="40" text-anchor="middle" fill="#6A3D9C">Fazit</text></g>
-</g>
+<div class="eyebrow">B1/B2 · Sprechclub <span class="badge">Deluxe</span></div>
+<div class="title-wrap">
+  <h1 class="title">Einfach <span class="hl">drauflos reden</span></h1>
+  <p class="subtitle">Sechs Sprech-Räume, ein Story-Würfel, Mini-Debatten und Erzähl-Impulse, die wirklich Lust aufs Reden machen. Trau dich. Mach Fehler. Erzähl.</p>
+</div>
+
+<svg class="hero-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="100" r="48" fill="#FCE5E3"/><text x="80" y="112" font-size="40" text-anchor="middle">🗣️</text>
+  <circle cx="180" cy="60" r="38" fill="#D7F0EC"/><text x="180" y="73" font-size="32" text-anchor="middle">💭</text>
+  <circle cx="240" cy="140" r="42" fill="#FFF1C2"/><text x="240" y="154" font-size="36" text-anchor="middle">🎲</text>
+  <circle cx="320" cy="60" r="38" fill="#F5F0FA"/><text x="320" y="73" font-size="32" text-anchor="middle">🎙️</text>
+  <circle cx="400" cy="100" r="48" fill="#FFE8E3"/><text x="400" y="112" font-size="40" text-anchor="middle">😄</text>
 </svg>
 
-<nav class="tabs">
-<button class="tab active" data-tab="0">📖 Überblick</button>
-<button class="tab" data-tab="1">💬 Umgangssprache</button>
-<button class="tab" data-tab="2">🃏 Redemittel</button>
-<button class="tab" data-tab="3">✅ Quiz</button>
-<button class="tab" data-tab="4">✍️ Lückentext</button>
-<button class="tab" data-tab="5">🧩 Zuordnen</button>
-<button class="tab" data-tab="6">🗣️ 12 Thesen</button>
-</nav>
-
-<!-- ÜBERBLICK -->
-<section class="section active" data-section="0">
-<h2 class="section-title">Die <em style="font-style:italic;">4 Schritte</em> einer guten Diskussion</h2>
-
-<div class="strat-grid">
-<div class="strat s1"><div class="strat-num">1</div><div class="strat-body"><h4>💭 Meine Meinung sagen</h4><p>Beginne mit einer KLAREN Position: „<strong>Ich bin der Meinung, dass…</strong>" oder „<strong>Meiner Ansicht nach…</strong>" — direkt zur Sache!</p></div></div>
-<div class="strat s2"><div class="strat-num">2</div><div class="strat-body"><h4>💡 Argument geben</h4><p>JEDE Meinung braucht ein Argument: „<strong>weil…</strong>" / „<strong>denn…</strong>" / „<strong>Ein wichtiger Grund ist, dass…</strong>"</p></div></div>
-<div class="strat s3"><div class="strat-num">3</div><div class="strat-body"><h4>📝 Beispiel nennen</h4><p>Beispiele machen alles konkret: „<strong>Zum Beispiel…</strong>" / „<strong>Ein Beispiel dafür ist…</strong>" / „<strong>Aus eigener Erfahrung…</strong>"</p></div></div>
-<div class="strat s4"><div class="strat-num">4</div><div class="strat-body"><h4>🏆 Fazit ziehen</h4><p>Beende mit einem starken Schluss: „<strong>Deshalb glaube ich, dass…</strong>" / „<strong>Zusammenfassend kann man sagen…</strong>"</p></div></div>
+<div class="tabs">
+  <button class="tab active" data-s="0">📖 Überblick</button>
+  <button class="tab" data-s="1">🃏 Lernkarten</button>
+  <button class="tab" data-s="2">✅ Quiz</button>
+  <button class="tab" data-s="3">✍️ Lückentext</button>
+  <button class="tab" data-s="4">🧩 Zuordnen</button>
+  <button class="tab" data-s="5">🗣️ Sprechen</button>
+  <button class="tab" data-s="6">💬 Umgangssprache</button>
 </div>
 
-<div class="tip">💡 <strong>Das Geheimnis von B2:</strong> Es geht NICHT darum, Recht zu haben! Es geht darum, deine Position klar zu STRUKTURIEREN. Mit dieser 4-Schritte-Methode klingst du sofort wie ein Profi-Sprecher.</div>
+<!-- 0 · ÜBERBLICK -->
+<section class="section active">
+  <h2 class="section-title">6 Sprech-Räume für heute</h2>
+  <p class="section-sub">Wähl einen aus — oder lass dich vom Würfel überraschen.</p>
 
-<h2 class="section-title">12 Pro &amp; Contra <em style="font-style:italic;">Thesen</em></h2>
-<p class="section-sub">Du findest die ausführliche Liste in Tab 🗣️ — hier siehst du 6 davon mit Argumenten.</p>
+  <div class="types-grid">
+    <div class="type-card t1"><div class="ico">🕺</div><h3>Letztes Wochenende</h3><div class="ex">„Was war das Beste? Was das Peinlichste?"</div></div>
+    <div class="type-card t2"><div class="ico">💰</div><h3>Wenn ich Geld hätte…</h3><div class="ex">„10 Millionen auf einmal — was machst du als Erstes?"</div></div>
+    <div class="type-card t3"><div class="ico">🙈</div><h3>Mein größter Misserfolg</h3><div class="ex">„Was ist gnadenlos schiefgegangen — und was hat es dich gelehrt?"</div></div>
+    <div class="type-card t4"><div class="ico">🎨</div><h3>Heimliches Talent</h3><div class="ex">„Was kannst du, was niemand erwartet?"</div></div>
+    <div class="type-card t5"><div class="ico">🐶</div><h3>Hund vs. Katze</h3><div class="ex">„Kontrovers — welches Team bist du und warum?"</div></div>
+    <div class="type-card t6"><div class="ico">🧞</div><h3>3 Wünsche frei</h3><div class="ex">„Drei Wünsche, ehrlich — keine Weltfrieden-Antworten."</div></div>
+  </div>
 
-<div class="these-grid">
-<div class="these-card"><div class="these-num">These 1 · Technologie</div><div class="these-q">„Smartphones machen unsere Gesellschaft einsamer."</div><div class="these-args"><div class="these-side pro"><strong>PRO</strong>Wir reden weniger face-to-face, mehr per Chat.</div><div class="these-side contra"><strong>CONTRA</strong>Smartphones verbinden uns mit Menschen weltweit.</div></div></div>
-<div class="these-card"><div class="these-num">These 2 · Arbeit</div><div class="these-q">„Die 4-Tage-Woche wäre besser für alle."</div><div class="these-args"><div class="these-side pro"><strong>PRO</strong>Mehr Zeit für Familie und Erholung.</div><div class="these-side contra"><strong>CONTRA</strong>Weniger Gehalt, ungleiche Branchen.</div></div></div>
-<div class="these-card"><div class="these-num">These 3 · Bildung</div><div class="these-q">„Hausaufgaben sollten abgeschafft werden."</div><div class="these-args"><div class="these-side pro"><strong>PRO</strong>Kinder brauchen mehr Freizeit.</div><div class="these-side contra"><strong>CONTRA</strong>Wiederholung ist wichtig zum Lernen.</div></div></div>
-<div class="these-card"><div class="these-num">These 4 · Umwelt</div><div class="these-q">„Plastik sollte komplett verboten werden."</div><div class="these-args"><div class="these-side pro"><strong>PRO</strong>Plastik verschmutzt Meere und Natur.</div><div class="these-side contra"><strong>CONTRA</strong>Plastik ist günstig und in Medizin nötig.</div></div></div>
-<div class="these-card"><div class="these-num">These 5 · Ernährung</div><div class="these-q">„Veganismus ist die Zukunft."</div><div class="these-args"><div class="these-side pro"><strong>PRO</strong>Gesünder und besser für die Umwelt.</div><div class="these-side contra"><strong>CONTRA</strong>Nicht überall verfügbar/erschwinglich.</div></div></div>
-<div class="these-card"><div class="these-num">These 6 · Sozialleben</div><div class="these-q">„Online-Freundschaften sind echte Freundschaften."</div><div class="these-args"><div class="these-side pro"><strong>PRO</strong>Tiefe Gespräche auch ohne physische Nähe möglich.</div><div class="these-side contra"><strong>CONTRA</strong>Echte Bindung braucht echte Treffen.</div></div></div>
-</div>
+  <h2 class="section-title">5 Strategien fürs freie Sprechen</h2>
+  <p class="section-sub">Mut + Tricks — so klingt man flüssig, auch wenn man unsicher ist.</p>
+  <div class="escalation">
+    <div class="esc-step"><div class="num">1</div><h4>Anfangen</h4><div class="desc">„Also …", „Naja, ich würde sagen …" — einfach lossprechen.</div></div>
+    <div class="esc-step"><div class="num">2</div><h4>Zeit gewinnen</h4><div class="desc">„Moment, lass mich kurz überlegen …" statt zu schweigen.</div></div>
+    <div class="esc-step"><div class="num">3</div><h4>Umschreiben</h4><div class="desc">Wort fehlt? Beschreiben! „So ein Ding, das man …"</div></div>
+    <div class="esc-step"><div class="num">4</div><h4>Anekdote</h4><div class="desc">Konkrete Geschichte → besser als Theorie.</div></div>
+    <div class="esc-step"><div class="num">5</div><h4>Zurückgeben</h4><div class="desc">„Und du? Wie siehst du das?" — Ball ins Spiel.</div></div>
+  </div>
 
-<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
-<div class="alltag-q"><div class="ql">Reflexion</div><div class="qq">Wann hast du das letzte Mal deine Meinung zu einem wichtigen Thema öffentlich vertreten?</div><div class="think">💭 War es leicht? Hat dir jemand widersprochen?</div></div>
-<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Selbsteinschätzung</div><div class="qq">Bist du eher jemand, der direkt widerspricht oder versucht, Kompromisse zu finden?</div><div class="think">💭 Beide Stile sind okay — aber kennst du DEINEN?</div></div>
-<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Strategie</div><div class="qq">Wenn du jemanden überzeugen willst — was funktioniert besser: Fakten oder Geschichten?</div><div class="think">💭 Geschichten bleiben länger im Kopf. Fakten überzeugen den Verstand.</div></div>
+  <h2 class="section-title">Lehrbuch vs. echt gesprochen</h2>
+  <p class="section-sub">So redet man wirklich — nicht aus dem A1-Heft.</p>
+  <div class="compare">
+    <div class="comp-card a">
+      <div class="comp-tag">📚 Lehrbuch</div>
+      <div class="comp-text">„<strong>Ich denke</strong>, dass das eine gute Idee ist."</div>
+    </div>
+    <div class="comp-card b">
+      <div class="comp-tag">🗣️ Echt</div>
+      <div class="comp-text">„<strong>Ehrlich gesagt</strong> find ich das ziemlich genial — also <strong>wenn du mich fragst</strong>."</div>
+    </div>
+    <div class="comp-card a">
+      <div class="comp-tag">📚 Lehrbuch</div>
+      <div class="comp-text">„<strong>Ich bin der Meinung</strong>, dass es nicht stimmt."</div>
+    </div>
+    <div class="comp-card b">
+      <div class="comp-tag">🗣️ Echt</div>
+      <div class="comp-text">„<strong>Naja, eigentlich</strong> sehe ich das ganz anders, <strong>um ehrlich zu sein</strong>."</div>
+    </div>
+    <div class="comp-card a">
+      <div class="comp-tag">📚 Lehrbuch</div>
+      <div class="comp-text">„<strong>Ich weiß nicht</strong>, was ich sagen soll."</div>
+    </div>
+    <div class="comp-card b">
+      <div class="comp-tag">🗣️ Echt</div>
+      <div class="comp-text">„<strong>Hmm, gute Frage</strong> — lass mich kurz überlegen … <strong>also</strong> spontan würde ich sagen …"</div>
+    </div>
+  </div>
 
+  <h2 class="section-title">Stell dir vor …</h2>
+  <p class="section-sub">Konkrete Erzähl-Impulse — sofort losquatschen!</p>
+  <div class="alltag-grid">
+    <div class="alltag-q"><div class="ql">Impuls 1</div><div class="qq">Welche peinliche Situation hattest du letzte Woche? Erzähl in 2 Minuten — mit Pointe.</div><div class="think">💭 Wer war dabei? Wie hast du reagiert?</div></div>
+    <div class="alltag-q"><div class="ql">Impuls 2</div><div class="qq">Wenn du morgen eine Sprache fließend könntest — welche und warum genau die?</div><div class="think">💭 Was würdest du als Erstes damit machen?</div></div>
+    <div class="alltag-q"><div class="ql">Impuls 3</div><div class="qq">Erzähl von einem Tag, der komplett anders lief als geplant. Wie hat er angefangen — wie hat er geendet?</div><div class="think">💭 Was hast du daraus gelernt?</div></div>
+    <div class="alltag-q"><div class="ql">Impuls 4</div><div class="qq">Du bekommst 10.000 €, musst sie aber bis Sonntag ausgeben. Keine Sparen, keine Anlagen. Was tust du?</div><div class="think">💭 Allein oder mit anderen?</div></div>
+    <div class="alltag-q"><div class="ql">Impuls 5</div><div class="qq">Welche Meinung hast du, mit der du oft alleine dastehst? Erzähl — und verteidige sie!</div><div class="think">💭 Warum sehen das andere anders?</div></div>
+    <div class="alltag-q"><div class="ql">Impuls 6</div><div class="qq">Mit welcher Person — lebend oder tot — würdest du gerne ein Bier trinken? Was würdest du sie fragen?</div><div class="think">💭 Drei Fragen wären das?</div></div>
+  </div>
+
+  <div class="tip">
+    <strong>Gold-Regel:</strong> Beim freien Sprechen ist <strong>flüssig wichtiger als perfekt</strong>. Lieber 5 Minuten mit kleinen Fehlern als 1 Minute mit perfekter Grammatik. <em>Mach den Mund auf — der Rest kommt von alleine.</em>
+  </div>
 </section>
 
-<!-- UMGANGSSPRACHE -->
-<section class="section" data-section="1">
-<h2 class="section-title">💬 So diskutieren Deutsche <em style="font-style:italic;">wirklich</em></h2>
-<p class="section-sub">Echte Chat-Diskussionen — wenn man Meinungen austauscht und nicht zustimmt.</p>
-
-<div class="tip">🔥 <strong>Wichtig:</strong> Im Alltag streiten Deutsche ANDERS als in der Prüfung! Sie unterbrechen, lachen, übertreiben. Im Sprechclub übst du beides — den höflichen UND den lebendigen Stil.</div>
-
-<div class="uss-grid">
-<div class="chat">
-<div class="chat-head"><div class="av">📱</div><div><div class="name">Bestie · Politik</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hast du den Artikel über Bürgergeld gelesen?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ja! Ich finde, das ist <strong>total ungerecht</strong>. <strong>Meiner Meinung nach</strong> sollte man arbeiten gehen 🤷</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Da bin ich anderer Meinung. <strong>Ich glaube</strong>, manche Menschen können nicht arbeiten — wir müssen helfen!</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Naja, <strong>das stimmt schon</strong>, aber es gibt auch Missbrauch…</div></div>
-<div class="chat-meaning"><strong>„Meiner Meinung nach" · „Ich glaube" · „Das stimmt schon"</strong> — echte Diskussion mit Zustimmung UND Widerspruch!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">☕</div><div><div class="name">WG-Streit</div><div class="stat">online</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Wir sollten echt mal die Putzregeln ändern!</div></div>
-<div class="chat-msg in"><div class="chat-bubble"><strong>Warum?</strong> Bei mir hat es immer geklappt 🤔</div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Das mag sein</strong>, aber Anna putzt nie das Bad! Das ist <strong>einfach unfair</strong>.</div></div>
-<div class="chat-msg in"><div class="chat-bubble"><strong>Da hast du einen Punkt</strong> 🤝 Lass uns am Sonntag reden.</div></div>
-<div class="chat-meaning"><strong>„Das mag sein, aber…"</strong> = höflich widersprechen · <strong>„Da hast du einen Punkt"</strong> = teilweise zustimmen!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🌱</div><div><div class="name">Mama · Klima</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Ich verstehe diese Klimakleber nicht 😩</div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Einerseits</strong> verstehe ich ihre Wut, <strong>andererseits</strong> finde ich Straßen blockieren nicht okay.</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Genau! Das nervt nur die Leute!</div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Aber andererseits</strong>: Welche andere Aufmerksamkeit bekommen sie? 🤷</div></div>
-<div class="chat-meaning"><strong>„Einerseits…, andererseits…"</strong> = klassische deutsche Form, um BEIDE Seiten zu zeigen!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🏠</div><div><div class="name">Schwester · Familienurlaub</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Mama will dieses Jahr nach Mallorca</div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Echt?!</strong> Schon wieder?! 😅</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Was schlägst du vor?</div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Wie wäre es mit</strong> einem Urlaub in Schweden? Mal was Neues!</div></div>
-<div class="chat-msg in"><div class="chat-bubble"><strong>Klingt gut</strong>, aber Mama will Sonne 🌞</div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Lasst uns einen Kompromiss finden</strong>! Vielleicht Süditalien?</div></div>
-<div class="chat-meaning"><strong>„Wie wäre es mit…?"</strong> · <strong>„Lasst uns einen Kompromiss finden"</strong> = Vorschläge machen statt zu kämpfen!</div>
-</div>
-</div>
-
-<h2 class="section-title">12 wichtige <em style="font-style:italic;">Diskussions-Phrasen</em></h2>
-<div class="rm-grid">
-<div class="rm"><div class="rm-tag">Meinung beginnen</div><div class="rm-text">„Ich bin der Meinung, dass…"</div></div>
-<div class="rm t2"><div class="rm-tag">Zustimmen</div><div class="rm-text">„Da stimme ich dir voll zu!"</div></div>
-<div class="rm t3"><div class="rm-tag">Widersprechen</div><div class="rm-text">„Da bin ich anderer Meinung."</div></div>
-<div class="rm t4"><div class="rm-tag">Teilweise zustimmen</div><div class="rm-text">„Das mag sein, aber…"</div></div>
-<div class="rm t5"><div class="rm-tag">Begründen</div><div class="rm-text">„Der Grund dafür ist, dass…"</div></div>
-<div class="rm"><div class="rm-tag">Beispiel</div><div class="rm-text">„Ein gutes Beispiel ist…"</div></div>
-<div class="rm t2"><div class="rm-tag">Beide Seiten</div><div class="rm-text">„Einerseits…, andererseits…"</div></div>
-<div class="rm t3"><div class="rm-tag">Vermutung</div><div class="rm-text">„Ich könnte mir vorstellen, dass…"</div></div>
-<div class="rm t4"><div class="rm-tag">Kompromiss</div><div class="rm-text">„Wir könnten doch…"</div></div>
-<div class="rm t5"><div class="rm-tag">Nachfragen</div><div class="rm-text">„Was meinst du genau damit?"</div></div>
-<div class="rm"><div class="rm-tag">Fazit</div><div class="rm-text">„Zusammenfassend lässt sich sagen…"</div></div>
-<div class="rm t2"><div class="rm-tag">Höflich beenden</div><div class="rm-text">„Wir sind uns einig, dass…"</div></div>
-</div>
+<!-- 1 · LERNKARTEN -->
+<section class="section">
+  <h2 class="section-title">23 Sprech-Strategien-Karten</h2>
+  <p class="section-sub">Klick zum Umdrehen. Pfeile für nächste Karte. Shuffle für Zufallsreihenfolge.</p>
+  <div class="flip" id="flipCard">
+    <div class="flip-inner">
+      <div class="flip-side front">
+        <div class="flip-emoji" id="fEmoji">🗣️</div>
+        <div class="flip-word" id="fWord">erzählen</div>
+        <div class="flip-badge" id="fBadge">Hauptverb</div>
+        <div class="flip-prompt">→ Klick zum Umdrehen</div>
+      </div>
+      <div class="flip-side back">
+        <div class="flip-rule" id="fRule">eine Geschichte mündlich wiedergeben</div>
+        <div class="flip-ex" id="fEx">„Erzähl mal, <strong>wie war\'s</strong> gestern auf der Party?"</div>
+        <div class="flip-syn" id="fSyn"><b>Synonyme:</b> berichten · schildern · ausplaudern</div>
+      </div>
+    </div>
+  </div>
+  <div class="lk-nav">
+    <button class="lk-btn" onclick="prevCard()">◀</button>
+    <span class="lk-counter"><span id="cardNr">1</span> / <span id="cardTotal">23</span></span>
+    <button class="lk-btn" onclick="nextCard()">▶</button>
+    <button class="lk-btn" onclick="shuffleCards()" title="Mischen">🔀</button>
+  </div>
 </section>
 
-<!-- LERNKARTEN -->
-<section class="section" data-section="2">
-<h2 class="section-title">Redemittel-Karten</h2>
-<p class="section-sub">Erst denken — dann tippen.</p>
-
-<div class="flip" id="flip">
-<div class="flip-inner">
-<div class="flip-side front">
-<div class="flip-emoji" id="flipEmoji">💭</div>
-<div class="flip-word" id="flipWord">Wie sage ich meine Meinung?</div>
-<div class="flip-badge" id="flipBadge">Phase 1</div>
-<div class="flip-prompt">Welcher Satz beginnt eine Meinung? <br>(zum Umdrehen tippen)</div>
-</div>
-<div class="flip-side back">
-<div class="flip-rule" id="flipRule">3 sichere Anfänge</div>
-<div class="flip-ex" id="flipEx">„<strong>Ich bin der Meinung, dass…</strong>" / „<strong>Meiner Ansicht nach…</strong>" / „<strong>Ich finde, dass…</strong>"</div>
-</div>
-</div>
-</div>
-
-<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span><button class="lk-btn" id="lkNext">→</button></div>
-<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+<!-- 2 · QUIZ -->
+<section class="section">
+  <h2 class="section-title">13 Quiz-Fragen</h2>
+  <p class="section-sub">Welche Antwort passt? Welcher Sprechakt ist das? Klick eine Option.</p>
+  <div id="quizContainer"></div>
 </section>
 
-<!-- QUIZ -->
-<section class="section" data-section="3">
-<h2 class="section-title">Quiz: <em style="font-style:italic;">Was passt?</em></h2>
-
-<div class="quiz"><div class="quiz-q">Du willst höflich widersprechen. Was sagst du?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Du hast unrecht!</span><span class="quiz-chip">Stopp, hör mir zu!</span><span class="quiz-chip">Da bin ich anderer Meinung.</span></div><div class="quiz-explain">✓ Höflich = „<strong>Da bin ich anderer Meinung</strong>" — respektvoll &amp; klar</div></div>
-
-<div class="quiz"><div class="quiz-q">Du willst eine Vermutung äußern. Was passt?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Das ist 100% so!</span><span class="quiz-chip">Ich könnte mir vorstellen, dass…</span><span class="quiz-chip">Du weißt es nicht!</span></div><div class="quiz-explain">✓ Vermutung = „<strong>Ich könnte mir vorstellen…</strong>" — unsicher aber konstruktiv</div></div>
-
-<div class="quiz"><div class="quiz-q">Welche Phrase zeigt BEIDE Seiten?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Einerseits…, andererseits…</span><span class="quiz-chip">Total falsch!</span><span class="quiz-chip">Ich gewinne immer.</span></div><div class="quiz-explain">✓ „<strong>Einerseits…, andererseits…</strong>" — der Klassiker für ausgewogene Argumentation</div></div>
-
-<div class="quiz"><div class="quiz-q">Wie endest du eine Diskussion höflich?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Du verstehst nichts.</span><span class="quiz-chip">Genug geredet!</span><span class="quiz-chip">Wir sind uns einig, dass…</span></div><div class="quiz-explain">✓ Positives Fazit ziehen — „<strong>Wir sind uns einig</strong>"</div></div>
-
-<div class="quiz"><div class="quiz-q">Was tust du, wenn du jemanden NICHT verstehst?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ignorieren.</span><span class="quiz-chip">„Was meinst du genau damit?"</span><span class="quiz-chip">„Egal, weiter."</span></div><div class="quiz-explain">✓ Nachfragen ist ein ZEICHEN von Interesse, kein Schwäche!</div></div>
-
-<div class="quiz"><div class="quiz-q">Welche Phrase passt zum Argumentieren?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Der Grund dafür ist, dass…</span><span class="quiz-chip">Schluss jetzt!</span><span class="quiz-chip">Ich bin müde.</span></div><div class="quiz-explain">✓ JEDE Meinung braucht ein Argument — „<strong>Der Grund dafür ist…</strong>"</div></div>
-
-<div class="quiz"><div class="quiz-q">Du willst einen Kompromiss vorschlagen. Was sagst du?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Mach was du willst.</span><span class="quiz-chip">Nein!</span><span class="quiz-chip">Wir könnten doch…</span></div><div class="quiz-explain">✓ <strong>„Wir könnten doch…"</strong> — freundlicher Vorschlag</div></div>
-
-<div class="quiz"><div class="quiz-q">Wann sagt man „Da hast du einen Punkt"?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Wenn der andere teilweise recht hat.</span><span class="quiz-chip">Wenn der andere unrecht hat.</span><span class="quiz-chip">Wenn man nicht zuhört.</span></div><div class="quiz-explain">✓ <strong>„Da hast du einen Punkt"</strong> = höfliche teilweise Zustimmung</div></div>
+<!-- 3 · LÜCKENTEXT -->
+<section class="section">
+  <h2 class="section-title">11 Lückentext-Floskeln</h2>
+  <p class="section-sub">Diskursmarker und Smalltalk-Floskeln — wähl das passende Wort. Dann „Auswerten".</p>
+  <div id="gapContainer"></div>
+  <button class="gap-btn" onclick="evalGap()">Auswerten</button>
+  <div class="gap-score" id="gapScore"></div>
 </section>
 
-<!-- LÜCKENTEXT -->
-<section class="section" data-section="4">
-<h2 class="section-title">Lückentext</h2>
-<div class="gap-text" id="gapText">
-<div class="gap-line">1. <select data-sol="Meiner"><option value="">…</option><option>Mein</option><option>Meiner</option><option>Meine</option></select> Meinung nach sollten alle Kinder eine Fremdsprache lernen.</div>
-<div class="gap-line">2. Da <select data-sol="bin"><option value="">…</option><option>bin</option><option>habe</option><option>kann</option></select> ich anderer Meinung — Englisch reicht heute völlig.</div>
-<div class="gap-line">3. <select data-sol="Einerseits"><option value="">…</option><option>Einerseits</option><option>Nur</option><option>Also</option></select> hast du recht, andererseits gibt es viele Argumente dafür.</div>
-<div class="gap-line">4. Der <select data-sol="Grund"><option value="">…</option><option>Punkt</option><option>Grund</option><option>Beispiel</option></select> dafür ist, dass es das Gehirn trainiert.</div>
-<div class="gap-line">5. Wir <select data-sol="könnten"><option value="">…</option><option>können</option><option>könnten</option><option>müssen</option></select> doch einen Kompromiss finden!</div>
-<div class="gap-line">6. <select data-sol="Zusammenfassend"><option value="">…</option><option>Anfangend</option><option>Zusammenfassend</option><option>Hauptsächlich</option></select> kann man sagen, dass beide Seiten gute Argumente haben.</div>
-<div class="gap-line">7. <select data-sol="Was"><option value="">…</option><option>Wie</option><option>Was</option><option>Wer</option></select> meinst du genau damit?</div>
-<div class="gap-line">8. Ich könnte mir <select data-sol="vorstellen"><option value="">…</option><option>vorstellen</option><option>denken</option><option>finden</option></select>, dass das nicht so einfach ist.</div>
-<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
-</div>
-<div class="tip" id="gapScore" style="display:none;"></div>
+<!-- 4 · ZUORDNEN -->
+<section class="section">
+  <h2 class="section-title">10 Sprech-Situationen + passende Einstiege</h2>
+  <p class="section-sub">Welcher Einstieg passt zu welcher Situation? Klick links, dann rechts.</p>
+  <div class="match" id="matchContainer"></div>
+  <div class="gap-score" id="matchScore"></div>
 </section>
 
-<!-- ZUORDNEN -->
-<section class="section" data-section="5">
-<h2 class="section-title">Phrase &harr; <em style="font-style:italic;">Funktion</em> zuordnen</h2>
-<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Phrase</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Funktion</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+<!-- 5 · SPRECHEN -->
+<section class="section">
+  <h2 class="section-title">Sprechen üben</h2>
+  <p class="section-sub">24 Erzähl-Impulse · Story-Würfel · 5 Rollenspiele mit Hilfestellung · 6 Mini-Debatten · Mission</p>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin:1.5rem 0 .8rem;">🃏 Erzähl-Impulse</h3>
+  <div id="speakCard" class="speak-card"></div>
+  <div class="speak-nav"><button class="speak-btn" onclick="nextSpeak()">▶ Nächste Karte</button></div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin:2.5rem 0 .8rem;">🎲 Story-Würfel</h3>
+  <p class="section-sub" style="text-align:left;margin-bottom:.6rem;color:var(--ink-soft);">Drei Würfel — drücken — drei Zufallselemente. Bau in 90 Sekunden eine Mini-Geschichte daraus.</p>
+  <div class="dice-wrap">
+    <div class="dice-grid">
+      <div class="dice"><div class="dl">🧑 Wer?</div><div class="dv" id="diceWho">eine Oma</div></div>
+      <div class="dice"><div class="dl">📍 Wo?</div><div class="dv" id="diceWhere">im Supermarkt</div></div>
+      <div class="dice"><div class="dl">⚡ Was passiert?</div><div class="dv" id="diceWhat">findet 100 Euro</div></div>
+    </div>
+    <button class="dice-btn" onclick="rollDice()">🎲 Würfeln</button>
+    <p style="margin-top:.7rem;font-size:.85rem;color:var(--ink-soft);">→ Erzähl eine kleine Geschichte. Anfang, Mitte, Ende. Lass dich überraschen!</p>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin:2.5rem 0 .8rem;">🎭 5 Rollenspiele · MIT HILFESTELLUNG</h3>
+  <p class="section-sub" style="text-align:left;margin-bottom:.6rem;color:var(--ink-soft);">Jedes Rollenspiel hat <strong style="color:var(--teal);">🔑 Schlüssel-Vokabular</strong>, <strong style="color:#B66809;">💬 Beispiel-Phrasen</strong>, <strong style="color:var(--red);">💡 Strategie</strong> und <strong style="color:var(--teal);">✅ Antwort-Struktur</strong>.</p>
+
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 1) Erzähl deine Lebensgeschichte in 2 Minuten</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Auf einer Party fragt dich jemand: „Erzähl mal — wer bist du eigentlich, in 2 Minuten?" Stoppuhr läuft.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du willst interessant rüberkommen, nicht wie ein Lebenslauf. <em>Geboren in … aufgewachsen in … heute bin ich …</em> — aber mit einer kleinen Pointe oder Wendung.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>geboren in</span><span>aufgewachsen</span><span>der Wendepunkt</span><span>damals</span><span>plötzlich</span><span>eigentlich wollte ich</span><span>am Ende kam es anders</span><span>heutzutage</span><span>seit drei Jahren</span><span>davor</span><span>im Großen und Ganzen</span><span>witzigerweise</span><span>was ich richtig liebe</span><span>der Grund warum</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Also … geboren bin ich in einem kleinen Dorf, das niemand kennt.</li>
+        <li>Eigentlich wollte ich Tierärztin werden — aber dann kam alles anders.</li>
+        <li>Der Wendepunkt war, als ich mit 19 nach Berlin gezogen bin.</li>
+        <li>Heutzutage mache ich was ganz anderes, und ehrlich gesagt — viel besser so.</li>
+        <li>Was mich heute richtig glücklich macht, ist …</li>
+        <li>Witzigerweise hat alles mit einem Zufall angefangen.</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> Nicht chronologisch von der Geburt an erzählen — das wird langweilig. <b>Mit einem kleinen Höhepunkt anfangen</b> („Mein Leben hat sich an einem Mittwochmorgen komplett geändert …"), dann zurück und vor.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Konkreter Einstieg + 2) ein Wendepunkt / eine Pointe + 3) heute + 4) was dir wichtig ist.</div>
+  </div>
+
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 2) Verteidige deine kontroverse Meinung</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du hast eine Meinung, mit der du oft alleine bist. <em>Beispiel: „Kinder sollten kein Smartphone vor 16 haben"</em> oder <em>„Hunde gehören nicht in Mietwohnungen"</em>. Jetzt musst du sie 3 Minuten lang verteidigen.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du bist überzeugt, aber nicht aggressiv. Du willst andere zum Nachdenken bringen, nicht beleidigen.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>meiner Meinung nach</span><span>überzeugt</span><span>der Hauptgrund</span><span>außerdem</span><span>zugegeben</span><span>auf der anderen Seite</span><span>trotzdem bleibe ich dabei</span><span>aus eigener Erfahrung</span><span>wenn du mich fragst</span><span>ehrlich gesagt</span><span>es klingt komisch, aber</span><span>belegen</span><span>ein Beispiel</span><span>nachvollziehen</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Okay, das klingt jetzt vielleicht extrem, aber ich glaube wirklich …</li>
+        <li>Mein Hauptgrund ist: ich habe selbst erlebt, dass …</li>
+        <li>Ich verstehe, dass viele das anders sehen — aber für mich überwiegt …</li>
+        <li>Ein gutes Beispiel: stell dir vor …</li>
+        <li>Zugegeben, es gibt Ausnahmen — trotzdem bleibe ich dabei.</li>
+        <li>Wenn du ehrlich nachdenkst, würdest du nicht auch sagen …?</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> <b>These → Begründung → Beispiel → Einwand zugeben → trotzdem dabei bleiben.</b> Wer Einwände vorwegnimmt, wirkt souveräner. Konjunktiv 2 hilft („würde sagen", „könnte man meinen").</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Klare These + 2) 2-3 Argumente + 3) konkretes Beispiel + 4) Einwand kurz zugeben + 5) Schluss-Standpunkt.</div>
+  </div>
+
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 3) Beschreibe einen Ort, den du liebst — so dass ich ihn sehe</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Schließ die Augen. Denk an einen Lieblingsort — ein Café, ein Park, eine Straße, dein Lieblingszimmer. Erzähl 2 Minuten so, dass dein:e Zuhörer:in ihn direkt vor Augen hat.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du bist Geschichtenerzähler:in. Nicht „es ist schön" — sondern <em>was siehst du, was riechst du, welches Geräusch?</em></div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>es riecht nach</span><span>man hört</span><span>die Atmosphäre</span><span>gemütlich</span><span>das Licht fällt</span><span>knarzt</span><span>im Sommer</span><span>genau dann, wenn</span><span>vom Fenster aus</span><span>im Hintergrund</span><span>das Beste daran</span><span>ich fühle mich wie</span><span>verstecken sich</span><span>an einem regnerischen Tag</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Stell dir vor: du kommst rein, und sofort riecht es nach Kaffee und alten Büchern.</li>
+        <li>Das Licht fällt schräg durch ein hohes Fenster.</li>
+        <li>Im Hintergrund läuft leise Jazz — niemand redet zu laut.</li>
+        <li>Es gibt diese eine Ecke, hinten links, wo immer die alten Männer Schach spielen.</li>
+        <li>An einem Regentag ist es da am schönsten — alles ist warm und gelb.</li>
+        <li>Ich fühle mich da wie zuhause, obwohl es nicht mal in meiner Stadt ist.</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> Nutze <b>alle 5 Sinne</b> — Sehen, Hören, Riechen, Schmecken, Fühlen. Ein konkretes Detail („die quietschende Tür") sagt mehr als 10 Adjektive.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Sinneseindrücke (min. 3 Sinne) + 2) ein konkretes Detail + 3) deine Gefühle dort + 4) wann/warum du hingehst.</div>
+  </div>
+
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 4) Stell dich vor — als wärst du jemand anderes</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du bist <em>Albert Einstein, Frida Kahlo, Greta Thunberg, Goethe oder dein Lieblingsfilmcharakter</em>. Ein:e Reporter:in interviewt dich. Erste Frage: „Wer sind Sie und was treibt Sie an?"</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Schlüpf voll in die Rolle. Wie würde die Person sprechen? Welche Wörter würde sie benutzen? Welche nicht?</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>mein Antrieb</span><span>was mich beschäftigt</span><span>seit ich klein war</span><span>damals war es so</span><span>man muss sich vorstellen</span><span>ich bin überzeugt</span><span>im Laufe meines Lebens</span><span>verzeihen Sie</span><span>wenn ich ehrlich bin</span><span>aus meiner Perspektive</span><span>damals hat man</span><span>wissen Sie</span><span>ich habe gelernt</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Mein Name ist … und im Grunde war mein ganzes Leben eine Suche nach …</li>
+        <li>Wissen Sie, damals war alles anders. Man konnte nicht einfach …</li>
+        <li>Ich bin überzeugt, dass mein größter Beitrag … war.</li>
+        <li>Verzeihen Sie, aber das ist eine Frage, die ich oft falsch verstanden sehe.</li>
+        <li>Aus meiner Perspektive ist es so: …</li>
+        <li>Wenn ich ehrlich bin — ich hatte selbst Zweifel.</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> Wähl <b>2-3 charakteristische Eigenheiten</b> der Person (höflich? rebellisch? schüchtern?) und übertreib sie ein bisschen. Spaß ist erlaubt — Hauptsache du redest!</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Selbstvorstellung + 2) ein Lebensereignis + 3) deine Überzeugung + 4) eine sprachliche Eigenheit der Person.</div>
+  </div>
+
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 5) Reagiere spontan auf eine Schlagzeile</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du ziehst eine Schlagzeile aus dem virtuellen Hut: <em>„Forscher beweisen: Schlafen vor Mitternacht macht klüger"</em> · <em>„Stadt verbietet WhatsApp im Park"</em> · <em>„Studie: Wer Bücher liest, lebt 5 Jahre länger"</em>. Reagier 2 Minuten lang — überrascht, kritisch, begeistert.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Spontan! Kein langes Nachdenken. Sofort eine erste Reaktion, dann argumentieren, dann eine eigene Idee.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>echt jetzt</span><span>das überrascht mich</span><span>typisch</span><span>ich frag mich</span><span>einerseits … andererseits</span><span>worauf das hindeutet</span><span>wenn das stimmt</span><span>was mich daran stört</span><span>nachvollziehbar</span><span>komplett absurd</span><span>ich kann mir vorstellen</span><span>am Ende läuft es darauf hinaus</span><span>auf den ersten Blick</span><span>genauer betrachtet</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Echt jetzt? Das überrascht mich ehrlich gesagt nicht — schon lange im Gespräch.</li>
+        <li>Auf den ersten Blick klingt das absurd, aber wenn ich genauer drüber nachdenke …</li>
+        <li>Einerseits verstehe ich die Idee, andererseits frag ich mich, wer das durchsetzen soll.</li>
+        <li>Was mich an solchen Studien stört, ist …</li>
+        <li>Wenn das stimmt, dann müssten wir eigentlich …</li>
+        <li>Am Ende läuft es darauf hinaus, dass …</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> <b>Erste Reaktion → Frage stellen → eigenes Beispiel → Bewertung.</b> Spontansein heißt nicht hektisch — Atempausen sind erlaubt („Hmm, lass mich kurz überlegen …").</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Spontanreaktion + 2) Pro-/Contra-Gedanke + 3) eigene Erfahrung/Beispiel + 4) klare Schlussbewertung.</div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin:2.5rem 0 .8rem;">⚖️ 6 Mini-Debatten · mit Pro/Contra-Hilfe</h3>
+
+  <div class="these">
+    <div class="nr">These 1</div>
+    <h4>„Hunde sind die besseren Haustiere als Katzen — Punkt."</h4>
+    <div class="sides">
+      <div class="these-side pro">
+        <b>✓ Pro</b>
+        <div class="ks">Keywords: loyal · sportlich · Begleiter · Liebe zeigen · Spaziergänge</div>
+        <div class="ph">„Ein Hund gibt dir Zuneigung zurück, eine Katze ignoriert dich …"</div>
+      </div>
+      <div class="these-side con">
+        <b>✗ Contra</b>
+        <div class="ks">Keywords: unabhängig · sauber · ruhig · klug · keine Spaziergänge</div>
+        <div class="ph">„Katzen sind klüger — sie kommen, wenn SIE es wollen …"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="these">
+    <div class="nr">These 2</div>
+    <h4>„Wer reisen will, sollte das vor 30 machen — danach ist es zu spät."</h4>
+    <div class="sides">
+      <div class="these-side pro">
+        <b>✓ Pro</b>
+        <div class="ks">Keywords: Energie · keine Verantwortung · Backpacking · prägende Jahre · flexibel</div>
+        <div class="ph">„Mit Kindern und Job geht das einfach nicht mehr so spontan …"</div>
+      </div>
+      <div class="these-side con">
+        <b>✗ Contra</b>
+        <div class="ks">Keywords: mehr Geld · bewusster reisen · jederzeit möglich · Erfahrung · slow travel</div>
+        <div class="ph">„Mit 50 reist man bewusster und versteht mehr …"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="these">
+    <div class="nr">These 3</div>
+    <h4>„Smalltalk ist Zeitverschwendung — direkt zum Punkt, bitte."</h4>
+    <div class="sides">
+      <div class="these-side pro">
+        <b>✓ Pro</b>
+        <div class="ks">Keywords: Effizienz · ehrlich · Energie sparen · Substanz · introvertiert</div>
+        <div class="ph">„Wer über das Wetter redet, hat nichts zu sagen …"</div>
+      </div>
+      <div class="these-side con">
+        <b>✗ Contra</b>
+        <div class="ks">Keywords: Aufwärmen · Beziehung · Sympathie · Brücke · Kultur</div>
+        <div class="ph">„Ohne Smalltalk gibt es kein Vertrauen — er ist das Türöffner-Ritual …"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="these">
+    <div class="nr">These 4</div>
+    <h4>„Soziale Medien machen uns einsamer — und wir wissen es alle."</h4>
+    <div class="sides">
+      <div class="these-side pro">
+        <b>✓ Pro</b>
+        <div class="ks">Keywords: Vergleich · oberflächlich · Doomscrolling · Sucht · Filterblase · weniger Treffen</div>
+        <div class="ph">„Je mehr Likes, desto leerer fühlt man sich oft …"</div>
+      </div>
+      <div class="these-side con">
+        <b>✗ Contra</b>
+        <div class="ks">Keywords: Verbindung · alte Freunde · Communitys · Lernen · Inspiration · Fernbeziehungen</div>
+        <div class="ph">„Ohne Instagram hätte ich meinen besten Freund nie wiedergefunden …"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="these">
+    <div class="nr">These 5</div>
+    <h4>„Geld macht doch glücklich — alle, die das Gegenteil behaupten, hatten welches."</h4>
+    <div class="sides">
+      <div class="these-side pro">
+        <b>✓ Pro</b>
+        <div class="ks">Keywords: Sicherheit · Zeit kaufen · Stress weg · Optionen · Gesundheit</div>
+        <div class="ph">„Wer Miete nicht zahlen kann, redet anders über Glück …"</div>
+      </div>
+      <div class="these-side con">
+        <b>✗ Contra</b>
+        <div class="ks">Keywords: Beziehungen · Sinn · Gewöhnung · Vergleich · Druck</div>
+        <div class="ph">„Ab einem Punkt macht jeder zusätzliche Euro nichts mehr …"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="these">
+    <div class="nr">These 6</div>
+    <h4>„Bücher zu lesen ist überschätzt — Podcasts und YouTube sind ehrlich gesagt besser."</h4>
+    <div class="sides">
+      <div class="these-side pro">
+        <b>✓ Pro</b>
+        <div class="ks">Keywords: aktuell · multitasking · Stimmen hören · kostenlos · Dialog · Vielfalt</div>
+        <div class="ph">„Ich lerne beim Putzen mehr als beim Lesen …"</div>
+      </div>
+      <div class="these-side con">
+        <b>✗ Contra</b>
+        <div class="ks">Keywords: Tiefe · Fokus · Fantasie · Wortschatz · langsam · Erinnerung · Konzentration</div>
+        <div class="ph">„Ein Buch zwingt dich, ganz da zu sein — Audio dudelt nebenher …"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mission">
+    <h3>🎯 Mission der Woche</h3>
+    <p>Erzähl <strong>5 Minuten am Stück auf Deutsch</strong> über dein letztes Wochenende — <em>ohne lange Pausen, ohne ins Englische zu kippen, ohne Google Translate</em>. Nimm es als Sprachnachricht auf und hör dir selbst zu.</p>
+    <div class="bonus"><b>Bonus-Challenge:</b> Mach es 3 Tage hintereinander — jedes Mal zu einem neuen Thema (Wochenende, Kindheitserinnerung, Traum von gestern). Du wirst hören, wie du flüssiger wirst. Versprochen.</div>
+  </div>
 </section>
 
-<!-- SPRECHEN -->
-<section class="section" data-section="6">
-<h2 class="section-title">🗣️ Die <em style="font-style:italic;">12 Thesen</em></h2>
-<p class="section-sub">Wähle eine — diskutiere mit deinem Tandempartner!</p>
+<!-- 6 · UMGANGSSPRACHE -->
+<section class="section">
+  <h2 class="section-title">Wie wirklich gesprochen wird</h2>
+  <p class="section-sub">So quatschen Freunde über Wochenende, Träume, Misserfolge — nicht im Lehrbuch.</p>
 
-<div class="speak-card" id="speakCard">
-<div class="speak-emoji">🎲</div><div class="speak-cat">Diskussions-These</div>
-<div class="speak-q">Tippe unten auf „Neue These" und leg los!</div>
-</div>
-<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue These</button></div>
+  <div class="uss-grid">
 
-<div class="role-section">
-<h2 class="section-title">3 Rollenspiele</h2>
+    <div class="chat">
+      <div class="chat-head"><div class="av">🕺</div><div><div class="name">Mia 💬 Jana</div><div class="stat">tippt …</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">aaalter wie war dein WE 🙈</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Frag nicht. Komplett aus dem Ruder gelaufen 😅</div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">erzäääähl</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Also eig wollten wir nur 1 bier trinken</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Am ende waren wir um 5 in nem dönerladen in neukölln und haben mit dem besitzer arabisch gelernt 😂</div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble"><strong>NEIN</strong> hahaha typisch du</div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">ich war btw zuhause mit serie und chips ngl bisschen neidisch 🛋️</div></div>
+      <div class="chat-meaning"><strong>„aus dem Ruder gelaufen"</strong> = außer Kontrolle, anders als geplant. <strong>„ngl"</strong> = ehrlich gesagt. Klassisches Wochenend-Geständnis-Vokabular!</div>
+    </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 1 · Mini-Debatte</div>
-<div class="role-title">⚖️ Pro & Contra</div>
-<div class="role-situation">Person A vertritt die PRO-Seite einer These, Person B die CONTRA-Seite. Beide haben 2 Minuten zum Argumentieren!</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">✅</div><div><div class="person-label">Person A — PRO</div><div class="person-quote">„Ich bin der Meinung, dass… denn… Ein Beispiel dafür ist…"</div></div></div>
-<div class="person b"><div class="person-avatar">❌</div><div><div class="person-label">Person B — CONTRA</div><div class="person-quote">„Das mag sein, aber… Andererseits… Der Grund dafür ist, dass…"</div></div></div>
-</div>
-<div class="role-goal">🎯 Ziel: Mindestens je 5 verschiedene Redemittel verwenden!</div>
-</div>
+    <div class="chat">
+      <div class="chat-head"><div class="av">💰</div><div><div class="name">Tobi 💬 Sven</div><div class="stat">zuletzt online vor 1 Min</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Tobi</span><div class="chat-bubble">stell dir vor du hättest gerade 10 millionen auf dem konto</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Boah erste Frage: zahl ich die Schulden weg oder lass ich die für die Show? 🤔</div></div>
+      <div class="chat-msg in"><span class="speaker">Tobi</span><div class="chat-bubble">hahahahaha</div></div>
+      <div class="chat-msg in"><span class="speaker">Tobi</span><div class="chat-bubble">also ich würd erstmal nem kumpel anrufen und sagen wir fliegen morgen nach tokio</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Klassisch. Ich würd mir <strong>so ein altes Häuschen am See kaufen</strong> und einfach 6 monate nix tun</div></div>
+      <div class="chat-msg in"><span class="speaker">Tobi</span><div class="chat-bubble">ngl klingt richtig gut</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Eben. Geld macht doch glücklich, sorry 🤷</div></div>
+      <div class="chat-meaning"><strong>„so ein altes Häuschen"</strong> = vage Beschreibung mit „so ein" — sehr typisch im gesprochenen Deutsch. <strong>„eben"</strong> = „genau, stimmt!"</div>
+    </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 2 · Talkshow</div>
-<div class="role-title">🎤 Moderator + Gast</div>
-<div class="role-situation">Person A ist Talkshow-Moderator und stellt provokante Fragen zu einer These. Person B antwortet als Experte.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🎙️</div><div><div class="person-label">Person A — Moderator</div><div class="person-quote">„Was sagen Sie zu der These, dass…? Können Sie ein Beispiel nennen? Was würden Sie Kritikern entgegnen?"</div></div></div>
-<div class="person b"><div class="person-avatar">🤓</div><div><div class="person-label">Person B — Expert:in</div><div class="person-quote">„Meiner Ansicht nach… Ich könnte mir vorstellen, dass… Zusammenfassend kann man sagen…"</div></div></div>
-</div>
-<div class="role-goal">🎯 Mindestens 8 Konjunktiv-II-Formen + Argumente nutzen!</div>
-</div>
+    <div class="chat">
+      <div class="chat-head"><div class="av">🙈</div><div><div class="name">Lena 💬 Pia</div><div class="stat">online</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Lena</span><div class="chat-bubble">Pia ich muss dir was beichten 😶</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">oh oh. raus damit</div></div>
+      <div class="chat-msg in"><span class="speaker">Lena</span><div class="chat-voice"><div class="play">▶</div><div class="wave"></div><div class="dur">🎙️ 1:12</div></div></div>
+      <div class="chat-msg out"><div class="chat-bubble">😭 ich bin tot</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">du hast WIRKLICH den falschen Mann auf der Hochzeit umarmt?</div></div>
+      <div class="chat-msg in"><span class="speaker">Lena</span><div class="chat-bubble">ja. von hinten. mit „schaaaatz!"</div></div>
+      <div class="chat-msg in"><span class="speaker">Lena</span><div class="chat-bubble"><strong>er war\'s nicht</strong> und seine frau stand daneben 🙃</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">das ist soooo peinlich ich kann nicht atmen lol</div></div>
+      <div class="chat-meaning">Voice-Note 🎙️ = wenn die Geschichte zu lang oder zu peinlich zum Tippen ist. <strong>„raus damit"</strong> = sag schon! <strong>„ich bin tot"</strong> = ich lache mich kaputt.</div>
+    </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 3 · Kompromiss</div>
-<div class="role-title">🤝 Streit lösen</div>
-<div class="role-situation">Ein Paar streitet über eine wichtige Entscheidung (Wohnort, Beruf, Urlaub, Geld). Ihr findet zusammen einen Kompromiss.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">😤</div><div><div class="person-label">Person A — Standpunkt 1</div><div class="person-quote">„Ich bestehe darauf, dass… Mir ist wichtig, dass…"</div></div></div>
-<div class="person b"><div class="person-avatar">😊</div><div><div class="person-label">Person B — Standpunkt 2</div><div class="person-quote">„Lass uns einen Kompromiss finden! Wie wäre es mit…?"</div></div></div>
-</div>
-<div class="role-goal">🎯 Am Ende: „Wir sind uns einig, dass…" — eine gemeinsame Lösung!</div>
-</div>
-</div>
+    <div class="chat">
+      <div class="chat-head"><div class="av">🧞</div><div><div class="name">Theo 💬 Anna</div><div class="stat">heute, 22:14</div></div></div>
+      <div class="chat-msg out"><div class="chat-bubble">3 wünsche frei. los.</div></div>
+      <div class="chat-msg in"><span class="speaker">Theo</span><div class="chat-bubble">weltfrieden, gesundheit, glück für alle</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">😒 nö</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">EHRLICH. keine miss-deutschland antworten.</div></div>
+      <div class="chat-msg in"><span class="speaker">Theo</span><div class="chat-bubble">okay okay 😂</div></div>
+      <div class="chat-msg in"><span class="speaker">Theo</span><div class="chat-bubble">1. nie wieder vorm Spiegel deutsche Aussprache üben müssen</div></div>
+      <div class="chat-msg in"><span class="speaker">Theo</span><div class="chat-bubble">2. einmal in tarantinos kopf gucken</div></div>
+      <div class="chat-msg in"><span class="speaker">Theo</span><div class="chat-bubble">3. dass meine oma ihr lasagne-rezept aufschreibt bevor sie\'s vergisst 🥲</div></div>
+      <div class="chat-msg out"><div class="chat-bubble"><strong>nummer 3 ist alles</strong> ❤️</div></div>
+      <div class="chat-meaning"><strong>„nö"</strong> = nein (locker). <strong>„nummer 3 ist alles"</strong> = das ist das wichtigste/schönste. Junge Sprache.</div>
+    </div>
 
-<h2 class="section-title">🎯 Mission der Woche</h2>
-<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
-<strong>Tägliche Aufgabe:</strong> Such dir täglich eine NACHRICHT in deutschen Zeitungen (Spiegel, Zeit, Süddeutsche). Formuliere mündlich deine Meinung dazu — Pro &amp; Contra je 3 Sätze!<br><br>
-🏆 <strong>Bonus:</strong> Diskutiere ein kontroverses Thema mit einem deutschen Freund / Tandempartner — mindestens 10 verschiedene Redemittel verwenden!
-</div>
+    <div class="chat">
+      <div class="chat-head"><div class="av">🎨</div><div><div class="name">Karim 💬 Felix</div><div class="stat">vor 8 Min</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Karim</span><div class="chat-bubble">eyy ratemal was ich am wochenende gemacht hab</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">keine ahnung — gezockt?</div></div>
+      <div class="chat-msg in"><span class="speaker">Karim</span><div class="chat-bubble">nope. töpferkurs 🫖</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">WAS</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">du? töpfern? 🤣</div></div>
+      <div class="chat-msg in"><span class="speaker">Karim</span><div class="chat-bubble">jaa hab heimliches talent entdeckt lol</div></div>
+      <div class="chat-msg in"><span class="speaker">Karim</span><div class="chat-bubble">die Lehrerin meinte sogar ich soll weitermachen</div></div>
+      <div class="chat-msg out"><div class="chat-bubble"><strong>respekt eig</strong>. find ich richtig stark dass du das machst</div></div>
+      <div class="chat-msg in"><span class="speaker">Karim</span><div class="chat-bubble">danke 🙏 nächstes mal kommst du mit</div></div>
+      <div class="chat-meaning"><strong>„ratemal"</strong> = rate mal (zusammengezogen). <strong>„respekt eig"</strong> = „eigentlich Respekt" — Anerkennung ohne zu kitschig zu werden.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🐶</div><div><div class="name">Hund vs. Katze · 4 Personen</div><div class="stat">aktiv</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Jule</span><div class="chat-bubble">team hund forever. punkt.</div></div>
+      <div class="chat-msg in"><span class="speaker">Tom</span><div class="chat-bubble">lol wie kann man katzen nicht lieben</div></div>
+      <div class="chat-msg in"><span class="speaker">Jule</span><div class="chat-bubble">sie sind <strong>so arrogant</strong> 😼</div></div>
+      <div class="chat-msg in"><span class="speaker">Tom</span><div class="chat-bubble">das ist ihr CHARME mein freund</div></div>
+      <div class="chat-msg in"><span class="speaker">Bea</span><div class="chat-bubble">leute kompromiss: kaninchen 🐰</div></div>
+      <div class="chat-msg in"><span class="speaker">Tom</span><div class="chat-bubble">nein bea geh weg</div></div>
+      <div class="chat-msg in"><span class="speaker">Jule</span><div class="chat-bubble">😂😂😂 bea immer mit den absurden ideen</div></div>
+      <div class="chat-meaning"><strong>„team hund/katze"</strong> = welche Seite man bevorzugt. <strong>„bea geh weg"</strong> = ironische Ablehnung unter Freunden, gemeint: „deine Idee passt nicht". Gruppen-Chat-Energie!</div>
+    </div>
+
+  </div>
+
+  <div class="tip">
+    <strong>Typische Gesprächs-Floskeln zum Üben:</strong><br>
+    „<em>Naja, eigentlich…</em>" · „<em>Wenn du mich fragst</em>" · „<em>Ehrlich gesagt</em>" · „<em>Ngl</em>" · „<em>Stell dir vor</em>" · „<em>Echt jetzt?</em>" · „<em>Boah, lass mich überlegen…</em>" · „<em>So ein ähnliches Ding wie…</em>" · „<em>Das klingt jetzt komisch, aber…</em>" · „<em>Am Ende läuft es darauf hinaus</em>" · „<em>Lange Rede, kurzer Sinn</em>" · „<em>Wie soll ich sagen…</em>"
+  </div>
 </section>
 
-</div>
+<footer>deutschoderwas · Sprechclub · Freies Sprechen · B1/B2 · <strong>Deluxe-Version</strong> · 13.06.2026</footer>
 
-<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit ❤️ für meine Sprechclub-Lernenden · Freies Sprechen · B1/B2</footer>
+</div>
 
 <script>
-document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+// ============= TAB-NAVI =============
+document.querySelectorAll('.tab').forEach((t,i)=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelectorAll('.section')[i].classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
 
-const KARTEN=[
-  {emoji:'💭',word:'Wie sage ich meine Meinung?',badge:'Phase 1',rule:'3 sichere Anfänge',ex:'„<strong>Ich bin der Meinung, dass…</strong>" / „<strong>Meiner Ansicht nach…</strong>" / „<strong>Ich finde, dass…</strong>"'},
-  {emoji:'✅',word:'Wie stimme ich zu?',badge:'Phase 2',rule:'Volle Zustimmung',ex:'„Da <strong>stimme ich dir voll zu</strong>." / „<strong>Genau!</strong>" / „<strong>Du hast völlig recht!</strong>"'},
-  {emoji:'❌',word:'Wie widerspreche ich höflich?',badge:'Phase 2',rule:'Höflich aber klar',ex:'„Da bin ich <strong>anderer Meinung</strong>." / „<strong>Ich sehe das anders</strong>." / „<strong>Das stimmt so nicht</strong>."'},
-  {emoji:'🤝',word:'Wie stimme ich teilweise zu?',badge:'Diplomat',rule:'„Da hast du einen Punkt, aber…"',ex:'„<strong>Das mag sein, aber…</strong>" / „<strong>Da hast du einen Punkt, allerdings…</strong>"'},
-  {emoji:'💡',word:'Wie begründe ich?',badge:'Phase 3',rule:'JEDE Meinung braucht WEIL!',ex:'„<strong>Der Grund dafür ist, dass…</strong>" / „<strong>Das liegt daran, dass…</strong>"'},
-  {emoji:'📝',word:'Wie nenne ich ein Beispiel?',badge:'Phase 3',rule:'Beispiele machen Argumente stark',ex:'„<strong>Ein gutes Beispiel ist…</strong>" / „<strong>Zum Beispiel…</strong>" / „<strong>Nehmen wir…</strong>"'},
-  {emoji:'⚖️',word:'Wie zeige ich beide Seiten?',badge:'B2 Profi',rule:'Klassiker: Einerseits / Andererseits',ex:'„<strong>Einerseits…, andererseits…</strong>" / „<strong>Zwar…, jedoch…</strong>"'},
-  {emoji:'🤔',word:'Wie äußere ich eine Vermutung?',badge:'Konjunktiv II',rule:'Unsicher, aber konstruktiv',ex:'„<strong>Ich könnte mir vorstellen, dass…</strong>" / „<strong>Es könnte sein, dass…</strong>"'},
-  {emoji:'❓',word:'Wie frage ich nach?',badge:'Aktives Zuhören',rule:'Zeigt Interesse!',ex:'„<strong>Was meinst du genau damit?</strong>" / „<strong>Könntest du das näher erklären?</strong>"'},
-  {emoji:'🎯',word:'Wie schlage ich Kompromisse vor?',badge:'Konstruktiv',rule:'Konjunktiv II + Wir',ex:'„<strong>Wir könnten doch…</strong>" / „<strong>Wie wäre es, wenn wir…</strong>"'},
-  {emoji:'🏆',word:'Wie ziehe ich ein Fazit?',badge:'Phase 4',rule:'Starker Abschluss',ex:'„<strong>Zusammenfassend lässt sich sagen…</strong>" / „<strong>Abschließend möchte ich betonen…</strong>"'},
-  {emoji:'🤐',word:'Wie unterbreche ich höflich?',badge:'Schwierig!',rule:'„Darf ich kurz?"',ex:'„<strong>Entschuldigung, darf ich kurz ergänzen?</strong>" / „<strong>Verzeihung, aber…</strong>"'},
-  {emoji:'😅',word:'Wie gebe ich Unsicherheit zu?',badge:'Ehrlich',rule:'„Ich bin mir nicht sicher"',ex:'„<strong>Ich bin mir nicht sicher, aber…</strong>" / „<strong>Vielleicht irre ich mich…</strong>"'},
-  {emoji:'💪',word:'Wie überzeuge ich stärker?',badge:'B2 Profi',rule:'Faktische Verstärkung',ex:'„<strong>Studien zeigen, dass…</strong>" / „<strong>Es ist erwiesen, dass…</strong>"'},
-  {emoji:'🤲',word:'Wie höre ich ab?',badge:'Brücke schlagen',rule:'Antwort + neue Frage',ex:'„<strong>Das ist ein interessanter Punkt. Wie siehst du…?</strong>"'},
+// ============= LERNKARTEN (23) =============
+const CARDS = [
+  {e:'🗣️',w:'erzählen',b:'Hauptverb',r:'eine Geschichte mündlich wiedergeben',ex:'„Erzähl mal, <strong>wie war\'s</strong> gestern auf der Party?"',syn:'berichten · schildern · ausplaudern'},
+  {e:'💭',w:'behaupten',b:'Sprechakt',r:'etwas als wahr darstellen — auch ohne Beweis',ex:'„Er <strong>behauptet</strong>, er hätte das nie gesagt."',syn:'sagen · bekräftigen · von sich geben'},
+  {e:'👍',w:'zustimmen',b:'Reaktion',r:'sagen, dass man derselben Meinung ist',ex:'„Da muss ich dir voll <strong>zustimmen</strong>."',syn:'beipflichten · recht geben · einverstanden sein'},
+  {e:'👎',w:'widersprechen',b:'Reaktion',r:'sagen, dass man anderer Meinung ist',ex:'„Tut mir leid, aber da muss ich <strong>widersprechen</strong>."',syn:'dagegen sein · einwenden · entgegnen'},
+  {e:'😬',w:'zugeben',b:'Sprechakt',r:'etwas Unangenehmes als wahr eingestehen',ex:'„Okay, ich <strong>geb zu</strong> — das war meine Schuld."',syn:'eingestehen · beichten · einräumen'},
+  {e:'📖',w:'anekdotisch',b:'Erzähl-Stil',r:'als kleine Geschichte erzählt, nicht statistisch belegt',ex:'„Das ist nur <strong>anekdotisch</strong>, aber ich kenn 3 Leute, denen das passiert ist."',syn:'als Geschichte · aus Erfahrung'},
+  {e:'⏳',w:'Zeit gewinnen',b:'Trick',r:'Floskeln nutzen, während man nachdenkt',ex:'„<strong>Hmm, lass mich kurz überlegen</strong> …"',syn:'Pause schaffen · überbrücken'},
+  {e:'🌀',w:'umschreiben',b:'Notfall-Strategie',r:'ein Wort beschreiben, wenn man\'s nicht kennt',ex:'„So ein Ding, das man auf den Tisch stellt für die Suppe — du weißt schon."',syn:'erklären · beschreiben · drumherum reden'},
+  {e:'🎯',w:'auf den Punkt kommen',b:'Struktur',r:'kurz und klar sagen, worum es geht',ex:'„<strong>Komm auf den Punkt</strong> — was willst du sagen?"',syn:'sich kurz fassen · klar werden'},
+  {e:'🧶',w:'ausschweifen',b:'Gegenteil',r:'lange reden, weit weg vom Thema',ex:'„Er <strong>schweift</strong> immer total <strong>aus</strong>, das nervt."',syn:'abschweifen · vom Hundertsten ins Tausendste'},
+  {e:'🪄',w:'die Pointe',b:'Erzählkunst',r:'der überraschende Höhepunkt einer Geschichte',ex:'„Und dann kam die <strong>Pointe</strong>: er war der Bürgermeister!"',syn:'der Clou · der Witz · die Überraschung'},
+  {e:'🎬',w:'der Wendepunkt',b:'Erzähl-Struktur',r:'der Moment, wo sich alles ändert',ex:'„Der <strong>Wendepunkt</strong> war, als ich nach Berlin gezogen bin."',syn:'die Wende · der Knackpunkt · ab da'},
+  {e:'🙋',w:'sich trauen',b:'Mut',r:'Mut haben, etwas zu tun',ex:'„<strong>Trau dich</strong> einfach! Fehler sind okay."',syn:'wagen · sich überwinden · es riskieren'},
+  {e:'💬',w:'der Diskursmarker',b:'Sprach-Werkzeug',r:'kleines Wort, das ein Gespräch lenkt („naja", „also")',ex:'„<strong>Diskursmarker</strong> wie ‚also\' machen dich flüssig."',syn:'Gesprächs-Floskel · Füllwort'},
+  {e:'🤷',w:'ehrlich gesagt',b:'Floskel',r:'leitet eine offene/persönliche Meinung ein',ex:'„<strong>Ehrlich gesagt</strong> finde ich das nicht so gut."',syn:'um ehrlich zu sein · unter uns gesagt'},
+  {e:'❓',w:'die Anekdote',b:'Erzähl-Form',r:'kurze, oft amüsante Geschichte aus dem Leben',ex:'„Ich kenne da eine kleine <strong>Anekdote</strong> dazu …"',syn:'kleine Geschichte · Schwank · Mini-Story'},
+  {e:'🎭',w:'übertreiben',b:'Stil-Mittel',r:'etwas größer/dramatischer machen als es war',ex:'„Du <strong>übertreibst</strong> mal wieder — so schlimm war\'s nicht."',syn:'aufbauschen · dramatisieren · dick auftragen'},
+  {e:'🤔',w:'mutmaßen',b:'Sprechakt',r:'eine Vermutung äußern, ohne Sicherheit',ex:'„Ich kann nur <strong>mutmaßen</strong>, dass er müde war."',syn:'vermuten · spekulieren · raten'},
+  {e:'🎙️',w:'der Smalltalk',b:'Soziales',r:'leichtes Gespräch über Belangloses',ex:'„Beim <strong>Smalltalk</strong> ist Wetter immer ein sicheres Thema."',syn:'Plauderei · Geplauder · Plausch'},
+  {e:'🪞',w:'sich verhaspeln',b:'Patzer',r:'beim Sprechen durcheinanderkommen',ex:'„Sorry, ich hab mich gerade kurz <strong>verhaspelt</strong>."',syn:'sich versprechen · durcheinanderkommen'},
+  {e:'🧭',w:'der Faden',b:'Bildlich',r:'der rote Leitgedanke einer Geschichte',ex:'„Ich hab grad den <strong>Faden verloren</strong> — wo war ich?"',syn:'der rote Faden · die Linie'},
+  {e:'🥁',w:'eine Geschichte aufbauen',b:'Struktur',r:'Spannung erzeugen — Anfang, Mitte, Pointe',ex:'„Gute Erzähler <strong>bauen</strong> jede <strong>Geschichte auf</strong> wie ein Lied."',syn:'erzählen mit Bogen · dramaturgisch'},
+  {e:'😎',w:'souverän wirken',b:'Wirkung',r:'sicher und gelassen klingen, auch wenn man unsicher ist',ex:'„Sprich langsam, dann wirkst du <strong>souverän</strong>."',syn:'sicher · gelassen · selbstbewusst'}
 ];
-let order=KARTEN.map((_,i)=>i);let lkIdx=0;
-const flipEl=document.getElementById('flip');
-function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
-flipEl.onclick=()=>flipEl.classList.toggle('flipped');
-document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
-document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
-document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+let cardIdx = 0;
+function showCard(){
+  const c = CARDS[cardIdx];
+  document.getElementById('fEmoji').textContent = c.e;
+  document.getElementById('fWord').textContent = c.w;
+  document.getElementById('fBadge').textContent = c.b;
+  document.getElementById('fRule').textContent = c.r;
+  document.getElementById('fEx').innerHTML = c.ex;
+  document.getElementById('fSyn').innerHTML = '<b>Synonyme:</b> ' + c.syn;
+  document.getElementById('cardNr').textContent = cardIdx + 1;
+  document.getElementById('flipCard').classList.remove('flipped');
+}
+function nextCard(){ cardIdx = (cardIdx + 1) % CARDS.length; showCard(); }
+function prevCard(){ cardIdx = (cardIdx - 1 + CARDS.length) % CARDS.length; showCard(); }
+function shuffleCards(){
+  for(let i = CARDS.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [CARDS[i], CARDS[j]] = [CARDS[j], CARDS[i]];
+  }
+  cardIdx = 0;
+  showCard();
+}
+document.getElementById('flipCard').addEventListener('click', () => {
+  document.getElementById('flipCard').classList.toggle('flipped');
+});
+document.getElementById('cardTotal').textContent = CARDS.length;
 showCard();
 
-document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
-
-document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');};
-document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
-
-const PAIRS=[
-  {l:'Ich bin der Meinung, dass…',r:'Meinung beginnen'},
-  {l:'Da stimme ich dir voll zu!',r:'Zustimmen'},
-  {l:'Da bin ich anderer Meinung.',r:'Widersprechen'},
-  {l:'Das mag sein, aber…',r:'Teilweise zustimmen'},
-  {l:'Der Grund dafür ist, dass…',r:'Begründen'},
-  {l:'Einerseits…, andererseits…',r:'Beide Seiten zeigen'},
-  {l:'Wir könnten doch…',r:'Kompromiss vorschlagen'},
-  {l:'Zusammenfassend lässt sich sagen…',r:'Fazit ziehen'},
+// ============= QUIZ (13 Fragen) =============
+const QUIZ = [
+  {q:'Welcher Satz ist ein klassischer „Zeit-gewinnen"-Trick?',opts:['Hmm, lass mich kurz überlegen …','Ich weiß es nicht, frag jemand anderen.','Das ist eine dumme Frage.'],correct:0,exp:'„Hmm, lass mich kurz überlegen" gibt dir 3-5 Sekunden zum Nachdenken — ohne dass du schweigst. Sehr typisch flüssiges Deutsch.'},
+  {q:'Du kennst das Wort „Schraubenzieher" nicht. Was machst du?',opts:['Du sagst „Equipment" auf Englisch.','Du beschreibst: „So ein Ding aus Metall, mit dem man Schrauben dreht."','Du schweigst und schaust verlegen.'],correct:1,exp:'Umschreiben! Das ist eine der wichtigsten Strategien beim freien Sprechen — man bleibt im Gespräch, statt zu stocken.'},
+  {q:'Was bedeutet „ngl" in einem Chat?',opts:['nichts genaues, lol','not gonna lie = ehrlich gesagt','neue gute Laune'],correct:1,exp:'„ngl" = englische Abkürzung „not gonna lie", auf Deutsch im Chat sehr verbreitet für „ehrlich gesagt".'},
+  {q:'Welcher Einstieg eignet sich, um eine Anekdote zu beginnen?',opts:['Es war einmal …','Stell dir vor, gestern ist mir was Verrücktes passiert …','Im Folgenden möchte ich darlegen, dass …'],correct:1,exp:'„Stell dir vor, gestern …" zieht sofort die Aufmerksamkeit. „Es war einmal" klingt nach Märchen, das andere nach Behördenbrief.'},
+  {q:'Welcher Satz ist ein Ich-Satz, der eigene Meinung höflich einleitet?',opts:['Das ist totaler Quatsch.','Wenn du mich fragst, sehe ich das anders.','Du verstehst es einfach nicht.'],correct:1,exp:'„Wenn du mich fragst …" ist eine perfekte höfliche Einleitung für eine eigene Meinung — ohne zu konfrontieren.'},
+  {q:'Was ist die „Pointe" einer Geschichte?',opts:['der langweilige Anfang','der überraschende Höhepunkt am Ende','die Liste der Personen'],correct:1,exp:'Die Pointe ist der Clou, die Überraschung am Ende. Ohne Pointe wirkt eine Anekdote unfertig.'},
+  {q:'Was ist die GESÜNDESTE Reaktion, wenn dir im Gespräch ein Wort nicht einfällt?',opts:['Sofort ins Englische wechseln und hoffen, dass niemand merkt.','Eine Pause machen, umschreiben oder fragen: „Wie heißt nochmal das Ding, das …?"','Das Thema komplett wechseln.'],correct:1,exp:'Ehrlichkeit + Umschreibung = flüssiges Deutsch. Auch Muttersprachler vergessen Wörter und sagen: „Wie heißt das nochmal?"'},
+  {q:'Welche Aussage ist ein „Diskursmarker"?',opts:['Tisch','Naja, eigentlich …','grün'],correct:1,exp:'„Naja", „also", „eigentlich", „ehrlich gesagt" — kleine Wörter, die ein Gespräch lenken. Wer sie nutzt, klingt flüssig.'},
+  {q:'Du verteidigst eine Meinung. Wie nimmst du Einwände am souveränsten vorweg?',opts:['Ich weiß, dass alle anderen falsch liegen.','Zugegeben, da gibt es Argumente dagegen — aber für mich überwiegt …','Lass uns nicht streiten.'],correct:1,exp:'Den Einwand zugeben + trotzdem dabei bleiben = souverän. Wer nur stur ist, wirkt unsicher.'},
+  {q:'Was bedeutet „aus dem Ruder laufen"?',opts:['eine Bootsfahrt machen','außer Kontrolle geraten, anders verlaufen als geplant','rudern können'],correct:1,exp:'Bild aus dem Bootssport: das Ruder verlieren. Im Alltag: „Die Party ist total aus dem Ruder gelaufen." Perfekt für Wochenend-Geschichten!'},
+  {q:'Welche Floskel macht dich beim Sprechen flüssiger?',opts:['Eigentlich finde ich, dass — also, naja, weiß nicht.','Im Wesentlichen ist die Sachlage so zu betrachten.','Boah, lass mich kurz überlegen …'],correct:2,exp:'„Boah, lass mich kurz überlegen" ist authentisch + gewinnt Zeit + klingt natürlich. Das zweite ist Lehrbuch, das erste klingt unsicher.'},
+  {q:'Beim Erzählen einer Geschichte — was ist die WICHTIGSTE Regel?',opts:['Chronologisch von Anfang bis Ende, ohne Pointe.','Mit einem Höhepunkt anfangen oder zumindest mit Spannung — Pointe am Ende.','Möglichst viele Fakten erwähnen.'],correct:1,exp:'Gute Geschichten haben einen Bogen: Spannung aufbauen → Pointe. Reine Chronologie langweilt, wenn die Pointe nicht klar ist.'},
+  {q:'Was bedeutet „den Faden verlieren"?',opts:['einen Strickfehler machen','beim Reden den roten Leitgedanken vergessen','sehr müde sein'],correct:1,exp:'Bildlich: der „rote Faden" ist die Linie der Geschichte. „Den Faden verlieren" = vergessen, worauf man hinauswollte. Sehr typisch beim freien Sprechen!'}
 ];
-function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
-buildMatch();
-document.getElementById('matchRestart').onclick=buildMatch;
-const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
+const quizCont = document.getElementById('quizContainer');
+QUIZ.forEach((q, i) => {
+  const div = document.createElement('div');
+  div.className = 'quiz';
+  div.innerHTML = '<div class="quiz-q">' + (i+1) + '. ' + q.q + '</div>' +
+    '<div class="quiz-opts">' +
+    q.opts.map((o, j) => '<button class="quiz-chip" data-i="' + j + '">' + o + '</button>').join('') +
+    '</div>' +
+    '<div class="quiz-explain"><b>Erklärung:</b> ' + q.exp + '</div>';
+  div.querySelectorAll('.quiz-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (div.classList.contains('answered')) return;
+      const sel = parseInt(chip.dataset.i);
+      div.querySelectorAll('.quiz-chip').forEach((c, ci) => {
+        if (ci === q.correct) c.classList.add('correct');
+        else if (ci === sel) c.classList.add('wrong');
+      });
+      div.classList.add('answered');
+    });
+  });
+  quizCont.appendChild(div);
+});
 
-const SPEAK=[
-  {emoji:'📱',cat:'These 1 · Technologie',q:'„Smartphones machen unsere Gesellschaft einsamer." — Pro oder Contra?'},
-  {emoji:'⏰',cat:'These 2 · Arbeit',q:'„Die 4-Tage-Woche wäre besser für alle." — Argumentiere für beide Seiten!'},
-  {emoji:'📚',cat:'These 3 · Bildung',q:'„Hausaufgaben sollten abgeschafft werden." — Was meinst du?'},
-  {emoji:'🌍',cat:'These 4 · Umwelt',q:'„Plastik sollte komplett verboten werden." — Realistisch oder nicht?'},
-  {emoji:'🥗',cat:'These 5 · Ernährung',q:'„Veganismus ist die Zukunft." — Diskutiere mit deinem Partner!'},
-  {emoji:'💻',cat:'These 6 · Sozial',q:'„Online-Freundschaften sind echte Freundschaften." — Findest du das auch?'},
-  {emoji:'🚗',cat:'These 7 · Verkehr',q:'„Innenstädte sollten autofrei sein." — Pro / Contra?'},
-  {emoji:'🏥',cat:'These 8 · Gesundheit',q:'„Krankenversicherung sollte für alle gratis sein."'},
-  {emoji:'💰',cat:'These 9 · Geld',q:'„Geld macht glücklich — aber nur bis zu einem bestimmten Punkt."'},
-  {emoji:'🎓',cat:'These 10 · Studium',q:'„Ein Universitätsabschluss ist heute nicht mehr wichtig."'},
-  {emoji:'✈️',cat:'These 11 · Reisen',q:'„Wer reist, lernt mehr über sich selbst als wer studiert."'},
-  {emoji:'❤️',cat:'These 12 · Beziehung',q:'„Liebe auf den ersten Blick gibt es nicht."'},
+// ============= LÜCKENTEXT (11 Sätze) =============
+const GAPS = [
+  {t:'Naja, ___ gesagt finde ich das ziemlich schräg.',opts:['ehrlich','geheim','wörtlich'],c:0},
+  {t:'Hmm, ___ mich kurz überlegen …',opts:['lass','last','lass\'s'],c:0},
+  {t:'Wenn du mich ___, sehe ich das ganz anders.',opts:['fragst','sagst','frachtest'],c:0},
+  {t:'Boah, das ist eine ___ Frage!',opts:['gute','grobe','große'],c:0},
+  {t:'Ach so, ___ ist mir das alles total entfallen.',opts:['ehrlich gesagt','ehrenhaft','ehrend'],c:0},
+  {t:'Komm bitte ___ den Punkt — was willst du sagen?',opts:['auf','an','in'],c:0},
+  {t:'Stell dir mal ___: gestern ist mir was Verrücktes passiert.',opts:['vor','her','an'],c:0},
+  {t:'Am Ende läuft es darauf ___, dass wir alle dasselbe wollen.',opts:['hinaus','heraus','hinab'],c:0},
+  {t:'Ich hab grad kurz den ___ verloren — wo war ich?',opts:['Faden','Falter','Faktor'],c:0},
+  {t:'Echt ___? Das überrascht mich jetzt aber.',opts:['jetzt','schon','immer'],c:0},
+  {t:'Wie soll ich ___ … es ist ein bisschen schwer zu erklären.',opts:['sagen','zeigen','meinen'],c:0}
 ];
-let lastS=-1;
-document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Pro UND Contra! Mind. 5 Redemittel!</div>';c.style.opacity='1';},200);};
+const gapCont = document.getElementById('gapContainer');
+GAPS.forEach((g, i) => {
+  const div = document.createElement('div');
+  div.className = 'gap-row';
+  div.innerHTML = (i+1) + '. ' + g.t.replace('___', '<select data-i="' + i + '"><option value="-1">— wählen —</option>' +
+    g.opts.map((o, j) => '<option value="' + j + '">' + o + '</option>').join('') + '</select>');
+  gapCont.appendChild(div);
+});
+function evalGap(){
+  let correct = 0;
+  document.querySelectorAll('#gapContainer select').forEach(sel => {
+    const i = parseInt(sel.dataset.i);
+    const v = parseInt(sel.value);
+    sel.classList.remove('correct', 'wrong');
+    if (v === GAPS[i].c){ sel.classList.add('correct'); correct++; }
+    else if (v >= 0) sel.classList.add('wrong');
+  });
+  document.getElementById('gapScore').textContent = '🎯 ' + correct + ' von ' + GAPS.length + ' richtig!';
+}
+
+// ============= ZUORDNEN (10 Paare) =============
+const MATCH = [
+  {l:'Du wirst gefragt: „Erzähl was über dich!"',r:'„Also … geboren bin ich in einem Dorf, das niemand kennt — und dann …"'},
+  {l:'Du brauchst 3 Sekunden zum Nachdenken.',r:'„Hmm, gute Frage — lass mich kurz überlegen."'},
+  {l:'Ein Wort fällt dir gerade nicht ein.',r:'„So ein Ding, das man auf den Tisch stellt — du weißt schon was ich meine?"'},
+  {l:'Jemand hat eine extreme Meinung — du widersprichst höflich.',r:'„Ich versteh dich, aber wenn du mich fragst, sehe ich das anders, weil …"'},
+  {l:'Du willst eine peinliche Geschichte ankündigen.',r:'„Okay, ich muss euch was beichten — das wird kurz peinlich."'},
+  {l:'Du willst deine Meinung sanft einleiten.',r:'„Ehrlich gesagt finde ich, dass …"'},
+  {l:'Du erzählst eine Geschichte und kommst zur Pointe.',r:'„Und dann — ihr glaubt es nicht — kam plötzlich …"'},
+  {l:'Du wirst gefragt: „Was würdest du mit 10 Millionen machen?"',r:'„Boah, erste spontane Antwort: ein Häuschen am See und 6 Monate nichts tun."'},
+  {l:'Du hast den Gesprächsfaden verloren.',r:'„Moment, wo war ich gerade … ach ja, ich wollte sagen …"'},
+  {l:'Du willst ein Gespräch schließen und den Ball zurückspielen.',r:'„So sehe ich das jedenfalls. Und du? Wie ist das bei dir?"'}
+];
+const mc = document.getElementById('matchContainer');
+const lefts = MATCH.map((m, i) => ({ ...m, idx: i }));
+const rights = [...MATCH].map((m, i) => ({ r: m.r, originalIdx: i }))
+  .sort(() => Math.random() - 0.5);
+mc.innerHTML = '<div class="match-col"><h4>📋 Situation</h4>' +
+  lefts.map((m, i) => '<div class="match-item left" data-i="' + i + '">' + m.l + '</div>').join('') +
+  '</div>' +
+  '<div class="match-col"><h4>✅ Bester Einstieg</h4>' +
+  rights.map((m, i) => '<div class="match-item right" data-i="' + i + '" data-orig="' + m.originalIdx + '">' + m.r + '</div>').join('') +
+  '</div>';
+let selL = null;
+let matchCount = 0;
+mc.querySelectorAll('.match-item.left').forEach(el => {
+  el.addEventListener('click', () => {
+    if (el.classList.contains('matched')) return;
+    mc.querySelectorAll('.match-item.left').forEach(x => x.classList.remove('selected'));
+    el.classList.add('selected');
+    selL = parseInt(el.dataset.i);
+  });
+});
+mc.querySelectorAll('.match-item.right').forEach(el => {
+  el.addEventListener('click', () => {
+    if (el.classList.contains('matched') || selL === null) return;
+    const orig = parseInt(el.dataset.orig);
+    if (orig === selL){
+      el.classList.add('matched');
+      mc.querySelector('.match-item.left[data-i="' + selL + '"]').classList.add('matched');
+      matchCount++;
+      if (matchCount === MATCH.length) document.getElementById('matchScore').textContent = '🎉 Super — alle 10 Paare zugeordnet!';
+    } else {
+      el.classList.add('wrong');
+      setTimeout(() => el.classList.remove('wrong'), 400);
+    }
+    selL = null;
+    mc.querySelectorAll('.match-item.left').forEach(x => x.classList.remove('selected'));
+  });
+});
+
+// ============= SPRECHKARTEN (24) =============
+const SPEAK = [
+  {c:'Letztes Wochenende',q:'Erzähl von einem Tag am Wochenende, der nicht so lief wie geplant. Was war der peinlichste Moment?'},
+  {c:'Wenn ich Geld hätte',q:'Du bekommst 10.000 € und musst sie bis Sonntag ausgeben — kein Sparen erlaubt. Was tust du?'},
+  {c:'Mein größter Misserfolg',q:'Erzähl von einem Misserfolg, der dich rückblickend etwas Wichtiges gelehrt hat.'},
+  {c:'Heimliches Talent',q:'Was kannst du, was niemand erwartet? Erzähl, wie du es entdeckt hast.'},
+  {c:'Hund vs. Katze',q:'Welches Team bist du — und warum hat das andere Team komplett unrecht?'},
+  {c:'3 Wünsche frei',q:'Du hast 3 echte Wünsche. Keine Weltfrieden-Antworten — sei egoistisch und ehrlich!'},
+  {c:'Sich vorstellen',q:'Erzähl deine Lebensgeschichte in 90 Sekunden. Nicht chronologisch — mit einem Höhepunkt anfangen.'},
+  {c:'Anekdote',q:'Was war die peinlichste Situation der letzten Monate? Mit Pointe, bitte!'},
+  {c:'Wenn-Satz',q:'Wenn du morgen eine Sprache fließend könntest — welche und warum genau die?'},
+  {c:'Wenn-Satz',q:'Wenn du eine Woche unsichtbar wärst — was würdest du tun, was nicht?'},
+  {c:'Spontane Reaktion',q:'Schlagzeile: „Forscher beweisen: Schlafen vor Mitternacht macht klüger." Reagiere in 90 Sekunden.'},
+  {c:'Ort beschreiben',q:'Beschreib deinen Lieblingsort so, dass ich ihn sehe. Mit Gerüchen, Geräuschen, Licht.'},
+  {c:'Person sein',q:'Stell dich vor, als wärst du Albert Einstein. Erste Frage: „Was treibt Sie an, Herr Einstein?"'},
+  {c:'Kontroverse',q:'Welche Meinung hast du, mit der du oft alleine bist? Verteidige sie — und nimm Gegenargumente vorweg.'},
+  {c:'Erinnerung',q:'Was ist deine früheste Kindheitserinnerung? Beschreib sie so detailliert wie möglich.'},
+  {c:'Konjunktiv 2',q:'Wenn du nochmal 15 wärst — was würdest du anders machen?'},
+  {c:'Vergleich',q:'Vergleiche zwei Städte oder Länder, die du kennst. Wo lebst du lieber — und warum?'},
+  {c:'Smalltalk',q:'Du sitzt im Zug, jemand spricht dich an. Erfind 60 Sekunden Smalltalk — Wetter, Reise, Beruf.'},
+  {c:'Konjunktiv 2',q:'Wenn du 3 berühmte Personen zu einem Abendessen einladen könntest — welche? Und worüber redet ihr?'},
+  {c:'Persönlich',q:'Erzähl von jemandem, der dich geprägt hat — und WAS genau die Person dir mitgegeben hat.'},
+  {c:'Lieblings-Anekdote',q:'Erzähl deinen besten Witz oder deine lustigste Geschichte auf Deutsch. Pointe nicht vergessen!'},
+  {c:'Träume',q:'Was ist dein größter Traum — beruflich oder privat? Und was hält dich gerade davon ab?'},
+  {c:'Spontane Meinung',q:'Pro oder Contra: Sollten Kinder erst mit 16 ein Smartphone bekommen? Argumentiere 90 Sekunden.'},
+  {c:'Selbstreflexion',q:'Beschreib dich in 5 Adjektiven — und erklär, warum genau diese 5 dich treffen.'}
+];
+let speakIdx = 0;
+function showSpeak(){
+  const s = SPEAK[speakIdx];
+  document.getElementById('speakCard').innerHTML =
+    '<div class="cat">' + s.c + ' · Karte ' + (speakIdx+1) + ' / ' + SPEAK.length + '</div>' +
+    '<div class="q">' + s.q + '</div>';
+}
+function nextSpeak(){
+  speakIdx = (speakIdx + 1) % SPEAK.length;
+  showSpeak();
+}
+showSpeak();
+
+// ============= STORY-WÜRFEL =============
+const DICE_WHO = ['eine Oma','ein Influencer','dein Lieblings-Lehrer','ein Astronaut','eine sprechende Katze','ein verlorener Tourist','dein Nachbar','ein Roboter','eine Bäckerin um 4 Uhr morgens','ein Kind mit Eis'];
+const DICE_WHERE = ['im Supermarkt','am Flughafen um 3 Uhr','auf einer Hochzeit','im Aufzug','in der U-Bahn','im Schwimmbad','in einer winzigen Bar','auf einer einsamen Insel','im Tanzkurs','in einer Apotheke'];
+const DICE_WHAT = ['findet 100 Euro','verliert den Schlüssel','trifft den Ex','muss plötzlich singen','wird angesprochen auf Französisch','sieht ein UFO','vergisst den eigenen Namen','findet ein Tagebuch','muss eine Rede halten','entdeckt ein Geheimnis'];
+function rollDice(){
+  document.getElementById('diceWho').textContent = DICE_WHO[Math.floor(Math.random()*DICE_WHO.length)];
+  document.getElementById('diceWhere').textContent = DICE_WHERE[Math.floor(Math.random()*DICE_WHERE.length)];
+  document.getElementById('diceWhat').textContent = DICE_WHAT[Math.floor(Math.random()*DICE_WHAT.length)];
+}
 </script>
 </body></html>

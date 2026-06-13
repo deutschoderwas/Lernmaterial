@@ -1,381 +1,813 @@
 <!DOCTYPE html><html lang="de"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Smalltalk auf der Straße · B1/B2 | deutschoderwas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Smalltalk auf der Straße · B1/B2 · DELUXE | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
-*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3; --red-dark:#C8211D;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+  --deluxe:linear-gradient(135deg,#E8302A,#FFD24A);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
 body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
-.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.wrapper{max-width:980px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
 .eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.eyebrow .badge{display:inline-block;background:var(--deluxe);color:#fff;padding:.18em .8em;border-radius:999px;margin-left:.6em;font-size:.7rem;letter-spacing:.15em;}
 .title-wrap{text-align:center;margin-bottom:1rem;}
-h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,4rem);line-height:1.05;color:var(--ink);}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.4rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
 h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
-h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
-.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
-.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
-.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
-.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;}
-.tab:hover{border-color:var(--ink);}
+h1.title .hl::before{content:\'\';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:680px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:480px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;position:sticky;top:.5rem;z-index:50;box-shadow:0 4px 12px rgba(38,32,25,.08);}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
 .tab.active{background:var(--red);color:white;border-color:var(--red);}
-.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
 .section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
 .tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
-.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}
-.sit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.5rem 0;}
-@media(max-width:600px){.sit-grid{grid-template-columns:repeat(2,1fr);}}
-.sit{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem;text-align:center;border-top:5px solid var(--red);}
-.sit:nth-child(2){border-top-color:var(--teal);}.sit:nth-child(3){border-top-color:#B66809;}.sit:nth-child(4){border-top-color:#6A3D9C;}.sit:nth-child(5){border-top-color:var(--pink);}.sit:nth-child(6){border-top-color:#5F7A2A;}
-.sit-icon{font-size:2rem;margin-bottom:.3rem;}.sit-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1rem;margin-bottom:.3rem;}
-.sit-ex{color:var(--ink-soft);font-size:.82rem;font-style:italic;font-family:'Fraunces',serif;}
-.dial-grid{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0;}
-.dial{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.2rem;border-left:5px solid var(--red);}
-.dial.d2{border-left-color:var(--teal);}.dial.d3{border-left-color:#B66809;}.dial.d4{border-left-color:#6A3D9C;}
-.dial h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.02rem;margin-bottom:.4rem;}
-.dial ul{list-style:none;padding:0;}
-.dial li{padding:.25rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;padding-left:1.1rem;position:relative;}
-.dial li::before{content:'›';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
-.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;}
-.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
-.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
-.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+.tip strong{color:var(--red);font-weight:700;}
+
+/* SITUATIONS-GRID */
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.5rem 0;}
+@media(max-width:700px){.types-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.types-grid{grid-template-columns:1fr;}}
+.type-card{background:var(--paper);border:2px solid var(--sand);border-radius:16px;padding:1.2rem;text-align:left;display:flex;flex-direction:column;gap:.5rem;}
+.type-card.t1{border-color:var(--red);background:#FFF6F5;}
+.type-card.t2{border-color:var(--teal);background:#F1FAF8;}
+.type-card.t3{border-color:#B66809;background:#FFF8E8;}
+.type-card.t4{border-color:#6A3D9C;background:#F5F0FA;}
+.type-card.t5{border-color:#0E7C7B;background:#EFFAF9;}
+.type-card.t6{border-color:var(--pink);background:#FFF0F4;}
+.type-card .ico{font-size:1.8rem;}
+.type-card h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;color:var(--ink);}
+.type-card .ex{font-size:.85rem;color:var(--ink-soft);font-style:italic;line-height:1.4;}
+
+/* TABU vs OK */
+.tabu-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.5rem 0;}
+@media(max-width:600px){.tabu-grid{grid-template-columns:1fr;}}
+.tabu-col{background:var(--paper);border-radius:18px;padding:1.2rem 1.3rem;border:2px solid var(--sand);}
+.tabu-col.ok{border-color:var(--teal);background:#F1FAF8;}
+.tabu-col.no{border-color:var(--red);background:#FFF6F5;}
+.tabu-col h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;margin-bottom:.6rem;}
+.tabu-col.ok h3{color:var(--teal);}
+.tabu-col.no h3{color:var(--red);}
+.tabu-col ul{list-style:none;padding:0;}
+.tabu-col li{padding:.35rem 0 .35rem 1.4rem;position:relative;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.tabu-col.ok li::before{content:\'✓\';position:absolute;left:0;color:var(--teal);font-weight:900;}
+.tabu-col.no li::before{content:\'✗\';position:absolute;left:0;color:var(--red);font-weight:900;}
+
+/* GESPRÄCHS-STRUKTUR */
+.struct{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin:1.5rem 0;}
+@media(max-width:700px){.struct{grid-template-columns:repeat(2,1fr);}}
+.struct-step{background:var(--paper);border-left:5px solid var(--teal);border-radius:12px;padding:.8rem 1rem;}
+.struct-step:nth-child(2){border-left-color:var(--yellow);}
+.struct-step:nth-child(3){border-left-color:var(--pink);}
+.struct-step:nth-child(4){border-left-color:var(--red);}
+.struct-step .num{font-family:'Fraunces',serif;font-weight:900;color:var(--ink-mute);font-size:1.4rem;}
+.struct-step h4{font-weight:700;font-size:.95rem;color:var(--ink);margin:.3rem 0 .2rem;}
+.struct-step .desc{font-size:.8rem;color:var(--ink-soft);line-height:1.4;}
+.struct-step .ph{font-family:\'Fraunces\',serif;font-style:italic;color:var(--ink);font-size:.82rem;margin-top:.35rem;line-height:1.4;}
+
+/* ALLTAG-FRAGEN */
+.alltag-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;margin:1.5rem 0;}
+@media(max-width:700px){.alltag-grid{grid-template-columns:1fr;}}
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4rem;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);font-style:italic;line-height:1.45;}
+.alltag-q .think{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;}
+
+/* WHATSAPP-CHAT */
 .chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
 .chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
 .chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
-.chat-head .name{font-weight:700;font-size:.92rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
 .chat-head .stat{font-size:.7rem;opacity:.85;}
-.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-msg.in .speaker{font-size:.7rem;color:var(--ink-mute);margin-right:.4rem;align-self:flex-end;font-weight:600;}
 .chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
 .chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
 .chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
 .chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-voice{background:var(--wa-in);border-bottom-left-radius:4px;padding:.6rem 1rem;display:flex;align-items:center;gap:.6rem;}
+.chat-msg.out .chat-voice{background:var(--wa-out);border-bottom-right-radius:4px;border-bottom-left-radius:14px;}
+.chat-voice .play{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+.chat-voice .wave{flex:1;height:18px;background:repeating-linear-gradient(90deg,var(--ink-mute) 0 2px,transparent 2px 5px);opacity:.5;}
+.chat-voice .dur{font-size:.75rem;color:var(--ink-soft);}
 .chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
 .uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
-.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+
+/* FLIP-KARTEN */
+.flip{perspective:1000px;width:100%;max-width:480px;height:380px;margin:1.5rem auto;cursor:pointer;}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
 .flip.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
 .flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
-.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
-.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);line-height:1.3;}
+.flip-emoji{font-size:2.6rem;margin-bottom:.4rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
 .flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
-.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
-.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
-.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;}
+.flip-prompt{font-size:.78rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.92rem;margin-bottom:.4rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.9rem;margin-top:.4rem;line-height:1.5;}
 .flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.flip-syn{font-size:.78rem;color:var(--ink-soft);margin-top:.5rem;border-top:1px dashed var(--sand);padding-top:.4rem;}
+.flip-syn b{color:var(--ink);}
 .lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
 .lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
 .lk-btn:hover{background:var(--ink);color:white;}
-.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
-.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;}
-.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
-.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;}
-.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
-.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);}
+
+/* QUIZ */
+.quiz{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:1.2rem 1.4rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:.7rem;}
+.quiz-opts{display:flex;flex-direction:column;gap:.4rem;}
+.quiz-chip{background:var(--cream);border:1.5px solid var(--sand);border-radius:10px;padding:.55rem .9rem;cursor:pointer;font-size:.92rem;transition:.15s;text-align:left;}
 .quiz-chip:hover{border-color:var(--ink);}
-.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
-.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
-.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
-.quiz-explain.show{display:block;}
-.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
-.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
-.gap-text .gap-line:last-of-type{border-bottom:0;}
-.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
-.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
-.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
-.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
-.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.match-stage{margin:1.5rem 0;}
-.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
-.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
-.match-list{display:flex;flex-direction:column;gap:.45rem;}
-.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;text-align:center;}
-.match-item:hover{border-color:var(--ink);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);font-weight:600;}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);text-decoration:line-through;}
+.quiz-explain{display:none;margin-top:.7rem;padding:.7rem .9rem;background:var(--yellow-soft);border-radius:10px;font-size:.85rem;color:var(--ink);border-left:3px solid var(--yellow);}
+.quiz.answered .quiz-explain{display:block;}
+
+/* LÜCKENTEXT */
+.gap-row{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.2rem;margin:.6rem 0;font-family:'Fraunces',serif;font-size:1rem;color:var(--ink);line-height:1.7;}
+.gap-row select{font-family:'Outfit',sans-serif;font-size:.95rem;background:var(--cream-warm);border:1.5px solid var(--ink);border-radius:8px;padding:.2rem .5rem;font-weight:600;color:var(--red);cursor:pointer;}
+.gap-row select.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.gap-row select.wrong{background:var(--red-soft);border-color:var(--red);}
+.gap-score{text-align:center;margin-top:1rem;font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.1rem;}
+.gap-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:.55rem 1.4rem;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;font-size:.92rem;margin:1rem auto;display:block;}
+
+/* ZUORDNEN */
+.match{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.2rem 0;}
+@media(max-width:600px){.match{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--red);margin-bottom:.6rem;text-align:center;font-size:.92rem;}
+.match-item{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.65rem .9rem;margin:.35rem 0;cursor:pointer;font-size:.88rem;transition:.15s;}
 .match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
-.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
-.match-restart{display:block;margin:1.2rem auto 0;}
-.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;}
-.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
-.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
-.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
-.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
-.speak-controls{text-align:center;margin-top:1rem;}
-.role-section{margin-top:2.5rem;}
-.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
-.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
-.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
-.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
-.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
-@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
-.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;}
-.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
-.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
-.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
-.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
-.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
-.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
-footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+.match-item.matched{background:var(--teal-soft);border-color:var(--teal);cursor:default;opacity:.7;}
+.match-item.wrong{animation:shake .35s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+
+/* SPRECHKARTEN */
+.speak-card{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;animation:fade .35s;}
+.speak-card .cat{font-size:.7rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.speak-card .q{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);margin-top:.4rem;font-style:italic;line-height:1.5;}
+.speak-nav{text-align:center;margin-top:1rem;}
+.speak-btn{background:var(--red);color:#fff;border:none;border-radius:999px;padding:.7rem 1.6rem;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;font-size:.95rem;}
+.speak-btn:hover{background:var(--red-dark);}
+
+/* ROLLENSPIEL — DELUXE mit Hilfestellung */
+.rolle{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1.5rem 0;box-shadow:0 4px 18px rgba(38,32,25,.06);}
+.rolle h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--ink);margin-bottom:.8rem;}
+.rolle h3 .ico{display:inline-block;margin-right:.4rem;}
+.rolle .row{display:flex;gap:.6rem;margin:.6rem 0;align-items:flex-start;}
+.rolle .row .lbl{font-weight:700;color:var(--red);font-size:.85rem;min-width:140px;}
+.rolle .row .val{font-size:.94rem;color:var(--ink);line-height:1.55;}
+.rolle .val em{font-style:normal;font-family:'Fraunces',serif;font-weight:600;color:var(--ink);}
+.rolle .keys{background:var(--teal-soft);border-radius:10px;padding:.7rem .9rem;margin:.6rem 0;}
+.rolle .keys .lbl-k{display:block;font-weight:700;color:var(--teal);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;}
+.rolle .keys .words{font-size:.9rem;color:var(--ink);}
+.rolle .keys .words span{display:inline-block;background:#fff;border:1px solid var(--teal);color:var(--ink);padding:.15rem .55rem;border-radius:999px;margin:.18rem .14rem;font-size:.82rem;font-weight:500;}
+.rolle .phrases{background:var(--yellow-soft);border-radius:10px;padding:.7rem .9rem;margin:.6rem 0;}
+.rolle .phrases .lbl-k{display:block;font-weight:700;color:#B66809;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;}
+.rolle .phrases ul{list-style:none;padding:0;}
+.rolle .phrases li{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;padding:.18rem 0 .18rem 1.1rem;position:relative;line-height:1.55;}
+.rolle .phrases li::before{content:\'\201E\';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;font-size:1.1rem;line-height:.9;}
+.rolle .phrases li::after{content:\'\201C\';color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+.rolle .strategy{background:var(--cream-warm);border-left:4px solid var(--red);padding:.6rem .9rem;border-radius:10px;margin:.6rem 0;font-size:.88rem;color:var(--ink);line-height:1.55;}
+.rolle .strategy b{color:var(--red);}
+.rolle .answer-struct{background:#F1FAF8;border:1.5px dashed var(--teal);padding:.6rem .9rem;border-radius:10px;margin:.6rem 0;font-size:.86rem;color:var(--ink);}
+.rolle .answer-struct b{color:var(--teal);}
+
+/* MISSION */
+.mission{background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;border-radius:20px;padding:1.5rem 1.7rem;margin:2rem 0;}
+.mission h3{font-family:'Fraunces',serif;font-size:1.4rem;margin-bottom:.6rem;}
+.mission p{font-size:.95rem;margin:.4rem 0;line-height:1.6;}
+.mission .bonus{background:rgba(255,255,255,.18);border-radius:12px;padding:.7rem 1rem;margin-top:.8rem;font-size:.88rem;}
+.mission .bonus b{color:var(--yellow);}
+footer{text-align:center;color:var(--ink-mute);font-size:.78rem;margin-top:3rem;padding:1rem;}
 </style>
 </head>
 <body>
 <div class="wrapper">
-<div class="eyebrow">deutschoderwas · Alltag B1/B2 Sprechclub</div>
-<div class="title-wrap"><h1 class="title">Smalltalk auf der <span class="hl">Straße</span></h1></div>
-<p class="subtitle">Kleine Gespräche zwischendurch — beim Bäcker, im Aufzug, an der Bushaltestelle. Mit echten deutschen Phrasen, die wirklich funktionieren!</p>
 
-<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg"><g font-family="Outfit" font-weight="700" font-size="9">
-<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">👋</text><text y="40" text-anchor="middle" fill="#E8302A">Begrüßen</text></g>
-<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">☀️</text><text y="40" text-anchor="middle" fill="#0FB5A6">Wetter</text></g>
-<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">🐕</text><text y="40" text-anchor="middle" fill="#B66809">Hund</text></g>
-<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">🚌</text><text y="40" text-anchor="middle" fill="#A04060">Bus</text></g>
-<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">🏘️</text><text y="40" text-anchor="middle" fill="#5F7A2A">Nachbar</text></g>
-<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">👋</text><text y="40" text-anchor="middle" fill="#6A3D9C">Tschüss</text></g>
-</g></svg>
+<div class="eyebrow">B1/B2 · Alltag auf der Straße <span class="badge">Deluxe</span></div>
+<div class="title-wrap">
+  <h1 class="title"><span class="hl">Smalltalk</span> auf der Straße</h1>
+  <p class="subtitle">Was sagt man im Aufzug, beim Bäcker, mit dem Nachbarn? Deutsche Smalltalk-Kultur ist anders — kürzer, sachlicher, oft übers Wetter. Hier lernst du, wie du locker mitredest.</p>
+</div>
 
-<nav class="tabs">
-<button class="tab active" data-tab="0">📖 Überblick</button>
-<button class="tab" data-tab="1">💬 Umgangssprache</button>
-<button class="tab" data-tab="2">🃏 Lernkarten</button>
-<button class="tab" data-tab="3">✅ Quiz</button>
-<button class="tab" data-tab="4">✍️ Lückentext</button>
-<button class="tab" data-tab="5">🧩 Zuordnen</button>
-<button class="tab" data-tab="6">🗣️ Sprechen</button>
-</nav>
+<svg class="hero-svg" viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="100" r="48" fill="#FCE5E3"/><text x="80" y="112" font-size="40" text-anchor="middle">☀️</text>
+  <circle cx="180" cy="60" r="38" fill="#D7F0EC"/><text x="180" y="73" font-size="32" text-anchor="middle">🥐</text>
+  <circle cx="240" cy="140" r="42" fill="#FFF1C2"/><text x="240" y="154" font-size="36" text-anchor="middle">🐕</text>
+  <circle cx="320" cy="60" r="38" fill="#F5F0FA"/><text x="320" y="73" font-size="32" text-anchor="middle">🚌</text>
+  <circle cx="400" cy="100" r="48" fill="#FFE8E3"/><text x="400" y="112" font-size="40" text-anchor="middle">💬</text>
+</svg>
+
+<div class="tabs">
+  <button class="tab active" data-s="0">📖 Überblick</button>
+  <button class="tab" data-s="1">🃏 Lernkarten</button>
+  <button class="tab" data-s="2">✅ Quiz</button>
+  <button class="tab" data-s="3">✍️ Lückentext</button>
+  <button class="tab" data-s="4">🧩 Zuordnen</button>
+  <button class="tab" data-s="5">🗣️ Sprechen</button>
+  <button class="tab" data-s="6">💬 Umgangssprache</button>
+</div>
 
 <!-- ÜBERBLICK -->
-<section class="section active" data-section="0">
-<h2 class="section-title">6 typische <em style="font-style:italic;">Smalltalk-Situationen</em></h2>
-<div class="sit-grid">
-<div class="sit"><div class="sit-icon">🥖</div><div class="sit-name">Beim Bäcker</div><div class="sit-ex">„Schönes Wetter heute, ne?"</div></div>
-<div class="sit"><div class="sit-icon">🛗</div><div class="sit-name">Im Aufzug</div><div class="sit-ex">„Schon Feierabend?"</div></div>
-<div class="sit"><div class="sit-icon">🚏</div><div class="sit-name">Bushaltestelle</div><div class="sit-ex">„Wieder Verspätung…"</div></div>
-<div class="sit"><div class="sit-icon">🐕</div><div class="sit-name">Hundebegegnung</div><div class="sit-ex">„Was für eine süße Rasse!"</div></div>
-<div class="sit"><div class="sit-icon">🏘️</div><div class="sit-name">Nachbarn treffen</div><div class="sit-ex">„Wie geht's der Familie?"</div></div>
-<div class="sit"><div class="sit-icon">🛒</div><div class="sit-name">An der Kasse</div><div class="sit-ex">„Tüte? Karte oder bar?"</div></div>
-</div>
+<section class="section active">
+  <h2 class="section-title">6 typische Smalltalk-Situationen</h2>
+  <p class="section-sub">Diese kleinen Begegnungen passieren jeden Tag — sei vorbereitet.</p>
 
-<div class="tip">💡 <strong>Deutsche Regel #1:</strong> Smalltalk in Deutschland ist KÜRZER als in den USA. Wetter, Verspätung, Hund oder Wochenende — und FERTIG. Nicht zu persönlich werden!</div>
+  <div class="types-grid">
+    <div class="type-card t1"><div class="ico">🛗</div><h3>Im Aufzug</h3><div class="ex">„Na, auch im 4. Stock?" — 30 Sekunden, dann ist es vorbei.</div></div>
+    <div class="type-card t2"><div class="ico">🥐</div><h3>Beim Bäcker</h3><div class="ex">„Wie immer das Roggenbrot?" — die Verkäuferin kennt dich.</div></div>
+    <div class="type-card t3"><div class="ico">🐕</div><h3>Mit Hundebesitzern</h3><div class="ex">„Wie alt ist denn der Kleine?" — Hunde brechen jedes Eis.</div></div>
+    <div class="type-card t4"><div class="ico">🛒</div><h3>An der Supermarkt-Kasse</h3><div class="ex">„Heute ist ja wieder was los hier!" — Schlangen-Solidarität.</div></div>
+    <div class="type-card t5"><div class="ico">🏠</div><h3>Mit dem Nachbarn</h3><div class="ex">„Mensch, das Paket steht schon seit gestern!" — pragmatisch.</div></div>
+    <div class="type-card t6"><div class="ico">🚌</div><h3>An der Bushaltestelle</h3><div class="ex">„Kommt der heute überhaupt noch?" — gemeinsames Leid hilft.</div></div>
+  </div>
 
-<h2 class="section-title">Die <em style="font-style:italic;">4 Phasen</em> jedes Smalltalks</h2>
-<div class="dial-grid">
-<div class="dial d1"><h4>1. 👋 Begrüßen</h4><ul><li>„Hallo!" / „Guten Tag!" / „Moin!" (Norddeutsch)</li><li>„Schönen Tag noch!" (beim Vorbeigehen)</li></ul></div>
-<div class="dial d2"><h4>2. 💬 Einsteigen</h4><ul><li>„Schönes Wetter heute, oder?"</li><li>„Mensch, der Bus ist wieder spät…"</li><li>„Was für ein süßer Hund!"</li></ul></div>
-<div class="dial d3"><h4>3. 🗨️ Vertiefen (NUR wenn der andere antwortet!)</h4><ul><li>„Hoffentlich bleibt das so."</li><li>„Wo geht's denn hin so spät?"</li><li>„Wie alt ist denn der/die?"</li></ul></div>
-<div class="dial d4"><h4>4. 🙌 Verabschieden</h4><ul><li>„Tschüss, schönen Tag noch!"</li><li>„Mach's gut!"</li><li>„Schönen Feierabend!"</li></ul></div>
-</div>
+  <h2 class="section-title">Die 4 Schritte eines deutschen Smalltalks</h2>
+  <p class="section-sub">Kurz, höflich, ohne tiefe Themen. So läuft das.</p>
+  <div class="struct">
+    <div class="struct-step"><div class="num">1</div><h4>Eisbrecher</h4><div class="desc">Wetter, Situation, gemeinsamer Moment.</div><div class="ph">„Heute schon wieder so kalt, oder?"</div></div>
+    <div class="struct-step"><div class="num">2</div><h4>Kleiner Austausch</h4><div class="desc">1-2 Sätze, nichts Tiefes.</div><div class="ph">„Ja, aber wenigstens kein Regen."</div></div>
+    <div class="struct-step"><div class="num">3</div><h4>Sympathie zeigen</h4><div class="desc">Lächeln, nicken, kurzes „mhm".</div><div class="ph">„Stimmt, das ist ja was."</div></div>
+    <div class="struct-step"><div class="num">4</div><h4>Höflich beenden</h4><div class="desc">Mit Floskel rausgehen.</div><div class="ph">„Na, einen schönen Tag noch!"</div></div>
+  </div>
 
-<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
-<div class="alltag-q"><div class="ql">Persönlich</div><div class="qq">Hast du in Deutschland schon mal Smalltalk geführt? In welcher Situation?</div><div class="think">💭 War's leicht oder schwer? Was ist anders als in deiner Heimat?</div></div>
-<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Kultur</div><div class="qq">In deinem Land — redet man mit Fremden? Oder ist das komisch?</div><div class="think">💭 Vergleiche mit Deutschland — wo wird mehr/weniger smalltalk gemacht?</div></div>
-</section>
+  <h2 class="section-title">Was geht — und was nicht</h2>
+  <p class="section-sub">In Deutschland sind viele Themen tabu. Wichtig zu wissen!</p>
+  <div class="tabu-grid">
+    <div class="tabu-col ok">
+      <h3>✓ Sichere Themen</h3>
+      <ul>
+        <li><b>Wetter</b> — der Klassiker, geht immer</li>
+        <li><b>Die aktuelle Situation</b> („So eine lange Schlange heute!")</li>
+        <li><b>Verkehr &amp; Verspätungen</b> („Die Bahn mal wieder…")</li>
+        <li><b>Hunde, Kinder, Wagen</b> (wenn dabei)</li>
+        <li><b>Lokales</b> („Der neue Bäcker hier — kennen Sie den schon?")</li>
+        <li><b>Wochenende</b> („Schönes Wochenende gehabt?")</li>
+        <li><b>Feiertage allgemein</b> („Schon weihnachtlich, oder?")</li>
+      </ul>
+    </div>
+    <div class="tabu-col no">
+      <h3>✗ Tabu / Heikel</h3>
+      <ul>
+        <li><b>Gehalt</b> — niemals fragen</li>
+        <li><b>Politik</b> (außer mit guten Bekannten)</li>
+        <li><b>Religion</b> — sehr privat</li>
+        <li><b>Krankheiten</b> im Detail</li>
+        <li><b>„Wie viel Miete zahlst du?"</b> — bitte nicht</li>
+        <li><b>Alter</b> bei Frauen</li>
+        <li><b>Persönliche Probleme</b> bei Fremden</li>
+        <li><b>Übertriebene Komplimente</b> wirken aufdringlich</li>
+      </ul>
+    </div>
+  </div>
 
-<!-- UMGANGSSPRACHE -->
-<section class="section" data-section="1">
-<h2 class="section-title">💬 Echter <em style="font-style:italic;">Smalltalk</em> auf der Straße</h2>
-<div class="uss-grid">
-<div class="chat">
-<div class="chat-head"><div class="av">🥖</div><div><div class="name">Beim Bäcker · Mo morgens</div><div class="stat">live</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hallo! Was darf's sein?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Guten Morgen! 2 Brötchen bitte. <strong>Ganz schön kalt heute, ne?</strong> 🥶</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Oh ja, brrr! Aber <strong>am Wochenende soll's wärmer werden</strong>.</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Echt? Na hoffentlich! Danke, <strong>schönen Tag noch</strong>!</div></div>
-<div class="chat-meaning"><strong>„Schönen Tag noch"</strong> — der STANDARD-Abschied im Alltag. Immer freundlich!</div>
-</div>
+  <h2 class="section-title">Stell dir vor …</h2>
+  <p class="section-sub">Kleine Alltagsmomente — wie reagierst du?</p>
+  <div class="alltag-grid">
+    <div class="alltag-q"><div class="ql">Situation 1</div><div class="qq">Du stehst mit deinem Nachbarn 5 Minuten im Aufzug. Er schaut auf sein Handy. Sprichst du ihn an — und wenn ja, wie?</div><div class="think">💭 Schweigen ist okay! Aber ein „Na, alles fit?" geht auch.</div></div>
+    <div class="alltag-q"><div class="ql">Situation 2</div><div class="qq">Die Frau vor dir an der Supermarkt-Kasse seufzt laut. Die Schlange ist lang. Was sagst du?</div><div class="think">💭 Empathie ist hier gold wert.</div></div>
+    <div class="alltag-q"><div class="ql">Situation 3</div><div class="qq">Beim Bäcker fragt die Verkäuferin dich plötzlich, ob du heute schon was Schönes vorhast. Was antwortest du?</div><div class="think">💭 Kurz, freundlich, kein Roman.</div></div>
+    <div class="alltag-q"><div class="ql">Situation 4</div><div class="qq">Im Park schnüffelt dein Hund am Hund einer fremden Frau. Sie lächelt dich an. Wie eröffnest du das Gespräch?</div><div class="think">💭 Über den Hund reden ist immer sicher.</div></div>
+    <div class="alltag-q"><div class="ql">Situation 5</div><div class="qq">An der Bushaltestelle wartet ihr seit 15 Minuten — der Bus kommt nicht. Eine ältere Dame schaut dich an. Was sagst du?</div><div class="think">💭 Gemeinsames „Genervt-Sein" verbindet.</div></div>
+    <div class="alltag-q"><div class="ql">Situation 6</div><div class="qq">Du musst ein nettes, aber langes Gespräch mit der Nachbarin im Treppenhaus höflich beenden. Was sagst du, ohne unfreundlich zu wirken?</div><div class="think">💭 „Ich muss leider …" ist dein Freund.</div></div>
+  </div>
 
-<div class="chat">
-<div class="chat-head"><div class="av">🐕</div><div><div class="name">Hundebegegnung im Park</div><div class="stat">live</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Oh, <strong>was für ein süßer Hund</strong>! 🥺 Welche Rasse?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Danke! Das ist ein Labrador, 2 Jahre alt.</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Aww! <strong>Darf ich mal streicheln</strong>?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Klar, der ist total lieb!</div></div>
-<div class="chat-meaning"><strong>„Darf ich mal streicheln?"</strong> — IMMER fragen. Sehr deutsch &amp; höflich.</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🚏</div><div><div class="name">Bushaltestelle · 18 Uhr</div><div class="stat">live</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Schon wieder Verspätung… 😮‍💨</div></div>
-<div class="chat-msg in"><div class="chat-bubble"><strong>Tja, BVG halt</strong> 🤷‍♀️</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Haha, stimmt. <strong>Da kann man nichts machen</strong>.</div></div>
-<div class="chat-meaning"><strong>„Da kann man nichts machen"</strong> — DAS Universal-Trostmittel der Deutschen. Akzeptanz von schlechten Situationen.</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🛗</div><div><div class="name">Im Aufzug</div><div class="stat">live</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hallo!</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Hallo! <strong>Schon Feierabend</strong>?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Endlich! War <strong>'n langer Tag</strong>…</div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Kenn ich</strong>. Dann mach's gut!</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Tschüss!</div></div>
-<div class="chat-meaning"><strong>„'n langer Tag"</strong> &amp; <strong>„Kenn ich"</strong> — typisches Wegkürzen + Empathie zeigen.</div>
-</div>
-</div>
+  <div class="tip">
+    <strong>Goldene Regel:</strong> Deutscher Smalltalk ist <strong>kürzer</strong> als amerikanischer und <strong>weniger persönlich</strong>. Niemand erwartet eine echte Antwort auf „Wie geht\'s?" — ein „Gut, danke, und Ihnen?" reicht völlig. Übers <em>Wetter</em> reden ist nicht oberflächlich — es ist <em>höflich</em>.
+  </div>
 </section>
 
 <!-- LERNKARTEN -->
-<section class="section" data-section="2">
-<h2 class="section-title">Smalltalk-Phrasen</h2>
-<div class="flip" id="flip"><div class="flip-inner">
-<div class="flip-side front"><div class="flip-emoji" id="flipEmoji">☀️</div><div class="flip-word" id="flipWord">Schönes Wetter heute, ne?</div><div class="flip-badge" id="flipBadge">Wetter-Klassiker</div><div class="flip-prompt">Wann sagst du das? (tippen zum Umdrehen)</div></div>
-<div class="flip-side back"><div class="flip-rule" id="flipRule">Standard-Einstieg bei gutem Wetter</div><div class="flip-ex" id="flipEx">„<strong>Schönes Wetter heute, ne?</strong>" — funktioniert IMMER!</div></div>
-</div></div>
-<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span><button class="lk-btn" id="lkNext">→</button></div>
-<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+<section class="section">
+  <h2 class="section-title">22 Smalltalk-Karten</h2>
+  <p class="section-sub">Klick zum Umdrehen. Pfeile für nächste Karte. Shuffle für Zufallsreihenfolge.</p>
+  <div class="flip" id="flipCard">
+    <div class="flip-inner">
+      <div class="flip-side front">
+        <div class="flip-emoji" id="fEmoji">💬</div>
+        <div class="flip-word" id="fWord">der Smalltalk</div>
+        <div class="flip-badge" id="fBadge">Hauptthema</div>
+        <div class="flip-prompt">→ Klick zum Umdrehen</div>
+      </div>
+      <div class="flip-side back">
+        <div class="flip-rule" id="fRule">Kurzes, höfliches Plaudern ohne tiefes Thema</div>
+        <div class="flip-ex" id="fEx">„Beim Bäcker gibt\'s immer kurzen <strong>Smalltalk</strong>."</div>
+        <div class="flip-syn" id="fSyn"><b>Synonyme:</b> Plauderei · Geplauder · ein paar Worte wechseln</div>
+      </div>
+    </div>
+  </div>
+  <div class="lk-nav">
+    <button class="lk-btn" onclick="prevCard()">◀</button>
+    <span class="lk-counter"><span id="cardNr">1</span> / <span id="cardTotal">22</span></span>
+    <button class="lk-btn" onclick="nextCard()">▶</button>
+    <button class="lk-btn" onclick="shuffleCards()" title="Mischen">🔀</button>
+  </div>
 </section>
 
 <!-- QUIZ -->
-<section class="section" data-section="3">
-<h2 class="section-title">Quiz</h2>
-<div class="quiz"><div class="quiz-q">Was sagst du beim Vorbeigehen freundlich zu einem Nachbarn?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">„Hey!"</span><span class="quiz-chip">„Wie geht's?"</span><span class="quiz-chip">„Schönen Tag noch!"</span></div><div class="quiz-explain">✓ <strong>„Schönen Tag noch!"</strong> — perfekt, kurz, höflich</div></div>
-<div class="quiz"><div class="quiz-q">Wie reagierst du, wenn jemand sagt „Schon Feierabend?"</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">„Ja, warum?"</span><span class="quiz-chip">„Endlich, war 'n langer Tag!"</span><span class="quiz-chip">„Wer fragt?"</span></div><div class="quiz-explain">✓ Smalltalk: Empathie zeigen, kurz antworten</div></div>
-<div class="quiz"><div class="quiz-q">„Was für ein süßer Hund!" — was sagst du noch?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">„Will ihn kaufen!"</span><span class="quiz-chip">„Wieviel hat der gekostet?"</span><span class="quiz-chip">„Darf ich mal streicheln?"</span></div><div class="quiz-explain">✓ IMMER fragen, BEVOR du den Hund anfasst!</div></div>
-<div class="quiz"><div class="quiz-q">Bushaltestelle, Verspätung. Was sagst du?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">„Tja, BVG halt..."</span><span class="quiz-chip">„Skandal!"</span><span class="quiz-chip">„Ich rufe meinen Anwalt!"</span></div><div class="quiz-explain">✓ Deutsche Akzeptanz mit kleinem Augenzwinkern</div></div>
-<div class="quiz"><div class="quiz-q">An der Kasse — was fragt die Kassiererin oft zuerst?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">„Heiraten Sie mich?"</span><span class="quiz-chip">„Brauchen Sie eine Tüte?"</span><span class="quiz-chip">„Wer sind Sie?"</span></div><div class="quiz-explain">✓ Klassische Kassen-Frage — auch: „Sammeln Sie Punkte?"</div></div>
-<div class="quiz"><div class="quiz-q">„Da kann man nichts machen" — wann sagt man das?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Bei einer schlechten Situation (Verspätung, Regen…)</span><span class="quiz-chip">Bei einem Job-Angebot</span><span class="quiz-chip">Bei einer Hochzeit</span></div><div class="quiz-explain">✓ Universal-Trostspruch für Alltagspech</div></div>
-<div class="quiz"><div class="quiz-q">Norddeutsche Begrüßung morgens?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">„Servus"</span><span class="quiz-chip">„Grüß Gott"</span><span class="quiz-chip">„Moin"</span></div><div class="quiz-explain">✓ Moin = Hallo in Norddeutschland — geht den ganzen Tag!</div></div>
-<div class="quiz"><div class="quiz-q">Bayerische Begrüßung?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">„Moin"</span><span class="quiz-chip">„Servus / Grüß Gott"</span><span class="quiz-chip">„Tschüss"</span></div><div class="quiz-explain">✓ Servus &amp; Grüß Gott — typisch Bayern/Österreich</div></div>
+<section class="section">
+  <h2 class="section-title">12 Quiz-Fragen</h2>
+  <p class="section-sub">Welche Antwort passt? Welches Thema ist tabu? Klick eine Option.</p>
+  <div id="quizContainer"></div>
 </section>
 
 <!-- LÜCKENTEXT -->
-<section class="section" data-section="4">
-<h2 class="section-title">Lückentext</h2>
-<div class="gap-text" id="gapText">
-<div class="gap-line">1. Beim Bäcker: <select data-sol="Schönes"><option value="">…</option><option>Schönes</option><option>Heißes</option><option>Großes</option></select> Wetter heute, ne?</div>
-<div class="gap-line">2. Im Aufzug: Schon <select data-sol="Feierabend"><option value="">…</option><option>Feierabend</option><option>Mittag</option><option>Pause</option></select>?</div>
-<div class="gap-line">3. Tschüss, <select data-sol="schönen"><option value="">…</option><option>guten</option><option>schönen</option><option>tollen</option></select> Tag noch!</div>
-<div class="gap-line">4. Darf ich Ihren Hund mal <select data-sol="streicheln"><option value="">…</option><option>kaufen</option><option>streicheln</option><option>füttern</option></select>?</div>
-<div class="gap-line">5. Bus ist wieder spät — da kann man <select data-sol="nichts"><option value="">…</option><option>nichts</option><option>etwas</option><option>vieles</option></select> machen!</div>
-<div class="gap-line">6. <select data-sol="Mach's"><option value="">…</option><option>Mach's</option><option>Mache</option><option>Machst</option></select> gut!</div>
-<div class="gap-line">7. <select data-sol="Moin"><option value="">…</option><option>Moin</option><option>Servus</option><option>Hallo</option></select>! (in Hamburg morgens)</div>
-<div class="gap-line">8. An der Kasse: Brauchen Sie eine <select data-sol="Tüte"><option value="">…</option><option>Tüte</option><option>Quittung</option><option>Karte</option></select>?</div>
-<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
-</div>
-<div class="tip" id="gapScore" style="display:none;"></div>
+<section class="section">
+  <h2 class="section-title">10 Lückentext-Sätze</h2>
+  <p class="section-sub">Wähl das passende Wort. Dann „Auswerten".</p>
+  <div id="gapContainer"></div>
+  <button class="gap-btn" onclick="evalGap()">Auswerten</button>
+  <div class="gap-score" id="gapScore"></div>
 </section>
 
 <!-- ZUORDNEN -->
-<section class="section" data-section="5">
-<h2 class="section-title">Situation &harr; <em style="font-style:italic;">Smalltalk</em></h2>
-<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Situation</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Was sagst du?</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+<section class="section">
+  <h2 class="section-title">10 Situationen + passende Smalltalk-Phrasen</h2>
+  <p class="section-sub">Welche Phrase passt zu welcher Situation? Klick links, dann rechts.</p>
+  <div class="match" id="matchContainer"></div>
+  <div class="gap-score" id="matchScore"></div>
 </section>
 
 <!-- SPRECHEN -->
-<section class="section" data-section="6">
-<h2 class="section-title">Sprechen</h2>
-<div class="speak-card" id="speakCard"><div class="speak-emoji">🎲</div><div class="speak-cat">Sprechclub-Karte</div><div class="speak-q">Tippe auf „Neue Karte"!</div></div>
-<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+<section class="section">
+  <h2 class="section-title">Sprechen üben</h2>
+  <p class="section-sub">24 Sprechkarten · 5 Rollenspiele mit Hilfestellung · Mission</p>
 
-<div class="role-section">
-<h2 class="section-title">3 Rollenspiele auf der <em style="font-style:italic;">Straße</em></h2>
+  <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin:1.5rem 0 .8rem;">🃏 Sprechkarten</h3>
+  <div id="speakCard" class="speak-card"></div>
+  <div class="speak-nav"><button class="speak-btn" onclick="nextSpeak()">▶ Nächste Karte</button></div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 1</div>
-<div class="role-title">🥖 Beim Bäcker</div>
-<div class="role-situation">Du gehst zum Bäcker und kaufst Brötchen. Es ist gerade Smalltalk-Stimmung — über Wetter und Wochenende!</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🙋</div><div><div class="person-label">Kund:in</div><div class="person-quote">„Hallo! 4 Brötchen bitte. Schönes Wetter, ne? Was haben Sie am Wochenende vor?"</div></div></div>
-<div class="person b"><div class="person-avatar">👨‍🍳</div><div><div class="person-label">Bäcker:in</div><div class="person-quote">„Ja klar, kommt sofort! Oh ja, endlich Frühling! Hoffentlich bleibt's so..."</div></div></div>
-</div>
-<div class="role-goal">🎯 Mindestens 4 verschiedene Smalltalk-Phrasen + Begrüßung + Abschied!</div>
-</div>
+  <h3 style="font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);margin:2.5rem 0 .8rem;">🎭 5 Rollenspiele · MIT HILFESTELLUNG</h3>
+  <p class="section-sub" style="text-align:left;margin-bottom:.6rem;color:var(--ink-soft);">Jedes Rollenspiel hat <strong style="color:var(--teal);">🔑 Schlüssel-Vokabular</strong>, <strong style="color:#B66809;">💬 Beispiel-Phrasen</strong>, <strong style="color:var(--red);">💡 Strategie</strong> und <strong style="color:var(--teal);">✅ Antwort-Struktur</strong>.</p>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 2</div>
-<div class="role-title">🐕 Hundebegegnung</div>
-<div class="role-situation">Du siehst einen total süßen Hund im Park. Du sprichst den Besitzer an — höflich und freundlich!</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">😍</div><div><div class="person-label">Du · Hund-Fan</div><div class="person-quote">„Was für ein süßer Hund! Welche Rasse? Darf ich mal streicheln?"</div></div></div>
-<div class="person b"><div class="person-avatar">🐕</div><div><div class="person-label">Hundebesitzer:in</div><div class="person-quote">„Danke! Das ist ein... Sie ist 3 Jahre alt. Klar, sie ist sehr lieb!"</div></div></div>
-</div>
-<div class="role-goal">🎯 IMMER fragen vor dem Streicheln — sehr deutsch!</div>
-</div>
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 1) 5 Minuten mit dem Nachbarn im Aufzug</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du steigst in den Aufzug — <em>Herr Wagner</em> aus dem 3. Stock ist schon drin. Ihr fahrt 5 Stockwerke zusammen. Es ist still.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du willst nicht unhöflich sein, aber auch kein langes Gespräch. Ein freundlicher kurzer Austausch reicht.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>Na</span><span>Mensch</span><span>auch hoch</span><span>schon wieder</span><span>so ein Wetter</span><span>endlich Wochenende</span><span>halb sieben schon</span><span>ganz schön kalt</span><span>schönen Feierabend</span><span>bis dann</span><span>tschüss</span><span>einen schönen Abend noch</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Na, auch grad Feierabend?</li>
+        <li>Mensch, heute war es wieder voll auf der Arbeit, oder?</li>
+        <li>So ein Wetter heute, schon wieder grau.</li>
+        <li>Ach, endlich Wochenende — hat lang genug gedauert.</li>
+        <li>So, das war\'s für heute. Schönen Abend noch!</li>
+        <li>Bis dann, tschüss!</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> Im Aufzug gilt: <b>kurz und freundlich</b>. Schon ein „Hallo" + ein Satz übers Wetter reicht. Wenn der andere wenig sagt — auch okay. <b>Niemals Smalltalk erzwingen</b>. Schweigen mit Lächeln ist auch höflich.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Kurzer Gruß („Na, Hallo Herr Wagner") + 2) EIN Satz übers Wetter / die Situation + 3) Höflicher Abschluss („Schönen Abend!").</div>
+  </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 3</div>
-<div class="role-title">🚏 Bushaltestelle bei Regen</div>
-<div class="role-situation">Der Bus hat 20 Minuten Verspätung. Du wartest mit jemandem zusammen unter dem Dach. Smalltalk!</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">😩</div><div><div class="person-label">Person 1</div><div class="person-quote">„Schon wieder Verspätung! Und so'n Wetter..."</div></div></div>
-<div class="person b"><div class="person-avatar">🤷</div><div><div class="person-label">Person 2</div><div class="person-quote">„Tja, da kann man nichts machen. Wohin müssen Sie denn?"</div></div></div>
-</div>
-<div class="role-goal">🎯 Höflich aber NICHT zu persönlich werden!</div>
-</div>
-</div>
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 2) Beim Bäcker — die Verkäuferin will plaudern</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du bist morgens beim Bäcker. <em>Frau Hoffmann</em> hinter der Theke kennt dich. Sie fragt: „Na, was Schönes vor heute?"</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du hast es eilig — aber willst nicht unfreundlich wirken. Du gibst kurze, warme Antworten und fragst auch zurück.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>Wie immer das</span><span>nix Großes</span><span>ganz normal</span><span>nur Büro</span><span>endlich Wochenende</span><span>hab heute frei</span><span>und Sie?</span><span>Roggenbrot</span><span>Brötchen</span><span>einmal zum Mitnehmen</span><span>das wär\'s</span><span>danke, gleichfalls</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Ach, nichts Besonderes — nur ab ins Büro.</li>
+        <li>Ja, das Übliche bitte: ein Roggenbrot und zwei Brötchen.</li>
+        <li>Und Sie? Schon viel los heute morgen?</li>
+        <li>Ach echt? Ja, Montag ist immer hart.</li>
+        <li>Schönen Tag noch, Frau Hoffmann!</li>
+        <li>Danke, gleichfalls!</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> Beim Bäcker erwartet niemand Details. <b>Kurz + warm + zurückfragen</b>. „Und Sie?" hält den Smalltalk im Fluss, kostet dich nichts. <b>Niemals private Probleme erzählen</b> — nicht der richtige Ort.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Kurze Antwort auf ihre Frage + 2) Bestellung + 3) Zurückfrage („Und Sie?") + 4) Höflicher Abschluss mit Namen.</div>
+  </div>
 
-<h2 class="section-title">🎯 Mission der Woche</h2>
-<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
-<strong>Tägliche Aufgabe:</strong> Mache JEDEN Tag mindestens 1 Smalltalk auf Deutsch — beim Bäcker, im Bus, mit dem Nachbarn. Notiere 3 Sätze, die du gehört hast!<br><br>
-🏆 <strong>Bonus:</strong> Sprich 3x in einer Woche fremde Menschen an (über Wetter, Hund, etc.). Wie reagieren sie?
-</div>
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 3) Im Park — die Hunde schnüffeln aneinander</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du gehst mit deinem Hund im Park spazieren. Eine fremde Frau kommt mit ihrem Hund entgegen — die beiden schnüffeln aneinander. Sie lächelt dich an.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du nutzt die Gelegenheit für einen lockeren Hunde-Smalltalk. Hunde sind das perfekte Thema — sicher, leicht, alle lieben es.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>Wie alt ist der Kleine?</span><span>Was für eine Rasse?</span><span>Rüde oder Hündin?</span><span>schnüffeln</span><span>die mögen sich</span><span>ganz lieb</span><span>verträglich</span><span>Welpe</span><span>seit drei Jahren</span><span>aus dem Tierheim</span><span>spielen lassen</span><span>na komm, weiter geht\'s</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Ach, die mögen sich ja!</li>
+        <li>Wie alt ist denn der Kleine?</li>
+        <li>Was für eine Rasse ist das? Sieht süß aus.</li>
+        <li>Meiner ist ein Mischling, vier Jahre, aus dem Tierheim.</li>
+        <li>Ist Ihrer verträglich? Dann lassen wir sie kurz spielen.</li>
+        <li>Na komm, weiter geht\'s! Schönen Spaziergang noch!</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> Über den <b>Hund</b> reden, nicht über die Person. Frag: Alter, Rasse, Charakter. <b>Niemals fragen</b>: „Was kostet so ein Hund?" oder „Wie viel Auslauf braucht der?" — wirkt belehrend. Lieber bewundern.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Kommentar zum Hund („Ach, süß!") + 2) Frage zum Hund (Alter/Rasse) + 3) Eigener Hund kurz vorstellen + 4) Höflicher Abschied.</div>
+  </div>
+
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 4) Schlange im Supermarkt — jemand seufzt</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du stehst Freitag um 18 Uhr an der Kasse. Vor dir die Schlange ist lang. <em>Die Dame</em> vor dir seufzt laut und dreht sich kopfschüttelnd zu dir um.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du nutzt die Gelegenheit für „Schlangen-Solidarität". Gemeinsam genervt sein verbindet — typisch deutsch, total normal.</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>Mensch, was ist denn hier los?</span><span>immer Freitags</span><span>wie immer</span><span>nur eine Kasse offen</span><span>kein Wunder</span><span>typisch</span><span>na ja</span><span>Hauptsache Wochenende</span><span>da kann man nichts machen</span><span>man wartet sich tot</span><span>endlich dran</span><span>schönes Wochenende noch</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Mensch, was ist denn hier heute los!</li>
+        <li>Tja, Freitagabend — immer dasselbe.</li>
+        <li>Und natürlich wieder nur eine Kasse auf!</li>
+        <li>Na ja, Hauptsache wir haben gleich Wochenende.</li>
+        <li>Da kann man halt nichts machen.</li>
+        <li>So, endlich dran. Schönes Wochenende noch!</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> <b>Gemeinsam meckern</b> ist okay — aber kurz und mit Humor. Niemals lange jammern oder Personal beleidigen. <b>„Na ja"</b> + Schulter-Zucken + Lächeln = perfekter deutscher Smalltalk-Move.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Mitfühlende Reaktion auf den Seufzer + 2) Allgemeiner Kommentar zur Situation + 3) Positiver Ausblick („Hauptsache Wochenende") + 4) Freundlicher Abschied.</div>
+  </div>
+
+  <div class="rolle">
+    <h3><span class="ico">🎭</span> 5) Langes Smalltalk-Gespräch HÖFLICH beenden</h3>
+    <div class="row"><div class="lbl">Situation</div><div class="val">Du triffst <em>Frau Becker</em> aus dem Erdgeschoss im Treppenhaus. Sie redet seit 10 Minuten über ihre Tochter, das neue Auto und die Nachbarn. Du musst los — der Termin ruft.</div></div>
+    <div class="row"><div class="lbl">Deine Rolle</div><div class="val">Du willst freundlich bleiben, aber das Gespräch beenden. Höflich aussteigen ohne sie zu kränken — eine echte Kunst!</div></div>
+    <div class="keys">
+      <span class="lbl-k">🔑 Schlüssel-Vokabular</span>
+      <div class="words">
+        <span>oh, ich muss leider</span><span>so leid</span><span>ich hab leider noch einen Termin</span><span>ich bin schon spät dran</span><span>so spannend</span><span>das müssen Sie mir nochmal erzählen</span><span>beim nächsten Mal</span><span>liebe Grüße an</span><span>passen Sie auf sich auf</span><span>ich muss los</span><span>schönen Tag noch</span><span>wir reden bald wieder</span>
+      </div>
+    </div>
+    <div class="phrases">
+      <span class="lbl-k">💬 Beispiel-Phrasen zum Übernehmen</span>
+      <ul>
+        <li>Oh, das ist ja interessant! Aber ich muss leider los, ich hab gleich einen Termin.</li>
+        <li>Das müssen Sie mir beim nächsten Mal weiter erzählen!</li>
+        <li>Tut mir leid, ich bin schon spät dran.</li>
+        <li>Liebe Grüße an Ihre Tochter!</li>
+        <li>Passen Sie auf sich auf, Frau Becker.</li>
+        <li>Schönen Tag noch — bis bald!</li>
+      </ul>
+    </div>
+    <div class="strategy"><b>💡 Strategie:</b> <b>„Oh-Stopp-Sandwich"</b>: 1) Interesse zeigen („Oh, spannend!"), 2) Grund nennen („Ich muss leider…"), 3) Tür offen lassen („Beim nächsten Mal!"). Niemals abrupt abbrechen oder genervt wirken — das verletzt.</div>
+    <div class="answer-struct"><b>✅ Eine gute Antwort enthält:</b> 1) Positive Würdigung des Gesagten + 2) Konkreter Grund warum du musst + 3) Versprechen für späteres Gespräch + 4) Warmer Abschied.</div>
+  </div>
+
+  <div class="mission">
+    <h3>🎯 Mission der Woche</h3>
+    <p>Führe diese Woche <strong>3 echte Smalltalk-Gespräche auf Deutsch</strong>: einmal beim Bäcker (oder im Supermarkt), einmal mit einem Nachbarn (oder im Aufzug), einmal an einer Bushaltestelle oder im Park. Mindestens 3 Sätze pro Gespräch!</p>
+    <div class="bonus"><b>Bonus-Challenge:</b> Schreib dir auf einen Zettel <em>3 Eisbrecher-Sätze</em> auf und lerne sie auswendig — einer übers Wetter, einer über die Situation, einer höflicher Abschied. Beim nächsten Sprechclub erzählst du, wie es gelaufen ist!</div>
+  </div>
 </section>
 
+<!-- UMGANGSSPRACHE — am ENDE -->
+<section class="section">
+  <h2 class="section-title">Wie wirklich gequatscht wird</h2>
+  <p class="section-sub">So redet man wirklich beim Smalltalk — entspannt, locker, oft mit kleinen Tippfehlern.</p>
+
+  <div class="uss-grid">
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🙋‍♀️</div><div><div class="name">Mia 💬 Lena</div><div class="stat">tippt …</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">Heute im Bus hat mich ne Oma angequatscht 😂</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Hahaha worüber denn?</div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">Über das Wetter natürlich 🙄 Klassiker</div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">Und dann hat sie gefragt wo ich her komme. Da wars vorbei lol</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Oh nein. Hast du geantwortet?</div></div>
+      <div class="chat-msg in"><span class="speaker">Mia</span><div class="chat-bubble">Ka, irgendwas gemurmelt und dann <strong>schnell ausgestiegen</strong> 😅</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Ngl das ist Smalltalk Hardcore-Mode 💀</div></div>
+      <div class="chat-meaning"><strong>„jemanden anquatschen"</strong> = jemanden ansprechen (locker). <strong>„Klassiker"</strong> = das typische Thema. Wetter ist DER deutsche Smalltalk-Klassiker.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🥐</div><div><div class="name">Tim 💬 Jonas</div><div class="stat">zuletzt online vor 1 Min</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Tim</span><div class="chat-bubble">Alter, die neue Bäckereiverkäuferin ist mega nett</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Aha?</div></div>
+      <div class="chat-msg in"><span class="speaker">Tim</span><div class="chat-bubble">Die quatscht jeden Morgen mit mir. Heute hat sie gefragt ob ich gut geschlafen hab 😅</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Lol, das ist <strong>Stammkunden-Bonus</strong></div></div>
+      <div class="chat-msg in"><span class="speaker">Tim</span><div class="chat-bubble">Ich weiß ja nie was ich sagen soll. Sag immer nur „ja, gut, danke"</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Frag halt zurück. „Und bei Ihnen?" — fertig</div></div>
+      <div class="chat-msg in"><span class="speaker">Tim</span><div class="chat-bubble">Ahhh stimmt. Easy</div></div>
+      <div class="chat-meaning"><strong>„Stammkunde"</strong> = regelmäßiger Kunde. <strong>„zurückfragen"</strong> = der goldene Smalltalk-Trick. Hält das Gespräch am Laufen, ohne dass du was Eigenes erzählen musst.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🚌</div><div><div class="name">Sophie 💬 Mama</div><div class="stat">online</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Sophie</span><div class="chat-bubble">Mama ich steh seit 20 min an der Haltestelle 😩</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Och nee, schon wieder?</div></div>
+      <div class="chat-msg in"><span class="speaker">Sophie</span><div class="chat-voice"><div class="play">▶</div><div class="wave"></div><div class="dur">🎙️ 0:38</div></div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Hat jemand mit dir geredet?</div></div>
+      <div class="chat-msg in"><span class="speaker">Sophie</span><div class="chat-bubble">Ja so ein Opa. Der war richtig sauer auf die Bahn 😂</div></div>
+      <div class="chat-msg in"><span class="speaker">Sophie</span><div class="chat-bubble">Wir haben uns <strong>gemeinsam aufgeregt</strong>. Hat fast Spaß gemacht ngl</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Hahaha typisch. Schlangen-Solidarität 🤝</div></div>
+      <div class="chat-meaning">Voice-Note 🎙️ = Sprachnachricht — typisch wenn man unterwegs ist. <strong>„sich gemeinsam aufregen"</strong> = zusammen meckern. Total normaler deutscher Smalltalk-Modus!</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🏠</div><div><div class="name">Familie WG</div><div class="stat">4 Personen</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Paul</span><div class="chat-bubble">Leute, hab grad die Nachbarin getroffen. <strong>10 Minuten</strong> übers Wetter geredet</div></div>
+      <div class="chat-msg in"><span class="speaker">Ada</span><div class="chat-bubble">😭😭😭</div></div>
+      <div class="chat-msg in"><span class="speaker">Paul</span><div class="chat-bubble">Wie kommt man da raus ohne unhöflich zu sein??</div></div>
+      <div class="chat-msg in"><span class="speaker">Ben</span><div class="chat-bubble">„Oh ich muss leider los, Termin" 😅 funktioniert immer</div></div>
+      <div class="chat-msg in"><span class="speaker">Ada</span><div class="chat-bubble">Oder: „so spannend, müssen wir bald mal weiterreden!"</div></div>
+      <div class="chat-msg in"><span class="speaker">Paul</span><div class="chat-bubble">Ich muss das echt üben. Bin immer so freundlich, dann hängen die mich voll 😩</div></div>
+      <div class="chat-msg in"><span class="speaker">Ben</span><div class="chat-bubble"><strong>Höflich beenden</strong> ist eine Kunst lol</div></div>
+      <div class="chat-meaning"><strong>„jemanden vollhängen"</strong> = jemanden mit Reden zumüllen. <strong>„Höflich beenden"</strong> = die schwierigste Smalltalk-Skill überhaupt.</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🐕</div><div><div class="name">Anja 💬 Bea</div><div class="stat">heute, 16:12</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Anja</span><div class="chat-bubble">Hab im Park ne ganz nette Frau kennengelernt 🥰</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Wie das denn?</div></div>
+      <div class="chat-msg in"><span class="speaker">Anja</span><div class="chat-bubble">Unsere Hunde haben sich beschnuppert und dann haben wir geredet</div></div>
+      <div class="chat-msg in"><span class="speaker">Anja</span><div class="chat-bubble">Sie wohnt 2 Straßen weiter. <strong>Voll sympathisch</strong></div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Habt ihr Nummern getauscht?</div></div>
+      <div class="chat-msg in"><span class="speaker">Anja</span><div class="chat-bubble">Nee, das wär komisch beim ersten Mal. Aber vllt seh ich sie wieder im Park</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Hund ist halt der beste Eisbrecher 🐶</div></div>
+      <div class="chat-meaning"><strong>„beschnuppern"</strong> = bei Hunden: am anderen riechen. Übertragen auch: „sich kennenlernen". <strong>„voll sympathisch"</strong> = sehr nett (umgangssprachlich, „voll" als Verstärker).</div>
+    </div>
+
+    <div class="chat">
+      <div class="chat-head"><div class="av">🛗</div><div><div class="name">Noah 💬 Felix</div><div class="stat">vor 3 Min</div></div></div>
+      <div class="chat-msg in"><span class="speaker">Noah</span><div class="chat-bubble">Bro, ich hab den weirdesten Aufzugs-Moment grad gehabt</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Erzähl</div></div>
+      <div class="chat-msg in"><span class="speaker">Noah</span><div class="chat-bubble">Der Typ aus dem 5. starrt mich an und sagt plötzlich „Sie haben aber große Hände"</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">WAS 😂😂😂</div></div>
+      <div class="chat-msg in"><span class="speaker">Noah</span><div class="chat-bubble">Ich hab nur „äh… danke?" gemurmelt 💀</div></div>
+      <div class="chat-msg out"><div class="chat-bubble">Bro das ist <strong>kein Smalltalk</strong>, das ist creepy</div></div>
+      <div class="chat-msg in"><span class="speaker">Noah</span><div class="chat-bubble">Eben! Smalltalk ist Wetter, Wochenende, fertig. <strong>Keine Körperteile</strong> ✋</div></div>
+      <div class="chat-meaning"><strong>„creepy"</strong> = unheimlich, gruselig (Anglizismus, sehr verbreitet). <strong>Lektion:</strong> Körperliche Kommentare = NIE Smalltalk-Material!</div>
+    </div>
+
+  </div>
+
+  <div class="tip">
+    <strong>Typische Smalltalk-Phrasen die du oft hörst:</strong><br>
+    „<em>Na, alles fit?</em>" · „<em>Schönes Wochenende gehabt?</em>" · „<em>Mensch, was ist denn hier los!</em>" · „<em>Endlich Wochenende!</em>" · „<em>Tja, da kann man nichts machen</em>" · „<em>Na ja, Hauptsache gesund</em>" · „<em>Wie immer das Übliche?</em>" · „<em>Schönen Feierabend noch!</em>" · „<em>Passen Sie auf sich auf!</em>" · „<em>Grüßen Sie zuhause!</em>" · „<em>Bis bald mal wieder!</em>" · „<em>Machen Sie\'s gut!</em>"
+  </div>
+</section>
+
+<footer>deutschoderwas · Sprechclub · Smalltalk auf der Straße · B1/B2 · <strong>Deluxe-Version</strong> · 13.06.2026</footer>
+
 </div>
 
-<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag · Smalltalk auf der Straße · B1/B2</footer>
-
 <script>
-document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
+// ============= TAB-NAVI =============
+document.querySelectorAll('.tab').forEach((t,i)=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.querySelectorAll('.section')[i].classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
 
-const KARTEN=[
-{emoji:'☀️',word:'Schönes Wetter heute, ne?',badge:'Wetter-Klassiker',rule:'Standard-Einstieg bei gutem Wetter',ex:'Funktioniert IMMER, wenn die Sonne scheint!'},
-{emoji:'🌧️',word:'Mensch, was für ein Sauwetter!',badge:'Schlecht-Wetter',rule:'Ärger über Regen ausdrücken',ex:'„<strong>Sauwetter</strong>" = umgangssprachlich für schlechtes Wetter'},
-{emoji:'😊',word:'Schönen Tag noch!',badge:'Standard-Abschied',rule:'Funktioniert in fast jeder Situation',ex:'Beim Verlassen vom Bäcker, Café, Geschäft…'},
-{emoji:'🐕',word:'Was für ein süßer Hund!',badge:'Hunde-Komplimente',rule:'Sicherer Smalltalk-Einstieg',ex:'+ „Darf ich mal streicheln?" — IMMER fragen!'},
-{emoji:'🛗',word:'Schon Feierabend?',badge:'Aufzug-Frage',rule:'Freitag-Nachmittag-Standard',ex:'Antwort meist: „Endlich!" oder „War \'n langer Tag"'},
-{emoji:'🚌',word:'Schon wieder Verspätung!',badge:'BVG/DB-Frust',rule:'Gemeinsames Leiden über öffentliche Verkehrsmittel',ex:'+ „Da kann man nichts machen" zur Lösung'},
-{emoji:'🤷',word:'Da kann man nichts machen.',badge:'Universal-Trost',rule:'Akzeptanz von Pech / schlechten Situationen',ex:'DAS deutsche Sprichwort schlechthin!'},
-{emoji:'👋',word:'Mach\'s gut!',badge:'Informeller Abschied',rule:'unter Freunden / lockerem Kontakt',ex:'Lockerer als „Auf Wiedersehen"'},
-{emoji:'🌅',word:'Moin!',badge:'Norddeutsch',rule:'Begrüßung in Hamburg/Bremen — geht ganzen Tag',ex:'Hamburger sagen sogar nachts „Moin"!'},
-{emoji:'⛪',word:'Grüß Gott / Servus',badge:'Süddeutsch',rule:'Bayern, Österreich, Süddeutschland',ex:'„Servus" auch als Abschied!'},
-{emoji:'☕',word:'Wie war Ihr Wochenende?',badge:'Montags-Smalltalk',rule:'Klassischer Büro-Einstieg am Montag',ex:'Antwort: kurz! Maximal 2-3 Sätze'},
-{emoji:'🛒',word:'Brauchen Sie eine Tüte?',badge:'Kassen-Frage',rule:'Standard im Supermarkt',ex:'„Nein danke, ich hab eine!"'},
-{emoji:'💳',word:'Karte oder bar?',badge:'Bezahlung',rule:'an der Kasse — IMMER gefragt',ex:'„Karte" oder „bar, bitte"'},
-{emoji:'😴',word:'War \'n langer Tag…',badge:'Müdigkeits-Smalltalk',rule:'Empathie vom Gegenüber holen',ex:'Klassische Antwort: „Kenn ich!"'},
-{emoji:'🏠',word:'Wo geht\'s denn hin so spät?',badge:'höflich-neugierig',rule:'Lockere Frage, NICHT zu persönlich',ex:'Antwort kann auch nur „Nach Hause" sein!'}
+// ============= LERNKARTEN (22) =============
+const CARDS = [
+  {e:'💬',w:'der Smalltalk',b:'Hauptthema',r:'Kurzes, höfliches Plaudern ohne tiefes Thema',ex:'„Beim Bäcker gibt\'s immer kurzen <strong>Smalltalk</strong>."',syn:'Plauderei · Geplauder · ein paar Worte wechseln'},
+  {e:'🧊',w:'der Eisbrecher',b:'Gesprächs-Start',r:'Ein Satz, der das Gespräch in Gang bringt',ex:'„Das Wetter ist der klassische <strong>Eisbrecher</strong>."',syn:'Gesprächsöffner · Einstieg'},
+  {e:'☀️',w:'übers Wetter reden',b:'Klassiker',r:'DAS deutsche Smalltalk-Thema überhaupt',ex:'„Mit Fremden redet man hier am liebsten <strong>übers Wetter</strong>."',syn:'Wetter-Smalltalk · Wetter-Plauderei'},
+  {e:'🛗',w:'der Aufzug-Smalltalk',b:'Situation',r:'Kurzer Austausch beim Fahrstuhlfahren — max. 30 Sek.',ex:'„<strong>Aufzug-Smalltalk</strong> ist die kürzeste Form überhaupt."',syn:'Fahrstuhl-Plauderei · kurzer Gruß'},
+  {e:'🥐',w:'beim Bäcker plaudern',b:'Situation',r:'Mit der Verkäuferin kurz reden — sehr typisch',ex:'„Ich plaudere immer kurz <strong>beim Bäcker</strong> — gehört dazu."',syn:'kurzer Plausch · Bäckerei-Gespräch'},
+  {e:'🐕',w:'der Hunde-Smalltalk',b:'Universal',r:'Hunde sind der perfekte Eisbrecher überall',ex:'„Im Park läuft <strong>Hunde-Smalltalk</strong> wie von selbst."',syn:'Spaziergangs-Plausch'},
+  {e:'😩',w:'sich gemeinsam aufregen',b:'Verbindung',r:'Zusammen über etwas meckern — sehr deutsch',ex:'„An der Haltestelle haben wir uns <strong>gemeinsam aufgeregt</strong>."',syn:'gemeinsam meckern · zusammen lästern'},
+  {e:'🚫',w:'das Tabu-Thema',b:'No-Go',r:'Worüber man im Smalltalk nicht spricht',ex:'„Gehalt ist hier ein absolutes <strong>Tabu-Thema</strong>."',syn:'No-Go · heikles Thema'},
+  {e:'🙋',w:'jemanden anquatschen',b:'Locker',r:'Jemanden spontan ansprechen (umgangssprachlich)',ex:'„Im Bus hat mich eine ältere Dame <strong>angequatscht</strong>."',syn:'ansprechen · ins Gespräch kommen'},
+  {e:'🔁',w:'zurückfragen',b:'Goldene Regel',r:'Die Gegenfrage stellen — hält Smalltalk am Laufen',ex:'„Auf „Wie geht\'s?" einfach <strong>zurückfragen</strong>: „Und Ihnen?""',syn:'Gegenfrage stellen · nachfragen'},
+  {e:'👋',w:'höflich beenden',b:'Schwierig',r:'Ein Gespräch nett abschließen, ohne unhöflich zu wirken',ex:'„Ich muss los — wie kann ich das jetzt <strong>höflich beenden</strong>?"',syn:'Gespräch abschließen · aussteigen'},
+  {e:'😊',w:'die Floskel',b:'Standard-Satz',r:'Ein höflicher Standard-Satz, ohne tiefe Bedeutung',ex:'„„Wie geht\'s?" ist nur eine <strong>Floskel</strong>, keine echte Frage."',syn:'Höflichkeitsfloskel · Standardphrase'},
+  {e:'🤝',w:'der Stammkunde',b:'Beziehung',r:'Regelmäßiger Kunde, den man kennt',ex:'„Als <strong>Stammkunde</strong> wirst du beim Bäcker immer mit Namen gegrüßt."',syn:'Dauerkunde · regelmäßiger Gast'},
+  {e:'🎯',w:'die gemeinsame Situation',b:'Trick',r:'Was ihr beide gerade erlebt — perfektes Smalltalk-Thema',ex:'„Die lange Schlange ist eine <strong>gemeinsame Situation</strong> — perfekt zum Reden."',syn:'gemeinsamer Moment · geteilte Lage'},
+  {e:'🥱',w:'oberflächlich',b:'Eigenschaft',r:'Ohne Tiefe, nur an der Oberfläche',ex:'„Smalltalk ist <strong>oberflächlich</strong> — und das ist okay so."',syn:'flach · belanglos · leicht'},
+  {e:'⏱️',w:'kurz und knapp',b:'Stil',r:'Schnell, ohne lange Sätze',ex:'„Im Aufzug nur <strong>kurz und knapp</strong> grüßen, mehr nicht."',syn:'kurz · knapp · keine Romane'},
+  {e:'😶',w:'das Schweigen aushalten',b:'Skill',r:'Still sein können, ohne unhöflich zu wirken',ex:'„Schweigen ist okay — du musst es nur <strong>aushalten können</strong>."',syn:'Stille akzeptieren · nicht zwanghaft reden'},
+  {e:'☔',w:'„So ein Sauwetter!"',b:'Klassiker-Satz',r:'Umgangssprachlich: das Wetter ist mies',ex:'„<strong>So ein Sauwetter</strong> heute, oder?"',syn:'Mistwetter · schlechtes Wetter'},
+  {e:'🎉',w:'„Endlich Wochenende!"',b:'Freitag-Floskel',r:'Standardsatz am Freitag — alle nicken',ex:'„Auf der Arbeit am Freitag hört man immer: <strong>Endlich Wochenende!</strong>"',syn:'TGIF · Wochenend-Erleichterung'},
+  {e:'🤷',w:'„Da kann man nichts machen"',b:'Akzeptanz',r:'Resignierter Smalltalk-Klassiker',ex:'„Bahn verspätet? Tja, <strong>da kann man nichts machen</strong>."',syn:'man muss damit leben · halt so'},
+  {e:'😬',w:'„weirdsam" / komisch',b:'Reaktion',r:'Wenn der Smalltalk seltsam wird',ex:'„Der hat plötzlich übers Geld geredet — total <strong>komisch</strong>."',syn:'seltsam · unangenehm · creepy'},
+  {e:'💼',w:'„Schönen Feierabend!"',b:'Abschied',r:'Klassischer Job-Abschied am Abend',ex:'„Beim Rausgehen sagt man immer: <strong>Schönen Feierabend!</strong>"',syn:'Schönen Abend · bis morgen'}
 ];
-let order=KARTEN.map((_,i)=>i);let lkIdx=0;
-const flipEl=document.getElementById('flip');
-function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
-flipEl.onclick=()=>flipEl.classList.toggle('flipped');
-document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
-document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
-document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+let cardIdx = 0;
+function showCard(){
+  const c = CARDS[cardIdx];
+  document.getElementById('fEmoji').textContent = c.e;
+  document.getElementById('fWord').textContent = c.w;
+  document.getElementById('fBadge').textContent = c.b;
+  document.getElementById('fRule').textContent = c.r;
+  document.getElementById('fEx').innerHTML = c.ex;
+  document.getElementById('fSyn').innerHTML = '<b>Synonyme:</b> ' + c.syn;
+  document.getElementById('cardNr').textContent = cardIdx + 1;
+  document.getElementById('flipCard').classList.remove('flipped');
+}
+function nextCard(){ cardIdx = (cardIdx + 1) % CARDS.length; showCard(); }
+function prevCard(){ cardIdx = (cardIdx - 1 + CARDS.length) % CARDS.length; showCard(); }
+function shuffleCards(){
+  for(let i = CARDS.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [CARDS[i], CARDS[j]] = [CARDS[j], CARDS[i]];
+  }
+  cardIdx = 0;
+  showCard();
+}
+document.getElementById('flipCard').addEventListener('click', () => {
+  document.getElementById('flipCard').classList.toggle('flipped');
+});
+document.getElementById('cardTotal').textContent = CARDS.length;
 showCard();
 
-document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
-
-document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig!';};
-document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
-
-const PAIRS=[{l:'Beim Bäcker',r:'„Schönes Wetter heute, ne?"'},{l:'Im Aufzug Freitag',r:'„Schon Feierabend?"'},{l:'Hundebegegnung',r:'„Darf ich mal streicheln?"'},{l:'Bus Verspätung',r:'„Da kann man nichts machen!"'},{l:'Verlassen vom Café',r:'„Schönen Tag noch!"'},{l:'Norddeutsch morgens',r:'„Moin!"'},{l:'An der Kasse',r:'„Brauchen Sie eine Tüte?"'},{l:'Bayerische Begrüßung',r:'„Grüß Gott / Servus"'}];
-function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
-buildMatch();document.getElementById('matchRestart').onclick=buildMatch;
-const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
-
-const SPEAK=[
-{emoji:'☀️',cat:'Wetter',q:'Beginne ein Smalltalk-Gespräch über das Wetter — 3 verschiedene Phrasen!'},
-{emoji:'🐕',cat:'Hund',q:'Du siehst einen süßen Hund. Sprich den Besitzer an + frage 3 Dinge!'},
-{emoji:'🚏',cat:'Bushaltestelle',q:'Bus hat 20 Min Verspätung. Mache Smalltalk mit jemandem!'},
-{emoji:'🛗',cat:'Aufzug',q:'Im Aufzug ist es still. Was sagst du, um die Stille zu brechen?'},
-{emoji:'🥖',cat:'Bäcker',q:'Du bist beim Bäcker. Bestelle + mache Smalltalk!'},
-{emoji:'👋',cat:'Nachbar',q:'Du triffst deinen Nachbarn im Treppenhaus. Was sagst du?'},
-{emoji:'☕',cat:'Café',q:'Im Café — du sitzt neben einem Fremden. Wie startest du ein Gespräch?'},
-{emoji:'🛒',cat:'Supermarkt',q:'An der Kasse ist eine lange Schlange. Smalltalk mit dem Vordermann!'},
-{emoji:'📚',cat:'Bibliothek',q:'In der Bibliothek triffst du eine bekannte Person. Was sagst du?'},
-{emoji:'🏃',cat:'Park Jogging',q:'Beim Joggen triffst du eine andere Joggerin. Smalltalk!'},
-{emoji:'🚇',cat:'U-Bahn',q:'Die U-Bahn ist voll. Wie sagst du höflich „Lass mich durch"?'},
-{emoji:'🎓',cat:'Uni',q:'Erster Tag an der Uni. Du sprichst eine andere Studentin an. Was sagst du?'},
-{emoji:'😴',cat:'Müde',q:'Reagiere auf jemanden, der sagt „War \'n langer Tag" — empathisch!'},
-{emoji:'🎉',cat:'Wochenende',q:'„Was haben Sie am Wochenende vor?" — Antworte freundlich + frage zurück!'},
-{emoji:'🌧️',cat:'Regen',q:'Es regnet plötzlich. Du stehst mit Fremden unter einem Dach. Was sagst du?'},
-{emoji:'🎯',cat:'Freestyle',q:'Erfinde 5 eigene Smalltalk-Situationen aus deinem Alltag!'}
+// ============= QUIZ (12 Fragen) =============
+const QUIZ = [
+  {q:'Die Frau vor dir an der Kasse sagt: „Heute ist wieder was los hier!" Was antwortest du am besten?',opts:['Tja, Freitagabend halt — typisch.','Das geht mich nichts an.','Was wollen Sie denn von mir?'],correct:0,exp:'„Tja, Freitagabend halt" zeigt Empathie und Mitgefühl. Sie sucht „Schlangen-Solidarität" — gib sie ihr.'},
+  {q:'Welches Thema ist im deutschen Smalltalk ein klares TABU?',opts:['Das Wetter','Wie viel jemand verdient','Der lokale Verkehr'],correct:1,exp:'Über Geld/Gehalt spricht man in Deutschland nicht — auch nicht mit guten Bekannten. Wetter und Verkehr sind dagegen die Klassiker.'},
+  {q:'Im Aufzug fragt der Nachbar „Na, alles gut?" — was ist die beste Antwort?',opts:['Eigentlich nicht, mein Hund ist krank, meine Mutter ruft jeden Tag an…','Gut, danke. Und bei Ihnen?','Warum fragen Sie?'],correct:1,exp:'„Wie geht\'s?" ist eine Floskel, keine echte Frage. Antwort: kurz + zurückfragen. Niemals echte Probleme erzählen!'},
+  {q:'Was ist die GOLDENE REGEL, um Smalltalk am Laufen zu halten?',opts:['Viel von sich erzählen','Zurückfragen („Und Sie?")','Tiefgründige Themen ansprechen'],correct:1,exp:'„Und Sie?" / „Und bei Ihnen?" — der einfachste Trick. Du musst nichts Eigenes sagen und der andere fühlt sich gesehen.'},
+  {q:'Du willst ein langes Smalltalk-Gespräch HÖFLICH beenden. Was sagst du?',opts:['Sie reden zu viel, ich muss los.','Oh, das ist ja spannend — aber ich hab leider gleich einen Termin.','Tschüss.'],correct:1,exp:'Sandwich-Technik: 1) Würdigung („spannend") + 2) Grund („Termin") + 3) Tür offen lassen. Niemals abrupt!'},
+  {q:'Beim Bäcker fragt die Verkäuferin: „Was Schönes vor heute?" Was antwortest du?',opts:['Ach, nichts Besonderes — nur Büro. Und bei Ihnen?','Das geht Sie nichts an.','Heute hab ich einen Arzttermin wegen meiner Rückenschmerzen.'],correct:0,exp:'Kurz + freundlich + zurückfragen. Niemals private medizinische Details — das ist ein Tabu!'},
+  {q:'Was ist ein „Eisbrecher"?',opts:['Ein Werkzeug für die Tiefkühltruhe','Ein Satz, der ein Gespräch in Gang bringt','Ein Spitzname für einen lauten Menschen'],correct:1,exp:'„Eisbrecher" = der erste Satz, der das Schweigen bricht. Im Smalltalk meist Wetter oder die aktuelle Situation.'},
+  {q:'Im Park kommt eine Frau mit Hund. Was ist ein guter Eisbrecher?',opts:['Was kostet so ein Hund?','Wie alt ist denn der Kleine?','Haben Sie Zeit für mich?'],correct:1,exp:'Über den Hund reden = sicher. Frag nach Alter, Rasse oder Charakter. Niemals nach Preis (taktlos) und niemals über dich selbst.'},
+  {q:'Welche Phrase ist KEIN typischer deutscher Smalltalk-Klassiker?',opts:['Wie immer das Übliche?','Schönen Feierabend noch!','Verraten Sie mir Ihr Gehalt?'],correct:2,exp:'Übers Gehalt fragen ist absolutes No-Go im Smalltalk. Die anderen beiden sind Standard-Floskeln, die man täglich hört.'},
+  {q:'Wie lange dauert ein typischer Aufzug-Smalltalk?',opts:['10-15 Minuten','Maximal 30-60 Sekunden','So lange, bis das Gespräch zu Ende ist'],correct:1,exp:'Aufzug-Smalltalk ist kurz! Ein Gruß, ein Satz übers Wetter, fertig. Schweigen ist auch okay — bloß kein erzwungenes Geplauder.'},
+  {q:'An der Bushaltestelle wartest du seit 15 Min — der Bus kommt nicht. Was ist die typisch deutsche Smalltalk-Reaktion?',opts:['Niemanden ansprechen, ist ja privat.','Gemeinsam meckern: „Die Bahn mal wieder!"','Sich beim Busfahrer beschweren, wenn er kommt.'],correct:1,exp:'„Sich gemeinsam aufregen" ist sehr deutsch — verbindet die Wartenden. Total normaler Smalltalk-Modus an Haltestellen.'},
+  {q:'Du sollst eine Floskel finden, mit der du dich vom Bäcker verabschiedest. Welche passt?',opts:['Lassen Sie uns mal in Kontakt bleiben.','Schönen Tag noch — und bis Montag!','Auf bald, mein Schatz.'],correct:1,exp:'„Schönen Tag noch" + ein freundliches „bis bald/morgen/Montag" = klassischer warmer Abschied. Niemals zu intim („Schatz") bei Fremden!'}
 ];
-let lastS=-1;
-document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Smalltalk = kurz &amp; freundlich!</div>';c.style.opacity='1';},200);};
+const quizCont = document.getElementById('quizContainer');
+QUIZ.forEach((q, i) => {
+  const div = document.createElement('div');
+  div.className = 'quiz';
+  div.innerHTML = '<div class="quiz-q">' + (i+1) + '. ' + q.q + '</div>' +
+    '<div class="quiz-opts">' +
+    q.opts.map((o, j) => '<button class="quiz-chip" data-i="' + j + '">' + o + '</button>').join('') +
+    '</div>' +
+    '<div class="quiz-explain"><b>Erklärung:</b> ' + q.exp + '</div>';
+  div.querySelectorAll('.quiz-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      if (div.classList.contains('answered')) return;
+      const sel = parseInt(chip.dataset.i);
+      div.querySelectorAll('.quiz-chip').forEach((c, ci) => {
+        if (ci === q.correct) c.classList.add('correct');
+        else if (ci === sel) c.classList.add('wrong');
+      });
+      div.classList.add('answered');
+    });
+  });
+  quizCont.appendChild(div);
+});
+
+// ============= LÜCKENTEXT (10 Sätze) =============
+const GAPS = [
+  {t:'Heute ist es aber wieder ___ kalt, oder?',opts:['ganz schön','völlig vorbei','irgendwie schade'],c:0},
+  {t:'Na, ___ Feierabend noch!',opts:['schönen','schöne','schönes'],c:0},
+  {t:'Tja, da kann man nichts ___.',opts:['machen','geben','sehen'],c:0},
+  {t:'Endlich ___! Hat lang genug gedauert.',opts:['Wochenende','Urlaub','Feierabend'],c:0},
+  {t:'Wie immer das ___, bitte.',opts:['Übliche','Einfache','Bekannte'],c:0},
+  {t:'Wie alt ist denn der ___?',opts:['Kleine','Junge','Nachbar'],c:0},
+  {t:'Mensch, was ist denn hier heute ___?',opts:['los','da','dran'],c:0},
+  {t:'Oh, ich muss leider los — ich hab noch einen ___.',opts:['Termin','Auftrag','Plan'],c:0},
+  {t:'„Wie geht\'s?" ist nur eine ___, keine echte Frage.',opts:['Floskel','Frage','Tatsache'],c:0},
+  {t:'Über Gehalt zu sprechen ist hier ein ___.',opts:['Tabu','Highlight','Hobby'],c:0}
+];
+const gapCont = document.getElementById('gapContainer');
+GAPS.forEach((g, i) => {
+  const div = document.createElement('div');
+  div.className = 'gap-row';
+  div.innerHTML = (i+1) + '. ' + g.t.replace('___', '<select data-i="' + i + '"><option value="-1">— wählen —</option>' +
+    g.opts.map((o, j) => '<option value="' + j + '">' + o + '</option>').join('') + '</select>');
+  gapCont.appendChild(div);
+});
+function evalGap(){
+  let correct = 0;
+  document.querySelectorAll('#gapContainer select').forEach(sel => {
+    const i = parseInt(sel.dataset.i);
+    const v = parseInt(sel.value);
+    sel.classList.remove('correct', 'wrong');
+    if (v === GAPS[i].c){ sel.classList.add('correct'); correct++; }
+    else if (v >= 0) sel.classList.add('wrong');
+  });
+  document.getElementById('gapScore').textContent = '🎯 ' + correct + ' von ' + GAPS.length + ' richtig!';
+}
+
+// ============= ZUORDNEN (10 Paare) =============
+const MATCH = [
+  {l:'Im Aufzug — der Nachbar steigt zu dir ein.',r:'„Na, auch grad Feierabend? Schönen Abend noch!"'},
+  {l:'Beim Bäcker fragt die Verkäuferin „Was Schönes vor heute?"',r:'„Ach, nichts Großes — nur ins Büro. Und bei Ihnen?"'},
+  {l:'Eine fremde Frau mit Hund kommt dir im Park entgegen.',r:'„Ach, die mögen sich ja! Wie alt ist denn der Kleine?"'},
+  {l:'Du stehst in einer ewigen Supermarkt-Schlange.',r:'„Mensch, was ist denn hier heute los! Typisch Freitag."'},
+  {l:'Die Nachbarin redet seit 10 Minuten — du musst los.',r:'„Oh, das ist ja spannend! Aber ich muss leider los, ich hab gleich einen Termin."'},
+  {l:'An der Bushaltestelle — der Bus ist 15 Min zu spät.',r:'„Die Bahn mal wieder! Tja, da kann man nichts machen."'},
+  {l:'Kollege fragt dich Montag früh: „Wie war\'s Wochenende?"',r:'„Schön ruhig, danke. Und bei dir? Was Schönes gemacht?"'},
+  {l:'Jemand fragt dich plötzlich, wie viel Miete du zahlst.',r:'„Ach, das ist mir eigentlich zu privat — sorry."'},
+  {l:'Du verabschiedest dich von deiner Stamm-Bäckerin.',r:'„Schönen Tag noch — und bis Montag!"'},
+  {l:'Im Aufzug — du willst gar nicht reden.',r:'Kurz lächeln, freundlich nicken, dann auf das Display schauen — ist auch okay!'}
+];
+const mc = document.getElementById('matchContainer');
+const lefts = MATCH.map((m, i) => ({ ...m, idx: i }));
+const rights = [...MATCH].map((m, i) => ({ r: m.r, originalIdx: i }))
+  .sort(() => Math.random() - 0.5);
+mc.innerHTML = '<div class="match-col"><h4>📋 Situation</h4>' +
+  lefts.map((m, i) => '<div class="match-item left" data-i="' + i + '">' + m.l + '</div>').join('') +
+  '</div>' +
+  '<div class="match-col"><h4>✅ Beste Smalltalk-Reaktion</h4>' +
+  rights.map((m, i) => '<div class="match-item right" data-i="' + i + '" data-orig="' + m.originalIdx + '">' + m.r + '</div>').join('') +
+  '</div>';
+let selL = null;
+let matchCount = 0;
+mc.querySelectorAll('.match-item.left').forEach(el => {
+  el.addEventListener('click', () => {
+    if (el.classList.contains('matched')) return;
+    mc.querySelectorAll('.match-item.left').forEach(x => x.classList.remove('selected'));
+    el.classList.add('selected');
+    selL = parseInt(el.dataset.i);
+  });
+});
+mc.querySelectorAll('.match-item.right').forEach(el => {
+  el.addEventListener('click', () => {
+    if (el.classList.contains('matched') || selL === null) return;
+    const orig = parseInt(el.dataset.orig);
+    if (orig === selL){
+      el.classList.add('matched');
+      mc.querySelector('.match-item.left[data-i="' + selL + '"]').classList.add('matched');
+      matchCount++;
+      if (matchCount === MATCH.length) document.getElementById('matchScore').textContent = '🎉 Super — alle 10 Paare zugeordnet!';
+    } else {
+      el.classList.add('wrong');
+      setTimeout(() => el.classList.remove('wrong'), 400);
+    }
+    selL = null;
+    mc.querySelectorAll('.match-item.left').forEach(x => x.classList.remove('selected'));
+  });
+});
+
+// ============= SPRECHKARTEN (24) =============
+const SPEAK = [
+  {c:'Eisbrecher finden',q:'Du stehst mit einer fremden Person 5 Minuten im Aufzug. Was sagst du als ersten Satz?'},
+  {c:'Wetter-Smalltalk',q:'Formuliere drei verschiedene Sätze übers Wetter — heute, gestern, allgemein im Winter.'},
+  {c:'Bäcker-Plausch',q:'Die Verkäuferin fragt: „Na, gut geschlafen?" — antworte freundlich und frag zurück.'},
+  {c:'Hunde-Smalltalk',q:'Du triffst eine fremde Hundebesitzerin im Park. Wie eröffnest du das Gespräch über die Hunde?'},
+  {c:'Schlangen-Solidarität',q:'An der Supermarkt-Kasse seufzt jemand vor dir. Was sagst du, um Mitgefühl zu zeigen?'},
+  {c:'Bushaltestelle',q:'Der Bus ist seit 15 Min zu spät. Wie redest du mit einer anderen Wartenden darüber?'},
+  {c:'Nachbar-Treff',q:'Du triffst den Nachbarn im Treppenhaus — er hat ein neues Paket vor seiner Tür. Was sagst du?'},
+  {c:'Zurückfragen',q:'Übe die „Und Sie?"-Technik mit 3 verschiedenen Beispiel-Situationen.'},
+  {c:'Höflich beenden',q:'Die Nachbarin redet seit 10 Minuten. Wie steigst du höflich aus dem Gespräch aus?'},
+  {c:'Tabu erkennen',q:'Nenne 3 Themen, die du im Smalltalk niemals ansprechen würdest — und begründe warum.'},
+  {c:'Floskel-Sammlung',q:'Nenne 5 typische deutsche Smalltalk-Floskeln (Begrüßung, Abschied, Wetter).'},
+  {c:'Wie geht\'s?-Spiel',q:'Auf „Wie geht\'s?" antworten — auf 3 verschiedene Arten (alles gut / mittel / schlecht), aber jedes Mal smalltalk-tauglich.'},
+  {c:'Eis brechen',q:'Du sitzt allein an einem Tisch in einem Café. Eine andere Person setzt sich an den Nebentisch. Sprichst du sie an?'},
+  {c:'Abschieds-Floskeln',q:'Du gehst vom Kollegen-Kaffee weg. Wie verabschiedest du dich auf 3 verschiedene Weisen?'},
+  {c:'Pseudo-Frage',q:'Erkläre, warum „Wie geht\'s?" in Deutschland eigentlich gar keine echte Frage ist.'},
+  {c:'Smalltalk-Frust',q:'Erzähle von einem Smalltalk-Moment, der dir unangenehm war — und was du heute anders machen würdest.'},
+  {c:'Komplimente',q:'Wann ist ein Kompliment beim Smalltalk okay — und wann grenzt es an Belästigung?'},
+  {c:'Kulturvergleich',q:'Wie unterscheidet sich deutscher Smalltalk vom Smalltalk in deinem Heimatland?'},
+  {c:'Stamm-Beziehung',q:'Beschreibe deinen Stamm-Bäcker oder Stamm-Café-Personal. Was redet ihr immer?'},
+  {c:'Stille aushalten',q:'Ist Schweigen im Aufzug höflich oder unhöflich? Was denkst du?'},
+  {c:'Smalltalk-Erfolg',q:'Erzähle von einem Smalltalk-Moment, der schön war. Was hat ihn gut gemacht?'},
+  {c:'Gemeinsam meckern',q:'Über was kann man auf Deutsch gut „gemeinsam meckern" — als positives Bonding?'},
+  {c:'Nachbar-Beziehung',q:'Wie viel Smalltalk brauchst du mit deinem Nachbarn — und wie viel ist zu viel?'},
+  {c:'Eigene Mission',q:'Erzähle: Mit wem hattest du diese Woche dein längstes / kürzestes / schönstes Smalltalk-Gespräch?'}
+];
+let speakIdx = 0;
+function showSpeak(){
+  const s = SPEAK[speakIdx];
+  document.getElementById('speakCard').innerHTML =
+    '<div class="cat">' + s.c + ' · Karte ' + (speakIdx+1) + ' / ' + SPEAK.length + '</div>' +
+    '<div class="q">' + s.q + '</div>';
+}
+function nextSpeak(){
+  speakIdx = (speakIdx + 1) % SPEAK.length;
+  showSpeak();
+}
+showSpeak();
 </script>
 </body></html>
