@@ -1,8 +1,7 @@
 <!DOCTYPE html><html lang="de"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Relativsätze · Baukasten | deutschoderwas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Relativsätze · B1 Deluxe | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -13,6 +12,8 @@
   --yellow:#FFD24A; --yellow-soft:#FFF1C2;
   --pink:#E69CB3;
   --sand:#F0E2C8;
+  --blue:#3478C7; --blue-soft:#DCEAF7;
+  --green:#5F7A2A; --green-soft:#E2EBC9;
   --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -22,22 +23,20 @@ body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 
 
 .eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
 .title-wrap{text-align:center;margin-bottom:1rem;}
-h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.2rem,5.5vw,4.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,4.2rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
 h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
 h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
-.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
-
-.hero-svg{display:block;margin:1.5rem auto 0;max-width:360px;width:100%;}
+.subtitle{text-align:center;max-width:640px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
 
 .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
-.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.5rem 1rem;border-radius:999px;cursor:pointer;transition:.15s;}
 .tab:hover{border-color:var(--ink);transform:translateY(-1px);}
 .tab.active{background:var(--red);color:white;border-color:var(--red);}
-
 .section{display:none;animation:fade .35s ease;}
 .section.active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.7rem,3.3vw,2.4rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
 .section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
 
 .tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
@@ -45,49 +44,77 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .tip em{color:var(--ink);font-style:italic;}
 .tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
 
-/* TABELLE Relativpronomen */
-.pron-table{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.3rem;margin:1.5rem 0;overflow-x:auto;}
-.pron-table h3{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.2rem;margin-bottom:.8rem;text-align:center;}
-.pron-table table{width:100%;border-collapse:collapse;font-family:'Outfit',sans-serif;min-width:480px;}
-.pron-table th,.pron-table td{padding:.7rem .8rem;text-align:center;border:1px solid var(--sand);font-size:.95rem;}
-.pron-table th{background:var(--red);color:white;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;}
-.pron-table th.kasus{background:var(--cream-warm);color:var(--ink);}
-.pron-table td.kasus{background:var(--cream-warm);font-weight:700;color:var(--ink);}
-.pron-table td{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--red);background:var(--paper);}
-.pron-table td.special{background:var(--yellow-soft);color:#B66809;}
+/* GENUS-FARBEN MATRIX TABELLE */
+.pron-matrix{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem;margin:1.5rem 0;overflow-x:auto;}
+.pron-matrix h3{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.2rem;margin-bottom:.8rem;text-align:center;}
+.pron-matrix table{width:100%;border-collapse:separate;border-spacing:4px;font-family:'Outfit',sans-serif;min-width:520px;}
+.pron-matrix th,.pron-matrix td{padding:.7rem .6rem;text-align:center;border-radius:10px;font-size:.95rem;}
+.pron-matrix th.kasus-h{background:var(--ink);color:white;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;}
+.pron-matrix th.m{background:var(--blue);color:white;font-weight:700;font-size:.85rem;}
+.pron-matrix th.f{background:var(--red);color:white;font-weight:700;font-size:.85rem;}
+.pron-matrix th.n{background:var(--green);color:white;font-weight:700;font-size:.85rem;}
+.pron-matrix th.p{background:#B66809;color:white;font-weight:700;font-size:.85rem;}
+.pron-matrix td.kasus{background:var(--cream-warm);font-weight:700;color:var(--ink);font-family:'Fraunces',serif;}
+.pron-matrix td.cell-m{background:var(--blue-soft);color:var(--blue);font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;}
+.pron-matrix td.cell-f{background:var(--red-soft);color:var(--red);font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;}
+.pron-matrix td.cell-n{background:var(--green-soft);color:var(--green);font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;}
+.pron-matrix td.cell-p{background:#FFF1C2;color:#B66809;font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;}
+.pron-matrix td.special{box-shadow:inset 0 0 0 2px var(--ink);}
+.pron-matrix tr td.cell-m:hover,.pron-matrix tr td.cell-f:hover,.pron-matrix tr td.cell-n:hover,.pron-matrix tr td.cell-p:hover{transform:scale(1.06);transition:.15s;cursor:pointer;}
+.matrix-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:.8rem;margin-top:.8rem;font-size:.8rem;}
+.matrix-legend span{padding:.2rem .7rem;border-radius:999px;font-weight:600;}
+.lg-m{background:var(--blue-soft);color:var(--blue);}
+.lg-f{background:var(--red-soft);color:var(--red);}
+.lg-n{background:var(--green-soft);color:var(--green);}
+.lg-p{background:#FFF1C2;color:#B66809;}
 
-/* MEAN CARDS - hier für Kasus-Beispiele */
+/* DECISION-DIAGRAMM */
+.decision{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
+.decision h3{font-family:'Fraunces',serif;font-weight:700;text-align:center;color:var(--ink);font-size:1.15rem;margin-bottom:1rem;}
+.dec-flow{display:flex;flex-direction:column;align-items:center;gap:.5rem;}
+.dec-step{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.8rem 1.2rem;text-align:center;max-width:520px;width:100%;}
+.dec-step.q{border-color:var(--red);background:var(--red-soft);}
+.dec-step.a{border-color:var(--teal);background:var(--teal-soft);}
+.dec-step .step-num{display:inline-block;background:var(--red);color:white;width:24px;height:24px;border-radius:50%;font-weight:700;font-size:.78rem;line-height:24px;margin-right:.5rem;}
+.dec-step.a .step-num{background:var(--teal);}
+.dec-step strong{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);}
+.dec-arrow{color:var(--red);font-size:1.5rem;font-weight:900;}
+
+/* MEAN CARDS */
 .mean-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;margin:1.5rem 0;}
 @media(max-width:520px){.mean-grid{grid-template-columns:1fr;}}
-.mean{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:0;box-shadow:0 4px 16px rgba(38,32,25,.05);transition:.2s;cursor:pointer;overflow:hidden;}
+.mean{background:var(--paper);border:1.5px solid var(--sand);border-radius:18px;padding:0;box-shadow:0 4px 16px rgba(38,32,25,.05);transition:.2s;overflow:hidden;}
 .mean:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(38,32,25,.12);}
-.mean-svg{background:linear-gradient(135deg,#FFE8E3,#FBEDD8);height:110px;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--sand);font-size:2.6rem;}
-.mean.m2 .mean-svg{background:linear-gradient(135deg,#D7F0EC,#E8F8F4);}
-.mean.m3 .mean-svg{background:linear-gradient(135deg,#FFF1C2,#FFE8E3);}
-.mean.m4 .mean-svg{background:linear-gradient(135deg,#FAE0EA,#FFE8E3);}
+.mean-svg{height:110px;display:flex;align-items:center;justify-content:center;border-bottom:2px solid var(--sand);font-size:2.6rem;}
+.mean.m1 .mean-svg{background:linear-gradient(135deg,var(--blue-soft),#E8F0FA);}
+.mean.m2 .mean-svg{background:linear-gradient(135deg,var(--red-soft),#FFE8E3);}
+.mean.m3 .mean-svg{background:linear-gradient(135deg,var(--green-soft),#EAF2D6);}
+.mean.m4 .mean-svg{background:linear-gradient(135deg,#FFF1C2,#FFE8E3);}
 .mean-body{padding:1.1rem 1.3rem 1.4rem;}
-.mean-num{display:inline-block;background:var(--red-soft);color:var(--red);font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;}
-.mean.m2 .mean-num{background:var(--teal-soft);color:var(--teal);}
-.mean.m3 .mean-num{background:var(--yellow-soft);color:#B66809;}
-.mean.m4 .mean-num{background:#FAE0EA;color:#A04060;}
+.mean-num{display:inline-block;font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.4rem;}
+.mean.m1 .mean-num{background:var(--blue-soft);color:var(--blue);}
+.mean.m2 .mean-num{background:var(--red-soft);color:var(--red);}
+.mean.m3 .mean-num{background:var(--green-soft);color:var(--green);}
+.mean.m4 .mean-num{background:#FFF1C2;color:#B66809;}
 .mean-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--ink);margin-bottom:.35rem;}
-.mean-meaning{color:var(--red);font-weight:700;font-size:.9rem;margin-bottom:.6rem;}
-.mean.m2 .mean-meaning{color:var(--teal);}
-.mean.m3 .mean-meaning{color:#B66809;}
-.mean.m4 .mean-meaning{color:#A04060;}
-.mean-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;padding-top:.7rem;border-top:1px dashed var(--sand);}
+.mean-meaning{font-weight:700;font-size:.9rem;margin-bottom:.6rem;}
+.mean.m1 .mean-meaning{color:var(--blue);}
+.mean.m2 .mean-meaning{color:var(--red);}
+.mean.m3 .mean-meaning{color:var(--green);}
+.mean.m4 .mean-meaning{color:#B66809;}
+.mean-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.6;padding-top:.7rem;border-top:1px dashed var(--sand);}
 .mean-ex strong{color:var(--ink);background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
 
 /* VORHER/NACHHER */
 .vn-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.5rem;margin:1.5rem 0;}
-.vn-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.2rem;margin-bottom:1rem;text-align:center;}
+.vn-title{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.15rem;margin-bottom:1rem;text-align:center;}
 .vn-grid{display:grid;grid-template-columns:1fr 60px 1fr;gap:.7rem;align-items:center;}
 @media(max-width:600px){.vn-grid{grid-template-columns:1fr;}.vn-arrow{display:none;}}
 .vn-card{background:var(--cream);border-radius:14px;padding:1rem;text-align:center;border:1.5px solid var(--sand);}
 .vn-card.b{background:var(--yellow-soft);border-color:var(--yellow);}
 .vn-label{font-size:.72rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
 .vn-card.b .vn-label{color:#B66809;}
-.vn-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.3rem;}
+.vn-text{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.3rem;line-height:1.55;}
 .vn-arrow{text-align:center;font-size:2rem;color:var(--red);font-weight:900;}
 
 /* ALLTAG */
@@ -95,6 +122,13 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
 .alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
 .alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* MISSION */
+.mission{background:linear-gradient(135deg,#FFE8E3,var(--yellow-soft));border:2px solid var(--yellow);border-radius:18px;padding:1.4rem 1.6rem;margin:1.8rem 0;text-align:center;}
+.mission-tag{display:inline-block;background:var(--red);color:white;font-size:.72rem;font-weight:700;padding:.25rem .8rem;border-radius:999px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.mission-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.3rem;margin-bottom:.5rem;}
+.mission-text{color:var(--ink);font-size:.95rem;line-height:1.6;}
+.mission-text strong{color:var(--red);}
 
 /* CHAT */
 .chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);position:relative;}
@@ -109,24 +143,27 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
 .chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
 .chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-bubble.voice{display:flex;align-items:center;gap:.5rem;font-style:italic;color:var(--ink-soft);}
+.chat-bubble.voice .vw{flex:1;height:14px;background:linear-gradient(90deg,var(--teal) 60%,#bbb 60%);border-radius:7px;opacity:.7;}
 .chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
 .chat-meaning strong{color:#B66809;}
 .uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
 
 /* FLIP */
-.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip{perspective:1000px;width:100%;max-width:460px;height:380px;margin:1.5rem auto;cursor:pointer;}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
 .flip.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
 .flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
-.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
-.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;color:var(--ink);margin-bottom:.3rem;}
+.flip-emoji{font-size:2.6rem;margin-bottom:.5rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);margin-bottom:.3rem;line-height:1.2;}
 .flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
-.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
-.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
-.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.98rem;margin-top:.6rem;line-height:1.55;}
+.flip-prompt{font-size:.8rem;color:var(--ink-mute);font-style:italic;margin-top:.4rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.95rem;line-height:1.4;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;line-height:1.55;}
 .flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.flip-syn{font-size:.78rem;color:var(--ink-soft);margin-top:.6rem;padding-top:.6rem;border-top:1px dashed var(--sand);}
 
 .lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
 .lk-btn{font-family:'Outfit',sans-serif;font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);transition:.15s;}
@@ -137,8 +174,9 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 
 /* QUIZ */
 .quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
-.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
-.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.55;}
+.quiz-q .blank{display:inline-block;min-width:80px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-q .hint{color:var(--ink-mute);font-size:.85em;font-style:normal;font-family:'Outfit',sans-serif;font-weight:500;}
 .quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
 .quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;transition:.15s;}
 .quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
@@ -166,37 +204,40 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 @media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
 .match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
 .match-list{display:flex;flex-direction:column;gap:.45rem;}
-.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;color:var(--ink);font-size:.9rem;transition:.15s;text-align:center;line-height:1.35;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-family:'Outfit',sans-serif;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;line-height:1.35;}
 .match-item:hover{border-color:var(--ink);transform:translateX(2px);}
 .match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
 .match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
 .match-restart{display:block;margin:1.2rem auto 0;}
 
 /* SPEAK */
-.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:220px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:560px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
 .speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
 .speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
 .speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
 .speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
 .speak-controls{text-align:center;margin-top:1rem;}
 
-/* ROLE */
+/* ROLLENSPIELE Deluxe */
 .role-section{margin-top:2.5rem;}
-.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.4rem;}
 .role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
 .role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
 .role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
-.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
-@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
-.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
-.person.a{border-color:var(--red);background:#FFF6F5;}
-.person.b{border-color:var(--teal);background:#F1FAF8;}
-.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
-.person.a .person-avatar{border-color:var(--red);}
-.person.b .person-avatar{border-color:var(--teal);}
-.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
-.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
-.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+.role-rolle{background:#FFF6F5;border:1.5px solid var(--red);border-radius:12px;padding:.7rem 1rem;color:var(--ink);font-size:.9rem;margin-bottom:.8rem;}
+.role-rolle strong{color:var(--red);}
+.role-block{background:var(--cream);border-radius:12px;padding:.8rem 1rem;margin-bottom:.6rem;border-left:4px solid var(--teal);}
+.role-block.key{border-left-color:var(--blue);}
+.role-block.phrases{border-left-color:#B66809;}
+.role-block.tip{border-left-color:var(--yellow);background:var(--yellow-soft);}
+.role-block.struct{border-left-color:var(--green);}
+.role-block h5{font-family:'Outfit',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:.35rem;}
+.role-block p,.role-block ul{font-size:.88rem;color:var(--ink);line-height:1.55;}
+.role-block ul{padding-left:1.1rem;}
+.role-block li{margin-bottom:.2rem;font-family:'Fraunces',serif;font-style:italic;}
+.role-block li strong{color:var(--red);font-style:normal;font-family:'Outfit',sans-serif;background:var(--yellow-soft);padding:.05em .25em;border-radius:4px;}
+.role-keyvocab{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.4rem;}
+.role-keyvocab span{background:var(--paper);border:1.5px solid var(--blue);color:var(--blue);font-size:.78rem;font-weight:600;padding:.18rem .55rem;border-radius:999px;}
 
 footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
 footer strong{color:var(--ink);}
@@ -205,613 +246,821 @@ footer strong{color:var(--ink);}
 <body>
 <div class="wrapper">
 
-<div class="eyebrow">deutschoderwas · Grammatik mit System</div>
+<div class="eyebrow">deutschoderwas &middot; Grammatik ab B1 &middot; Deluxe</div>
 
 <div class="title-wrap">
 <h1 class="title"><span class="hl">Relativsätze</span></h1>
 </div>
-<p class="subtitle">Der Mann, <em>der</em> dort steht. Die Frau, <em>die</em> ich liebe. Das Buch, <em>das</em> mich rührt. Endlich klar — wann <em>der/die/das/dessen/deren</em> kommt!</p>
+<p class="subtitle">Der Mann, <em>der</em> dort steht. Die Frau, <em>der</em> ich helfe. Das Buch, <em>dessen</em> Autor ich liebe. Endlich klar — wann welches Relativpronomen kommt.</p>
 
-<!-- HERO SVG: Relativpronomen-Familie -->
-<svg class="hero-svg" viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg">
+<!-- HERO SVG -->
+<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
 <g font-family="Outfit, sans-serif" font-weight="700" font-size="10">
-<g transform="translate(30,25)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="6" font-size="20">👨</text><text text-anchor="middle" y="40" fill="#E8302A">der</text></g>
-<g transform="translate(85,25)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="6" font-size="20">👩</text><text text-anchor="middle" y="40" fill="#0FB5A6">die</text></g>
-<g transform="translate(140,25)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="6" font-size="20">📖</text><text text-anchor="middle" y="40" fill="#B66809">das</text></g>
-<g transform="translate(195,25)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="6" font-size="20">👥</text><text text-anchor="middle" y="40" fill="#A04060">die (Pl.)</text></g>
-<g transform="translate(250,25)"><circle cx="0" cy="0" r="22" fill="#E2EBC9"/><text text-anchor="middle" dy="6" font-size="20">🔗</text><text text-anchor="middle" y="40" fill="#5F7A2A">dessen</text></g>
-<g transform="translate(305,25)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="6" font-size="20">🔗</text><text text-anchor="middle" y="40" fill="#6A3D9C">deren</text></g>
+<g transform="translate(35,25)"><circle r="22" fill="#DCEAF7"/><text dy="6" text-anchor="middle" font-size="20">&#128104;</text><text y="40" text-anchor="middle" fill="#3478C7">der</text></g>
+<g transform="translate(95,25)"><circle r="22" fill="#FCE5E3"/><text dy="6" text-anchor="middle" font-size="20">&#128105;</text><text y="40" text-anchor="middle" fill="#E8302A">die</text></g>
+<g transform="translate(155,25)"><circle r="22" fill="#E2EBC9"/><text dy="6" text-anchor="middle" font-size="20">&#128214;</text><text y="40" text-anchor="middle" fill="#5F7A2A">das</text></g>
+<g transform="translate(215,25)"><circle r="22" fill="#FFF1C2"/><text dy="6" text-anchor="middle" font-size="20">&#128101;</text><text y="40" text-anchor="middle" fill="#B66809">die (Pl.)</text></g>
+<g transform="translate(275,25)"><circle r="22" fill="#FAE0EA"/><text dy="6" text-anchor="middle" font-size="20">&#128279;</text><text y="40" text-anchor="middle" fill="#A04060">dessen</text></g>
+<g transform="translate(335,25)"><circle r="22" fill="#E5D8F2"/><text dy="6" text-anchor="middle" font-size="20">&#128279;</text><text y="40" text-anchor="middle" fill="#6A3D9C">deren</text></g>
 </g>
 </svg>
 
-<!-- TAB NAV -->
+<!-- TAB NAV — Deluxe-Reihenfolge -->
 <nav class="tabs">
-<button class="tab active" data-tab="0">📖 Überblick</button>
-<button class="tab" data-tab="1">💬 Umgangssprache</button>
-<button class="tab" data-tab="2">🃏 Lernkarten</button>
-<button class="tab" data-tab="3">✅ Quiz</button>
-<button class="tab" data-tab="4">✍️ Lückentext</button>
-<button class="tab" data-tab="5">🧩 Zuordnen</button>
-<button class="tab" data-tab="6">🗣️ Sprechen</button>
+<button class="tab active" data-tab="0">&#128214; &Uuml;berblick</button>
+<button class="tab" data-tab="1">&#127183; Lernkarten</button>
+<button class="tab" data-tab="2">&#9989; Quiz</button>
+<button class="tab" data-tab="3">&#9997;&#65039; L&uuml;ckentext</button>
+<button class="tab" data-tab="4">&#129513; Zuordnen</button>
+<button class="tab" data-tab="5">&#128483;&#65039; Sprechen</button>
+<button class="tab" data-tab="6">&#128172; Umgangssprache</button>
 </nav>
 
 <!-- ============== ÜBERBLICK ============== -->
 <section class="section active" data-section="0">
 
-<h2 class="section-title">Die <em style="font-style:italic;">Relativpronomen</em>-Tabelle</h2>
-<p class="section-sub">Gute Nachricht: Sie sehen fast genauso aus wie die bestimmten Artikel (der/die/das)!</p>
+<h2 class="section-title">Die <em style="font-style:italic;">Relativpronomen</em>-Matrix</h2>
+<p class="section-sub">Vier Genus-Farben &times; vier Kasus — die ganze Grammatik auf einen Blick.</p>
 
-<div class="tip">
-💡 <strong>Der Trick:</strong> Das Relativpronomen richtet sich nach 2 Dingen: <u>(1) dem Genus</u> des Wortes davor (Mann = der, Frau = die, Buch = das) und <u>(2) dem Kasus</u>, den das Verb im Nebensatz braucht. Beispiel: „Der Mann, <em>den</em> ich liebe." → „lieben" braucht Akkusativ → <strong>den</strong>.
-</div>
-
-<div class="pron-table">
-<h3>📋 Relativpronomen — Übersicht</h3>
+<div class="pron-matrix">
+<h3>&#128203; Genus + Kasus = Relativpronomen</h3>
 <table>
 <thead>
-<tr><th class="kasus">Kasus</th><th>maskulin</th><th>feminin</th><th>neutrum</th><th>Plural</th></tr>
+<tr><th class="kasus-h">Kasus</th><th class="m">&#128104; maskulin</th><th class="f">&#128105; feminin</th><th class="n">&#128214; neutrum</th><th class="p">&#128101; Plural</th></tr>
 </thead>
 <tbody>
-<tr><td class="kasus">Nominativ</td><td>der</td><td>die</td><td>das</td><td>die</td></tr>
-<tr><td class="kasus">Akkusativ</td><td>den</td><td>die</td><td>das</td><td>die</td></tr>
-<tr><td class="kasus">Dativ</td><td class="special">dem</td><td class="special">der</td><td class="special">dem</td><td class="special">denen</td></tr>
-<tr><td class="kasus">Genitiv</td><td class="special">dessen</td><td class="special">deren</td><td class="special">dessen</td><td class="special">deren</td></tr>
+<tr><td class="kasus">Nominativ<br><span style="font-size:.72rem;color:var(--ink-mute);font-family:Outfit;font-weight:500;">wer?</span></td><td class="cell-m">der</td><td class="cell-f">die</td><td class="cell-n">das</td><td class="cell-p">die</td></tr>
+<tr><td class="kasus">Akkusativ<br><span style="font-size:.72rem;color:var(--ink-mute);font-family:Outfit;font-weight:500;">wen?</span></td><td class="cell-m">den</td><td class="cell-f">die</td><td class="cell-n">das</td><td class="cell-p">die</td></tr>
+<tr><td class="kasus">Dativ<br><span style="font-size:.72rem;color:var(--ink-mute);font-family:Outfit;font-weight:500;">wem?</span></td><td class="cell-m special">dem</td><td class="cell-f special">der</td><td class="cell-n special">dem</td><td class="cell-p special">denen &#9888;&#65039;</td></tr>
+<tr><td class="kasus">Genitiv<br><span style="font-size:.72rem;color:var(--ink-mute);font-family:Outfit;font-weight:500;">wessen?</span></td><td class="cell-m special">dessen</td><td class="cell-f special">deren</td><td class="cell-n special">dessen</td><td class="cell-p special">deren</td></tr>
 </tbody>
 </table>
+<div class="matrix-legend">
+<span class="lg-m">&#128104; maskulin = blau</span>
+<span class="lg-f">&#128105; feminin = rot</span>
+<span class="lg-n">&#128214; neutrum = gr&uuml;n</span>
+<span class="lg-p">&#128101; Plural = gelb</span>
+</div>
 </div>
 
-<div class="tip" style="background:var(--teal-soft);border-color:var(--teal);">
-🎯 <strong>Die 3 Stolperfallen:</strong> <br>1. <u>Dativ Plural = denen</u> (nicht „den"!) → „Die Freunde, <em>denen</em> ich helfe…"<br>2. <u>Genitiv = dessen / deren</u> → „Der Mann, <em>dessen</em> Auto kaputt ist…" / „Die Frau, <em>deren</em> Hund bellt…"<br>3. <u>Komma + Verb am Ende</u> — wie bei jedem Nebensatz!
+<div class="tip">
+&#128161; <strong>Merksatz:</strong> Die Relativpronomen sehen aus wie die <u>bestimmten Artikel</u> (der/die/das) — au&szlig;er in 5 F&auml;llen: <em>denen</em> (Dativ Plural), <em>dessen</em> (Genitiv mask./neutr.) und <em>deren</em> (Genitiv fem./Plural). Diese 5 musst du auswendig lernen!
 </div>
 
+<!-- DECISION DIAGRAMM -->
+<h2 class="section-title">Welches Pronomen? <em style="font-style:italic;">In 3 Schritten</em></h2>
+<p class="section-sub">Frag dich diese 3 Fragen — dann hast du immer die richtige Form.</p>
+
+<div class="decision">
+<h3>&#127919; Beispiel: „Die Frau, ___ ich helfe."</h3>
+<div class="dec-flow">
+<div class="dec-step q"><span class="step-num">1</span><strong>Welches Genus hat das Wort vor dem Komma?</strong></div>
+<div class="dec-arrow">&darr;</div>
+<div class="dec-step a"><span class="step-num">&#128105;</span>„die Frau" &rarr; <strong>feminin</strong></div>
+<div class="dec-arrow">&darr;</div>
+<div class="dec-step q"><span class="step-num">2</span><strong>Welcher Kasus? Was braucht das Verb im Nebensatz?</strong></div>
+<div class="dec-arrow">&darr;</div>
+<div class="dec-step a"><span class="step-num">&#128302;</span>„helfen + Dativ" &rarr; <strong>Dativ</strong></div>
+<div class="dec-arrow">&darr;</div>
+<div class="dec-step q"><span class="step-num">3</span><strong>Schau in die Tabelle: feminin + Dativ?</strong></div>
+<div class="dec-arrow">&darr;</div>
+<div class="dec-step a"><span class="step-num">&#10004;</span><strong>der</strong> &rarr; „Die Frau, <strong style="background:var(--yellow-soft);padding:.05em .3em;border-radius:4px;">der</strong> ich helfe."</div>
+</div>
+</div>
+
+<!-- DIE 4 KASUS IN AKTION -->
 <h2 class="section-title">Die <em style="font-style:italic;">4 Kasus</em> in Aktion</h2>
-<p class="section-sub">Tipp auf eine Karte 👆 — sieh den Kasus + Beispiele.</p>
+<p class="section-sub">Pro Kasus 4 Beispielsätze — alle vier Genus durchgespielt.</p>
 
 <div class="mean-grid">
 
 <div class="mean m1">
-<div class="mean-svg">👤</div>
+<div class="mean-svg">&#128104;</div>
 <div class="mean-body">
-<div class="mean-num">Kasus 1 · Nominativ</div>
+<div class="mean-num">Kasus 1 &middot; Nominativ</div>
 <div class="mean-name">der / die / das / die</div>
 <div class="mean-meaning">wer/was macht etwas?</div>
-<div class="mean-ex">„Der Mann, <strong>der</strong> dort steht, ist mein Chef." <br>„Die Frau, <strong>die</strong> singt, ist berühmt." <br>„Das Buch, <strong>das</strong> rot ist, gehört mir." <br>„Die Leute, <strong>die</strong> warten, sind ungeduldig."</div>
+<div class="mean-ex">„Der Mann, <strong>der</strong> dort steht, ist mein Chef." <br>„Die Frau, <strong>die</strong> singt, ist ber&uuml;hmt." <br>„Das Buch, <strong>das</strong> rot ist, geh&ouml;rt mir." <br>„Die Leute, <strong>die</strong> warten, sind ungeduldig."</div>
 </div>
 </div>
 
 <div class="mean m2">
-<div class="mean-svg">🎯</div>
+<div class="mean-svg">&#127919;</div>
 <div class="mean-body">
-<div class="mean-num">Kasus 2 · Akkusativ</div>
+<div class="mean-num">Kasus 2 &middot; Akkusativ</div>
 <div class="mean-name">den / die / das / die</div>
 <div class="mean-meaning">wen/was tue ich?</div>
-<div class="mean-ex">„Der Mann, <strong>den</strong> ich liebe, heißt Paul." <br>„Die Frau, <strong>die</strong> ich gestern gesehen habe, war nett." <br>„Das Buch, <strong>das</strong> ich lese, ist spannend." <br>„Die Kinder, <strong>die</strong> ich kenne, sind brav."</div>
+<div class="mean-ex">„Der Mann, <strong>den</strong> ich liebe, hei&szlig;t Paul." <br>„Die Frau, <strong>die</strong> ich gestern gesehen habe, war nett." <br>„Das Buch, <strong>das</strong> ich lese, ist spannend." <br>„Die Kinder, <strong>die</strong> ich kenne, sind brav."</div>
 </div>
 </div>
 
 <div class="mean m3">
-<div class="mean-svg">🤝</div>
+<div class="mean-svg">&#129309;</div>
 <div class="mean-body">
-<div class="mean-num">Kasus 3 · Dativ ⚠️</div>
+<div class="mean-num">Kasus 3 &middot; Dativ &#9888;&#65039;</div>
 <div class="mean-name">dem / der / dem / denen</div>
-<div class="mean-meaning">wem helfe/gebe/danke ich?</div>
+<div class="mean-meaning">wem helfe/danke/glaube ich?</div>
 <div class="mean-ex">„Der Lehrer, <strong>dem</strong> ich danke, ist toll." <br>„Die Kollegin, <strong>der</strong> ich helfe, ist nett." <br>„Das Kind, <strong>dem</strong> ich Spielzeug schenke, lacht." <br>„Die Freunde, <strong>denen</strong> ich vertraue, sind wichtig."</div>
 </div>
 </div>
 
 <div class="mean m4">
-<div class="mean-svg">🔗</div>
+<div class="mean-svg">&#128279;</div>
 <div class="mean-body">
-<div class="mean-num">Kasus 4 · Genitiv ⚠️</div>
+<div class="mean-num">Kasus 4 &middot; Genitiv &#9888;&#65039;</div>
 <div class="mean-name">dessen / deren / dessen / deren</div>
 <div class="mean-meaning">wessen? = Besitz/Beziehung</div>
-<div class="mean-ex">„Der Mann, <strong>dessen</strong> Auto kaputt ist, wartet." <br>„Die Frau, <strong>deren</strong> Hund bellt, entschuldigt sich." <br>„Das Kind, <strong>dessen</strong> Mutter Ärztin ist, lernt schnell." <br>„Die Leute, <strong>deren</strong> Haus brennt, sind in Panik."</div>
+<div class="mean-ex">„Der Mann, <strong>dessen</strong> Auto kaputt ist, wartet." <br>„Die Frau, <strong>deren</strong> Hund bellt, entschuldigt sich." <br>„Das Kind, <strong>dessen</strong> Mutter &Auml;rztin ist, lernt schnell." <br>„Die Leute, <strong>deren</strong> Haus brennt, sind in Panik."</div>
 </div>
 </div>
 
+</div>
+
+<!-- PRÄPOSITIONEN -->
+<h2 class="section-title">Mit <em style="font-style:italic;">Präposition</em></h2>
+<p class="section-sub">Wenn ein Verb eine Präposition braucht — kommt sie VOR das Relativpronomen.</p>
+
+<div class="tip" style="background:var(--blue-soft);border-color:var(--blue);">
+&#128293; <strong>Regel:</strong> Pr&auml;position zuerst, dann Relativpronomen. Der Kasus richtet sich nach der <u>Pr&auml;position</u>, nicht nach dem Verb! Beispiel: „mit + Dativ" &rarr; „der Kollege, <em>mit dem</em> ich arbeite". „f&uuml;r + Akkusativ" &rarr; „das Geschenk, <em>f&uuml;r das</em> ich gespart habe".
+</div>
+
+<div class="mean-grid">
+<div class="mean m1"><div class="mean-body" style="padding:1.2rem 1.3rem;"><div class="mean-num">mit + Dativ</div><div class="mean-name">mit dem / mit der / mit dem / mit denen</div><div class="mean-ex" style="border-top:0;padding-top:.5rem;">„Der Kollege, <strong>mit dem</strong> ich arbeite, ist nett." <br>„Die Frau, <strong>mit der</strong> ich tanze, hei&szlig;t Anna."</div></div></div>
+<div class="mean m2"><div class="mean-body" style="padding:1.2rem 1.3rem;"><div class="mean-num">f&uuml;r + Akkusativ</div><div class="mean-name">f&uuml;r den / f&uuml;r die / f&uuml;r das / f&uuml;r die</div><div class="mean-ex" style="border-top:0;padding-top:.5rem;">„Das Geschenk, <strong>f&uuml;r das</strong> ich gespart habe, ist teuer." <br>„Die Sache, <strong>f&uuml;r die</strong> ich k&auml;mpfe, ist wichtig."</div></div></div>
+<div class="mean m3"><div class="mean-body" style="padding:1.2rem 1.3rem;"><div class="mean-num">&uuml;ber + Akkusativ</div><div class="mean-name">&uuml;ber den / &uuml;ber die / &uuml;ber das / &uuml;ber die</div><div class="mean-ex" style="border-top:0;padding-top:.5rem;">„Der Film, <strong>&uuml;ber den</strong> alle reden, ist langweilig." <br>„Die Sache, <strong>&uuml;ber die</strong> wir gestritten haben, war Quatsch."</div></div></div>
+<div class="mean m4"><div class="mean-body" style="padding:1.2rem 1.3rem;"><div class="mean-num">in + Dativ (Ort)</div><div class="mean-name">in dem / in der / in dem / in denen</div><div class="mean-ex" style="border-top:0;padding-top:.5rem;">„Die Stadt, <strong>in der</strong> ich aufgewachsen bin, liegt im S&uuml;den." <br>„Das Caf&eacute;, <strong>in dem</strong> wir uns trafen, ist zu."</div></div></div>
 </div>
 
 <!-- VORHER/NACHHER -->
-<h2 class="section-title">Zwei Sätze <em style="font-style:italic;">→</em> Ein Satz</h2>
+<h2 class="section-title">Zwei S&auml;tze <em style="font-style:italic;">&rarr;</em> Ein Satz</h2>
 <p class="section-sub">So baust du einen Relativsatz Schritt für Schritt.</p>
 
 <div class="vn-stage">
-<div class="vn-title">👨 Der Mann + er ist mein Chef</div>
+<div class="vn-title">&#128104; Der Mann + er ist mein Chef</div>
 <div class="vn-grid">
-<div class="vn-card">
-<div class="vn-label">2 Sätze</div>
-<div class="vn-text">„Der Mann steht dort. <strong>Er</strong> ist mein Chef."<br><span style="font-size:.78rem;color:var(--ink-mute);">Mann (Nom., mask.) → er</span></div>
-</div>
-<div class="vn-arrow">→</div>
-<div class="vn-card b">
-<div class="vn-label">1 Satz mit Relativsatz</div>
-<div class="vn-text">„Der Mann, <strong>der</strong> dort steht, ist mein Chef."<br><span style="font-size:.78rem;color:#B66809;">er → der (Nom., mask.)</span></div>
-</div>
+<div class="vn-card"><div class="vn-label">2 S&auml;tze</div><div class="vn-text">„Der Mann steht dort. <strong>Er</strong> ist mein Chef."<br><span style="font-size:.78rem;color:var(--ink-mute);">Mann (Nom., mask.) &rarr; er</span></div></div>
+<div class="vn-arrow">&rarr;</div>
+<div class="vn-card b"><div class="vn-label">1 Satz mit Relativsatz</div><div class="vn-text">„Der Mann, <strong>der</strong> dort steht, ist mein Chef."<br><span style="font-size:.78rem;color:#B66809;">er &rarr; der (Nom., mask.) &middot; Verb am Ende!</span></div></div>
 </div>
 </div>
 
 <div class="vn-stage">
-<div class="vn-title">📖 Das Buch + ich lese es</div>
+<div class="vn-title">&#129309; Die Kollegin + ich helfe ihr</div>
 <div class="vn-grid">
-<div class="vn-card">
-<div class="vn-label">2 Sätze</div>
-<div class="vn-text">„Das Buch ist spannend. Ich lese <strong>es</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">Buch (Akk., neutr.) → es</span></div>
-</div>
-<div class="vn-arrow">→</div>
-<div class="vn-card b">
-<div class="vn-label">Relativsatz</div>
-<div class="vn-text">„Das Buch, <strong>das</strong> ich lese, ist spannend."<br><span style="font-size:.78rem;color:#B66809;">es → das (Akk., neutr.)</span></div>
-</div>
+<div class="vn-card"><div class="vn-label">2 S&auml;tze</div><div class="vn-text">„Die Kollegin ist nett. Ich helfe <strong>ihr</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">helfen + Dativ &rarr; ihr</span></div></div>
+<div class="vn-arrow">&rarr;</div>
+<div class="vn-card b"><div class="vn-label">Relativsatz (Dativ!)</div><div class="vn-text">„Die Kollegin, <strong>der</strong> ich helfe, ist nett."<br><span style="font-size:.78rem;color:#B66809;">ihr &rarr; der (Dativ, fem.)</span></div></div>
 </div>
 </div>
 
 <div class="vn-stage">
-<div class="vn-title">🤝 Die Kollegin + ich helfe ihr</div>
+<div class="vn-title">&#128279; Der Kollege + ich arbeite mit ihm</div>
 <div class="vn-grid">
-<div class="vn-card">
-<div class="vn-label">2 Sätze</div>
-<div class="vn-text">„Die Kollegin ist nett. Ich helfe <strong>ihr</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">helfen + Dativ → ihr</span></div>
-</div>
-<div class="vn-arrow">→</div>
-<div class="vn-card b">
-<div class="vn-label">Relativsatz (Dativ!)</div>
-<div class="vn-text">„Die Kollegin, <strong>der</strong> ich helfe, ist nett."<br><span style="font-size:.78rem;color:#B66809;">ihr → der (Dativ, fem.)</span></div>
-</div>
+<div class="vn-card"><div class="vn-label">2 S&auml;tze</div><div class="vn-text">„Der Kollege ist nett. Ich arbeite <strong>mit ihm</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">mit + Dativ &rarr; ihm</span></div></div>
+<div class="vn-arrow">&rarr;</div>
+<div class="vn-card b"><div class="vn-label">Pr&auml;position kommt VOR!</div><div class="vn-text">„Der Kollege, <strong>mit dem</strong> ich arbeite, ist nett."<br><span style="font-size:.78rem;color:#B66809;">Pr&auml;position zuerst, dann Relativpronomen!</span></div></div>
 </div>
 </div>
 
-<div class="vn-stage">
-<div class="vn-title">🔗 Mit Präposition</div>
-<div class="vn-grid">
-<div class="vn-card">
-<div class="vn-label">2 Sätze</div>
-<div class="vn-text">„Der Kollege ist nett. Ich arbeite <strong>mit ihm</strong>."<br><span style="font-size:.78rem;color:var(--ink-mute);">mit + Dativ → ihm</span></div>
-</div>
-<div class="vn-arrow">→</div>
-<div class="vn-card b">
-<div class="vn-label">Präposition kommt vor!</div>
-<div class="vn-text">„Der Kollege, <strong>mit dem</strong> ich arbeite, ist nett."<br><span style="font-size:.78rem;color:#B66809;">Präposition zuerst, dann Relativpronomen!</span></div>
-</div>
-</div>
+<!-- VERB-POSITION TIPP -->
+<div class="tip" style="background:var(--teal-soft);border-color:var(--teal);">
+&#127919; <strong>Die 3 goldenen Regeln:</strong>
+<br>1. <u>Komma vor + Komma nach</u> dem Relativsatz (au&szlig;er am Satzende: nur eins).
+<br>2. Das <u>Verb wandert ans Ende</u> des Relativsatzes — wie bei jedem Nebensatz!
+<br>3. Bei Pr&auml;positionen: <u>Pr&auml;position + Relativpronomen</u> direkt nach dem Komma („mit dem", „f&uuml;r die", „&uuml;ber das" …).
 </div>
 
-<!-- ALLTAG-FRAGEN -->
+<!-- ALLTAG -->
 <h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
 <p class="section-sub">Denk kurz nach — formuliere innerlich einen Relativsatz.</p>
 
 <div class="alltag-q">
-<div class="ql">Alltag · Nominativ</div>
-<div class="qq">Beschreibe einen Menschen, <em>der</em> dir wichtig ist.</div>
-<div class="think">💭 „Mein/e … ist ein Mensch, der/die …"</div>
+<div class="ql">Alltag &middot; Nominativ</div>
+<div class="qq">Beschreibe einen Menschen, <em>der</em> dir wichtig ist — was macht ihn besonders?</div>
+<div class="think">&#128173; „Mein/e &hellip; ist ein Mensch, der/die immer &hellip;"</div>
 </div>
 
 <div class="alltag-q" style="border-left-color:var(--teal);">
-<div class="ql" style="color:var(--teal);">Alltag · Akkusativ</div>
-<div class="qq">Was ist das letzte Buch / der letzte Film, <em>den/das</em> du gelesen / gesehen hast?</div>
-<div class="think">💭 „Der Film, den ich gesehen habe, …" / „Das Buch, das ich gelesen habe, …"</div>
+<div class="ql" style="color:var(--teal);">Alltag &middot; Akkusativ</div>
+<div class="qq">Was war das letzte Buch / der letzte Film, <em>den/das</em> du dir merken wirst?</div>
+<div class="think">&#128173; „Der Film, den ich gesehen habe, …" / „Das Buch, das ich gelesen habe, …"</div>
 </div>
 
 <div class="alltag-q" style="border-left-color:#B66809;">
-<div class="ql" style="color:#B66809;">Alltag · Dativ</div>
+<div class="ql" style="color:#B66809;">Alltag &middot; Dativ</div>
 <div class="qq">Nenne eine Person, <em>der</em> du oft hilfst — oder die dir oft hilft.</div>
-<div class="think">💭 „Meine Mutter ist die Person, der ich oft helfe." / „dem ich danke"</div>
+<div class="think">&#128173; „Meine Mutter ist die Person, der ich oft helfe."</div>
 </div>
 
 <div class="alltag-q" style="border-left-color:#6A3D9C;">
-<div class="ql" style="color:#6A3D9C;">Alltag · Genitiv</div>
+<div class="ql" style="color:#6A3D9C;">Alltag &middot; Genitiv</div>
 <div class="qq">Kennst du jemanden, <em>dessen</em> Beruf du spannend findest?</div>
-<div class="think">💭 „Mein Onkel ist ein Mann, dessen Beruf ich spannend finde."</div>
+<div class="think">&#128173; „Mein Onkel ist ein Mann, dessen Beruf ich spannend finde."</div>
 </div>
 
-</section>
-
-<!-- ============== UMGANGSSPRACHE ============== -->
-<section class="section" data-section="1">
-
-<h2 class="section-title">💬 So <em style="font-style:italic;">benutzt</em> man Relativsätze im Alltag</h2>
-<p class="section-sub">Echte WhatsApp-Chats — Relativsätze sind überall, wo wir Menschen, Orte oder Dinge beschreiben!</p>
-
-<div class="tip">
-🔥 <strong>Tipp:</strong> Im Alltag hörst du Relativsätze besonders oft, wenn jemand <u>etwas oder jemanden beschreibt</u>, an den man sich erinnern soll: „Du weißt schon, die Frau, die…" / „Das Café, das…" / „Mein Freund, dessen…"
+<div class="alltag-q" style="border-left-color:var(--blue);">
+<div class="ql" style="color:var(--blue);">Alltag &middot; Pr&auml;position</div>
+<div class="qq">In welcher Stadt bist du aufgewachsen — und was war dort sch&ouml;n?</div>
+<div class="think">&#128173; „Die Stadt, in der ich aufgewachsen bin, hei&szlig;t …"</div>
 </div>
 
-<div class="uss-grid">
-
-<div class="chat">
-<div class="chat-head"><div class="av">👯</div><div class="name-row"><div class="name">Sarah · Freundin</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Erinnerst du dich an die Kollegin, <strong>die</strong> letztes Jahr nach Berlin gezogen ist?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Du meinst Lisa? Die Blondine, <strong>die</strong> immer so witzig war?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Genau! Sie kommt heute Abend! 🥳</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Mega! Bringst du den Wein mit, <strong>den</strong> wir letztes Mal hatten?</div></div>
-<div class="chat-meaning"><strong>3 Relativsätze in einem kurzen Chat!</strong> 2× „die" (Nom. fem.) und 1× „den" (Akk. mask.)</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">☕</div><div class="name-row"><div class="name">Marco</div><div class="stat">online</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Lust auf einen Kaffee?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Klar! In dem Café, <strong>das</strong> wir am Sonntag besucht haben?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ja, das mit dem Garten, <strong>der</strong> so schön ist! 🌿</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Perfekt — um 15 Uhr?</div></div>
-<div class="chat-meaning"><strong>„das" (Akk. neutr.) + „der" (Nom. mask.)</strong> — Beschreibungen mit Relativsätzen sind so natürlich!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🎂</div><div class="name-row"><div class="name">Mama</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hast du heute Geburtstag deinen Freund gesehen, <strong>dessen</strong> Bruder Arzt ist?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Du meinst Lukas? Ja, er war da! 🎉</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Und die Frau, <strong>deren</strong> Tochter mit dir zur Schule geht?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Frau Müller? Ja, auch dabei. Du fragst echt detailliert 😄</div></div>
-<div class="chat-meaning"><strong>Genitiv!</strong> „dessen" (mask.) für „sein Bruder", „deren" (fem.) für „ihre Tochter".</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🎁</div><div class="name-row"><div class="name">Beste Freundin</div><div class="stat">tippt…</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Was schenkst du Anna?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ich überlege noch! Vielleicht ein Buch, <strong>das</strong> sie noch nicht hat?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Was ist mit dem Ring, <strong>den</strong> sie sich gewünscht hat?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Hmm, vielleicht. Oder Blumen, <strong>die</strong> sie liebt? 💐</div></div>
-<div class="chat-meaning"><strong>3 Relativsätze für Geschenkideen!</strong> das (neutr.) + den (mask. Akk.) + die (Plural).</div>
-</div>
-
-</div>
-
-<!-- BONUS -->
-<h2 class="section-title">12 typische <em style="font-style:italic;">Beschreibungs</em>-Phrasen</h2>
-
-<div class="uss-grid" style="grid-template-columns:1fr 1fr;">
-<div class="alltag-q" style="margin:.5rem 0;"><div class="ql">Person</div><div class="qq">„Das ist mein Freund, <strong>der</strong> in München wohnt."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Ort</div><div class="qq">„Das ist die Stadt, <strong>in der</strong> ich aufgewachsen bin."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Ding</div><div class="qq">„Hier ist das Geschenk, <strong>das</strong> ich für dich habe."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:#A04060;"><div class="ql" style="color:#A04060;">Erinnerung</div><div class="qq">„Kennst du noch den Sommer, <strong>den</strong> wir am Meer verbracht haben?"</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:#5F7A2A;"><div class="ql" style="color:#5F7A2A;">Beruf</div><div class="qq">„Sie ist die Ärztin, <strong>der</strong> ich vertraue."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Genitiv</div><div class="qq">„Das ist der Mann, <strong>dessen</strong> Sohn mein Trainer ist."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;"><div class="ql">Vorstellung</div><div class="qq">„Darf ich vorstellen — die Kollegin, <strong>mit der</strong> ich arbeite."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Restaurant</div><div class="qq">„Lass uns ins Restaurant gehen, <strong>das</strong> wir letzte Woche entdeckt haben."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Dank</div><div class="qq">„Danke für den Tipp, <strong>den</strong> du mir gegeben hast!"</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:#A04060;"><div class="ql" style="color:#A04060;">Suche</div><div class="qq">„Ich suche die Brille, <strong>die</strong> ich gestern verloren habe."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:#5F7A2A;"><div class="ql" style="color:#5F7A2A;">Plural Dativ</div><div class="qq">„Das sind die Freunde, <strong>denen</strong> ich alles erzähle."</div></div>
-<div class="alltag-q" style="margin:.5rem 0;border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Genitiv Pl.</div><div class="qq">„Die Nachbarn, <strong>deren</strong> Kinder so laut sind, ziehen aus 🎉"</div></div>
+<!-- MISSION DER WOCHE -->
+<div class="mission">
+<div class="mission-tag">Mission der Woche</div>
+<div class="mission-title">&#127919; 10 Relativs&auml;tze im Alltag</div>
+<div class="mission-text">Diese Woche: <strong>achte bewusst</strong> darauf, in jedem Gespr&auml;ch mindestens <strong>10 Relativs&auml;tze</strong> aktiv zu nutzen. Z&auml;hle sie heimlich! Beschreibe deine Kollegen, dein Lieblings-Caf&eacute;, deinen Lieblingsfilm, deine Familie. Notiere abends den besten Satz, den du gesagt hast.</div>
 </div>
 
 </section>
 
 <!-- ============== LERNKARTEN ============== -->
-<section class="section" data-section="2">
+<section class="section" data-section="1">
 
-<h2 class="section-title">Lernkarten · <em style="font-style:italic;">Relativsätze</em> in Aktion</h2>
+<h2 class="section-title">Lernkarten &middot; <em style="font-style:italic;">22 Relativs&auml;tze</em></h2>
 <p class="section-sub">Errätst du, welches Relativpronomen passt? Erst denken — dann tippen.</p>
 
 <div class="flip" id="flip">
 <div class="flip-inner">
 <div class="flip-side front">
-<div class="flip-emoji" id="flipEmoji">👨</div>
-<div class="flip-word" id="flipWord">der (Nom. mask.)</div>
-<div class="flip-badge" id="flipBadge">Nominativ</div>
-<div class="flip-prompt">Wie sieht der Beispielsatz aus? <br>(zum Umdrehen tippen)</div>
+<div class="flip-emoji" id="flipEmoji">&#128104;</div>
+<div class="flip-word" id="flipWord">der Mann, ___ dort steht</div>
+<div class="flip-badge" id="flipBadge">Nominativ &middot; mask.</div>
+<div class="flip-prompt">Welches Relativpronomen?<br>(zum Umdrehen tippen)</div>
 </div>
 <div class="flip-side back">
-<div class="flip-rule" id="flipRule">Mann + er macht etwas → der</div>
+<div class="flip-rule" id="flipRule">der (Nom., mask.)</div>
 <div class="flip-ex" id="flipEx">„Der Mann, <strong>der</strong> dort steht, ist mein Chef."</div>
+<div class="flip-syn" id="flipSyn">Alternative: „Der Mann dort &mdash; das ist mein Chef."</div>
 </div>
 </div>
 </div>
 
 <div class="lk-nav">
-<button class="lk-btn" id="lkPrev">←</button>
-<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span>
-<button class="lk-btn" id="lkNext">→</button>
+<button class="lk-btn" id="lkPrev">&larr;</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">22</span></span>
+<button class="lk-btn" id="lkNext">&rarr;</button>
 </div>
-<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+<button class="lk-shuffle" id="lkShuffle">&#128256; Mischen</button>
 
 </section>
 
 <!-- ============== QUIZ ============== -->
-<section class="section" data-section="3">
+<section class="section" data-section="2">
 
 <h2 class="section-title">Quiz: <em style="font-style:italic;">Welches Relativpronomen?</em></h2>
-<p class="section-sub">Frag dich: Welches Genus? Welcher Kasus? Dann ist es einfach!</p>
+<p class="section-sub">12 Aufgaben &mdash; jeweils Genus + Kasus mit angegeben.</p>
 
-<div class="quiz"><div class="quiz-q">„Das ist der Kollege, <span class="blank">?</span> immer zu spät kommt." <span style="color:var(--ink-mute);font-size:.85em;">(mask. · Nom.)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">der</span><span class="quiz-chip">den</span><span class="quiz-chip">dem</span></div><div class="quiz-explain">✓ <strong>der</strong> — der Kollege (mask.) + er kommt zu spät (Nominativ)</div></div>
+<div class="quiz"><div class="quiz-q">„Das ist der Kollege, <span class="blank">?</span> immer zu sp&auml;t kommt." <span class="hint">(mask. &middot; Nom.)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">der</span><span class="quiz-chip">den</span><span class="quiz-chip">dem</span></div><div class="quiz-explain">&#10004; <strong>der</strong> &mdash; mask. Nominativ. „er kommt zu sp&auml;t" &rarr; der.</div></div>
 
-<div class="quiz"><div class="quiz-q">„Die Frau, <span class="blank">?</span> ich gestern getroffen habe, war sehr nett." <span style="color:var(--ink-mute);font-size:.85em;">(fem. · Akk.)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">der</span><span class="quiz-chip">die</span><span class="quiz-chip">deren</span></div><div class="quiz-explain">✓ <strong>die</strong> — die Frau + ich habe sie getroffen (Akkusativ)</div></div>
+<div class="quiz"><div class="quiz-q">„Die Frau, <span class="blank">?</span> ich gestern getroffen habe, war sehr nett." <span class="hint">(fem. &middot; Akk.)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">der</span><span class="quiz-chip">die</span><span class="quiz-chip">deren</span></div><div class="quiz-explain">&#10004; <strong>die</strong> &mdash; fem. Akkusativ. „ich habe sie getroffen" &rarr; die.</div></div>
 
-<div class="quiz"><div class="quiz-q">„Das Buch, <span class="blank">?</span> ich gerade lese, ist super." <span style="color:var(--ink-mute);font-size:.85em;">(neutr. · Akk.)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">der</span><span class="quiz-chip">die</span><span class="quiz-chip">das</span></div><div class="quiz-explain">✓ <strong>das</strong> — das Buch (neutr.) + ich lese es (Akkusativ)</div></div>
+<div class="quiz"><div class="quiz-q">„Das Buch, <span class="blank">?</span> ich gerade lese, ist super." <span class="hint">(neutr. &middot; Akk.)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">der</span><span class="quiz-chip">die</span><span class="quiz-chip">das</span></div><div class="quiz-explain">&#10004; <strong>das</strong> &mdash; neutr. Akkusativ. „ich lese es" &rarr; das.</div></div>
 
-<div class="quiz"><div class="quiz-q">„Der Lehrer, <span class="blank">?</span> ich danke, ist sehr geduldig." <span style="color:var(--ink-mute);font-size:.85em;">(mask. · Dativ — danken+D!)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">der</span><span class="quiz-chip">den</span><span class="quiz-chip">dem</span></div><div class="quiz-explain">✓ <strong>dem</strong> — danken + Dativ → ich danke ihm (mask. Dativ = dem)</div></div>
+<div class="quiz"><div class="quiz-q">„Der Lehrer, <span class="blank">?</span> ich danke, geht in Rente." <span class="hint">(mask. &middot; Dativ &mdash; danken+D!)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">der</span><span class="quiz-chip">den</span><span class="quiz-chip">dem</span></div><div class="quiz-explain">&#10004; <strong>dem</strong> &mdash; danken + Dativ. „ich danke ihm" &rarr; dem (mask. Dativ).</div></div>
 
-<div class="quiz"><div class="quiz-q">„Die Freunde, <span class="blank">?</span> ich vertraue, sind treu." <span style="color:var(--ink-mute);font-size:.85em;">(Plural · Dativ — vertrauen+D!)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">die</span><span class="quiz-chip">den</span><span class="quiz-chip">denen</span></div><div class="quiz-explain">✓ <strong>denen</strong> — Dativ Plural ist NICHT „den", sondern „denen"!</div></div>
+<div class="quiz"><div class="quiz-q">„Die Freunde, <span class="blank">?</span> ich vertraue, sind treu." <span class="hint">(Plural &middot; Dativ &mdash; vertrauen+D!)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">die</span><span class="quiz-chip">den</span><span class="quiz-chip">denen</span></div><div class="quiz-explain">&#10004; <strong>denen</strong> &mdash; Dativ Plural ist NICHT „den"! Klassischer Fehler.</div></div>
 
-<div class="quiz"><div class="quiz-q">„Das ist der Mann, <span class="blank">?</span> Auto vor unserem Haus steht." <span style="color:var(--ink-mute);font-size:.85em;">(mask. · Genitiv — sein Auto!)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">deren</span><span class="quiz-chip">dessen</span><span class="quiz-chip">der</span></div><div class="quiz-explain">✓ <strong>dessen</strong> — Genitiv mask./neutr. = dessen (= sein Auto)</div></div>
+<div class="quiz"><div class="quiz-q">„Das ist der Mann, <span class="blank">?</span> Auto vor unserem Haus steht." <span class="hint">(mask. &middot; Genitiv &mdash; sein Auto!)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">deren</span><span class="quiz-chip">dessen</span><span class="quiz-chip">der</span></div><div class="quiz-explain">&#10004; <strong>dessen</strong> &mdash; Genitiv mask./neutr. = dessen.</div></div>
 
-<div class="quiz"><div class="quiz-q">„Die Frau, <span class="blank">?</span> Hund immer bellt, ist meine Nachbarin." <span style="color:var(--ink-mute);font-size:.85em;">(fem. · Genitiv — ihr Hund!)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">deren</span><span class="quiz-chip">dessen</span><span class="quiz-chip">die</span></div><div class="quiz-explain">✓ <strong>deren</strong> — Genitiv feminin = deren (= ihr Hund)</div></div>
+<div class="quiz"><div class="quiz-q">„Die Frau, <span class="blank">?</span> Hund immer bellt, ist meine Nachbarin." <span class="hint">(fem. &middot; Genitiv &mdash; ihr Hund!)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">deren</span><span class="quiz-chip">dessen</span><span class="quiz-chip">die</span></div><div class="quiz-explain">&#10004; <strong>deren</strong> &mdash; Genitiv feminin = deren.</div></div>
 
-<div class="quiz"><div class="quiz-q">„Der Kollege, <span class="blank">?</span> ich arbeite, ist sehr nett." <span style="color:var(--ink-mute);font-size:.85em;">(mit + Dativ → mit dem)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">mit der</span><span class="quiz-chip">mit den</span><span class="quiz-chip">mit dem</span></div><div class="quiz-explain">✓ <strong>mit dem</strong> — arbeiten mit + Dativ → der Kollege (mask. Dativ = dem)</div></div>
+<div class="quiz"><div class="quiz-q">„Der Kollege, <span class="blank">?</span> ich arbeite, ist sehr nett." <span class="hint">(mit + mask. Dativ)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">mit der</span><span class="quiz-chip">mit den</span><span class="quiz-chip">mit dem</span></div><div class="quiz-explain">&#10004; <strong>mit dem</strong> &mdash; mit + Dativ; mask. Dativ = dem.</div></div>
+
+<div class="quiz"><div class="quiz-q">„Die Stadt, <span class="blank">?</span> ich aufgewachsen bin, ist klein." <span class="hint">(in + fem. Dativ)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">in der</span><span class="quiz-chip">in die</span><span class="quiz-chip">in dem</span></div><div class="quiz-explain">&#10004; <strong>in der</strong> &mdash; aufwachsen in + Dativ; fem. Dativ = der.</div></div>
+
+<div class="quiz"><div class="quiz-q">„Das Geschenk, <span class="blank">?</span> ich monatelang gespart habe, war teuer." <span class="hint">(f&uuml;r + neutr. Akk.)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">f&uuml;r den</span><span class="quiz-chip">f&uuml;r das</span><span class="quiz-chip">f&uuml;r die</span></div><div class="quiz-explain">&#10004; <strong>f&uuml;r das</strong> &mdash; f&uuml;r + Akkusativ; neutr. Akk. = das.</div></div>
+
+<div class="quiz"><div class="quiz-q">„Die Nachbarn, <span class="blank">?</span> Kinder so laut sind, ziehen aus." <span class="hint">(Plural &middot; Genitiv &mdash; ihre Kinder!)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">deren</span><span class="quiz-chip">dessen</span><span class="quiz-chip">denen</span></div><div class="quiz-explain">&#10004; <strong>deren</strong> &mdash; Genitiv Plural = deren.</div></div>
+
+<div class="quiz"><div class="quiz-q">„Welche Form ist FALSCH bei: <em>die Freunde, ___ ich helfe</em>?" <span class="hint">(Achtung: helfen + Dativ!)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">den</span><span class="quiz-chip">denen</span><span class="quiz-chip">denen ich helfe</span></div><div class="quiz-explain">&#10004; <strong>den</strong> ist FALSCH &mdash; Dativ Plural ist <em>denen</em>!</div></div>
 
 </section>
 
 <!-- ============== LÜCKENTEXT ============== -->
-<section class="section" data-section="4">
+<section class="section" data-section="3">
 
-<h2 class="section-title">Lückentext</h2>
-<p class="section-sub">Wähle pro Satz das passende Relativpronomen. Dann auf „Überprüfen" tippen.</p>
+<h2 class="section-title">L&uuml;ckentext</h2>
+<p class="section-sub">10 S&auml;tze &mdash; w&auml;hle jeweils das passende Relativpronomen.</p>
 
 <div class="gap-text" id="gapText">
-<div class="gap-line">1. Das ist mein Bruder, <select data-sol="der"><option value="">…</option><option>der</option><option>den</option><option>dem</option></select> in Berlin studiert.</div>
-<div class="gap-line">2. Die Stadt, <select data-sol="in der"><option value="">…</option><option>in der</option><option>in dem</option><option>in den</option></select> ich aufgewachsen bin, liegt im Süden.</div>
-<div class="gap-line">3. Das ist die Kollegin, <select data-sol="die"><option value="">…</option><option>der</option><option>die</option><option>deren</option></select> ich gestern auf der Party gesehen habe.</div>
-<div class="gap-line">4. Mein Onkel, <select data-sol="dessen"><option value="">…</option><option>deren</option><option>dessen</option><option>der</option></select> Sohn mein Trainer ist, kommt morgen.</div>
-<div class="gap-line">5. Die Freunde, <select data-sol="denen"><option value="">…</option><option>die</option><option>den</option><option>denen</option></select> ich alles erzähle, sind in München.</div>
-<div class="gap-line">6. Das Buch, <select data-sol="das"><option value="">…</option><option>der</option><option>die</option><option>das</option></select> auf dem Tisch liegt, gehört mir.</div>
-<div class="gap-line">7. Die Frau, <select data-sol="deren"><option value="">…</option><option>deren</option><option>dessen</option><option>der</option></select> Hund so süß ist, wohnt nebenan.</div>
-<div class="gap-line">8. Der Lehrer, <select data-sol="dem"><option value="">…</option><option>der</option><option>den</option><option>dem</option></select> ich für alles danke, geht in Rente.</div>
+<div class="gap-line">1. Das ist mein Bruder, <select data-sol="der"><option value="">&hellip;</option><option>der</option><option>den</option><option>dem</option></select> in Berlin studiert.</div>
+<div class="gap-line">2. Die Stadt, <select data-sol="in der"><option value="">&hellip;</option><option>in der</option><option>in dem</option><option>in den</option></select> ich aufgewachsen bin, liegt im S&uuml;den.</div>
+<div class="gap-line">3. Das ist die Kollegin, <select data-sol="die"><option value="">&hellip;</option><option>der</option><option>die</option><option>deren</option></select> ich gestern auf der Party gesehen habe.</div>
+<div class="gap-line">4. Mein Onkel, <select data-sol="dessen"><option value="">&hellip;</option><option>deren</option><option>dessen</option><option>der</option></select> Sohn mein Trainer ist, kommt morgen.</div>
+<div class="gap-line">5. Die Freunde, <select data-sol="denen"><option value="">&hellip;</option><option>die</option><option>den</option><option>denen</option></select> ich alles erz&auml;hle, leben in M&uuml;nchen.</div>
+<div class="gap-line">6. Das Buch, <select data-sol="das"><option value="">&hellip;</option><option>der</option><option>die</option><option>das</option></select> auf dem Tisch liegt, geh&ouml;rt mir.</div>
+<div class="gap-line">7. Die Frau, <select data-sol="deren"><option value="">&hellip;</option><option>deren</option><option>dessen</option><option>der</option></select> Hund so s&uuml;&szlig; ist, wohnt nebenan.</div>
+<div class="gap-line">8. Der Lehrer, <select data-sol="dem"><option value="">&hellip;</option><option>der</option><option>den</option><option>dem</option></select> ich f&uuml;r alles danke, geht in Rente.</div>
+<div class="gap-line">9. Der Kollege, <select data-sol="mit dem"><option value="">&hellip;</option><option>mit der</option><option>mit dem</option><option>mit den</option></select> ich am Projekt arbeite, ist genial.</div>
+<div class="gap-line">10. Das Caf&eacute;, <select data-sol="in dem"><option value="">&hellip;</option><option>in dem</option><option>in der</option><option>in das</option></select> wir uns kennengelernt haben, hat zugemacht.</div>
 <div class="gap-actions">
 <button class="btn-secondary" id="gapReset">Neu</button>
-<button class="btn-primary" id="gapCheck">Überprüfen</button>
+<button class="btn-primary" id="gapCheck">&Uuml;berpr&uuml;fen</button>
 </div>
 </div>
-
 <div class="tip" id="gapScore" style="display:none;"></div>
 
 </section>
 
 <!-- ============== ZUORDNEN ============== -->
-<section class="section" data-section="5">
+<section class="section" data-section="4">
 
 <h2 class="section-title">Hauptsatz &amp; <em style="font-style:italic;">Relativsatz</em> zuordnen</h2>
-<p class="section-sub">Tippe links einen Hauptsatz-Anfang — dann rechts den passenden Relativsatz. Richtige Paare werden grün.</p>
+<p class="section-sub">Tippe links einen Hauptsatz-Anfang &mdash; dann rechts den passenden Relativsatz. Richtige Paare werden gr&uuml;n.</p>
 
 <div class="match-stage">
 <div class="match-cols">
-<div class="match-col">
-<h4>🏛️ Hauptsatz</h4>
-<div class="match-list" id="leftCol"></div>
+<div class="match-col"><h4>&#127963;&#65039; Hauptsatz</h4><div class="match-list" id="leftCol"></div></div>
+<div class="match-col"><h4>&#128279; Relativsatz</h4><div class="match-list" id="rightCol"></div></div>
 </div>
-<div class="match-col">
-<h4>🔗 Relativsatz</h4>
-<div class="match-list" id="rightCol"></div>
-</div>
-</div>
-<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+<button class="btn-secondary match-restart" id="matchRestart">&#128260; Nochmal</button>
 </div>
 
 </section>
 
 <!-- ============== SPRECHEN ============== -->
-<section class="section" data-section="6">
+<section class="section" data-section="5">
 
-<h2 class="section-title">Sprechen — <em style="font-style:italic;">beschreibe alles!</em></h2>
-<p class="section-sub">Allein, mit Partner oder in der Gruppe. Zieh eine Karte und beschreibe — mit Relativsätzen!</p>
+<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">beschreibe dein Leben!</em></h2>
+<p class="section-sub">Allein, mit Partner oder in der Gruppe. Zieh eine Karte und erz&auml;hl mit so vielen Relativs&auml;tzen wie m&ouml;glich.</p>
 
 <div class="speak-card" id="speakCard">
-<div class="speak-emoji">🎲</div>
+<div class="speak-emoji">&#127922;</div>
 <div class="speak-cat">Sprechclub-Karte</div>
 <div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
 </div>
 
 <div class="speak-controls">
-<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+<button class="btn-primary" id="speakNew">&#127922; Neue Karte</button>
 </div>
 
-<!-- ROLLENSPIELE -->
+<!-- ROLLENSPIELE Deluxe -->
 <div class="role-section">
-<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">mit Relativsätzen</em></h2>
-<p class="section-sub">Übt zu zweit — nutzt möglichst viele Relativsätze in allen Kasus!</p>
+<h2 class="section-title">5 Rollenspiele <em style="font-style:italic;">mit Hilfestellung</em></h2>
+<p class="section-sub">Pro Rollenspiel: Situation, Rolle, Schl&uuml;ssel-Vokabular, Beispiel-Phrasen, Strategie + Antwort-Struktur.</p>
 
+<!-- ROLLENSPIEL 1 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 1 · Personenbeschreibung</div>
-<div class="role-title">🕵️ „Beschreib mir die Person, die du suchst!"</div>
-<div class="role-situation">Du hast jemanden auf einer Party getroffen, dessen Namen du vergessen hast — und willst die Person beschreiben. Dein Freund versucht zu erraten, wer das ist.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🤔</div><div>
-<div class="person-label">Person A — die/der Suchende</div>
-<div class="person-quote">„Ich suche die Frau, <strong>die</strong> ein rotes Kleid trug. Die, <strong>mit der</strong> ich über München gesprochen habe! Die Frau, <strong>deren</strong> Bruder beim Bayrischen Rundfunk arbeitet…"</div>
-</div></div>
-<div class="person b"><div class="person-avatar">💡</div><div>
-<div class="person-label">Person B — die/der Ratende</div>
-<div class="person-quote">„Meinst du Sandra, <strong>die</strong> bei uns im Sportverein ist? Oder Julia, <strong>deren</strong> Mann auch da war? Ich brauche mehr Details, <strong>die</strong> mir helfen!"</div>
-</div></div>
-</div>
-<div class="role-goal">🎯 Ziel: Mindestens <strong>6 verschiedene Relativsätze</strong> mit unterschiedlichen Kasus!</div>
+<div class="role-tag">Rollenspiel 1 &middot; Verlorenes Portemonnaie</div>
+<div class="role-title">&#128110; „Beschreib es der Polizei!"</div>
+<div class="role-situation"><strong>Situation:</strong> Du hast in der U-Bahn dein Portemonnaie verloren &mdash; oder deine Tasche, deinen Schl&uuml;ssel, dein Handy. Du gehst zur Polizei und beschreibst, was du verloren hast.</div>
+<div class="role-rolle"><strong>Deine Rolle:</strong> Du bist ruhig, aber gestresst. Du m&ouml;chtest m&ouml;glichst genau beschreiben &mdash; mit vielen Details (Farbe, Form, Inhalt, wo, wann).</div>
+
+<div class="role-block key"><h5>&#128273; Schl&uuml;ssel-Vokabular <span style="color:var(--ink-mute);font-weight:500;">(nutze 5-8 davon)</span></h5>
+<div class="role-keyvocab"><span>das Portemonnaie</span><span>verlieren</span><span>aus Leder</span><span>schwarz</span><span>ein Foto, das &hellip;</span><span>der Ausweis, der &hellip;</span><span>die Karte, die &hellip;</span><span>der Zug, in dem &hellip;</span><span>die Linie, mit der &hellip;</span><span>vermissen</span></div>
 </div>
 
+<div class="role-block phrases"><h5>&#128172; Beispiel-Phrasen <span style="color:var(--ink-mute);font-weight:500;">(als Inspiration)</span></h5>
+<ul>
+<li>„Ich habe ein Portemonnaie verloren, <strong>das</strong> aus schwarzem Leder ist."</li>
+<li>„Es ist die Tasche, <strong>in der</strong> meine Schl&uuml;ssel waren."</li>
+<li>„Darin war ein Ausweis, <strong>der</strong> auf meinen Namen ausgestellt ist."</li>
+<li>„Es war in der U-Bahn-Linie 5, <strong>mit der</strong> ich von Alexanderplatz gefahren bin."</li>
+<li>„Ich vermisse auch ein Foto, <strong>auf dem</strong> meine Oma zu sehen ist."</li>
+</ul>
+</div>
+
+<div class="role-block tip"><h5>&#128161; Strategie</h5>
+<p>Bau jeden Satz mit „<em>X, das/der/die &hellip;</em>" &mdash; so kommst du automatisch in den Relativsatz-Modus. Denk an die Reihenfolge: <strong>Gegenstand &rarr; Komma &rarr; Relativpronomen &rarr; alles andere &rarr; Verb am Ende!</strong></p>
+</div>
+
+<div class="role-block struct"><h5>&#9989; Antwort-Struktur</h5>
+<p>Gegenstand benennen (1 Satz) + Beschreibung mit 2-3 Relativs&auml;tzen (Farbe, Material, Inhalt) + Ort/Zeit-Angabe mit Relativsatz („die Bahn, mit der &hellip;").</p>
+</div>
+</div>
+
+<!-- ROLLENSPIEL 2 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 2 · Lieblingsort</div>
-<div class="role-title">🌍 „Das ist mein Lieblingsort!"</div>
-<div class="role-situation">Du erzählst einem neuen Freund von deinem absoluten Lieblingsort (Café, Park, Stadt, Land…). Beschreibe alles — die Menschen, die du dort triffst, die Dinge, die du dort machst.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">😍</div><div>
-<div class="person-label">Person A — die/der Schwärmende</div>
-<div class="person-quote">„Mein Lieblingsort ist ein kleines Café, <strong>das</strong> ich seit Jahren kenne. Die Besitzerin, <strong>der</strong> ich immer einen guten Tag wünsche, macht den besten Kaffee, <strong>den</strong> ich je getrunken habe!"</div>
-</div></div>
-<div class="person b"><div class="person-avatar">🤓</div><div>
-<div class="person-label">Person B — die/der Neugierige</div>
-<div class="person-quote">„Erzähl mir mehr! Wer sind die Menschen, <strong>die</strong> dort regelmäßig sind? Und was ist das Besondere, <strong>das</strong> du an diesem Ort liebst?"</div>
-</div></div>
-</div>
-<div class="role-goal">🎯 Bonus: Mindestens 1 Relativsatz im Genitiv (dessen/deren) verwenden!</div>
+<div class="role-tag">Rollenspiel 2 &middot; Restaurant-Empfehlung</div>
+<div class="role-title">&#127869;&#65039; „Erz&auml;hl von dem Restaurant, das du empfiehlst!"</div>
+<div class="role-situation"><strong>Situation:</strong> Eine Freundin aus dem Ausland besucht dich. Sie m&ouml;chte ein typisches deutsches Restaurant ausprobieren. Du empfiehlst ihr ein Lieblings-Lokal &mdash; und schw&auml;rmst.</div>
+<div class="role-rolle"><strong>Deine Rolle:</strong> Du bist begeistert. Du willst sie &uuml;berzeugen, indem du m&ouml;glichst viele Details nennst &mdash; das Essen, die Atmosph&auml;re, die Kellner, die Lage.</div>
+
+<div class="role-block key"><h5>&#128273; Schl&uuml;ssel-Vokabular</h5>
+<div class="role-keyvocab"><span>das Restaurant, das &hellip;</span><span>die K&uuml;che, die &hellip;</span><span>die Atmosph&auml;re</span><span>die Bedienung</span><span>der Klassiker, den &hellip;</span><span>frisch</span><span>regional</span><span>gem&uuml;tlich</span><span>der Wein, den ich empfehle</span><span>die Terrasse, auf der &hellip;</span></div>
 </div>
 
+<div class="role-block phrases"><h5>&#128172; Beispiel-Phrasen</h5>
+<ul>
+<li>„Es gibt ein Restaurant, <strong>das</strong> ich dir unbedingt empfehlen muss."</li>
+<li>„Die K&uuml;che, <strong>die</strong> sie dort kochen, ist regional und total frisch."</li>
+<li>„Sie haben einen Klassiker, <strong>den</strong> du probieren musst &mdash; Schnitzel mit Bratkartoffeln."</li>
+<li>„Die Bedienung, <strong>mit der</strong> ich immer rede, ist super nett."</li>
+<li>„Und die Terrasse, <strong>auf der</strong> man im Sommer sitzt, hat einen Blick auf den Fluss."</li>
+</ul>
+</div>
+
+<div class="role-block tip"><h5>&#128161; Strategie</h5>
+<p>Eine Empfehlung lebt von Details. Statt „das Essen ist gut" sage „das Schnitzel, <em>das</em> sie machen, ist riesig und gold-knusprig". Je konkreter, desto mehr Relativs&auml;tze &mdash; und desto &uuml;berzeugender!</p>
+</div>
+
+<div class="role-block struct"><h5>&#9989; Antwort-Struktur</h5>
+<p>Restaurant + 1 Highlight benennen + 3-4 Relativs&auml;tze zu K&uuml;che/Atmo/Personal/Lage + konkrete Empfehlung („du musst unbedingt &hellip; probieren").</p>
+</div>
+</div>
+
+<!-- ROLLENSPIEL 3 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 3 · Geschenk</div>
-<div class="role-title">🎁 „Ich brauche ein Geschenk!"</div>
-<div class="role-situation">Du suchst ein Geschenk für jemanden — z.B. für die Mutter, den Partner, den besten Freund. Beschreibe die Person genau (mit Relativsätzen!) und die/der Verkäufer:in macht Vorschläge.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🛍️</div><div>
-<div class="person-label">Kund:in</div>
-<div class="person-quote">„Ich suche etwas für meine Schwester, <strong>die</strong> ich sehr liebe. Sie ist die Person, <strong>der</strong> ich alles erzähle. Sie mag Bücher, <strong>die</strong> spannend sind, und Schmuck, <strong>der</strong> elegant ist."</div>
-</div></div>
-<div class="person b"><div class="person-avatar">💁</div><div>
-<div class="person-label">Verkäufer:in</div>
-<div class="person-quote">„Wir haben hier diese Kette, <strong>die</strong> sehr beliebt ist. Oder dieses Buch, <strong>das</strong> gerade ein Bestseller ist. Welche Farbe mag sie, <strong>die</strong> für sie typisch ist?"</div>
-</div></div>
+<div class="role-tag">Rollenspiel 3 &middot; WG-Casting</div>
+<div class="role-title">&#127968; „Beschreib deine ideale Mitbewohner:in"</div>
+<div class="role-situation"><strong>Situation:</strong> Eure WG sucht eine neue Mitbewohner:in. Im Vorgespr&auml;ch erkl&auml;rst du dem/der Kandidat:in, welche Eigenschaften ihr in einer Person sucht &mdash; und welche Eigenschaften ein No-Go sind.</div>
+<div class="role-rolle"><strong>Deine Rolle:</strong> Du bist ehrlich, aber freundlich. Du m&ouml;chtest klar machen, was wichtig ist, ohne abschreckend zu wirken.</div>
+
+<div class="role-block key"><h5>&#128273; Schl&uuml;ssel-Vokabular</h5>
+<div class="role-keyvocab"><span>eine Person, die &hellip;</span><span>jemand, der &hellip;</span><span>jemand, mit dem &hellip;</span><span>R&uuml;cksicht nehmen</span><span>sauber</span><span>kommunikativ</span><span>respektvoll</span><span>jemand, dem &hellip; wichtig ist</span><span>der Typ Mensch, der &hellip;</span><span>passen</span></div>
 </div>
-<div class="role-goal">🏆 Bonus: Wer 8+ verschiedene Relativsätze unterbringt, gewinnt!</div>
+
+<div class="role-block phrases"><h5>&#128172; Beispiel-Phrasen</h5>
+<ul>
+<li>„Wir suchen jemanden, <strong>der</strong> R&uuml;cksicht auf andere nimmt."</li>
+<li>„Ideal w&auml;re eine Person, <strong>mit der</strong> man auch mal zusammen kochen kann."</li>
+<li>„Wichtig ist uns jemand, <strong>dem</strong> Sauberkeit wirklich wichtig ist."</li>
+<li>„Wir m&ouml;chten keinen Mitbewohner, <strong>dessen</strong> Partyn&auml;chte unter der Woche stattfinden."</li>
+<li>„Schwierig sind Leute, <strong>die</strong> ihre Sachen tagelang in der K&uuml;che stehen lassen."</li>
+</ul>
+</div>
+
+<div class="role-block tip"><h5>&#128161; Strategie</h5>
+<p>Nutze „jemand, der &hellip;" / „eine Person, mit der &hellip;" &mdash; das sind die nat&uuml;rlichsten Konstruktionen. Beschreibe sowohl positiv (was ihr wollt) als auch negativ (was ein No-Go ist) &mdash; das macht den Wunsch konkret.</p>
+</div>
+
+<div class="role-block struct"><h5>&#9989; Antwort-Struktur</h5>
+<p>2-3 positive Eigenschaften mit Relativsatz + 1-2 No-Gos mit Relativsatz + Frage zur&uuml;ck: „Passt das f&uuml;r dich?"</p>
 </div>
 </div>
 
-<!-- MISSION -->
-<h2 class="section-title">🎯 Mission der Woche</h2>
-<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
-<strong>Tägliche Mini-Aufgabe:</strong> Beschreibe jeden Tag <strong>3 Personen oder Dinge aus deinem Alltag</strong> mit einem Relativsatz! Mo: eine Person (Nominativ) · Di: ein Ding (Akkusativ) · Mi: jemandem, dem du hilfst (Dativ) · Do: jemand mit Besitz (Genitiv) · Fr: ein Ort mit Präposition. <br><br>
-🏆 <strong>Bonus-Challenge:</strong> Beschreibe deine 5 besten Freund:innen in 5 Sätzen — jeder mit <strong>einem Relativsatz</strong>! Schicke die Beschreibungen einem Tandempartner und lass ihn raten, wer wer ist.
+<!-- ROLLENSPIEL 4 -->
+<div class="role">
+<div class="role-tag">Rollenspiel 4 &middot; Beruf erkl&auml;ren</div>
+<div class="role-title">&#129489;&#8205;&#128188; „Erkl&auml;r mir, was du beruflich machst!"</div>
+<div class="role-situation"><strong>Situation:</strong> Bei einer Party fragt jemand: „Was machst du eigentlich beruflich?" Du erkl&auml;rst deinen Job &mdash; mit Werkzeugen, Personen, Aufgaben, die typisch f&uuml;r deinen Beruf sind.</div>
+<div class="role-rolle"><strong>Deine Rolle:</strong> Du m&ouml;chtest interessant erkl&auml;ren &mdash; nicht trocken. Nutze Relativs&auml;tze, um Werkzeuge und Personen zu beschreiben, die in deinem Job vorkommen.</div>
+
+<div class="role-block key"><h5>&#128273; Schl&uuml;ssel-Vokabular</h5>
+<div class="role-keyvocab"><span>der Beruf, den &hellip;</span><span>die Aufgabe, die &hellip;</span><span>das Werkzeug, mit dem &hellip;</span><span>die Kunden, denen &hellip;</span><span>das Team, mit dem &hellip;</span><span>der Computer, an dem &hellip;</span><span>die Problemstellung</span><span>jemand, der &hellip; braucht</span><span>verantwortlich sein f&uuml;r</span><span>ein Bereich, in dem &hellip;</span></div>
+</div>
+
+<div class="role-block phrases"><h5>&#128172; Beispiel-Phrasen</h5>
+<ul>
+<li>„Ich arbeite in einem Bereich, <strong>in dem</strong> es viel um Daten geht."</li>
+<li>„Mein Hauptwerkzeug ist ein Programm, <strong>mit dem</strong> ich Statistiken erstelle."</li>
+<li>„Ich habe Kunden, <strong>denen</strong> ich bei komplizierten Fragen helfe."</li>
+<li>„Das Team, <strong>mit dem</strong> ich arbeite, ist international."</li>
+<li>„Eine typische Aufgabe ist ein Bericht, <strong>den</strong> ich jeden Monat schreibe."</li>
+</ul>
+</div>
+
+<div class="role-block tip"><h5>&#128161; Strategie</h5>
+<p>Anstatt Fachbegriffe zu nennen, beschreibe sie: „ein Tool, <em>mit dem</em> man &hellip;" / „ein System, <em>in dem</em> &hellip;". So verstehen dich auch Leute, die deinen Beruf nicht kennen.</p>
+</div>
+
+<div class="role-block struct"><h5>&#9989; Antwort-Struktur</h5>
+<p>Beruf nennen + Bereich beschreiben („ein Bereich, in dem &hellip;") + 2 Werkzeuge/Aufgaben mit Relativsatz + 1 Satz zu Menschen, mit denen du arbeitest.</p>
+</div>
+</div>
+
+<!-- ROLLENSPIEL 5 -->
+<div class="role">
+<div class="role-tag">Rollenspiel 5 &middot; Lieblingsstadt-Pitch</div>
+<div class="role-title">&#127961;&#65039; „&Uuml;berzeug mich von deiner Lieblingsstadt!"</div>
+<div class="role-situation"><strong>Situation:</strong> Du diskutierst mit einer Freundin, wo ihr im Urlaub hinfahrt. Du willst sie unbedingt von deiner Lieblingsstadt &uuml;berzeugen &mdash; mit so vielen Relativs&auml;tzen wie m&ouml;glich!</div>
+<div class="role-rolle"><strong>Deine Rolle:</strong> Du bist verliebt in diese Stadt. Beschreibe sie poetisch und konkret &mdash; Pl&auml;tze, Caf&eacute;s, Menschen, Geschichten.</div>
+
+<div class="role-block key"><h5>&#128273; Schl&uuml;ssel-Vokabular</h5>
+<div class="role-keyvocab"><span>die Stadt, in der &hellip;</span><span>der Platz, auf dem &hellip;</span><span>das Caf&eacute;, in dem &hellip;</span><span>die Menschen, die &hellip;</span><span>das Viertel, das &hellip;</span><span>der Fluss, an dem &hellip;</span><span>das Geb&auml;ude, das &hellip;</span><span>die Stra&szlig;e, durch die &hellip;</span><span>das Restaurant, dessen &hellip;</span><span>die Atmosph&auml;re, die &hellip;</span></div>
+</div>
+
+<div class="role-block phrases"><h5>&#128172; Beispiel-Phrasen</h5>
+<ul>
+<li>„Es ist die Stadt, <strong>in der</strong> ich das erste Mal verliebt war."</li>
+<li>„Es gibt einen Markt, <strong>auf dem</strong> jeden Samstag die besten Tomaten verkauft werden."</li>
+<li>„Die Menschen, <strong>die</strong> dort leben, sind viel entspannter als bei uns."</li>
+<li>„Ich kenne ein Caf&eacute;, <strong>dessen</strong> Apfelkuchen legend&auml;r ist."</li>
+<li>„Es gibt eine Brücke, <strong>von der</strong> man den schönsten Sonnenuntergang sieht."</li>
+</ul>
+</div>
+
+<div class="role-block tip"><h5>&#128161; Strategie</h5>
+<p>Sammle 5 konkrete Orte/Personen aus deiner Lieblingsstadt &mdash; und mach aus jedem einen Relativsatz. Das wird automatisch lebendig und persönlich. „Es gibt ein/e &hellip;, das/die/der &hellip;" ist dein bester Freund.</p>
+</div>
+
+<div class="role-block struct"><h5>&#9989; Antwort-Struktur</h5>
+<p>Stadt nennen + emotionaler Einstieg („die Stadt, in der &hellip;") + 4-5 konkrete Highlights als Relativs&auml;tze + Abschluss-Satz: „&hellip; deshalb m&uuml;ssen wir da hin!"</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ============== UMGANGSSPRACHE (am Ende) ============== -->
+<section class="section" data-section="6">
+
+<h2 class="section-title">&#128172; So benutzen Deutsche <em style="font-style:italic;">Relativs&auml;tze</em> im Alltag</h2>
+<p class="section-sub">Echte WhatsApp-Chats &mdash; mit Tippfehlern, Voice-Notes und ganz viel „du wei&szlig;t schon, die/der/das …".</p>
+
+<div class="tip">
+&#128293; <strong>Tipp:</strong> Relativs&auml;tze sind im Alltag &uuml;berall, wo Deutsche jemanden oder etwas beschreiben &mdash; besonders bei „du wei&szlig;t schon, <u>die Frau, die &hellip;</u>" oder „das Caf&eacute;, <u>wo wir damals waren</u>" (umgangssprachlich oft „wo" statt „in dem"!).
+</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128107;</div><div class="name-row"><div class="name">Sarah &middot; Freundin</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">erinnerst du dich an die kollegin, <strong>die</strong> letztes jahr nach Berlin gezogen ist? &#129300;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Du meinst Lisa? Die blonde, <strong>die</strong> immer so laut gelacht hat? &#128514;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">genau! sie kommt heute abend!! &#129395;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">mega! Bringst du den Wein mit, <strong>den</strong> wir letztes Mal hatten?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">jaa der war echt geil &#127863;</div></div>
+<div class="chat-meaning"><strong>3 Relativs&auml;tze in einem Mini-Chat!</strong> 2&times; „die" (fem. Nom.) + 1&times; „den" (mask. Akk.). Plus typische Chat-Schreibweise: kleinbuchstaben, „mega", „jaa".</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#9749;</div><div class="name-row"><div class="name">Marco</div><div class="stat">zuletzt online 14:32</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Lust auf nen Kaffee?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">klaaar! In dem Caf&eacute;, <strong>wo</strong> wir am Sonntag waren?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ja! Das mit dem Garten, <strong>der</strong> so sch&ouml;n ist &#127807;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">perfekt &mdash; um 15 Uhr?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">passt! Bis gleich &#10084;&#65039;</div></div>
+<div class="chat-meaning"><strong>Hinweis:</strong> Im Alltag oft <em>„wo" statt „in dem"</em> &mdash; grammatisch nicht ganz korrekt, aber sehr h&auml;ufig gesprochen. Im Schreiben besser „in dem"!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128105;&#8205;&#129489;&#8205;&#129489;&#8205;&#128102;</div><div class="name-row"><div class="name">Mama</div><div class="stat">tippt &hellip;</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hast du gestern deinen Freund gesehen, <strong>dessen</strong> Bruder Arzt ist?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Du meinst Lukas? Ja, er war da! &#127881;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Und die Frau, <strong>deren</strong> Tochter mit dir in die Schule ging?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Frau M&uuml;ller! Ja, auch da. du fragst echt detailliert &#128514;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">ich will halt wissen wer noch da war &#128521;</div></div>
+<div class="chat-meaning"><strong>Genitiv-Power!</strong> „dessen" (mask.) f&uuml;r „sein Bruder", „deren" (fem.) f&uuml;r „ihre Tochter". Mamas fragen IMMER so detailliert &mdash; super f&uuml;rs &Uuml;ben!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128105;&#8205;&#10084;&#65039;&#8205;&#128105;</div><div class="name-row"><div class="name">Beste Freundin</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Was schenkst du Anna eigentlich?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">&uuml;berleg noch! Vlt das Buch, <strong>das</strong> sie noch nicht hat?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Was ist mit dem Ring, <strong>den</strong> sie sich gew&uuml;nscht hat? &#128141;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">hmm zu teuer &#128542;</div></div>
+<div class="chat-msg in voice"><div class="chat-bubble voice">&#127908; <span class="vw"></span> 0:42</div></div>
+<div class="chat-msg out"><div class="chat-bubble">jaaa stimmt &mdash; die Blumen, <strong>die</strong> sie liebt, sind viel pers&ouml;nlicher &#128144;</div></div>
+<div class="chat-meaning"><strong>3 Relativs&auml;tze + Voice-Note!</strong> Im Alltag wechseln wir oft zwischen Tippen und Sprechnachricht &mdash; gerade beim Brainstorming.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#129327;</div><div class="name-row"><div class="name">Anna &middot; L&auml;ster-Modus</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">kennst du den Typ, <strong>der</strong> immer beim B&auml;cker so laut telefoniert? &#128579;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">omg JA! mit dem auff&auml;lligen Mantel?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">genau der! Heute war wieder eine show, <strong>die</strong> die ganze Schlange mith&ouml;ren musste</div></div>
+<div class="chat-msg in"><div class="chat-bubble">manche Leute brauchen einfach b&uuml;hne &#129325;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">die Nachbarn, <strong>deren</strong> Hund er immer mitnimmt, gucken auch nur noch verzweifelt</div></div>
+<div class="chat-meaning"><strong>3 Relativs&auml;tze beim L&auml;stern!</strong> Personenbeschreibung („der Typ, der …") + Genitiv („deren Hund"). Sehr typisch f&uuml;r authentischen Smalltalk.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#127968;</div><div class="name-row"><div class="name">WG-Gruppe</div><div class="stat">3 online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Tom:</strong> wer hat das Geschirr stehengelassen, <strong>das</strong> seit gestern in der Sp&uuml;le ist?? &#128545;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">sry war ich &mdash; war die Pfanne, <strong>in der</strong> ich gestern Pasta gemacht hab &#128517;</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Lisa:</strong> und der Topf, <strong>den</strong> jemand bei mir im Zimmer abgestellt hat??</div></div>
+<div class="chat-msg out"><div class="chat-bubble">hahaha nicht ich!!</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>Tom:</strong> Leute, <strong>denen</strong> Sauberkeit egal ist, sollten echt nicht in eine WG ziehen &#128529;</div></div>
+<div class="chat-meaning"><strong>WG-Drama mit Relativs&auml;tzen!</strong> Inkl. Dativ Plural „denen" &mdash; merken: NICHT „den"! Plus Pr&auml;position „in der" (Pfanne).</div>
+</div>
+
+</div>
+
+<h2 class="section-title">12 typische <em style="font-style:italic;">Beschreibungs</em>-Phrasen</h2>
+
+<div class="uss-grid" style="grid-template-columns:1fr 1fr;">
+<div class="alltag-q" style="margin:.5rem 0;"><div class="ql">Person</div><div class="qq">„Das ist mein Freund, <strong>der</strong> in M&uuml;nchen wohnt."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Ort</div><div class="qq">„Das ist die Stadt, <strong>in der</strong> ich aufgewachsen bin."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Ding</div><div class="qq">„Hier ist das Geschenk, <strong>das</strong> ich für dich habe."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#A04060;"><div class="ql" style="color:#A04060;">Erinnerung</div><div class="qq">„Kennst du den Sommer, <strong>den</strong> wir am Meer verbracht haben?"</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#5F7A2A;"><div class="ql" style="color:#5F7A2A;">Vertrauen</div><div class="qq">„Sie ist die &Auml;rztin, <strong>der</strong> ich vertraue."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Genitiv</div><div class="qq">„Das ist der Mann, <strong>dessen</strong> Sohn mein Trainer ist."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;"><div class="ql">Vorstellung</div><div class="qq">„Darf ich vorstellen &mdash; die Kollegin, <strong>mit der</strong> ich arbeite."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Restaurant</div><div class="qq">„Lass uns ins Restaurant gehen, <strong>das</strong> wir entdeckt haben."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Dank</div><div class="qq">„Danke f&uuml;r den Tipp, <strong>den</strong> du mir gegeben hast!"</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#A04060;"><div class="ql" style="color:#A04060;">Suche</div><div class="qq">„Ich suche die Brille, <strong>die</strong> ich gestern verloren habe."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#5F7A2A;"><div class="ql" style="color:#5F7A2A;">Plural Dativ</div><div class="qq">„Das sind die Freunde, <strong>denen</strong> ich alles erz&auml;hle."</div></div>
+<div class="alltag-q" style="margin:.5rem 0;border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Genitiv Pl.</div><div class="qq">„Die Nachbarn, <strong>deren</strong> Kinder so laut sind, ziehen aus &#127881;"</div></div>
 </div>
 
 </section>
 
+<footer>
+&copy; <strong>deutschoderwas</strong> &middot; Sprechclub-Baukasten &middot; Relativs&auml;tze (B1 Deluxe) &middot; Mit Liebe gemacht &#10084;&#65039;
+</footer>
+
 </div>
 
-<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Relativsätze</footer>
-
 <script>
-// ===== TAB NAV =====
-document.querySelectorAll('.tab').forEach(b=>{
-  b.onclick=()=>{
-    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-  };
+// ---------- TABS ----------
+const tabs = document.querySelectorAll('.tab');
+const sections = document.querySelectorAll('.section');
+tabs.forEach(t => t.addEventListener('click', () => {
+  tabs.forEach(x => x.classList.remove('active'));
+  sections.forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  const i = t.dataset.tab;
+  document.querySelector('.section[data-section="' + i + '"]').classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}));
+
+// ---------- LERNKARTEN (22) ----------
+const cards = [
+  {emoji:'\u{1F468}', word:'der Mann, ___ dort steht', badge:'Nominativ · mask.', rule:'der (Nom., mask.)', ex:'„Der Mann, <strong>der</strong> dort steht, ist mein Chef.“', syn:'Alternativ: „Der Mann dort &mdash; das ist mein Chef.“'},
+  {emoji:'\u{1F469}', word:'die Frau, ___ singt', badge:'Nominativ · fem.', rule:'die (Nom., fem.)', ex:'„Die Frau, <strong>die</strong> auf der Bühne singt, heißt Lena.“', syn:'Alternativ: „Die singende Frau heißt Lena.“ (Partizip!)'},
+  {emoji:'\u{1F4D6}', word:'das Buch, ___ rot ist', badge:'Nominativ · neutr.', rule:'das (Nom., neutr.)', ex:'„Das Buch, <strong>das</strong> rot ist, gehört mir.“', syn:'Alternativ: „Das rote Buch gehört mir.“'},
+  {emoji:'\u{1F465}', word:'die Leute, ___ warten', badge:'Nominativ · Plural', rule:'die (Nom., Plural)', ex:'„Die Leute, <strong>die</strong> draussen warten, sind ungeduldig.“', syn:'Plural Nominativ ist immer „die“ — wie im Nom. Sg. fem.'},
+  {emoji:'\u{1F3AF}', word:'der Mann, ___ ich liebe', badge:'Akkusativ · mask.', rule:'den (Akk., mask.)', ex:'„Der Mann, <strong>den</strong> ich liebe, heißt Paul.“', syn:'lieben + Akkusativ → ich liebe ihn → den'},
+  {emoji:'\u{1F498}', word:'die Frau, ___ ich gesehen habe', badge:'Akkusativ · fem.', rule:'die (Akk., fem.)', ex:'„Die Frau, <strong>die</strong> ich gestern gesehen habe, war nett.“', syn:'sehen + Akkusativ → ich habe sie gesehen → die'},
+  {emoji:'\u{1F4D5}', word:'das Buch, ___ ich lese', badge:'Akkusativ · neutr.', rule:'das (Akk., neutr.)', ex:'„Das Buch, <strong>das</strong> ich lese, ist spannend.“', syn:'lesen + Akkusativ → ich lese es → das'},
+  {emoji:'\u{1F476}', word:'die Kinder, ___ ich kenne', badge:'Akkusativ · Plural', rule:'die (Akk., Plural)', ex:'„Die Kinder, <strong>die</strong> ich kenne, sind alle brav.“', syn:'Akk. Plural = Nom. Plural = „die“'},
+  {emoji:'\u{1F468}‍\u{1F3EB}', word:'der Lehrer, ___ ich danke', badge:'Dativ · mask. ⚠️', rule:'dem (Dativ, mask.)', ex:'„Der Lehrer, <strong>dem</strong> ich danke, geht in Rente.“', syn:'danken + Dativ! → ich danke ihm → dem'},
+  {emoji:'\u{1F469}‍\u{1F4BC}', word:'die Kollegin, ___ ich helfe', badge:'Dativ · fem. ⚠️', rule:'der (Dativ, fem.)', ex:'„Die Kollegin, <strong>der</strong> ich helfe, ist neu.“', syn:'helfen + Dativ! → ich helfe ihr → der (NICHT die!)'},
+  {emoji:'\u{1F476}', word:'das Kind, ___ ich Spielzeug schenke', badge:'Dativ · neutr. ⚠️', rule:'dem (Dativ, neutr.)', ex:'„Das Kind, <strong>dem</strong> ich Spielzeug schenke, lacht.“', syn:'schenken + Dativ → ich schenke ihm → dem'},
+  {emoji:'\u{1F46B}', word:'die Freunde, ___ ich vertraue', badge:'Dativ · Plural ⚠️', rule:'denen (Dativ, Plural)', ex:'„Die Freunde, <strong>denen</strong> ich vertraue, sind treu.“', syn:'Dativ Plural = denen (NICHT den!) — klassischer Fehler!'},
+  {emoji:'\u{1F697}', word:'der Mann, ___ Auto kaputt ist', badge:'Genitiv · mask. ⚠️', rule:'dessen (Genitiv, mask.)', ex:'„Der Mann, <strong>dessen</strong> Auto kaputt ist, wartet.“', syn:'Genitiv mask./neutr. = dessen → = „sein Auto“'},
+  {emoji:'\u{1F415}', word:'die Frau, ___ Hund bellt', badge:'Genitiv · fem. ⚠️', rule:'deren (Genitiv, fem.)', ex:'„Die Frau, <strong>deren</strong> Hund bellt, entschuldigt sich.“', syn:'Genitiv feminin = deren → = „ihr Hund“'},
+  {emoji:'\u{1F468}‍\u{2695}️', word:'das Kind, ___ Mutter Ärztin ist', badge:'Genitiv · neutr. ⚠️', rule:'dessen (Genitiv, neutr.)', ex:'„Das Kind, <strong>dessen</strong> Mutter Ärztin ist, lernt schnell.“', syn:'Genitiv neutr. = dessen (gleich wie mask.!) → = „seine Mutter“'},
+  {emoji:'\u{1F525}', word:'die Leute, ___ Haus brennt', badge:'Genitiv · Plural ⚠️', rule:'deren (Genitiv, Plural)', ex:'„Die Leute, <strong>deren</strong> Haus brennt, sind in Panik.“', syn:'Genitiv Plural = deren (gleich wie fem.!) → = „ihr Haus“'},
+  {emoji:'\u{1F91D}', word:'der Kollege, ___ ich arbeite', badge:'Präposition · mit + Dativ', rule:'mit dem', ex:'„Der Kollege, <strong>mit dem</strong> ich arbeite, ist sehr nett.“', syn:'Präposition kommt VOR dem Relativpronomen → mit + dem'},
+  {emoji:'\u{1F3DB}️', word:'die Stadt, ___ ich aufgewachsen bin', badge:'Präposition · in + Dativ', rule:'in der', ex:'„Die Stadt, <strong>in der</strong> ich aufgewachsen bin, liegt im Süden.“', syn:'„wo ich aufgewachsen bin“ = umgangssprachlich, aber „in der“ ist korrekter'},
+  {emoji:'\u{1F381}', word:'das Geschenk, ___ ich gespart habe', badge:'Präposition · für + Akk.', rule:'für das', ex:'„Das Geschenk, <strong>für das</strong> ich monatelang gespart habe, war teuer.“', syn:'für + Akkusativ → neutr. Akk. = das → für das'},
+  {emoji:'\u{1F3AC}', word:'der Film, ___ alle reden', badge:'Präposition · über + Akk.', rule:'über den', ex:'„Der Film, <strong>über den</strong> alle reden, ist tatsächlich langweilig.“', syn:'über + Akkusativ → mask. Akk. = den → über den'},
+  {emoji:'\u{1F4DD}', word:'Was am Ende steht: das Verb!', badge:'Verb-Position ⚠️', rule:'Verb am Ende des Relativsatzes', ex:'„Der Mann, der dort <strong>steht</strong>, ist mein Chef.“ — nicht „der steht dort“!', syn:'Wie bei jedem Nebensatz wandert das Verb ans Ende!'},
+  {emoji:'\u{1F535}', word:'Komma vor + nach', badge:'Zeichensetzung ⚠️', rule:'Relativsatz immer mit Kommas', ex:'„Der Mann<strong>,</strong> der dort steht<strong>,</strong> ist mein Chef.“', syn:'Am Satzende nur noch 1 Komma vorne: „Das ist mein Chef, der dort steht.“'}
+];
+
+let cur = 0, flipped = false;
+const flip = document.getElementById('flip');
+const flipEmoji = document.getElementById('flipEmoji');
+const flipWord = document.getElementById('flipWord');
+const flipBadge = document.getElementById('flipBadge');
+const flipRule = document.getElementById('flipRule');
+const flipEx = document.getElementById('flipEx');
+const flipSyn = document.getElementById('flipSyn');
+const lkCur = document.getElementById('lkCur');
+const lkTot = document.getElementById('lkTot');
+lkTot.textContent = cards.length;
+
+function show(i) {
+  const c = cards[i];
+  flipEmoji.innerHTML = c.emoji;
+  flipWord.innerHTML = c.word;
+  flipBadge.innerHTML = c.badge;
+  flipRule.innerHTML = c.rule;
+  flipEx.innerHTML = c.ex;
+  flipSyn.innerHTML = c.syn;
+  lkCur.textContent = i + 1;
+  flip.classList.remove('flipped');
+  flipped = false;
+}
+show(0);
+flip.addEventListener('click', () => { flip.classList.toggle('flipped'); flipped = !flipped; });
+document.getElementById('lkPrev').addEventListener('click', (e) => { e.stopPropagation(); cur = (cur - 1 + cards.length) % cards.length; show(cur); });
+document.getElementById('lkNext').addEventListener('click', (e) => { e.stopPropagation(); cur = (cur + 1) % cards.length; show(cur); });
+document.getElementById('lkShuffle').addEventListener('click', () => {
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+  cur = 0; show(0);
 });
 
-// ===== LERNKARTEN =====
-const KARTEN=[
-  {emoji:'👨',word:'der',badge:'Nominativ · mask.',rule:'Mann + er macht etwas',ex:'„Der Mann, <strong>der</strong> dort steht, ist mein Chef."'},
-  {emoji:'👩',word:'die',badge:'Nominativ · fem.',rule:'Frau + sie macht etwas',ex:'„Die Frau, <strong>die</strong> singt, ist berühmt."'},
-  {emoji:'📖',word:'das',badge:'Nominativ · neutr.',rule:'Buch/Kind + es macht etwas',ex:'„Das Buch, <strong>das</strong> hier liegt, gehört mir."'},
-  {emoji:'👥',word:'die (Pl.)',badge:'Nominativ · Plural',rule:'Leute + sie machen etwas',ex:'„Die Leute, <strong>die</strong> warten, sind ungeduldig."'},
-  {emoji:'💏',word:'den',badge:'Akkusativ · mask.',rule:'Mann + ich sehe ihn',ex:'„Der Mann, <strong>den</strong> ich liebe, heißt Paul."'},
-  {emoji:'👀',word:'die (Akk.)',badge:'Akkusativ · fem.',rule:'Frau + ich sehe sie',ex:'„Die Frau, <strong>die</strong> ich gestern getroffen habe, war nett."'},
-  {emoji:'📚',word:'das (Akk.)',badge:'Akkusativ · neutr.',rule:'Buch + ich lese es',ex:'„Das Buch, <strong>das</strong> ich lese, ist spannend."'},
-  {emoji:'🙏',word:'dem',badge:'Dativ · mask./neutr.',rule:'Mann/Kind + ich danke ihm',ex:'„Der Lehrer, <strong>dem</strong> ich danke, ist toll."'},
-  {emoji:'💝',word:'der (Dativ!)',badge:'Dativ · fem.',rule:'Frau + ich helfe ihr',ex:'„Die Kollegin, <strong>der</strong> ich helfe, ist nett."'},
-  {emoji:'🤝',word:'denen',badge:'Dativ · PLURAL ⚠️',rule:'Freunde + ich vertraue ihnen',ex:'„Die Freunde, <strong>denen</strong> ich vertraue, sind treu."'},
-  {emoji:'🔑',word:'dessen',badge:'Genitiv · mask./neutr.',rule:'sein Auto / sein Buch',ex:'„Der Mann, <strong>dessen</strong> Auto kaputt ist, wartet."'},
-  {emoji:'💼',word:'deren',badge:'Genitiv · fem./Pl.',rule:'ihr Hund / ihre Kinder',ex:'„Die Frau, <strong>deren</strong> Hund bellt, entschuldigt sich."'},
-  {emoji:'🤵',word:'mit dem',badge:'Präposition + Dativ',rule:'mit + Mann (Dativ)',ex:'„Der Kollege, <strong>mit dem</strong> ich arbeite, ist nett."'},
-  {emoji:'🏡',word:'in der',badge:'Präposition + Dativ',rule:'in + Stadt (Dativ, fem.)',ex:'„Die Stadt, <strong>in der</strong> ich wohne, ist klein."'},
-  {emoji:'🎁',word:'für den',badge:'Präposition + Akk.',rule:'für + Mann (Akk.)',ex:'„Der Freund, <strong>für den</strong> das Geschenk ist, freut sich."'},
-  {emoji:'🌍',word:'in dem',badge:'Präposition + Dativ',rule:'in + Land (Dativ, neutr.)',ex:'„Das Land, <strong>in dem</strong> ich geboren bin, ist schön."'},
-];
-let order=KARTEN.map((_,i)=>i);
-let lkIdx=0;
-const flipEl=document.getElementById('flip');
-function showCard(){
-  const k=KARTEN[order[lkIdx]];
-  document.getElementById('flipEmoji').textContent=k.emoji;
-  document.getElementById('flipWord').textContent=k.word;
-  document.getElementById('flipBadge').textContent=k.badge;
-  document.getElementById('flipRule').textContent=k.rule;
-  document.getElementById('flipEx').innerHTML=k.ex;
-  document.getElementById('lkCur').textContent=lkIdx+1;
-  document.getElementById('lkTot').textContent=KARTEN.length;
-  flipEl.classList.remove('flipped');
-}
-flipEl.onclick=()=>flipEl.classList.toggle('flipped');
-document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
-document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
-document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
-showCard();
-
-// ===== QUIZ =====
-document.querySelectorAll('.quiz-opts').forEach(opts=>{
-  const c=parseInt(opts.dataset.c);
-  const chips=opts.querySelectorAll('.quiz-chip');
-  const exp=opts.parentElement.querySelector('.quiz-explain');
-  chips.forEach((chip,i)=>{
-    chip.onclick=()=>{
-      if(opts.dataset.done)return;
-      opts.dataset.done='1';
-      if(i===c)chip.classList.add('correct');
-      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
-      exp.classList.add('show');
-    };
+// ---------- QUIZ ----------
+document.querySelectorAll('.quiz').forEach(q => {
+  const opts = q.querySelector('.quiz-opts');
+  const correctIdx = parseInt(opts.dataset.c);
+  const chips = opts.querySelectorAll('.quiz-chip');
+  const explain = q.querySelector('.quiz-explain');
+  chips.forEach((chip, idx) => {
+    chip.addEventListener('click', () => {
+      if (q.dataset.answered) return;
+      q.dataset.answered = '1';
+      chips.forEach(c => c.style.pointerEvents = 'none');
+      if (idx === correctIdx) {
+        chip.classList.add('correct');
+      } else {
+        chip.classList.add('wrong');
+        chips[correctIdx].classList.add('correct');
+      }
+      explain.classList.add('show');
+    });
   });
 });
 
-// ===== LÜCKENTEXT =====
-document.getElementById('gapCheck').onclick=()=>{
-  const sels=document.querySelectorAll('#gapText select');
-  let right=0,total=sels.length;
-  sels.forEach(s=>{
-    s.classList.remove('right','wrong');
-    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
-    else s.classList.add('wrong');
+// ---------- LÜCKENTEXT ----------
+const gapText = document.getElementById('gapText');
+const gapScore = document.getElementById('gapScore');
+document.getElementById('gapCheck').addEventListener('click', () => {
+  const selects = gapText.querySelectorAll('select');
+  let right = 0;
+  selects.forEach(s => {
+    s.classList.remove('right', 'wrong');
+    if (s.value === s.dataset.sol) { s.classList.add('right'); right++; }
+    else { s.classList.add('wrong'); }
   });
-  const score=document.getElementById('gapScore');
-  score.style.display='block';
-  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=6?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');
-};
-document.getElementById('gapReset').onclick=()=>{
-  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
-  document.getElementById('gapScore').style.display='none';
-};
+  gapScore.style.display = 'block';
+  gapScore.innerHTML = '\u{1F3AF} <strong>' + right + ' / ' + selects.length + '</strong> richtig! ' + (right === selects.length ? 'Perfekt! \u{1F389}' : right >= selects.length * 0.7 ? 'Sehr gut — fast alles!' : 'Schau dir die Tabelle nochmal an \u{1F4D6}');
+});
+document.getElementById('gapReset').addEventListener('click', () => {
+  gapText.querySelectorAll('select').forEach(s => { s.value = ''; s.classList.remove('right', 'wrong'); });
+  gapScore.style.display = 'none';
+});
 
-// ===== ZUORDNEN =====
-const PAIRS=[
-  {l:'Das ist der Mann,',r:'der dort drüben wartet.'},
-  {l:'Die Frau,',r:'die ich gestern getroffen habe, war nett.'},
-  {l:'Hier ist das Buch,',r:'das ich dir empfehlen kann.'},
-  {l:'Mein Kollege,',r:'dem ich oft helfe, ist krank.'},
-  {l:'Die Freunde,',r:'denen ich alles erzähle, sind in München.'},
-  {l:'Der Lehrer,',r:'dessen Sohn auch hier ist, geht in Rente.'},
-  {l:'Die Nachbarin,',r:'deren Hund immer bellt, zieht aus.'},
-  {l:'Das Restaurant,',r:'in dem wir letztes Mal waren, ist toll.'},
+// ---------- ZUORDNEN ----------
+const pairs = [
+  {l:'Der Mann …', r:'… der dort am Tresen steht, ist mein Bruder.'},
+  {l:'Die Frau …', r:'… der ich oft im Café helfe, ist Rentnerin.'},
+  {l:'Das Buch …', r:'… das ich gerade lese, ist von Herta Müller.'},
+  {l:'Die Kollegen …', r:'… denen ich alles erzähle, sind im Urlaub.'},
+  {l:'Mein Onkel …', r:'… dessen Sohn mein Trainer ist, lebt in Köln.'},
+  {l:'Die Nachbarin …', r:'… deren Hund immer bellt, ist sonst sehr nett.'},
+  {l:'Die Stadt …', r:'… in der ich aufgewachsen bin, liegt am Rhein.'},
+  {l:'Das Café …', r:'… in dem wir uns kennengelernt haben, hat zu.'},
+  {l:'Der Kollege …', r:'… mit dem ich am Projekt arbeite, ist genial.'},
+  {l:'Das Geschenk …', r:'… für das ich monatelang gespart habe, ist teuer.'}
 ];
-function buildMatch(){
-  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
-  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
-  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
-  L.innerHTML='';R.innerHTML='';
-  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
-  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
-  let pick=null;
-  document.querySelectorAll('.match-item').forEach(item=>{
-    item.onclick=()=>{
-      if(item.classList.contains('done'))return;
-      if(!pick){pick=item;item.classList.add('selected');return;}
-      if(pick===item){item.classList.remove('selected');pick=null;return;}
-      const pickCol=pick.parentElement.id;
-      const itemCol=item.parentElement.id;
-      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
-      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
-      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
-    };
+
+const leftCol = document.getElementById('leftCol');
+const rightCol = document.getElementById('rightCol');
+let selectedLeft = null, selectedRight = null;
+
+function shuffle(a) { return a.slice().sort(() => Math.random() - 0.5); }
+
+function renderMatch() {
+  leftCol.innerHTML = ''; rightCol.innerHTML = '';
+  const ls = shuffle(pairs); const rs = shuffle(pairs);
+  ls.forEach(p => {
+    const d = document.createElement('div');
+    d.className = 'match-item'; d.textContent = p.l; d.dataset.key = p.l;
+    d.addEventListener('click', () => {
+      if (d.classList.contains('done')) return;
+      leftCol.querySelectorAll('.match-item').forEach(x => x.classList.remove('selected'));
+      d.classList.add('selected'); selectedLeft = d; tryMatch();
+    });
+    leftCol.appendChild(d);
+  });
+  rs.forEach(p => {
+    const d = document.createElement('div');
+    d.className = 'match-item'; d.textContent = p.r; d.dataset.key = p.l;
+    d.addEventListener('click', () => {
+      if (d.classList.contains('done')) return;
+      rightCol.querySelectorAll('.match-item').forEach(x => x.classList.remove('selected'));
+      d.classList.add('selected'); selectedRight = d; tryMatch();
+    });
+    rightCol.appendChild(d);
   });
 }
-buildMatch();
-document.getElementById('matchRestart').onclick=buildMatch;
-const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
 
-// ===== SPRECHKARTEN =====
-const SPEAK=[
-  {emoji:'👨',cat:'Nominativ · Person beschreiben',q:'Beschreibe deinen besten Freund / deine beste Freundin mit 3 Relativsätzen: „Mein/e … ist ein Mensch, der/die …"'},
-  {emoji:'👩',cat:'Nominativ · Familie',q:'Stelle 3 Familienmitglieder vor: „Meine Mutter, die … / Mein Bruder, der … / Meine Oma, die …"'},
-  {emoji:'📖',cat:'Akkusativ · Lieblingsbuch/Film',q:'Was ist das letzte Buch / der letzte Film, den/das du gelesen / gesehen hast? Beschreibe!'},
-  {emoji:'🏠',cat:'Akkusativ · Lieblingsort',q:'Beschreibe einen Ort, den du sehr liebst. Wer sind die Menschen, die du dort triffst?'},
-  {emoji:'🙏',cat:'Dativ · Dank',q:'Nenne 3 Menschen, denen du im Leben dankbar bist — und sage warum!'},
-  {emoji:'🤝',cat:'Dativ · Hilfe',q:'Wer ist die Person, der du am häufigsten hilfst? Und wer hilft dir?'},
-  {emoji:'🔗',cat:'Genitiv · dessen/deren',q:'Kennst du jemanden, dessen / deren Beruf du spannend findest? Beschreibe ihn/sie!'},
-  {emoji:'🌍',cat:'Präposition · Ort',q:'Beschreibe die Stadt, in der du lebst — und die Stadt, in der du geboren bist!'},
-  {emoji:'🍕',cat:'Akkusativ · Essen',q:'Was ist das Lieblingsessen, das deine Mutter / dein Vater kocht?'},
-  {emoji:'🎁',cat:'Akkusativ · Geschenk',q:'Beschreibe ein Geschenk, das du nie vergessen wirst. Von wem? Warum?'},
-  {emoji:'🚪',cat:'Dativ · Vertrauen',q:'Wer sind die 3 Menschen, denen du absolut alles anvertrauen kannst?'},
-  {emoji:'❤️',cat:'Liebeserklärung',q:'Schreibe eine kleine Liebeserklärung — an Person, Ort oder Ding — mit mindestens 5 Relativsätzen!'},
-  {emoji:'🎬',cat:'Akkusativ · Empfehlung',q:'Empfiehl mir 3 Filme / Serien / Bücher: „Du musst unbedingt … sehen / lesen, die/der/das …"'},
-  {emoji:'🤔',cat:'Mischung · Curriculum vitae',q:'Erzähle deine Lebensgeschichte in 5 Sätzen — jeder mit einem Relativsatz!'},
-  {emoji:'👀',cat:'Nominativ · Klatsch',q:'Erzähle einen kleinen Klatsch: „Du weißt schon, die Frau, die … / Der Mann, der …"'},
-  {emoji:'🌟',cat:'Freestyle',q:'Beschreibe dich selbst in 90 Sekunden — mit mindestens 8 verschiedenen Relativsätzen (alle 4 Kasus)!'},
+function tryMatch() {
+  if (selectedLeft && selectedRight) {
+    if (selectedLeft.dataset.key === selectedRight.dataset.key) {
+      selectedLeft.classList.add('done'); selectedRight.classList.add('done');
+      selectedLeft.classList.remove('selected'); selectedRight.classList.remove('selected');
+    } else {
+      const a = selectedLeft, b = selectedRight;
+      setTimeout(() => { a.classList.remove('selected'); b.classList.remove('selected'); }, 700);
+    }
+    selectedLeft = null; selectedRight = null;
+  }
+}
+renderMatch();
+document.getElementById('matchRestart').addEventListener('click', renderMatch);
+
+// ---------- SPRECHEN ----------
+const speakCards = [
+  {e:'\u{1F468}', cat:'Person beschreiben', q:'Beschreib einen Menschen, der dich oft nervt — ohne den Namen zu nennen!'},
+  {e:'\u{1F469}', cat:'Person beschreiben', q:'Beschreib eine Person, die du sehr bewunderst. Mindestens 3 Relativsätze!'},
+  {e:'\u{1F3E0}', cat:'Wohnen', q:'Beschreib die Wohnung, in der du gerade wohnst — was magst du, was nicht?'},
+  {e:'\u{1F37D}️', cat:'Essen', q:'Erzähl von einem Restaurant, das du immer wieder empfiehlst.'},
+  {e:'\u{1F4D6}', cat:'Hobby', q:'Erzähl von einem Buch oder Film, den du nie vergessen wirst.'},
+  {e:'\u{1F465}', cat:'Beziehungen', q:'Wer ist eine Person, der du immer alles erzählst? Warum?'},
+  {e:'\u{1F3DB}️', cat:'Reisen', q:'Beschreib eine Stadt, in der du immer wieder Urlaub machen würdest.'},
+  {e:'\u{1F4BC}', cat:'Beruf', q:'Beschreib einen Kollegen / eine Kollegin, mit dem/der du gerne arbeitest.'},
+  {e:'\u{1F4F1}', cat:'Alltag', q:'Beschreib eine App, ohne die du nicht leben könntest — was kann sie?'},
+  {e:'\u{1F415}', cat:'Tiere', q:'Hast du ein Haustier (oder kennst eines), dessen Charakter besonders ist?'},
+  {e:'\u{1F381}', cat:'Geschenke', q:'Erzähl von einem Geschenk, für das du lange gespart hast.'},
+  {e:'\u{1F3BC}', cat:'Musik', q:'Welches Lied / welche Band ist die, die du gerade auf Repeat hörst?'},
+  {e:'\u{1F468}‍\u{1F3EB}', cat:'Schule', q:'Wer war der Lehrer / die Lehrerin, dem/der du am meisten verdankst?'},
+  {e:'\u{1F46B}', cat:'Familie', q:'Beschreib ein Familienmitglied, dessen Geschichte du spannend findest.'},
+  {e:'\u{1F9D1}‍\u{1F3A8}', cat:'Inspiration', q:'Nenne einen Mensch, dessen Arbeit dich inspiriert — was macht er/sie?'},
+  {e:'\u{1F31E}', cat:'Erinnerung', q:'Beschreib den Sommer, den du nie vergessen wirst. Was war besonders?'},
+  {e:'\u{1F3AC}', cat:'Film', q:'Welcher Film, den du zuletzt gesehen hast, hat dich am meisten berührt?'},
+  {e:'\u{1F496}', cat:'Liebe', q:'Beschreib den Menschen, mit dem du am liebsten Zeit verbringst.'},
+  {e:'\u{1F389}', cat:'Party', q:'Erzähl von einer Party, auf der etwas richtig Verrücktes passiert ist.'},
+  {e:'\u{1F4AD}', cat:'Traum', q:'Beschreib einen Beruf, den du gerne hast — oder den du nie machen würdest!'},
+  {e:'\u{1F6D2}', cat:'Shopping', q:'Was ist ein Ding, das du gekauft hast und sofort bereut hast?'},
+  {e:'\u{1F4DC}', cat:'Erinnerung', q:'Wer ist eine Person, deren Rat dir mal das Leben gerettet hat?'},
+  {e:'\u{1F3DE}️', cat:'Natur', q:'Beschreib einen Ort in der Natur, an dem du dich richtig wohlfühlst.'},
+  {e:'\u{1F4DA}', cat:'Lernen', q:'Was ist eine Sache, die du gerne gelernt hast — oder bereust, nicht gelernt zu haben?'}
 ];
-let lastSpeak=-1;
-document.getElementById('speakNew').onclick=()=>{
-  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
-  lastSpeak=i;const k=SPEAK[i];
-  const c=document.getElementById('speakCard');
-  c.style.opacity='0';
-  setTimeout(()=>{
-    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60-90 Sekunden!</div>';
-    c.style.opacity='1';
-  },200);
-};
+
+const speakCard = document.getElementById('speakCard');
+document.getElementById('speakNew').addEventListener('click', () => {
+  const c = speakCards[Math.floor(Math.random() * speakCards.length)];
+  speakCard.innerHTML = '<div class="speak-emoji">' + c.e + '</div><div class="speak-cat">' + c.cat + '</div><div class="speak-q">' + c.q + '</div><div class="speak-hint">Tipp: Nutze mindestens 2 Relativsätze!</div>';
+});
 </script>
+
 </body></html>

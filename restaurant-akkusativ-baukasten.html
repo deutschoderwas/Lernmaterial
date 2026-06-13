@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="de"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Im Restaurant + Akkusativ · A2 | deutschoderwas</title>
+<title>Im Restaurant + Akkusativ &middot; A2 DELUXE | deutschoderwas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,70 +14,66 @@
   --pink:#E69CB3;
   --sand:#F0E2C8;
   --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+  /* GENUS-FARBEN (A2-PFLICHT) */
+  --m-blue:#2A6FE8; --m-blue-soft:#DBE7FC;
+  --f-red:#E8302A; --f-red-soft:#FCE5E3;
+  --n-green:#3FA64C; --n-green-soft:#DCF1DF;
+  --pl-purple:#6A3D9C; --pl-purple-soft:#E5D8F2;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
-.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.6;min-height:100vh;font-size:16.5px;}
+.wrapper{max-width:940px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
 .eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
 .title-wrap{text-align:center;margin-bottom:1rem;}
-h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
 h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
 h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
-.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
-.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
+.subtitle{text-align:center;max-width:640px;margin:.9rem auto 0;font-size:1.08rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:420px;width:100%;}
 .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
-.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.05rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
 .tab:hover{border-color:var(--ink);transform:translateY(-1px);}
 .tab.active{background:var(--red);color:white;border-color:var(--red);}
 .section{display:none;animation:fade .35s ease;}
 .section.active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
 h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
-.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
-.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1.02rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.98rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
 .tip strong{color:var(--red);font-weight:700;}
 .tip em{color:var(--ink);font-style:italic;}
 .tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
 
-/* GENERIC CARDS */
-.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
-@media(max-width:600px){.prep-grid{grid-template-columns:repeat(2,1fr);}}
-.prep{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.9rem;text-align:center;}
-.prep-icon{font-size:1.8rem;margin-bottom:.3rem;}
-.prep-word{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.05rem;margin-bottom:.2rem;}
-.prep-case{font-size:.7rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
-.prep-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.82rem;margin-top:.3rem;}
+/* GENUS-BUNTE-KARTEN (A2 visuell) */
+.genus-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:700px){.genus-grid{grid-template-columns:repeat(2,1fr);}}
+.genus-card{background:var(--paper);border-radius:18px;padding:1rem .8rem;text-align:center;border:2.5px solid;position:relative;overflow:hidden;}
+.genus-card.m{border-color:var(--m-blue);background:linear-gradient(180deg,var(--m-blue-soft) 0%,var(--paper) 70%);}
+.genus-card.f{border-color:var(--f-red);background:linear-gradient(180deg,var(--f-red-soft) 0%,var(--paper) 70%);}
+.genus-card.n{border-color:var(--n-green);background:linear-gradient(180deg,var(--n-green-soft) 0%,var(--paper) 70%);}
+.genus-card.pl{border-color:var(--pl-purple);background:linear-gradient(180deg,var(--pl-purple-soft) 0%,var(--paper) 70%);}
+.genus-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .6rem;border-radius:999px;color:white;margin-bottom:.5rem;}
+.genus-card.m .genus-tag{background:var(--m-blue);}
+.genus-card.f .genus-tag{background:var(--f-red);}
+.genus-card.n .genus-tag{background:var(--n-green);}
+.genus-card.pl .genus-tag{background:var(--pl-purple);}
+.genus-illu{margin:.3rem auto .5rem;width:64px;height:64px;display:block;}
+.genus-art{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--ink);}
+.genus-art .nom{color:var(--ink-soft);font-weight:400;font-size:.92rem;}
+.genus-art .arrow{display:block;color:var(--ink-mute);margin:.3rem 0;font-size:.85rem;}
+.genus-card.m .akk{color:var(--m-blue);font-weight:900;}
+.genus-card.f .akk{color:var(--f-red);font-weight:900;}
+.genus-card.n .akk{color:var(--n-green);font-weight:900;}
+.genus-card.pl .akk{color:var(--pl-purple);font-weight:900;}
+.genus-rule{font-size:.78rem;color:var(--ink-soft);margin-top:.4rem;font-style:italic;}
 
-/* AKKUSATIV-TABELLE */
-.akk-table{background:var(--paper);border:2px solid var(--sand);border-radius:18px;overflow:hidden;margin:1.5rem 0;}
-.akk-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;}
-.akk-row.head{background:var(--ink);color:white;font-weight:700;}
-.akk-cell{padding:.8rem .6rem;border-right:1px solid var(--sand);border-bottom:1px solid var(--sand);text-align:center;font-size:.92rem;}
-.akk-row.head .akk-cell{border-color:#444;color:white;font-family:'Outfit',sans-serif;}
-.akk-cell:last-child{border-right:0;}
-.akk-row:last-child .akk-cell{border-bottom:0;}
-.akk-cell .gen{font-size:.7rem;text-transform:uppercase;color:var(--ink-mute);letter-spacing:.05em;margin-bottom:.2rem;font-weight:700;}
-.akk-row.head .akk-cell .gen{color:#FFD24A;}
-.akk-cell .form{font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1.05rem;}
-.akk-cell.label{background:var(--cream-warm);font-weight:700;font-family:'Fraunces',serif;color:var(--ink);}
-.akk-cell .arrow{color:var(--teal);font-size:.85rem;margin:.15rem 0;}
-.akk-cell .new{font-family:'Fraunces',serif;font-weight:900;color:var(--teal);font-size:1.1rem;}
-@media(max-width:600px){.akk-cell{font-size:.78rem;padding:.5rem .35rem;}.akk-cell .form,.akk-cell .new{font-size:.92rem;}}
-
-/* VORHER/NACHHER (Nominativ vs. Akkusativ) */
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.5rem 0;}
-@media(max-width:600px){.compare{grid-template-columns:1fr;}}
-.comp-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.1rem 1.2rem;}
-.comp-card.a{border-color:var(--red);background:#FFF6F5;}
-.comp-card.b{border-color:var(--teal);background:#F1FAF8;}
-.comp-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem;}
-.comp-card.a .comp-tag{background:var(--red);color:white;}
-.comp-card.b .comp-tag{background:var(--teal);color:white;}
-.comp-text{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);line-height:1.5;}
-.comp-text strong{color:var(--red);}
-.comp-card.b .comp-text strong{color:var(--teal);}
-.comp-note{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;}
+/* AKKUSATIV-MERKE-BOX */
+.merke-box{background:linear-gradient(135deg,#FFF8E5,#FFE9E5);border:3px solid var(--yellow);border-radius:22px;padding:1.4rem 1.6rem;margin:1.5rem 0;text-align:center;}
+.merke-box .label{font-size:.75rem;font-weight:800;letter-spacing:.15em;color:var(--red);text-transform:uppercase;}
+.merke-box .satz{font-family:'Fraunces',serif;font-weight:900;font-size:1.6rem;color:var(--ink);margin-top:.5rem;line-height:1.3;}
+.merke-box .satz em{color:var(--m-blue);font-style:italic;}
+.merke-box .erklaer{font-size:.95rem;color:var(--ink-soft);margin-top:.6rem;}
 
 /* DIALOG STEPS */
 .dialog-grid{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0;}
@@ -86,219 +82,317 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .dial.d2{border-left:5px solid var(--teal);}
 .dial.d3{border-left:5px solid #B66809;}
 .dial.d4{border-left:5px solid #6A3D9C;}
-.dial-icon{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.dial-icon{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-family:'Fraunces',serif;font-weight:900;}
 .dial.d2 .dial-icon{background:var(--teal);}
 .dial.d3 .dial-icon{background:#B66809;}
 .dial.d4 .dial-icon{background:#6A3D9C;}
-.dial-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.02rem;margin-bottom:.3rem;}
+.dial-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;margin-bottom:.3rem;}
 .dial-body ul{list-style:none;padding:0;}
-.dial-body li{padding:.2rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;padding-left:1.1rem;position:relative;}
-.dial-body li::before{content:'›';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+.dial-body li{padding:.2rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.95rem;padding-left:1.1rem;position:relative;}
+.dial-body li::before{content:'\203A';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+.dial-body li strong{font-style:normal;color:var(--red);background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
 
 /* ALLTAG-FRAGEN */
 .alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
 .alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
-.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
-.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.08rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.9rem;color:var(--ink-soft);margin-top:.4rem;}
+
+/* SPEISEKARTE (visuell mit SVG-Icons) */
+.menu{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1.5rem 0;background-image:repeating-linear-gradient(0deg,transparent,transparent 30px,#F4E8D2 30px,#F4E8D2 31px);box-shadow:0 4px 14px rgba(0,0,0,.05);}
+.menu-section{margin-bottom:1.2rem;}
+.menu-section:last-child{margin-bottom:0;}
+.menu-h{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.1rem;border-bottom:2px dashed var(--red);padding-bottom:.3rem;margin-bottom:.6rem;letter-spacing:.04em;text-transform:uppercase;}
+.menu-item{display:grid;grid-template-columns:30px 1fr auto;gap:.6rem;align-items:center;padding:.35rem 0;font-family:'Fraunces',serif;}
+.menu-item .ic{font-size:1.3rem;text-align:center;}
+.menu-item .name{color:var(--ink);font-size:1rem;}
+.menu-item .name em{font-style:italic;color:var(--ink-soft);font-size:.88rem;}
+.menu-item .name .art-m{color:var(--m-blue);font-weight:700;}
+.menu-item .name .art-f{color:var(--f-red);font-weight:700;}
+.menu-item .name .art-n{color:var(--n-green);font-weight:700;}
+.menu-item .name .art-pl{color:var(--pl-purple);font-weight:700;}
+.menu-item .price{color:var(--teal);font-weight:700;font-family:'Outfit',sans-serif;font-size:.95rem;white-space:nowrap;}
 
 /* CHAT */
 .chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
 .chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
-.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
-.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .av{width:34px;height:34px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.94rem;line-height:1.1;}
 .chat-head .stat{font-size:.7rem;opacity:.85;}
-.chat-msg{margin:.4rem 0;display:flex;}
-.chat-msg.out{justify-content:flex-end;}
-.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg{margin:.4rem 0;display:flex;flex-direction:column;}
+.chat-msg.out{align-items:flex-end;}
+.chat-msg.in{align-items:flex-start;}
+.chat-bubble{max-width:82%;padding:.5rem .8rem;border-radius:14px;font-size:.95rem;color:var(--ink);line-height:1.45;}
 .chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
 .chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
 .chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
-.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-voice{display:inline-flex;align-items:center;gap:.5rem;background:var(--wa-in);padding:.5rem .8rem;border-radius:14px;font-size:.88rem;color:var(--ink-soft);font-style:italic;}
+.chat-msg.out .chat-voice{background:var(--wa-out);}
+.chat-voice .play{width:24px;height:24px;border-radius:50%;background:var(--teal);color:white;display:inline-flex;align-items:center;justify-content:center;font-size:.7rem;}
+.chat-voice .wave{display:inline-block;width:80px;height:14px;background:repeating-linear-gradient(90deg,var(--teal-soft) 0 2px,transparent 2px 5px);border-radius:4px;}
+.chat-meta{font-size:.68rem;color:var(--ink-mute);margin-top:.15rem;padding:0 .3rem;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.85rem;color:var(--ink);}
 .chat-meaning strong{color:#B66809;}
 .uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
 
-/* FLIP */
-.flip{perspective:1000px;width:100%;max-width:440px;height:340px;margin:1.5rem auto;cursor:pointer;}
+/* FLIP-CARDS */
+.flip{perspective:1000px;width:100%;max-width:460px;height:380px;margin:1.5rem auto;cursor:pointer;}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
 .flip.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2.5px solid var(--sand);border-radius:24px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
 .flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
-.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-emoji{font-size:3rem;margin-bottom:.4rem;}
+.flip-illu{width:90px;height:90px;margin:0 auto .5rem;display:block;}
 .flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
-.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
-.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
-.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
-.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.96rem;margin-top:.6rem;line-height:1.55;}
+.flip-badge{display:inline-block;font-size:.72rem;font-weight:800;padding:.22rem .8rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;color:white;}
+.flip-badge.m{background:var(--m-blue);}
+.flip-badge.f{background:var(--f-red);}
+.flip-badge.n{background:var(--n-green);}
+.flip-badge.pl{background:var(--pl-purple);}
+.flip-prompt{font-size:.85rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:1rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:1rem;margin-top:.6rem;line-height:1.55;}
 .flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
 .lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
-.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:46px;height:46px;border-radius:50%;cursor:pointer;color:var(--ink);}
 .lk-btn:hover{background:var(--ink);color:white;}
 .lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
 .lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
 
 /* QUIZ */
 .quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
-.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.08rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
 .quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
+.quiz-q .gen-m{color:var(--m-blue);font-weight:700;}
+.quiz-q .gen-f{color:var(--f-red);font-weight:700;}
+.quiz-q .gen-n{color:var(--n-green);font-weight:700;}
+.quiz-q .gen-pl{color:var(--pl-purple);font-weight:700;}
 .quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
-.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.96rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;font-family:'Outfit',sans-serif;}
 .quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
 .quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
 .quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
-.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain{margin-top:.7rem;font-size:.92rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
 .quiz-explain.show{display:block;}
 
 /* GAP */
-.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);line-height:2;}
 .gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
 .gap-text .gap-line:last-of-type{border-bottom:0;}
-.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
 .gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
 .gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-text .hint{color:var(--ink-mute);font-size:.85em;font-style:italic;}
+.gap-text .hint.m{color:var(--m-blue);}
+.gap-text .hint.f{color:var(--f-red);}
+.gap-text .hint.n{color:var(--n-green);}
+.gap-text .hint.pl{color:var(--pl-purple);}
 .gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
 .btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
 .btn-primary:hover{background:#C8211D;border-color:#C8211D;}
 .btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
 .btn-secondary:hover{background:var(--ink);color:white;}
 
-/* MATCH */
+/* MATCH (Bild + Phrase) */
 .match-stage{margin:1.5rem 0;}
 .match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
 .match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
 .match-list{display:flex;flex-direction:column;gap:.45rem;}
-.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.92rem;transition:.15s;text-align:center;display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:50px;}
+.match-item .big{font-size:1.8rem;}
 .match-item:hover{border-color:var(--ink);transform:translateX(2px);}
 .match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
 .match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
 .match-restart{display:block;margin:1.2rem auto 0;}
 
-/* SPEAK + ROLES */
-.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+/* SPEAK */
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:220px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:560px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
 .speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
 .speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
-.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
-.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
-.speak-controls{text-align:center;margin-top:1rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.25rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.9rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;}
+.tts-btn{background:var(--teal);color:white;border:2px solid var(--teal);font-family:'Outfit',sans-serif;font-weight:700;padding:.5rem 1.1rem;border-radius:999px;cursor:pointer;font-size:.92rem;display:inline-flex;align-items:center;gap:.4rem;}
+.tts-btn:hover{background:#0A8C80;border-color:#0A8C80;}
+
+/* ROLLENSPIELE (mit Hilfestellung) */
 .role-section{margin-top:2.5rem;}
-.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.4rem;}
 .role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
-.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
-.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
-.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
-@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
-.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
-.person.a{border-color:var(--red);background:#FFF6F5;}
-.person.b{border-color:var(--teal);background:#F1FAF8;}
-.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
-.person.a .person-avatar{border-color:var(--red);}
-.person.b .person-avatar{border-color:var(--teal);}
-.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
-.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
-.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.3rem;margin-bottom:.6rem;}
+.role-block{margin:.75rem 0;}
+.role-block .lbl{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:.25rem;}
+.role-block.situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;}
+.role-block.situation .lbl{color:#B66809;}
+.role-block.situation .txt{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.98rem;line-height:1.5;}
+.role-block.role-you{background:var(--m-blue-soft);border-radius:12px;padding:.8rem 1rem;}
+.role-block.role-you .lbl{color:var(--m-blue);}
+.role-block.role-you .txt{font-size:.95rem;color:var(--ink);}
+.vocab-chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.3rem;}
+.vocab-chip{background:var(--paper);border:1.5px solid var(--teal);color:var(--teal);font-size:.85rem;font-weight:600;padding:.2rem .65rem;border-radius:999px;}
+.role-block.phrases{background:var(--yellow-soft);border-radius:12px;padding:.8rem 1rem;}
+.role-block.phrases .lbl{color:#7A6300;}
+.role-block.phrases ul{list-style:none;padding:0;}
+.role-block.phrases li{padding:.2rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.94rem;padding-left:1rem;position:relative;}
+.role-block.phrases li::before{content:'\201E';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;}
+.role-block.tipp{background:var(--teal-soft);border-radius:12px;padding:.8rem 1rem;}
+.role-block.tipp .lbl{color:var(--teal);}
+.role-block.tipp .txt{font-size:.93rem;color:var(--ink);}
+.role-block.good{background:#F1FAF8;border:1.5px dashed var(--teal);border-radius:12px;padding:.8rem 1rem;}
+.role-block.good .lbl{color:var(--teal);}
+.role-block.good .txt{font-size:.92rem;color:var(--ink-soft);}
 
-/* SPEISEKARTE */
-.menu{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1.5rem 0;background-image:repeating-linear-gradient(0deg,transparent,transparent 30px,#F0E2C8 30px,#F0E2C8 31px);}
-.menu-section{margin-bottom:1.2rem;}
-.menu-section:last-child{margin-bottom:0;}
-.menu-h{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.05rem;border-bottom:2px dashed var(--red);padding-bottom:.3rem;margin-bottom:.6rem;letter-spacing:.04em;text-transform:uppercase;}
-.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.3rem 0;font-family:'Fraunces',serif;}
-.menu-item .name{color:var(--ink);font-size:.96rem;}
-.menu-item .name em{font-style:italic;color:var(--ink-soft);font-size:.85rem;}
-.menu-item .price{color:var(--teal);font-weight:700;font-family:'Outfit',sans-serif;font-size:.92rem;white-space:nowrap;padding-left:.5rem;}
+/* MISSION */
+.mission{background:linear-gradient(135deg,#FFF1C2,#FCE5E3);border:3px solid var(--red);border-radius:22px;padding:1.6rem 1.8rem;margin:2rem 0;text-align:center;}
+.mission .tag{display:inline-block;background:var(--red);color:white;font-size:.72rem;font-weight:800;letter-spacing:.12em;padding:.25rem .8rem;border-radius:999px;text-transform:uppercase;margin-bottom:.6rem;}
+.mission .title{font-family:'Fraunces',serif;font-weight:900;font-size:1.5rem;color:var(--ink);margin-bottom:.5rem;}
+.mission .task{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:1.05rem;line-height:1.55;}
 
-footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer{text-align:center;color:var(--ink-mute);font-size:.88rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
 footer strong{color:var(--ink);}
 </style>
 </head>
 <body>
 <div class="wrapper">
 
-<div class="eyebrow">deutschoderwas &middot; A2 Sprechclub &middot; Grammatik + Alltag</div>
+<div class="eyebrow">deutschoderwas &middot; A2 Sprechclub &middot; Deluxe-Standard</div>
 
 <div class="title-wrap">
 <h1 class="title">Im <span class="hl">Restaurant</span> mit Akkusativ</h1>
 </div>
-<p class="subtitle">Bestellen, fragen, reklamieren, bezahlen &mdash; und dabei den Akkusativ richtig benutzen. &bdquo;Ich nehme <em>einen</em> Salat, <em>eine</em> Pizza, <em>ein</em> Bier!&ldquo;</p>
+<p class="subtitle">Bestellen, fragen, reklamieren, bezahlen &mdash; mit Farben, Bildern und Stimme den Akkusativ lernen. <em>&bdquo;Ich nehme einen Salat, eine Pizza, ein Bier!&ldquo;</em></p>
 
-<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
-<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
-<g transform="translate(35,20)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="5" font-size="22">📋</text><text text-anchor="middle" y="40" fill="#E8302A">Karte</text></g>
-<g transform="translate(95,20)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="5" font-size="22">🍕</text><text text-anchor="middle" y="40" fill="#0FB5A6">Bestellen</text></g>
-<g transform="translate(155,20)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="5" font-size="22">🥗</text><text text-anchor="middle" y="40" fill="#B66809">Essen</text></g>
-<g transform="translate(215,20)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="5" font-size="22">🍷</text><text text-anchor="middle" y="40" fill="#A04060">Trinken</text></g>
-<g transform="translate(275,20)"><circle cx="0" cy="0" r="22" fill="#E2EBC9"/><text text-anchor="middle" dy="5" font-size="22">💳</text><text text-anchor="middle" y="40" fill="#5F7A2A">Rechnung</text></g>
-<g transform="translate(335,20)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="5" font-size="22">💶</text><text text-anchor="middle" y="40" fill="#6A3D9C">Trinkgeld</text></g>
+<!-- HERO SVG (Speisen-Reihe) -->
+<svg class="hero-svg" viewBox="0 0 420 130" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="plate" cx=".5" cy=".5"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e6dcc6"/></radialGradient>
+</defs>
+<!-- Teller mit Pizza -->
+<g transform="translate(50,50)">
+<circle r="28" fill="url(#plate)" stroke="#A8957D" stroke-width="1.5"/>
+<circle r="22" fill="#F7C97A"/>
+<circle cx="-7" cy="-5" r="3.5" fill="#E8302A"/><circle cx="6" cy="-7" r="3.5" fill="#E8302A"/>
+<circle cx="3" cy="6" r="3.5" fill="#E8302A"/><circle cx="-8" cy="7" r="3.5" fill="#E8302A"/>
+<circle cx="-4" cy="0" r="2" fill="#fff"/><circle cx="8" cy="3" r="2" fill="#fff"/>
+<text y="48" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#E8302A">die Pizza</text>
+</g>
+<!-- Salat-Schale -->
+<g transform="translate(130,50)">
+<path d="M-26,-2 Q-26,18 0,18 Q26,18 26,-2 Z" fill="#fff" stroke="#A8957D" stroke-width="1.5"/>
+<ellipse cx="0" cy="-2" rx="26" ry="6" fill="#5FA850"/>
+<circle cx="-10" cy="-3" r="4" fill="#E8302A"/><circle cx="8" cy="-4" r="3.5" fill="#E8302A"/>
+<ellipse cx="0" cy="-4" rx="4" ry="2.5" fill="#F0E2C8"/>
+<text y="34" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#2A6FE8">der Salat</text>
+</g>
+<!-- Weinglas -->
+<g transform="translate(200,42)">
+<path d="M-9,-22 Q-9,2 0,2 Q9,2 9,-22 Z" fill="#7A1838" stroke="#A8957D" stroke-width="1.2"/>
+<path d="M-9,-22 L9,-22" stroke="#A8957D" stroke-width="1.2"/>
+<line x1="0" y1="2" x2="0" y2="22" stroke="#A8957D" stroke-width="1.5"/>
+<ellipse cx="0" cy="24" rx="9" ry="2" fill="#A8957D"/>
+<text y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#2A6FE8">der Wein</text>
+</g>
+<!-- Wasserglas -->
+<g transform="translate(255,44)">
+<path d="M-9,-22 L-7,22 L7,22 L9,-22 Z" fill="#D7F0EC" fill-opacity=".7" stroke="#0FB5A6" stroke-width="1.4"/>
+<path d="M-8,-10 L8,-10" stroke="#0FB5A6" stroke-width="1" opacity=".6"/>
+<circle cx="-3" cy="0" r="1.5" fill="#fff"/><circle cx="4" cy="5" r="1.2" fill="#fff"/>
+<text y="42" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#3FA64C">das Wasser</text>
+</g>
+<!-- Kaffeetasse -->
+<g transform="translate(310,52)">
+<path d="M-14,-10 L-14,10 Q-14,16 -8,16 L8,16 Q14,16 14,10 L14,-10 Z" fill="#fff" stroke="#262019" stroke-width="1.5"/>
+<path d="M14,-4 Q22,-4 22,4 Q22,12 14,12" fill="none" stroke="#262019" stroke-width="1.5"/>
+<ellipse cx="0" cy="-9" rx="13" ry="3" fill="#6B3A1F"/>
+<path d="M-5,-13 Q-5,-16 -3,-17 M2,-13 Q2,-16 4,-17" stroke="#A8957D" stroke-width="1.2" fill="none"/>
+<text y="34" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#2A6FE8">der Kaffee</text>
+</g>
+<!-- Pommes -->
+<g transform="translate(370,52)">
+<path d="M-12,18 L-14,-2 L14,-2 L12,18 Z" fill="#E8302A"/>
+<rect x="-10" y="-18" width="3" height="20" fill="#F7C97A"/>
+<rect x="-5" y="-22" width="3" height="24" fill="#F7C97A"/>
+<rect x="0" y="-20" width="3" height="22" fill="#F7C97A"/>
+<rect x="5" y="-24" width="3" height="26" fill="#F7C97A"/>
+<text y="34" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" font-weight="700" fill="#6A3D9C">die Pommes</text>
 </g>
 </svg>
 
 <nav class="tabs">
-<button class="tab active" data-tab="0">📖 Überblick</button>
-<button class="tab" data-tab="1">💬 Umgangssprache</button>
-<button class="tab" data-tab="2">🃏 Lernkarten</button>
-<button class="tab" data-tab="3">✅ Quiz</button>
-<button class="tab" data-tab="4">✍️ Lückentext</button>
-<button class="tab" data-tab="5">🧩 Zuordnen</button>
-<button class="tab" data-tab="6">🗣️ Sprechen</button>
+<button class="tab active" data-tab="0">&#128214; &Uuml;berblick</button>
+<button class="tab" data-tab="1">&#127183; Lernkarten</button>
+<button class="tab" data-tab="2">&#9989; Quiz</button>
+<button class="tab" data-tab="3">&#9997;&#65039; L&uuml;ckentext</button>
+<button class="tab" data-tab="4">&#129513; Zuordnen</button>
+<button class="tab" data-tab="5">&#128483;&#65039; Sprechen</button>
+<button class="tab" data-tab="6">&#128172; Umgangssprache</button>
 </nav>
 
-<!-- ============== ÜBERBLICK ============== -->
+<!-- ============== 1. ÜBERBLICK ============== -->
 <section class="section active" data-section="0">
 
-<h2 class="section-title">Der <em style="font-style:italic;">Akkusativ</em> &mdash; auf einen Blick</h2>
-<p class="section-sub">Beim Bestellen brauchst du IMMER den Akkusativ. Was aendert sich gegenueber dem Nominativ?</p>
+<h2 class="section-title">Der <em style="font-style:italic;">Akkusativ</em> in 4 Farben</h2>
+<p class="section-sub">Jedes Genus hat eine Farbe. So siehst du sofort: <span style="color:var(--m-blue);font-weight:700;">der = blau</span>, <span style="color:var(--f-red);font-weight:700;">die = rot</span>, <span style="color:var(--n-green);font-weight:700;">das = gr&uuml;n</span>, <span style="color:var(--pl-purple);font-weight:700;">Plural = lila</span>.</p>
 
-<div class="akk-table">
-<div class="akk-row head">
-<div class="akk-cell"><div class="gen">&nbsp;</div><div>Genus</div></div>
-<div class="akk-cell"><div class="gen">der/die/das</div><div>Nominativ</div></div>
-<div class="akk-cell"><div class="gen">ein/eine</div><div>Nominativ</div></div>
-<div class="akk-cell"><div class="gen">Ich nehme&hellip;</div><div>Akkusativ</div></div>
+<div class="genus-grid">
+<!-- m: Salat -->
+<div class="genus-card m">
+<span class="genus-tag">maskulin</span>
+<svg class="genus-illu" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M6,30 Q6,52 32,52 Q58,52 58,30 Z" fill="#fff" stroke="#2A6FE8" stroke-width="2"/>
+<ellipse cx="32" cy="30" rx="26" ry="7" fill="#5FA850"/>
+<circle cx="22" cy="28" r="4" fill="#E8302A"/><circle cx="42" cy="27" r="3.5" fill="#E8302A"/>
+<ellipse cx="32" cy="27" rx="5" ry="3" fill="#F0E2C8"/>
+</svg>
+<div class="genus-art"><span class="nom">der Salat</span><span class="arrow">&rarr;</span><span class="akk">einen Salat</span></div>
+<div class="genus-rule">Nur hier &auml;ndert sich was: <strong>+n</strong>!</div>
 </div>
-<div class="akk-row">
-<div class="akk-cell label">maskulin 🧔</div>
-<div class="akk-cell"><div class="form">der Salat</div></div>
-<div class="akk-cell"><div class="form">ein Salat</div></div>
-<div class="akk-cell"><div class="arrow">→ aendert sich!</div><div class="new">einen Salat / den Salat</div></div>
+<!-- f: Pizza -->
+<div class="genus-card f">
+<span class="genus-tag">feminin</span>
+<svg class="genus-illu" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<circle cx="32" cy="32" r="26" fill="#F7C97A" stroke="#E8302A" stroke-width="2"/>
+<circle cx="22" cy="22" r="4" fill="#E8302A"/><circle cx="42" cy="20" r="4" fill="#E8302A"/>
+<circle cx="40" cy="38" r="4" fill="#E8302A"/><circle cx="20" cy="40" r="4" fill="#E8302A"/>
+<circle cx="32" cy="30" r="3" fill="#fff"/><circle cx="28" cy="42" r="2.5" fill="#fff"/>
+</svg>
+<div class="genus-art"><span class="nom">die Pizza</span><span class="arrow">&rarr;</span><span class="akk">eine Pizza</span></div>
+<div class="genus-rule">bleibt gleich &mdash; super!</div>
 </div>
-<div class="akk-row">
-<div class="akk-cell label">feminin 👩</div>
-<div class="akk-cell"><div class="form">die Pizza</div></div>
-<div class="akk-cell"><div class="form">eine Pizza</div></div>
-<div class="akk-cell"><div class="arrow">→ bleibt gleich</div><div class="new">eine Pizza / die Pizza</div></div>
+<!-- n: Wasser -->
+<div class="genus-card n">
+<span class="genus-tag">neutrum</span>
+<svg class="genus-illu" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M22,8 L20,56 L44,56 L42,8 Z" fill="#D7F0EC" fill-opacity=".8" stroke="#3FA64C" stroke-width="2"/>
+<path d="M21,30 L43,30" stroke="#3FA64C" stroke-width="1.5" opacity=".7"/>
+<circle cx="28" cy="38" r="2" fill="#fff"/><circle cx="36" cy="45" r="1.8" fill="#fff"/>
+<circle cx="32" cy="20" r="1.6" fill="#fff"/>
+</svg>
+<div class="genus-art"><span class="nom">das Wasser</span><span class="arrow">&rarr;</span><span class="akk">ein Wasser</span></div>
+<div class="genus-rule">bleibt gleich &mdash; super!</div>
 </div>
-<div class="akk-row">
-<div class="akk-cell label">neutrum 🧒</div>
-<div class="akk-cell"><div class="form">das Bier</div></div>
-<div class="akk-cell"><div class="form">ein Bier</div></div>
-<div class="akk-cell"><div class="arrow">→ bleibt gleich</div><div class="new">ein Bier / das Bier</div></div>
-</div>
-<div class="akk-row">
-<div class="akk-cell label">Plural 👥</div>
-<div class="akk-cell"><div class="form">die Pommes</div></div>
-<div class="akk-cell"><div class="form">&mdash;</div></div>
-<div class="akk-cell"><div class="arrow">→ bleibt gleich</div><div class="new">die Pommes</div></div>
+<!-- pl: Pommes -->
+<div class="genus-card pl">
+<span class="genus-tag">Plural</span>
+<svg class="genus-illu" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M14,46 L11,16 L53,16 L50,46 Z" fill="#E8302A" stroke="#6A3D9C" stroke-width="2"/>
+<rect x="18" y="6" width="4" height="14" fill="#F7C97A"/>
+<rect x="25" y="2" width="4" height="18" fill="#F7C97A"/>
+<rect x="32" y="0" width="4" height="20" fill="#F7C97A"/>
+<rect x="39" y="4" width="4" height="16" fill="#F7C97A"/>
+<rect x="46" y="8" width="4" height="12" fill="#F7C97A"/>
+</svg>
+<div class="genus-art"><span class="nom">die Pommes</span><span class="arrow">&rarr;</span><span class="akk">die Pommes</span></div>
+<div class="genus-rule">Plural? Bleibt gleich!</div>
 </div>
 </div>
 
-<div class="tip">
-💡 <strong>Die goldene Regel A2:</strong> Nur bei <u>maskulin</u> aendert sich der Artikel im Akkusativ: <em>der → den</em> und <em>ein → einen</em>. Bei feminin, neutrum und Plural bleibt alles gleich! Merksatz: <strong>&bdquo;Nur Mr. M kriegt ein -n!&ldquo;</strong>
-</div>
-
-<h2 class="section-title">Nominativ vs. <em style="font-style:italic;">Akkusativ</em></h2>
-
-<div class="compare">
-<div class="comp-card a">
-<span class="comp-tag">Nominativ (Subjekt)</span>
-<div class="comp-text">&bdquo;<strong>Der Salat</strong> ist sehr lecker.&ldquo;</div>
-<div class="comp-note">Hier ist der Salat das <em>Subjekt</em> &mdash; er TUT etwas (er IST lecker).</div>
-</div>
-<div class="comp-card b">
-<span class="comp-tag">Akkusativ (Objekt)</span>
-<div class="comp-text">&bdquo;Ich nehme <strong>den Salat</strong>.&ldquo; / &bdquo;Ich moechte <strong>einen Salat</strong>.&ldquo;</div>
-<div class="comp-note">Jetzt ist der Salat das <em>Objekt</em> &mdash; ICH tue etwas mit IHM (nehmen, bestellen, essen).</div>
-</div>
+<div class="merke-box">
+<div class="label">&#128161; Merksatz f&uuml;r immer</div>
+<div class="satz">&bdquo;Nur <em>Mr. M</em> kriegt ein <em>-n</em>!&ldquo;</div>
+<div class="erklaer">Nur bei maskulin: <strong style="color:var(--m-blue);">der &rarr; den</strong> &middot; <strong style="color:var(--m-blue);">ein &rarr; einen</strong>. Bei <strong style="color:var(--f-red);">die</strong>, <strong style="color:var(--n-green);">das</strong>, <strong style="color:var(--pl-purple);">Plural</strong> &mdash; alles bleibt gleich!</div>
 </div>
 
 <h2 class="section-title">Die <em style="font-style:italic;">4 Schritte</em> im Restaurant</h2>
@@ -307,12 +401,12 @@ footer strong{color:var(--ink);}
 <div class="dial d1">
 <div class="dial-icon">1</div>
 <div class="dial-body">
-<h4>📋 Karte ansehen &amp; fragen</h4>
+<h4>&#128203; Karte ansehen &amp; fragen</h4>
 <ul>
-<li>&bdquo;Die Karte, bitte!&ldquo;</li>
+<li>&bdquo;<strong>Die</strong> Karte, bitte!&ldquo;</li>
 <li>&bdquo;Was empfehlen Sie?&ldquo;</li>
-<li>&bdquo;Was ist das Tagesmenue?&ldquo;</li>
-<li>&bdquo;Ist hier <strong>der</strong> Fisch frisch?&ldquo;</li>
+<li>&bdquo;Was ist <strong>das</strong> Tagesmen&uuml;?&ldquo;</li>
+<li>&bdquo;Haben Sie etwas Vegetarisches?&ldquo;</li>
 </ul>
 </div>
 </div>
@@ -320,11 +414,11 @@ footer strong{color:var(--ink);}
 <div class="dial d2">
 <div class="dial-icon">2</div>
 <div class="dial-body">
-<h4>🍽️ Bestellen (mit Akkusativ!)</h4>
+<h4>&#127869;&#65039; Bestellen (Akkusativ!)</h4>
 <ul>
 <li>&bdquo;Ich nehme <strong>einen</strong> Salat.&ldquo;</li>
-<li>&bdquo;Ich moechte <strong>eine</strong> Pizza und <strong>ein</strong> Wasser.&ldquo;</li>
-<li>&bdquo;Fuer mich <strong>die</strong> Pommes und <strong>einen</strong> Kaffee, bitte.&ldquo;</li>
+<li>&bdquo;Ich m&ouml;chte <strong>eine</strong> Pizza und <strong>ein</strong> Wasser.&ldquo;</li>
+<li>&bdquo;F&uuml;r mich <strong>die</strong> Pommes und <strong>einen</strong> Kaffee, bitte.&ldquo;</li>
 </ul>
 </div>
 </div>
@@ -332,11 +426,11 @@ footer strong{color:var(--ink);}
 <div class="dial d3">
 <div class="dial-icon">3</div>
 <div class="dial-body">
-<h4>🙋 Reklamieren / Wuensche</h4>
+<h4>&#128587; Reklamieren / W&uuml;nsche</h4>
 <ul>
 <li>&bdquo;Entschuldigung, das Essen ist <strong>kalt</strong>.&ldquo;</li>
 <li>&bdquo;Ich habe <strong>die</strong> Suppe nicht bestellt.&ldquo;</li>
-<li>&bdquo;Koennen Sie das nochmal warm machen?&ldquo;</li>
+<li>&bdquo;K&ouml;nnen Sie das nochmal warm machen?&ldquo;</li>
 </ul>
 </div>
 </div>
@@ -344,440 +438,730 @@ footer strong{color:var(--ink);}
 <div class="dial d4">
 <div class="dial-icon">4</div>
 <div class="dial-body">
-<h4>💳 Bezahlen</h4>
+<h4>&#128181; Bezahlen + Trinkgeld</h4>
 <ul>
 <li>&bdquo;<strong>Die</strong> Rechnung, bitte!&ldquo;</li>
 <li>&bdquo;Zusammen oder getrennt?&ldquo;</li>
-<li>&bdquo;Stimmt so!&ldquo; (= Trinkgeld bleibt)</li>
+<li>&bdquo;Stimmt so!&ldquo; (= der Rest ist Trinkgeld)</li>
 </ul>
 </div>
 </div>
 </div>
 
-<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
-
-<div class="alltag-q">
-<div class="ql">Grammatik &middot; Akkusativ</div>
-<div class="qq">Du moechtest einen Burger bestellen. Wie sagst du das richtig?</div>
-<div class="think">💭 &bdquo;Ich nehme <strong>einen</strong> Burger.&ldquo; &mdash; der Burger ist maskulin, also <em>einen</em> (mit -n!).</div>
-</div>
-
-<div class="alltag-q" style="border-left-color:var(--teal);">
-<div class="ql" style="color:var(--teal);">Alltag &middot; Vegetarisch</div>
-<div class="qq">Du isst kein Fleisch. Wie sagst du das hoeflich, wenn die Kellnerin Salami empfiehlt?</div>
-<div class="think">💭 &bdquo;Ich bin Vegetarier:in &mdash; haben Sie etwas <strong>ohne Fleisch</strong>?&ldquo;</div>
-</div>
-
-<div class="alltag-q" style="border-left-color:#B66809;">
-<div class="ql" style="color:#B66809;">Alltag &middot; Trinkgeld</div>
-<div class="qq">Die Rechnung ist 18,40 €. Du bist zufrieden &mdash; wie viel Trinkgeld?</div>
-<div class="think">💭 In Deutschland: ca. 10%, also auf 20 € aufrunden. &bdquo;Machen Sie 20 &mdash; stimmt so!&ldquo;</div>
-</div>
-
-</section>
-
-<!-- ============== UMGANGSSPRACHE ============== -->
-<section class="section" data-section="1">
-<h2 class="section-title">💬 So bestellt man <em style="font-style:italic;">wirklich</em></h2>
-<p class="section-sub">Echte Chats &mdash; bevor, waehrend und nach dem Restaurantbesuch.</p>
-
-<div class="tip">🔥 <strong>Tipp:</strong> Statt &bdquo;Ich moechte&hellip;&ldquo; sagen Deutsche im Cafe oft kuerzer: <strong>&bdquo;Ich nehme&hellip;&ldquo;</strong> oder einfach &bdquo;Fuer mich <strong>einen</strong> Kaffee, bitte.&ldquo;</div>
-
-<div class="uss-grid">
-
-<div class="chat">
-<div class="chat-head"><div class="av">🍕</div><div><div class="name">Lisa &middot; vor dem Italiener</div><div class="stat">online</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Was nimmst du heute Abend?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Ich glaube <strong>eine</strong> Pizza Margherita &mdash; und du?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Hmm <strong>die</strong> Pasta sieht auch gut aus 🤔</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Was empfiehlst du? Vielleicht <strong>einen</strong> Salat zusammen?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ja perfekt, dann teilen wir <strong>den</strong>! 🥗</div></div>
-<div class="chat-meaning"><strong>&bdquo;eine Pizza&ldquo;</strong> (f) &middot; <strong>&bdquo;einen Salat&ldquo;</strong> (m, mit -n!) &middot; <strong>&bdquo;den Salat&ldquo;</strong> &mdash; Akkusativ richtig benutzt!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🥦</div><div><div class="name">Tom &middot; Vegetarier</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Gehst du mit zum Schnitzelhaus?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ach, <strong>ich bin Vegetarier</strong>&hellip; gibt&rsquo;s da was fuer mich?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Klar! Die haben auch <strong>ein</strong> super Gemueseschnitzel und <strong>einen</strong> tollen Salat.</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ok, dann komme ich mit! 🌱</div></div>
-<div class="chat-meaning"><strong>&bdquo;Ich bin Vegetarier&ldquo;</strong> &mdash; immer ohne Artikel! <strong>&bdquo;ein Gemueseschnitzel&ldquo;</strong> (n) bleibt im Akk. gleich.</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">💳</div><div><div class="name">Bei der Rechnung</div><div class="stat">Kellner</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Die Rechnung, bitte!</strong></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Gerne &mdash; <strong>zusammen oder getrennt?</strong></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Getrennt, bitte. Ich hatte <strong>die</strong> Pasta und <strong>ein</strong> Bier.</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Das macht 14,50 &mdash; bar oder Karte?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Karte &mdash; und machen Sie 16, <strong>stimmt so!</strong> 🙏</div></div>
-<div class="chat-meaning"><strong>&bdquo;Zusammen oder getrennt?&ldquo;</strong> = MUSS-Wissen fuer jedes Restaurant. <strong>&bdquo;Stimmt so&ldquo;</strong> = Rest = Trinkgeld!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">⚠️</div><div><div class="name">Allergie-Maria</div><div class="stat">muss aufpassen</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Entschuldigung, ich habe <strong>eine</strong> Erdnussallergie 🥜</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Oh, kein Problem! Hat <strong>der</strong> Salat Erdnuesse?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Sind <strong>die</strong> Nudeln glutenfrei?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Ich frage <strong>den</strong> Koch! Einen Moment&hellip;</div></div>
-<div class="chat-meaning"><strong>&bdquo;Ich habe eine Allergie gegen&hellip;&ldquo;</strong> &mdash; Allergie ist feminin = <em>eine</em>. <strong>&bdquo;den Koch&ldquo;</strong> (m, Akk.).</div>
-</div>
-
-</div>
-
-<h2 class="section-title">10 <em style="font-style:italic;">Alltagssaetze</em></h2>
-
-<div class="prep-grid" style="grid-template-columns:1fr;">
-<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">&bdquo;Die Karte, bitte!&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">die Speisekarte holen</div></div>
-<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">&bdquo;Was empfehlen Sie?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">der Kellner soll helfen</div></div>
-<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">&bdquo;Ich nehme&hellip; / Ich moechte&hellip;&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">bestellen mit Akkusativ</div></div>
-<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">&bdquo;Haben Sie etwas Vegetarisches?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">ohne Fleisch fragen</div></div>
-<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">&bdquo;Ich habe eine Allergie gegen&hellip;&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">wichtig fuer die Gesundheit!</div></div>
-<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">&bdquo;Schmeckt es Ihnen?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">die Kellnerin fragt nach</div></div>
-<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">&bdquo;Die Rechnung, bitte.&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">bezahlen wollen</div></div>
-<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">&bdquo;Zusammen oder getrennt?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Standard-Frage beim Bezahlen</div></div>
-</div>
-
-<h2 class="section-title">Mini-<em style="font-style:italic;">Speisekarte</em></h2>
-<p class="section-sub">Uebe damit das Bestellen &mdash; alle Artikel sind richtig!</p>
+<h2 class="section-title">Visuelle <em style="font-style:italic;">Speisekarte</em></h2>
+<p class="section-sub">Eine echte Speisekarte zum &Uuml;ben &mdash; alle Artikel sind farbig markiert!</p>
 
 <div class="menu">
 <div class="menu-section">
 <div class="menu-h">Vorspeisen</div>
-<div class="menu-item"><span class="name"><strong>der</strong> Salat <em>mit Tomate &amp; Mozzarella</em></span><span class="price">6,90 €</span></div>
-<div class="menu-item"><span class="name"><strong>die</strong> Suppe <em>des Tages</em></span><span class="price">4,50 €</span></div>
-<div class="menu-item"><span class="name"><strong>das</strong> Brot <em>mit Olivenoel</em></span><span class="price">3,20 €</span></div>
+<div class="menu-item"><span class="ic">&#129382;</span><span class="name"><span class="art-m">der</span> Salat <em>mit Tomate &amp; Mozzarella</em></span><span class="price">6,90 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#127858;</span><span class="name"><span class="art-f">die</span> Suppe <em>des Tages</em></span><span class="price">4,50 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#129366;</span><span class="name"><span class="art-n">das</span> Brot <em>mit Oliven&ouml;l</em></span><span class="price">3,20 &euro;</span></div>
 </div>
 
 <div class="menu-section">
 <div class="menu-h">Hauptgerichte</div>
-<div class="menu-item"><span class="name"><strong>die</strong> Pizza Margherita</span><span class="price">9,80 €</span></div>
-<div class="menu-item"><span class="name"><strong>der</strong> Burger <em>mit Pommes</em></span><span class="price">12,50 €</span></div>
-<div class="menu-item"><span class="name"><strong>das</strong> Schnitzel <em>vegetarisch</em></span><span class="price">11,90 €</span></div>
-<div class="menu-item"><span class="name"><strong>die</strong> Pasta <em>Carbonara</em></span><span class="price">10,80 €</span></div>
+<div class="menu-item"><span class="ic">&#127829;</span><span class="name"><span class="art-f">die</span> Pizza Margherita</span><span class="price">9,80 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#127828;</span><span class="name"><span class="art-m">der</span> Burger <em>mit Pommes</em></span><span class="price">12,50 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#127837;</span><span class="name"><span class="art-n">das</span> Schnitzel <em>vegetarisch</em></span><span class="price">11,90 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#127837;</span><span class="name"><span class="art-f">die</span> Pasta <em>Carbonara</em></span><span class="price">10,80 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#127839;</span><span class="name"><span class="art-pl">die</span> Pommes <em>mit Ketchup</em></span><span class="price">4,50 &euro;</span></div>
 </div>
 
 <div class="menu-section">
-<div class="menu-h">Getraenke</div>
-<div class="menu-item"><span class="name"><strong>das</strong> Wasser <em>(0,5L)</em></span><span class="price">2,80 €</span></div>
-<div class="menu-item"><span class="name"><strong>das</strong> Bier <em>vom Fass</em></span><span class="price">3,90 €</span></div>
-<div class="menu-item"><span class="name"><strong>der</strong> Kaffee</span><span class="price">2,50 €</span></div>
-<div class="menu-item"><span class="name"><strong>der</strong> Wein <em>(0,2L Rotwein)</em></span><span class="price">5,50 €</span></div>
+<div class="menu-h">Getr&auml;nke</div>
+<div class="menu-item"><span class="ic">&#128167;</span><span class="name"><span class="art-n">das</span> Wasser <em>(0,5L)</em></span><span class="price">2,80 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#127866;</span><span class="name"><span class="art-n">das</span> Bier <em>vom Fass</em></span><span class="price">3,90 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#9749;</span><span class="name"><span class="art-m">der</span> Kaffee</span><span class="price">2,50 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#127863;</span><span class="name"><span class="art-m">der</span> Wein <em>(0,2L Rotwein)</em></span><span class="price">5,50 &euro;</span></div>
 </div>
 
 <div class="menu-section">
 <div class="menu-h">Nachspeisen</div>
-<div class="menu-item"><span class="name"><strong>das</strong> Eis <em>(3 Kugeln)</em></span><span class="price">4,80 €</span></div>
-<div class="menu-item"><span class="name"><strong>der</strong> Apfelstrudel</span><span class="price">5,50 €</span></div>
+<div class="menu-item"><span class="ic">&#127848;</span><span class="name"><span class="art-n">das</span> Eis <em>(3 Kugeln)</em></span><span class="price">4,80 &euro;</span></div>
+<div class="menu-item"><span class="ic">&#129473;</span><span class="name"><span class="art-m">der</span> Apfelstrudel</span><span class="price">5,50 &euro;</span></div>
 </div>
+</div>
+
+<!-- 3 Bonus-SVG-Illustrationen: Kellner, Rechnung, Münzen -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0;">
+<div style="background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1rem;text-align:center;">
+<svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" style="width:100px;height:110px;">
+<!-- Kellner mit Tablett -->
+<circle cx="50" cy="22" r="12" fill="#F4D5B8" stroke="#262019" stroke-width="1.5"/>
+<path d="M42,18 Q50,12 58,18" stroke="#262019" stroke-width="1.2" fill="none"/>
+<circle cx="46" cy="22" r="1.2" fill="#262019"/><circle cx="54" cy="22" r="1.2" fill="#262019"/>
+<path d="M46,28 Q50,30 54,28" stroke="#262019" stroke-width="1" fill="none"/>
+<rect x="38" y="34" width="24" height="36" fill="#262019" rx="3"/>
+<rect x="42" y="38" width="16" height="10" fill="#FFFFFF" rx="2"/>
+<line x1="50" y1="34" x2="50" y2="48" stroke="#FFFFFF" stroke-width=".8"/>
+<!-- Arm + Tablett -->
+<path d="M38,40 Q22,42 18,30" stroke="#F4D5B8" stroke-width="6" fill="none" stroke-linecap="round"/>
+<ellipse cx="14" cy="26" rx="14" ry="3" fill="#A8957D"/>
+<ellipse cx="14" cy="24" rx="13" ry="2" fill="#F0E2C8"/>
+<circle cx="10" cy="22" r="3" fill="#7A1838"/><circle cx="18" cy="22" r="3" fill="#3FA64C"/>
+<!-- Beine -->
+<rect x="42" y="68" width="6" height="22" fill="#262019"/>
+<rect x="52" y="68" width="6" height="22" fill="#262019"/>
+<rect x="40" y="88" width="10" height="4" fill="#000"/>
+<rect x="50" y="88" width="10" height="4" fill="#000"/>
+</svg>
+<div style="font-family:'Fraunces',serif;font-weight:700;color:var(--m-blue);margin-top:.3rem;">der Kellner</div>
+<div style="font-size:.78rem;color:var(--ink-soft);font-style:italic;">bringt das Essen</div>
+</div>
+
+<div style="background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1rem;text-align:center;">
+<svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" style="width:90px;height:110px;">
+<!-- Rechnung -->
+<path d="M20,10 L80,10 L80,95 L70,90 L60,95 L50,90 L40,95 L30,90 L20,95 Z" fill="#FFFFFF" stroke="#262019" stroke-width="1.5"/>
+<text x="50" y="24" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#E8302A">RECHNUNG</text>
+<line x1="28" y1="30" x2="72" y2="30" stroke="#A8957D" stroke-width=".6"/>
+<text x="28" y="42" font-family="Outfit,sans-serif" font-size="6" fill="#262019">Pizza</text>
+<text x="72" y="42" text-anchor="end" font-family="Outfit,sans-serif" font-size="6" fill="#262019">9,80</text>
+<text x="28" y="52" font-family="Outfit,sans-serif" font-size="6" fill="#262019">Salat</text>
+<text x="72" y="52" text-anchor="end" font-family="Outfit,sans-serif" font-size="6" fill="#262019">6,90</text>
+<text x="28" y="62" font-family="Outfit,sans-serif" font-size="6" fill="#262019">Wasser</text>
+<text x="72" y="62" text-anchor="end" font-family="Outfit,sans-serif" font-size="6" fill="#262019">2,80</text>
+<line x1="28" y1="68" x2="72" y2="68" stroke="#262019" stroke-width=".8"/>
+<text x="28" y="78" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#0FB5A6">SUMME</text>
+<text x="72" y="78" text-anchor="end" font-family="Outfit,sans-serif" font-size="7" font-weight="700" fill="#0FB5A6">19,50 &#8364;</text>
+</svg>
+<div style="font-family:'Fraunces',serif;font-weight:700;color:var(--f-red);margin-top:.3rem;">die Rechnung</div>
+<div style="font-size:.78rem;color:var(--ink-soft);font-style:italic;">am Ende bezahlen</div>
+</div>
+
+<div style="background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1rem;text-align:center;">
+<svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" style="width:100px;height:110px;">
+<!-- Münzen-Stapel für Trinkgeld -->
+<ellipse cx="35" cy="80" rx="20" ry="6" fill="#D4A41F"/>
+<rect x="15" y="72" width="40" height="8" fill="#E8B82C"/>
+<ellipse cx="35" cy="72" rx="20" ry="6" fill="#FFD24A" stroke="#B66809" stroke-width="1"/>
+<text x="35" y="76" text-anchor="middle" font-family="Fraunces,serif" font-size="9" font-weight="900" fill="#7A4A00">2&#8364;</text>
+<ellipse cx="60" cy="58" rx="18" ry="5" fill="#D4A41F"/>
+<rect x="42" y="51" width="36" height="7" fill="#E8B82C"/>
+<ellipse cx="60" cy="51" rx="18" ry="5" fill="#FFD24A" stroke="#B66809" stroke-width="1"/>
+<text x="60" y="55" text-anchor="middle" font-family="Fraunces,serif" font-size="8" font-weight="900" fill="#7A4A00">1&#8364;</text>
+<ellipse cx="45" cy="38" rx="14" ry="4" fill="#A8957D"/>
+<rect x="31" y="32" width="28" height="6" fill="#C9B594"/>
+<ellipse cx="45" cy="32" rx="14" ry="4" fill="#DCCCAA" stroke="#5C4E3E" stroke-width=".8"/>
+<text x="45" y="35" text-anchor="middle" font-family="Fraunces,serif" font-size="7" font-weight="900" fill="#5C4E3E">50</text>
+<!-- Sparkle -->
+<text x="78" y="20" font-size="14">&#10024;</text>
+<text x="14" y="22" font-size="12">&#10024;</text>
+</svg>
+<div style="font-family:'Fraunces',serif;font-weight:700;color:var(--n-green);margin-top:.3rem;">das Trinkgeld</div>
+<div style="font-size:.78rem;color:var(--ink-soft);font-style:italic;">ca. 5-10% extra</div>
+</div>
+</div>
+
+<div class="tip">
+&#128176; <strong>Trinkgeld in Deutschland:</strong> ca. <u>5-10%</u>, auf einen runden Betrag aufrunden. Bei <em>15,40 &euro;</em> sagst du: &bdquo;Machen Sie 17 &mdash; <strong>stimmt so!</strong>&ldquo; Trinkgeld ist <em>kein Muss</em>, aber sehr h&ouml;flich!
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+
+<div class="alltag-q">
+<div class="ql">Konkret &middot; Bestellen</div>
+<div class="qq">Du bist beim Italiener. Der Kellner kommt mit der Karte. Was sagst du als Erstes?</div>
+<div class="think">&#128173; &bdquo;Hallo! Ich nehme <strong>einen</strong> Salat, <strong>eine</strong> Pizza Margherita und <strong>ein</strong> Wasser, bitte.&ldquo;</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);">
+<div class="ql" style="color:var(--teal);">Alltag &middot; Vegetarisch</div>
+<div class="qq">Du isst kein Fleisch. Die Kellnerin empfiehlt das Schnitzel. Wie reagierst du h&ouml;flich?</div>
+<div class="think">&#128173; &bdquo;Oh, danke &mdash; aber ich bin Vegetarier:in. Haben Sie etwas <strong>ohne Fleisch</strong>?&ldquo;</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#B66809;">
+<div class="ql" style="color:#B66809;">Konkret &middot; Trinkgeld</div>
+<div class="qq">Die Rechnung ist 18,40 &euro;. Du bist zufrieden &mdash; wie viel Trinkgeld gibst du?</div>
+<div class="think">&#128173; Auf 20 &euro; aufrunden. &bdquo;Machen Sie 20 &mdash; stimmt so!&ldquo; Das sind ca. 9% Trinkgeld.</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#6A3D9C;">
+<div class="ql" style="color:#6A3D9C;">Problem &middot; Bezahlen</div>
+<div class="qq">Du willst zahlen, aber die Karten-Maschine geht nicht. Was tust du?</div>
+<div class="think">&#128173; &bdquo;Oh, dann zahle ich bar. Haben Sie Wechselgeld auf 20 Euro?&ldquo;</div>
 </div>
 
 </section>
 
-<!-- ============== LERNKARTEN ============== -->
-<section class="section" data-section="2">
-<h2 class="section-title">Lernkarten &middot; <em style="font-style:italic;">Bestellen mit Akkusativ</em></h2>
-<p class="section-sub">Vorne: das Wort. Hinten: der Akkusativ-Satz!</p>
+<!-- ============== 2. LERNKARTEN ============== -->
+<section class="section" data-section="1">
+<h2 class="section-title">Lernkarten &middot; <em style="font-style:italic;">22 Speisen + Akkusativ</em></h2>
+<p class="section-sub">Tipp die Karte an &mdash; vorne siehst du das Wort, hinten den Bestell-Satz!</p>
 
 <div class="flip" id="flip">
 <div class="flip-inner">
 <div class="flip-side front">
-<div class="flip-emoji" id="flipEmoji">🥗</div>
+<div class="flip-emoji" id="flipEmoji">&#129382;</div>
 <div class="flip-word" id="flipWord">der Salat</div>
-<div class="flip-badge" id="flipBadge">maskulin → -n!</div>
+<div class="flip-badge m" id="flipBadge">maskulin &middot; +n!</div>
 <div class="flip-prompt">Wie bestellst du das? <br>(zum Umdrehen tippen)</div>
 </div>
 <div class="flip-side back">
-<div class="flip-rule" id="flipRule">der → einen / den</div>
+<div class="flip-rule" id="flipRule">der &rarr; einen / den</div>
 <div class="flip-ex" id="flipEx">&bdquo;Ich nehme <strong>einen Salat</strong>, bitte.&ldquo;</div>
+<button class="tts-btn" onclick="event.stopPropagation();speakCurrent();">&#128266; H&ouml;ren</button>
 </div>
 </div>
 </div>
 
 <div class="lk-nav">
-<button class="lk-btn" id="lkPrev">←</button>
-<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span>
-<button class="lk-btn" id="lkNext">→</button>
+<button class="lk-btn" id="lkPrev">&larr;</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">22</span></span>
+<button class="lk-btn" id="lkNext">&rarr;</button>
 </div>
-<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+<button class="lk-shuffle" id="lkShuffle">&#128256; Mischen</button>
 </section>
 
-<!-- ============== QUIZ ============== -->
-<section class="section" data-section="3">
+<!-- ============== 3. QUIZ ============== -->
+<section class="section" data-section="2">
 <h2 class="section-title">Quiz: <em style="font-style:italic;">Akkusativ &amp; Restaurant</em></h2>
+<p class="section-sub">12 Aufgaben &mdash; tipp die richtige Antwort an!</p>
 
-<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Ich nehme <span class="blank">?</span> Salat.&ldquo; (der Salat)</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">eine</span><span class="quiz-chip">einen</span><span class="quiz-chip">ein</span></div><div class="quiz-explain">✓ <strong>einen</strong> &mdash; der Salat ist maskulin, im Akkusativ wird &bdquo;ein&ldquo; zu &bdquo;einen&ldquo;!</div></div>
+<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Ich nehme <span class="blank">?</span> Salat.&ldquo; <span class="gen-m">(der Salat &middot; m)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">eine</span><span class="quiz-chip">einen</span><span class="quiz-chip">ein</span></div><div class="quiz-explain">&#10003; <strong>einen</strong> &mdash; der Salat ist maskulin, im Akkusativ wird &bdquo;ein&ldquo; zu &bdquo;einen&ldquo;!</div></div>
 
-<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Ich moechte <span class="blank">?</span> Pizza.&ldquo; (die Pizza)</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">eine</span><span class="quiz-chip">einen</span><span class="quiz-chip">ein</span></div><div class="quiz-explain">✓ <strong>eine</strong> &mdash; feminin bleibt gleich: ein<u>e</u> Pizza → ein<u>e</u> Pizza.</div></div>
+<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Ich m&ouml;chte <span class="blank">?</span> Pizza.&ldquo; <span class="gen-f">(die Pizza &middot; f)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">eine</span><span class="quiz-chip">einen</span><span class="quiz-chip">ein</span></div><div class="quiz-explain">&#10003; <strong>eine</strong> &mdash; feminin bleibt gleich. ein<u>e</u> Pizza im Nom. &rarr; ein<u>e</u> Pizza im Akk.</div></div>
 
-<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Fuer mich <span class="blank">?</span> Wasser, bitte.&ldquo; (das Wasser)</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">eine</span><span class="quiz-chip">einen</span><span class="quiz-chip">ein</span></div><div class="quiz-explain">✓ <strong>ein</strong> &mdash; neutrum bleibt gleich. &bdquo;das Wasser&ldquo; → &bdquo;ein Wasser&ldquo;.</div></div>
+<div class="quiz"><div class="quiz-q">Was passt? &bdquo;F&uuml;r mich <span class="blank">?</span> Wasser, bitte.&ldquo; <span class="gen-n">(das Wasser &middot; n)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">eine</span><span class="quiz-chip">einen</span><span class="quiz-chip">ein</span></div><div class="quiz-explain">&#10003; <strong>ein</strong> &mdash; neutrum bleibt gleich. &bdquo;das Wasser&ldquo; &rarr; &bdquo;ein Wasser&ldquo;.</div></div>
 
-<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Ich nehme <span class="blank">?</span> Pommes.&ldquo; (die Pommes &mdash; Plural!)</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">einen</span><span class="quiz-chip">die</span><span class="quiz-chip">ein</span></div><div class="quiz-explain">✓ <strong>die</strong> &mdash; im Plural sagt man nicht &bdquo;ein&ldquo;, sondern direkt &bdquo;die Pommes&ldquo; (oder einfach &bdquo;Pommes&ldquo;).</div></div>
+<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Ich nehme <span class="blank">?</span> Pommes.&ldquo; <span class="gen-pl">(die Pommes &middot; Plural!)</span></div><div class="quiz-opts" data-c="1"><span class="quiz-chip">einen</span><span class="quiz-chip">die</span><span class="quiz-chip">ein</span></div><div class="quiz-explain">&#10003; <strong>die</strong> &mdash; im Plural sagt man nicht &bdquo;ein&ldquo;, sondern direkt &bdquo;die Pommes&ldquo;.</div></div>
 
-<div class="quiz"><div class="quiz-q">Was bedeutet <strong>&bdquo;Was empfehlen Sie?&ldquo;</strong>?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Was waere fuer mich gut?</span><span class="quiz-chip">Wie viel kostet das?</span><span class="quiz-chip">Wo ist die Toilette?</span></div><div class="quiz-explain">✓ Du fragst den Kellner um <strong>einen Tipp</strong>, was gut ist!</div></div>
+<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Ich bestelle <span class="blank">?</span> Kaffee.&ldquo; <span class="gen-m">(der Kaffee &middot; m)</span></div><div class="quiz-opts" data-c="2"><span class="quiz-chip">eine</span><span class="quiz-chip">ein</span><span class="quiz-chip">einen</span></div><div class="quiz-explain">&#10003; <strong>einen</strong> &mdash; der Kaffee ist maskulin! Wieder das +n.</div></div>
 
-<div class="quiz"><div class="quiz-q">Du isst kein Fleisch. Wie sagst du das?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Ich habe keinen Hunger.</span><span class="quiz-chip">Das Essen ist kalt.</span><span class="quiz-chip">Ich bin Vegetarier:in.</span></div><div class="quiz-explain">✓ <strong>&bdquo;Ich bin Vegetarier:in&ldquo;</strong> &mdash; immer ohne Artikel (wie Beruf!).</div></div>
+<div class="quiz"><div class="quiz-q">Was passt? &bdquo;Hast du <span class="blank">?</span> Eis genommen?&ldquo; <span class="gen-n">(das Eis &middot; n)</span></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">ein</span><span class="quiz-chip">einen</span><span class="quiz-chip">eine</span></div><div class="quiz-explain">&#10003; <strong>ein</strong> &mdash; neutrum bleibt gleich, auch in Fragen.</div></div>
 
-<div class="quiz"><div class="quiz-q">Was sagt der Kellner beim Bezahlen?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Schmeckt es Ihnen?</span><span class="quiz-chip">Zusammen oder getrennt?</span><span class="quiz-chip">Was empfehlen Sie?</span></div><div class="quiz-explain">✓ <strong>&bdquo;Zusammen oder getrennt?&ldquo;</strong> &mdash; eine Rechnung oder mehrere?</div></div>
+<div class="quiz"><div class="quiz-q">Welcher Satz ist <strong>richtig</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ich m&ouml;chte ein Burger.</span><span class="quiz-chip">Ich m&ouml;chte einen Burger.</span><span class="quiz-chip">Ich m&ouml;chte eine Burger.</span></div><div class="quiz-explain">&#10003; der Burger (m) &rarr; <strong>einen</strong> Burger im Akkusativ.</div></div>
 
-<div class="quiz"><div class="quiz-q">Welches Wort ist maskulin (der)?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Kaffee</span><span class="quiz-chip">Pizza</span><span class="quiz-chip">Bier</span></div><div class="quiz-explain">✓ <strong>der Kaffee</strong> &mdash; im Akkusativ also: &bdquo;Ich nehme einen Kaffee&ldquo;. (die Pizza, das Bier!)</div></div>
+<div class="quiz"><div class="quiz-q">Was bedeutet <strong>&bdquo;Was empfehlen Sie?&ldquo;</strong></div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Was w&auml;re f&uuml;r mich gut?</span><span class="quiz-chip">Wie viel kostet das?</span><span class="quiz-chip">Wo ist die Toilette?</span></div><div class="quiz-explain">&#10003; Du fragst den Kellner um <strong>einen Tipp</strong>, was gut ist!</div></div>
+
+<div class="quiz"><div class="quiz-q">Du isst kein Fleisch. Wie sagst du das?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Ich habe keinen Hunger.</span><span class="quiz-chip">Das Essen ist kalt.</span><span class="quiz-chip">Ich bin Vegetarier:in.</span></div><div class="quiz-explain">&#10003; <strong>&bdquo;Ich bin Vegetarier:in&ldquo;</strong> &mdash; immer ohne Artikel (wie Beruf!).</div></div>
+
+<div class="quiz"><div class="quiz-q">Was sagt der Kellner beim Bezahlen oft?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Schmeckt es Ihnen?</span><span class="quiz-chip">Zusammen oder getrennt?</span><span class="quiz-chip">Was empfehlen Sie?</span></div><div class="quiz-explain">&#10003; <strong>&bdquo;Zusammen oder getrennt?&ldquo;</strong> &mdash; eine Rechnung oder mehrere?</div></div>
+
+<div class="quiz"><div class="quiz-q">Welches Wort ist <span class="gen-m">maskulin (der)</span>?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Kaffee</span><span class="quiz-chip">Pizza</span><span class="quiz-chip">Bier</span></div><div class="quiz-explain">&#10003; <strong>der Kaffee</strong> &mdash; Akk.: &bdquo;Ich nehme einen Kaffee&ldquo;. (die Pizza, das Bier!)</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet <strong>&bdquo;Stimmt so!&ldquo;</strong> beim Bezahlen?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Der Rest ist Trinkgeld f&uuml;r Sie.</span><span class="quiz-chip">Bitte geben Sie mir Wechselgeld.</span><span class="quiz-chip">Die Rechnung ist falsch.</span></div><div class="quiz-explain">&#10003; <strong>&bdquo;Stimmt so&ldquo;</strong> = Sie geben kein R&uuml;ckgeld &mdash; der Rest ist Trinkgeld!</div></div>
+
+<div class="quiz"><div class="quiz-q">Welcher Satz ist <strong>falsch</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Ich m&ouml;chte eine Pizza.</span><span class="quiz-chip">Ich nehme einen Salat.</span><span class="quiz-chip">Ich m&ouml;chte einen Wasser.</span></div><div class="quiz-explain">&#10003; Falsch! Das Wasser ist <strong>neutrum</strong> &mdash; richtig: &bdquo;Ich m&ouml;chte ein Wasser.&ldquo;</div></div>
 
 </section>
 
-<!-- ============== LÜCKENTEXT ============== -->
-<section class="section" data-section="4">
-<h2 class="section-title">Lückentext &middot; <em style="font-style:italic;">Im Restaurant</em></h2>
-<p class="section-sub">Tipp: m = ein<strong>en</strong> / f = eine / n = ein / Plural = die</p>
+<!-- ============== 4. LÜCKENTEXT ============== -->
+<section class="section" data-section="3">
+<h2 class="section-title">L&uuml;ckentext &middot; <em style="font-style:italic;">Im Restaurant</em></h2>
+<p class="section-sub">Wahle das richtige Wort. Farben helfen: <span style="color:var(--m-blue);font-weight:700;">m</span> = ein<strong>en</strong> &middot; <span style="color:var(--f-red);font-weight:700;">f</span> = eine &middot; <span style="color:var(--n-green);font-weight:700;">n</span> = ein &middot; <span style="color:var(--pl-purple);font-weight:700;">Pl</span> = die</p>
 
 <div class="gap-text" id="gapText">
-<div class="gap-line">1. Ich nehme <select data-sol="einen"><option value="">…</option><option>eine</option><option>einen</option><option>ein</option></select> Salat. <span style="color:var(--ink-mute);font-size:.85em;">(der Salat &mdash; m)</span></div>
-<div class="gap-line">2. Fuer mich bitte <select data-sol="eine"><option value="">…</option><option>eine</option><option>einen</option><option>ein</option></select> Pizza. <span style="color:var(--ink-mute);font-size:.85em;">(die Pizza &mdash; f)</span></div>
-<div class="gap-line">3. Ich moechte <select data-sol="ein"><option value="">…</option><option>eine</option><option>einen</option><option>ein</option></select> Glas Wasser. <span style="color:var(--ink-mute);font-size:.85em;">(das Glas &mdash; n)</span></div>
-<div class="gap-line">4. Und dazu <select data-sol="die"><option value="">…</option><option>der</option><option>den</option><option>die</option></select> Pommes, bitte. <span style="color:var(--ink-mute);font-size:.85em;">(die Pommes &mdash; Pl.)</span></div>
-<div class="gap-line">5. Mein Mann nimmt <select data-sol="einen"><option value="">…</option><option>eine</option><option>einen</option><option>ein</option></select> Burger mit Kaese. <span style="color:var(--ink-mute);font-size:.85em;">(der Burger &mdash; m)</span></div>
-<div class="gap-line">6. Als Nachtisch nehme ich <select data-sol="ein"><option value="">…</option><option>eine</option><option>einen</option><option>ein</option></select> Eis. <span style="color:var(--ink-mute);font-size:.85em;">(das Eis &mdash; n)</span></div>
-<div class="gap-line">7. Ich habe <select data-sol="eine"><option value="">…</option><option>eine</option><option>einen</option><option>ein</option></select> Erdnussallergie. <span style="color:var(--ink-mute);font-size:.85em;">(die Allergie &mdash; f)</span></div>
-<div class="gap-line">8. <select data-sol="Die"><option value="">…</option><option>Den</option><option>Der</option><option>Die</option></select> Rechnung, bitte! <span style="color:var(--ink-mute);font-size:.85em;">(die Rechnung &mdash; f)</span></div>
+<div class="gap-line">1. Ich nehme <select data-sol="einen"><option value="">&hellip;</option><option>eine</option><option>einen</option><option>ein</option></select> Salat. <span class="hint m">(der Salat &middot; m)</span></div>
+<div class="gap-line">2. F&uuml;r mich bitte <select data-sol="eine"><option value="">&hellip;</option><option>eine</option><option>einen</option><option>ein</option></select> Pizza. <span class="hint f">(die Pizza &middot; f)</span></div>
+<div class="gap-line">3. Ich m&ouml;chte <select data-sol="ein"><option value="">&hellip;</option><option>eine</option><option>einen</option><option>ein</option></select> Glas Wasser. <span class="hint n">(das Glas &middot; n)</span></div>
+<div class="gap-line">4. Und dazu <select data-sol="die"><option value="">&hellip;</option><option>der</option><option>den</option><option>die</option></select> Pommes, bitte. <span class="hint pl">(die Pommes &middot; Pl)</span></div>
+<div class="gap-line">5. Mein Mann nimmt <select data-sol="einen"><option value="">&hellip;</option><option>eine</option><option>einen</option><option>ein</option></select> Burger mit K&auml;se. <span class="hint m">(der Burger &middot; m)</span></div>
+<div class="gap-line">6. Als Nachtisch nehme ich <select data-sol="ein"><option value="">&hellip;</option><option>eine</option><option>einen</option><option>ein</option></select> Eis. <span class="hint n">(das Eis &middot; n)</span></div>
+<div class="gap-line">7. Ich habe <select data-sol="eine"><option value="">&hellip;</option><option>eine</option><option>einen</option><option>ein</option></select> Erdnussallergie. <span class="hint f">(die Allergie &middot; f)</span></div>
+<div class="gap-line">8. <select data-sol="Die"><option value="">&hellip;</option><option>Den</option><option>Der</option><option>Die</option></select> Rechnung, bitte! <span class="hint f">(die Rechnung &middot; f)</span></div>
+<div class="gap-line">9. M&ouml;chtest du <select data-sol="einen"><option value="">&hellip;</option><option>eine</option><option>einen</option><option>ein</option></select> Kaffee nach dem Essen? <span class="hint m">(der Kaffee &middot; m)</span></div>
+<div class="gap-line">10. Sie trinkt <select data-sol="ein"><option value="">&hellip;</option><option>eine</option><option>einen</option><option>ein</option></select> Bier vom Fass. <span class="hint n">(das Bier &middot; n)</span></div>
 <div class="gap-actions">
 <button class="btn-secondary" id="gapReset">Neu</button>
-<button class="btn-primary" id="gapCheck">Überprüfen</button>
+<button class="btn-primary" id="gapCheck">&Uuml;berpr&uuml;fen</button>
 </div>
 </div>
 
 <div class="tip" id="gapScore" style="display:none;"></div>
 </section>
 
-<!-- ============== ZUORDNEN ============== -->
-<section class="section" data-section="5">
-<h2 class="section-title">Bestellung &harr; <em style="font-style:italic;">Antwort der Kellnerin</em></h2>
-<p class="section-sub">Verbinde Bestellung mit der passenden Reaktion!</p>
+<!-- ============== 5. ZUORDNEN (Bild + Bestellung) ============== -->
+<section class="section" data-section="4">
+<h2 class="section-title">Bild &harr; <em style="font-style:italic;">richtige Bestellung</em></h2>
+<p class="section-sub">Tipp ein Bild links und dann die passende Bestellung rechts &mdash; achte auf den Artikel!</p>
 
 <div class="match-stage">
 <div class="match-cols">
 <div class="match-col">
-<h4>🙋 Gast sagt</h4>
+<h4>&#128064; Was siehst du?</h4>
 <div class="match-list" id="leftCol"></div>
 </div>
 <div class="match-col">
-<h4>👨‍🍳 Kellner sagt</h4>
+<h4>&#128483;&#65039; Wie bestellst du?</h4>
 <div class="match-list" id="rightCol"></div>
 </div>
 </div>
-<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+<button class="btn-secondary match-restart" id="matchRestart">&#128260; Nochmal</button>
 </div>
 </section>
 
-<!-- ============== SPRECHEN ============== -->
-<section class="section" data-section="6">
-<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht&rsquo;s!</em></h2>
-<p class="section-sub">Zieh eine Karte. Spiel die Restaurant-Szene mit deinem Partner durch!</p>
+<!-- ============== 6. SPRECHEN ============== -->
+<section class="section" data-section="5">
+<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht es!</em></h2>
+<p class="section-sub">Zieh eine Karte. Druck auf <strong>&#128266; H&ouml;ren</strong> &mdash; und sprich nach!</p>
 
 <div class="speak-card" id="speakCard">
-<div class="speak-emoji">🎲</div>
+<div class="speak-emoji">&#127922;</div>
 <div class="speak-cat">Sprechclub-Karte</div>
 <div class="speak-q">Tippe unten auf &bdquo;Neue Karte&ldquo; und leg los!</div>
 </div>
 
 <div class="speak-controls">
-<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+<button class="btn-primary" id="speakNew">&#127922; Neue Karte</button>
+<button class="tts-btn" id="speakListen">&#128266; H&ouml;ren</button>
 </div>
 
 <div class="role-section">
-<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">im Restaurant</em></h2>
-<p class="section-sub">Übt zu zweit oder zu dritt &mdash; benutzt die Mini-Speisekarte aus Tab 💬!</p>
+<h2 class="section-title">5 Rollenspiele <em style="font-style:italic;">mit Hilfestellung</em></h2>
 
+<!-- ROLE 1 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 1 &middot; Klassiker</div>
-<div class="role-title">🍽️ Kellner und Gast</div>
-<div class="role-situation">Person A ist Gast und kommt zum ersten Mal ins Restaurant. Person B ist Kellner:in und fuehrt durch den ganzen Abend &mdash; von der Karte bis zur Rechnung.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🙋</div><div><div class="person-label">Person A &mdash; Gast</div><div class="person-quote">&bdquo;Guten Abend, einen Tisch fuer 2, bitte. Die Karte? Danke! Ich nehme <strong>einen</strong> Salat und <strong>eine</strong> Pasta&hellip;&ldquo;</div></div></div>
-<div class="person b"><div class="person-avatar">👨‍🍳</div><div><div class="person-label">Person B &mdash; Kellner:in</div><div class="person-quote">&bdquo;Gerne! Moechten Sie etwas zu trinken? Was darf es sein? Schmeckt es Ihnen? Zusammen oder getrennt?&ldquo;</div></div></div>
-</div>
-<div class="role-goal">🎯 Ziel: Person A muss mindestens 4 Akkusativ-Saetze richtig benutzen (einen / eine / ein / die)!</div>
+<div class="role-tag">Rollenspiel 1 &middot; Beim Italiener</div>
+<div class="role-title">&#127829; &bdquo;Erstes Mal beim Italiener &mdash; du bestellst Pizza + Cola&ldquo;</div>
+
+<div class="role-block situation"><div class="lbl">&#128205; Situation</div><div class="txt">Du bist zum ersten Mal in einem italienischen Restaurant in Berlin. Der Kellner kommt mit der Karte. Du hast Hunger und Durst und willst eine Pizza Margherita und eine Cola bestellen.</div></div>
+
+<div class="role-block role-you"><div class="lbl">&#128587; Deine Rolle</div><div class="txt">Du bist h&ouml;flich aber bestimmt. Du sagst klar, was du willst &mdash; mit dem richtigen Akkusativ!</div></div>
+
+<div class="role-block"><div class="lbl">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="vocab-chips"><span class="vocab-chip">die Karte</span><span class="vocab-chip">ich nehme</span><span class="vocab-chip">ich m&ouml;chte</span><span class="vocab-chip">eine Pizza</span><span class="vocab-chip">eine Cola</span><span class="vocab-chip">bitte</span><span class="vocab-chip">danke</span><span class="vocab-chip">was empfehlen Sie?</span><span class="vocab-chip">f&uuml;r mich</span><span class="vocab-chip">und</span></div>
 </div>
 
+<div class="role-block phrases"><div class="lbl">&#128172; Beispiel-Phrasen</div>
+<ul>
+<li>Hallo! Die Karte, bitte.&ldquo;</li>
+<li>Ich nehme eine Pizza Margherita.&ldquo;</li>
+<li>Und f&uuml;r mich eine Cola, bitte.&ldquo;</li>
+<li>Was empfehlen Sie als Vorspeise?&ldquo;</li>
+<li>Danke sch&ouml;n!&ldquo;</li>
+</ul>
+</div>
+
+<div class="role-block tipp"><div class="lbl">&#128161; Tipp</div><div class="txt">Sprich langsam und klar &mdash; der Kellner hat oft viel zu tun. Bei <strong>&bdquo;eine Pizza&ldquo;</strong> ist Pizza feminin, also <em>eine</em> (nicht einen!).</div></div>
+
+<div class="role-block good"><div class="lbl">&#9989; Was eine gute Bestellung enth&auml;lt</div><div class="txt">Gru&szlig; + Was du m&ouml;chtest (mit richtigem Artikel!) + h&ouml;flicher Abschluss (&bdquo;bitte&ldquo;, &bdquo;danke&ldquo;).</div></div>
+</div>
+
+<!-- ROLE 2 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 2 &middot; Allergie</div>
-<div class="role-title">⚠️ Mit Allergie bestellen</div>
-<div class="role-situation">Person A hat mehrere Allergien (z. B. Nuesse, Laktose). Person B ist Kellner:in und muss bei jedem Gericht klaeren, ob es passt.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🥜</div><div><div class="person-label">Person A &mdash; mit Allergie</div><div class="person-quote">&bdquo;Ich habe <strong>eine</strong> Nussallergie. Hat <strong>der</strong> Salat Nuesse? Und <strong>die</strong> Pasta &mdash; ist da Sahne drin?&ldquo;</div></div></div>
-<div class="person b"><div class="person-avatar">📋</div><div><div class="person-label">Person B &mdash; Kellner:in</div><div class="person-quote">&bdquo;Moment, ich frage <strong>den</strong> Koch! &hellip; Nein, <strong>der</strong> Salat ist nussfrei. Aber <strong>die</strong> Pasta hat Sahne &mdash; nehmen Sie lieber <strong>die</strong> Tomatensosse!&ldquo;</div></div></div>
-</div>
-<div class="role-goal">🎯 A nennt 3 Allergien. B findet fuer jedes Gericht eine sichere Alternative!</div>
+<div class="role-tag">Rollenspiel 2 &middot; Vegetarier:in</div>
+<div class="role-title">&#129364; &bdquo;Hat das Gericht Fleisch?&ldquo;</div>
+
+<div class="role-block situation"><div class="lbl">&#128205; Situation</div><div class="txt">Du bist Vegetarier:in. Die Kellnerin empfiehlt das &bdquo;Hausgericht&ldquo; &mdash; aber du wei&szlig;t nicht, ob da Fleisch drin ist. Frag freundlich nach!</div></div>
+
+<div class="role-block role-you"><div class="lbl">&#128587; Deine Rolle</div><div class="txt">Du willst nicht unh&ouml;flich sein. Du fragst nach Details und bittest um eine Alternative.</div></div>
+
+<div class="role-block"><div class="lbl">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="vocab-chips"><span class="vocab-chip">ich bin Vegetarier:in</span><span class="vocab-chip">ohne Fleisch</span><span class="vocab-chip">mit Fleisch</span><span class="vocab-chip">vegan</span><span class="vocab-chip">enthalten</span><span class="vocab-chip">das Gericht</span><span class="vocab-chip">eine Alternative</span><span class="vocab-chip">k&ouml;nnen Sie etwas empfehlen?</span><span class="vocab-chip">Gem&uuml;se</span></div>
 </div>
 
+<div class="role-block phrases"><div class="lbl">&#128172; Beispiel-Phrasen</div>
+<ul>
+<li>Entschuldigung, ich bin Vegetarier:in.&ldquo;</li>
+<li>Ist da Fleisch drin?&ldquo;</li>
+<li>Haben Sie etwas ohne Fleisch?&ldquo;</li>
+<li>K&ouml;nnen Sie mir etwas Vegetarisches empfehlen?&ldquo;</li>
+<li>Dann nehme ich den Salat und die Pasta ohne Speck, bitte.&ldquo;</li>
+</ul>
+</div>
+
+<div class="role-block tipp"><div class="lbl">&#128161; Tipp</div><div class="txt">Du musst nicht erkl&auml;ren <em>warum</em> du Vegetarier:in bist. Ein einfaches &bdquo;Ich bin Vegetarier:in&ldquo; reicht!</div></div>
+
+<div class="role-block good"><div class="lbl">&#9989; Was eine gute Frage enth&auml;lt</div><div class="txt">Du sagst was du brauchst + fragst klar nach + bedankst dich.</div></div>
+</div>
+
+<!-- ROLE 3 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 3 &middot; Bezahlen</div>
-<div class="role-title">💳 Die Rechnung aufteilen</div>
-<div class="role-situation">3 Personen waren essen. Die Rechnung kommt &mdash; jeder hatte etwas anderes. Diskutiert, wer was zahlt, und gebt am Ende Trinkgeld!</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🍷</div><div><div class="person-label">Person A &mdash; Gast 1</div><div class="person-quote">&bdquo;Ich hatte <strong>die</strong> Pasta und <strong>ein</strong> Glas Wein. Das macht 16,30, oder?&ldquo;</div></div></div>
-<div class="person b"><div class="person-avatar">👨‍🍳</div><div><div class="person-label">Person B &mdash; Kellner:in</div><div class="person-quote">&bdquo;Getrennt? Kein Problem! Wer hatte <strong>den</strong> Burger? Und <strong>die</strong> Pommes? Bar oder Karte?&ldquo;</div></div></div>
-</div>
-<div class="role-goal">🎯 Jede Person zahlt einzeln &mdash; und gibt Trinkgeld mit &bdquo;Stimmt so!&ldquo;.</div>
-</div>
+<div class="role-tag">Rollenspiel 3 &middot; Mit Freunden</div>
+<div class="role-title">&#128106; &bdquo;Wir wollen die Rechnung getrennt zahlen&ldquo;</div>
+
+<div class="role-block situation"><div class="lbl">&#128205; Situation</div><div class="txt">Du bist mit 3 Freunden im Restaurant. Jeder hat etwas anderes bestellt. Jetzt wollt ihr getrennt zahlen.</div></div>
+
+<div class="role-block role-you"><div class="lbl">&#128587; Deine Rolle</div><div class="txt">Du sagst dem Kellner, dass ihr getrennt zahlt. Dann sagst du was DU bestellt hast.</div></div>
+
+<div class="role-block"><div class="lbl">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="vocab-chips"><span class="vocab-chip">getrennt</span><span class="vocab-chip">zusammen</span><span class="vocab-chip">die Rechnung</span><span class="vocab-chip">ich hatte</span><span class="vocab-chip">ich bezahle</span><span class="vocab-chip">bar</span><span class="vocab-chip">mit Karte</span><span class="vocab-chip">das macht</span></div>
 </div>
 
-<h2 class="section-title">🎯 Mission der Woche</h2>
-<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
-<strong>Tägliche Mini-Aufgabe:</strong> Schreib jeden Tag 3 Saetze auf, was du gegessen oder getrunken hast &mdash; immer mit Akkusativ! &bdquo;Heute habe ich <strong>einen</strong> Kaffee, <strong>eine</strong> Brezel und <strong>ein</strong> Joghurt gegessen.&ldquo;<br><br>
-🏆 <strong>Bonus-Challenge:</strong> Geh diese Woche in ein deutsches Restaurant oder Cafe und bestelle KOMPLETT auf Deutsch. Achte besonders auf &bdquo;<strong>einen / eine / ein</strong>&ldquo; &mdash; und sag am Ende &bdquo;Stimmt so!&ldquo;
+<div class="role-block phrases"><div class="lbl">&#128172; Beispiel-Phrasen</div>
+<ul>
+<li>Die Rechnung, bitte &mdash; getrennt!&ldquo;</li>
+<li>Ich hatte die Pasta und ein Wasser.&ldquo;</li>
+<li>Wie viel macht das?&ldquo;</li>
+<li>Ich bezahle mit Karte.&ldquo;</li>
+<li>Stimmt so, danke!&ldquo;</li>
+</ul>
+</div>
+
+<div class="role-block tipp"><div class="lbl">&#128161; Tipp</div><div class="txt">In Deutschland ist <strong>getrennt zahlen</strong> total normal! Manche Restaurants fragen sogar zuerst.</div></div>
+
+<div class="role-block good"><div class="lbl">&#9989; Was eine gute Zahlung enth&auml;lt</div><div class="txt">Klar sagen &bdquo;getrennt&ldquo; + was du hattest (mit Akkusativ!) + Zahlmethode + Trinkgeld-Entscheidung.</div></div>
+</div>
+
+<!-- ROLE 4 -->
+<div class="role">
+<div class="role-tag">Rollenspiel 4 &middot; Reklamation</div>
+<div class="role-title">&#129397; &bdquo;Das Essen ist kalt &mdash; reklamiere h&ouml;flich&ldquo;</div>
+
+<div class="role-block situation"><div class="lbl">&#128205; Situation</div><div class="txt">Du hast eine Pasta bestellt. Das Essen kommt &mdash; aber es ist kalt! Du m&ouml;chtest reklamieren, aber freundlich bleiben.</div></div>
+
+<div class="role-block role-you"><div class="lbl">&#128587; Deine Rolle</div><div class="txt">Du bist nicht b&ouml;se &mdash; du bittest nur, dass das Essen warm gemacht wird.</div></div>
+
+<div class="role-block"><div class="lbl">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="vocab-chips"><span class="vocab-chip">Entschuldigung</span><span class="vocab-chip">kalt</span><span class="vocab-chip">warm</span><span class="vocab-chip">leider</span><span class="vocab-chip">k&ouml;nnen Sie?</span><span class="vocab-chip">nochmal warm machen</span><span class="vocab-chip">die Pasta</span><span class="vocab-chip">das tut mir leid</span><span class="vocab-chip">kein Problem</span></div>
+</div>
+
+<div class="role-block phrases"><div class="lbl">&#128172; Beispiel-Phrasen</div>
+<ul>
+<li>Entschuldigung, die Pasta ist leider kalt.&ldquo;</li>
+<li>K&ouml;nnen Sie das nochmal warm machen?&ldquo;</li>
+<li>Das ist nicht so wie ich es bestellt habe.&ldquo;</li>
+<li>Vielen Dank!&ldquo;</li>
+<li>Jetzt ist es perfekt &mdash; danke!&ldquo;</li>
+</ul>
+</div>
+
+<div class="role-block tipp"><div class="lbl">&#128161; Tipp</div><div class="txt">In Deutschland ist Reklamieren OK &mdash; aber bleib <strong>ruhig und h&ouml;flich</strong>. Sage &bdquo;leider&ldquo; statt zu schimpfen!</div></div>
+
+<div class="role-block good"><div class="lbl">&#9989; Was eine gute Reklamation enth&auml;lt</div><div class="txt">&bdquo;Entschuldigung&ldquo; + Problem benennen (kalt/zu salzig/falsch) + L&ouml;sung vorschlagen + &bdquo;danke&ldquo;.</div></div>
+</div>
+
+<!-- ROLE 5 -->
+<div class="role">
+<div class="role-tag">Rollenspiel 5 &middot; Trinkgeld</div>
+<div class="role-title">&#128181; &bdquo;Rechnung bezahlen + Trinkgeld geben&ldquo;</div>
+
+<div class="role-block situation"><div class="lbl">&#128205; Situation</div><div class="txt">Die Rechnung kommt: 23,40 &euro;. Du warst sehr zufrieden &mdash; das Essen war super und der Kellner sehr nett. Wie zahlst du, und wie viel Trinkgeld?</div></div>
+
+<div class="role-block role-you"><div class="lbl">&#128587; Deine Rolle</div><div class="txt">Du m&ouml;chtest h&ouml;flich Trinkgeld geben &mdash; ca. 10%. Du sagst dem Kellner direkt den runden Betrag.</div></div>
+
+<div class="role-block"><div class="lbl">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="vocab-chips"><span class="vocab-chip">die Rechnung</span><span class="vocab-chip">das macht</span><span class="vocab-chip">stimmt so</span><span class="vocab-chip">machen Sie 26</span><span class="vocab-chip">aufrunden</span><span class="vocab-chip">das Trinkgeld</span><span class="vocab-chip">bar</span><span class="vocab-chip">mit Karte</span><span class="vocab-chip">danke f&uuml;r alles</span></div>
+</div>
+
+<div class="role-block phrases"><div class="lbl">&#128172; Beispiel-Phrasen</div>
+<ul>
+<li>Die Rechnung, bitte!&ldquo;</li>
+<li>Das war sehr lecker &mdash; danke!&ldquo;</li>
+<li>Machen Sie 26 Euro &mdash; stimmt so!&ldquo;</li>
+<li>Ich bezahle mit Karte.&ldquo;</li>
+<li>Sch&ouml;nen Abend noch!&ldquo;</li>
+</ul>
+</div>
+
+<div class="role-block tipp"><div class="lbl">&#128161; Tipp</div><div class="txt">Bei 23,40 &euro; sagst du <strong>&bdquo;Machen Sie 26&ldquo;</strong> &mdash; das sind ca. 11% Trinkgeld. Gib das Trinkgeld <em>direkt</em>, nicht auf dem Tisch liegen lassen!</div></div>
+
+<div class="role-block good"><div class="lbl">&#9989; Was eine gute Bezahlung enth&auml;lt</div><div class="txt">Rechnung verlangen + Kompliment ans Restaurant + runden Betrag sagen + &bdquo;stimmt so&ldquo; + freundlicher Abschied.</div></div>
+</div>
+
+</div>
+
+<!-- MISSION -->
+<div class="mission">
+<div class="tag">&#127919; Mission diese Woche</div>
+<div class="title">Geh in ein deutsches Caf&eacute; oder Restaurant!</div>
+<div class="task">Bestelle <strong>3 Sachen</strong> auf Deutsch &mdash; mindestens eine maskulin (&bdquo;einen Kaffee&ldquo;), eine feminin (&bdquo;eine Pizza&ldquo;) und eine neutrum (&bdquo;ein Wasser&ldquo;). Bezahle mit <strong>&bdquo;Stimmt so!&ldquo;</strong>. Erz&auml;hl uns n&auml;chste Woche, wie es war!</div>
 </div>
 
 </section>
 
+<!-- ============== 7. UMGANGSSPRACHE (am Ende!) ============== -->
+<section class="section" data-section="6">
+<h2 class="section-title">&#128172; So reden Deutsche <em style="font-style:italic;">wirklich</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats &mdash; vor, w&auml;hrend und nach dem Restaurantbesuch.</p>
+
+<div class="tip">&#128293; <strong>Tipp:</strong> Im Caf&eacute; sagen Deutsche oft kurz: <strong>&bdquo;Ich nehme&hellip;&ldquo;</strong> oder einfach <em>&bdquo;F&uuml;r mich einen Kaffee, bitte.&ldquo;</em> &mdash; das ist h&ouml;flich genug!</div>
+
+<div class="uss-grid">
+
+<!-- CHAT 1: vor dem Italiener -->
+<div class="chat">
+<div class="chat-head"><div class="av">&#127829;</div><div><div class="name">Lisa &middot; gleich beim Italiener</div><div class="stat">tippt &hellip;</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">na wat nimmst du heut? &#128064;</div><div class="chat-meta">19:32</div></div>
+<div class="chat-msg in"><div class="chat-bubble">ka, hab mega hunger&hellip; vlt <strong>eine</strong> Pizza Margherita?</div><div class="chat-meta">19:32</div></div>
+<div class="chat-msg out"><div class="chat-bubble">die Pasta sieht auch krass aus oder &#129316;</div><div class="chat-meta">19:33</div></div>
+<div class="chat-msg in"><div class="chat-bubble">stimmt&hellip; nehmen wir <strong>einen</strong> Salat zusammen?</div><div class="chat-meta">19:33</div></div>
+<div class="chat-msg out"><div class="chat-bubble">jaa! dann teilen wir <strong>den</strong> &#129385;</div><div class="chat-meta">19:34</div></div>
+<div class="chat-msg in"><div class="chat-voice"><span class="play">&#9658;</span><span class="wave"></span>0:08</div><div class="chat-meta">19:34 &middot; Sprachnachricht</div></div>
+<div class="chat-meaning"><strong>&bdquo;ka&ldquo;</strong> = keine Ahnung &middot; <strong>&bdquo;vlt&ldquo;</strong> = vielleicht &middot; <strong>einen/eine/den</strong> &mdash; Akkusativ in der Wildnis!</div>
 </div>
 
-<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch fuer den Alltag<br>Erstellt mit ❤️ fuer meine Sprechclub-Lernenden &middot; Im Restaurant + Akkusativ &middot; A2</footer>
+<!-- CHAT 2: Vegetarier -->
+<div class="chat">
+<div class="chat-head"><div class="av">&#129364;</div><div><div class="name">Tom &middot; Vegetarier</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">kommst du mit zum schnitzelhaus?</div><div class="chat-meta">17:10</div></div>
+<div class="chat-msg out"><div class="chat-bubble">&auml;hm&hellip; ich bin doch <strong>Vegetarier</strong> &#128556;</div><div class="chat-meta">17:11</div></div>
+<div class="chat-msg in"><div class="chat-bubble">stimmt sry! die haben aber auch <strong>ein</strong> gem&uuml;seschnitzel und <strong>einen</strong> mega salat</div><div class="chat-meta">17:11</div></div>
+<div class="chat-msg out"><div class="chat-bubble">ach ok dann komm ich mit &#127807;</div><div class="chat-meta">17:12</div></div>
+<div class="chat-msg in"><div class="chat-bubble">top! 19 uhr?</div><div class="chat-meta">17:12</div></div>
+<div class="chat-msg out"><div class="chat-bubble">passt &#128077;</div><div class="chat-meta">17:13</div></div>
+<div class="chat-meaning"><strong>&bdquo;Ich bin Vegetarier&ldquo;</strong> &mdash; immer OHNE Artikel! <strong>&bdquo;ein Gem&uuml;seschnitzel&ldquo;</strong> (n) bleibt im Akk. gleich.</div>
+</div>
+
+<!-- CHAT 3: Rechnung -->
+<div class="chat">
+<div class="chat-head"><div class="av">&#128181;</div><div><div class="name">Anna &middot; nach dem Essen</div><div class="stat">zuletzt online vor 2 Min</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">alter die rechnung war ein chaos &#128514;</div><div class="chat-meta">21:45</div></div>
+<div class="chat-msg in"><div class="chat-bubble">wieso, was war?</div><div class="chat-meta">21:46</div></div>
+<div class="chat-msg out"><div class="chat-bubble">getrennt wollten wir, aber der kellner hat alles zusammengezahlt&hellip; mussten neu rechnen</div><div class="chat-meta">21:46</div></div>
+<div class="chat-msg in"><div class="chat-bubble">oh nein peinlich. habt ihr <strong>trinkgeld</strong> gegeben?</div><div class="chat-meta">21:47</div></div>
+<div class="chat-msg out"><div class="chat-bubble">jo, hab gesagt &bdquo;<strong>stimmt so</strong>&ldquo; bei 18 euro &mdash; war 16,40</div><div class="chat-meta">21:47</div></div>
+<div class="chat-msg in"><div class="chat-bubble">perfekt! genau richtig &#128076;</div><div class="chat-meta">21:48</div></div>
+<div class="chat-meaning"><strong>&bdquo;stimmt so&ldquo;</strong> = Rest ist Trinkgeld. <strong>&bdquo;getrennt zahlen&ldquo;</strong> in DE total normal!</div>
+</div>
+
+<!-- CHAT 4: Allergie -->
+<div class="chat">
+<div class="chat-head"><div class="av">&#9888;&#65039;</div><div><div class="name">Maria &middot; mit Allergie</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">ich war heute beim asiaten, war wieder so peinlich &#128517;</div><div class="chat-meta">14:22</div></div>
+<div class="chat-msg in"><div class="chat-bubble">was war denn?</div><div class="chat-meta">14:23</div></div>
+<div class="chat-msg out"><div class="chat-bubble">musste 3x fragen ob <strong>der</strong> salat erdn&uuml;sse hat. die kellnerin war voll genervt</div><div class="chat-meta">14:23</div></div>
+<div class="chat-msg in"><div class="chat-bubble">nee aber das ist deine gesundheit! sag einfach klar: ich habe <strong>eine</strong> erdnussallergie</div><div class="chat-meta">14:24</div></div>
+<div class="chat-msg out"><div class="chat-bubble">ja stimmt&hellip; aber mein deutsch ist halt nicht so gut</div><div class="chat-meta">14:24</div></div>
+<div class="chat-msg in"><div class="chat-bubble">hey, das war perfekt. lieber fragen als krank werden &#128591;</div><div class="chat-meta">14:25</div></div>
+<div class="chat-meaning"><strong>&bdquo;eine Allergie&ldquo;</strong> &mdash; die Allergie ist feminin. <strong>&bdquo;der Salat&ldquo;</strong> (m) im Nom., aber <em>einen Salat</em> im Akk.!</div>
+</div>
+
+<!-- CHAT 5: Verabredung Caf&eacute; -->
+<div class="chat">
+<div class="chat-head"><div class="av">&#9749;</div><div><div class="name">Sarah &middot; Caf&eacute;-Date?</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">treffen wir uns morgen im caf&eacute; eckstein?</div><div class="chat-meta">10:02</div></div>
+<div class="chat-msg out"><div class="chat-bubble">jaa gerne! die haben so guten <strong>kuchen</strong> &#127856;</div><div class="chat-meta">10:03</div></div>
+<div class="chat-msg in"><div class="chat-bubble">ich nehm <strong>einen</strong> cappuccino und <strong>ein</strong> st&uuml;ck schokokuchen</div><div class="chat-meta">10:03</div></div>
+<div class="chat-msg out"><div class="chat-bubble">und ich <strong>einen</strong> latte und <strong>die</strong> waffeln &#129396;</div><div class="chat-meta">10:04</div></div>
+<div class="chat-msg in"><div class="chat-bubble">15 uhr? &#9749;</div><div class="chat-meta">10:04</div></div>
+<div class="chat-msg out"><div class="chat-bubble">deal &#128077;</div><div class="chat-meta">10:05</div></div>
+<div class="chat-meaning"><strong>einen Cappuccino</strong> (m, +n!) &middot; <strong>ein St&uuml;ck</strong> (n) &middot; <strong>die Waffeln</strong> (Plural). Alles richtig &mdash; super!</div>
+</div>
+
+<!-- CHAT 6: Reklamation -->
+<div class="chat">
+<div class="chat-head"><div class="av">&#129397;</div><div><div class="name">Ben &middot; Pasta-Drama</div><div class="stat">zuletzt online jetzt</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">die pasta war kalt heute &#128556;</div><div class="chat-meta">20:14</div></div>
+<div class="chat-msg in"><div class="chat-bubble">und? hast du was gesagt?</div><div class="chat-meta">20:15</div></div>
+<div class="chat-msg out"><div class="chat-bubble">erst nicht, dann ja. hab nett gefragt &bdquo;k&ouml;nnen sie das nochmal warm machen?&ldquo;</div><div class="chat-meta">20:15</div></div>
+<div class="chat-msg in"><div class="chat-bubble">und?? &#128064;</div><div class="chat-meta">20:16</div></div>
+<div class="chat-msg out"><div class="chat-bubble">kein problem! sogar entschuldigt. das war voll easy</div><div class="chat-meta">20:16</div></div>
+<div class="chat-msg in"><div class="chat-voice"><span class="play">&#9658;</span><span class="wave"></span>0:12</div><div class="chat-meta">20:17 &middot; Sprachnachricht</div></div>
+<div class="chat-msg out"><div class="chat-bubble">eben! immer freundlich fragen, nie schimpfen &#128591;</div><div class="chat-meta">20:18</div></div>
+<div class="chat-meaning"><strong>&bdquo;K&ouml;nnen Sie das nochmal warm machen?&ldquo;</strong> &mdash; perfekter h&ouml;flicher Reklamations-Satz. Merken!</div>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<strong>deutschoderwas</strong> &middot; A2 Sprechclub Deluxe &middot; Im Restaurant + Akkusativ<br>
+Erstellt 13.06.2026 &middot; <a href="https://deutschoderwas-lernen.de" style="color:var(--red);">deutschoderwas-lernen.de</a>
+</footer>
+
+</div>
 
 <script>
-document.querySelectorAll('.tab').forEach(b=>{
-  b.onclick=()=>{
-    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-  };
-});
-
-// LERNKARTEN
-const KARTEN=[
-  {emoji:'🥗',word:'der Salat',badge:'maskulin → -n!',rule:'der → einen / den',ex:'„Ich nehme <strong>einen Salat</strong>, bitte."'},
-  {emoji:'🍕',word:'die Pizza',badge:'feminin',rule:'die → eine (bleibt gleich)',ex:'„Fuer mich <strong>eine Pizza</strong> Margherita."'},
-  {emoji:'💧',word:'das Wasser',badge:'neutrum',rule:'das → ein (bleibt gleich)',ex:'„Ich moechte <strong>ein Wasser</strong>, bitte."'},
-  {emoji:'🍟',word:'die Pommes',badge:'Plural',rule:'die → die (kein ein im Plural!)',ex:'„Und dazu <strong>die Pommes</strong>, bitte."'},
-  {emoji:'☕',word:'der Kaffee',badge:'maskulin → -n!',rule:'der → einen Kaffee',ex:'„Ich nehme <strong>einen Kaffee</strong> mit Milch."'},
-  {emoji:'🍺',word:'das Bier',badge:'neutrum',rule:'das → ein Bier',ex:'„Fuer mich <strong>ein Bier</strong> vom Fass!"'},
-  {emoji:'🍷',word:'der Wein',badge:'maskulin → -n!',rule:'der → einen Wein',ex:'„Ich moechte <strong>einen Rotwein</strong>, bitte."'},
-  {emoji:'🍔',word:'der Burger',badge:'maskulin → -n!',rule:'der → einen Burger',ex:'„Ich bestelle <strong>einen Burger</strong> mit Pommes."'},
-  {emoji:'🥩',word:'das Schnitzel',badge:'neutrum',rule:'das → ein Schnitzel',ex:'„Ich nehme <strong>ein Schnitzel</strong> mit Kartoffeln."'},
-  {emoji:'🍝',word:'die Pasta',badge:'feminin',rule:'die → eine Pasta',ex:'„Ich moechte <strong>eine Pasta</strong> Carbonara."'},
-  {emoji:'🍰',word:'der Kuchen',badge:'maskulin → -n!',rule:'der → einen Kuchen',ex:'„Als Nachtisch <strong>einen Apfelkuchen</strong>!"'},
-  {emoji:'🍦',word:'das Eis',badge:'neutrum',rule:'das → ein Eis',ex:'„Ich moechte <strong>ein Eis</strong> mit drei Kugeln."'},
-  {emoji:'🍅',word:'die Suppe',badge:'feminin',rule:'die → eine Suppe',ex:'„Bringen Sie mir bitte <strong>eine Tomatensuppe</strong>."'},
-  {emoji:'🥖',word:'das Brot',badge:'neutrum',rule:'das → ein Brot',ex:'„Koennen Sie mir <strong>ein Brot</strong> bringen?"'},
-  {emoji:'💳',word:'die Rechnung',badge:'feminin',rule:'die → die Rechnung',ex:'„<strong>Die Rechnung</strong>, bitte!"'},
-];
-let order=KARTEN.map((_,i)=>i);
-let lkIdx=0;
-const flipEl=document.getElementById('flip');
-function showCard(){
-  const k=KARTEN[order[lkIdx]];
-  document.getElementById('flipEmoji').textContent=k.emoji;
-  document.getElementById('flipWord').textContent=k.word;
-  document.getElementById('flipBadge').textContent=k.badge;
-  document.getElementById('flipRule').textContent=k.rule;
-  document.getElementById('flipEx').innerHTML=k.ex;
-  document.getElementById('lkCur').textContent=lkIdx+1;
-  document.getElementById('lkTot').textContent=KARTEN.length;
-  flipEl.classList.remove('flipped');
+/* ========= TTS ========= */
+function speak(t){
+  try{
+    speechSynthesis.cancel();
+    var u=new SpeechSynthesisUtterance(t);
+    u.lang='de-DE';
+    u.rate=0.92;
+    speechSynthesis.speak(u);
+  }catch(e){console.warn('TTS not available',e);}
 }
-flipEl.onclick=()=>flipEl.classList.toggle('flipped');
-document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
-document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
-document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
-showCard();
 
-// QUIZ
-document.querySelectorAll('.quiz-opts').forEach(opts=>{
-  const c=parseInt(opts.dataset.c);
-  const chips=opts.querySelectorAll('.quiz-chip');
-  const exp=opts.parentElement.querySelector('.quiz-explain');
-  chips.forEach((chip,i)=>{
-    chip.onclick=()=>{
-      if(opts.dataset.done)return;opts.dataset.done='1';
-      if(i===c)chip.classList.add('correct');
-      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
-      exp.classList.add('show');
-    };
+/* ========= TABS ========= */
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active');});
+    document.querySelectorAll('.section').forEach(function(x){x.classList.remove('active');});
+    t.classList.add('active');
+    var idx=t.getAttribute('data-tab');
+    document.querySelector('.section[data-section="'+idx+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
   });
 });
 
-// GAP
-document.getElementById('gapCheck').onclick=()=>{
-  const sels=document.querySelectorAll('#gapText select');
-  let right=0,total=sels.length;
-  sels.forEach(s=>{
+/* ========= LERNKARTEN (22 Karten) ========= */
+var cards=[
+  {emoji:'🥗',word:'der Salat',badge:'maskulin · +n!',gen:'m',rule:'der → einen / den',ex:'„Ich nehme <strong>einen Salat<\/strong>, bitte.“',tts:'Ich nehme einen Salat, bitte.'},
+  {emoji:'🍕',word:'die Pizza',badge:'feminin · bleibt',gen:'f',rule:'die → eine / die',ex:'„Ich möchte <strong>eine Pizza<\/strong> Margherita.“',tts:'Ich möchte eine Pizza Margherita.'},
+  {emoji:'💧',word:'das Wasser',badge:'neutrum · bleibt',gen:'n',rule:'das → ein / das',ex:'„Für mich <strong>ein Wasser<\/strong>, bitte.“',tts:'Für mich ein Wasser, bitte.'},
+  {emoji:'🍟',word:'die Pommes (Pl.)',badge:'Plural · bleibt',gen:'pl',rule:'die Pommes → die Pommes',ex:'„Und dazu <strong>die Pommes<\/strong>, bitte.“',tts:'Und dazu die Pommes, bitte.'},
+  {emoji:'☕',word:'der Kaffee',badge:'maskulin · +n!',gen:'m',rule:'der → einen / den',ex:'„Ich nehme <strong>einen Kaffee<\/strong>.“',tts:'Ich nehme einen Kaffee.'},
+  {emoji:'🍺',word:'das Bier',badge:'neutrum · bleibt',gen:'n',rule:'das → ein / das',ex:'„Ich trinke <strong>ein Bier<\/strong>.“',tts:'Ich trinke ein Bier.'},
+  {emoji:'🍷',word:'der Wein',badge:'maskulin · +n!',gen:'m',rule:'der → einen / den',ex:'„Ich möchte <strong>einen Wein<\/strong>, bitte.“',tts:'Ich möchte einen Wein, bitte.'},
+  {emoji:'🍔',word:'der Burger',badge:'maskulin · +n!',gen:'m',rule:'der → einen / den',ex:'„Ich nehme <strong>einen Burger<\/strong> mit Pommes.“',tts:'Ich nehme einen Burger mit Pommes.'},
+  {emoji:'🍝',word:'die Pasta',badge:'feminin · bleibt',gen:'f',rule:'die → eine / die',ex:'„<strong>Die Pasta<\/strong> Carbonara, bitte.“',tts:'Die Pasta Carbonara, bitte.'},
+  {emoji:'🍮',word:'das Eis',badge:'neutrum · bleibt',gen:'n',rule:'das → ein / das',ex:'„Als Nachtisch nehme ich <strong>ein Eis<\/strong>.“',tts:'Als Nachtisch nehme ich ein Eis.'},
+  {emoji:'🍲',word:'die Suppe',badge:'feminin · bleibt',gen:'f',rule:'die → eine / die',ex:'„Ich hätte gerne <strong>eine Suppe<\/strong>.“',tts:'Ich hätte gerne eine Suppe.'},
+  {emoji:'🥪',word:'das Brot',badge:'neutrum · bleibt',gen:'n',rule:'das → ein / das',ex:'„Bringen Sie mir bitte <strong>ein Brot<\/strong>.“',tts:'Bringen Sie mir bitte ein Brot.'},
+  {emoji:'🥣',word:'das Schnitzel',badge:'neutrum · bleibt',gen:'n',rule:'das → ein / das',ex:'„Ich möchte <strong>ein Schnitzel<\/strong>, vegetarisch.“',tts:'Ich möchte ein Schnitzel, vegetarisch.'},
+  {emoji:'🥕',word:'die Karotte',badge:'feminin · bleibt',gen:'f',rule:'die → eine / die',ex:'„Haben Sie <strong>eine Karotten<\/strong>-Suppe?“',tts:'Haben Sie eine Karotten-Suppe?'},
+  {emoji:'📄',word:'die Karte (Speise-)',badge:'feminin · bleibt',gen:'f',rule:'die → eine / die',ex:'„<strong>Die Karte<\/strong>, bitte!“',tts:'Die Karte, bitte!'},
+  {emoji:'💳',word:'die Rechnung',badge:'feminin · bleibt',gen:'f',rule:'die → eine / die',ex:'„<strong>Die Rechnung<\/strong>, bitte!“',tts:'Die Rechnung, bitte!'},
+  {emoji:'💶',word:'das Trinkgeld',badge:'neutrum · bleibt',gen:'n',rule:'das → ein / das',ex:'„<strong>Das Trinkgeld<\/strong> ist inklusive.“',tts:'Das Trinkgeld ist inklusive.'},
+  {emoji:'🍽️',word:'das Glas (Wasser)',badge:'neutrum · bleibt',gen:'n',rule:'das → ein / das',ex:'„Ich nehme <strong>ein Glas<\/strong> Wein.“',tts:'Ich nehme ein Glas Wein.'},
+  {emoji:'🍦',word:'der Eisbecher',badge:'maskulin · +n!',gen:'m',rule:'der → einen / den',ex:'„Ich möchte <strong>einen Eisbecher<\/strong>.“',tts:'Ich möchte einen Eisbecher.'},
+  {emoji:'🧁',word:'der Kuchen',badge:'maskulin · +n!',gen:'m',rule:'der → einen / den',ex:'„Ich nehme <strong>einen Kuchen<\/strong> mit Sahne.“',tts:'Ich nehme einen Kuchen mit Sahne.'},
+  {emoji:'🍴',word:'die Gabel',badge:'feminin · bleibt',gen:'f',rule:'die → eine / die',ex:'„Könnten Sie mir <strong>eine Gabel<\/strong> bringen?“',tts:'Könnten Sie mir eine Gabel bringen?'},
+  {emoji:'🍜',word:'die Nudeln (Pl.)',badge:'Plural · bleibt',gen:'pl',rule:'die Nudeln → die Nudeln',ex:'„<strong>Die Nudeln<\/strong> schmecken super!“',tts:'Die Nudeln schmecken super!'}
+];
+
+var ci=0;
+function renderCard(){
+  var c=cards[ci];
+  document.getElementById('flipEmoji').innerHTML=c.emoji;
+  document.getElementById('flipWord').textContent=c.word;
+  var b=document.getElementById('flipBadge');
+  b.textContent=c.badge;
+  b.className='flip-badge '+c.gen;
+  document.getElementById('flipRule').textContent=c.rule;
+  document.getElementById('flipEx').innerHTML=c.ex;
+  document.getElementById('lkCur').textContent=ci+1;
+  document.getElementById('lkTot').textContent=cards.length;
+  document.getElementById('flip').classList.remove('flipped');
+}
+function speakCurrent(){speak(cards[ci].tts);}
+document.getElementById('flip').addEventListener('click',function(){this.classList.toggle('flipped');});
+document.getElementById('lkPrev').addEventListener('click',function(){ci=(ci-1+cards.length)%cards.length;renderCard();});
+document.getElementById('lkNext').addEventListener('click',function(){ci=(ci+1)%cards.length;renderCard();});
+document.getElementById('lkShuffle').addEventListener('click',function(){
+  for(var i=cards.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=cards[i];cards[i]=cards[j];cards[j]=t;}
+  ci=0;renderCard();
+});
+renderCard();
+
+/* ========= QUIZ ========= */
+document.querySelectorAll('.quiz-opts').forEach(function(o){
+  var correct=parseInt(o.getAttribute('data-c'));
+  var chips=o.querySelectorAll('.quiz-chip');
+  chips.forEach(function(c,i){
+    c.addEventListener('click',function(){
+      if(o.classList.contains('done'))return;
+      chips.forEach(function(x,xi){
+        x.classList.add(xi===correct?'correct':'wrong');
+      });
+      o.classList.add('done');
+      var ex=o.parentElement.querySelector('.quiz-explain');
+      if(ex)ex.classList.add('show');
+    });
+  });
+});
+
+/* ========= GAP ========= */
+document.getElementById('gapCheck').addEventListener('click',function(){
+  var ok=0,tot=0;
+  document.querySelectorAll('#gapText select').forEach(function(s){
+    tot++;
     s.classList.remove('right','wrong');
-    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    if(s.value===s.getAttribute('data-sol')){s.classList.add('right');ok++;}
     else s.classList.add('wrong');
   });
-  const score=document.getElementById('gapScore');
-  score.style.display='block';
-  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter ueben!');
-};
-document.getElementById('gapReset').onclick=()=>{
-  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  var sc=document.getElementById('gapScore');
+  sc.style.display='block';
+  sc.innerHTML='&#127942; <strong>'+ok+' / '+tot+'</strong> richtig! '+(ok===tot?'Perfekt &mdash; du bist Akkusativ-Meister:in!':(ok>=tot*.7?'Sehr gut, fast alles!':'Versuch es nochmal &mdash; schau dir die Farb-Regel an!'));
+});
+document.getElementById('gapReset').addEventListener('click',function(){
+  document.querySelectorAll('#gapText select').forEach(function(s){s.value='';s.classList.remove('right','wrong');});
   document.getElementById('gapScore').style.display='none';
-};
+});
 
-// MATCH
-const PAIRS=[
-  {l:'Die Karte, bitte!',r:'Selbstverstaendlich, einen Moment.'},
-  {l:'Was empfehlen Sie?',r:'Heute ist die Pasta sehr gut!'},
-  {l:'Ich nehme einen Salat.',r:'Mit oder ohne Dressing?'},
-  {l:'Ich bin Vegetarier:in.',r:'Wir haben ein leckeres Gemueseschnitzel!'},
-  {l:'Schmeckt es nicht?',r:'Doch, alles super &mdash; danke!'},
-  {l:'Die Rechnung, bitte!',r:'Zusammen oder getrennt?'},
-  {l:'Stimmt so!',r:'Danke schoen &mdash; einen schoenen Abend!'},
-  {l:'Ich habe eine Allergie gegen Nuesse.',r:'Ich frage gleich den Koch fuer Sie!'},
+/* ========= MATCH (Bild + Phrase) ========= */
+var pairs=[
+  {l:'🥗',r:'Ich nehme einen Salat.',g:'m'},
+  {l:'🍕',r:'Ich möchte eine Pizza.',g:'f'},
+  {l:'💧',r:'Für mich ein Wasser.',g:'n'},
+  {l:'🍟',r:'Und dazu die Pommes.',g:'pl'},
+  {l:'☕',r:'Ich nehme einen Kaffee.',g:'m'},
+  {l:'🍺',r:'Ich trinke ein Bier.',g:'n'},
+  {l:'🍔',r:'Ich möchte einen Burger.',g:'m'},
+  {l:'🍮',r:'Ein Eis, bitte!',g:'n'},
+  {l:'🍽️',r:'Die Rechnung, bitte!',g:'f'},
+  {l:'🍷',r:'Einen Wein, bitte.',g:'m'}
 ];
+
+var leftItems=[],rightItems=[];
+function shuf(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
 function buildMatch(){
-  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
-  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
-  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
-  L.innerHTML='';R.innerHTML='';
-  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
-  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
-  let pick=null;
-  document.querySelectorAll('.match-item').forEach(item=>{
-    item.onclick=()=>{
-      if(item.classList.contains('done'))return;
-      if(!pick){pick=item;item.classList.add('selected');return;}
-      if(pick===item){item.classList.remove('selected');pick=null;return;}
-      const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;
-      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
-      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
-      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
-    };
+  var left=document.getElementById('leftCol'),right=document.getElementById('rightCol');
+  left.innerHTML='';right.innerHTML='';
+  var ls=shuf(pairs.slice());
+  var rs=shuf(pairs.slice());
+  ls.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='match-item';
+    d.innerHTML='<span class="big">'+p.l+'</span>';
+    d.dataset.key=p.r;
+    d.addEventListener('click',function(){selectItem(d,'L');});
+    left.appendChild(d);
+  });
+  rs.forEach(function(p,i){
+    var d=document.createElement('div');
+    d.className='match-item';
+    d.textContent=p.r;
+    d.dataset.key=p.r;
+    d.addEventListener('click',function(){selectItem(d,'R');});
+    right.appendChild(d);
   });
 }
+var selL=null,selR=null;
+function selectItem(el,side){
+  if(side==='L'){
+    if(selL)selL.classList.remove('selected');
+    selL=el;el.classList.add('selected');
+  }else{
+    if(selR)selR.classList.remove('selected');
+    selR=el;el.classList.add('selected');
+  }
+  if(selL&&selR){
+    if(selL.dataset.key===selR.dataset.key){
+      selL.classList.remove('selected');selR.classList.remove('selected');
+      selL.classList.add('done');selR.classList.add('done');
+    }else{
+      var a=selL,b=selR;
+      setTimeout(function(){a.classList.remove('selected');b.classList.remove('selected');},700);
+    }
+    selL=null;selR=null;
+  }
+}
+document.getElementById('matchRestart').addEventListener('click',buildMatch);
 buildMatch();
-document.getElementById('matchRestart').onclick=buildMatch;
-const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
 
-// SPEAK
-const SPEAK=[
-  {emoji:'🍕',cat:'Bestellen mit Akkusativ',q:'Bestelle eine Pizza, einen Salat und ein Wasser &mdash; achte auf die Artikel!'},
-  {emoji:'🍔',cat:'Burger oder Pasta?',q:'Du kannst dich nicht entscheiden. Frag den Kellner: was empfiehlt er &mdash; und warum?'},
-  {emoji:'🥗',cat:'Vegetarisch bestellen',q:'Du bist Vegetarier:in. Frag, was es ohne Fleisch gibt &mdash; und bestelle 2 Gerichte!'},
-  {emoji:'🥜',cat:'Allergie erklaeren',q:'Du hast eine Nussallergie. Frag bei 3 Gerichten nach, ob sie sicher sind!'},
-  {emoji:'😞',cat:'Reklamieren',q:'Deine Suppe ist kalt. Wie sagst du das hoeflich? Was forderst du?'},
-  {emoji:'🍷',cat:'Empfehlung',q:'Bitte den Kellner um eine Weinempfehlung. Was passt zur Pasta?'},
-  {emoji:'💳',cat:'Bezahlen',q:'Du moechtest zahlen &mdash; getrennt. Erklaere genau, was DU hattest!'},
-  {emoji:'🤝',cat:'Trinkgeld',q:'Die Rechnung ist 27,40 €. Du bist sehr zufrieden. Wie gibst du Trinkgeld?'},
-  {emoji:'🪑',cat:'Tisch reservieren',q:'Ruf an: Du moechtest einen Tisch fuer 4 Personen am Samstag um 19 Uhr reservieren.'},
-  {emoji:'🌶️',cat:'Schaerfegrad',q:'Frag, ob die Pasta scharf ist. Sag, dass du es lieber mild magst!'},
-  {emoji:'🍦',cat:'Nachtisch',q:'Du hast keinen Hunger mehr, aber Lust auf Suesses. Bestelle einen kleinen Nachtisch!'},
-  {emoji:'😋',cat:'Komplimente',q:'Das Essen war fantastisch! Sag dem Kellner mind. 3 Komplimente!'},
-  {emoji:'❓',cat:'Karte erklaeren',q:'Du verstehst ein Wort auf der Karte nicht (z. B. „Spaetzle"). Wie fragst du?'},
-  {emoji:'🍻',cat:'Anstossen',q:'Erklaere einer Touristin: Wie sagt man auf Deutsch &bdquo;Cheers&ldquo; &mdash; und wie macht man das richtig?'},
-  {emoji:'⏰',cat:'Es dauert lange',q:'Du wartest schon 40 Minuten auf das Essen. Wie sprichst du den Kellner hoeflich an?'},
-  {emoji:'📞',cat:'Lieferung',q:'Du bestellst Pizza zur Lieferung. Sag Adresse, Bestellung (mind. 3 Sachen) und Zahlart!'},
+/* ========= SPEAK (24 Karten) ========= */
+var speakCards=[
+  {e:'🍕',c:'Bestellen',q:'Du bist beim Italiener. Bestelle eine Pizza Margherita und ein Wasser.',tts:'Ich möchte eine Pizza Margherita und ein Wasser, bitte.'},
+  {e:'☕',c:'Café',q:'Bestelle einen Kaffee und ein Stück Kuchen.',tts:'Für mich einen Kaffee und ein Stück Kuchen, bitte.'},
+  {e:'🍽️',c:'Rechnung',q:'Du möchtest zahlen. Was sagst du?',tts:'Die Rechnung, bitte!'},
+  {e:'💶',c:'Trinkgeld',q:'Rechnung: 16,40 €. Du gibst 18 € und willst kein Rückgeld.',tts:'Machen Sie 18 Euro, stimmt so!'},
+  {e:'🥤',c:'Reklamation',q:'Die Suppe ist kalt. Reklamiere höflich.',tts:'Entschuldigung, die Suppe ist leider kalt. Können Sie das nochmal warm machen?'},
+  {e:'🥕',c:'Vegetarisch',q:'Du möchtest etwas ohne Fleisch. Wie fragst du?',tts:'Haben Sie etwas ohne Fleisch?'},
+  {e:'🥣',c:'Empfehlung',q:'Du weißt nicht was du nehmen sollst. Frag den Kellner!',tts:'Was empfehlen Sie?'},
+  {e:'🍷',c:'Getränk',q:'Du möchtest einen Rotwein bestellen.',tts:'Ich möchte einen Rotwein, bitte.'},
+  {e:'🍺',c:'Getränk',q:'Bestelle ein Bier vom Fass.',tts:'Für mich ein Bier vom Fass, bitte.'},
+  {e:'🍦',c:'Nachtisch',q:'Du möchtest noch ein Eis.',tts:'Als Nachtisch nehme ich ein Eis.'},
+  {e:'👥',c:'Getrennt',q:'Du bist mit Freunden. Sag dass ihr getrennt zahlt.',tts:'Wir möchten getrennt zahlen, bitte.'},
+  {e:'⚠️',c:'Allergie',q:'Du hast Erdnussallergie. Frag ob der Salat sicher ist.',tts:'Ich habe eine Erdnussallergie. Hat der Salat Erdnüsse?'},
+  {e:'📄',c:'Karte',q:'Du möchtest die Speisekarte sehen.',tts:'Die Karte, bitte!'},
+  {e:'💬',c:'Bestellen',q:'Bestelle einen Burger mit Pommes für deinen Mann.',tts:'Mein Mann nimmt einen Burger mit Pommes.'},
+  {e:'👏',c:'Lob',q:'Das Essen war super! Lobe den Koch.',tts:'Das war sehr lecker, vielen Dank!'},
+  {e:'💳',c:'Zahlung',q:'Du willst mit Karte zahlen.',tts:'Ich bezahle mit Karte, bitte.'},
+  {e:'🥤',c:'Frage',q:'Frag was die Suppe des Tages ist.',tts:'Was ist die Suppe des Tages?'},
+  {e:'🍅',c:'Vegetarisch 2',q:'Ist die Pasta vegetarisch? Frag nach!',tts:'Ist die Pasta vegetarisch?'},
+  {e:'❓',c:'Verstehen',q:'Du hast nicht verstanden. Was sagst du höflich?',tts:'Entschuldigung, können Sie das wiederholen?'},
+  {e:'👋',c:'Begrüßung',q:'Du kommst ins Restaurant. Begrüße und frag nach einem Tisch für zwei.',tts:'Guten Abend! Haben Sie einen Tisch für zwei?'},
+  {e:'🍽️',c:'Besteck',q:'Du brauchst eine Gabel. Bitte freundlich darum.',tts:'Könnten Sie mir bitte eine Gabel bringen?'},
+  {e:'⏰',c:'Geduld',q:'Das Essen dauert sehr lange. Frag höflich nach.',tts:'Entschuldigung, kommt mein Essen bald?'},
+  {e:'🚫',c:'Ablehnen',q:'Der Kellner empfiehlt das Steak. Du sagst höflich nein.',tts:'Nein danke, ich nehme lieber etwas Vegetarisches.'},
+  {e:'👋',c:'Abschied',q:'Du gehst. Verabschiede dich nett!',tts:'Vielen Dank, schönen Abend noch!'}
 ];
-let lastSpeak=-1;
-document.getElementById('speakNew').onclick=()=>{
-  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
-  lastSpeak=i;const k=SPEAK[i];
-  const c=document.getElementById('speakCard');
-  c.style.opacity='0';
-  setTimeout(()=>{
-    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei &mdash; 60-90 Sekunden!</div>';
-    c.style.opacity='1';
-  },200);
-};
+var currentSpeak=null;
+document.getElementById('speakNew').addEventListener('click',function(){
+  currentSpeak=speakCards[Math.floor(Math.random()*speakCards.length)];
+  var card=document.getElementById('speakCard');
+  card.innerHTML='<div class="speak-emoji">'+currentSpeak.e+'</div><div class="speak-cat">'+currentSpeak.c+'</div><div class="speak-q">'+currentSpeak.q+'</div><div class="speak-hint">&#128172; Beispielsatz: „'+currentSpeak.tts+'“</div>';
+});
+document.getElementById('speakListen').addEventListener('click',function(){
+  if(currentSpeak)speak(currentSpeak.tts);
+  else speak('Tippe zuerst auf neue Karte!');
+});
 </script>
 </body></html>

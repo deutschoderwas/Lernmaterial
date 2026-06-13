@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="de"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Online-Shopping &amp; Reklamationen · B1/B2 | deutschoderwas</title>
+<title>Online-Shopping &amp; Reklamationen &middot; B1/B2 DELUXE | deutschoderwas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -45,6 +45,17 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .prob-name{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.95rem;}
 .prob-desc{color:var(--ink-soft);font-size:.78rem;margin-top:.2rem;}
 
+/* RECHTE-BOX */
+.rechte-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.2rem 0;}
+@media(max-width:700px){.rechte-grid{grid-template-columns:1fr;}}
+.recht{background:var(--paper);border:2px solid var(--sand);border-radius:16px;padding:1.1rem 1.2rem;border-top:5px solid var(--teal);}
+.recht:nth-child(2){border-top-color:#B66809;}.recht:nth-child(3){border-top-color:#6A3D9C;}
+.recht-name{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:1.05rem;margin-bottom:.3rem;}
+.recht-zeit{font-size:.72rem;font-weight:700;color:var(--teal);background:var(--teal-soft);padding:.2rem .55rem;border-radius:999px;display:inline-block;letter-spacing:.05em;margin-bottom:.5rem;}
+.recht:nth-child(2) .recht-zeit{color:#B66809;background:#FFF1E0;}
+.recht:nth-child(3) .recht-zeit{color:#6A3D9C;background:#EFE6F8;}
+.recht-desc{color:var(--ink-soft);font-size:.85rem;line-height:1.5;}
+
 /* E-MAIL VORLAGE */
 .email{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Outfit',sans-serif;}
 .email-head{border-bottom:1.5px solid var(--sand);padding-bottom:.6rem;margin-bottom:.8rem;font-size:.85rem;color:var(--ink-soft);}
@@ -69,6 +80,11 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
 .chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
 .chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.voice{display:flex;align-items:center;gap:.5rem;padding:.4rem .2rem;}
+.voice-icon{width:28px;height:28px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+.voice-bar{flex:1;height:24px;display:flex;align-items:center;gap:2px;}
+.voice-bar span{display:inline-block;width:3px;background:var(--ink-mute);border-radius:2px;}
+.voice-time{font-size:.75rem;color:var(--ink-mute);font-weight:600;}
 .chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
 .chat-meaning strong{color:#B66809;}
 .uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
@@ -83,17 +99,18 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .phrase-meaning{color:var(--ink-soft);font-size:.8rem;margin-top:.2rem;}
 
 /* FLIP */
-.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip{perspective:1000px;width:100%;max-width:440px;height:380px;margin:1.5rem auto;cursor:pointer;}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
 .flip.flipped .flip-inner{transform:rotateY(180deg);}
 .flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
-.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);overflow-y:auto;}
 .flip-emoji{font-size:3rem;margin-bottom:.6rem;}
-.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);line-height:1.3;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.5rem;color:var(--ink);line-height:1.3;}
 .flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
 .flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
 .flip-rule{color:var(--red);font-weight:700;font-size:.95rem;}
-.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;margin-top:.6rem;line-height:1.5;}
+.flip-syn{font-size:.78rem;color:var(--ink-soft);margin-top:.4rem;font-style:italic;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.55rem;line-height:1.5;}
 .flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
 .lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
 .lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
@@ -137,7 +154,7 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
 .match-restart{display:block;margin:1.2rem auto 0;}
 
-/* SPEAK + ROLE + DEBATE */
+/* SPEAK + ROLE */
 .speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
 .speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
 .speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
@@ -145,19 +162,21 @@ h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.
 .speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
 .speak-controls{text-align:center;margin-top:1rem;}
 .role-section{margin-top:2.5rem;}
-.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.5rem;}
 .role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
 .role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
 .role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
-.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
-@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
-.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
-.person.a{border-color:var(--red);background:#FFF6F5;}.person.b{border-color:var(--teal);background:#F1FAF8;}
-.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
-.person.a .person-avatar{border-color:var(--red);}.person.b .person-avatar{border-color:var(--teal);}
-.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
-.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
-.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+.role-role{background:#FFF6F5;border-left:4px solid var(--red);padding:.65rem 1rem;border-radius:8px;margin-bottom:.9rem;font-size:.9rem;color:var(--ink);}
+.role-role strong{color:var(--red);}
+.role-box{background:var(--cream);border:1.5px solid var(--sand);border-radius:12px;padding:.85rem 1.05rem;margin-bottom:.7rem;}
+.role-box-label{font-size:.78rem;font-weight:700;color:var(--ink);letter-spacing:.04em;margin-bottom:.4rem;text-transform:uppercase;}
+.role-vocab{display:flex;flex-wrap:wrap;gap:.35rem;}
+.vocab-chip{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.82rem;font-weight:600;padding:.2rem .7rem;border-radius:999px;}
+.role-phrases{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.7;}
+.role-phrases li{margin-left:1.2rem;margin-top:.15rem;}
+.role-tipp{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.6rem .9rem;border-radius:8px;margin-top:.4rem;font-size:.85rem;color:#7A6300;}
+.role-struct{background:var(--teal-soft);border-left:4px solid var(--teal);padding:.6rem .9rem;border-radius:8px;margin-top:.4rem;font-size:.85rem;color:#0A6B62;}
+.role-struct strong{color:var(--teal);}
 
 footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
 footer strong{color:var(--ink);}
@@ -165,72 +184,93 @@ footer strong{color:var(--ink);}
 </head>
 <body>
 <div class="wrapper">
-<div class="eyebrow">deutschoderwas · Alltag B1/B2 Sprechclub</div>
+<div class="eyebrow">deutschoderwas &middot; Alltag B1/B2 Sprechclub &middot; DELUXE</div>
 <div class="title-wrap"><h1 class="title">Online-Shopping &amp; <span class="hl">Reklamationen</span></h1></div>
-<p class="subtitle">Amazon, Zalando, Otto — bestellen, retournieren, beschweren. Der komplette Wortschatz fürs Online-Einkaufen auf Deutsch.</p>
+<p class="subtitle">Amazon, Zalando, Otto &mdash; bestellen, retournieren, reklamieren. Plus Verbraucherrecht, das du wirklich brauchst.</p>
 
 <svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
 <g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
-<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">🛒</text><text y="40" text-anchor="middle" fill="#E8302A">Bestellen</text></g>
-<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">📦</text><text y="40" text-anchor="middle" fill="#0FB5A6">Liefern</text></g>
-<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">📮</text><text y="40" text-anchor="middle" fill="#B66809">Retoure</text></g>
-<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">💰</text><text y="40" text-anchor="middle" fill="#A04060">Erstattung</text></g>
-<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">😡</text><text y="40" text-anchor="middle" fill="#5F7A2A">Reklamieren</text></g>
-<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">⭐</text><text y="40" text-anchor="middle" fill="#6A3D9C">Bewerten</text></g>
+<g transform="translate(35,20)"><circle r="22" fill="#FCE5E3"/><text dy="5" text-anchor="middle" font-size="22">&#128722;</text><text y="40" text-anchor="middle" fill="#E8302A">Bestellen</text></g>
+<g transform="translate(95,20)"><circle r="22" fill="#D7F0EC"/><text dy="5" text-anchor="middle" font-size="22">&#128230;</text><text y="40" text-anchor="middle" fill="#0FB5A6">Liefern</text></g>
+<g transform="translate(155,20)"><circle r="22" fill="#FFF1C2"/><text dy="5" text-anchor="middle" font-size="22">&#128238;</text><text y="40" text-anchor="middle" fill="#B66809">Retoure</text></g>
+<g transform="translate(215,20)"><circle r="22" fill="#FAE0EA"/><text dy="5" text-anchor="middle" font-size="22">&#128176;</text><text y="40" text-anchor="middle" fill="#A04060">Erstattung</text></g>
+<g transform="translate(275,20)"><circle r="22" fill="#E2EBC9"/><text dy="5" text-anchor="middle" font-size="22">&#128545;</text><text y="40" text-anchor="middle" fill="#5F7A2A">Reklamieren</text></g>
+<g transform="translate(335,20)"><circle r="22" fill="#E5D8F2"/><text dy="5" text-anchor="middle" font-size="22">&#11088;</text><text y="40" text-anchor="middle" fill="#6A3D9C">Bewerten</text></g>
 </g>
 </svg>
 
 <nav class="tabs">
-<button class="tab active" data-tab="0">📖 Überblick</button>
-<button class="tab" data-tab="1">💬 Umgangssprache</button>
-<button class="tab" data-tab="2">🃏 Lernkarten</button>
-<button class="tab" data-tab="3">✅ Quiz</button>
-<button class="tab" data-tab="4">✍️ Lückentext</button>
-<button class="tab" data-tab="5">🧩 Zuordnen</button>
-<button class="tab" data-tab="6">🗣️ Sprechen</button>
+<button class="tab active" data-tab="0">&#128214; &Uuml;berblick</button>
+<button class="tab" data-tab="1">&#127183; Lernkarten</button>
+<button class="tab" data-tab="2">&#9989; Quiz</button>
+<button class="tab" data-tab="3">&#9997;&#65039; L&uuml;ckentext</button>
+<button class="tab" data-tab="4">&#129513; Zuordnen</button>
+<button class="tab" data-tab="5">&#128483;&#65039; Sprechen</button>
+<button class="tab" data-tab="6">&#128172; Umgangssprache</button>
 </nav>
 
-<!-- ÜBERBLICK -->
+<!-- UEBERBLICK -->
 <section class="section active" data-section="0">
 
 <h2 class="section-title">Der <em style="font-style:italic;">Online-Shop-Wortschatz</em></h2>
-<p class="section-sub">Diese Wörter brauchst du JEDES MAL beim Online-Shoppen — speichere sie ab!</p>
+<p class="section-sub">Diese W&ouml;rter brauchst du JEDES MAL beim Online-Shoppen &mdash; speichere sie ab!</p>
 
 <div class="shop-grid">
-<div class="shop"><span class="shop-icon">🛒</span><div class="shop-word">der Warenkorb</div><div class="shop-desc">Wo deine Sachen vor dem Bezahlen liegen</div></div>
-<div class="shop"><span class="shop-icon">🚚</span><div class="shop-word">der Versand</div><div class="shop-desc">Wie das Paket zu dir kommt</div></div>
-<div class="shop"><span class="shop-icon">📦</span><div class="shop-word">die Lieferung</div><div class="shop-desc">Das ankommende Paket</div></div>
-<div class="shop"><span class="shop-icon">📮</span><div class="shop-word">die Retoure</div><div class="shop-desc">Wenn du etwas zurückschickst</div></div>
-<div class="shop"><span class="shop-icon">💰</span><div class="shop-word">die Erstattung</div><div class="shop-desc">Geld zurück aufs Konto</div></div>
-<div class="shop"><span class="shop-icon">🎟️</span><div class="shop-word">die Gutschrift</div><div class="shop-desc">Guthaben statt Geld zurück</div></div>
-<div class="shop"><span class="shop-icon">🔍</span><div class="shop-word">das Tracking</div><div class="shop-desc">Sendungsverfolgung — wo ist mein Paket?</div></div>
-<div class="shop"><span class="shop-icon">⏰</span><div class="shop-word">die Lieferzeit</div><div class="shop-desc">2–5 Werktage z.B.</div></div>
-<div class="shop"><span class="shop-icon">⭐</span><div class="shop-word">die Bewertung</div><div class="shop-desc">5 Sterne oder Beschwerde</div></div>
-<div class="shop"><span class="shop-icon">📋</span><div class="shop-word">die Bestellung</div><div class="shop-desc">Alles was du gekauft hast</div></div>
-<div class="shop"><span class="shop-icon">💳</span><div class="shop-word">die Zahlungsart</div><div class="shop-desc">PayPal, Kreditkarte, Rechnung</div></div>
-<div class="shop"><span class="shop-icon">📜</span><div class="shop-word">die Rechnung</div><div class="shop-desc">Beleg mit allen Kosten</div></div>
+<div class="shop"><span class="shop-icon">&#128722;</span><div class="shop-word">der Warenkorb</div><div class="shop-desc">Wo deine Sachen vor dem Bezahlen liegen</div></div>
+<div class="shop"><span class="shop-icon">&#128666;</span><div class="shop-word">der Versand</div><div class="shop-desc">Wie das Paket zu dir kommt</div></div>
+<div class="shop"><span class="shop-icon">&#128230;</span><div class="shop-word">die Lieferung</div><div class="shop-desc">Das ankommende Paket</div></div>
+<div class="shop"><span class="shop-icon">&#128238;</span><div class="shop-word">die Retoure</div><div class="shop-desc">Wenn du etwas zur&uuml;ckschickst</div></div>
+<div class="shop"><span class="shop-icon">&#128176;</span><div class="shop-word">die Erstattung</div><div class="shop-desc">Geld zur&uuml;ck aufs Konto</div></div>
+<div class="shop"><span class="shop-icon">&#127903;&#65039;</span><div class="shop-word">die Gutschrift</div><div class="shop-desc">Guthaben statt Geld zur&uuml;ck</div></div>
+<div class="shop"><span class="shop-icon">&#128269;</span><div class="shop-word">das Tracking</div><div class="shop-desc">Sendungsverfolgung &mdash; wo ist mein Paket?</div></div>
+<div class="shop"><span class="shop-icon">&#9203;</span><div class="shop-word">die Lieferzeit</div><div class="shop-desc">2&ndash;5 Werktage z.B.</div></div>
+<div class="shop"><span class="shop-icon">&#11088;</span><div class="shop-word">die Bewertung</div><div class="shop-desc">5 Sterne oder Beschwerde</div></div>
+<div class="shop"><span class="shop-icon">&#128221;</span><div class="shop-word">die Bestellung</div><div class="shop-desc">Alles was du gekauft hast</div></div>
+<div class="shop"><span class="shop-icon">&#128179;</span><div class="shop-word">die Zahlungsart</div><div class="shop-desc">PayPal, Kreditkarte, Rechnung</div></div>
+<div class="shop"><span class="shop-icon">&#129534;</span><div class="shop-word">die Stornierung</div><div class="shop-desc">Bestellung r&uuml;ckg&auml;ngig machen</div></div>
 </div>
 
-<div class="tip">💡 <strong>Tipp:</strong> In Deutschland gibt es ein <u>14-tägiges Widerrufsrecht</u>. Das heißt: Du darfst alles innerhalb von 14 Tagen ohne Grund zurückschicken! Sehr wichtig zu wissen.</div>
+<div class="tip">&#128161; <strong>Tipp:</strong> In Deutschland gibt es ein <u>14-t&auml;giges Widerrufsrecht</u>. Du darfst alles innerhalb von 14 Tagen <em>ohne Grund</em> zur&uuml;ckschicken &mdash; gesetzlich garantiert. Das ist mehr als in vielen anderen L&auml;ndern!</div>
 
 <h2 class="section-title">6 typische <em style="font-style:italic;">Probleme</em></h2>
-<p class="section-sub">Das geht JEDEM mal so — also keine Sorge, du musst nur das passende Vokabular kennen!</p>
+<p class="section-sub">Das passiert JEDEM mal &mdash; also keine Sorge, du brauchst nur das passende Vokabular.</p>
 
 <div class="prob-grid">
-<div class="prob"><div class="prob-icon">📏</div><div><div class="prob-name">Die Größe passt nicht</div><div class="prob-desc">Zu klein, zu groß, fällt anders aus</div></div></div>
-<div class="prob"><div class="prob-icon">💥</div><div><div class="prob-name">Die Ware ist beschädigt</div><div class="prob-desc">Defekt, kaputt, zerbrochen angekommen</div></div></div>
-<div class="prob"><div class="prob-icon">❌</div><div><div class="prob-name">Das Paket ist nicht angekommen</div><div class="prob-desc">Verloren, gestohlen, falsch zugestellt</div></div></div>
-<div class="prob"><div class="prob-icon">🔄</div><div><div class="prob-name">Falsches Produkt geliefert</div><div class="prob-desc">Andere Farbe, anderes Modell</div></div></div>
-<div class="prob"><div class="prob-icon">⏳</div><div><div class="prob-name">Lieferung verspätet</div><div class="prob-desc">Schon Wochen warten</div></div></div>
-<div class="prob"><div class="prob-icon">💸</div><div><div class="prob-name">Erstattung fehlt</div><div class="prob-desc">Zurückgeschickt, aber kein Geld zurück</div></div></div>
+<div class="prob"><div class="prob-icon">&#128207;</div><div><div class="prob-name">Die Gr&ouml;&szlig;e passt nicht</div><div class="prob-desc">Zu klein, zu gro&szlig;, f&auml;llt anders aus</div></div></div>
+<div class="prob"><div class="prob-icon">&#128165;</div><div><div class="prob-name">Die Ware ist besch&auml;digt</div><div class="prob-desc">Defekt, kaputt, zerbrochen angekommen</div></div></div>
+<div class="prob"><div class="prob-icon">&#10060;</div><div><div class="prob-name">Das Paket ist nicht angekommen</div><div class="prob-desc">Verloren, gestohlen, falsch zugestellt</div></div></div>
+<div class="prob"><div class="prob-icon">&#128260;</div><div><div class="prob-name">Falsches Produkt geliefert</div><div class="prob-desc">Andere Farbe, anderes Modell</div></div></div>
+<div class="prob"><div class="prob-icon">&#8987;</div><div><div class="prob-name">Lieferung verzogen</div><div class="prob-desc">Schon Wochen warten ohne Update</div></div></div>
+<div class="prob"><div class="prob-icon">&#128184;</div><div><div class="prob-name">Erstattung fehlt</div><div class="prob-desc">Zur&uuml;ckgeschickt, aber kein Geld zur&uuml;ck</div></div></div>
 </div>
 
 <h2 class="section-title">Die <em style="font-style:italic;">3 Top-Shops</em> in Deutschland</h2>
 <div class="shop-grid" style="grid-template-columns:repeat(3,1fr);">
-<div class="shop"><span class="shop-icon">📦</span><div class="shop-word">Amazon</div><div class="shop-desc">Alles, schnell, Prime-Versand</div></div>
-<div class="shop"><span class="shop-icon">👗</span><div class="shop-word">Zalando</div><div class="shop-desc">Mode, kostenlose Retoure</div></div>
-<div class="shop"><span class="shop-icon">🏠</span><div class="shop-word">Otto</div><div class="shop-desc">Möbel, Mode, alles auf Rechnung</div></div>
+<div class="shop"><span class="shop-icon">&#128230;</span><div class="shop-word">Amazon</div><div class="shop-desc">Alles, schnell, Prime-Versand &mdash; aber laute Pakete</div></div>
+<div class="shop"><span class="shop-icon">&#128087;</span><div class="shop-word">Zalando</div><div class="shop-desc">Mode, kostenlose Retoure, 100 Tage R&uuml;ckgabe</div></div>
+<div class="shop"><span class="shop-icon">&#127968;</span><div class="shop-word">Otto</div><div class="shop-desc">M&ouml;bel, Mode, alles auf Rechnung m&ouml;glich</div></div>
 </div>
+
+<h2 class="section-title">Deine <em style="font-style:italic;">Verbraucherrechte</em> in DE</h2>
+<p class="section-sub">3 Begriffe, die du verstehen musst &mdash; sie sind UNTERSCHIEDLICH!</p>
+<div class="rechte-grid">
+<div class="recht">
+<div class="recht-zeit">14 Tage</div>
+<div class="recht-name">Widerrufsrecht</div>
+<div class="recht-desc">Du kannst alles online Gekaufte ohne Grund innerhalb von 14 Tagen zur&uuml;ckschicken. Egal warum &mdash; passt nicht, gef&auml;llt nicht, anders &uuml;berlegt.</div>
+</div>
+<div class="recht">
+<div class="recht-zeit">2 Jahre &middot; Pflicht</div>
+<div class="recht-name">Gew&auml;hrleistung</div>
+<div class="recht-desc">Wenn die Ware schon beim Kauf einen Fehler hatte, muss der Verk&auml;ufer 2 Jahre lang reparieren, ersetzen oder Geld zur&uuml;ck geben. GESETZLICH &mdash; nicht freiwillig!</div>
+</div>
+<div class="recht">
+<div class="recht-zeit">freiwillig</div>
+<div class="recht-name">Garantie</div>
+<div class="recht-desc">Zus&auml;tzliche Zusage vom Hersteller (z.B. 5 Jahre). Freiwillig! Nicht das Gleiche wie Gew&auml;hrleistung &mdash; oft verwechselt.</div>
+</div>
+</div>
+<div class="tip">&#9888;&#65039; <strong>Wichtig:</strong> <em>Garantie</em> ist <u>freiwillig</u> vom Hersteller. <em>Gew&auml;hrleistung</em> ist <u>Pflicht</u> vom Verk&auml;ufer (2 Jahre, gesetzlich). Viele Shops sagen &bdquo;Garantie&ldquo;, meinen aber Gew&auml;hrleistung. Bei Streit: auf <strong>Gew&auml;hrleistung</strong> bestehen!</div>
 
 <h2 class="section-title">E-Mail-Vorlage: <em style="font-style:italic;">Reklamation</em></h2>
 <p class="section-sub">So schreibst du eine professionelle Beschwerde-E-Mail auf Deutsch.</p>
@@ -239,232 +279,388 @@ footer strong{color:var(--ink);}
 <div class="email-head"><strong>An:</strong> kundenservice@zalando.de<br><strong>Betreff:</strong> Reklamation Bestellung Nr. 123456789</div>
 <div class="email-body">
 Sehr geehrte Damen und Herren,<br><br>
-am 5. Juni habe ich bei Ihnen eine <strong>Bestellung</strong> aufgegeben (Nr. 123456789). Leider muss ich feststellen, dass die <strong>Ware beschädigt</strong> bei mir angekommen ist.<br><br>
-Konkret handelt es sich um eine schwarze Lederjacke, Größe M. Der Reißverschluss ist defekt und am Ärmel ist ein Loch.<br><br>
-Ich möchte die Ware <strong>zurücksenden</strong> und bitte um eine <strong>vollständige Erstattung</strong> des Kaufpreises. Bitte schicken Sie mir das Retourenetikett zu.<br><br>
-Mit freundlichen Grüßen,<br>
+am 5. Juni habe ich bei Ihnen eine <strong>Bestellung</strong> aufgegeben (Nr. 123456789). Leider muss ich feststellen, dass die <strong>Ware besch&auml;digt</strong> bei mir angekommen ist.<br><br>
+Konkret handelt es sich um eine schwarze Lederjacke, Gr&ouml;&szlig;e M. Der Rei&szlig;verschluss ist defekt und am &Auml;rmel ist ein Loch.<br><br>
+Ich m&ouml;chte die Ware <strong>zur&uuml;cksenden</strong> und bitte um eine <strong>vollst&auml;ndige Erstattung</strong> des Kaufpreises. Bitte schicken Sie mir das Retourenetikett zu.<br><br>
+Mit freundlichen Gr&uuml;&szlig;en,<br>
 Maria Schmidt
 </div>
 </div>
 
 <h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
-<div class="alltag-q"><div class="ql">Persönlich</div><div class="qq">Wie oft bestellst du online? Was war deine letzte Bestellung?</div><div class="think">💭 „Ich bestelle… mal pro Monat. Zuletzt habe ich… bei… bestellt."</div></div>
-<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Erfahrung</div><div class="qq">Hattest du schon mal ein Problem mit einer Online-Bestellung? Was ist passiert?</div><div class="think">💭 Falsche Größe? Beschädigt? Nie geliefert? Erzähle!</div></div>
-<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Vergleich</div><div class="qq">Online oder im Laden — was findest du besser? Warum?</div><div class="think">💭 Anprobieren, Beratung, Bequemlichkeit, Preis — was ist dir wichtig?</div></div>
-<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Provokant</div><div class="qq">Sind Online-Bewertungen wichtig? Liest du sie immer? Schreibst du selbst welche?</div><div class="think">💭 Gefälschte Bewertungen, 5 Sterne, Beschwerden — wem vertraust du?</div></div>
+<div class="alltag-q"><div class="ql">Konkret</div><div class="qq">Du hast die falsche Gr&ouml;&szlig;e bestellt. Was machst du als Erstes &mdash; in die App schauen oder das Paket erstmal weglegen?</div><div class="think">&#128173; Retoure starten? Bei welcher App war das nochmal kompliziert?</div></div>
+<div class="alltag-q" style="border-left-color:var(--teal);"><div class="ql" style="color:var(--teal);">Verantwortung</div><div class="qq">Das Paket ist besch&auml;digt angekommen. Wer ist verantwortlich &mdash; der Versender (Amazon) oder DHL?</div><div class="think">&#128173; Tipp: Vertrag hast du mit dem Shop &mdash; nicht mit DHL!</div></div>
+<div class="alltag-q" style="border-left-color:#B66809;"><div class="ql" style="color:#B66809;">Strategie</div><div class="qq">Das Paket steht laut Tracking &bdquo;zugestellt&ldquo; &mdash; aber bei dir ist nichts. Erste 3 Schritte?</div><div class="think">&#128173; Nachbarn, Hausmeister, Schuppen, dann DHL anrufen&hellip;</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;"><div class="ql" style="color:#6A3D9C;">Provokant</div><div class="qq">Schreibst du eine schlechte Bewertung, wenn der Service mies war? Oder lieber Privat-Beschwerde?</div><div class="think">&#128173; Bewertungen wirken &mdash; aber: fair bleiben!</div></div>
+<div class="alltag-q" style="border-left-color:var(--red);"><div class="ql">Geld</div><div class="qq">Wie bezahlst du online &mdash; PayPal, Kreditkarte, Klarna (Rechnung) oder Sofort&uuml;berweisung? Warum?</div><div class="think">&#128173; K&auml;uferschutz, Schuldenfalle, Bequemlichkeit &mdash; was z&auml;hlt f&uuml;r dich?</div></div>
 
-</section>
-
-<!-- UMGANGSSPRACHE -->
-<section class="section" data-section="1">
-<h2 class="section-title">💬 So reden Deutsche <em style="font-style:italic;">übers Online-Shopping</em></h2>
-<p class="section-sub">Echte WhatsApp-Chats — beim Reklamieren, Schimpfen über DHL und Tracking-Frust.</p>
-
-<div class="tip">🔥 <strong>Tipp:</strong> Bei einer Reklamation ist der Ton WICHTIG. Bleib <u>höflich aber bestimmt</u> — „Ich erwarte eine Lösung" wirkt besser als „Das ist eine Frechheit!"</div>
-
-<div class="uss-grid">
-<div class="chat">
-<div class="chat-head"><div class="av">📦</div><div><div class="name">Wo ist mein Paket?</div><div class="stat">online</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Mein Paket sollte gestern kommen — <strong>nichts da</strong>! 😡</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hast du das <strong>Tracking</strong> gecheckt?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ja, da steht „zugestellt"… aber bei MIR ist nichts!</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Frag mal beim Nachbarn — DHL gibt Pakete oft beim Nachbarn ab!</div></div>
-<div class="chat-meaning"><strong>„Beim Nachbarn abgeben"</strong> = sehr typisch in DE · <strong>Tracking</strong> = Sendungsverfolgung</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">👗</div><div><div class="name">Zalando-Chat</div><div class="stat">online</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Hab das Kleid bei Zalando bestellt — <strong>passt nicht</strong> 😩</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Zu groß oder zu klein?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Viel zu klein! Geht nicht mal über die Schultern. <strong>Schicke ich zurück</strong>.</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Bei Zalando ist die Retoure ja zum Glück <strong>kostenlos</strong>!</div></div>
-<div class="chat-meaning"><strong>„Zurückschicken"</strong> = retournieren · bei Zalando ist Retoure gratis (nicht bei allen Shops!)</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">💸</div><div><div class="name">Erstattung-Stress</div><div class="stat">online</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Hab vor 3 Wochen retourniert — <strong>immer noch keine Erstattung</strong>!</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hast du dem Kundenservice geschrieben?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ja, die <strong>vertrösten</strong> mich nur. „Bitte haben Sie Geduld" 🙄</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Schreib eine schlechte Bewertung — das hilft meistens!</div></div>
-<div class="chat-meaning"><strong>„jemanden vertrösten"</strong> = hinhalten, nicht handeln · sehr typisch bei schlechtem Kundenservice!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">⭐</div><div><div class="name">Bewertung schreiben</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hast du das Produkt schon bewertet?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Mache ich gleich — <strong>5 Sterne</strong>! War super!</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Cool! Ich schreibe auch immer Rezensionen, das hilft anderen.</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Stimmt — ich lese Bewertungen <strong>immer</strong> vor dem Kauf!</div></div>
-<div class="chat-meaning"><strong>„5 Sterne geben"</strong> = sehr positiv bewerten · „Rezension" = formal für „Bewertung"</div>
-</div>
-</div>
-
-<h2 class="section-title">12 wichtige <em style="font-style:italic;">Reklamations-Phrasen</em></h2>
-<div class="phrase-grid">
-<div class="phrase"><div class="phrase-icon">😩</div><div><div class="phrase-de">„Mein Paket ist nicht angekommen."</div><div class="phrase-meaning">die Standard-Beschwerde</div></div></div>
-<div class="phrase"><div class="phrase-icon">📏</div><div><div class="phrase-de">„Die Größe passt nicht."</div><div class="phrase-meaning">zu klein, zu groß, fällt anders aus</div></div></div>
-<div class="phrase"><div class="phrase-icon">📮</div><div><div class="phrase-de">„Ich möchte die Ware zurückschicken."</div><div class="phrase-meaning">retournieren formell</div></div></div>
-<div class="phrase"><div class="phrase-icon">💰</div><div><div class="phrase-de">„Wo ist meine Erstattung?"</div><div class="phrase-meaning">wenn das Geld nicht zurückkommt</div></div></div>
-<div class="phrase"><div class="phrase-icon">💥</div><div><div class="phrase-de">„Die Ware ist beschädigt angekommen."</div><div class="phrase-meaning">defekt, kaputt</div></div></div>
-<div class="phrase"><div class="phrase-icon">❌</div><div><div class="phrase-de">„Das ist nicht das Produkt, das ich bestellt habe."</div><div class="phrase-meaning">falsche Lieferung</div></div></div>
-<div class="phrase"><div class="phrase-icon">🎟️</div><div><div class="phrase-de">„Ich bitte um ein Retourenetikett."</div><div class="phrase-meaning">formelle Bitte per E-Mail</div></div></div>
-<div class="phrase"><div class="phrase-icon">📞</div><div><div class="phrase-de">„Ich erwarte eine schnelle Lösung."</div><div class="phrase-meaning">höflich aber bestimmt</div></div></div>
-<div class="phrase"><div class="phrase-icon">🔄</div><div><div class="phrase-de">„Ich möchte vom Kauf zurücktreten."</div><div class="phrase-meaning">14-Tage-Widerruf nutzen</div></div></div>
-<div class="phrase"><div class="phrase-icon">📋</div><div><div class="phrase-de">„Meine Bestellnummer ist…"</div><div class="phrase-meaning">immer angeben bei Reklamationen!</div></div></div>
-<div class="phrase"><div class="phrase-icon">⭐</div><div><div class="phrase-de">„Ich werde eine schlechte Bewertung schreiben."</div><div class="phrase-meaning">letzte Drohung — funktioniert oft!</div></div></div>
-<div class="phrase"><div class="phrase-icon">😡</div><div><div class="phrase-de">„Das ist absolut inakzeptabel."</div><div class="phrase-meaning">formelle Empörung</div></div></div>
-</div>
 </section>
 
 <!-- LERNKARTEN -->
-<section class="section" data-section="2">
+<section class="section" data-section="1">
 <h2 class="section-title">Wortschatz-Karten</h2>
-<p class="section-sub">Erst denken — dann tippen.</p>
+<p class="section-sub">Erst denken &mdash; dann tippen. 23 Karten zum Bl&auml;ttern oder Mischen.</p>
 <div class="flip" id="flip">
 <div class="flip-inner">
 <div class="flip-side front">
-<div class="flip-emoji" id="flipEmoji">🛒</div>
+<div class="flip-emoji" id="flipEmoji">&#128722;</div>
 <div class="flip-word" id="flipWord">der Warenkorb</div>
 <div class="flip-badge" id="flipBadge">Shop</div>
 <div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
 </div>
 <div class="flip-side back">
 <div class="flip-rule" id="flipRule">shopping cart</div>
-<div class="flip-ex" id="flipEx">„Ich habe drei Sachen im <strong>Warenkorb</strong>."</div>
+<div class="flip-syn" id="flipSyn">Synonym: der Einkaufskorb</div>
+<div class="flip-ex" id="flipEx">&bdquo;Ich habe drei Sachen im <strong>Warenkorb</strong>.&ldquo;</div>
 </div>
 </div>
 </div>
-<div class="lk-nav"><button class="lk-btn" id="lkPrev">←</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">16</span></span><button class="lk-btn" id="lkNext">→</button></div>
-<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+<div class="lk-nav"><button class="lk-btn" id="lkPrev">&larr;</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">23</span></span><button class="lk-btn" id="lkNext">&rarr;</button></div>
+<button class="lk-shuffle" id="lkShuffle">&#128256; Mischen</button>
 </section>
 
 <!-- QUIZ -->
-<section class="section" data-section="3">
+<section class="section" data-section="2">
 <h2 class="section-title">Quiz: <em style="font-style:italic;">Was passt?</em></h2>
+<p class="section-sub">13 Fragen rund um Bestellen, Reklamieren und Verbraucherrecht.</p>
 
-<div class="quiz"><div class="quiz-q">Wo legst du Sachen ab, bevor du sie online kaufst?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">In die Bestellung</span><span class="quiz-chip">In den Warenkorb</span><span class="quiz-chip">In die Retoure</span></div><div class="quiz-explain">Warenkorb = shopping cart — dort sammelst du deine Sachen vor dem Bezahlen.</div></div>
+<div class="quiz"><div class="quiz-q">Wo legst du Sachen ab, bevor du sie online kaufst?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">In die Bestellung</span><span class="quiz-chip">In den Warenkorb</span><span class="quiz-chip">In die Retoure</span></div><div class="quiz-explain">Warenkorb = shopping cart &mdash; dort sammelst du deine Sachen vor dem Bezahlen.</div></div>
 
-<div class="quiz"><div class="quiz-q">Wie heißt es, wenn du Ware zurückschickst?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">die Lieferung</span><span class="quiz-chip">der Versand</span><span class="quiz-chip">die Retoure</span></div><div class="quiz-explain">Retoure = der Rückversand. Bei Zalando ist sie sogar kostenlos!</div></div>
+<div class="quiz"><div class="quiz-q">Wie hei&szlig;t es, wenn du Ware zur&uuml;ckschickst?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">die Lieferung</span><span class="quiz-chip">der Versand</span><span class="quiz-chip">die Retoure</span></div><div class="quiz-explain">Retoure = der R&uuml;ckversand. Bei Zalando ist sie sogar kostenlos!</div></div>
 
-<div class="quiz"><div class="quiz-q">Du hast retourniert und willst das Geld zurück. Du brauchst eine…</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Erstattung</span><span class="quiz-chip">Bestellung</span><span class="quiz-chip">Bewertung</span></div><div class="quiz-explain">Erstattung = Rückerstattung des Kaufpreises aufs Konto.</div></div>
+<div class="quiz"><div class="quiz-q">Du hast retourniert und willst dein Geld zur&uuml;ck. Du brauchst eine&hellip;</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Erstattung</span><span class="quiz-chip">Bestellung</span><span class="quiz-chip">Bewertung</span></div><div class="quiz-explain">Erstattung = R&uuml;ckerstattung des Kaufpreises aufs Konto.</div></div>
 
-<div class="quiz"><div class="quiz-q">Wie lange hast du in Deutschland Zeit, etwas zurückzuschicken (Widerrufsrecht)?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">7 Tage</span><span class="quiz-chip">14 Tage</span><span class="quiz-chip">30 Tage</span></div><div class="quiz-explain">Gesetzlich garantiert: 14 Tage Widerrufsrecht — ohne Grund!</div></div>
+<div class="quiz"><div class="quiz-q">Wie lange hast du in Deutschland Zeit, etwas online Gekauftes zur&uuml;ckzuschicken (Widerrufsrecht)?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">7 Tage</span><span class="quiz-chip">14 Tage</span><span class="quiz-chip">30 Tage</span></div><div class="quiz-explain">Gesetzlich garantiert: 14 Tage Widerrufsrecht &mdash; ohne Grund!</div></div>
 
-<div class="quiz"><div class="quiz-q">Welche Phrase ist HÖFLICH am Anfang einer Reklamations-E-Mail?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Hi Leute!</span><span class="quiz-chip">Hey ihr!</span><span class="quiz-chip">Sehr geehrte Damen und Herren,</span></div><div class="quiz-explain">Standard-Formel für formelle E-Mails an Firmen.</div></div>
+<div class="quiz"><div class="quiz-q">Welche Phrase ist H&Ouml;FLICH am Anfang einer Reklamations-E-Mail?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Hi Leute!</span><span class="quiz-chip">Hey ihr!</span><span class="quiz-chip">Sehr geehrte Damen und Herren,</span></div><div class="quiz-explain">Standard-Formel f&uuml;r formelle E-Mails an Firmen.</div></div>
 
-<div class="quiz"><div class="quiz-q">Was bedeutet „Die Größe passt nicht"?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Die Farbe ist falsch</span><span class="quiz-chip">Zu klein oder zu groß</span><span class="quiz-chip">Die Ware ist defekt</span></div><div class="quiz-explain">Passt nicht = die Größe stimmt nicht. Sehr häufig bei Mode-Bestellungen!</div></div>
+<div class="quiz"><div class="quiz-q">Was bedeutet &bdquo;Die Gr&ouml;&szlig;e passt nicht&ldquo;?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Die Farbe ist falsch</span><span class="quiz-chip">Zu klein oder zu gro&szlig;</span><span class="quiz-chip">Die Ware ist defekt</span></div><div class="quiz-explain">Passt nicht = die Gr&ouml;&szlig;e stimmt nicht. Sehr h&auml;ufig bei Mode-Bestellungen!</div></div>
 
-<div class="quiz"><div class="quiz-q">Mit welcher App kannst du sehen, wo dein Paket gerade ist?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Bewertung</span><span class="quiz-chip">Warenkorb</span><span class="quiz-chip">Tracking / Sendungsverfolgung</span></div><div class="quiz-explain">Tracking = die Sendungsverfolgung. Jeder Shop hat einen Tracking-Link!</div></div>
+<div class="quiz"><div class="quiz-q">Wie hei&szlig;t die App-Funktion, mit der du siehst, wo dein Paket gerade ist?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Bewertung</span><span class="quiz-chip">Warenkorb</span><span class="quiz-chip">Tracking / Sendungsverfolgung</span></div><div class="quiz-explain">Tracking = die Sendungsverfolgung. Jeder Shop hat einen Tracking-Link!</div></div>
 
-<div class="quiz"><div class="quiz-q">„Ich möchte vom Kauf zurücktreten" — was heißt das?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Bestellung stornieren / rückgängig machen</span><span class="quiz-chip">Eine neue Bestellung aufgeben</span><span class="quiz-chip">Eine Bewertung schreiben</span></div><div class="quiz-explain">„Vom Kauf zurücktreten" = formelle Sprache für „stornieren" — sehr formell aber wirksam!</div></div>
+<div class="quiz"><div class="quiz-q">&bdquo;Ich m&ouml;chte vom Kauf zur&uuml;cktreten&ldquo; &mdash; was hei&szlig;t das?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Bestellung stornieren / r&uuml;ckg&auml;ngig machen</span><span class="quiz-chip">Eine neue Bestellung aufgeben</span><span class="quiz-chip">Eine Bewertung schreiben</span></div><div class="quiz-explain">&bdquo;Vom Kauf zur&uuml;cktreten&ldquo; = formelle Sprache f&uuml;r &bdquo;stornieren&ldquo; &mdash; sehr formell, aber wirksam!</div></div>
+
+<div class="quiz"><div class="quiz-q">Dein Toaster geht nach 8 Monaten kaputt. Welches Recht greift &mdash; ohne Garantie?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Widerrufsrecht</span><span class="quiz-chip">Gew&auml;hrleistung (2 Jahre)</span><span class="quiz-chip">Mahnung</span></div><div class="quiz-explain">Gew&auml;hrleistung = Pflicht des Verk&auml;ufers, 2 Jahre lang Mangel zu beheben &mdash; auch ohne Garantie!</div></div>
+
+<div class="quiz"><div class="quiz-q">Welche Plattform ist bekannt f&uuml;r KOSTENLOSE Mode-Retouren?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Amazon</span><span class="quiz-chip">Otto</span><span class="quiz-chip">Zalando</span></div><div class="quiz-explain">Zalando &mdash; deshalb bestellen viele dort 3 Gr&ouml;&szlig;en und schicken 2 zur&uuml;ck.</div></div>
+
+<div class="quiz"><div class="quiz-q">Das Paket steht laut Tracking &bdquo;zugestellt&ldquo;, ist aber NICHT bei dir. Erster Schritt?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Sofort Polizei anrufen</span><span class="quiz-chip">Bei Nachbarn und Hausmeister fragen</span><span class="quiz-chip">Schlechte Bewertung schreiben</span></div><div class="quiz-explain">DHL gibt sehr oft beim Nachbarn ab &mdash; check das zuerst, bevor du Reklamation startest.</div></div>
+
+<div class="quiz"><div class="quiz-q">Du zahlst per Klarna auf Rechnung und vergisst zu zahlen. Was kommt zuerst?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Mahnung</span><span class="quiz-chip">Inkasso</span><span class="quiz-chip">Schufa-Eintrag</span></div><div class="quiz-explain">Reihenfolge: erst Mahnung &rarr; dann Inkasso &rarr; im schlimmsten Fall Schufa-Eintrag. Erste Mahnung ernst nehmen!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist der Unterschied zwischen &bdquo;Garantie&ldquo; und &bdquo;Gew&auml;hrleistung&ldquo;?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Beides ist dasselbe</span><span class="quiz-chip">Garantie ist Pflicht, Gew&auml;hrleistung ist freiwillig</span><span class="quiz-chip">Garantie ist freiwillig, Gew&auml;hrleistung ist Pflicht (2 Jahre)</span></div><div class="quiz-explain">Wichtigster Lehrer-Hinweis: bei Streit IMMER auf Gew&auml;hrleistung pochen, nicht auf Garantie!</div></div>
 </section>
 
-<!-- LÜCKENTEXT -->
-<section class="section" data-section="4">
-<h2 class="section-title">Lückentext: <em style="font-style:italic;">Reklamations-E-Mails</em></h2>
+<!-- LUECKENTEXT -->
+<section class="section" data-section="3">
+<h2 class="section-title">L&uuml;ckentext: <em style="font-style:italic;">Reklamations-E-Mail</em></h2>
+<p class="section-sub">10 L&uuml;cken &mdash; w&auml;hle aus jeder Liste das passende Wort.</p>
 <div class="gap-text" id="gapText">
-<div class="gap-line">1. Sehr geehrte Damen und <select data-sol="Herren"><option value="">…</option><option>Herren</option><option>Männer</option><option>Leute</option></select>, ich habe ein Problem mit meiner Bestellung.</div>
-<div class="gap-line">2. Meine <select data-sol="Bestellnummer"><option value="">…</option><option>Bestellnummer</option><option>Bestellzeit</option><option>Bestellfarbe</option></select> ist 123456789.</div>
-<div class="gap-line">3. Die Ware ist leider <select data-sol="beschädigt"><option value="">…</option><option>schön</option><option>beschädigt</option><option>billig</option></select> bei mir angekommen.</div>
-<div class="gap-line">4. Ich möchte die Ware <select data-sol="zurückschicken"><option value="">…</option><option>zurückschicken</option><option>vergessen</option><option>verschenken</option></select> und bitte um eine Erstattung.</div>
-<div class="gap-line">5. Bitte senden Sie mir ein <select data-sol="Retourenetikett"><option value="">…</option><option>Retourenetikett</option><option>Foto</option><option>Geschenk</option></select> per E-Mail.</div>
-<div class="gap-line">6. Ich <select data-sol="erwarte"><option value="">…</option><option>hoffe</option><option>erwarte</option><option>vermute</option></select> eine schnelle Lösung des Problems.</div>
-<div class="gap-line">7. Mit freundlichen <select data-sol="Grüßen"><option value="">…</option><option>Grüßen</option><option>Worten</option><option>Sachen</option></select>, Maria Schmidt.</div>
-<div class="gap-line">8. Ich möchte vom Kauf <select data-sol="zurücktreten"><option value="">…</option><option>aufstehen</option><option>zurücktreten</option><option>abfahren</option></select> — das geht 14 Tage lang.</div>
-<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">Überprüfen</button></div>
+<div class="gap-line">1. Sehr geehrte Damen und <select data-sol="Herren"><option value="">&hellip;</option><option>Herren</option><option>M&auml;nner</option><option>Leute</option></select>, ich habe ein Problem mit meiner Bestellung.</div>
+<div class="gap-line">2. Meine <select data-sol="Bestellnummer"><option value="">&hellip;</option><option>Bestellnummer</option><option>Bestellzeit</option><option>Bestellfarbe</option></select> ist 123456789.</div>
+<div class="gap-line">3. Die Ware ist leider <select data-sol="beschädigt"><option value="">&hellip;</option><option>sch&ouml;n</option><option>beschädigt</option><option>billig</option></select> bei mir angekommen.</div>
+<div class="gap-line">4. Ich m&ouml;chte die Ware <select data-sol="zurückschicken"><option value="">&hellip;</option><option>zurückschicken</option><option>vergessen</option><option>verschenken</option></select> und bitte um eine Erstattung.</div>
+<div class="gap-line">5. Bitte senden Sie mir ein <select data-sol="Retourenetikett"><option value="">&hellip;</option><option>Retourenetikett</option><option>Foto</option><option>Geschenk</option></select> per E-Mail zu.</div>
+<div class="gap-line">6. Ich <select data-sol="erwarte"><option value="">&hellip;</option><option>hoffe</option><option>erwarte</option><option>vermute</option></select> eine schnelle L&ouml;sung des Problems.</div>
+<div class="gap-line">7. Ich berufe mich auf mein gesetzliches <select data-sol="Widerrufsrecht"><option value="">&hellip;</option><option>Widerrufsrecht</option><option>Wahlrecht</option><option>Wohnrecht</option></select> nach &sect; 355 BGB.</div>
+<div class="gap-line">8. Innerhalb der zweij&auml;hrigen <select data-sol="Gewährleistung"><option value="">&hellip;</option><option>Garantie</option><option>Gewährleistung</option><option>Versicherung</option></select> muss der Verk&auml;ufer den Mangel beheben.</div>
+<div class="gap-line">9. Bitte erstatten Sie den Kaufpreis auf mein <select data-sol="Konto"><option value="">&hellip;</option><option>Konto</option><option>Handy</option><option>Auto</option></select> innerhalb von 14 Tagen.</div>
+<div class="gap-line">10. Mit freundlichen <select data-sol="Grüßen"><option value="">&hellip;</option><option>Grüßen</option><option>Worten</option><option>Sachen</option></select>, Maria Schmidt.</div>
+<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">&Uuml;berpr&uuml;fen</button></div>
 </div>
 <div class="tip" id="gapScore" style="display:none;"></div>
 </section>
 
 <!-- ZUORDNEN -->
-<section class="section" data-section="5">
-<h2 class="section-title">Problem &harr; <em style="font-style:italic;">Lösung</em> zuordnen</h2>
-<p class="section-sub">Was hilft bei welchem Online-Shopping-Problem?</p>
-<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Problem</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Lösung</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button></div>
+<section class="section" data-section="4">
+<h2 class="section-title">Problem &harr; <em style="font-style:italic;">L&ouml;sung</em> zuordnen</h2>
+<p class="section-sub">10 Paare &mdash; was hilft bei welchem Online-Shopping-Problem?</p>
+<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Problem</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>L&ouml;sung</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">&#128260; Nochmal</button></div>
 </section>
 
 <!-- SPRECHEN -->
-<section class="section" data-section="6">
-<h2 class="section-title">Sprechen — <em style="font-style:italic;">los geht\'s!</em></h2>
+<section class="section" data-section="5">
+<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht\'s!</em></h2>
+<p class="section-sub">24 Sprechkarten, dann 5 Rollenspiele mit Hilfestellung.</p>
 <div class="speak-card" id="speakCard">
-<div class="speak-emoji">🎲</div><div class="speak-cat">Sprechclub-Karte</div>
-<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+<div class="speak-emoji">&#127922;</div><div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf &bdquo;Neue Karte&ldquo; und leg los!</div>
 </div>
-<div class="speak-controls"><button class="btn-primary" id="speakNew">🎲 Neue Karte</button></div>
+<div class="speak-controls"><button class="btn-primary" id="speakNew">&#127922; Neue Karte</button></div>
 
 <div class="role-section">
-<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">rund ums Online-Shopping</em></h2>
+<h2 class="section-title">5 Rollenspiele <em style="font-style:italic;">rund ums Online-Shopping</em></h2>
 
+<!-- ROLLENSPIEL 1 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 1 · Telefonat</div>
-<div class="role-title">📞 Kunde ruft beim Service an</div>
-<div class="role-situation">Du hast vor 3 Wochen ein Paket bestellt — es ist nie angekommen. Rufe beim Kundenservice an und kläre die Sache! Bleib höflich aber bestimmt.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">😡</div><div><div class="person-label">Kunde:in</div><div class="person-quote">„Guten Tag, mein Name ist… Ich habe ein Problem mit meiner Bestellung Nr…. Das Paket ist nicht angekommen…"</div></div></div>
-<div class="person b"><div class="person-avatar">🎧</div><div><div class="person-label">Kundenservice</div><div class="person-quote">„Guten Tag, mein Name ist… Wie kann ich Ihnen helfen? Können Sie mir die Bestellnummer nennen? Einen Moment, bitte…"</div></div></div>
+<div class="role-tag">Rollenspiel 1 &middot; Hotline</div>
+<div class="role-title">&#128222; Kundenservice: &bdquo;Mein Paket ist nicht angekommen&ldquo;</div>
+<div class="role-situation"><strong>Situation:</strong> Du hast vor 3 Wochen bei Amazon eine Bluetooth-Box bestellt. Tracking sagt seit 10 Tagen &bdquo;in Zustellung&ldquo; &mdash; nichts kommt. Du rufst bei der Hotline an und musst die Reklamation klar schildern.</div>
+<div class="role-role"><strong>Deine Rolle:</strong> Du bist genervt, aber willst sachlich bleiben. Du hast Bestellnummer und Tracking-Nummer parat. Ziel: Erstattung ODER neue Lieferung.</div>
+<div class="role-box">
+<div class="role-box-label">&#128273; Schl&uuml;ssel-Vokabular <span style="color:var(--ink-mute);font-weight:400;text-transform:none;">(nutze 5&ndash;8 davon)</span></div>
+<div class="role-vocab">
+<span class="vocab-chip">Bestellnummer</span><span class="vocab-chip">Tracking-Nummer</span><span class="vocab-chip">zustellen</span><span class="vocab-chip">verschollen</span><span class="vocab-chip">reklamieren</span><span class="vocab-chip">nachforschen</span><span class="vocab-chip">Erstattung</span><span class="vocab-chip">Ersatzlieferung</span><span class="vocab-chip">Frist</span><span class="vocab-chip">leider</span><span class="vocab-chip">unannehmbar</span><span class="vocab-chip">Schadenersatz</span>
 </div>
-<div class="role-goal">🎯 Ziel: Bestellnummer nennen, Problem schildern, Lösung verlangen (Erstattung ODER neue Lieferung) — mindestens 8 Sätze pro Person!</div>
+</div>
+<div class="role-box">
+<div class="role-box-label">&#128172; Beispiel-Phrasen <span style="color:var(--ink-mute);font-weight:400;text-transform:none;">(als Inspiration)</span></div>
+<ul class="role-phrases">
+<li>&bdquo;Guten Tag, mein Name ist&hellip; Ich rufe wegen meiner Bestellung Nr.&hellip; an.&ldquo;</li>
+<li>&bdquo;Im Tracking steht seit 10 Tagen &bdquo;in Zustellung&ldquo; &mdash; das Paket ist aber nie angekommen.&ldquo;</li>
+<li>&bdquo;K&ouml;nnten Sie bitte einen Nachforschungsauftrag stellen?&ldquo;</li>
+<li>&bdquo;Ich m&ouml;chte entweder eine Ersatzlieferung oder die vollst&auml;ndige Erstattung.&ldquo;</li>
+<li>&bdquo;Bis wann kann ich mit einer L&ouml;sung rechnen?&ldquo;</li>
+</ul>
+</div>
+<div class="role-tipp">&#128161; <strong>Tipp:</strong> Bestellnummer und Datum IMMER bereit haben. Nicht aggressiv werden &mdash; auch wenn du genervt bist. Frage nach einer konkreten <em>Frist</em>!</div>
+<div class="role-struct"><strong>&#9989; Was eine gute Antwort enth&auml;lt:</strong> Begr&uuml;&szlig;ung + Bestellnummer + Problem-Beschreibung + Wunsch (Erstattung/Ersatz) + Frist erfragen.</div>
 </div>
 
+<!-- ROLLENSPIEL 2 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 2 · Paketshop</div>
-<div class="role-title">📮 Paket im Shop abholen</div>
-<div class="role-situation">Du holst dein Paket im Paketshop ab (Hermes, DHL-Filiale). Du hast die Abholkarte vergessen — kläre die Sache mit der Mitarbeiterin!</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🙋</div><div><div class="person-label">Kunde:in</div><div class="person-quote">„Guten Tag, ich möchte ein Paket abholen. Ich habe leider die Karte vergessen, aber ich habe meinen Ausweis…"</div></div></div>
-<div class="person b"><div class="person-avatar">🧑‍💼</div><div><div class="person-label">Shop-Mitarbeiter:in</div><div class="person-quote">„Kein Problem, ich brauche Ihren Namen und Ihre Adresse. Haben Sie eine Tracking-Nummer? Bitte unterschreiben Sie hier."</div></div></div>
+<div class="role-tag">Rollenspiel 2 &middot; Zalando-Service</div>
+<div class="role-title">&#128087; Schuhe zur&uuml;ckschicken &mdash; am Telefon</div>
+<div class="role-situation"><strong>Situation:</strong> Du hast bei Zalando Sneaker in Gr&ouml;&szlig;e 39 bestellt. Sie sind viel zu klein (eigentlich 38er-Schnitt). Du rufst beim Service an und willst eine gr&ouml;&szlig;ere Gr&ouml;&szlig;e &mdash; ohne nochmal zu bezahlen.</div>
+<div class="role-role"><strong>Deine Rolle:</strong> Freundlich, sachlich. Du willst Umtausch, keine Erstattung. Du fragst auch, ob du das alte Paar zur&uuml;ckschicken sollst, BEVOR das neue kommt.</div>
+<div class="role-box">
+<div class="role-box-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span class="vocab-chip">Gr&ouml;&szlig;e</span><span class="vocab-chip">passt nicht</span><span class="vocab-chip">Umtausch</span><span class="vocab-chip">umtauschen</span><span class="vocab-chip">Retoure</span><span class="vocab-chip">kostenfreies Retourenetikett</span><span class="vocab-chip">f&auml;llt klein aus</span><span class="vocab-chip">eine Nummer gr&ouml;&szlig;er</span><span class="vocab-chip">Lagerbestand</span><span class="vocab-chip">bestellen</span><span class="vocab-chip">parallel</span><span class="vocab-chip">unkompliziert</span>
 </div>
-<div class="role-goal">🎯 Identität nachweisen, Tracking-Nummer angeben, höflich bleiben — auch wenn es dauert!</div>
+</div>
+<div class="role-box">
+<div class="role-box-label">&#128172; Beispiel-Phrasen</div>
+<ul class="role-phrases">
+<li>&bdquo;Hallo, ich habe eine Frage zu meiner Bestellung. Die Sneaker fallen leider klein aus.&ldquo;</li>
+<li>&bdquo;Ich h&auml;tte sie gerne in einer Nummer gr&ouml;&szlig;er &mdash; geht das per Umtausch?&ldquo;</li>
+<li>&bdquo;Schicke ich die alten zur&uuml;ck, BEVOR ich die neuen bekomme &mdash; oder parallel?&ldquo;</li>
+<li>&bdquo;Bekomme ich ein kostenfreies Retourenetikett per E-Mail?&ldquo;</li>
+<li>&bdquo;Wie lange habe ich Zeit f&uuml;r die R&uuml;cksendung?&ldquo;</li>
+</ul>
+</div>
+<div class="role-tipp">&#128161; <strong>Tipp:</strong> Zalando hat 100 Tage R&uuml;ckgaberecht &mdash; viel l&auml;nger als das gesetzliche Minimum. Erw&auml;hne nicht sofort &bdquo;Widerrufsrecht&ldquo;, das wirkt aggressiv. Freundlicher Umtausch reicht.</div>
+<div class="role-struct"><strong>&#9989; Was eine gute Antwort enth&auml;lt:</strong> Hallo + Bestelldetail + Problem (Gr&ouml;&szlig;e) + Wunsch (Umtausch) + Praktische Frage (Etikett, Frist).</div>
 </div>
 
+<!-- ROLLENSPIEL 3 -->
 <div class="role">
-<div class="role-tag">Rollenspiel 3 · Bewertung</div>
-<div class="role-title">⭐ Bewertung schreiben + Antwort</div>
-<div class="role-situation">Person A schreibt eine schlechte Bewertung (1-2 Sterne) über einen Online-Shop. Person B antwortet als Kundenservice und versucht, Person A zu beruhigen.</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">😤</div><div><div class="person-label">Kunde:in (Bewertung)</div><div class="person-quote">„1 Stern! Ware kaputt, Service unfreundlich, Erstattung dauert ewig! NIE WIEDER!"</div></div></div>
-<div class="person b"><div class="person-avatar">💼</div><div><div class="person-label">Shop-Antwort</div><div class="person-quote">„Sehr geehrte Frau…, wir bedauern Ihre schlechte Erfahrung sehr. Bitte schreiben Sie uns direkt an…"</div></div></div>
+<div class="role-tag">Rollenspiel 3 &middot; &Ouml;ffentliche Bewertung</div>
+<div class="role-title">&#11088; Bei Amazon eine ehrliche schlechte Bewertung schreiben</div>
+<div class="role-situation"><strong>Situation:</strong> Du hast eine Powerbank bestellt. Sie l&auml;dt das Handy nicht richtig auf und wird hei&szlig;. Du willst eine 2-Sterne-Bewertung schreiben &mdash; sachlich, konkret, hilfreich f&uuml;r andere K&auml;ufer.</div>
+<div class="role-role"><strong>Deine Rolle:</strong> Kein Wutausbruch, keine Beleidigungen. Du beschreibst Fakten + dein Erlebnis + gibst eine Empfehlung. Andere K&auml;ufer:innen sollen verstehen, was los war.</div>
+<div class="role-box">
+<div class="role-box-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span class="vocab-chip">leider</span><span class="vocab-chip">entt&auml;uschend</span><span class="vocab-chip">Qualit&auml;t</span><span class="vocab-chip">Verarbeitung</span><span class="vocab-chip">funktioniert nicht</span><span class="vocab-chip">defekt</span><span class="vocab-chip">&uuml;berhitzen</span><span class="vocab-chip">Akkuleistung</span><span class="vocab-chip">Werbeversprechen</span><span class="vocab-chip">nicht zu empfehlen</span><span class="vocab-chip">Vorsicht</span><span class="vocab-chip">Sterne abziehen</span>
 </div>
-<div class="role-goal">🎯 Kunde: emotional aber konkret beschreiben · Shop: höflich, professionell, lösungsorientiert antworten!</div>
 </div>
+<div class="role-box">
+<div class="role-box-label">&#128172; Beispiel-Phrasen</div>
+<ul class="role-phrases">
+<li>&bdquo;Leider muss ich von dem Produkt abraten &mdash; aus folgenden Gr&uuml;nden:&ldquo;</li>
+<li>&bdquo;Die Verarbeitung wirkt billig, die Akkuleistung entspricht nicht der Beschreibung.&ldquo;</li>
+<li>&bdquo;Bereits nach 5 Minuten Nutzung wird das Geh&auml;use unangenehm warm.&ldquo;</li>
+<li>&bdquo;Daf&uuml;r gibt es leider nur 2 Sterne &mdash; bitte spart euch das Geld.&ldquo;</li>
+<li>&bdquo;Werde die Powerbank im Rahmen meines Widerrufsrechts zur&uuml;cksenden.&ldquo;</li>
+</ul>
+</div>
+<div class="role-tipp">&#128161; <strong>Tipp:</strong> Konkrete Beispiele schlagen Adjektive. Statt &bdquo;total schei&szlig;e&ldquo; &rarr; &bdquo;nach 5 Min hei&szlig;&ldquo;. Andere K&auml;ufer:innen lieben pr&uuml;fbare Fakten.</div>
+<div class="role-struct"><strong>&#9989; Was eine gute Antwort enth&auml;lt:</strong> Sternzahl + 2&ndash;3 konkrete M&auml;ngel + eigenes Erlebnis (Datum/Nutzung) + Empfehlung (kaufen/nicht kaufen) + ggf. Kontakt zum Verk&auml;ufer.</div>
 </div>
 
-<h2 class="section-title">🎯 Mission der Woche</h2>
+<!-- ROLLENSPIEL 4 -->
+<div class="role">
+<div class="role-tag">Rollenspiel 4 &middot; Kleinanzeigen-Verhandlung</div>
+<div class="role-title">&#129309; Verk&auml;ufer auf Kleinanzeigen will Geld zur&uuml;ck</div>
+<div class="role-situation"><strong>Situation:</strong> Du hast eine gebrauchte Spielkonsole bei eBay-Kleinanzeigen f&uuml;r 180&euro; verkauft. Der K&auml;ufer schreibt nach 2 Tagen: &bdquo;Funktioniert nicht richtig &mdash; ich will Geld zur&uuml;ck.&ldquo; Du hast bei der &Uuml;bergabe alles getestet. Du verhandelst per Chat.</div>
+<div class="role-role"><strong>Deine Rolle:</strong> Privatverkauf hei&szlig;t: keine Gew&auml;hrleistung (wenn richtig formuliert). Du willst fair bleiben, aber nicht abgezogen werden. Schlage einen Kompromiss vor &mdash; oder bleib hart, wenn du sicher bist.</div>
+<div class="role-box">
+<div class="role-box-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span class="vocab-chip">Privatverkauf</span><span class="vocab-chip">gekauft wie gesehen</span><span class="vocab-chip">getestet</span><span class="vocab-chip">funktionsf&auml;hig</span><span class="vocab-chip">Sachmangel</span><span class="vocab-chip">Kulanz</span><span class="vocab-chip">Kompromiss</span><span class="vocab-chip">Teilerstattung</span><span class="vocab-chip">unter Ausschluss</span><span class="vocab-chip">Beweis</span><span class="vocab-chip">tut mir leid</span><span class="vocab-chip">f&uuml;r dich</span>
+</div>
+</div>
+<div class="role-box">
+<div class="role-box-label">&#128172; Beispiel-Phrasen</div>
+<ul class="role-phrases">
+<li>&bdquo;Bei der &Uuml;bergabe haben wir das Ger&auml;t zusammen getestet &mdash; es lief einwandfrei.&ldquo;</li>
+<li>&bdquo;Es war ein Privatverkauf unter Ausschluss der Gew&auml;hrleistung &mdash; das stand auch in der Anzeige.&ldquo;</li>
+<li>&bdquo;Tut mir leid, dass es nicht klappt &mdash; was genau funktioniert nicht?&ldquo;</li>
+<li>&bdquo;Aus Kulanz biete ich dir 30&euro; Teilerstattung an.&ldquo;</li>
+<li>&bdquo;F&uuml;r eine komplette R&uuml;ckgabe sehe ich rechtlich keine Grundlage.&ldquo;</li>
+</ul>
+</div>
+<div class="role-tipp">&#128161; <strong>Tipp:</strong> Privat = keine 14-Tage-Widerruf, keine Gew&auml;hrleistung (wenn ausgeschlossen). Aber: bleib menschlich, biete Kulanz an, wenn es passt. Drohungen mit Anwalt sind selten n&ouml;tig.</div>
+<div class="role-struct"><strong>&#9989; Was eine gute Antwort enth&auml;lt:</strong> Verst&auml;ndnis zeigen + Fakten der &Uuml;bergabe + Rechtslage erkl&auml;ren (Privat) + Kompromiss-Angebot + klare Grenze.</div>
+</div>
+
+<!-- ROLLENSPIEL 5 -->
+<div class="role">
+<div class="role-tag">Rollenspiel 5 &middot; Locker mit Freund:in</div>
+<div class="role-title">&#129303; &bdquo;Meine Online-Bestell-Hacks&ldquo; &mdash; Talk mit Freund:in</div>
+<div class="role-situation"><strong>Situation:</strong> Du erz&auml;hlst einer Freundin / einem Freund, wie du sinnvoll online bestellst &mdash; ohne Geld zu verbrennen, ohne 5 Pakete pro Woche, ohne den Klima-Kollaps. Eure Hacks und Regeln im Vergleich.</div>
+<div class="role-role"><strong>Deine Rolle:</strong> Locker, pers&ouml;nlich. Du teilst 3&ndash;4 Hacks, h&ouml;rst Gegenargumente, und ihr stellt zusammen eine Mini-&bdquo;Regelliste&ldquo; auf.</div>
+<div class="role-box">
+<div class="role-box-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span class="vocab-chip">Wunschliste</span><span class="vocab-chip">draufschlafen</span><span class="vocab-chip">Impulskauf</span><span class="vocab-chip">Preisvergleich</span><span class="vocab-chip">b&uuml;ndeln</span><span class="vocab-chip">vermeiden</span><span class="vocab-chip">Retoure-Quote</span><span class="vocab-chip">Sammelbestellung</span><span class="vocab-chip">nachhaltig</span><span class="vocab-chip">Klima</span><span class="vocab-chip">Verpackung</span><span class="vocab-chip">echt brauchen</span>
+</div>
+</div>
+<div class="role-box">
+<div class="role-box-label">&#128172; Beispiel-Phrasen</div>
+<ul class="role-phrases">
+<li>&bdquo;Ich leg Sachen erstmal in den Warenkorb und schlaf eine Nacht dr&uuml;ber.&ldquo;</li>
+<li>&bdquo;Bei Klamotten bestell ich nie 3 Gr&ouml;&szlig;en &mdash; das schadet dem Klima total.&ldquo;</li>
+<li>&bdquo;Was ich nach 24h immer noch will, kauf ich. Alles andere fliegt raus.&ldquo;</li>
+<li>&bdquo;Ich sammel alles f&uuml;r eine Bestellung pro Monat &mdash; weniger Pakete, weniger Plastik.&ldquo;</li>
+<li>&bdquo;Bewertungen lese ich immer von 3 Sternen aufw&auml;rts &mdash; die sind am ehrlichsten.&ldquo;</li>
+</ul>
+</div>
+<div class="role-tipp">&#128161; <strong>Tipp:</strong> Dieses Rollenspiel ist locker &mdash; nutze Umgangssprache! &bdquo;Voll krass&ldquo;, &bdquo;ehrlich gesagt&ldquo;, &bdquo;ich peil das nicht&ldquo;. Es geht um Authentizit&auml;t, nicht Perfektion.</div>
+<div class="role-struct"><strong>&#9989; Was eine gute Antwort enth&auml;lt:</strong> 1 pers&ouml;nlicher Hack + Begr&uuml;ndung (Geld/Zeit/Klima) + Frage an Gegen&uuml;ber + gemeinsame Regel formulieren.</div>
+</div>
+
+</div>
+
+<h2 class="section-title">&#127919; Mission der Woche</h2>
 <div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
-<strong>Mission:</strong> Simuliere eine Online-Bestellung auf einer deutschen Webseite (Amazon.de, Zalando.de, Otto.de). Lies alle Schritte LAUT auf Deutsch durch — von „Warenkorb" bis „Bestellung abschließen". Schreibe alle neuen Wörter auf!<br><br>
-🏆 <strong>Bonus:</strong> Schreibe eine echte Bewertung (oder Reklamations-E-Mail) auf Deutsch. Mindestens 5 Sätze. Schicke sie mir zur Korrektur!
+<strong>Mission:</strong> Simuliere eine Online-Bestellung auf einer deutschen Webseite (Amazon.de, Zalando.de, Otto.de). Lies alle Schritte LAUT auf Deutsch durch &mdash; von &bdquo;Warenkorb&ldquo; bis &bdquo;Bestellung abschlie&szlig;en&ldquo;. Schreibe alle neuen W&ouml;rter auf!<br><br>
+&#127942; <strong>Bonus 1:</strong> Schreibe eine echte Bewertung (oder Reklamations-E-Mail) auf Deutsch. Mind. 5 S&auml;tze.<br>
+&#127942; <strong>Bonus 2:</strong> Erkl&auml;re einer Freundin auf Deutsch den Unterschied zwischen <em>Garantie</em> und <em>Gew&auml;hrleistung</em>. Wenn sie es versteht &rarr; mission accomplished!
+</div>
+</section>
+
+<!-- UMGANGSSPRACHE - AM ENDE -->
+<section class="section" data-section="6">
+<h2 class="section-title">&#128172; So reden Deutsche <em style="font-style:italic;">&uuml;bers Online-Shopping</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats &mdash; Frust mit DHL, Klarna-Drama und Voice-Notes vom Sofa.</p>
+
+<div class="tip">&#128293; <strong>Tipp:</strong> Im Chat unter Freund:innen redet man <u>locker, mit Tippfehlern und Abk&uuml;rzungen</u> (sry, ka, lol). In offiziellen Reklamationen <em>sachlich und h&ouml;flich</em>. Wechsle bewusst zwischen den Stilen!</div>
+
+<div class="uss-grid">
+<div class="chat">
+<div class="chat-head"><div class="av">&#128230;</div><div><div class="name">Lena &middot; Paket-Drama</div><div class="stat">tippt &hellip;</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Bro mein Paket ist seit 3 Wochen unterwegs &mdash; bin am Ausrasten &#128548;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">no way. Welcher Shop?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Amazon. Tracking <strong>steht</strong> seit Tagen still, kein Update, nix</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Schreib denen einfach &mdash; sry aber Amazon ist da meist mega <strong>kulant</strong></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Echt? Ka, ich check das gleich. Wenn nicht: <strong>Erstattung</strong> &amp; tsch&uuml;ss &#128075;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Genau. Und das n&auml;chste Mal Prime, dann gibt&rsquo;s wenigstens schnellen Ersatz lol</div></div>
+<div class="chat-meaning"><strong>&bdquo;steht&ldquo;</strong> (umgangsspr.) = bewegt sich nicht &middot; <strong>&bdquo;kulant&ldquo;</strong> = kundenfreundlich, gibt schnell Geld zur&uuml;ck &middot; <strong>&bdquo;ka&ldquo;</strong> = keine Ahnung</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128087;</div><div><div class="name">Pia &middot; Zalando-Haul</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hab gestern bei Zalando 6 Teile bestellt &#128293;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">SECHS?? Bist du wahnsinnig &#128561;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ja eig schickt man 4 zur&uuml;ck. Aber Retoure ist halt gratis bei Zalando</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Pia &#128064; das ist so unnachhaltig</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich wei&szlig;&hellip; aber wie soll ich sonst die richtige Gr&ouml;&szlig;e finden?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Mit Ma&szlig;band? Lol. Bestell <strong>maximal 2</strong></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ok ok du hast recht &#128549; n&auml;chstes mal versprochen</div></div>
+<div class="chat-meaning"><strong>&bdquo;eig&ldquo;</strong> = eigentlich &middot; <strong>&bdquo;Retoure&ldquo;</strong> (informell auch &bdquo;zur&uuml;ckschicken&ldquo;) &middot; <strong>&bdquo;Haul&ldquo;</strong> (Anglizismus) = gro&szlig;er Einkauf zum Vorzeigen</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128184;</div><div><div class="name">Tom &middot; Klarna-Stress</div><div class="stat">zuletzt online vor 5 Min</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Alter, hab grad eine <strong>Mahnung</strong> von Klarna bekommen &#128557;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Wtf, hast du nicht bezahlt?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hab voll vergessen. War &uuml;ber 200&euro;. Jetzt + 5&euro; Mahngeb&uuml;hr</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Boah zahl SOFORT. Sonst kommt Inkasso und das ist <strong>richtig teuer</strong></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ja ja mach ich. Hab echt Schiss vor <strong>Schufa-Eintrag</strong>&hellip;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Eine Mahnung ist noch ok. Erst bei mehreren wird&rsquo;s eng. Aber zahl JETZT</div></div>
+<div class="chat-meaning"><strong>&bdquo;Schiss haben&ldquo;</strong> = Angst haben (Slang) &middot; <strong>&bdquo;Schufa&ldquo;</strong> = deutsche Bonit&auml;tsauskunft &mdash; ein schlechter Eintrag = sp&auml;ter keine Wohnung, kein Kredit</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#11088;</div><div><div class="name">Nico &middot; Bewertungs-Talk</div><div class="stat">online</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hab grad bei Amazon &uuml;ber 30 Min Bewertungen gelesen &#128529;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Lol typisch. Was wolltest du kaufen?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Bluetooth-Kopfh&ouml;rer. Aber die 5-Sterne wirken alle so <strong>fake</strong></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Filter mal nach 3 Sternen. Die sind am ehrlichsten &mdash; nicht nur Hass, nicht nur Liebe</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><div class="voice"><div class="voice-icon">&#9654;</div><div class="voice-bar"><span style="height:6px"></span><span style="height:12px"></span><span style="height:18px"></span><span style="height:10px"></span><span style="height:16px"></span><span style="height:8px"></span><span style="height:14px"></span><span style="height:20px"></span><span style="height:8px"></span><span style="height:12px"></span></div><div class="voice-time">0:34</div></div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">&#128514; ja stimmt das mit den verifizierten K&auml;ufen ist wichtig</div></div>
+<div class="chat-meaning"><strong>&bdquo;fake&ldquo;</strong> (Anglizismus) = gef&auml;lscht, unecht &middot; <strong>&bdquo;verifizierter Kauf&ldquo;</strong> = Bewertung von echtem K&auml;ufer (kleines Symbol bei Amazon) &middot; <strong>Voice-Note</strong> &#127897;&#65039; oft statt Tippen</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128559;</div><div><div class="name">Mia &middot; Kleinanzeigen-Schock</div><div class="stat">tippt &hellip;</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Du, hab bei Kleinanzeigen einen Sessel gekauft &mdash; und der ist <strong>komplett anders</strong> als auf den Bildern &#128563;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Oh no. Wie anders?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Andere Farbe, riesen Fleck, Polster kaputt. Aber sie sagt: &bdquo;Wie besichtigt verkauft&ldquo; &#129402;</div></div>
+<div class="chat-msg out"><div class="chat-bubble"><div class="voice"><div class="voice-icon">&#9654;</div><div class="voice-bar"><span style="height:8px"></span><span style="height:16px"></span><span style="height:10px"></span><span style="height:20px"></span><span style="height:12px"></span><span style="height:18px"></span><span style="height:6px"></span><span style="height:14px"></span><span style="height:10px"></span><span style="height:16px"></span><span style="height:8px"></span></div><div class="voice-time">0:52</div></div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ok ich versuch&rsquo;s &#129310; Wenn sie sich quer stellt, geh ich zur Verbraucherzentrale</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Genau. Aber Privatverkauf ist halt schwer. Beim n&auml;chsten Mal: <strong>vorher persona-checken</strong>!</div></div>
+<div class="chat-meaning"><strong>&bdquo;wie besichtigt&ldquo;</strong> = du hast es vorher gesehen, kein Anspruch danach &middot; <strong>&bdquo;quer stellen&ldquo;</strong> = sich weigern, nicht kooperieren &middot; Verbraucherzentrale = offizielle Beratungsstelle</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#127968;</div><div><div class="name">Max &middot; Otto auf Rechnung</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Sry kurze Frage &mdash; wie zahlt man am besten bei Otto?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ich nehm immer <strong>auf Rechnung</strong>. Erst die Ware checken, dann zahlen</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ah cool. Geht das nicht nur f&uuml;r Stammkunden?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Doch geht eig immer. Otto pr&uuml;ft Bonit&auml;t per Schufa</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Wtf, die machen also <strong>Schufa-Abfrage</strong> nur weil ich was bestelle?? &#128561;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Ja. Steht klein in den AGB. Aber chill, das ist Standard bei &bdquo;Kauf auf Rechnung&ldquo;</div></div>
+<div class="chat-meaning"><strong>&bdquo;Kauf auf Rechnung&ldquo;</strong> = sehr beliebt in DE, erst Ware, dann zahlen &middot; <strong>&bdquo;Schufa-Abfrage&ldquo;</strong> = Bonit&auml;tscheck &middot; <strong>AGB</strong> = Allgemeine Gesch&auml;ftsbedingungen</div>
+</div>
+</div>
+
+<h2 class="section-title">14 wichtige <em style="font-style:italic;">Reklamations-Phrasen</em></h2>
+<div class="phrase-grid">
+<div class="phrase"><div class="phrase-icon">&#128548;</div><div><div class="phrase-de">&bdquo;Mein Paket ist nicht angekommen.&ldquo;</div><div class="phrase-meaning">die Standard-Beschwerde</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128207;</div><div><div class="phrase-de">&bdquo;Die Gr&ouml;&szlig;e passt nicht.&ldquo;</div><div class="phrase-meaning">zu klein, zu gro&szlig;, f&auml;llt anders aus</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128238;</div><div><div class="phrase-de">&bdquo;Ich m&ouml;chte die Ware zur&uuml;ckschicken.&ldquo;</div><div class="phrase-meaning">retournieren formell</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128176;</div><div><div class="phrase-de">&bdquo;Wo ist meine Erstattung?&ldquo;</div><div class="phrase-meaning">wenn das Geld nicht zur&uuml;ckkommt</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128165;</div><div><div class="phrase-de">&bdquo;Die Ware ist besch&auml;digt angekommen.&ldquo;</div><div class="phrase-meaning">defekt, kaputt</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#10060;</div><div><div class="phrase-de">&bdquo;Das ist nicht das Produkt, das ich bestellt habe.&ldquo;</div><div class="phrase-meaning">falsche Lieferung</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#127903;&#65039;</div><div><div class="phrase-de">&bdquo;Ich bitte um ein kostenfreies Retourenetikett.&ldquo;</div><div class="phrase-meaning">formelle Bitte per E-Mail</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128222;</div><div><div class="phrase-de">&bdquo;Ich erwarte eine schnelle L&ouml;sung.&ldquo;</div><div class="phrase-meaning">h&ouml;flich aber bestimmt</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128260;</div><div><div class="phrase-de">&bdquo;Ich m&ouml;chte vom Kauf zur&uuml;cktreten.&ldquo;</div><div class="phrase-meaning">14-Tage-Widerruf nutzen</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128221;</div><div><div class="phrase-de">&bdquo;Meine Bestellnummer ist&hellip;&ldquo;</div><div class="phrase-meaning">immer angeben bei Reklamationen!</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#11088;</div><div><div class="phrase-de">&bdquo;Ich werde eine schlechte Bewertung schreiben.&ldquo;</div><div class="phrase-meaning">letzte Drohung &mdash; wirkt oft!</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128545;</div><div><div class="phrase-de">&bdquo;Das ist absolut inakzeptabel.&ldquo;</div><div class="phrase-meaning">formelle Emp&ouml;rung</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#9878;&#65039;</div><div><div class="phrase-de">&bdquo;Ich berufe mich auf mein Widerrufsrecht.&ldquo;</div><div class="phrase-meaning">rechtlich klar, sehr wirksam</div></div></div>
+<div class="phrase"><div class="phrase-icon">&#128737;&#65039;</div><div><div class="phrase-de">&bdquo;Bitte stellen Sie einen Nachforschungsauftrag.&ldquo;</div><div class="phrase-meaning">Standard-Satz f&uuml;r verlorene Pakete</div></div></div>
 </div>
 </section>
 
 </div>
 
-<footer><strong>deutschoderwas</strong> — authentisches Deutsch für den Alltag<br>Erstellt mit Liebe für meine Sprechclub-Lernenden · Online-Shopping &amp; Reklamationen · B1/B2</footer>
+<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch f&uuml;r den Alltag<br>Erstellt mit Liebe f&uuml;r meine Sprechclub-Lernenden &middot; Online-Shopping &amp; Reklamationen &middot; B1/B2 DELUXE</footer>
 
 <script>
 document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
 
 const KARTEN=[
-  {emoji:'🛒',word:'der Warenkorb',badge:'Shop',rule:'shopping cart',ex:'„Ich habe drei Sachen im <strong>Warenkorb</strong>."'},
-  {emoji:'🚚',word:'der Versand',badge:'Lieferung',rule:'shipping — wie das Paket kommt',ex:'„Der <strong>Versand</strong> kostet 4,99 Euro."'},
-  {emoji:'📦',word:'die Lieferung',badge:'Paket',rule:'delivery — das ankommende Paket',ex:'„Die <strong>Lieferung</strong> dauert 2–5 Werktage."'},
-  {emoji:'📮',word:'die Retoure',badge:'Rückgabe',rule:'return — Ware zurückschicken',ex:'„Bei Zalando ist die <strong>Retoure</strong> kostenlos."'},
-  {emoji:'💰',word:'die Erstattung',badge:'Geld zurück',rule:'refund — Geld zurück aufs Konto',ex:'„Wo bleibt meine <strong>Erstattung</strong>?"'},
-  {emoji:'🎟️',word:'die Gutschrift',badge:'Guthaben',rule:'credit — statt Geld zurück',ex:'„Sie bekommen eine <strong>Gutschrift</strong> über 50 Euro."'},
-  {emoji:'🔍',word:'das Tracking',badge:'Verfolgung',rule:'die Sendungsverfolgung',ex:'„Im <strong>Tracking</strong> steht „zugestellt"."'},
-  {emoji:'⏰',word:'die Lieferzeit',badge:'Zeit',rule:'delivery time — z.B. 2–5 Werktage',ex:'„Die <strong>Lieferzeit</strong> beträgt 3 Werktage."'},
-  {emoji:'⭐',word:'die Bewertung',badge:'Sterne',rule:'review — 1–5 Sterne',ex:'„Ich gebe 5 Sterne in der <strong>Bewertung</strong>."'},
-  {emoji:'📋',word:'die Bestellung',badge:'Auftrag',rule:'order — alles was du gekauft hast',ex:'„Meine <strong>Bestellung</strong> kommt morgen."'},
-  {emoji:'💳',word:'die Zahlungsart',badge:'Bezahlen',rule:'payment method',ex:'„Welche <strong>Zahlungsart</strong> möchten Sie?"'},
-  {emoji:'📜',word:'die Rechnung',badge:'Beleg',rule:'invoice — Beleg mit Kosten',ex:'„Die <strong>Rechnung</strong> ist im Paket."'},
-  {emoji:'😡',word:'die Reklamation',badge:'Beschwerde',rule:'complaint — offizielle Beschwerde',ex:'„Ich schreibe eine <strong>Reklamation</strong>."'},
-  {emoji:'💥',word:'beschädigt',badge:'Zustand',rule:'damaged — kaputt, defekt',ex:'„Die Ware ist <strong>beschädigt</strong> angekommen."'},
-  {emoji:'🎟️',word:'das Retourenetikett',badge:'Aufkleber',rule:'return label — zum Zurückschicken',ex:'„Schicken Sie mir bitte das <strong>Retourenetikett</strong>."'},
-  {emoji:'⚖️',word:'das Widerrufsrecht',badge:'Gesetz',rule:'right of withdrawal — 14 Tage in DE!',ex:'„Ich nutze mein <strong>Widerrufsrecht</strong>."'},
+  {emoji:'\u{1F6D2}',word:'der Warenkorb',badge:'Shop',rule:'shopping cart',syn:'Synonym: der Einkaufskorb',ex:'„Ich habe drei Sachen im <strong>Warenkorb</strong>.“'},
+  {emoji:'\u{1F69A}',word:'der Versand',badge:'Lieferung',rule:'shipping — wie das Paket kommt',syn:'Verwandt: versenden, der Versender',ex:'„Der <strong>Versand</strong> kostet 4,99 Euro.“'},
+  {emoji:'\u{1F4E6}',word:'die Lieferung',badge:'Paket',rule:'delivery — das ankommende Paket',syn:'Verb: liefern · die Lieferzeit',ex:'„Die <strong>Lieferung</strong> dauert 2–5 Werktage.“'},
+  {emoji:'\u{1F4EE}',word:'die Retoure',badge:'Rückgabe',rule:'return — Ware zurückschicken',syn:'Verb: retournieren / zurückschicken',ex:'„Bei Zalando ist die <strong>Retoure</strong> kostenlos.“'},
+  {emoji:'\u{1F4B0}',word:'die Erstattung',badge:'Geld zurück',rule:'refund — Geld zurück aufs Konto',syn:'Verb: erstatten · die Rückerstattung',ex:'„Wo bleibt meine <strong>Erstattung</strong>?“'},
+  {emoji:'\u{1F3F7}\u{FE0F}',word:'die Gutschrift',badge:'Guthaben',rule:'credit — statt Geld zurück',syn:'Verwandt: der Gutschein',ex:'„Sie bekommen eine <strong>Gutschrift</strong> über 50 Euro.“'},
+  {emoji:'\u{1F50D}',word:'das Tracking',badge:'Verfolgung',rule:'tracking — die Sendungsverfolgung',syn:'Synonym DE: die Sendungsverfolgung',ex:'„Im <strong>Tracking</strong> steht „zugestellt“.“'},
+  {emoji:'\u{23F0}',word:'die Lieferzeit',badge:'Zeit',rule:'delivery time — z.B. 2–5 Werktage',syn:'Verwandt: die Lieferfrist',ex:'„Die <strong>Lieferzeit</strong> beträgt 3 Werktage.“'},
+  {emoji:'\u{2B50}',word:'die Bewertung',badge:'Sterne',rule:'review — 1–5 Sterne',syn:'Synonym: die Rezension',ex:'„Ich gebe 5 Sterne in der <strong>Bewertung</strong>.“'},
+  {emoji:'\u{1F4DD}',word:'die Bestellung',badge:'Auftrag',rule:'order — alles was du gekauft hast',syn:'Verb: bestellen · die Bestellnummer',ex:'„Meine <strong>Bestellung</strong> kommt morgen.“'},
+  {emoji:'\u{1F4B3}',word:'die Zahlungsart',badge:'Bezahlen',rule:'payment method',syn:'Verwandt: bezahlen, die Zahlung',ex:'„Welche <strong>Zahlungsart</strong> möchten Sie?“'},
+  {emoji:'\u{1F4DC}',word:'die Rechnung',badge:'Beleg',rule:'invoice — Beleg mit Kosten',syn:'„auf Rechnung kaufen“ = erst Ware, dann zahlen',ex:'„Die <strong>Rechnung</strong> ist im Paket.“'},
+  {emoji:'\u{1F621}',word:'die Reklamation',badge:'Beschwerde',rule:'complaint — offizielle Beschwerde',syn:'Verb: reklamieren · Synonym: die Beschwerde',ex:'„Ich schreibe eine <strong>Reklamation</strong>.“'},
+  {emoji:'\u{1F4A5}',word:'beschädigt',badge:'Zustand',rule:'damaged — kaputt, defekt',syn:'Synonyme: defekt, kaputt, zerbrochen',ex:'„Die Ware ist <strong>beschädigt</strong> angekommen.“'},
+  {emoji:'\u{1F3AB}',word:'das Retourenetikett',badge:'Aufkleber',rule:'return label — zum Zurückschicken',syn:'Auch: der Rücksendeschein',ex:'„Schicken Sie mir bitte das <strong>Retourenetikett</strong>.“'},
+  {emoji:'\u{2696}\u{FE0F}',word:'das Widerrufsrecht',badge:'Gesetz',rule:'right of withdrawal — 14 Tage in DE!',syn:'Verb: widerrufen · &sect; 355 BGB',ex:'„Ich nutze mein <strong>Widerrufsrecht</strong>.“'},
+  {emoji:'\u{1F6E1}\u{FE0F}',word:'die Gewährleistung',badge:'2 Jahre Pflicht',rule:'statutory warranty — 2 Jahre Pflicht des Verkäufers',syn:'Nicht verwechseln mit „Garantie“!',ex:'„Bei einem Mangel greift die <strong>Gewährleistung</strong>.“'},
+  {emoji:'\u{1F4DC}',word:'die Garantie',badge:'freiwillig',rule:'warranty — freiwilliges Versprechen vom Hersteller',syn:'Anders als Gewährleistung!',ex:'„Die <strong>Garantie</strong> gilt 2 Jahre.“'},
+  {emoji:'\u{1F4EC}',word:'die Mahnung',badge:'Erinnerung',rule:'payment reminder — „Sie haben nicht gezahlt“',syn:'Verb: mahnen · Mahngebühr',ex:'„Heute kam eine <strong>Mahnung</strong> per Post.“'},
+  {emoji:'\u{1F480}',word:'das Inkasso',badge:'teuer',rule:'collection agency — Schulden eintreiben',syn:'Achtung: viel teurer als Mahnung!',ex:'„Wenn du nicht zahlst, kommt <strong>Inkasso</strong>.“'},
+  {emoji:'\u{1F4CA}',word:'die Schufa',badge:'Bonität',rule:'german credit bureau — Bonitäts-Datenbank',syn:'Schlechter Eintrag = keine Wohnung, kein Kredit',ex:'„Die <strong>Schufa</strong> hat einen negativen Eintrag.“'},
+  {emoji:'\u{1F9FE}',word:'die Stornierung',badge:'Storno',rule:'cancellation — Bestellung rückgängig',syn:'Verb: stornieren · oft im Webshop möglich',ex:'„Ist eine <strong>Stornierung</strong> noch möglich?“'},
+  {emoji:'\u{1F50E}',word:'der Nachforschungsauftrag',badge:'verlorenes Paket',rule:'investigation request — DHL sucht dein Paket',syn:'Standard-Schritt bei verschollenen Paketen',ex:'„Stellen Sie bitte einen <strong>Nachforschungsauftrag</strong>.“'},
 ];
 let order=KARTEN.map((_,i)=>i);let lkIdx=0;
 const flipEl=document.getElementById('flip');
-function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
+function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipSyn').textContent=k.syn||'';document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
 flipEl.onclick=()=>flipEl.classList.toggle('flipped');
 document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
 document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
@@ -473,18 +669,20 @@ showCard();
 
 document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
 
-document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=6?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');};
+document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=7?'Sehr gut!':right>=4?'Auf gutem Weg!':'Weiter üben!');};
 document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
 
 const PAIRS=[
-  {l:'Paket nicht angekommen',r:'Tracking checken + Kundenservice anrufen'},
+  {l:'Paket nicht angekommen',r:'Nachforschungsauftrag + Kundenservice'},
   {l:'Größe passt nicht',r:'Retourenetikett anfordern, zurückschicken'},
   {l:'Ware beschädigt',r:'Foto machen + Reklamation per E-Mail'},
-  {l:'Falsches Produkt',r:'Reklamieren + Originalprodukt verlangen'},
-  {l:'Erstattung fehlt',r:'Beim Kundenservice nachhaken'},
-  {l:'Lieferung verspätet',r:'Tracking checken + Geduld haben'},
-  {l:'Schlechter Service',r:'Schlechte Bewertung schreiben'},
-  {l:'Will nicht mehr kaufen',r:'Vom Kauf zurücktreten (14 Tage)'},
+  {l:'Falsches Produkt geliefert',r:'Reklamieren + Original verlangen'},
+  {l:'Erstattung fehlt seit Wochen',r:'Beim Kundenservice nachhaken + Frist setzen'},
+  {l:'Bestellung versehentlich aufgegeben',r:'Sofort stornieren (24h möglich)'},
+  {l:'Toaster nach 8 Monaten kaputt',r:'Gewährleistung geltend machen (2 Jahre)'},
+  {l:'Mahnung von Klarna bekommen',r:'Sofort zahlen, bevor Inkasso kommt'},
+  {l:'Kleid passt — aber gefällt nicht',r:'Vom Kauf zurücktreten (14 Tage Widerruf)'},
+  {l:'Verkäufer verweigert Erstattung',r:'Verbraucherzentrale einschalten'},
 ];
 function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
 buildMatch();
@@ -492,22 +690,30 @@ document.getElementById('matchRestart').onclick=buildMatch;
 const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
 
 const SPEAK=[
-  {emoji:'🛒',cat:'Persönlich · Bestellen',q:'Wie oft bestellst du online? Was war deine letzte Bestellung?'},
-  {emoji:'📦',cat:'Lieferung',q:'Beschreibe deine letzte Lieferung — kam alles wie geplant?'},
-  {emoji:'😩',cat:'Reklamation',q:'Erzähle von einer Reklamation, die du schon mal machen musstest!'},
-  {emoji:'⭐',cat:'Bewertungen',q:'Liest du Bewertungen vor dem Kauf? Schreibst du selbst welche?'},
-  {emoji:'📏',cat:'Größe falsch',q:'Bestellst du oft Mode online? Wie oft musst du etwas zurückschicken?'},
-  {emoji:'💸',cat:'Erstattung',q:'Wie lange hast du schon mal auf eine Erstattung gewartet? War es nervig?'},
-  {emoji:'🏪',cat:'Online vs. Laden',q:'Online-Shopping oder im Laden — was findest du besser? Warum?'},
-  {emoji:'📮',cat:'Retoure',q:'Wie ist das Rückgabe-System in deinem Land? Auch 14 Tage wie in DE?'},
-  {emoji:'🌍',cat:'Heimat',q:'Welche Online-Shops sind in deinem Land beliebt? Wie unterscheiden sie sich von DE?'},
-  {emoji:'💳',cat:'Bezahlen',q:'Wie bezahlst du am liebsten online? PayPal, Kreditkarte, auf Rechnung?'},
-  {emoji:'🎁',cat:'Geschenke',q:'Hast du schon mal ein Geschenk online gekauft? Wie ist das gelaufen?'},
-  {emoji:'🌱',cat:'Nachhaltigkeit',q:'Ist Online-Shopping umweltfreundlich? Was denkst du?'},
-  {emoji:'⚡',cat:'Schnell-Lieferung',q:'Brauchst du Amazon Prime / Same-Day-Delivery? Warum (nicht)?'},
-  {emoji:'😡',cat:'Frust-Story',q:'Erzähle die schlimmste Online-Shopping-Geschichte deines Lebens!'},
-  {emoji:'🔍',cat:'Tracking-Drama',q:'Hast du schon mal stundenlang auf das Tracking gestarrt? Wie war das Gefühl?'},
-  {emoji:'🎯',cat:'Freestyle',q:'Wenn du einen perfekten Online-Shop bauen würdest — was wäre dort anders?'},
+  {emoji:'\u{1F6D2}',cat:'Persönlich · Bestellen',q:'Wie oft bestellst du online? Was war deine letzte Bestellung?'},
+  {emoji:'\u{1F4E6}',cat:'Lieferung',q:'Beschreibe deine letzte Lieferung — kam alles wie geplant?'},
+  {emoji:'\u{1F629}',cat:'Reklamation',q:'Erzähle von einer Reklamation, die du schon mal machen musstest!'},
+  {emoji:'\u{2B50}',cat:'Bewertungen',q:'Liest du Bewertungen vor dem Kauf? Schreibst du selbst welche?'},
+  {emoji:'\u{1F4CF}',cat:'Größe falsch',q:'Bestellst du oft Mode online? Wie oft musst du etwas zurückschicken?'},
+  {emoji:'\u{1F4B8}',cat:'Erstattung',q:'Wie lange hast du schon mal auf eine Erstattung gewartet? Was hast du gemacht?'},
+  {emoji:'\u{1F3EA}',cat:'Online vs. Laden',q:'Online-Shopping oder im Laden — was findest du besser? Warum?'},
+  {emoji:'\u{1F4EE}',cat:'Retoure',q:'Wie ist das Rückgabe-System in deinem Land? Auch 14 Tage wie in DE?'},
+  {emoji:'\u{1F30D}',cat:'Heimat',q:'Welche Online-Shops sind in deinem Land beliebt? Wie unterscheiden sie sich von DE?'},
+  {emoji:'\u{1F4B3}',cat:'Bezahlen',q:'Wie bezahlst du am liebsten online? PayPal, Kreditkarte, auf Rechnung?'},
+  {emoji:'\u{1F381}',cat:'Geschenke',q:'Hast du schon mal ein Geschenk online gekauft? Wie ist das gelaufen?'},
+  {emoji:'\u{1F331}',cat:'Nachhaltigkeit',q:'Ist Online-Shopping umweltfreundlich? Was denkst du wirklich?'},
+  {emoji:'\u{26A1}',cat:'Schnell-Lieferung',q:'Brauchst du Amazon Prime / Same-Day-Delivery? Warum (nicht)?'},
+  {emoji:'\u{1F621}',cat:'Frust-Story',q:'Erzähle die schlimmste Online-Shopping-Geschichte deines Lebens!'},
+  {emoji:'\u{1F50D}',cat:'Tracking-Drama',q:'Hast du schon mal stundenlang auf das Tracking gestarrt? Wie war das?'},
+  {emoji:'\u{2696}\u{FE0F}',cat:'Widerrufsrecht',q:'Hast du das 14-tägige Widerrufsrecht schon mal genutzt? Wofür?'},
+  {emoji:'\u{1F4EC}',cat:'Mahnung',q:'Hast du schon mal eine Mahnung bekommen? Wie hast du reagiert?'},
+  {emoji:'\u{1F4F1}',cat:'Klarna-Falle',q:'„Erst kaufen, später zahlen“ — Segen oder Risiko? Was denkst du?'},
+  {emoji:'\u{1F465}',cat:'Kleinanzeigen',q:'Hast du schon mal etwas privat gekauft oder verkauft? Wie war das?'},
+  {emoji:'\u{1F389}',cat:'Black Friday',q:'Black Friday — echtes Schnäppchen oder Marketing-Trick?'},
+  {emoji:'\u{1F914}',cat:'Bewertungs-Ethik',q:'Schreibst du eine schlechte Bewertung schon nach EINEM schlechten Erlebnis?'},
+  {emoji:'\u{1F4DD}',cat:'E-Mail-Stil',q:'Wie startest du eine Beschwerde-E-Mail? Direkt oder mit Smalltalk?'},
+  {emoji:'\u{1F3AF}',cat:'Hack',q:'Verrate deinen besten Online-Shopping-Hack — Geld sparen, Zeit sparen, Stress sparen.'},
+  {emoji:'\u{1F31F}',cat:'Freestyle',q:'Wenn du den perfekten Online-Shop bauen würdest — was wäre dort anders?'},
 ];
 let lastS=-1;
 document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';c.style.opacity='1';},200);};

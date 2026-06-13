@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="de"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Preise &amp; Zahlen · A2 | deutschoderwas</title>
+<title>Preise &amp; Zahlen &middot; A2 DELUXE | deutschoderwas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,261 +14,404 @@
   --pink:#E69CB3;
   --sand:#F0E2C8;
   --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+  --blue:#2D6BB8; --blue-soft:#DCE9F7;
+  --green:#5F7A2A; --green-soft:#E2EBC9;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.6;min-height:100vh;font-size:17px;}
 .wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
-.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.eyebrow{text-align:center;font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
 .title-wrap{text-align:center;margin-bottom:1rem;}
-h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,3.8rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
 h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
 h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
-.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
-.hero-svg{display:block;margin:1.5rem auto 0;max-width:380px;width:100%;}
-.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
-.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.subtitle{text-align:center;max-width:640px;margin:.9rem auto 0;font-size:1.1rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:420px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:24px;padding:.55rem;margin:2rem auto;max-width:fit-content;}
+.tab{font-family:'Outfit',sans-serif;font-size:.98rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
 .tab:hover{border-color:var(--ink);transform:translateY(-1px);}
 .tab.active{background:var(--red);color:white;border-color:var(--red);}
 .section{display:none;animation:fade .35s ease;}
 .section.active{display:block;}
 @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
-.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
-.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.9rem,3.8vw,2.6rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1.05rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1.1rem 1.4rem;font-size:1rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
 .tip strong{color:var(--red);font-weight:700;}
 .tip em{color:var(--ink);font-style:italic;}
 .tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
 
-/* PRICE / NUMBER CARDS */
-.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
-@media(max-width:600px){.prep-grid{grid-template-columns:repeat(2,1fr);}}
-.prep{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.9rem;text-align:center;}
-.prep-icon{font-size:1.8rem;margin-bottom:.3rem;}
-.prep-word{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.05rem;margin-bottom:.2rem;}
-.prep-case{font-size:.7rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
-.prep-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.82rem;margin-top:.3rem;}
+/* GENUS-COLORS */
+.g-der{color:var(--blue);} .g-die{color:var(--red);} .g-das{color:var(--green);}
+.genus-key{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:1rem 0 1.5rem;font-size:.9rem;}
+.genus-key span{padding:.3rem .8rem;border-radius:999px;font-weight:700;}
+.genus-key .k-der{background:var(--blue-soft);color:var(--blue);}
+.genus-key .k-die{background:var(--red-soft);color:var(--red);}
+.genus-key .k-das{background:var(--green-soft);color:var(--green);}
 
-/* PRICE-STAGE (Vorher/Nachher) */
+/* NUMBER GRID (Visual) */
+.num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin:1.5rem 0;}
+@media(max-width:600px){.num-grid{grid-template-columns:repeat(2,1fr);}}
+.num-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1rem .9rem;text-align:center;transition:.2s;}
+.num-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(38,32,25,.08);}
+.num-svg{margin:0 auto .3rem;display:block;}
+.num-range{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.2rem;margin-bottom:.2rem;}
+.num-case{font-size:.78rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.num-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.92rem;margin-top:.4rem;line-height:1.4;}
+
+/* PRICE-TAG SVG ROW */
+.tag-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1.5rem 0;}
+@media(max-width:600px){.tag-row{grid-template-columns:repeat(2,1fr);}}
+.tag-card{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem .5rem;text-align:center;}
+.tag-card svg{display:block;margin:0 auto .4rem;}
+.tag-say{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.85rem;line-height:1.4;}
+
+/* COMPARE (Komma vs Punkt) */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.5rem 0;}
 @media(max-width:600px){.compare{grid-template-columns:1fr;}}
-.comp-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.1rem 1.2rem;}
+.comp-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.2rem 1.2rem;text-align:center;}
 .comp-card.a{border-color:var(--red);background:#FFF6F5;}
 .comp-card.b{border-color:var(--teal);background:#F1FAF8;}
-.comp-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem;}
+.comp-tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .8rem;border-radius:999px;margin-bottom:.5rem;}
 .comp-card.a .comp-tag{background:var(--red);color:white;}
 .comp-card.b .comp-tag{background:var(--teal);color:white;}
-.comp-text{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);line-height:1.5;}
-.comp-text strong{color:var(--red);}
-.comp-card.b .comp-text strong{color:var(--teal);}
-.comp-note{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;}
+.comp-text{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--ink);line-height:1.3;margin:.4rem 0;}
+.comp-note{font-size:.9rem;color:var(--ink-soft);margin-top:.5rem;line-height:1.5;}
 
 /* DIALOG STEPS */
-.dialog-grid{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0;}
-.dial{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;}
+.dialog-grid{display:grid;grid-template-columns:1fr;gap:.8rem;margin:1.5rem 0;}
+.dial{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.8rem;align-items:start;}
 .dial.d1{border-left:5px solid var(--red);}
 .dial.d2{border-left:5px solid var(--teal);}
 .dial.d3{border-left:5px solid #B66809;}
 .dial.d4{border-left:5px solid #6A3D9C;}
-.dial-icon{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.dial-icon{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;font-family:'Fraunces',serif;}
 .dial.d2 .dial-icon{background:var(--teal);}
 .dial.d3 .dial-icon{background:#B66809;}
 .dial.d4 .dial-icon{background:#6A3D9C;}
-.dial-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.02rem;margin-bottom:.3rem;}
+.dial-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.08rem;margin-bottom:.3rem;}
 .dial-body ul{list-style:none;padding:0;}
-.dial-body li{padding:.2rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;padding-left:1.1rem;position:relative;}
-.dial-body li::before{content:'›';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+.dial-body li{padding:.25rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.95rem;padding-left:1.2rem;position:relative;}
+.dial-body li::before{content:'\203A';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+
+/* PRICE READ table */
+.price-table{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.2rem 1.4rem;margin:1.2rem 0;}
+.price-row{display:grid;grid-template-columns:1fr 2fr;gap:.7rem;padding:.6rem 0;border-bottom:1px dashed var(--sand);align-items:center;}
+.price-row:last-child{border-bottom:0;}
+.price-num{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.35rem;text-align:center;background:var(--yellow-soft);padding:.5rem .3rem;border-radius:10px;}
+.price-say{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:1rem;line-height:1.5;}
+.price-say strong{color:var(--teal);font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
 
 /* ALLTAG-FRAGEN */
 .alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
-.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
-.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
-.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+.alltag-q .ql{font-size:.74rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);margin-top:.3rem;font-style:italic;line-height:1.5;}
+.alltag-q .think{font-size:.9rem;color:var(--ink-soft);margin-top:.4rem;}
 
 /* CHAT */
 .chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
-.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
-.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
-.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
-.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.88rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:34px;height:34px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.15rem;}
+.chat-head .name{font-weight:700;font-size:.95rem;line-height:1.1;}
+.chat-head .stat{font-size:.72rem;opacity:.85;}
 .chat-msg{margin:.4rem 0;display:flex;}
 .chat-msg.out{justify-content:flex-end;}
-.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-bubble{max-width:80%;padding:.55rem .85rem;border-radius:14px;font-size:.96rem;color:var(--ink);line-height:1.45;}
 .chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
 .chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
 .chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
-.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-voice{display:inline-flex;align-items:center;gap:.5rem;background:#E7F4E1;padding:.3rem .6rem;border-radius:20px;font-size:.85rem;color:var(--ink-soft);}
+.chat-voice .play{width:24px;height:24px;border-radius:50%;background:var(--teal);color:white;display:flex;align-items:center;justify-content:center;font-size:.7rem;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.55rem .85rem;border-radius:8px;margin-top:.6rem;font-size:.86rem;color:var(--ink);line-height:1.5;}
 .chat-meaning strong{color:#B66809;}
 .uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 @media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
 
 /* FLIP */
-.flip{perspective:1000px;width:100%;max-width:440px;height:340px;margin:1.5rem auto;cursor:pointer;}
+.flip{perspective:1000px;width:100%;max-width:460px;height:380px;margin:1.5rem auto;cursor:pointer;}
 .flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
 .flip.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);overflow:hidden;}
 .flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
-.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
-.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
-.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
-.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
-.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
-.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.96rem;margin-top:.6rem;line-height:1.55;}
+.flip-emoji{font-size:3rem;margin-bottom:.5rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
+.flip-word.der{color:var(--blue);}
+.flip-word.die{color:var(--red);}
+.flip-word.das{color:var(--green);}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.72rem;font-weight:700;padding:.22rem .75rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.85rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:1rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:1rem;margin-top:.7rem;line-height:1.55;}
 .flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.flip-syn{font-size:.82rem;color:var(--ink-soft);margin-top:.6rem;}
+.flip-syn strong{color:var(--teal);font-weight:700;}
 .lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
-.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:48px;height:48px;border-radius:50%;cursor:pointer;color:var(--ink);}
 .lk-btn:hover{background:var(--ink);color:white;}
-.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
-.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:var(--ink);}
+.lk-actions{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:1rem;}
+.lk-shuffle,.lk-speak{background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.lk-speak{background:var(--teal);color:white;border-color:var(--teal);}
+.lk-speak:hover{background:#0a9587;border-color:#0a9587;}
 
 /* QUIZ */
 .quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
-.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
-.quiz-q .blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--red);text-align:center;padding:0 .3em;color:var(--red);font-weight:700;}
-.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
-.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.5rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.98rem;color:var(--ink);padding:.5rem 1.05rem;border-radius:999px;cursor:pointer;}
 .quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
 .quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
 .quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
-.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain{margin-top:.7rem;font-size:.92rem;color:var(--teal);background:var(--teal-soft);padding:.6rem .95rem;border-radius:10px;display:none;line-height:1.5;}
 .quiz-explain.show{display:block;}
 
 /* GAP */
-.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
-.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);line-height:1.95;}
+.gap-text .gap-line{padding:.55rem 0;border-bottom:1px dashed var(--sand);}
 .gap-text .gap-line:last-of-type{border-bottom:0;}
-.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
 .gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
 .gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
 .gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
-.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.6rem 1.5rem;border-radius:999px;cursor:pointer;font-size:.98rem;}
 .btn-primary:hover{background:#C8211D;border-color:#C8211D;}
-.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.6rem 1.5rem;border-radius:999px;cursor:pointer;font-size:.98rem;}
 .btn-secondary:hover{background:var(--ink);color:white;}
 
-/* MATCH */
-.match-stage{margin:1.5rem 0;}
-.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
-.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
-.match-list{display:flex;flex-direction:column;gap:.45rem;}
-.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
-.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
-.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
-.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
-.match-restart{display:block;margin:1.2rem auto 0;}
+/* DRAG&DROP MATCH */
+.dnd-stage{margin:1.5rem 0;}
+.dnd-instr{background:var(--blue-soft);border-left:5px solid var(--blue);padding:.9rem 1.1rem;border-radius:10px;margin-bottom:1.2rem;font-size:.96rem;color:var(--ink);}
+.dnd-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
+@media(max-width:600px){.dnd-cols{grid-template-columns:1fr;}}
+.dnd-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.1rem;text-align:center;margin-bottom:.7rem;}
+.dnd-pool{display:flex;flex-direction:column;gap:.5rem;}
+.dnd-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.75rem 1rem;font-weight:600;color:var(--ink);font-size:1rem;text-align:center;cursor:grab;transition:.15s;user-select:none;}
+.dnd-item.tag{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.15rem;background:var(--yellow-soft);border-color:var(--yellow);}
+.dnd-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.dnd-item.dragging{opacity:.4;cursor:grabbing;}
+.dnd-slot{background:var(--cream-warm);border:2px dashed var(--ink-mute);border-radius:14px;padding:.7rem;min-height:54px;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--ink-mute);transition:.2s;}
+.dnd-slot.hover{background:var(--yellow-soft);border-color:var(--yellow);border-style:solid;}
+.dnd-slot.filled{background:var(--paper);border-style:solid;}
+.dnd-slot.correct{background:var(--teal-soft);border-color:var(--teal);}
+.dnd-slot.wrong{background:var(--red-soft);border-color:var(--red);animation:shake .4s;}
+.dnd-pair{display:grid;grid-template-columns:1fr 1.3fr;gap:.5rem;align-items:center;background:transparent;padding:.3rem 0;}
+.dnd-pair .dnd-tag-label{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.05rem;text-align:center;background:var(--yellow-soft);padding:.6rem .3rem;border-radius:10px;border:2px solid var(--yellow);}
+.dnd-actions{display:flex;gap:.6rem;justify-content:center;margin-top:1.3rem;flex-wrap:wrap;}
+.dnd-score{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:14px;padding:.8rem 1.2rem;text-align:center;margin-top:1rem;font-size:1rem;color:var(--ink);display:none;}
+.dnd-score.show{display:block;}
+.dnd-score strong{color:var(--red);}
 
 /* SPEAK + ROLES */
-.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
-.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
-.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
-.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
-.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
-.speak-controls{text-align:center;margin-top:1rem;}
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:230px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:560px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.8rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.76rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.25rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.9rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-tts{margin-top:.9rem;display:inline-flex;align-items:center;gap:.4rem;background:var(--teal);color:white;border:none;font-family:'Outfit',sans-serif;font-weight:700;padding:.5rem 1.1rem;border-radius:999px;cursor:pointer;font-size:.92rem;}
+.speak-tts:hover{background:#0a9587;}
+.speak-controls{text-align:center;margin-top:1rem;display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;}
+
 .role-section{margin-top:2.5rem;}
-.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
-.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
-.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
-.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
-.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
-@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
-.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
-.person.a{border-color:var(--red);background:#FFF6F5;}
-.person.b{border-color:var(--teal);background:#F1FAF8;}
-.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
-.person.a .person-avatar{border-color:var(--red);}
-.person.b .person-avatar{border-color:var(--teal);}
-.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
-.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
-.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.3rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.74rem;font-weight:700;padding:.25rem .85rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.3rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.85rem 1.05rem;color:var(--ink);font-size:.98rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;line-height:1.55;}
+.role-block{margin:.8rem 0;}
+.role-label{font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--red);margin-bottom:.3rem;}
+.role-vocab{display:flex;flex-wrap:wrap;gap:.4rem;}
+.role-vocab span{background:var(--teal-soft);color:var(--teal);font-weight:600;font-size:.88rem;padding:.3rem .7rem;border-radius:999px;}
+.role-phrases{background:var(--cream);border:1.5px solid var(--sand);border-radius:12px;padding:.8rem 1rem;}
+.role-phrases ul{list-style:none;padding:0;}
+.role-phrases li{padding:.25rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.95rem;padding-left:1.1rem;position:relative;line-height:1.5;}
+.role-phrases li::before{content:'\201E';position:absolute;left:0;color:var(--red);font-weight:900;}
+.role-strategy{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.65rem .95rem;border-radius:8px;font-size:.92rem;color:#7A6300;line-height:1.5;}
+.role-answer{background:var(--green-soft);border-left:4px solid var(--green);padding:.65rem .95rem;border-radius:8px;font-size:.92rem;color:var(--ink);line-height:1.5;}
+.role-answer strong{color:var(--green);}
 
-/* PRICE-READ table */
-.price-table{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.2rem 1.4rem;margin:1.2rem 0;}
-.price-row{display:grid;grid-template-columns:1fr 2fr;gap:.7rem;padding:.6rem 0;border-bottom:1px dashed var(--sand);align-items:center;}
-.price-row:last-child{border-bottom:0;}
-.price-num{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.3rem;text-align:center;background:var(--yellow-soft);padding:.5rem .3rem;border-radius:10px;}
-.price-say{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:1rem;line-height:1.5;}
-.price-say strong{color:var(--teal);font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
-
-footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer{text-align:center;color:var(--ink-mute);font-size:.88rem;padding:3rem 1rem 1.5rem;margin-top:3rem;line-height:1.7;}
 footer strong{color:var(--ink);}
 </style>
 </head>
 <body>
 <div class="wrapper">
 
-<div class="eyebrow">deutschoderwas &middot; A2 Sprechclub &middot; Alltag</div>
+<div class="eyebrow">deutschoderwas &middot; A2 Sprechclub &middot; Deluxe</div>
 
 <div class="title-wrap">
 <h1 class="title">Mit <span class="hl">Preisen</span> und Zahlen umgehen</h1>
 </div>
-<p class="subtitle">Zahlen verstehen, Preise lesen, im Geschaeft fragen &mdash; im Restaurant teilen, auf dem Flohmarkt verhandeln. Alles auf Deutsch!</p>
+<p class="subtitle">Zahlen verstehen, Preise lesen, im Gesch&auml;ft fragen &mdash; im Restaurant teilen, am Flohmarkt verhandeln. Alles auf Deutsch &mdash; einfach + visuell!</p>
 
-<svg class="hero-svg" viewBox="0 0 380 110" xmlns="http://www.w3.org/2000/svg">
-<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
-<g transform="translate(35,20)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="5" font-size="20">1-10</text><text text-anchor="middle" y="40" fill="#E8302A">Zahlen</text></g>
-<g transform="translate(95,20)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="5" font-size="18">€</text><text text-anchor="middle" y="40" fill="#0FB5A6">Preise</text></g>
-<g transform="translate(155,20)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="5" font-size="22">🛒</text><text text-anchor="middle" y="40" fill="#B66809">Einkauf</text></g>
-<g transform="translate(215,20)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="5" font-size="22">🍽️</text><text text-anchor="middle" y="40" fill="#A04060">Rechnung</text></g>
-<g transform="translate(275,20)"><circle cx="0" cy="0" r="22" fill="#E2EBC9"/><text text-anchor="middle" dy="5" font-size="22">💸</text><text text-anchor="middle" y="40" fill="#5F7A2A">Trinkgeld</text></g>
-<g transform="translate(335,20)"><circle cx="0" cy="0" r="22" fill="#E5D8F2"/><text text-anchor="middle" dy="5" font-size="22">🏷️</text><text text-anchor="middle" y="40" fill="#6A3D9C">Rabatt</text></g>
+<svg class="hero-svg" viewBox="0 0 420 160" xmlns="http://www.w3.org/2000/svg" aria-label="Preise und Zahlen Hero">
+<!-- Geldscheine + Muenzen -->
+<defs>
+  <linearGradient id="bill" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0" stop-color="#FFE6A8"/>
+    <stop offset="1" stop-color="#FFC850"/>
+  </linearGradient>
+</defs>
+<!-- 10 Euro Schein -->
+<g transform="translate(28,40) rotate(-6)">
+  <rect width="110" height="60" rx="6" fill="url(#bill)" stroke="#B66809" stroke-width="1.5"/>
+  <circle cx="22" cy="30" r="11" fill="none" stroke="#B66809" stroke-width="1.5"/>
+  <text x="22" y="34" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" font-weight="700" fill="#B66809">10</text>
+  <text x="80" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-size="13" font-weight="700" fill="#B66809">10 &euro;</text>
+  <text x="80" y="44" text-anchor="middle" font-family="Outfit, sans-serif" font-size="6" fill="#B66809">EURO</text>
+</g>
+<!-- 20 Euro Schein -->
+<g transform="translate(125,30) rotate(4)">
+  <rect width="110" height="60" rx="6" fill="#D7E5FF" stroke="#2D6BB8" stroke-width="1.5"/>
+  <circle cx="22" cy="30" r="11" fill="none" stroke="#2D6BB8" stroke-width="1.5"/>
+  <text x="22" y="34" text-anchor="middle" font-family="Outfit, sans-serif" font-size="11" font-weight="700" fill="#2D6BB8">20</text>
+  <text x="80" y="22" text-anchor="middle" font-family="Outfit, sans-serif" font-size="13" font-weight="700" fill="#2D6BB8">20 &euro;</text>
+  <text x="80" y="44" text-anchor="middle" font-family="Outfit, sans-serif" font-size="6" fill="#2D6BB8">EURO</text>
+</g>
+<!-- Muenzen -->
+<g transform="translate(260,40)">
+  <circle cx="0" cy="0" r="22" fill="#FFD24A" stroke="#B66809" stroke-width="1.5"/>
+  <text text-anchor="middle" dy="6" font-family="Outfit, sans-serif" font-size="14" font-weight="900" fill="#B66809">1 &euro;</text>
+</g>
+<g transform="translate(305,55)">
+  <circle cx="0" cy="0" r="17" fill="#E0E0E0" stroke="#888" stroke-width="1.5"/>
+  <text text-anchor="middle" dy="5" font-family="Outfit, sans-serif" font-size="9" font-weight="900" fill="#444">50 ct</text>
+</g>
+<g transform="translate(345,40)">
+  <circle cx="0" cy="0" r="14" fill="#C99362" stroke="#7A5530" stroke-width="1.5"/>
+  <text text-anchor="middle" dy="4" font-family="Outfit, sans-serif" font-size="8" font-weight="900" fill="#3D2A14">2 ct</text>
+</g>
+<!-- Preisschild -->
+<g transform="translate(305,105)">
+  <path d="M 0,0 L 90,0 L 90,30 L 12,30 Q 0,30 0,18 L 0,0 Z" fill="#E8302A" stroke="#9B1B16" stroke-width="1.5"/>
+  <circle cx="8" cy="8" r="3" fill="white"/>
+  <text x="50" y="20" text-anchor="middle" font-family="Outfit, sans-serif" font-size="14" font-weight="900" fill="white">9,99 &euro;</text>
+</g>
+<!-- Einkaufstuete -->
+<g transform="translate(35,115)">
+  <path d="M 0,5 L 0,40 L 32,40 L 32,5 L 24,5 L 24,0 Q 16,-5 8,0 L 8,5 Z" fill="#0FB5A6" stroke="#0a8579" stroke-width="1.5"/>
+  <text x="16" y="28" text-anchor="middle" font-size="14">&#128722;</text>
+</g>
+<!-- Kreditkarte -->
+<g transform="translate(95,118)">
+  <rect width="70" height="42" rx="5" fill="#2D6BB8" stroke="#1a4373" stroke-width="1.5"/>
+  <rect x="6" y="10" width="14" height="9" rx="1" fill="#FFD24A"/>
+  <text x="35" y="34" text-anchor="middle" font-family="Outfit, sans-serif" font-size="7" font-weight="700" fill="white">VISA</text>
+</g>
+<!-- Quittung/Rechnung -->
+<g transform="translate(190,108)">
+  <rect width="38" height="50" fill="white" stroke="#888" stroke-width="1"/>
+  <path d="M 0,50 L 4,46 L 8,50 L 12,46 L 16,50 L 20,46 L 24,50 L 28,46 L 32,50 L 38,46 L 38,50 Z" fill="white" stroke="#888" stroke-width="1"/>
+  <line x1="4" y1="8" x2="34" y2="8" stroke="#888" stroke-width="0.8"/>
+  <line x1="4" y1="16" x2="34" y2="16" stroke="#888" stroke-width="0.8"/>
+  <line x1="4" y1="24" x2="34" y2="24" stroke="#888" stroke-width="0.8"/>
+  <line x1="4" y1="32" x2="34" y2="32" stroke="#888" stroke-width="0.8"/>
+  <line x1="4" y1="40" x2="34" y2="40" stroke="#E8302A" stroke-width="1.2"/>
 </g>
 </svg>
 
 <nav class="tabs">
-<button class="tab active" data-tab="0">📖 Überblick</button>
-<button class="tab" data-tab="1">💬 Umgangssprache</button>
-<button class="tab" data-tab="2">🃏 Lernkarten</button>
-<button class="tab" data-tab="3">✅ Quiz</button>
-<button class="tab" data-tab="4">✍️ Lückentext</button>
-<button class="tab" data-tab="5">🧩 Zuordnen</button>
-<button class="tab" data-tab="6">🗣️ Sprechen</button>
+<button class="tab active" data-tab="0">&#128214; &Uuml;berblick</button>
+<button class="tab" data-tab="1">&#127183; Lernkarten</button>
+<button class="tab" data-tab="2">&#9989; Quiz</button>
+<button class="tab" data-tab="3">&#9997;&#65039; L&uuml;ckentext</button>
+<button class="tab" data-tab="4">&#129513; Zuordnen</button>
+<button class="tab" data-tab="5">&#128483;&#65039; Sprechen</button>
+<button class="tab" data-tab="6">&#128172; Umgangssprache</button>
 </nav>
 
-<!-- ============== ÜBERBLICK ============== -->
+<!-- ============== UEBERBLICK ============== -->
 <section class="section active" data-section="0">
 
 <h2 class="section-title">Die Zahlen <em style="font-style:italic;">0 bis 1000+</em></h2>
-<p class="section-sub">So bildest du jede deutsche Zahl &mdash; ohne Tricks!</p>
+<p class="section-sub">So bildest du jede deutsche Zahl &mdash; einfach Schritt fuer Schritt.</p>
 
-<div class="prep-grid">
-<div class="prep"><div class="prep-icon">🔢</div><div class="prep-word">0&ndash;12</div><div class="prep-case">Grundzahlen</div><div class="prep-ex">null, eins, zwei, drei&hellip; zwoelf</div></div>
-<div class="prep"><div class="prep-icon">🔟</div><div class="prep-word">13&ndash;19</div><div class="prep-case">Zahl + zehn</div><div class="prep-ex">dreizehn, vierzehn, fuenfzehn&hellip;</div></div>
-<div class="prep"><div class="prep-icon">2️⃣</div><div class="prep-word">20, 30, 40&hellip;</div><div class="prep-case">Zehner</div><div class="prep-ex">zwanzig, dreissig, vierzig&hellip;</div></div>
-<div class="prep"><div class="prep-icon">🔀</div><div class="prep-word">21, 35, 99</div><div class="prep-case">rueckwaerts!</div><div class="prep-ex">einundzwanzig, fuenfunddreissig</div></div>
-<div class="prep"><div class="prep-icon">💯</div><div class="prep-word">100, 200, 1000</div><div class="prep-case">hundert / tausend</div><div class="prep-ex">einhundert, zweihundert, tausend</div></div>
-<div class="prep"><div class="prep-icon">💶</div><div class="prep-word">1,50 €</div><div class="prep-case">Preis lesen</div><div class="prep-ex">&bdquo;ein Euro fuenfzig&ldquo;</div></div>
+<div class="num-grid">
+<div class="num-card">
+<svg class="num-svg" width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#FCE5E3" stroke="#E8302A" stroke-width="2"/><text x="25" y="32" text-anchor="middle" font-family="Fraunces" font-size="18" font-weight="900" fill="#E8302A">12</text></svg>
+<div class="num-range">0 &ndash; 12</div>
+<div class="num-case">Grundzahlen</div>
+<div class="num-ex">null, eins, zwei, drei&hellip; zw&ouml;lf</div>
+</div>
+<div class="num-card">
+<svg class="num-svg" width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#D7F0EC" stroke="#0FB5A6" stroke-width="2"/><text x="25" y="32" text-anchor="middle" font-family="Fraunces" font-size="16" font-weight="900" fill="#0FB5A6">17</text></svg>
+<div class="num-range">13 &ndash; 19</div>
+<div class="num-case">Zahl + zehn</div>
+<div class="num-ex">drei<u>zehn</u>, vier<u>zehn</u>, f&uuml;nf<u>zehn</u>&hellip;</div>
+</div>
+<div class="num-card">
+<svg class="num-svg" width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#FFF1C2" stroke="#B66809" stroke-width="2"/><text x="25" y="32" text-anchor="middle" font-family="Fraunces" font-size="16" font-weight="900" fill="#B66809">50</text></svg>
+<div class="num-range">20, 30, 40&hellip;</div>
+<div class="num-case">Zehner</div>
+<div class="num-ex">zwanzig, drei&szlig;ig, vierzig&hellip;</div>
+</div>
+<div class="num-card">
+<svg class="num-svg" width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#E5D8F2" stroke="#6A3D9C" stroke-width="2"/><text x="25" y="32" text-anchor="middle" font-family="Fraunces" font-size="14" font-weight="900" fill="#6A3D9C">35</text></svg>
+<div class="num-range">21, 35, 99</div>
+<div class="num-case">r&uuml;ckw&auml;rts!</div>
+<div class="num-ex">f&uuml;nf<strong>und</strong>drei&szlig;ig</div>
+</div>
+<div class="num-card">
+<svg class="num-svg" width="50" height="50" viewBox="0 0 50 50"><circle cx="25" cy="25" r="22" fill="#E2EBC9" stroke="#5F7A2A" stroke-width="2"/><text x="25" y="32" text-anchor="middle" font-family="Fraunces" font-size="13" font-weight="900" fill="#5F7A2A">100</text></svg>
+<div class="num-range">100, 200&hellip;</div>
+<div class="num-case">Hunderter</div>
+<div class="num-ex">einhundert, zweihundert</div>
+</div>
+<div class="num-card">
+<svg class="num-svg" width="50" height="50" viewBox="0 0 50 50"><rect x="6" y="14" width="38" height="22" rx="3" fill="#FFE6A8" stroke="#B66809" stroke-width="2"/><text x="25" y="30" text-anchor="middle" font-family="Outfit" font-size="11" font-weight="900" fill="#B66809">1,50&euro;</text></svg>
+<div class="num-range">Preis lesen</div>
+<div class="num-case">Euro + Cent</div>
+<div class="num-ex">&bdquo;ein Euro f&uuml;nfzig&ldquo;</div>
+</div>
 </div>
 
 <div class="tip">
-💡 <strong>Die goldene Regel A2:</strong> Bei zweistelligen Zahlen sprichst du sie <u>rueckwaerts</u> &mdash; erst die Einer, dann &bdquo;und&ldquo;, dann die Zehner: <em>32 = zweiunddreissig</em>, <em>47 = siebenundvierzig</em>. Das ist ganz typisch deutsch!
+&#128161; <strong>Die goldene Regel f&uuml;r A2:</strong> Bei Zahlen ab 21 sprichst du sie <u>r&uuml;ckw&auml;rts</u> &mdash; erst die Einer, dann &bdquo;und&ldquo;, dann die Zehner: <em>32 = zwei<strong>und</strong>drei&szlig;ig</em>, <em>47 = sieben<strong>und</strong>vierzig</em>. Das ist typisch deutsch &mdash; und am Anfang verwirrend!
 </div>
 
 <h2 class="section-title">Preise <em style="font-style:italic;">richtig lesen</em></h2>
-<p class="section-sub">Im Geschaeft, im Restaurant, auf dem Etikett &mdash; so sprichst du jeden Preis!</p>
+<p class="section-sub">Im Gesch&auml;ft, im Restaurant, auf dem Etikett &mdash; so sprichst du jeden Preis!</p>
+
+<div class="tag-row">
+<div class="tag-card">
+<svg width="80" height="50" viewBox="0 0 80 50"><path d="M 0,5 L 70,5 L 70,40 L 12,40 Q 0,40 0,28 L 0,5 Z" fill="#E8302A"/><circle cx="8" cy="13" r="2.5" fill="white"/><text x="42" y="28" text-anchor="middle" font-family="Outfit" font-size="13" font-weight="900" fill="white">0,99&euro;</text></svg>
+<div class="tag-say">&bdquo;neunundneunzig <strong>Cent</strong>&ldquo;</div>
+</div>
+<div class="tag-card">
+<svg width="80" height="50" viewBox="0 0 80 50"><path d="M 0,5 L 70,5 L 70,40 L 12,40 Q 0,40 0,28 L 0,5 Z" fill="#0FB5A6"/><circle cx="8" cy="13" r="2.5" fill="white"/><text x="42" y="28" text-anchor="middle" font-family="Outfit" font-size="13" font-weight="900" fill="white">2,50&euro;</text></svg>
+<div class="tag-say">&bdquo;zwei Euro <strong>f&uuml;nfzig</strong>&ldquo;</div>
+</div>
+<div class="tag-card">
+<svg width="80" height="50" viewBox="0 0 80 50"><path d="M 0,5 L 70,5 L 70,40 L 12,40 Q 0,40 0,28 L 0,5 Z" fill="#B66809"/><circle cx="8" cy="13" r="2.5" fill="white"/><text x="42" y="28" text-anchor="middle" font-family="Outfit" font-size="12" font-weight="900" fill="white">12,90&euro;</text></svg>
+<div class="tag-say">&bdquo;zw&ouml;lf Euro <strong>neunzig</strong>&ldquo;</div>
+</div>
+<div class="tag-card">
+<svg width="80" height="50" viewBox="0 0 80 50"><path d="M 0,5 L 70,5 L 70,40 L 12,40 Q 0,40 0,28 L 0,5 Z" fill="#6A3D9C"/><circle cx="8" cy="13" r="2.5" fill="white"/><text x="42" y="28" text-anchor="middle" font-family="Outfit" font-size="11" font-weight="900" fill="white">45,80&euro;</text></svg>
+<div class="tag-say">&bdquo;f&uuml;nf<strong>und</strong>vierzig Euro <strong>achtzig</strong>&ldquo;</div>
+</div>
+</div>
 
 <div class="price-table">
-<div class="price-row"><div class="price-num">0,99 €</div><div class="price-say">&bdquo;null Euro <strong>neunundneunzig</strong>&ldquo; oder einfach &bdquo;neunundneunzig Cent&ldquo;</div></div>
-<div class="price-row"><div class="price-num">1,50 €</div><div class="price-say">&bdquo;<strong>ein</strong> Euro <strong>fuenfzig</strong>&ldquo; (nicht: eins Euro!)</div></div>
-<div class="price-row"><div class="price-num">2,30 €</div><div class="price-say">&bdquo;zwei Euro <strong>dreissig</strong>&ldquo;</div></div>
-<div class="price-row"><div class="price-num">12,50 €</div><div class="price-say">&bdquo;<strong>zwoelf</strong> Euro <strong>fuenfzig</strong>&ldquo;</div></div>
-<div class="price-row"><div class="price-num">45,80 €</div><div class="price-say">&bdquo;fuenfundvierzig Euro <strong>achtzig</strong>&ldquo;</div></div>
-<div class="price-row"><div class="price-num">199,99 €</div><div class="price-say">&bdquo;einhundertneunundneunzig Euro <strong>neunundneunzig</strong>&ldquo;</div></div>
-<div class="price-row"><div class="price-num">1.000,50 €</div><div class="price-say">&bdquo;tausend Euro <strong>fuenfzig</strong>&ldquo; &mdash; Punkt = Tausender, Komma = Cent!</div></div>
+<div class="price-row"><div class="price-num">0,99 &euro;</div><div class="price-say">&bdquo;null Euro <strong>neunundneunzig</strong>&ldquo; oder kurz: &bdquo;neunundneunzig Cent&ldquo;</div></div>
+<div class="price-row"><div class="price-num">1,50 &euro;</div><div class="price-say">&bdquo;<strong>ein</strong> Euro <strong>f&uuml;nfzig</strong>&ldquo; (nicht: eins Euro!)</div></div>
+<div class="price-row"><div class="price-num">2,30 &euro;</div><div class="price-say">&bdquo;zwei Euro <strong>drei&szlig;ig</strong>&ldquo;</div></div>
+<div class="price-row"><div class="price-num">12,50 &euro;</div><div class="price-say">&bdquo;<strong>zw&ouml;lf</strong> Euro <strong>f&uuml;nfzig</strong>&ldquo;</div></div>
+<div class="price-row"><div class="price-num">45,80 &euro;</div><div class="price-say">&bdquo;f&uuml;nfundvierzig Euro <strong>achtzig</strong>&ldquo;</div></div>
+<div class="price-row"><div class="price-num">199,99 &euro;</div><div class="price-say">&bdquo;einhundertneunundneunzig Euro <strong>neunundneunzig</strong>&ldquo;</div></div>
+<div class="price-row"><div class="price-num">1.000,50 &euro;</div><div class="price-say">&bdquo;tausend Euro <strong>f&uuml;nfzig</strong>&ldquo; &mdash; Punkt = Tausender, Komma = Cent!</div></div>
 </div>
 
 <h2 class="section-title">Komma vs. Punkt <em style="font-style:italic;">&mdash; aufgepasst!</em></h2>
 
 <div class="compare">
 <div class="comp-card a">
-<span class="comp-tag">Deutsch 🇩🇪</span>
-<div class="comp-text"><strong>1.000,50 €</strong></div>
+<span class="comp-tag">Deutsch &#127465;&#127466;</span>
+<div class="comp-text">1.000,50 &euro;</div>
 <div class="comp-note">Der <strong>Punkt</strong> trennt Tausender. Das <strong>Komma</strong> kommt vor den Cent.</div>
 </div>
 <div class="comp-card b">
-<span class="comp-tag">Englisch 🇺🇸</span>
-<div class="comp-text"><strong>1,000.50 €</strong></div>
-<div class="comp-note">Genau <em>umgekehrt</em>! Komma = Tausender, Punkt = Cent. Verwechsele das nicht!</div>
+<span class="comp-tag">Englisch &#127482;&#127480;</span>
+<div class="comp-text">1,000.50 &euro;</div>
+<div class="comp-note">Genau <em>umgekehrt</em>! Komma = Tausender, Punkt = Cent. Verwechsle das nicht!</div>
 </div>
 </div>
 
@@ -278,7 +421,7 @@ footer strong{color:var(--ink);}
 <div class="dial d1">
 <div class="dial-icon">1</div>
 <div class="dial-body">
-<h4>❓ Nach dem Preis fragen</h4>
+<h4>&#10067; Nach dem Preis fragen</h4>
 <ul>
 <li>&bdquo;Wie viel kostet das?&ldquo;</li>
 <li>&bdquo;Was macht das zusammen?&ldquo;</li>
@@ -290,11 +433,11 @@ footer strong{color:var(--ink);}
 <div class="dial d2">
 <div class="dial-icon">2</div>
 <div class="dial-body">
-<h4>💶 Den Preis verstehen</h4>
+<h4>&#128182; Den Preis verstehen</h4>
 <ul>
 <li>&bdquo;Das macht 12 Euro 50.&ldquo;</li>
-<li>&bdquo;Zusammen <strong>17,90 €</strong>.&ldquo;</li>
-<li>&bdquo;Mit Rabatt nur 9,99 &mdash; ein Schnaeppchen!&ldquo;</li>
+<li>&bdquo;Zusammen 17,90 &euro;.&ldquo;</li>
+<li>&bdquo;Mit Rabatt nur 9,99 &mdash; ein Schn&auml;ppchen!&ldquo;</li>
 </ul>
 </div>
 </div>
@@ -302,11 +445,11 @@ footer strong{color:var(--ink);}
 <div class="dial d3">
 <div class="dial-icon">3</div>
 <div class="dial-body">
-<h4>💳 Bezahlen</h4>
+<h4>&#128179; Bezahlen</h4>
 <ul>
 <li>&bdquo;Bar oder mit Karte?&ldquo;</li>
 <li>&bdquo;Ich zahle bar.&ldquo; / &bdquo;Mit Karte, bitte.&ldquo;</li>
-<li>&bdquo;Koennen wir getrennt zahlen?&ldquo;</li>
+<li>&bdquo;K&ouml;nnen wir getrennt zahlen?&ldquo;</li>
 </ul>
 </div>
 </div>
@@ -314,261 +457,433 @@ footer strong{color:var(--ink);}
 <div class="dial d4">
 <div class="dial-icon">4</div>
 <div class="dial-body">
-<h4>💸 Wechselgeld &amp; Trinkgeld</h4>
+<h4>&#128184; Wechselgeld &amp; Trinkgeld</h4>
 <ul>
 <li>&bdquo;Stimmt so!&ldquo; (= das Trinkgeld bleibt)</li>
-<li>&bdquo;15 Euro &mdash; der Rest ist fuer Sie.&ldquo;</li>
+<li>&bdquo;Machen Sie 15 &mdash; der Rest ist f&uuml;r Sie.&ldquo;</li>
 <li>&bdquo;Hier ist Ihr Wechselgeld.&ldquo;</li>
 </ul>
 </div>
 </div>
 </div>
 
-<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+<h2 class="section-title">Konkrete <em style="font-style:italic;">Mini-Situationen</em></h2>
 
 <div class="alltag-q">
-<div class="ql">Alltag &middot; Im Geschaeft</div>
-<div class="qq">Du siehst ein Schild: &bdquo;9,99 €&ldquo;. Wie sagst du den Preis laut?</div>
-<div class="think">💭 &bdquo;Neun Euro neunundneunzig&ldquo; &mdash; und denk an die rueckwaertsregel!</div>
+<div class="ql">Beim B&auml;cker</div>
+<div class="qq">Du kaufst ein Brot f&uuml;r 3,50 &euro;. Du gibst 50 &euro;. Wie viel Wechselgeld bekommst du?</div>
+<div class="think">&#128173; 50 &minus; 3,50 = <strong>46,50 &euro;</strong>. Sag laut auf Deutsch: &bdquo;sechsundvierzig Euro f&uuml;nfzig&ldquo;.</div>
 </div>
 
 <div class="alltag-q" style="border-left-color:var(--teal);">
-<div class="ql" style="color:var(--teal);">Alltag &middot; Trinkgeld</div>
-<div class="qq">Die Rechnung im Restaurant ist 18,40 €. Wie viel Trinkgeld gibst du?</div>
-<div class="think">💭 In Deutschland: ca. 10% &mdash; also auf 20 € aufrunden. &bdquo;Machen Sie 20 &mdash; stimmt so!&ldquo;</div>
+<div class="ql" style="color:var(--teal);">Im Restaurant</div>
+<div class="qq">Der Kellner sagt: &bdquo;27 Euro 80.&ldquo; Du gibst 30 Euro. Sagst du &bdquo;Stimmt so&ldquo; oder willst du Wechselgeld?</div>
+<div class="think">&#128173; 2,20 &euro; sind etwa <strong>8% Trinkgeld</strong> &mdash; normal in Deutschland! &bdquo;Stimmt so&ldquo; ist hier perfekt.</div>
 </div>
 
 <div class="alltag-q" style="border-left-color:#B66809;">
-<div class="ql" style="color:#B66809;">Alltag &middot; Pfand</div>
-<div class="qq">Du kaufst Wasser fuer 0,79 € &mdash; und zahlst 1,04 €. Warum?</div>
-<div class="think">💭 25 Cent <strong>Pfand</strong> fuer die Flasche! Den bekommst du beim Zurueckbringen wieder.</div>
+<div class="ql" style="color:#B66809;">Im Supermarkt</div>
+<div class="qq">Du kaufst Wasser f&uuml;r 0,79 &euro; &mdash; aber an der Kasse zahlst du 1,04 &euro;. Warum?</div>
+<div class="think">&#128173; 25 Cent <strong>Pfand</strong> f&uuml;r die Flasche! Den bekommst du beim Zur&uuml;ckbringen zur&uuml;ck.</div>
 </div>
 
-</section>
-
-<!-- ============== UMGANGSSPRACHE ============== -->
-<section class="section" data-section="1">
-<h2 class="section-title">💬 So fragen Deutsche <em style="font-style:italic;">wirklich</em></h2>
-<p class="section-sub">Echte Chats &mdash; rund um Geld, Preise und Bezahlen.</p>
-
-<div class="tip">🔥 <strong>Tipp:</strong> Im Alltag sagt fast niemand &bdquo;Wie viel kostet das?&ldquo; &mdash; viel haeufiger ist <strong>&bdquo;Was macht das?&ldquo;</strong> oder einfach &bdquo;<strong>Was kostet&hellip;?</strong>&ldquo;</div>
-
-<div class="uss-grid">
-
-<div class="chat">
-<div class="chat-head"><div class="av">🛒</div><div><div class="name">Lisa &middot; im Supermarkt</div><div class="stat">online</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ey, brauchen wir noch was?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Ja, Milch! Aber bitte die <strong>im Angebot</strong> 🙏</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Welche denn? Die kostet hier <strong>1,29</strong></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Bio-Milch, gelbe Packung &mdash; war diese Woche fuer <strong>99 Cent</strong>!</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Krass, das ist ja ein <strong>Schnaeppchen</strong> 😍</div></div>
-<div class="chat-meaning"><strong>&bdquo;im Angebot&ldquo;</strong> &middot; <strong>&bdquo;Schnaeppchen&ldquo;</strong> &middot; <strong>&bdquo;99 Cent&ldquo;</strong> &mdash; typisch Supermarkt-Vokabular!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🍕</div><div><div class="name">Tom &middot; Restaurant</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hab die Rechnung &mdash; <strong>42,80 €</strong> fuer uns drei</div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Koennen wir teilen?</strong></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Klar! Macht <strong>14,30</strong> pro Person, plus 2 € Trinkgeld?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Passt. Ich zahle gleich per <strong>Paypal</strong> zurueck 👍</div></div>
-<div class="chat-meaning"><strong>&bdquo;Koennen wir teilen?&ldquo;</strong> = die Rechnung aufteilen. <strong>&bdquo;getrennt zahlen&ldquo;</strong> bedeutet beim Kellner: jeder zahlt seins!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">🏷️</div><div><div class="name">Flohmarkt-Marie</div><div class="stat">handeln!</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Was kostet die Lampe?</div></div>
-<div class="chat-msg in"><div class="chat-bubble"><strong>25 Euro.</strong></div></div>
-<div class="chat-msg out"><div class="chat-bubble"><strong>Geht das billiger?</strong> Vielleicht 15? 🥺</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Hmm&hellip; sagen wir 20. <strong>Mehr geht nicht runter!</strong></div></div>
-<div class="chat-msg out"><div class="chat-bubble">Okay, abgemacht! 🤝</div></div>
-<div class="chat-meaning"><strong>&bdquo;Geht das billiger?&ldquo;</strong> = handeln (typisch Flohmarkt, nie im Supermarkt!). <strong>&bdquo;abgemacht!&ldquo;</strong> = Deal!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">☕</div><div><div class="name">Cafe &middot; Bezahlen</div><div class="stat">Kellner</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Zusammen oder getrennt?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Zusammen, bitte!</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Das macht <strong>13,40 €</strong>.</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Machen Sie <strong>15 &mdash; stimmt so!</strong></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Danke, schoenen Tag noch! 😊</div></div>
-<div class="chat-meaning"><strong>&bdquo;Stimmt so&ldquo;</strong> &mdash; der wichtigste Trinkgeld-Satz! Du gibst mehr und sagst &bdquo;Rest behalten!&ldquo;</div>
-</div>
-
-</div>
-
-<h2 class="section-title">10 <em style="font-style:italic;">Alltagssaetze</em></h2>
-
-<div class="prep-grid" style="grid-template-columns:1fr;">
-<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">&bdquo;Was kostet das?&ldquo; / &bdquo;Was macht das?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Standardfrage nach dem Preis</div></div>
-<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">&bdquo;Bar oder mit Karte?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">vom Kassierer typischer Satz</div></div>
-<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">&bdquo;Koennen wir getrennt zahlen?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">jede:r zahlt seins</div></div>
-<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">&bdquo;Stimmt so!&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">= &bdquo;Rest ist Trinkgeld&ldquo;</div></div>
-<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">&bdquo;Geht das billiger?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">handeln &mdash; nur am Flohmarkt!</div></div>
-<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">&bdquo;Das ist ein Schnaeppchen!&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">= super guenstig!</div></div>
-<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">&bdquo;Das ist mir zu teuer.&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">hoeflich ablehnen</div></div>
-<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">&bdquo;Haben Sie es passend?&ldquo;</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">= kein Wechselgeld noetig</div></div>
+<div class="alltag-q" style="border-left-color:#6A3D9C;">
+<div class="ql" style="color:#6A3D9C;">Am Flohmarkt</div>
+<div class="qq">Eine Jacke kostet 40 &euro;. Du m&ouml;chtest sie f&uuml;r 25 &euro;. Was sagst du h&ouml;flich?</div>
+<div class="think">&#128173; &bdquo;Geht das vielleicht f&uuml;r 25?&ldquo; &mdash; oder: &bdquo;Was ist Ihr bester Preis?&ldquo;</div>
 </div>
 
 </section>
 
 <!-- ============== LERNKARTEN ============== -->
-<section class="section" data-section="2">
+<section class="section" data-section="1">
 <h2 class="section-title">Lernkarten &middot; <em style="font-style:italic;">Preise &amp; Geld</em></h2>
-<p class="section-sub">Erst denken &mdash; dann tippen.</p>
+<p class="section-sub">Erst denken &mdash; dann tippen. Mit Aussprache-Button!</p>
+
+<div class="genus-key">
+<span class="k-der">der = blau</span>
+<span class="k-die">die = rot</span>
+<span class="k-das">das = gr&uuml;n</span>
+</div>
 
 <div class="flip" id="flip">
 <div class="flip-inner">
 <div class="flip-side front">
-<div class="flip-emoji" id="flipEmoji">💶</div>
-<div class="flip-word" id="flipWord">der Euro</div>
-<div class="flip-badge" id="flipBadge">Waehrung</div>
+<div class="flip-emoji" id="flipEmoji">&#128182;</div>
+<div class="flip-word der" id="flipWord">der Euro</div>
+<div class="flip-badge" id="flipBadge">W&auml;hrung</div>
 <div class="flip-prompt">Was ist das auf Deutsch? <br>(zum Umdrehen tippen)</div>
 </div>
 <div class="flip-side back">
-<div class="flip-rule" id="flipRule">die Hauptwaehrung in Deutschland</div>
+<div class="flip-rule" id="flipRule">die W&auml;hrung in Deutschland</div>
 <div class="flip-ex" id="flipEx">&bdquo;Das Brot kostet <strong>2 Euro 50</strong>.&ldquo;</div>
+<div class="flip-syn" id="flipSyn"><strong>Synonym:</strong> &mdash;</div>
 </div>
 </div>
 </div>
 
 <div class="lk-nav">
-<button class="lk-btn" id="lkPrev">←</button>
-<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span>
-<button class="lk-btn" id="lkNext">→</button>
+<button class="lk-btn" id="lkPrev">&larr;</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">22</span></span>
+<button class="lk-btn" id="lkNext">&rarr;</button>
 </div>
-<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+<div class="lk-actions">
+<button class="lk-speak" id="lkSpeak">&#128266; Aussprache h&ouml;ren</button>
+<button class="lk-shuffle" id="lkShuffle">&#128256; Mischen</button>
+</div>
 </section>
 
 <!-- ============== QUIZ ============== -->
-<section class="section" data-section="3">
+<section class="section" data-section="2">
 <h2 class="section-title">Quiz: <em style="font-style:italic;">Preise &amp; Zahlen</em></h2>
+<p class="section-sub">12 Fragen &mdash; lesen, rechnen, verstehen!</p>
 
-<div class="quiz"><div class="quiz-q">Wie liest man <strong>4,99 €</strong> auf Deutsch?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">vier Komma neun neun Euro</span><span class="quiz-chip">vier Euro neunundneunzig</span><span class="quiz-chip">vier Punkt neunundneunzig</span></div><div class="quiz-explain">✓ <strong>vier Euro neunundneunzig</strong> &mdash; das Komma sagt man NICHT mit, einfach Cent-Zahl dranhaengen.</div></div>
+<div class="quiz"><div class="quiz-q">Wie liest man <strong>4,99 &euro;</strong> auf Deutsch?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">vier Komma neun neun Euro</span><span class="quiz-chip">vier Euro neunundneunzig</span><span class="quiz-chip">vier Punkt neunundneunzig</span></div><div class="quiz-explain">&#10003; <strong>vier Euro neunundneunzig</strong> &mdash; das Komma sagt man nicht. Einfach Cent dranh&auml;ngen.</div></div>
 
-<div class="quiz"><div class="quiz-q">Welche Zahl ist <strong>siebenundvierzig</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">74</span><span class="quiz-chip">17</span><span class="quiz-chip">47</span></div><div class="quiz-explain">✓ <strong>47</strong> &mdash; erst Einer (sieben), dann Zehner (vierzig). Auf Deutsch immer rueckwaerts!</div></div>
+<div class="quiz"><div class="quiz-q">Welche Zahl ist <strong>siebenundvierzig</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">74</span><span class="quiz-chip">17</span><span class="quiz-chip">47</span></div><div class="quiz-explain">&#10003; <strong>47</strong> &mdash; erst Einer (sieben), dann Zehner (vierzig). Auf Deutsch immer r&uuml;ckw&auml;rts!</div></div>
 
-<div class="quiz"><div class="quiz-q">Die Rechnung ist <strong>17 €</strong>. Du gibst <strong>20 €</strong>. Wie viel Wechselgeld?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">3 €</span><span class="quiz-chip">13 €</span><span class="quiz-chip">7 €</span></div><div class="quiz-explain">✓ <strong>3 €</strong> &mdash; 20 minus 17 = 3 Euro Wechselgeld.</div></div>
+<div class="quiz"><div class="quiz-q">Die Rechnung ist <strong>17 &euro;</strong>. Du gibst <strong>20 &euro;</strong>. Wie viel Wechselgeld?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">3 &euro;</span><span class="quiz-chip">13 &euro;</span><span class="quiz-chip">7 &euro;</span></div><div class="quiz-explain">&#10003; <strong>3 &euro;</strong> &mdash; 20 minus 17 = 3 Euro Wechselgeld.</div></div>
 
-<div class="quiz"><div class="quiz-q">Was bedeutet <strong>&bdquo;Stimmt so!&ldquo;</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Bitte Wechselgeld zurueck.</span><span class="quiz-chip">Behalten Sie den Rest als Trinkgeld.</span><span class="quiz-chip">Das ist nicht richtig.</span></div><div class="quiz-explain">✓ <strong>Behalten Sie den Rest!</strong> &mdash; der typische Trinkgeld-Satz.</div></div>
+<div class="quiz"><div class="quiz-q">Was bedeutet <strong>&bdquo;Stimmt so!&ldquo;</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Bitte Wechselgeld zur&uuml;ck.</span><span class="quiz-chip">Behalten Sie den Rest als Trinkgeld.</span><span class="quiz-chip">Das ist nicht richtig.</span></div><div class="quiz-explain">&#10003; <strong>Behalten Sie den Rest!</strong> &mdash; der typische Trinkgeld-Satz im Restaurant oder Caf&eacute;.</div></div>
 
-<div class="quiz"><div class="quiz-q">Du siehst <strong>1.250,00 €</strong>. Wie viel ist das?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">eins Komma zwei fuenf null Euro</span><span class="quiz-chip">125 Euro</span><span class="quiz-chip">tausendzweihundertfuenfzig Euro</span></div><div class="quiz-explain">✓ <strong>1250 Euro</strong> &mdash; der Punkt ist nur das Tausendertrennzeichen, kein Komma!</div></div>
+<div class="quiz"><div class="quiz-q">Du siehst <strong>1.250,00 &euro;</strong>. Wie viel ist das?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">eins Komma zwei f&uuml;nf null Euro</span><span class="quiz-chip">125 Euro</span><span class="quiz-chip">tausendzweihundertf&uuml;nfzig Euro</span></div><div class="quiz-explain">&#10003; <strong>1250 Euro</strong> &mdash; der Punkt ist nur das Tausender-Trennzeichen, kein Komma!</div></div>
 
-<div class="quiz"><div class="quiz-q">Was sagst du auf dem Flohmarkt, wenn du <strong>handeln</strong> willst?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Geht das billiger?</span><span class="quiz-chip">Stimmt so!</span><span class="quiz-chip">Haben Sie es passend?</span></div><div class="quiz-explain">✓ <strong>&bdquo;Geht das billiger?&ldquo;</strong> &mdash; das ist Flohmarkt-Sprache. Im Supermarkt funktioniert das nicht!</div></div>
+<div class="quiz"><div class="quiz-q">Was sagst du am Flohmarkt, wenn du <strong>handeln</strong> willst?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Geht das billiger?</span><span class="quiz-chip">Stimmt so!</span><span class="quiz-chip">Haben Sie es passend?</span></div><div class="quiz-explain">&#10003; <strong>&bdquo;Geht das billiger?&ldquo;</strong> &mdash; das ist Flohmarkt-Sprache. Im Supermarkt funktioniert das nicht!</div></div>
 
-<div class="quiz"><div class="quiz-q">Welches Wort bedeutet <strong>&bdquo;gratis, kostet nichts&ldquo;</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">teuer</span><span class="quiz-chip">kostenlos</span><span class="quiz-chip">brutto</span></div><div class="quiz-explain">✓ <strong>kostenlos</strong> = es kostet nichts. (&bdquo;brutto&ldquo; = mit Steuer; &bdquo;teuer&ldquo; = Gegenteil von billig)</div></div>
+<div class="quiz"><div class="quiz-q">Welches Wort bedeutet <strong>&bdquo;gratis, kostet nichts&ldquo;</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">teuer</span><span class="quiz-chip">kostenlos</span><span class="quiz-chip">brutto</span></div><div class="quiz-explain">&#10003; <strong>kostenlos</strong> = es kostet nichts. (&bdquo;brutto&ldquo; = mit Steuer; &bdquo;teuer&ldquo; = Gegenteil von billig)</div></div>
 
-<div class="quiz"><div class="quiz-q">Du kaufst Wasser fuer <strong>0,79 €</strong> &mdash; zahlst aber <strong>1,04 €</strong>. Was sind die <strong>25 Cent</strong> extra?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Trinkgeld</span><span class="quiz-chip">Rabatt</span><span class="quiz-chip">Pfand</span></div><div class="quiz-explain">✓ <strong>Pfand</strong> &mdash; fuer die Flasche! Du bekommst es zurueck, wenn du die Flasche zurueckbringst.</div></div>
+<div class="quiz"><div class="quiz-q">Du kaufst Wasser f&uuml;r <strong>0,79 &euro;</strong> &mdash; zahlst aber <strong>1,04 &euro;</strong>. Was sind die <strong>25 Cent</strong> extra?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Trinkgeld</span><span class="quiz-chip">Rabatt</span><span class="quiz-chip">Pfand</span></div><div class="quiz-explain">&#10003; <strong>Pfand</strong> &mdash; f&uuml;r die Flasche! Du bekommst es zur&uuml;ck, wenn du die Flasche zur&uuml;ckbringst.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was hei&szlig;t <strong>&bdquo;30% Rabatt&ldquo;</strong>?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Du bezahlst 30% weniger.</span><span class="quiz-chip">Du bezahlst 30% mehr.</span><span class="quiz-chip">Du bekommst 30 Euro zur&uuml;ck.</span></div><div class="quiz-explain">&#10003; <strong>30% weniger</strong>! Aus 100 &euro; werden 70 &euro;. Super f&uuml;r Schn&auml;ppchen-J&auml;ger!</div></div>
+
+<div class="quiz"><div class="quiz-q">Wie viel ist <strong>einhundertdrei</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">130</span><span class="quiz-chip">113</span><span class="quiz-chip">103</span></div><div class="quiz-explain">&#10003; <strong>103</strong> &mdash; einhundert + drei. Bei 3-stelligen Zahlen ist es einfacher als bei 2-stelligen!</div></div>
+
+<div class="quiz"><div class="quiz-q">Die Rechnung im Caf&eacute;: <strong>8,40 &euro;</strong>. Du m&ouml;chtest 10 &euro; geben. Was sagst du?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Geht das billiger?</span><span class="quiz-chip">Stimmt so!</span><span class="quiz-chip">Haben Sie Wechselgeld?</span></div><div class="quiz-explain">&#10003; <strong>&bdquo;Stimmt so!&ldquo;</strong> &mdash; 1,60 &euro; Trinkgeld ist sehr h&ouml;flich im Caf&eacute;!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was ist ein <strong>&bdquo;Schn&auml;ppchen&ldquo;</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Etwas sehr Teures</span><span class="quiz-chip">Eine kleine Pause</span><span class="quiz-chip">Ein tolles Angebot zum kleinen Preis</span></div><div class="quiz-explain">&#10003; <strong>Schn&auml;ppchen</strong> = super g&uuml;nstig! Z. B. eine 100-&euro;-Jacke f&uuml;r 30 &euro; im Sale.</div></div>
 
 </section>
 
-<!-- ============== LÜCKENTEXT ============== -->
-<section class="section" data-section="4">
-<h2 class="section-title">Lückentext &middot; <em style="font-style:italic;">Im Alltag</em></h2>
+<!-- ============== LUECKENTEXT ============== -->
+<section class="section" data-section="3">
+<h2 class="section-title">L&uuml;ckentext &middot; <em style="font-style:italic;">Im Alltag</em></h2>
+<p class="section-sub">10 S&auml;tze &mdash; w&auml;hle das richtige Wort!</p>
 
 <div class="gap-text" id="gapText">
-<div class="gap-line">1. Im Supermarkt: &bdquo;Was <select data-sol="kostet"><option value="">…</option><option>macht</option><option>kostet</option><option>geht</option></select> ein Kilo Aepfel?&ldquo;</div>
-<div class="gap-line">2. Der Kellner fragt: &bdquo;<select data-sol="Bar"><option value="">…</option><option>Bar</option><option>Brutto</option><option>Pfand</option></select> oder mit Karte?&ldquo;</div>
-<div class="gap-line">3. Du moechtest Trinkgeld geben: &bdquo;Machen Sie 20 &mdash; <select data-sol="stimmt"><option value="">…</option><option>kostet</option><option>stimmt</option><option>passt</option></select> so!&ldquo;</div>
-<div class="gap-line">4. Auf dem Flohmarkt: &bdquo;Geht das vielleicht <select data-sol="billiger"><option value="">…</option><option>kostenlos</option><option>teurer</option><option>billiger</option></select>?&ldquo;</div>
-<div class="gap-line">5. Wir teilen die Rechnung: &bdquo;Koennen wir <select data-sol="getrennt"><option value="">…</option><option>zusammen</option><option>getrennt</option><option>bar</option></select> zahlen?&ldquo;</div>
-<div class="gap-line">6. Eine Flasche Wasser kostet 0,99 € &mdash; plus 25 Cent <select data-sol="Pfand"><option value="">…</option><option>Rabatt</option><option>Pfand</option><option>Brutto</option></select>.</div>
-<div class="gap-line">7. Im Angebot: &bdquo;Das ist ja ein echtes <select data-sol="Schnaeppchen"><option value="">…</option><option>Schnaeppchen</option><option>Pfand</option><option>Wechselgeld</option></select>!&ldquo;</div>
-<div class="gap-line">8. Der Preis 12,50 € liest man: &bdquo;zwoelf Euro <select data-sol="fuenfzig"><option value="">…</option><option>fuenf</option><option>fuenfzig</option><option>fuenfhundert</option></select>&ldquo;.</div>
+<div class="gap-line">1. Im Supermarkt: &bdquo;Was <select data-sol="kostet"><option value="">&hellip;</option><option>macht</option><option>kostet</option><option>geht</option></select> ein Kilo &Auml;pfel?&ldquo;</div>
+<div class="gap-line">2. Der Kellner fragt: &bdquo;<select data-sol="Bar"><option value="">&hellip;</option><option>Bar</option><option>Brutto</option><option>Pfand</option></select> oder mit Karte?&ldquo;</div>
+<div class="gap-line">3. Trinkgeld geben: &bdquo;Machen Sie 20 &mdash; <select data-sol="stimmt"><option value="">&hellip;</option><option>kostet</option><option>stimmt</option><option>passt</option></select> so!&ldquo;</div>
+<div class="gap-line">4. Am Flohmarkt: &bdquo;Geht das vielleicht <select data-sol="billiger"><option value="">&hellip;</option><option>kostenlos</option><option>teurer</option><option>billiger</option></select>?&ldquo;</div>
+<div class="gap-line">5. Wir teilen die Rechnung: &bdquo;K&ouml;nnen wir <select data-sol="getrennt"><option value="">&hellip;</option><option>zusammen</option><option>getrennt</option><option>bar</option></select> zahlen?&ldquo;</div>
+<div class="gap-line">6. Eine Flasche Wasser kostet 0,99 &euro; &mdash; plus 25 Cent <select data-sol="Pfand"><option value="">&hellip;</option><option>Rabatt</option><option>Pfand</option><option>Brutto</option></select>.</div>
+<div class="gap-line">7. Im Angebot: &bdquo;Das ist ja ein echtes <select data-sol="Schnaeppchen"><option value="">&hellip;</option><option>Schnaeppchen</option><option>Pfand</option><option>Wechselgeld</option></select>!&ldquo;</div>
+<div class="gap-line">8. Der Preis 12,50 &euro; liest man: &bdquo;zw&ouml;lf Euro <select data-sol="fuenfzig"><option value="">&hellip;</option><option>fuenf</option><option>fuenfzig</option><option>fuenfhundert</option></select>&ldquo;.</div>
+<div class="gap-line">9. Im Sale: &bdquo;Heute alle Jeans mit <select data-sol="Rabatt"><option value="">&hellip;</option><option>Rabatt</option><option>Pfand</option><option>Wechselgeld</option></select> &mdash; 30 Prozent weniger!&ldquo;</div>
+<div class="gap-line">10. Die Tasche kostet 89 &euro;. Das ist mir leider zu <select data-sol="teuer"><option value="">&hellip;</option><option>billig</option><option>teuer</option><option>kostenlos</option></select>.</div>
 <div class="gap-actions">
 <button class="btn-secondary" id="gapReset">Neu</button>
-<button class="btn-primary" id="gapCheck">Überprüfen</button>
+<button class="btn-primary" id="gapCheck">&Uuml;berpr&uuml;fen</button>
 </div>
 </div>
 
 <div class="tip" id="gapScore" style="display:none;"></div>
 </section>
 
-<!-- ============== ZUORDNEN ============== -->
-<section class="section" data-section="5">
-<h2 class="section-title">Preis &harr; <em style="font-style:italic;">ausgeschriebene Form</em></h2>
-<p class="section-sub">Verbinde die Ziffern mit der gesprochenen Form!</p>
+<!-- ============== ZUORDNEN (DRAG & DROP) ============== -->
+<section class="section" data-section="4">
+<h2 class="section-title">Zuordnen &middot; <em style="font-style:italic;">Drag &amp; Drop</em></h2>
+<p class="section-sub">Ziehe das richtige Wort zum passenden Preis!</p>
 
-<div class="match-stage">
-<div class="match-cols">
-<div class="match-col">
-<h4>💶 Preis</h4>
-<div class="match-list" id="leftCol"></div>
+<div class="dnd-instr">&#128073; <strong>So gehts:</strong> Halte ein Wort gedr&uuml;ckt und ziehe es auf den Preis links. Klick auf <em>&Uuml;berpr&uuml;fen</em>, wenn du fertig bist!</div>
+
+<div class="dnd-stage">
+<div class="dnd-cols">
+<div class="dnd-col">
+<h4>&#128181; Preise</h4>
+<div id="leftPairs"></div>
 </div>
-<div class="match-col">
-<h4>🗣️ So sagt man es</h4>
-<div class="match-list" id="rightCol"></div>
+<div class="dnd-col">
+<h4>&#128483;&#65039; W&ouml;rter (ziehen)</h4>
+<div class="dnd-pool" id="wordPool"></div>
 </div>
 </div>
-<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+<div class="dnd-actions">
+<button class="btn-primary" id="dndCheck">&#10003; &Uuml;berpr&uuml;fen</button>
+<button class="btn-secondary" id="dndReset">&#128260; Neu mischen</button>
+</div>
+<div class="dnd-score" id="dndScore"></div>
 </div>
 </section>
 
 <!-- ============== SPRECHEN ============== -->
-<section class="section" data-section="6">
-<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht&rsquo;s!</em></h2>
-<p class="section-sub">Zieh eine Karte. Mach es nach &mdash; oder spiel die Situation mit deinem Partner durch!</p>
+<section class="section" data-section="5">
+<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht\'s!</em></h2>
+<p class="section-sub">Zieh eine Karte &mdash; und h&ouml;re dir die Frage auch laut an!</p>
 
 <div class="speak-card" id="speakCard">
-<div class="speak-emoji">🎲</div>
+<div class="speak-emoji">&#127922;</div>
 <div class="speak-cat">Sprechclub-Karte</div>
-<div class="speak-q">Tippe unten auf &bdquo;Neue Karte&ldquo; und leg los!</div>
+<div class="speak-q" id="speakQText">Tippe unten auf &bdquo;Neue Karte&ldquo; und leg los!</div>
 </div>
 
 <div class="speak-controls">
-<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+<button class="btn-primary" id="speakNew">&#127922; Neue Karte</button>
+<button class="speak-tts" id="speakTTS">&#128266; Vorlesen</button>
 </div>
 
 <div class="role-section">
-<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">zum Mitmachen</em></h2>
-<p class="section-sub">Übt zu zweit &mdash; jede:r uebernimmt eine Rolle!</p>
+<h2 class="section-title">5 Rollenspiele <em style="font-style:italic;">aus dem Alltag</em></h2>
+<p class="section-sub">Jede Rolle mit Schl&uuml;ssel-Vokabular, Beispiel-Phrasen + Strategie!</p>
 
+<!-- ROLLENSPIEL 1 -->
 <div class="role">
 <div class="role-tag">Rollenspiel 1 &middot; Supermarkt</div>
-<div class="role-title">🛒 An der Kasse bei Edeka</div>
-<div class="role-situation">Person A ist Kundin und legt 6 Produkte aufs Band (Milch, Brot, Aepfel, Kaese, Wein, Schokolade). Person B ist Kassierer:in und sagt jeden Preis &mdash; am Ende die Gesamtsumme!</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🛍️</div><div><div class="person-label">Person A &mdash; Kund:in</div><div class="person-quote">&bdquo;Hallo! Hier sind meine Sachen. Nehmen Sie Karte?&ldquo;</div></div></div>
-<div class="person b"><div class="person-avatar">💳</div><div><div class="person-label">Person B &mdash; Kassierer:in</div><div class="person-quote">&bdquo;Klar! Milch 1,29 &mdash; Brot 2,50 &mdash; Aepfel 3,20&hellip; das macht zusammen 18,40 €.&ldquo;</div></div></div>
+<div class="role-title">&#128722; &bdquo;Was kostet das?&ldquo; &mdash; im Supermarkt</div>
+<div class="role-situation"><strong>Situation:</strong> Du bist im Supermarkt. Auf dem Regal stehen viele Tomaten ohne Preisschild. Du fragst die Mitarbeiterin nach dem Preis.</div>
+<div class="role-situation" style="background:var(--blue-soft);"><strong>Deine Rolle:</strong> Du bist freundlich und h&ouml;flich. Du m&ouml;chtest 1 Kilo kaufen &mdash; aber nur wenn der Preis okay ist.</div>
+
+<div class="role-block">
+<div class="role-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span>Was kostet</span><span>ein Kilo</span><span>im Angebot</span><span>billig</span><span>teuer</span><span>Entschuldigung</span><span>danke sch&ouml;n</span><span>nehme ich</span><span>kein Preisschild</span>
 </div>
-<div class="role-goal">🎯 Ziel: Person A muss die Gesamtsumme korrekt verstehen und auf Deutsch wiederholen!</div>
 </div>
 
+<div class="role-block">
+<div class="role-label">&#128172; Beispiel-Phrasen</div>
+<div class="role-phrases"><ul>
+<li>Entschuldigung, was kostet ein Kilo Tomaten?&ldquo;</li>
+<li>Ich sehe kein Preisschild&hellip;&ldquo;</li>
+<li>Sind die Tomaten im Angebot?&ldquo;</li>
+<li>Okay, dann nehme ich ein Kilo, bitte.&ldquo;</li>
+<li>Das ist mir zu teuer &mdash; danke trotzdem!&ldquo;</li>
+</ul></div>
+</div>
+
+<div class="role-strategy">&#128161; <strong>Tipp:</strong> Im Supermarkt wird <u>nicht gehandelt</u>! Frag freundlich nach dem Preis &mdash; und kaufe (oder nicht). Kein Drama.</div>
+<div class="role-answer" style="margin-top:.6rem;"><strong>&#10003; Gute Antwort enth&auml;lt:</strong> Begr&uuml;&szlig;ung &middot; klare Frage nach dem Preis &middot; Reaktion (kaufen oder ablehnen) &middot; Dank.</div>
+</div>
+
+<!-- ROLLENSPIEL 2 -->
 <div class="role">
 <div class="role-tag">Rollenspiel 2 &middot; Flohmarkt</div>
-<div class="role-title">🏷️ Handeln am Sonntag</div>
-<div class="role-situation">Person A ist Verkaeufer:in mit alten Sachen (Lampe 25 €, Buch 5 €, Jacke 40 €). Person B ist Kaeufer:in und versucht, alles billiger zu bekommen!</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🪑</div><div><div class="person-label">Person A &mdash; Verkaufende:r</div><div class="person-quote">&bdquo;Die Lampe? 25 Euro &mdash; ist Vintage! Aber fuer Sie 22.&ldquo;</div></div></div>
-<div class="person b"><div class="person-avatar">🤝</div><div><div class="person-label">Person B &mdash; Kaeufer:in</div><div class="person-quote">&bdquo;Geht das vielleicht fuer 15? Sie ist ja schon ein bisschen alt&hellip;&ldquo;</div></div></div>
+<div class="role-title">&#127960;&#65039; Handeln am Sonntag</div>
+<div class="role-situation"><strong>Situation:</strong> Am Flohmarkt siehst du eine alte Lampe. Sie kostet 30 &euro;. Du m&ouml;chtest sie f&uuml;r 18 &euro;. Du verhandelst!</div>
+<div class="role-situation" style="background:var(--blue-soft);"><strong>Deine Rolle:</strong> Du bist freundlich, aber bestimmt. Du nennst Gr&uuml;nde, warum die Lampe billiger sein sollte.</div>
+
+<div class="role-block">
+<div class="role-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span>Was kostet</span><span>Geht das billiger?</span><span>zu teuer</span><span>vielleicht</span><span>okay f&uuml;r mich</span><span>abgemacht</span><span>Ihr bester Preis</span><span>alt / nicht neu</span><span>Deal!</span>
 </div>
-<div class="role-goal">🎯 Mindestens 3 Mal handeln pro Produkt! Wer macht den besten Deal?</div>
 </div>
 
+<div class="role-block">
+<div class="role-label">&#128172; Beispiel-Phrasen</div>
+<div class="role-phrases"><ul>
+<li>Was kostet die Lampe?&ldquo;</li>
+<li>30 Euro? &Ouml;hm, das ist mir ein bisschen viel&hellip;&ldquo;</li>
+<li>Geht das vielleicht f&uuml;r 18?&ldquo;</li>
+<li>Sie ist ja schon ein bisschen alt &mdash; was ist Ihr bester Preis?&ldquo;</li>
+<li>Okay, 20 ist gut &mdash; abgemacht!&ldquo;</li>
+</ul></div>
+</div>
+
+<div class="role-strategy">&#128161; <strong>Tipp:</strong> Am Flohmarkt ist <u>Handeln normal</u>! Starte mit einem niedrigen Preis (etwa die H&auml;lfte). Sei freundlich, l&auml;chle &mdash; sonst sagt der Verk&auml;ufer nein.</div>
+<div class="role-answer" style="margin-top:.6rem;"><strong>&#10003; Gute Antwort enth&auml;lt:</strong> Preis erfragen &middot; G&uuml;nstigeren Preis anbieten &middot; Grund nennen &middot; Kompromiss finden &middot; Deal best&auml;tigen.</div>
+</div>
+
+<!-- ROLLENSPIEL 3 -->
 <div class="role">
 <div class="role-tag">Rollenspiel 3 &middot; Restaurant</div>
-<div class="role-title">🍽️ Die Rechnung teilen</div>
-<div class="role-situation">3 Personen waren essen. Die Rechnung ist 67,80 €. Aber: Person A hat nur einen Salat (8 €) gegessen, B und C hatten Hauptgerichte und Wein. Wie teilen?</div>
-<div class="role-people">
-<div class="person a"><div class="person-avatar">🥗</div><div><div class="person-label">Person A &mdash; Sparsame:r</div><div class="person-quote">&bdquo;Ich hatte nur den Salat &mdash; ich zahle 10 mit Trinkgeld, okay?&ldquo;</div></div></div>
-<div class="person b"><div class="person-avatar">🍷</div><div><div class="person-label">Person B &mdash; Grosszuegige:r</div><div class="person-quote">&bdquo;Lass uns einfach durch 3 teilen &mdash; das macht 22,60 pro Person, plus Trinkgeld 25 €.&ldquo;</div></div></div>
-</div>
-<div class="role-goal">🎯 Diskutiert hoeflich &mdash; und benutzt Saetze wie &bdquo;Mir waere es lieber&hellip;&ldquo; oder &bdquo;Koennen wir&hellip;?&ldquo;</div>
+<div class="role-title">&#127869;&#65039; Rechnung teilen &mdash; wer zahlt was?</div>
+<div class="role-situation"><strong>Situation:</strong> Drei Freunde waren essen. Die Rechnung ist 67,80 &euro;. Aber: Person A hatte nur Salat (8 &euro;). B und C hatten Hauptgerichte und Wein. Wie teilt ihr?</div>
+<div class="role-situation" style="background:var(--blue-soft);"><strong>Deine Rolle:</strong> Du bist Person A &mdash; du m&ouml;chtest nur das zahlen, was du gegessen hast. H&ouml;flich, aber klar!</div>
+
+<div class="role-block">
+<div class="role-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span>nur den Salat</span><span>getrennt zahlen</span><span>ich habe nur</span><span>passt das?</span><span>plus Trinkgeld</span><span>pro Person</span><span>geteilt durch drei</span><span>fair</span><span>K&ouml;nnen wir&hellip;?</span>
 </div>
 </div>
 
-<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="role-block">
+<div class="role-label">&#128172; Beispiel-Phrasen</div>
+<div class="role-phrases"><ul>
+<li>Ich hatte nur den Salat &mdash; das waren 8 Euro.&ldquo;</li>
+<li>Ich zahle 10 Euro mit Trinkgeld &mdash; passt das?&ldquo;</li>
+<li>K&ouml;nnen wir getrennt zahlen, bitte?&ldquo;</li>
+<li>Geteilt durch drei w&auml;re f&uuml;r mich nicht fair&hellip;&ldquo;</li>
+<li>Wie machen wir das jetzt?&ldquo;</li>
+</ul></div>
+</div>
+
+<div class="role-strategy">&#128161; <strong>Tipp:</strong> In Deutschland ist <u>&bdquo;getrennt zahlen&ldquo;</u> normal! Sag es einfach dem Kellner: &bdquo;Getrennt, bitte.&ldquo; Niemand findet das peinlich.</div>
+<div class="role-answer" style="margin-top:.6rem;"><strong>&#10003; Gute Antwort enth&auml;lt:</strong> Was du gegessen hast &middot; Was du zahlen m&ouml;chtest &middot; H&ouml;fliche Frage &middot; Trinkgeld nicht vergessen.</div>
+</div>
+
+<!-- ROLLENSPIEL 4 -->
+<div class="role">
+<div class="role-tag">Rollenspiel 4 &middot; Trinkgeld</div>
+<div class="role-title">&#128184; Trinkgeld geben &mdash; wie viel?</div>
+<div class="role-situation"><strong>Situation:</strong> Du bist im Caf&eacute;. Du hast Kaffee und Kuchen gegessen &mdash; die Rechnung ist 9,60 &euro;. Du gibst dem Kellner 12 &euro; und sagst &bdquo;Stimmt so!&ldquo;</div>
+<div class="role-situation" style="background:var(--blue-soft);"><strong>Deine Rolle:</strong> Du bist freundlich. Du wei&szlig;t: in Deutschland gibt man etwa 10% Trinkgeld.</div>
+
+<div class="role-block">
+<div class="role-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span>Stimmt so!</span><span>Machen Sie zw&ouml;lf</span><span>Trinkgeld</span><span>der Rest ist f&uuml;r Sie</span><span>vielen Dank</span><span>etwa 10 Prozent</span><span>zahlen, bitte</span><span>die Rechnung</span>
+</div>
+</div>
+
+<div class="role-block">
+<div class="role-label">&#128172; Beispiel-Phrasen</div>
+<div class="role-phrases"><ul>
+<li>Die Rechnung, bitte!&ldquo;</li>
+<li>Was macht das zusammen?&ldquo;</li>
+<li>Machen Sie zw&ouml;lf &mdash; stimmt so!&ldquo;</li>
+<li>Der Rest ist f&uuml;r Sie. Danke!&ldquo;</li>
+<li>Vielen Dank &mdash; sch&ouml;nen Tag noch!&ldquo;</li>
+</ul></div>
+</div>
+
+<div class="role-strategy">&#128161; <strong>Tipp:</strong> In Deutschland sagst du die <u>Endsumme</u>, nicht das Trinkgeld extra! Bei 9,60 &euro; sagst du &bdquo;Machen Sie 11&ldquo; oder &bdquo;Stimmt so&ldquo; bei 12 Euro &mdash; und der Kellner versteht, was Trinkgeld ist.</div>
+<div class="role-answer" style="margin-top:.6rem;"><strong>&#10003; Gute Antwort enth&auml;lt:</strong> Rechnung verlangen &middot; Endsumme nennen (mit Trinkgeld) &middot; Dank am Ende.</div>
+</div>
+
+<!-- ROLLENSPIEL 5 -->
+<div class="role">
+<div class="role-tag">Rollenspiel 5 &middot; Sonderangebot</div>
+<div class="role-title">&#127944; &bdquo;Gilt das wirklich?&ldquo; &mdash; das Sonderangebot pr&uuml;fen</div>
+<div class="role-situation"><strong>Situation:</strong> Im Bekleidungsladen siehst du ein Schild: &bdquo;Alles &minus;50%!&ldquo;. Du nimmst eine Jacke. An der Kasse kostet sie aber den vollen Preis. Du fragst den Verk&auml;ufer!</div>
+<div class="role-situation" style="background:var(--blue-soft);"><strong>Deine Rolle:</strong> Du bist h&ouml;flich, aber klar. Du m&ouml;chtest verstehen, warum die Jacke teurer ist als auf dem Schild.</div>
+
+<div class="role-block">
+<div class="role-label">&#128273; Schl&uuml;ssel-Vokabular</div>
+<div class="role-vocab">
+<span>das Schild</span><span>50% Rabatt</span><span>gilt das?</span><span>im Angebot</span><span>der volle Preis</span><span>Sonderangebot</span><span>Entschuldigung</span><span>Ausnahme</span><span>verstehe ich nicht</span>
+</div>
+</div>
+
+<div class="role-block">
+<div class="role-label">&#128172; Beispiel-Phrasen</div>
+<div class="role-phrases"><ul>
+<li>Entschuldigung &mdash; das Schild sagt &minus;50%. Gilt das auch f&uuml;r diese Jacke?&ldquo;</li>
+<li>Warum ist sie dann teurer?&ldquo;</li>
+<li>Ich verstehe das nicht ganz&hellip;&ldquo;</li>
+<li>Gibt es eine Ausnahme?&ldquo;</li>
+<li>Achso, okay &mdash; danke f&uuml;r die Erkl&auml;rung!&ldquo;</li>
+</ul></div>
+</div>
+
+<div class="role-strategy">&#128161; <strong>Tipp:</strong> Sei nie aggressiv! Manchmal gilt das Angebot nicht f&uuml;r alle Sachen (z. B. neue Kollektion). Frag h&ouml;flich &mdash; und entscheide dann, ob du kaufst.</div>
+<div class="role-answer" style="margin-top:.6rem;"><strong>&#10003; Gute Antwort enth&auml;lt:</strong> H&ouml;fliche Frage &middot; Auf das Schild zeigen &middot; Antwort verstehen &middot; Entscheidung treffen (kaufen oder nicht).</div>
+</div>
+
+</div>
+
+<h2 class="section-title">&#127919; Mission der Woche</h2>
 <div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
-<strong>Tägliche Mini-Aufgabe:</strong> Lies jeden Tag 5 Preise laut vor &mdash; auf einem Kassenbon, im Supermarkt, im Online-Shop. Sprich sie auf Deutsch! Achte auf das &bdquo;rueckwaerts&ldquo;-Lesen!<br><br>
-🏆 <strong>Bonus-Challenge:</strong> Geh in ein deutsches Cafe und bestelle etwas. Frag nach dem Preis, zahle bar &mdash; und sag &bdquo;Stimmt so!&ldquo;. Notiere danach: Was hast du verstanden, was nicht?
+<strong>T&auml;gliche Mini-Aufgabe:</strong> Lies jeden Tag <strong>5 Preise laut</strong> vor &mdash; auf einem Kassenbon, im Supermarkt, im Online-Shop. Sprich sie auf Deutsch! Achte auf das &bdquo;r&uuml;ckw&auml;rts&ldquo;-Lesen!<br><br>
+&#127942; <strong>Bonus-Challenge:</strong> Geh in ein deutsches Caf&eacute; und bestelle etwas. Frag nach dem Preis, zahle bar &mdash; und sag &bdquo;Stimmt so!&ldquo;. Notiere danach: Was hast du verstanden, was nicht?
+</div>
+
+</section>
+
+<!-- ============== UMGANGSSPRACHE (AM ENDE!) ============== -->
+<section class="section" data-section="6">
+<h2 class="section-title">&#128172; So reden Deutsche <em style="font-style:italic;">wirklich</em></h2>
+<p class="section-sub">Echte WhatsApp-Chats &mdash; rund um Geld, Preise und Bezahlen. Mit Tippfehlern + Voice-Notes!</p>
+
+<div class="tip">&#128293; <strong>Tipp:</strong> Im Alltag sagt fast niemand &bdquo;Wie viel kostet das?&ldquo; &mdash; viel h&auml;ufiger ist <strong>&bdquo;Was macht das?&ldquo;</strong> oder einfach &bdquo;<strong>Was kostet&hellip;?</strong>&ldquo;. Und beim Schreiben: Kleinbuchstaben + Abk&uuml;rzungen sind normal!</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128722;</div><div><div class="name">Lisa &middot; im Penny</div><div class="stat">tippt &hellip;</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">ey brauchen wa noch was?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">ja milch! aber bitte die <strong>im angebot</strong> &#128591;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">welche denn?? die kostet hier <strong>1,29</strong></div></div>
+<div class="chat-msg in"><div class="chat-bubble">bio-milch, gelbe packung &mdash; war diese woche fuer <strong>99 cent</strong>!!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">krass das is ja n echtes <strong>schn&auml;ppchen</strong> &#128525;</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><div class="chat-voice"><span class="play">&#9658;</span>Voice-Note &middot; 0:07</div></div></div>
+<div class="chat-meaning"><strong>&bdquo;im Angebot&ldquo;</strong> &middot; <strong>&bdquo;Schn&auml;ppchen&ldquo;</strong> &middot; <strong>&bdquo;99 Cent&ldquo;</strong> &mdash; typisch Supermarkt-Vokabular! Beachte: &bdquo;wa&ldquo; = wir, &bdquo;n&ldquo; = ein.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#127829;</div><div><div class="name">Tom &middot; Pizza-Abend</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">hab die rechnung &mdash; <strong>42,80 &euro;</strong> fuer uns drei</div></div>
+<div class="chat-msg out"><div class="chat-bubble">oof&hellip; <strong>k&ouml;nnen wir teilen?</strong></div></div>
+<div class="chat-msg in"><div class="chat-bubble">klar! macht <strong>14,30</strong> pro person, plus 2&euro; trinkgeld?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">passt. sende dir gleich per <strong>paypal</strong> &#128077;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">danke bro &#127866;</div></div>
+<div class="chat-meaning"><strong>&bdquo;K&ouml;nnen wir teilen?&ldquo;</strong> = die Rechnung aufteilen. <strong>&bdquo;Paypal&ldquo;</strong> ist heute super normal unter Freunden in DE!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#127960;&#65039;</div><div><div class="name">Flohmarkt-Marie</div><div class="stat">handeln!</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">was kostet die lampe?</div></div>
+<div class="chat-msg in"><div class="chat-bubble"><strong>25 euro.</strong></div></div>
+<div class="chat-msg out"><div class="chat-bubble"><strong>geht das billiger?</strong> vielleicht 15? &#129402;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">hmm&hellip; sagen wir 20. <strong>mehr geht nich runter!</strong></div></div>
+<div class="chat-msg out"><div class="chat-bubble">okay <strong>abgemacht!</strong> &#129309;</div></div>
+<div class="chat-meaning"><strong>&bdquo;Geht das billiger?&ldquo;</strong> = handeln (typisch Flohmarkt, nie im Supermarkt!). <strong>&bdquo;abgemacht&ldquo;</strong> = Deal! &bdquo;nich&ldquo; = nicht (gesprochen).</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#9749;</div><div><div class="name">Caf&eacute; &middot; Bezahlen</div><div class="stat">Kellner</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">zusammen oder getrennt?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">zusammen bitte!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">das macht <strong>13,40 &euro;</strong></div></div>
+<div class="chat-msg out"><div class="chat-bubble">machen sie <strong>15 &mdash; stimmt so!</strong></div></div>
+<div class="chat-msg in"><div class="chat-bubble">vielen dank, sch&ouml;nen tag noch! &#128522;</div></div>
+<div class="chat-meaning"><strong>&bdquo;Stimmt so&ldquo;</strong> &mdash; der wichtigste Trinkgeld-Satz! Du gibst mehr und sagst &bdquo;Rest behalten!&ldquo;</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128176;</div><div><div class="name">Sale-Alarm &middot; Mama</div><div class="stat">zuletzt online vor 5 Min</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">schatz schau mal bei H&amp;M! <strong>30% rabatt</strong> auf alles &#128293;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">echt?? auch auf die neue kollektion?</div></div>
+<div class="chat-msg in"><div class="chat-bubble">ka, muss man fragen. aber die jeans waren da letztens fuer <strong>20 &euro;</strong> statt 40!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">krass. geh ich morgen hin &#128512;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">sry&hellip; ich glaub das angebot ist heute zu ende &#128557;</div></div>
+<div class="chat-meaning"><strong>&bdquo;Rabatt&ldquo;</strong> = Preisreduzierung. <strong>&bdquo;ka&ldquo;</strong> = keine Ahnung. <strong>&bdquo;sry&ldquo;</strong> = sorry. Alles typische Chat-Abk&uuml;rzungen!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">&#128184;</div><div><div class="name">Onkel &middot; Geld-Drama</div><div class="stat">tippt&hellip;</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">hab heute beim discounter <strong>50 euro</strong> ausgegeben&hellip; nur fuer 3 t&uuml;ten!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">jaaa alles wird so teuer&hellip; <strong>inflation</strong> halt &#129397;</div></div>
+<div class="chat-msg out"><div class="chat-bubble">eig wollt ich nur milch und brot&hellip; aber dann <strong>impulskauf</strong> &#129327;</div></div>
+<div class="chat-msg in"><div class="chat-bubble">kenn ich. <strong>haushaltsbuch</strong> hilft! da siehst du wirklich wo dein geld bleibt</div></div>
+<div class="chat-meaning"><strong>&bdquo;Inflation&ldquo;</strong> = Preise steigen. <strong>&bdquo;Impulskauf&ldquo;</strong> = unplanm&auml;&szlig;ig kaufen. <strong>&bdquo;eig&ldquo;</strong> = eigentlich.</div>
+</div>
+
+</div>
+
+<h2 class="section-title">10 wichtige <em style="font-style:italic;">Alltags-S&auml;tze</em></h2>
+
+<div class="num-grid" style="grid-template-columns:1fr;">
+<div class="num-card" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1.05rem;">&bdquo;Was kostet das?&ldquo; / &bdquo;Was macht das?&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">Standard-Frage nach dem Preis</div></div>
+<div class="num-card" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1.05rem;">&bdquo;Bar oder mit Karte?&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">vom Kassierer typischer Satz</div></div>
+<div class="num-card" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1.05rem;">&bdquo;K&ouml;nnen wir getrennt zahlen?&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">jede:r zahlt seins</div></div>
+<div class="num-card" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1.05rem;">&bdquo;Stimmt so!&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">= &bdquo;Rest ist Trinkgeld&ldquo;</div></div>
+<div class="num-card" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1.05rem;">&bdquo;Geht das billiger?&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">handeln &mdash; nur am Flohmarkt!</div></div>
+<div class="num-card" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1.05rem;">&bdquo;Das ist ein Schn&auml;ppchen!&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">= super g&uuml;nstig!</div></div>
+<div class="num-card" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1.05rem;">&bdquo;Das ist mir zu teuer.&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">h&ouml;flich ablehnen</div></div>
+<div class="num-card" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1.05rem;">&bdquo;Haben Sie es passend?&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">= kein Wechselgeld n&ouml;tig</div></div>
+<div class="num-card" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1.05rem;">&bdquo;Im Angebot, oder?&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">Sonderpreis best&auml;tigen</div></div>
+<div class="num-card" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1.05rem;">&bdquo;Machen Sie 20!&ldquo;</div><div style="font-size:.85rem;color:var(--ink-soft);margin-top:.2rem;">runde Summe + Trinkgeld</div></div>
 </div>
 
 </section>
 
 </div>
 
-<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch fuer den Alltag<br>Erstellt mit ❤️ fuer meine Sprechclub-Lernenden &middot; Preise &amp; Zahlen &middot; A2</footer>
+<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch f&uuml;r den Alltag<br>Erstellt mit Liebe f&uuml;r meine Sprechclub-Lernenden &middot; Preise &amp; Zahlen &middot; A2 Deluxe</footer>
 
 <script>
+// ============== TABS ==============
 document.querySelectorAll('.tab').forEach(b=>{
   b.onclick=()=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
@@ -579,23 +894,40 @@ document.querySelectorAll('.tab').forEach(b=>{
   };
 });
 
-// LERNKARTEN
+// ============== TEXT-TO-SPEECH ==============
+function speak(text){
+  if(!window.speechSynthesis)return;
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang='de-DE';
+  u.rate=0.9;
+  window.speechSynthesis.speak(u);
+}
+
+// ============== LERNKARTEN ==============
 const KARTEN=[
-  {emoji:'💶',word:'der Euro',badge:'Waehrung',rule:'die Hauptwaehrung in Deutschland',ex:'„Das Brot kostet <strong>2 Euro 50</strong>."'},
-  {emoji:'🪙',word:'der Cent',badge:'1/100 Euro',rule:'100 Cent = 1 Euro',ex:'„Ein Bonbon kostet nur <strong>10 Cent</strong>."'},
-  {emoji:'🆓',word:'kostenlos / gratis',badge:'Adjektiv',rule:'es kostet nichts',ex:'„Die Lieferung ist <strong>kostenlos</strong>!"'},
-  {emoji:'💸',word:'billig',badge:'Adjektiv',rule:'guenstiger Preis',ex:'„Diese Jeans ist sehr <strong>billig</strong> &mdash; nur 15 Euro!"'},
-  {emoji:'💰',word:'teuer',badge:'Adjektiv',rule:'hoher Preis &mdash; viel Geld',ex:'„Ein iPhone ist mir zu <strong>teuer</strong>."'},
-  {emoji:'🏷️',word:'der Rabatt',badge:'Substantiv',rule:'eine Preisreduzierung',ex:'„Mit Studentenausweis bekommst du <strong>10% Rabatt</strong>."'},
-  {emoji:'🔥',word:'das Sonderangebot',badge:'Substantiv',rule:'spezieller, niedriger Preis',ex:'„Diese Woche im <strong>Sonderangebot</strong>: Tomaten 1 Euro."'},
-  {emoji:'🍾',word:'das Pfand',badge:'Substantiv',rule:'Geld, das du zurueckbekommst (Flaschen)',ex:'„25 Cent <strong>Pfand</strong> &mdash; zurueckbringen!"'},
-  {emoji:'📊',word:'brutto',badge:'Adverb',rule:'mit Steuer (z. B. Mehrwertsteuer)',ex:'„Das Gehalt ist <strong>brutto</strong> 2500 Euro."'},
-  {emoji:'💵',word:'netto',badge:'Adverb',rule:'ohne Steuer / was du wirklich kriegst',ex:'„<strong>Netto</strong> bleiben mir 1800 Euro."'},
-  {emoji:'🎁',word:'das Schnaeppchen',badge:'Substantiv',rule:'tolles Angebot, sehr guenstig!',ex:'„Wow, 70% Rabatt &mdash; ein echtes <strong>Schnaeppchen</strong>!"'},
-  {emoji:'💳',word:'mit Karte zahlen',badge:'Verb',rule:'Kartenzahlung (EC, Kredit)',ex:'„Kann ich <strong>mit Karte zahlen</strong>?"'},
-  {emoji:'💴',word:'bar zahlen',badge:'Verb',rule:'mit Bargeld zahlen',ex:'„Ich zahle <strong>bar</strong>, bitte."'},
-  {emoji:'🪙',word:'das Wechselgeld',badge:'Substantiv',rule:'was du zurueckkriegst',ex:'„Hier ist Ihr <strong>Wechselgeld</strong>: 3 Euro 50."'},
-  {emoji:'🤝',word:'Stimmt so!',badge:'Trinkgeld-Satz',rule:'= behalten Sie den Rest!',ex:'„20 Euro &mdash; <strong>stimmt so</strong>!"'},
+  {emoji:'\u{1F4B6}',word:'der Euro',gen:'der',badge:'Währung',rule:'die Währung in Deutschland',ex:'„Das Brot kostet <strong>2 Euro 50</strong>.“',syn:'€'},
+  {emoji:'\u{1FA99}',word:'der Cent',gen:'der',badge:'1/100 Euro',rule:'100 Cent = 1 Euro',ex:'„Ein Bonbon kostet nur <strong>10 Cent</strong>.“',syn:'ct'},
+  {emoji:'\u{1F4B8}',word:'billig',gen:'',badge:'Adjektiv',rule:'günstiger Preis',ex:'„Diese Jeans ist sehr <strong>billig</strong> — nur 15 Euro!“',syn:'günstig, preiswert'},
+  {emoji:'\u{1F4B0}',word:'teuer',gen:'',badge:'Adjektiv',rule:'hoher Preis — viel Geld',ex:'„Ein iPhone ist mir zu <strong>teuer</strong>.“',syn:'kostspielig'},
+  {emoji:'\u{1F193}',word:'kostenlos / gratis',gen:'',badge:'Adjektiv',rule:'es kostet nichts',ex:'„Die Lieferung ist <strong>kostenlos</strong>!“',syn:'umsonst, frei'},
+  {emoji:'\u{1F3F7}️',word:'der Rabatt',gen:'der',badge:'Substantiv',rule:'eine Preisreduzierung',ex:'„Mit Studentenausweis bekommst du <strong>10% Rabatt</strong>.“',syn:'Nachlass, Ermäßigung'},
+  {emoji:'\u{1F525}',word:'das Sonderangebot',gen:'das',badge:'Substantiv',rule:'spezieller niedriger Preis',ex:'„Diese Woche im <strong>Sonderangebot</strong>: Tomaten 1 Euro.“',syn:'Aktion, Deal'},
+  {emoji:'\u{1F37E}',word:'das Pfand',gen:'das',badge:'Substantiv',rule:'Geld, das du zurückbekommst (Flaschen)',ex:'„25 Cent <strong>Pfand</strong> — zurückbringen!“',syn:'—'},
+  {emoji:'\u{1F381}',word:'das Schnäppchen',gen:'das',badge:'Substantiv',rule:'tolles Angebot, sehr günstig!',ex:'„Wow, 70% Rabatt — ein echtes <strong>Schnäppchen</strong>!“',syn:'Deal, Glanzkauf'},
+  {emoji:'\u{1F4B3}',word:'mit Karte zahlen',gen:'',badge:'Verb',rule:'Kartenzahlung (EC, Kredit)',ex:'„Kann ich <strong>mit Karte zahlen</strong>?“',syn:'kartenlos zahlen'},
+  {emoji:'\u{1F4B5}',word:'bar zahlen',gen:'',badge:'Verb',rule:'mit Bargeld zahlen',ex:'„Ich zahle <strong>bar</strong>, bitte.“',syn:'in bar'},
+  {emoji:'\u{1FA99}',word:'das Wechselgeld',gen:'das',badge:'Substantiv',rule:'was du zurückkriegst',ex:'„Hier ist Ihr <strong>Wechselgeld</strong>: 3 Euro 50.“',syn:'Rückgeld'},
+  {emoji:'\u{1F91D}',word:'„Stimmt so!“',gen:'',badge:'Trinkgeld-Satz',rule:'= behalten Sie den Rest!',ex:'„20 Euro — <strong>stimmt so</strong>!“',syn:'„Der Rest ist für Sie!“'},
+  {emoji:'\u{1F4B6}',word:'das Trinkgeld',gen:'das',badge:'Substantiv',rule:'Extra-Geld für Kellner (ca. 10%)',ex:'„2 Euro <strong>Trinkgeld</strong> sind normal.“',syn:'Tip (engl.)'},
+  {emoji:'\u{1F4CA}',word:'die Rechnung',gen:'die',badge:'Substantiv',rule:'was du im Restaurant zahlst',ex:'„Die <strong>Rechnung</strong>, bitte!“',syn:'die Quittung'},
+  {emoji:'\u{1F4DD}',word:'der Kassenbon',gen:'der',badge:'Substantiv',rule:'der Papierzettel nach dem Kauf',ex:'„Ihr <strong>Kassenbon</strong>, bitte.“',syn:'der Beleg, die Quittung'},
+  {emoji:'\u{1F4C9}',word:'der Preis',gen:'der',badge:'Substantiv',rule:'wie viel etwas kostet',ex:'„Der <strong>Preis</strong> ist okay.“',syn:'die Kosten'},
+  {emoji:'\u{1F381}',word:'das Angebot',gen:'das',badge:'Substantiv',rule:'wenn etwas billiger ist',ex:'„Die Milch ist im <strong>Angebot</strong>!“',syn:'die Aktion'},
+  {emoji:'\u{1F4B0}',word:'sparen',gen:'',badge:'Verb',rule:'weniger Geld ausgeben',ex:'„Ich möchte 100 Euro <strong>sparen</strong>.“',syn:'beiseitelegen'},
+  {emoji:'\u{1F6D2}',word:'ausgeben',gen:'',badge:'Verb',rule:'Geld für etwas zahlen',ex:'„Ich <strong>gebe</strong> viel Geld für Essen <strong>aus</strong>.“',syn:'verbrauchen'},
+  {emoji:'\u{1F4B8}',word:'kosten',gen:'',badge:'Verb',rule:'einen Preis haben',ex:'„Was <strong>kostet</strong> das?“',syn:'—'},
+  {emoji:'\u{1F4B5}',word:'das Bargeld',gen:'das',badge:'Substantiv',rule:'Geldscheine und Münzen',ex:'„Ich habe kein <strong>Bargeld</strong> dabei.“',syn:'Cash'},
 ];
 let order=KARTEN.map((_,i)=>i);
 let lkIdx=0;
@@ -603,10 +935,14 @@ const flipEl=document.getElementById('flip');
 function showCard(){
   const k=KARTEN[order[lkIdx]];
   document.getElementById('flipEmoji').textContent=k.emoji;
-  document.getElementById('flipWord').textContent=k.word;
+  const w=document.getElementById('flipWord');
+  w.textContent=k.word;
+  w.className='flip-word';
+  if(k.gen)w.classList.add(k.gen);
   document.getElementById('flipBadge').textContent=k.badge;
   document.getElementById('flipRule').textContent=k.rule;
   document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('flipSyn').innerHTML='<strong>Synonym:</strong> '+k.syn;
   document.getElementById('lkCur').textContent=lkIdx+1;
   document.getElementById('lkTot').textContent=KARTEN.length;
   flipEl.classList.remove('flipped');
@@ -615,9 +951,14 @@ flipEl.onclick=()=>flipEl.classList.toggle('flipped');
 document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
 document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
 document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+document.getElementById('lkSpeak').onclick=()=>{
+  const k=KARTEN[order[lkIdx]];
+  const txt=k.word.replace(/[„“”‘’"]/g,'')+'. '+k.ex.replace(/<[^>]+>/g,'').replace(/[„“”]/g,'');
+  speak(txt);
+};
 showCard();
 
-// QUIZ
+// ============== QUIZ ==============
 document.querySelectorAll('.quiz-opts').forEach(opts=>{
   const c=parseInt(opts.dataset.c);
   const chips=opts.querySelectorAll('.quiz-chip');
@@ -632,7 +973,7 @@ document.querySelectorAll('.quiz-opts').forEach(opts=>{
   });
 });
 
-// GAP
+// ============== GAP ==============
 document.getElementById('gapCheck').onclick=()=>{
   const sels=document.querySelectorAll('#gapText select');
   let right=0,total=sels.length;
@@ -643,77 +984,169 @@ document.getElementById('gapCheck').onclick=()=>{
   });
   const score=document.getElementById('gapScore');
   score.style.display='block';
-  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter ueben!');
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'\u{1F389} Perfekt!':right>=8?'\u{1F44F} Sehr gut!':right>=5?'\u{1F44D} Auf gutem Weg!':'\u{1F4AA} Weiter üben!');
 };
 document.getElementById('gapReset').onclick=()=>{
   document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
   document.getElementById('gapScore').style.display='none';
 };
 
-// MATCH
-const PAIRS=[
-  {l:'9,99 €',r:'neun Euro neunundneunzig'},
-  {l:'12,50 €',r:'zwoelf Euro fuenfzig'},
-  {l:'0,79 €',r:'neunundsiebzig Cent'},
-  {l:'47,30 €',r:'siebenundvierzig Euro dreissig'},
-  {l:'1.250 €',r:'tausendzweihundertfuenfzig Euro'},
-  {l:'2,15 €',r:'zwei Euro fuenfzehn'},
-  {l:'100 €',r:'einhundert Euro'},
-  {l:'5,55 €',r:'fuenf Euro fuenfundfuenfzig'},
+// ============== DRAG & DROP ZUORDNEN ==============
+const DND_PAIRS=[
+  {tag:'0,99 €',word:'neunundneunzig Cent'},
+  {tag:'1,50 €',word:'ein Euro fünfzig'},
+  {tag:'12,50 €',word:'zwölf Euro fünfzig'},
+  {tag:'47,30 €',word:'siebenundvierzig Euro dreißig'},
+  {tag:'2,15 €',word:'zwei Euro fünfzehn'},
+  {tag:'100 €',word:'einhundert Euro'},
+  {tag:'5,55 €',word:'fünf Euro fünfundfünfzig'},
+  {tag:'1.250 €',word:'tausendzweihundertfünfzig Euro'},
+  {tag:'33 €',word:'dreiunddreißig Euro'},
+  {tag:'0,79 €',word:'neunundsiebzig Cent'},
 ];
-function buildMatch(){
-  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
-  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
-  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
-  L.innerHTML='';R.innerHTML='';
-  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
-  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
-  let pick=null;
-  document.querySelectorAll('.match-item').forEach(item=>{
-    item.onclick=()=>{
-      if(item.classList.contains('done'))return;
-      if(!pick){pick=item;item.classList.add('selected');return;}
-      if(pick===item){item.classList.remove('selected');pick=null;return;}
-      const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;
-      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
-      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
-      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
-    };
+
+function buildDND(){
+  const leftEl=document.getElementById('leftPairs');
+  const poolEl=document.getElementById('wordPool');
+  leftEl.innerHTML='';
+  poolEl.innerHTML='';
+  document.getElementById('dndScore').classList.remove('show');
+  // build pairs (price + drop slot)
+  DND_PAIRS.forEach((p,i)=>{
+    const pair=document.createElement('div');
+    pair.className='dnd-pair';
+    pair.innerHTML='<div class="dnd-tag-label">'+p.tag+'</div><div class="dnd-slot" data-i="'+i+'">hier ablegen</div>';
+    leftEl.appendChild(pair);
+  });
+  // shuffle words into pool
+  const shuffled=DND_PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  shuffled.forEach(p=>{
+    const item=document.createElement('div');
+    item.className='dnd-item';
+    item.draggable=true;
+    item.dataset.i=p.i;
+    item.textContent=p.word;
+    poolEl.appendChild(item);
+  });
+  attachDND();
+}
+
+function attachDND(){
+  let dragged=null;
+  document.querySelectorAll('.dnd-item').forEach(item=>{
+    item.addEventListener('dragstart',e=>{
+      dragged=item;
+      item.classList.add('dragging');
+      e.dataTransfer.effectAllowed='move';
+      e.dataTransfer.setData('text/plain',item.dataset.i);
+    });
+    item.addEventListener('dragend',()=>{
+      item.classList.remove('dragging');
+    });
+    // touch fallback: click to pick, click slot to drop
+    item.addEventListener('click',()=>{
+      document.querySelectorAll('.dnd-item').forEach(x=>x.classList.remove('selected'));
+      item.classList.add('selected');
+      dragged=item;
+    });
+  });
+  document.querySelectorAll('.dnd-slot').forEach(slot=>{
+    slot.addEventListener('dragover',e=>{e.preventDefault();slot.classList.add('hover');});
+    slot.addEventListener('dragleave',()=>slot.classList.remove('hover'));
+    slot.addEventListener('drop',e=>{
+      e.preventDefault();
+      slot.classList.remove('hover');
+      if(!dragged)return;
+      // if slot has child, return it to pool
+      const existing=slot.querySelector('.dnd-item');
+      if(existing)document.getElementById('wordPool').appendChild(existing);
+      slot.innerHTML='';
+      slot.appendChild(dragged);
+      slot.classList.add('filled');
+      slot.classList.remove('correct','wrong');
+      dragged=null;
+    });
+    slot.addEventListener('click',()=>{
+      if(!dragged||!dragged.classList.contains('selected'))return;
+      const existing=slot.querySelector('.dnd-item');
+      if(existing)document.getElementById('wordPool').appendChild(existing);
+      slot.innerHTML='';
+      slot.appendChild(dragged);
+      slot.classList.add('filled');
+      slot.classList.remove('correct','wrong');
+      dragged.classList.remove('selected');
+      dragged=null;
+    });
   });
 }
-buildMatch();
-document.getElementById('matchRestart').onclick=buildMatch;
-const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
 
-// SPEAK
+document.getElementById('dndCheck').onclick=()=>{
+  const slots=document.querySelectorAll('.dnd-slot');
+  let right=0,filled=0;
+  slots.forEach(s=>{
+    s.classList.remove('correct','wrong');
+    const item=s.querySelector('.dnd-item');
+    if(item){
+      filled++;
+      if(item.dataset.i===s.dataset.i){s.classList.add('correct');right++;}
+      else s.classList.add('wrong');
+    }
+  });
+  const score=document.getElementById('dndScore');
+  score.classList.add('show');
+  score.innerHTML='<strong>'+right+' von '+DND_PAIRS.length+'</strong> richtig! '+(right===DND_PAIRS.length?'\u{1F389} Perfekt!':right>=7?'\u{1F44F} Sehr gut!':right>=4?'\u{1F44D} Auf gutem Weg!':'\u{1F4AA} Weiter üben!');
+};
+document.getElementById('dndReset').onclick=buildDND;
+buildDND();
+
+// shake animation
+const dndStyle=document.createElement('style');
+dndStyle.textContent='@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}} .dnd-item.selected{outline:3px solid var(--yellow);background:var(--yellow-soft);}';
+document.head.appendChild(dndStyle);
+
+// ============== SPRECHEN ==============
 const SPEAK=[
-  {emoji:'💶',cat:'Preise lesen',q:'Lies diese Preise laut: 0,99 € &mdash; 12,50 € &mdash; 47,80 € &mdash; 199,99 € &mdash; 1.250 €'},
-  {emoji:'🛒',cat:'Im Supermarkt',q:'Du suchst die guenstigste Milch. Wie fragst du die Mitarbeiterin?'},
+  {emoji:'\u{1F4B6}',cat:'Preise lesen',q:'Lies diese Preise laut: 0,99 € — 12,50 € — 47,80 € — 199,99 € — 1.250 €'},
+  {emoji:'\u{1F6D2}',cat:'Im Supermarkt',q:'Du suchst die günstigste Milch. Wie fragst du die Mitarbeiterin?'},
   {emoji:'❓',cat:'Preis erfragen',q:'Du bist im Bekleidungsladen und siehst eine Hose ohne Preisschild. Was fragst du?'},
-  {emoji:'🤝',cat:'Trinkgeld geben',q:'Die Rechnung ist 23,40 €. Sag dem Kellner, dass er 26 € behalten soll!'},
-  {emoji:'🏷️',cat:'Flohmarkt-Handeln',q:'Eine alte Lampe kostet 30 €. Versuche, sie fuer 18 € zu kriegen &mdash; mit 3 Argumenten!'},
-  {emoji:'🍽️',cat:'Restaurant teilen',q:'Ihr seid zu zweit. Die Rechnung: 38,60 €. Erklaere, wie ihr teilen wollt &mdash; mit Trinkgeld!'},
-  {emoji:'💳',cat:'Bezahlen',q:'Die Kassiererin fragt: &bdquo;Bar oder mit Karte?&ldquo;. Wie antwortest du? Gib 3 Varianten!'},
-  {emoji:'❌',cat:'Hoeflich ablehnen',q:'Im Geschaeft &mdash; das Hemd kostet 89 €. Das ist dir zu teuer. Wie sagst du das hoeflich?'},
-  {emoji:'🆓',cat:'Was ist kostenlos?',q:'Nenne 5 Dinge, die in Deutschland (oft) kostenlos sind!'},
-  {emoji:'💸',cat:'Billig vs. teuer',q:'Was ist fuer dich billig &mdash; und was ist teuer? Nenne je 3 Beispiele mit Preis!'},
-  {emoji:'🎁',cat:'Bestes Schnaeppchen',q:'Erzaehle vom besten Schnaeppchen, das du je gemacht hast! Was &mdash; wo &mdash; wie viel?'},
-  {emoji:'🍾',cat:'Pfand erklaeren',q:'Erklaere einer Touristin auf Deutsch, was Pfand ist und wie es funktioniert!'},
-  {emoji:'🔢',cat:'Zahlen-Mathe',q:'Rechne laut auf Deutsch: 17 + 28 &mdash; 50 minus 13 &mdash; 4 mal 6 &mdash; 100 geteilt durch 4'},
-  {emoji:'📊',cat:'Brutto vs. Netto',q:'Was ist der Unterschied zwischen brutto und netto? Erklaere mit Beispiel!'},
-  {emoji:'🪙',cat:'Wechselgeld',q:'Du zahlst 50 € fuer eine Rechnung von 37,80 €. Wie viel Wechselgeld &mdash; wie sagst du das auf Deutsch?'},
-  {emoji:'📱',cat:'Online shoppen',q:'Du bestellst online. Die Versandkosten sind 4,99 €. Findest du das fair? Diskutiere!'},
+  {emoji:'\u{1F91D}',cat:'Trinkgeld geben',q:'Die Rechnung ist 23,40 €. Sag dem Kellner, dass er 26 € behalten soll!'},
+  {emoji:'\u{1F3F7}️',cat:'Flohmarkt-Handeln',q:'Eine alte Lampe kostet 30 €. Versuche, sie für 18 € zu kriegen — mit 3 Argumenten!'},
+  {emoji:'\u{1F37D}️',cat:'Restaurant teilen',q:'Ihr seid zu zweit. Die Rechnung: 38,60 €. Erkläre, wie ihr teilen wollt — mit Trinkgeld!'},
+  {emoji:'\u{1F4B3}',cat:'Bezahlen',q:'Die Kassiererin fragt: „Bar oder mit Karte?“. Wie antwortest du? Gib 3 Varianten!'},
+  {emoji:'❌',cat:'Höflich ablehnen',q:'Im Geschäft — das Hemd kostet 89 €. Das ist dir zu teuer. Wie sagst du das höflich?'},
+  {emoji:'\u{1F193}',cat:'Was ist kostenlos?',q:'Nenne 5 Dinge, die in Deutschland (oft) kostenlos sind!'},
+  {emoji:'\u{1F4B8}',cat:'Billig vs. teuer',q:'Was ist für dich billig — und was ist teuer? Nenne je 3 Beispiele mit Preis!'},
+  {emoji:'\u{1F381}',cat:'Bestes Schnäppchen',q:'Erzähle vom besten Schnäppchen, das du je gemacht hast! Was — wo — wie viel?'},
+  {emoji:'\u{1F37E}',cat:'Pfand erklären',q:'Erkläre einer Touristin auf Deutsch, was Pfand ist und wie es funktioniert!'},
+  {emoji:'\u{1F522}',cat:'Zahlen-Mathe',q:'Rechne laut auf Deutsch: 17 plus 28 — 50 minus 13 — 4 mal 6 — 100 geteilt durch 4'},
+  {emoji:'\u{1F4CA}',cat:'Brutto vs. Netto',q:'Was ist der Unterschied zwischen brutto und netto? Erkläre mit Beispiel!'},
+  {emoji:'\u{1FA99}',cat:'Wechselgeld',q:'Du zahlst 50 € für eine Rechnung von 37,80 €. Wie viel Wechselgeld — wie sagst du das auf Deutsch?'},
+  {emoji:'\u{1F4F1}',cat:'Online shoppen',q:'Du bestellst online. Die Versandkosten sind 4,99 €. Findest du das fair? Diskutiere!'},
+  {emoji:'\u{1F35E}',cat:'Beim Bäcker',q:'Du kaufst ein Brot für 3,50 € und gibst 50 €. Was sagst du — wie viel Wechselgeld erwartest du?'},
+  {emoji:'\u{1F4B0}',cat:'Sparen',q:'Wie sparst du im Alltag Geld? Nenne 3 Tipps auf Deutsch!'},
+  {emoji:'\u{1F3DB}️',cat:'Heimatland',q:'In deinem Heimatland — wie liest man Preise? Komma oder Punkt? Anders als in Deutschland?'},
+  {emoji:'\u{1F389}',cat:'Geburtstag',q:'Ein Geschenk für einen Freund: max. 20 €. Was kaufst du? Beschreibe es!'},
+  {emoji:'\u{1F4DD}',cat:'Kassenbon',q:'Schau auf deinen letzten Kassenbon. Lies 3 Preise davon laut vor auf Deutsch!'},
+  {emoji:'\u{1F3E0}',cat:'Miete',q:'Wie teuer ist deine Wohnung pro Monat? (Du musst keine echte Zahl sagen — nur üben!)'},
+  {emoji:'\u{1F69C}',cat:'Markt',q:'Du bist am Wochenmarkt: Äpfel 2,80 €/Kilo, Honig 6 €, Brot 4 €. Bestelle 1 Kilo Äpfel und Honig!'},
+  {emoji:'\u{1F4B5}',cat:'Welche Scheine?',q:'Du möchtest 47 € geben. Welche Scheine und Münzen würdest du nehmen?'},
 ];
 let lastSpeak=-1;
+let currentSpeakText='';
 document.getElementById('speakNew').onclick=()=>{
   let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
   lastSpeak=i;const k=SPEAK[i];
+  currentSpeakText=k.q;
   const c=document.getElementById('speakCard');
   c.style.opacity='0';
   setTimeout(()=>{
-    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei &mdash; 60-90 Sekunden!</div>';
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q" id="speakQText">'+k.q+'</div><div class="speak-hint">Sprich frei — 60-90 Sekunden!</div>';
     c.style.opacity='1';
   },200);
+};
+document.getElementById('speakTTS').onclick=()=>{
+  const text=currentSpeakText||document.getElementById('speakQText').textContent;
+  speak(text.replace(/[„“”]/g,''));
 };
 </script>
 </body></html>
