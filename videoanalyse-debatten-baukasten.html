@@ -1,767 +1,244 @@
 <!DOCTYPE html><html lang="de"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Videoanalyse: Warum sind alle Japaner schlank? &middot; B2/C1 | deutschoderwas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Videoanalyse: Warum sind alle Japaner schlank? · B2/C1 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#FDF6EC;--cream-warm:#FBEDD8;--paper:#FFFFFF;--ink:#262019;--ink-soft:#5C4E3E;--ink-mute:#A8957D;--red:#E8302A;--red-soft:#FCE5E3;--teal:#0FB5A6;--teal-soft:#D7F0EC;--yellow:#FFD24A;--yellow-soft:#FFF1C2;--pink:#E69CB3;--sand:#F0E2C8;--wa-bg:#ECE5DD;--wa-out:#DCF8C6;--wa-in:#FFFFFF;}
-*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3; --red-dark:#C8211D;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --blue:#2D6BB5; --blue-soft:#E0EAF7;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
 body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
 .wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
 .eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
 .title-wrap{text-align:center;margin-bottom:1rem;}
-h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.4rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
 h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
 h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
-.subtitle{text-align:center;max-width:680px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
-
-/* VIDEO */
-.video-wrap{margin:1.8rem auto 0;max-width:780px;border-radius:18px;overflow:hidden;border:3px solid var(--ink);box-shadow:0 12px 30px rgba(38,32,25,.18);background:#000;}
-.video-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:0;}
-.video-meta{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:1rem auto 0;font-size:.78rem;color:var(--ink-soft);}
-.video-meta span{background:var(--paper);border:1.5px solid var(--sand);padding:.32rem .85rem;border-radius:999px;font-weight:600;}
-
-.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;background:var(--cream-warm);border-radius:24px;padding:.5rem;margin:2rem auto;max-width:fit-content;}
-.tab{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1rem;border-radius:999px;cursor:pointer;}
-.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
-.tab.active{background:var(--red);color:white;border-color:var(--red);}
-.section{display:none;animation:fade .35s ease;}.section.active{display:block;}
-@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.6rem,3.5vw,2.3rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
-.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
-.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
-.tip strong{color:var(--red);font-weight:700;}.tip em{font-style:italic;}.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
-
-/* WAS DU SEHEN WIRST */
-.preview-list{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.6rem;margin:1.2rem 0;}
-.preview-list li{list-style:none;padding:.6rem 0;border-bottom:1px dashed var(--sand);font-size:.95rem;color:var(--ink);display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
-.preview-list li:last-child{border-bottom:0;}
-.preview-list .pi{font-size:1.5rem;text-align:center;}
-
-/* HOERFRAGEN */
-.hf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1.2rem 0;}
-@media(max-width:600px){.hf-grid{grid-template-columns:1fr;}}
-.hf{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:1rem 1.1rem;border-left:5px solid var(--red);}
-.hf:nth-child(4n+2){border-left-color:var(--teal);}
-.hf:nth-child(4n+3){border-left-color:#B66809;}
-.hf:nth-child(4n){border-left-color:#6A3D9C;}
-.hf-num{display:inline-block;background:var(--red);color:#fff;font-size:.7rem;font-weight:700;padding:.18rem .65rem;border-radius:999px;margin-bottom:.4rem;letter-spacing:.05em;}
-.hf:nth-child(4n+2) .hf-num{background:var(--teal);}
-.hf:nth-child(4n+3) .hf-num{background:#B66809;}
-.hf:nth-child(4n) .hf-num{background:#6A3D9C;}
-.hf-q{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.98rem;line-height:1.5;}
-
-/* ZEITMARKEN */
-.tm-stage{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem;margin:1.5rem 0;}
-.tm-row{display:grid;grid-template-columns:90px 1fr;gap:.9rem;padding:.7rem 0;border-bottom:1px dashed var(--sand);align-items:start;}
-.tm-row:last-child{border-bottom:0;}
-.tm-time{background:var(--ink);color:#fff;text-align:center;font-family:'Fraunces',serif;font-weight:900;font-size:.95rem;padding:.4rem .5rem;border-radius:10px;letter-spacing:.05em;}
-.tm-row:nth-child(2n) .tm-time{background:var(--red);}
-.tm-row:nth-child(3n) .tm-time{background:var(--teal);}
-.tm-name{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1rem;}
-.tm-desc{color:var(--ink-soft);font-size:.85rem;margin-top:.2rem;line-height:1.5;}
-
-/* WORTSCHATZ */
-.ws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin:1.2rem 0;}
-@media(max-width:700px){.ws-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.ws-grid{grid-template-columns:1fr;}}
-.ws{background:var(--paper);border:1.5px solid var(--sand);border-radius:12px;padding:.7rem .8rem;border-top:4px solid var(--teal);}
-.ws:nth-child(3n+2){border-top-color:var(--red);}
-.ws:nth-child(3n){border-top-color:#B66809;}
-.ws-word{font-family:'Fraunces',serif;font-weight:900;color:var(--ink);font-size:.95rem;}
-.ws-trans{color:var(--ink-soft);font-size:.78rem;margin-top:.2rem;font-style:italic;}
-
-/* KULTURVERGLEICH */
-.cv-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--paper);border:2px solid var(--sand);border-radius:18px;overflow:hidden;margin:1.2rem 0;}
-.cv-table th,.cv-table td{padding:.85rem 1rem;text-align:left;font-size:.9rem;border-bottom:1px dashed var(--sand);}
-.cv-table th{background:var(--cream-warm);font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:.92rem;}
-.cv-table tr:last-child td{border-bottom:0;}
-.cv-table td:first-child{font-weight:700;color:var(--ink);}
-.cv-table .jp{color:var(--red);}
-.cv-table .de{color:var(--teal);}
-
-/* FLIP */
-.flip{perspective:1000px;width:100%;max-width:460px;height:380px;margin:1.5rem auto;cursor:pointer;}
-.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
-.flip.flipped .flip-inner{transform:rotateY(180deg);}
-.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
-.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
-.flip-emoji{font-size:2.8rem;margin-bottom:.5rem;}
-.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--ink);line-height:1.3;}
-.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
-.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
-.flip-syn{color:var(--ink-soft);font-size:.82rem;margin-top:.6rem;font-style:italic;}
-.flip-rule{color:var(--red);font-weight:700;font-size:1rem;}
-.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.92rem;margin-top:.7rem;line-height:1.5;}
-.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
-.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
-.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
-.lk-btn:hover{background:var(--ink);color:white;}
-.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
-.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-
-/* QUIZ */
-.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
-.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
-.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
-.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.92rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
-.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
-.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
-.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
-.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
-.quiz-explain.show{display:block;}
-
-/* GAP */
-.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
-.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
-.gap-text .gap-line:last-of-type{border-bottom:0;}
-.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
-.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
-.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
-.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
-.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
-.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
-.btn-secondary:hover{background:var(--ink);color:white;}
-
-/* MATCH */
-.match-stage{margin:1.5rem 0;}
-.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
-.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
-.match-list{display:flex;flex-direction:column;gap:.45rem;}
-.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.86rem;transition:.15s;text-align:center;}
-.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
-.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
-.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
-.match-restart{display:block;margin:1.2rem auto 0;}
-
-/* SPEAK + ROLE + DEBATE */
-.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:220px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:560px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
-.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
-.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
-.speak-q{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);font-style:italic;line-height:1.5;}
-.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
-.speak-controls{text-align:center;margin-top:1rem;}
-
-.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
-.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
-.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.2rem;margin-bottom:.5rem;}
-.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.8rem;}
-.role-role{background:#F1FAF8;border-left:4px solid var(--teal);border-radius:8px;padding:.6rem .9rem;font-size:.88rem;color:var(--ink);margin-bottom:.7rem;}
-.role-block{margin-top:.7rem;padding:.7rem .9rem;border-radius:10px;font-size:.85rem;}
-.role-vocab{background:#FFF1C2;border-left:4px solid #B66809;}
-.role-phrases{background:#E5D8F2;border-left:4px solid #6A3D9C;}
-.role-tip{background:var(--teal-soft);border-left:4px solid var(--teal);}
-.role-answer{background:var(--red-soft);border-left:4px solid var(--red);}
-.role-block strong{font-family:'Outfit',sans-serif;font-weight:700;display:block;margin-bottom:.3rem;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;}
-.role-block ul{margin:.3rem 0 0 1rem;padding:0;}
-.role-block li{margin:.25rem 0;font-family:'Fraunces',serif;font-style:italic;}
-
-.debate{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.3rem 1.4rem;margin:1rem 0;border-top:6px solid var(--red);}
-.debate:nth-child(2n) {border-top-color:var(--teal);}
-.debate:nth-child(3n) {border-top-color:#B66809;}
-.debate-num{display:inline-block;background:var(--ink);color:#fff;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem;letter-spacing:.05em;}
-.debate-these{font-family:'Fraunces',serif;font-weight:700;font-style:italic;color:var(--ink);font-size:1.05rem;line-height:1.5;margin-bottom:.8rem;}
-.debate-cols{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
-@media(max-width:600px){.debate-cols{grid-template-columns:1fr;}}
-.debate-col{padding:.7rem .9rem;border-radius:10px;font-size:.83rem;}
-.debate-pro{background:var(--teal-soft);border-left:4px solid var(--teal);}
-.debate-con{background:var(--red-soft);border-left:4px solid var(--red);}
-.debate-col strong{display:block;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.3rem;}
-.debate-pro strong{color:var(--teal);}.debate-con strong{color:var(--red);}
-.debate-kw{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);margin-top:.3rem;}
-.debate-ex{font-family:'Fraunces',serif;color:var(--ink-soft);font-size:.82rem;margin-top:.4rem;border-top:1px dashed rgba(0,0,0,.1);padding-top:.4rem;}
-
-/* CHAT */
-.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
-.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
-.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
-.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
-.chat-head .stat{font-size:.7rem;opacity:.85;}
-.chat-msg{margin:.4rem 0;display:flex;}.chat-msg.out{justify-content:flex-end;}
-.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
-.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
-.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
-.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
-.chat-bubble.voice{background:#E8F4FD!important;font-style:italic;color:var(--ink-soft);font-size:.85rem;}
-.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
-.chat-meaning strong{color:#B66809;}
-.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
-
-footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
-footer strong{color:var(--ink);}
+.subtitle{text-align:center;max-width:680px;margin:1rem auto 0;font-size:1.08rem;color:var(--ink-soft);}
+.video-wrap{margin:2rem auto 1rem;border-radius:24px;overflow:hidden;box-shadow:0 12px 32px rgba(38,32,25,.18);background:#000;position:relative;aspect-ratio:16/9;}
+.video-wrap iframe{width:100%;height:100%;border:0;}
+.meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:1rem 0 2.5rem;}
+.meta-chip{background:var(--paper);border:1.5px solid var(--sand);border-radius:999px;padding:.35rem .9rem;font-size:.82rem;font-weight:600;color:var(--ink);}
+.anchors{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:0 auto 2.5rem;max-width:fit-content;position:sticky;top:1rem;z-index:50;box-shadow:0 4px 12px rgba(38,32,25,.08);}
+.anchors a{font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:600;background:var(--paper);color:var(--ink);padding:.45rem .95rem;border-radius:999px;text-decoration:none;border:2px solid transparent;transition:.15s;}
+.anchors a:hover{border-color:var(--ink);transform:translateY(-1px);}
+section{margin:2.5rem 0;}
+section h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.6rem,3.2vw,2.2rem);color:var(--ink);margin-bottom:.4rem;display:flex;align-items:center;gap:.6rem;}
+section h2 .ico{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:var(--red-soft);color:var(--red);font-size:1.5rem;}
+section .sub{color:var(--ink-soft);font-size:1rem;margin-bottom:1.4rem;}
+.q-list{display:flex;flex-direction:column;gap:.8rem;}
+.q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.4rem;box-shadow:0 3px 10px rgba(38,32,25,.05);transition:.15s;}
+.q:hover{transform:translateX(4px);border-left-width:8px;}
+.q .nr{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.q .text{font-family:'Fraunces',serif;font-size:1.08rem;color:var(--ink);margin-top:.3rem;line-height:1.5;}
+.q .text em{font-style:italic;color:var(--ink-soft);font-family:'Fraunces',serif;}
+section.warm h2 .ico{background:var(--yellow-soft);color:#B66809;}
+section.warm .q{border-left-color:var(--yellow);}
+section.warm .q .nr{color:#B66809;}
+section.understand h2 .ico{background:var(--teal-soft);color:var(--teal);}
+section.understand .q{border-left-color:var(--teal);}
+section.understand .q .nr{color:var(--teal);}
+section.analyze h2 .ico{background:var(--blue-soft);color:var(--blue);}
+section.analyze .q{border-left-color:var(--blue);}
+section.analyze .q .nr{color:var(--blue);}
+section.discuss h2 .ico{background:var(--red-soft);color:var(--red);}
+section.debate h2 .ico{background:#F0E0FA;color:#6A3D9C;}
+.timecodes{display:grid;grid-template-columns:auto 1fr;gap:.4rem .9rem;background:var(--paper);border:1.5px dashed var(--sand);border-radius:14px;padding:1.2rem 1.4rem;margin:1rem 0;}
+.timecodes .tc{font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:.95rem;}
+.timecodes .descr{color:var(--ink);font-size:.92rem;}
+.these{background:linear-gradient(135deg,#F5F0FA,#FFF);border:2px solid #6A3D9C;border-radius:18px;padding:1.3rem 1.5rem;margin:1rem 0;}
+.these .label{font-size:.72rem;font-weight:700;color:#6A3D9C;letter-spacing:.12em;text-transform:uppercase;}
+.these .statement{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);font-style:italic;margin:.4rem 0 .8rem;line-height:1.45;}
+.these .sides{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.6rem;}
+@media(max-width:600px){.these .sides{grid-template-columns:1fr;}}
+.these-side{padding:.7rem .9rem;border-radius:12px;font-size:.88rem;line-height:1.5;}
+.these-side.pro{background:var(--teal-soft);border-left:4px solid var(--teal);}
+.these-side.con{background:var(--red-soft);border-left:4px solid var(--red);}
+.these-side b{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem;}
+.these-side.pro b{color:var(--teal);}
+.these-side.con b{color:var(--red);}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.5rem 0;line-height:1.7;}
+.tip strong{color:var(--red);}
+footer{text-align:center;color:var(--ink-mute);font-size:.78rem;margin-top:3rem;padding:1rem;}
 </style>
 </head>
 <body>
 <div class="wrapper">
-<div class="eyebrow">deutschoderwas &middot; Videoanalyse B2/C1 Sprechclub</div>
-<div class="title-wrap"><h1 class="title">Warum sind alle Japaner <span class="hl">schlank?</span></h1></div>
-<p class="subtitle">Wir analysieren eine Galileo-Reportage aus Tokio: Esskultur, Portionsgr&ouml;&szlig;en, gesellschaftliche Normen &mdash; und debattieren, was Deutschland davon lernen k&ouml;nnte.</p>
+
+<div class="eyebrow">deutschoderwas · Videoanalyse B2/C1 Sprechclub</div>
+<div class="title-wrap">
+  <h1 class="title">Warum sind alle Japaner <span class="hl">schlank?</span></h1>
+  <p class="subtitle">Wir schauen eine Galileo-Reportage aus Tokio — und diskutieren, was sie wirklich erzählt (und was nicht).</p>
+</div>
 
 <div class="video-wrap">
-<iframe src="https://www.youtube.com/embed/BUzgVvq5JEM" title="Warum sind alle Japaner schlank? - Galileo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<div class="video-meta">
-<span>&#127909; Galileo / ProSieben</span>
-<span>&#128293; 7,33 Mio. Abos</span>
-<span>&#128064; 7 Mio. Aufrufe</span>
-<span>&#128197; vor 7 Jahren</span>
-<span>&#127471;&#127477; Tokio-Reportage</span>
+  <iframe src="https://www.youtube.com/embed/BUzgVvq5JEM" title="Warum sind alle Japaner schlank? | Galileo | ProSieben" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<nav class="tabs">
-<button class="tab active" data-tab="0">&#128214; &Uuml;berblick</button>
-<button class="tab" data-tab="1">&#127183; Lernkarten</button>
-<button class="tab" data-tab="2">&#9989; Quiz</button>
-<button class="tab" data-tab="3">&#9997;&#65039; L&uuml;ckentext</button>
-<button class="tab" data-tab="4">&#129513; Zuordnen</button>
-<button class="tab" data-tab="5">&#128483;&#65039; Sprechen</button>
-<button class="tab" data-tab="6">&#128172; Umgangssprache</button>
-</nav>
-
-<!-- UEBERBLICK -->
-<section class="section active" data-section="0">
-
-<div class="tip">&#127909; <strong>Bevor du das Video schaust:</strong> Lies kurz die Punkte unten durch &mdash; sie helfen dir, beim ersten Schauen <u>die wichtigsten Aspekte</u> zu erfassen. Notiere w&auml;hrend des Schauens 3 Dinge, die dich <em>&uuml;berraschen</em>.</div>
-
-<h2 class="section-title">Was du <em style="font-style:italic;">sehen wirst</em></h2>
-<p class="section-sub">Reporterin Maike reist nach Tokio &mdash; eine Stadt voller Kontraste, in der Essen eine ganz andere Rolle spielt.</p>
-<ul class="preview-list">
-<li><span class="pi">&#127814;</span><div><strong>Esskultur in Japan:</strong> wenig Brot, viel Reis, Suppe, Fisch &mdash; Frischk&uuml;che statt Tiefk&uuml;hlpizza.</div></li>
-<li><span class="pi">&#127859;</span><div><strong>Portionsgr&ouml;&szlig;en:</strong> kleine Sch&auml;lchen statt riesiger Teller. Aufh&ouml;ren, bevor man ganz voll ist (&bdquo;Hara hachi bu&ldquo; &mdash; nur zu 80&nbsp;% satt essen).</div></li>
-<li><span class="pi">&#129489;&#8205;&#129489;&#8205;&#129489;</span><div><strong>Gesellschaftliche Normen:</strong> &Uuml;bergewicht ist in Japan ein gro&szlig;es Tabu &mdash; es gibt sogar Gesetze zur Taillenmessung am Arbeitsplatz.</div></li>
-<li><span class="pi">&#127828;</span><div><strong>Keine Lebensmittel&shy;kennzeichnung wie bei uns:</strong> keine Nutri-Score-Ampel, keine Kalorienangaben auf jeder Packung &mdash; trotzdem sind die Menschen schlanker.</div></li>
-<li><span class="pi">&#128099;</span><div><strong>Bewegung im Alltag:</strong> Tokio l&auml;uft &mdash; zur U-Bahn, zur Arbeit, in den vielen Stockwerken. Auto fahren ist selten.</div></li>
-</ul>
-
-<h2 class="section-title">6 Fragen <em style="font-style:italic;">f&uuml;rs Hinschauen</em></h2>
-<p class="section-sub">Achte beim Video gezielt auf diese Punkte. Wir besprechen sie in der Stunde!</p>
-<div class="hf-grid">
-<div class="hf"><span class="hf-num">Frage 1</span><div class="hf-q">Wie viele Mahlzeiten am Tag essen die Japaner laut Video &mdash; und wie sehen die typischen Portionen aus?</div></div>
-<div class="hf"><span class="hf-num">Frage 2</span><div class="hf-q">Was &uuml;berrascht die Reporterin Maike am meisten beim ersten japanischen Fr&uuml;hst&uuml;ck?</div></div>
-<div class="hf"><span class="hf-num">Frage 3</span><div class="hf-q">Welche Rolle spielt &bdquo;Disziplin&ldquo; oder &bdquo;gesellschaftlicher Druck&ldquo; bei der Ern&auml;hrung in Japan?</div></div>
-<div class="hf"><span class="hf-num">Frage 4</span><div class="hf-q">Welche traditionellen Gerichte zeigt das Video &mdash; und was haben sie gemeinsam?</div></div>
-<div class="hf"><span class="hf-num">Frage 5</span><div class="hf-q">Was sagen die japanischen Passanten (O-T&ouml;ne) auf die Frage, warum sie schlank sind?</div></div>
-<div class="hf"><span class="hf-num">Frage 6</span><div class="hf-q">Welche Aussage der Reporterin findest du am Ende des Videos am st&auml;rksten &mdash; und warum?</div></div>
+<div class="meta-row">
+  <span class="meta-chip">📺 Galileo / ProSieben</span>
+  <span class="meta-chip">⏱️ ca. 7 Minuten</span>
+  <span class="meta-chip">🔥 7 Mio. Aufrufe</span>
+  <span class="meta-chip">📅 vor 7 Jahren</span>
+  <span class="meta-chip">🗾 Tokio-Reportage</span>
 </div>
 
-<h2 class="section-title">Wichtige <em style="font-style:italic;">Zeitmarken</em></h2>
-<p class="section-sub">Wenn du eine Stelle noch mal sehen willst &mdash; hier sind die Schl&uuml;sselszenen.</p>
-<div class="tm-stage">
-<div class="tm-row"><div class="tm-time">00:00</div><div><div class="tm-name">Intro &amp; Tokio-Ankunft</div><div class="tm-desc">Maike kommt in der Megacity an. Erste Eindr&uuml;cke: Leuchtreklamen, viele Menschen &mdash; aber kaum &Uuml;bergewichtige.</div></div></div>
-<div class="tm-row"><div class="tm-time">01:30</div><div><div class="tm-name">Japanisches Fr&uuml;hst&uuml;ck</div><div class="tm-desc">Reis, Misosuppe, Fisch, eingelegtes Gem&uuml;se &mdash; statt Br&ouml;tchen mit Marmelade. Maike probiert.</div></div></div>
-<div class="tm-row"><div class="tm-time">03:00</div><div><div class="tm-name">Mittagessen im Bento</div><div class="tm-desc">Kleine Lunchbox mit 5&ndash;7 verschiedenen Komponenten. Bunt, frisch, klein portioniert.</div></div></div>
-<div class="tm-row"><div class="tm-time">05:00</div><div><div class="tm-name">Stra&szlig;eninterviews</div><div class="tm-desc">Maike fragt Passanten: &bdquo;Warum sind Japaner so schlank?&ldquo; &mdash; die Antworten sind &uuml;berraschend ehrlich.</div></div></div>
-<div class="tm-row"><div class="tm-time">07:00</div><div><div class="tm-name">Taillenmessung am Arbeitsplatz</div><div class="tm-desc">Das &bdquo;Metabo-Gesetz&ldquo;: Firmen messen die Taille ihrer Mitarbeiter. Wer zu dick ist, muss zum Beratungsgespr&auml;ch.</div></div></div>
-<div class="tm-row"><div class="tm-time">09:00</div><div><div class="tm-name">Fazit der Reporterin</div><div class="tm-desc">Maike fasst zusammen: kleine Portionen + viel Bewegung + soziale Norm &mdash; das macht den Unterschied.</div></div></div>
+<div class="anchors">
+  <a href="#warm">🔥 Aufwärmen</a>
+  <a href="#timecodes">⏱️ Zeitmarken</a>
+  <a href="#understand">👀 Verständnis</a>
+  <a href="#analyze">🧠 Analyse</a>
+  <a href="#discuss">💬 Diskussion</a>
+  <a href="#debate">⚖️ Debatten</a>
 </div>
 
-<h2 class="section-title">Wortschatz <em style="font-style:italic;">vorab</em></h2>
-<p class="section-sub">12 Schl&uuml;sselbegriffe, die im Video immer wieder vorkommen.</p>
-<div class="ws-grid">
-<div class="ws"><div class="ws-word">schlank</div><div class="ws-trans">d&uuml;nn, schmal, sportlich</div></div>
-<div class="ws"><div class="ws-word">&uuml;bergewichtig</div><div class="ws-trans">zu dick, adip&ouml;s</div></div>
-<div class="ws"><div class="ws-word">die Lebensmittel&shy;kennzeichnung</div><div class="ws-trans">Etikett mit N&auml;hrwerten</div></div>
-<div class="ws"><div class="ws-word">die Industrienation</div><div class="ws-trans">entwickeltes Land</div></div>
-<div class="ws"><div class="ws-word">die Esskultur</div><div class="ws-trans">wie eine Gesellschaft isst</div></div>
-<div class="ws"><div class="ws-word">die Portion</div><div class="ws-trans">Menge auf dem Teller</div></div>
-<div class="ws"><div class="ws-word">das Bento</div><div class="ws-trans">jap. Lunchbox mit Sch&auml;lchen</div></div>
-<div class="ws"><div class="ws-word">die Disziplin</div><div class="ws-trans">Selbstkontrolle</div></div>
-<div class="ws"><div class="ws-word">die Tradition</div><div class="ws-trans">jahrelange Gewohnheit</div></div>
-<div class="ws"><div class="ws-word">die Misosuppe</div><div class="ws-trans">jap. Suppe aus Sojapaste</div></div>
-<div class="ws"><div class="ws-word">das Tabu</div><div class="ws-trans">verbotenes Thema</div></div>
-<div class="ws"><div class="ws-word">die N&auml;hrwerte</div><div class="ws-trans">Kalorien, Fett, Zucker</div></div>
-</div>
-
-<h2 class="section-title">Kultureller <em style="font-style:italic;">Vergleich</em></h2>
-<p class="section-sub">Wo unterscheiden sich Japan und Deutschland am st&auml;rksten?</p>
-<table class="cv-table">
-<thead><tr><th>Aspekt</th><th class="jp">&#127471;&#127477; Japan</th><th class="de">&#127465;&#127466; Deutschland</th></tr></thead>
-<tbody>
-<tr><td>Fr&uuml;hst&uuml;ck</td><td class="jp">Reis, Misosuppe, Fisch, Gem&uuml;se</td><td class="de">Br&ouml;tchen, Marmelade, M&uuml;sli, Kaffee</td></tr>
-<tr><td>Portionsgr&ouml;&szlig;e</td><td class="jp">Klein, viele kleine Sch&auml;lchen</td><td class="de">Gro&szlig;, ein gro&szlig;er Teller</td></tr>
-<tr><td>Bewegung im Alltag</td><td class="jp">Viel Laufen, U-Bahn-Treppen</td><td class="de">Oft Auto, Aufzug, B&uuml;rojob</td></tr>
-<tr><td>Esskultur</td><td class="jp">Frisch, saisonal, &auml;sthetisch</td><td class="de">Praktisch, oft Tiefk&uuml;hl/Fast&shy;food</td></tr>
-<tr><td>N&auml;hrwert-Kennzeichnung</td><td class="jp">Kaum vorhanden</td><td class="de">Nutri-Score, ausf&uuml;hrliche Labels</td></tr>
-<tr><td>Sozialer Druck</td><td class="jp">Hoch &mdash; &Uuml;bergewicht ist Tabu</td><td class="de">Tendenziell tolerant &mdash; &bdquo;Body Positivity&ldquo;</td></tr>
-<tr><td>Restaurant-Verhalten</td><td class="jp">Aufh&ouml;ren bei 80&nbsp;% satt</td><td class="de">Teller leer essen, oft Nachtisch</td></tr>
-</tbody>
-</table>
-
-<div class="tip" style="background:var(--teal-soft);border-color:var(--teal);">&#128172; <strong>Diskussions-Impuls f&uuml;rs Hinschauen:</strong> Galileo ist eine <u>Boulevard-Reportage</u> &mdash; das hei&szlig;t: ein bisschen sensationell, vereinfacht, mit viel Reporter-Off-Stimme. <em>Achte mal darauf:</em> Welche Stellen sind echt informativ &mdash; und welche eher Klischees? Wir besprechen das in der Stunde!</div>
-
+<section id="warm" class="warm">
+  <h2><span class="ico">🔥</span>Aufwärmen — bevor wir das Video schauen</h2>
+  <p class="sub">5 Fragen zum Einstieg. Antworte spontan — was kommt dir in den Sinn?</p>
+  <div class="q-list">
+    <div class="q"><div class="nr">Frage 1</div><div class="text">Wenn du an „japanisches Essen" denkst — welche 5 Dinge fallen dir sofort ein?</div></div>
+    <div class="q"><div class="nr">Frage 2</div><div class="text">Stimmt der Eindruck eigentlich, dass Japaner schlanker sind als Deutsche? Wo hast du diesen Eindruck her?</div></div>
+    <div class="q"><div class="nr">Frage 3</div><div class="text">Was glaubst du: ist es die Ernährung, die Genetik, die Bewegung, der Lebensstil — oder etwas ganz anderes?</div></div>
+    <div class="q"><div class="nr">Frage 4</div><div class="text">Wann hast du selbst zuletzt etwas an deiner Ernährung geändert — und warum?</div></div>
+    <div class="q"><div class="nr">Frage 5</div><div class="text">Findest du es richtig, dass es in Deutschland Nährwertangaben auf jeder Lebensmittelverpackung gibt — oder ist das übertrieben?</div></div>
+  </div>
 </section>
 
-<!-- LERNKARTEN -->
-<section class="section" data-section="1">
-<h2 class="section-title">Wortschatz aus dem Video</h2>
-<p class="section-sub">22 Karten mit Synonymen und Beispiels&auml;tzen aus dem Video-Kontext. Erst denken, dann tippen!</p>
-<div class="flip" id="flip">
-<div class="flip-inner">
-<div class="flip-side front">
-<div class="flip-emoji" id="flipEmoji">&#129489;</div>
-<div class="flip-word" id="flipWord">schlank</div>
-<div class="flip-badge" id="flipBadge">K&ouml;rper</div>
-<div class="flip-syn" id="flipSyn">Synonyme: d&uuml;nn, schmal, sportlich</div>
-<div class="flip-prompt">Was bedeutet das? <br>(zum Umdrehen tippen)</div>
-</div>
-<div class="flip-side back">
-<div class="flip-rule" id="flipRule">slim / slender &mdash; nicht dick</div>
-<div class="flip-ex" id="flipEx">&bdquo;Tokio hat die wenigsten &Uuml;bergewichtigen &mdash; alle sind <strong>schlank</strong>.&ldquo;</div>
-</div>
-</div>
-</div>
-<div class="lk-nav"><button class="lk-btn" id="lkPrev">&larr;</button><span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">22</span></span><button class="lk-btn" id="lkNext">&rarr;</button></div>
-<button class="lk-shuffle" id="lkShuffle">&#128256; Mischen</button>
+<section id="timecodes">
+  <h2><span class="ico">⏱️</span>Worauf du beim Schauen achten kannst</h2>
+  <p class="sub">Markierte Stellen im Video, die wir später besprechen.</p>
+  <div class="timecodes">
+    <div class="tc">00:00–01:00</div><div class="descr">Einstieg: Maike kommt in Tokio an. Welche ersten Eindrücke nennt sie?</div>
+    <div class="tc">01:00–02:30</div><div class="descr">Essgewohnheiten der Japaner — wie wird gegessen, wie viel, wie oft?</div>
+    <div class="tc">02:30–04:00</div><div class="descr">Portionsgrößen + Lebensmittel-Beispiele. Was fällt dir auf?</div>
+    <div class="tc">04:00–05:30</div><div class="descr">Gesellschaftliche Normen rund ums Essen — was ist erlaubt, was nicht?</div>
+    <div class="tc">05:30–07:00</div><div class="descr">Maikes Fazit + die zentrale Botschaft der Reportage</div>
+  </div>
+  <div class="tip">
+    <strong>Hinweis:</strong> Notiere dir während des Schauens <strong>3 Sätze</strong>, die dich besonders überrascht oder geärgert haben — die brauchen wir gleich.
+  </div>
 </section>
 
-<!-- QUIZ -->
-<section class="section" data-section="2">
-<h2 class="section-title">Quiz: <em style="font-style:italic;">Hast du gut zugeschaut?</em></h2>
-<p class="section-sub">14 Fragen zum Video &mdash; Verst&auml;ndnis, Wortschatz und Interpretation.</p>
-
-<div class="quiz"><div class="quiz-q">Wohin reist die Reporterin Maike in der Galileo-Reportage?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Nach Kyoto</span><span class="quiz-chip">Nach Tokio</span><span class="quiz-chip">Nach Osaka</span></div><div class="quiz-explain">Tokio ist die Hauptstadt Japans und Schauplatz der ganzen Reportage.</div></div>
-
-<div class="quiz"><div class="quiz-q">Welcher Aspekt &uuml;berrascht die Reporterin am meisten beim japanischen Fr&uuml;hst&uuml;ck?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Es gibt viel Kaffee</span><span class="quiz-chip">Alles ist s&uuml;&szlig;</span><span class="quiz-chip">Es gibt Reis, Suppe und Fisch &mdash; kein Brot</span></div><div class="quiz-explain">Das japanische Fr&uuml;hst&uuml;ck unterscheidet sich radikal vom deutschen &mdash; warm statt kalt, herzhaft statt s&uuml;&szlig;.</div></div>
-
-<div class="quiz"><div class="quiz-q">Was bedeutet das japanische Prinzip &bdquo;Hara hachi bu&ldquo;?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Immer Reis essen</span><span class="quiz-chip">Nur zu 80&nbsp;% satt essen</span><span class="quiz-chip">Dreimal am Tag essen</span></div><div class="quiz-explain">Eine alte Regel: H&ouml;re mit dem Essen auf, bevor du dich ganz voll f&uuml;hlst!</div></div>
-
-<div class="quiz"><div class="quiz-q">Was ist ein &bdquo;Bento&ldquo;?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Eine japanische Suppe</span><span class="quiz-chip">Ein Gem&uuml;sehobel</span><span class="quiz-chip">Eine Lunchbox mit mehreren kleinen Sch&auml;lchen</span></div><div class="quiz-explain">Bento ist die typische Lunchbox &mdash; bunt, klein portioniert, oft &auml;sthetisch arrangiert.</div></div>
-
-<div class="quiz"><div class="quiz-q">Was sagt das Video &uuml;ber die Lebensmittel&shy;kennzeichnung in Japan?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Es gibt kaum welche &mdash; trotzdem sind die Leute schlank</span><span class="quiz-chip">Es gibt mehr als in Deutschland</span><span class="quiz-chip">Sie ist gesetzlich verboten</span></div><div class="quiz-explain">Das ist das Paradox des Videos: weniger Etiketten, aber weniger &Uuml;bergewicht.</div></div>
-
-<div class="quiz"><div class="quiz-q">Welches Wort ist ein Synonym f&uuml;r &bdquo;schlank&ldquo;?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">dick</span><span class="quiz-chip">m&uuml;de</span><span class="quiz-chip">schmal</span></div><div class="quiz-explain">&bdquo;schlank&ldquo;, &bdquo;d&uuml;nn&ldquo; und &bdquo;schmal&ldquo; bedeuten alle ungef&auml;hr dasselbe &mdash; nicht dick.</div></div>
-
-<div class="quiz"><div class="quiz-q">Was ist das &bdquo;Metabo-Gesetz&ldquo; in Japan?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Ein Verbot von Junkfood</span><span class="quiz-chip">Firmen messen die Taille ihrer Mitarbeiter</span><span class="quiz-chip">Ein Steuerrabatt f&uuml;r Sport</span></div><div class="quiz-explain">Das Gesetz von 2008: Arbeitgeber messen Taillen &mdash; bei &Uuml;berschreitung gibt es Beratung. F&uuml;r westliche Ohren sehr ungewohnt!</div></div>
-
-<div class="quiz"><div class="quiz-q">Was ist eine &bdquo;Industrienation&ldquo;?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Ein hochentwickeltes Land mit starker Wirtschaft</span><span class="quiz-chip">Ein Land mit viel Landwirtschaft</span><span class="quiz-chip">Ein Land mit vielen Bergen</span></div><div class="quiz-explain">Japan, Deutschland, USA, Frankreich &mdash; alles Industrienationen mit hohem Lebensstandard.</div></div>
-
-<div class="quiz"><div class="quiz-q">Welche Rolle spielt Bewegung im japanischen Alltag laut Video?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Alle gehen ins Fitnessstudio</span><span class="quiz-chip">Bewegung ist unwichtig</span><span class="quiz-chip">Viel Laufen, U-Bahn-Treppen, kaum Auto</span></div><div class="quiz-explain">Bewegung passiert &bdquo;nebenbei&ldquo; &mdash; nicht im Studio, sondern im Alltag. Das macht den Unterschied.</div></div>
-
-<div class="quiz"><div class="quiz-q">Wie reagieren die japanischen Passanten auf die Frage, warum sie schlank sind?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Sie wissen es nicht</span><span class="quiz-chip">Sie verweisen auf die Esskultur und Tradition</span><span class="quiz-chip">Sie verweisen auf Medikamente</span></div><div class="quiz-explain">Die O-T&ouml;ne im Video betonen meist: kleine Portionen, Fisch, Gem&uuml;se &mdash; gewachsene Esskultur.</div></div>
-
-<div class="quiz"><div class="quiz-q">Was ist ein &bdquo;Tabu&ldquo;?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">Ein Thema, &uuml;ber das man nicht spricht</span><span class="quiz-chip">Ein japanisches Gericht</span><span class="quiz-chip">Eine Steuer</span></div><div class="quiz-explain">&bdquo;Tabu&ldquo; meint ein gesellschaftlich verbotenes oder peinliches Thema. &Uuml;bergewicht ist in Japan ein gro&szlig;es Tabu.</div></div>
-
-<div class="quiz"><div class="quiz-q">Welche Aussage trifft auf den Reportage-Stil von Galileo am besten zu?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Wissenschaftlich-n&uuml;chtern wie eine Dokumentation</span><span class="quiz-chip">Reine Nachrichten ohne Reporter</span><span class="quiz-chip">Lebendig, etwas sensationell, mit Off-Stimme und O-T&ouml;nen</span></div><div class="quiz-explain">Galileo ist Boulevard-Wissens-TV &mdash; unterhaltsam, vereinfacht, oft mit Klischees, aber lehrreich.</div></div>
-
-<div class="quiz"><div class="quiz-q">Wie viele Komponenten hat ein typisches japanisches Bento etwa?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">2&ndash;3 gro&szlig;e Portionen</span><span class="quiz-chip">5&ndash;7 kleine Sch&auml;lchen</span><span class="quiz-chip">Nur Reis</span></div><div class="quiz-explain">Die Vielfalt auf engem Raum ist typisch &mdash; viele kleine Geschmacksrichtungen statt einer gro&szlig;en Portion.</div></div>
-
-<div class="quiz"><div class="quiz-q">Welche Schlussfolgerung zieht die Reporterin im Video?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Genetik ist der einzige Grund</span><span class="quiz-chip">Japaner essen heimlich Diet-Pillen</span><span class="quiz-chip">Mehrere Faktoren zusammen: Portionen, Bewegung, soziale Norm</span></div><div class="quiz-explain">Maikes Fazit ist nuanciert &mdash; kein einzelner Grund, sondern das Zusammenspiel.</div></div>
-
+<section id="understand" class="understand">
+  <h2><span class="ico">👀</span>Verständnis — was hat das Video gezeigt?</h2>
+  <p class="sub">Inhaltsfragen direkt zur Reportage. Gemeinsam beantworten.</p>
+  <div class="q-list">
+    <div class="q"><div class="nr">Frage 1</div><div class="text">Was war Maikes erster Eindruck, als sie in Tokio angekommen ist?</div></div>
+    <div class="q"><div class="nr">Frage 2</div><div class="text">Welche konkreten Unterschiede beim Essen zwischen Japan und Deutschland nennt die Reportage?</div></div>
+    <div class="q"><div class="nr">Frage 3</div><div class="text">Wie groß sind die Portionen in japanischen Restaurants laut Video — und wie wirkt das auf die Reporterin?</div></div>
+    <div class="q"><div class="nr">Frage 4</div><div class="text">Welche Rolle spielen Reis, Fisch und Gemüse im japanischen Alltag?</div></div>
+    <div class="q"><div class="nr">Frage 5</div><div class="text">Warum gibt es in Japan keine Nährwertkennzeichnungen auf den Lebensmittel-Verpackungen — und welche Folgen hat das laut Reportage?</div></div>
+    <div class="q"><div class="nr">Frage 6</div><div class="text">Wer wird im Video interviewt? Welche Berufe oder Personengruppen kommen zu Wort?</div></div>
+    <div class="q"><div class="nr">Frage 7</div><div class="text">Was ist die Hauptaussage am Ende der Reportage? Mit welchem Satz oder Bild schließt das Video?</div></div>
+    <div class="q"><div class="nr">Frage 8</div><div class="text">Welche Statistik oder Zahl ist dir aus dem Video besonders im Gedächtnis geblieben?</div></div>
+  </div>
 </section>
 
-<!-- LUECKENTEXT -->
-<section class="section" data-section="3">
-<h2 class="section-title">L&uuml;ckentext: <em style="font-style:italic;">Zusammenfassung des Videos</em></h2>
-<p class="section-sub">F&uuml;ll die L&uuml;cken &mdash; und am Ende hast du die Hauptaussagen der Reportage in eigenen S&auml;tzen!</p>
-<div class="gap-text" id="gapText">
-<div class="gap-line">1. Galileo-Reporterin Maike reist nach <select data-sol="Tokio"><option value="">&hellip;</option><option>Tokio</option><option>Seoul</option><option>Berlin</option></select> &mdash; in eine der gr&ouml;&szlig;ten Megacities der Welt.</div>
-<div class="gap-line">2. Sie m&ouml;chte herausfinden, warum die Japaner so <select data-sol="schlank"><option value="">&hellip;</option><option>schlank</option><option>dick</option><option>m&uuml;de</option></select> sind &mdash; viel d&uuml;nner als Menschen in anderen Industrienationen.</div>
-<div class="gap-line">3. &Uuml;berraschend: In Japan gibt es kaum <select data-sol="Lebensmittelkennzeichnung"><option value="">&hellip;</option><option>Lebensmittelkennzeichnung</option><option>Werbung</option><option>Sport</option></select> wie in Deutschland.</div>
-<div class="gap-line">4. Trotzdem haben die Menschen dort die wenigsten <select data-sol="&Uuml;bergewichtigen"><option value="">&hellip;</option><option>&Uuml;bergewichtigen</option><option>Restaurants</option><option>Schulen</option></select> aller entwickelten L&auml;nder.</div>
-<div class="gap-line">5. Ein typisches Fr&uuml;hst&uuml;ck besteht aus Reis, Fisch und <select data-sol="Misosuppe"><option value="">&hellip;</option><option>Misosuppe</option><option>Marmelade</option><option>Schokolade</option></select> &mdash; warm und herzhaft.</div>
-<div class="gap-line">6. Die <select data-sol="Portionen"><option value="">&hellip;</option><option>Portionen</option><option>Preise</option><option>Restaurants</option></select> sind klein, daf&uuml;r isst man viele verschiedene Sch&auml;lchen.</div>
-<div class="gap-line">7. Ein wichtiges Prinzip hei&szlig;t &bdquo;Hara hachi bu&ldquo; &mdash; aufh&ouml;ren, wenn man zu 80&nbsp;% <select data-sol="satt"><option value="">&hellip;</option><option>satt</option><option>m&uuml;de</option><option>frisch</option></select> ist.</div>
-<div class="gap-line">8. Im Alltag bewegen sich die Japaner viel &mdash; sie laufen zur U-Bahn statt mit dem <select data-sol="Auto"><option value="">&hellip;</option><option>Auto</option><option>Fahrrad</option><option>Zug</option></select> zu fahren.</div>
-<div class="gap-line">9. Eine wichtige Rolle spielt die <select data-sol="Disziplin"><option value="">&hellip;</option><option>Disziplin</option><option>Faulheit</option><option>Romantik</option></select> &mdash; und der gesellschaftliche Druck, schlank zu bleiben.</div>
-<div class="gap-line">10. Das ber&uuml;hmte &bdquo;Metabo-Gesetz&ldquo; erlaubt sogar <select data-sol="Taillenmessungen"><option value="">&hellip;</option><option>Taillenmessungen</option><option>Lohnerh&ouml;hungen</option><option>Streiks</option></select> am Arbeitsplatz.</div>
-<div class="gap-line">11. Am Ende zieht Maike das <select data-sol="Fazit"><option value="">&hellip;</option><option>Fazit</option><option>Spiel</option><option>Geld</option></select>: Es ist die Kombination &mdash; nicht ein einziger Grund.</div>
-<div class="gap-line">12. Das Video stellt damit eine spannende <select data-sol="Frage"><option value="">&hellip;</option><option>Frage</option><option>Antwort</option><option>L&uuml;ge</option></select>: Was k&ouml;nnten wir Westeurop&auml;er von Japan lernen?</div>
-<div class="gap-actions"><button class="btn-secondary" id="gapReset">Neu</button><button class="btn-primary" id="gapCheck">&Uuml;berpr&uuml;fen</button></div>
-</div>
-<div class="tip" id="gapScore" style="display:none;"></div>
+<section id="analyze" class="analyze">
+  <h2><span class="ico">🧠</span>Analyse — wie wird erzählt?</h2>
+  <p class="sub">Nicht nur was, sondern WIE das Video erzählt. Fragen zur Reporterin, Bildern, Stil.</p>
+  <div class="q-list">
+    <div class="q"><div class="nr">Frage 1</div><div class="text">Wie tritt Maike, die Reporterin, im Video auf? Eher neugierig, kritisch, naiv, distanziert — wie würdest du ihren Stil beschreiben?</div></div>
+    <div class="q"><div class="nr">Frage 2</div><div class="text">Welche Bilder bleiben dir besonders im Kopf — und welche Emotionen sollen sie auslösen?</div></div>
+    <div class="q"><div class="nr">Frage 3</div><div class="text">Wird das japanische Essen romantisiert? Wo siehst du das im Video — oder findest du, es ist sachlich erzählt?</div></div>
+    <div class="q"><div class="nr">Frage 4</div><div class="text">Welche Stimme kommt im Off vor (die Sprecherstimme)? Welchen Tonfall hat sie — und was bewirkt dieser Ton bei dir?</div></div>
+    <div class="q"><div class="nr">Frage 5</div><div class="text">Welche Argumente bringt die Reportage — und welche Belege liefert sie für ihre Aussagen?</div></div>
+    <div class="q"><div class="nr">Frage 6</div><div class="text">Was wird im Video <em>nicht</em> gesagt? Welche Aspekte fehlen, die du erwartet hättest?</div></div>
+    <div class="q"><div class="nr">Frage 7</div><div class="text">Welche Klischees oder Stereotypen über Japan bedient das Video — bewusst oder unbewusst?</div></div>
+    <div class="q"><div class="nr">Frage 8</div><div class="text">Wenn du dieses Video mit einem Wort beschreiben müsstest: welches Adjektiv passt — und warum?</div></div>
+  </div>
 </section>
 
-<!-- ZUORDNEN -->
-<section class="section" data-section="4">
-<h2 class="section-title">Begriff &harr; <em style="font-style:italic;">Erkl&auml;rung</em> zuordnen</h2>
-<p class="section-sub">10 Paare &mdash; welcher Video-Begriff geh&ouml;rt zu welcher Definition?</p>
-<div class="match-stage"><div class="match-cols"><div class="match-col"><h4>Begriff</h4><div class="match-list" id="leftCol"></div></div><div class="match-col"><h4>Erkl&auml;rung</h4><div class="match-list" id="rightCol"></div></div></div><button class="btn-secondary match-restart" id="matchRestart">&#128260; Nochmal</button></div>
+<section id="discuss" class="discuss">
+  <h2><span class="ico">💬</span>Diskussion — eure Meinung</h2>
+  <p class="sub">Offene Fragen. Es gibt keine richtige Antwort.</p>
+  <div class="q-list">
+    <div class="q"><div class="nr">Frage 1</div><div class="text">Was hat dich am Video am meisten überrascht — und was hat dich vielleicht geärgert?</div></div>
+    <div class="q"><div class="nr">Frage 2</div><div class="text">Glaubst du, dass die Reportage ein realistisches Bild von Japan zeichnet — oder ist sie zu einseitig?</div></div>
+    <div class="q"><div class="nr">Frage 3</div><div class="text">Was könnten wir in Deutschland von der japanischen Esskultur lernen — und was sollte man besser <em>nicht</em> übernehmen?</div></div>
+    <div class="q"><div class="nr">Frage 4</div><div class="text">Würdest du dich selbst „gesund ernähren"? Was bedeutet das für dich konkret im Alltag?</div></div>
+    <div class="q"><div class="nr">Frage 5</div><div class="text">Hast du schon mal versucht, dauerhaft Gewohnheiten zu ändern? Was hat funktioniert, was nicht?</div></div>
+    <div class="q"><div class="nr">Frage 6</div><div class="text">Wie groß ist der Einfluss der Gesellschaft auf das, was und wie wir essen — verglichen mit unserer freien Entscheidung?</div></div>
+    <div class="q"><div class="nr">Frage 7</div><div class="text">Wenn du eine Reportage über die <em>deutsche</em> Esskultur drehen würdest: welche 3 Szenen würdest du auf jeden Fall zeigen?</div></div>
+    <div class="q"><div class="nr">Frage 8</div><div class="text">Findest du es problematisch, wenn fremde Kulturen in deutschen Medien immer „idealisiert" werden? Wo fängt das an, wo hört es auf?</div></div>
+  </div>
 </section>
 
-<!-- SPRECHEN -->
-<section class="section" data-section="5">
-<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht\'s!</em></h2>
-<p class="section-sub">24 Karten zum Video, zur eigenen Ern&auml;hrung und zum Kulturvergleich.</p>
-<div class="speak-card" id="speakCard">
-<div class="speak-emoji">&#127906;</div><div class="speak-cat">Sprechclub-Karte</div>
-<div class="speak-q">Tippe unten auf &bdquo;Neue Karte&ldquo; und leg los!</div>
-</div>
-<div class="speak-controls"><button class="btn-primary" id="speakNew">&#127922; Neue Karte</button></div>
+<section id="debate" class="debate">
+  <h2><span class="ico">⚖️</span>Debatten-Thesen — wer ist Pro, wer ist Contra?</h2>
+  <p class="sub">Jede These bekommt zwei Seiten. Wählt eine — und verteidigt sie.</p>
 
-<h2 class="section-title">5 Rollenspiele <em style="font-style:italic;">mit voller Hilfestellung</em></h2>
-<p class="section-sub">Situation + Rolle + Schl&uuml;ssel-Vokabular + Beispiel-Phrasen + Tipp + Antwort-Struktur. Mindestens 8 S&auml;tze pro Person!</p>
+  <div class="these">
+    <div class="label">These 1</div>
+    <div class="statement">„Lebensmittelkennzeichnungen sind überflüssig — Japan beweist es."</div>
+    <div class="sides">
+      <div class="these-side pro"><b>✓ Pro</b>Vertrauen statt Bevormundung · Eigenverantwortung · keine Reizüberflutung im Supermarkt · Tradition zählt mehr als Statistik</div>
+      <div class="these-side con"><b>✗ Contra</b>Allergiker brauchen das · Transparenz schützt · Verbraucherrecht · ohne Kennzeichnung mehr Übergewichtige</div>
+    </div>
+  </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 1 &middot; Talkshow</div>
-<div class="role-title">&#128250; Sollten wir wie die Japaner essen?</div>
-<div class="role-situation">Du bist Gast in einer Talkshow zum Thema &bdquo;Ern&auml;hrung im internationalen Vergleich&ldquo;. Die Moderatorin hat das Galileo-Video gezeigt und fragt: &bdquo;W&auml;re das ein Modell f&uuml;r Deutschland?&ldquo;</div>
-<div class="role-role"><strong>&#127919; Deine Rolle:</strong> Du argumentierst entweder PRO (japanisches Modell &uuml;bernehmen) oder CONTRA (nicht 1:1 &uuml;bertragbar). Bleib h&ouml;flich, aber klar.</div>
-<div class="role-block role-vocab"><strong>&#128273; Schl&uuml;ssel-Vokabular (nutze 5-8)</strong>
-&uuml;bertragbar &middot; das Modell &middot; die Ern&auml;hrungs&shy;gewohnheiten &middot; die kulturelle Pr&auml;gung &middot; idealisieren &middot; pragmatisch &middot; meiner Meinung nach &middot; einerseits &mdash; andererseits &middot; das mag stimmen, aber &middot; gewachsene Tradition &middot; westlicher Lebensstil</div>
-<div class="role-block role-phrases"><strong>&#128172; Beispiel-Phrasen</strong>
-<ul>
-<li>&bdquo;Aus meiner Sicht zeigt das Video sehr eindrucksvoll, dass&hellip;&ldquo;</li>
-<li>&bdquo;Einerseits ist das japanische Modell faszinierend, andererseits&hellip;&ldquo;</li>
-<li>&bdquo;Ich halte es f&uuml;r problematisch, eine ganze Kultur einfach zu kopieren.&ldquo;</li>
-<li>&bdquo;Was wir aber definitiv &uuml;bernehmen k&ouml;nnten, w&auml;re&hellip;&ldquo;</li>
-<li>&bdquo;Das mag in Tokio funktionieren, aber in Berlin&hellip;&ldquo;</li>
-</ul></div>
-<div class="role-block role-tip"><strong>&#128161; Strategie</strong>
-Trenne immer zwischen &bdquo;Was ist faszinierend?&ldquo; und &bdquo;Was ist realistisch?&ldquo;. Eine differenzierte Position &uuml;berzeugt mehr als ein einfaches Ja oder Nein!</div>
-<div class="role-block role-answer"><strong>&#9989; Was eine gute Antwort enth&auml;lt</strong>
-Bezug zum Video + eigene Position + min. ein Beispiel + Einschr&auml;nkung oder Gegenargument anerkennen + konkrete Schlussfolgerung.</div>
-</div>
+  <div class="these">
+    <div class="label">These 2</div>
+    <div class="statement">„Übergewicht ist eine Frage der individuellen Disziplin — nicht der Gesellschaft."</div>
+    <div class="sides">
+      <div class="these-side pro"><b>✓ Pro</b>Jeder entscheidet selbst was er isst · Selbstverantwortung · Ausreden helfen niemandem · auch in Japan gibt es Übergewichtige</div>
+      <div class="these-side con"><b>✗ Contra</b>Werbung · Lebensmittel-Industrie · Stress · Armut · Esskultur prägt schon Kinder · soziale Determinanten</div>
+    </div>
+  </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 2 &middot; Experten-Interview</div>
-<div class="role-title">&#129529; Interview mit einem Ern&auml;hrungs&shy;experten</div>
-<div class="role-situation">Du bist Journalist:in und interviewst eine:n Ern&auml;hrungs&shy;wissenschaftler:in &uuml;ber das Galileo-Video. Ziel: Was an dem Video hat wissenschaftliche Substanz &mdash; und was ist Klischee?</div>
-<div class="role-role"><strong>&#127919; Deine Rolle:</strong> Stelle kritische, aber respektvolle Fragen. Hake nach, wenn etwas vage bleibt.</div>
-<div class="role-block role-vocab"><strong>&#128273; Schl&uuml;ssel-Vokabular</strong>
-die Studie &middot; belegen &middot; widerlegen &middot; die These &middot; vereinfacht dargestellt &middot; statistisch signifikant &middot; verallgemeinern &middot; differenzieren &middot; der Einflussfaktor &middot; die Korrelation &middot; die Ursache &middot; der Zusammenhang</div>
-<div class="role-block role-phrases"><strong>&#128172; Beispiel-Phrasen</strong>
-<ul>
-<li>&bdquo;Welche der Aussagen im Video sind aus Ihrer Sicht wissenschaftlich belegt?&ldquo;</li>
-<li>&bdquo;Wie bewerten Sie die Behauptung, dass&hellip;?&ldquo;</li>
-<li>&bdquo;Wo sehen Sie eine Verk&uuml;rzung oder ein Klischee?&ldquo;</li>
-<li>&bdquo;Spielen genetische Faktoren auch eine Rolle?&ldquo;</li>
-<li>&bdquo;Was sollten wir konkret &uuml;bernehmen &mdash; was nicht?&ldquo;</li>
-</ul></div>
-<div class="role-block role-tip"><strong>&#128161; Strategie</strong>
-Gute Interviewer h&ouml;ren mehr zu, als sie reden. Stelle eine klare Frage, dann <em>schweige</em> &mdash; lass den Experten antworten und hak nach!</div>
-<div class="role-block role-answer"><strong>&#9989; Was eine gute Antwort enth&auml;lt</strong>
-Konkreter Bezug auf eine Szene aus dem Video + offene W-Frage + Nachfrage + Bitte um Beispiel oder Studie.</div>
-</div>
+  <div class="these">
+    <div class="label">These 3</div>
+    <div class="statement">„Reportagen wie diese romantisieren fremde Kulturen unkritisch."</div>
+    <div class="sides">
+      <div class="these-side pro"><b>✓ Pro</b>Klischees · Auslassungen · Wohlstandsbiotop wird gezeigt · Probleme verschwiegen · Tourismus-Werbung</div>
+      <div class="these-side con"><b>✗ Contra</b>Inspiration ist wichtig · positives Beispiel · keine Vorwürfe · Aufmerksamkeit für gute Ansätze</div>
+    </div>
+  </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 3 &middot; Tourist:in in Tokio</div>
-<div class="role-title">&#127471;&#127477; Wo finde ich typisches Essen?</div>
-<div class="role-situation">Du bist Tourist:in in Tokio und willst nicht zur McDonald&apos;s-Filiale gehen, sondern echtes japanisches Essen probieren. Du sprichst eine Einheimische auf der Stra&szlig;e an.</div>
-<div class="role-role"><strong>&#127919; Deine Rolle:</strong> Du bist freundlich, etwas unsicher, willst klar kommunizieren. Du sprichst Deutsch (im Rollenspiel).</div>
-<div class="role-block role-vocab"><strong>&#128273; Schl&uuml;ssel-Vokabular</strong>
-empfehlen &middot; in der N&auml;he &middot; authentisch &middot; traditionell &middot; sich anstellen &middot; reservieren &middot; die Spezialit&auml;t &middot; preiswert &middot; touristisch &middot; vom Einheimischen &middot; entschuldigen Sie bitte &middot; d&uuml;rfte ich Sie fragen</div>
-<div class="role-block role-phrases"><strong>&#128172; Beispiel-Phrasen</strong>
-<ul>
-<li>&bdquo;Entschuldigen Sie bitte, d&uuml;rfte ich Sie kurz etwas fragen?&ldquo;</li>
-<li>&bdquo;Ich suche ein authentisches Restaurant &mdash; wo gehen Sie selbst hin?&ldquo;</li>
-<li>&bdquo;Was w&uuml;rden Sie als typisches Mittagessen empfehlen?&ldquo;</li>
-<li>&bdquo;Ist es teuer &mdash; oder eher preiswert?&ldquo;</li>
-<li>&bdquo;Muss man reservieren oder kann man einfach reingehen?&ldquo;</li>
-</ul></div>
-<div class="role-block role-tip"><strong>&#128161; Strategie</strong>
-Beginne immer mit einer Entschuldigung &mdash; das ist h&ouml;flich. Nutze den Konjunktiv 2 (&bdquo;k&ouml;nnten Sie&hellip;&ldquo;, &bdquo;d&uuml;rfte ich&hellip;&ldquo;) &mdash; das ist sehr h&ouml;flich.</div>
-<div class="role-block role-answer"><strong>&#9989; Was eine gute Antwort enth&auml;lt</strong>
-Begr&uuml;&szlig;ung + Anliegen klar formuliert + Nachfrage zu Preis/Reservierung + Dank.</div>
-</div>
+  <div class="these">
+    <div class="label">These 4</div>
+    <div class="statement">„Die deutsche Politik sollte Zucker und Fett höher besteuern."</div>
+    <div class="sides">
+      <div class="these-side pro"><b>✓ Pro</b>Lenkungswirkung · Gesundheitskosten reduzieren · andere Länder zeigen Erfolg · gerechte Belastung</div>
+      <div class="these-side con"><b>✗ Contra</b>Bevormundung · trifft sozial Schwache am härtesten · Schwarzmarkt · Eingriff in Markt</div>
+    </div>
+  </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 4 &middot; Video erkl&auml;ren</div>
-<div class="role-title">&#128172; Erkl&auml;r das Video in 2 Minuten</div>
-<div class="role-situation">Du triffst eine Freundin im Caf&eacute; und erz&auml;hlst ihr von der Galileo-Reportage, die du gerade gesehen hast. Sie hat noch nie davon geh&ouml;rt &mdash; in 2 Minuten muss sie wissen, was Maike entdeckt hat.</div>
-<div class="role-role"><strong>&#127919; Deine Rolle:</strong> Pr&auml;zise zusammenfassen, lebendig erz&auml;hlen, das Wichtigste hervorheben.</div>
-<div class="role-block role-vocab"><strong>&#128273; Schl&uuml;ssel-Vokabular</strong>
-es geht um &middot; im Wesentlichen &middot; auf den Punkt gebracht &middot; die Kernaussage &middot; einerseits &middot; andererseits &middot; was mich besonders &uuml;berrascht hat &middot; ich h&auml;tte nicht gedacht &middot; bemerkenswert &middot; zusammengefasst</div>
-<div class="role-block role-phrases"><strong>&#128172; Beispiel-Phrasen</strong>
-<ul>
-<li>&bdquo;In der Doku geht es um&hellip;&ldquo;</li>
-<li>&bdquo;Die Reporterin reist nach Tokio, um herauszufinden&hellip;&ldquo;</li>
-<li>&bdquo;Was mich am meisten erstaunt hat, war&hellip;&ldquo;</li>
-<li>&bdquo;Auf den Punkt gebracht: Es liegt nicht an einem Faktor allein&hellip;&ldquo;</li>
-<li>&bdquo;Du solltest dir das wirklich mal anschauen &mdash; ist nur 10 Minuten!&ldquo;</li>
-</ul></div>
-<div class="role-block role-tip"><strong>&#128161; Strategie</strong>
-Strukturiere deine Zusammenfassung: 1) Wer reist wohin? 2) Was findet sie heraus? 3) Was ist die Hauptaussage? 4) Was war das &Uuml;berraschendste? Maximal 4 Punkte!</div>
-<div class="role-block role-answer"><strong>&#9989; Was eine gute Antwort enth&auml;lt</strong>
-Klare Einleitung + max. 3 Hauptpunkte + eigene Reaktion + Empfehlung am Ende.</div>
-</div>
+  <div class="these">
+    <div class="label">These 5</div>
+    <div class="statement">„Restaurants in Deutschland sollten ihre Portionen halbieren."</div>
+    <div class="sides">
+      <div class="these-side pro"><b>✓ Pro</b>Lebensmittelverschwendung · Gesundheit · niedriger Preis · echtes Sattgefühl · Italien macht es vor</div>
+      <div class="these-side con"><b>✗ Contra</b>Gäste erwarten viel fürs Geld · kulturell verankert · Geschmack vor Menge · funktioniert nicht</div>
+    </div>
+  </div>
 
-<div class="role">
-<div class="role-tag">Rollenspiel 5 &middot; Reporter:in-Spiel</div>
-<div class="role-title">&#127908; Dreh deine eigene Mini-Reportage</div>
-<div class="role-situation">Schl&uuml;pf in Maikes Rolle und &bdquo;dreh&ldquo; eine 3-Minuten-Reportage &uuml;ber die Esskultur in DEINER Stadt oder DEINEM Heimatland. Tu so, als h&auml;ttest du eine Kamera dabei.</div>
-<div class="role-role"><strong>&#127919; Deine Rolle:</strong> Galileo-Reporter:in &mdash; lebendig, fragend, ein bisschen &uuml;bertrieben. Sprich direkt in die imagin&auml;re Kamera!</div>
-<div class="role-block role-vocab"><strong>&#128273; Schl&uuml;ssel-Vokabular</strong>
-willkommen in &middot; ich befinde mich gerade in &middot; bei mir steht &middot; was f&auml;llt sofort auf &middot; typisch f&uuml;r &middot; im Gegensatz zu &middot; der erste Eindruck &middot; sprechen wir mit &middot; ein Blick auf &middot; Fazit der Reise</div>
-<div class="role-block role-phrases"><strong>&#128172; Beispiel-Phrasen</strong>
-<ul>
-<li>&bdquo;Hallo und willkommen in [Stadt] &mdash; einer Stadt, in der&hellip;&ldquo;</li>
-<li>&bdquo;Ich befinde mich gerade auf einem Markt, und schaut mal, was es hier gibt!&ldquo;</li>
-<li>&bdquo;Was sofort auff&auml;llt: Die Menschen hier essen&hellip;&ldquo;</li>
-<li>&bdquo;Sprechen wir mit einem Einheimischen &mdash; Entschuldigung, darf ich fragen&hellip;?&ldquo;</li>
-<li>&bdquo;Fazit meiner Reise: Diese Stadt zeigt eindrucksvoll, dass&hellip;&ldquo;</li>
-</ul></div>
-<div class="role-block role-tip"><strong>&#128161; Strategie</strong>
-Reportage-Sprache lebt von <em>Lebendigkeit</em>! Nutze rhetorische Fragen (&bdquo;Wie kann das sein?&ldquo;), kurze S&auml;tze, direkte Anrede an den Zuschauer (&bdquo;Schauen Sie mal&hellip;&ldquo;).</div>
-<div class="role-block role-answer"><strong>&#9989; Was eine gute Antwort enth&auml;lt</strong>
-Begr&uuml;&szlig;ung + Ortsbeschreibung + 2-3 Beobachtungen + ein O-Ton (selbst gespielt!) + Fazit. Mindestens 12 S&auml;tze!</div>
-</div>
-
-<h2 class="section-title">6 Debatten-Thesen <em style="font-style:italic;">(B2/C1)</em></h2>
-<p class="section-sub">Provokante Aussagen zum Video &mdash; je 1 Pro- und 1 Contra-Position vorbereiten!</p>
-
-<div class="debate">
-<span class="debate-num">These 1</span>
-<div class="debate-these">&bdquo;Lebensmittel&shy;kennzeichnung ist &uuml;berfl&uuml;ssig &mdash; Japan beweist es.&ldquo;</div>
-<div class="debate-cols">
-<div class="debate-col debate-pro"><strong>&#128077; Pro</strong>
-<div class="debate-kw">eigenverantwortlich &middot; Kultur statt B&uuml;rokratie &middot; intuitiv &middot; gesunder Menschen&shy;verstand &middot; mehr Bevormundung</div>
-<div class="debate-ex">&bdquo;Japan zeigt: Wenn die Esskultur stimmt, brauchen wir keine Ampel auf der Packung.&ldquo;</div></div>
-<div class="debate-col debate-con"><strong>&#128078; Contra</strong>
-<div class="debate-kw">Verbraucher&shy;schutz &middot; Transparenz &middot; Informations&shy;recht &middot; verarbeitete Lebensmittel &middot; nicht vergleichbar</div>
-<div class="debate-ex">&bdquo;Wir essen in Deutschland viel mehr Fertigprodukte &mdash; ohne Etikett w&auml;ren wir blind.&ldquo;</div></div>
-</div></div>
-
-<div class="debate">
-<span class="debate-num">These 2</span>
-<div class="debate-these">&bdquo;Westliche L&auml;nder sind selbst schuld an ihrer &Uuml;bergewichts-Epidemie.&ldquo;</div>
-<div class="debate-cols">
-<div class="debate-col debate-pro"><strong>&#128077; Pro</strong>
-<div class="debate-kw">Eigenverantwortung &middot; Bequemlichkeit &middot; Convenience-Food &middot; Bewegungs&shy;mangel &middot; mangelnde Disziplin</div>
-<div class="debate-ex">&bdquo;Niemand zwingt uns, Chips zu essen &mdash; wir entscheiden uns daf&uuml;r.&ldquo;</div></div>
-<div class="debate-col debate-con"><strong>&#128078; Contra</strong>
-<div class="debate-kw">strukturelle Faktoren &middot; Lebensmittel&shy;industrie &middot; soziale Ungleichheit &middot; Zeitdruck &middot; Marketing</div>
-<div class="debate-ex">&bdquo;Wer arm ist und 60 Stunden arbeitet, kauft kein Bio-Gem&uuml;se &mdash; das ist kein moralisches Versagen.&ldquo;</div></div>
-</div></div>
-
-<div class="debate">
-<span class="debate-num">These 3</span>
-<div class="debate-these">&bdquo;Die japanische Esskultur ist nicht &uuml;bertragbar auf Europa.&ldquo;</div>
-<div class="debate-cols">
-<div class="debate-col debate-pro"><strong>&#128077; Pro</strong>
-<div class="debate-kw">gewachsene Tradition &middot; kulturelle Pr&auml;gung &middot; geografische Lage &middot; andere Geschmackspr&auml;ferenzen &middot; jahrhundertealte Gewohnheit</div>
-<div class="debate-ex">&bdquo;Wir k&ouml;nnen nicht einfach Reis und Misosuppe einf&uuml;hren &mdash; das ist eine fremde Kultur.&ldquo;</div></div>
-<div class="debate-col debate-con"><strong>&#128078; Contra</strong>
-<div class="debate-kw">universelle Prinzipien &middot; kleine Portionen &middot; weniger Zucker &middot; Bewegung &middot; bewusstes Essen</div>
-<div class="debate-ex">&bdquo;Die Prinzipien &mdash; klein, frisch, bewusst &mdash; funktionieren &uuml;berall, egal mit welchen Zutaten.&ldquo;</div></div>
-</div></div>
-
-<div class="debate">
-<span class="debate-num">These 4</span>
-<div class="debate-these">&bdquo;Solche Reportagen romantisieren fremde Kulturen unkritisch.&ldquo;</div>
-<div class="debate-cols">
-<div class="debate-col debate-pro"><strong>&#128077; Pro</strong>
-<div class="debate-kw">Klischee &middot; vereinfacht &middot; Reporter-Blick &middot; Exotisierung &middot; einseitig &middot; Probleme ausgeblendet</div>
-<div class="debate-ex">&bdquo;Maike zeigt nur das Sch&ouml;ne &mdash; aber Japan hat auch hohe Suizidraten und Stress-Probleme.&ldquo;</div></div>
-<div class="debate-col debate-con"><strong>&#128078; Contra</strong>
-<div class="debate-kw">Inspiration &middot; Perspektivenwechsel &middot; Lerneffekt &middot; positive Beispiele &middot; Reportage-Format</div>
-<div class="debate-ex">&bdquo;Eine 10-Minuten-Reportage muss vereinfachen &mdash; sonst schaut niemand. Hauptsache, sie regt zum Nachdenken an.&ldquo;</div></div>
-</div></div>
-
-<div class="debate">
-<span class="debate-num">These 5</span>
-<div class="debate-these">&bdquo;Disziplin beim Essen ist der wichtigste Faktor f&uuml;r Gesundheit.&ldquo;</div>
-<div class="debate-cols">
-<div class="debate-col debate-pro"><strong>&#128077; Pro</strong>
-<div class="debate-kw">Selbstkontrolle &middot; bewusstes Essen &middot; Ma&szlig;halten &middot; Verzicht &middot; Routine &middot; Hara hachi bu</div>
-<div class="debate-ex">&bdquo;Wer immer bei 80&nbsp;% S&auml;ttigung aufh&ouml;rt, wird nie &uuml;bergewichtig &mdash; egal was er isst.&ldquo;</div></div>
-<div class="debate-col debate-con"><strong>&#128078; Contra</strong>
-<div class="debate-kw">Genetik &middot; Schlaf &middot; Stress &middot; soziales Umfeld &middot; Lebensmittelqualit&auml;t &middot; Bewegung</div>
-<div class="debate-ex">&bdquo;Gesundheit ist multifaktoriell &mdash; Disziplin allein reicht nicht, wenn der Schlaf fehlt oder der Stress riesig ist.&ldquo;</div></div>
-</div></div>
-
-<div class="debate">
-<span class="debate-num">These 6</span>
-<div class="debate-these">&bdquo;Restaurants in Deutschland sollten Portionen halbieren.&ldquo;</div>
-<div class="debate-cols">
-<div class="debate-col debate-pro"><strong>&#128077; Pro</strong>
-<div class="debate-kw">Lebensmittel&shy;verschwendung &middot; gesundheits&shy;f&ouml;rdernd &middot; Vorbild-Effekt &middot; Qualit&auml;t statt Quantit&auml;t &middot; weniger Abfall</div>
-<div class="debate-ex">&bdquo;In Deutschland landen 60&nbsp;% jedes Tellers im M&uuml;ll oder im Bauch &mdash; beides ist Verschwendung.&ldquo;</div></div>
-<div class="debate-col debate-con"><strong>&#128078; Contra</strong>
-<div class="debate-kw">Preis-Leistung &middot; Konsumenten&shy;wunsch &middot; Markt entscheidet &middot; Bevormundung &middot; halbe Portion = halber Spa&szlig;</div>
-<div class="debate-ex">&bdquo;Wer satt werden will, soll satt werden d&uuml;rfen &mdash; das Restaurant ist kein Erziehungsinstitut.&ldquo;</div></div>
-</div></div>
-
-<h2 class="section-title">&#127919; Mission der Woche</h2>
-<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
-<strong>Mission:</strong> Schau das Video diese Woche <u>noch einmal allein</u> &mdash; in Ruhe, ohne Ablenkung. Schreibe mir dann 3 S&auml;tze (mindestens 50 W&ouml;rter insgesamt) per Sprachnachricht oder Text:<br><br>
-&#10003; <em>Was hast du gelernt?</em> &mdash; eine konkrete Sache aus dem Video.<br>
-&#10003; <em>Was glaubst du nicht?</em> &mdash; wo hat die Reporterin vielleicht &uuml;bertrieben?<br>
-&#10003; <em>Was ist deine eigene Erfahrung?</em> &mdash; wie isst du selbst, was w&uuml;rdest du &auml;ndern?<br><br>
-&#127942; <strong>Bonus:</strong> Probiere diese Woche EINEN japanischen Tipp aus (z.B. &bdquo;Hara hachi bu&ldquo; oder kleine Sch&auml;lchen statt gro&szlig;er Teller). Berichte beim n&auml;chsten Treffen!
-</div>
+  <div class="these">
+    <div class="label">These 6</div>
+    <div class="statement">„Solche Trend-Reportagen ändern eigentlich nichts — sie sind nur Unterhaltung."</div>
+    <div class="sides">
+      <div class="these-side pro"><b>✓ Pro</b>7 Mio Aufrufe · trotzdem mehr Übergewicht in DE · TV-Konsum ≠ Verhaltensänderung · Aufmerksamkeitsökonomie</div>
+      <div class="these-side con"><b>✗ Contra</b>Bewusstsein schaffen ist erster Schritt · Vorbilder wirken · auch kleine Impulse zählen · Bildung beginnt mit Information</div>
+    </div>
+  </div>
 </section>
 
-<!-- UMGANGSSPRACHE -->
-<section class="section" data-section="6">
-<h2 class="section-title">&#128172; So reden Deutsche <em style="font-style:italic;">&uuml;ber das Video</em></h2>
-<p class="section-sub">5 echte WhatsApp-Chats &mdash; vom ersten &bdquo;hast du gesehen?&ldquo; bis zur Selbst-Reflexion am n&auml;chsten Morgen.</p>
-
-<div class="tip">&#128172; <strong>Beobachte:</strong> Beim Reden &uuml;ber Videos ist die Sprache <u>oft sehr salopp</u> &mdash; viele Anglizismen (Doku, Content, random), Tippfehler, Abk&uuml;rzungen. Aber bei Reflexion oder Streit kommen pl&ouml;tzlich <em>vollst&auml;ndige S&auml;tze</em> zur&uuml;ck!</div>
-
-<div class="uss-grid">
-
-<div class="chat">
-<div class="chat-head"><div class="av">&#129321;</div><div><div class="name">Anna &mdash; erste Reaktion</div><div class="stat">tippt &hellip;</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Alter, hast du das <strong>Galileo-Video</strong> &uuml;ber Japan gesehen?? &#128561;</div></div>
-<div class="chat-msg out"><div class="chat-bubble">N&ouml; welches?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">Warum japaner alle schlank sind. Mega <strong>krass</strong> ehrlich</div></div>
-<div class="chat-msg in"><div class="chat-bubble">7 mio aufrufe in 7 jahren lol</div></div>
-<div class="chat-msg out"><div class="chat-bubble">ka schick mal link</div></div>
-<div class="chat-msg in"><div class="chat-bubble">moment &hellip;</div></div>
-<div class="chat-msg in"><div class="chat-bubble">guck dir das an, du wirst nie wieder ne tk-pizza essen &#128514;</div></div>
-<div class="chat-meaning"><strong>&bdquo;krass&ldquo;</strong> = wahnsinnig/intensiv &middot; <strong>&bdquo;ka&ldquo;</strong> = keine Ahnung &middot; <strong>&bdquo;TK-Pizza&ldquo;</strong> = Tiefk&uuml;hlpizza</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">&#129300;</div><div><div class="name">Tom &mdash; eher skeptisch</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">und? was haltst du davon</div></div>
-<div class="chat-msg out"><div class="chat-bubble">Ehrlich gesagt&hellip; <strong>so spektakul&auml;r</strong> fand ichs nicht</div></div>
-<div class="chat-msg in"><div class="chat-bubble">huh? wieso</div></div>
-<div class="chat-msg out"><div class="chat-bubble">7 mio aufrufe und am ende sagt sie nur &bdquo;portionen kleiner&ldquo;. ka was das soll</div></div>
-<div class="chat-msg in"><div class="chat-bubble">ja aber dieser <strong>metabo-shit</strong> &mdash; firmen die deine taille messen?? wtf</div></div>
-<div class="chat-msg out"><div class="chat-bubble">ja DAS war krank ngl</div></div>
-<div class="chat-msg in"><div class="chat-bubble">stell dir vor das machen die bei uns</div></div>
-<div class="chat-msg out"><div class="chat-bubble">die hr-abteilung w&uuml;rde reihenweise klagen kriegen &#128514;</div></div>
-<div class="chat-meaning"><strong>&bdquo;ngl&ldquo;</strong> (engl. not gonna lie) = ehrlich gesagt &middot; <strong>&bdquo;wtf&ldquo;</strong> = was zum Teufel &middot; <strong>&bdquo;shit&ldquo;</strong> hier nicht beleidigend, eher &bdquo;Sache/Quatsch&ldquo;</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">&#128172;</div><div><div class="name">Lisa &mdash; will&rsquo;s ausprobieren</div><div class="stat">zuletzt online vor 2 Min</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">ich hab gestern das video gesehen und heute morgen kein br&ouml;tchen gegessen &#128521;</div></div>
-<div class="chat-msg out"><div class="chat-bubble">L O L was hast du dann gegessen</div></div>
-<div class="chat-msg in"><div class="chat-bubble">reis mit ei. ehrlich gesagt ganz <strong>lecker</strong></div></div>
-<div class="chat-msg out"><div class="chat-bubble">reis zum FR&Uuml;HST&Uuml;CK?? bist du sicher</div></div>
-<div class="chat-msg in"><div class="chat-bubble">jaja ich versuchs ne woche</div></div>
-<div class="chat-msg in"><div class="chat-bubble">aber so ne misosuppe&hellip; wei&szlig; ned wo ich die <strong>krieg</strong></div></div>
-<div class="chat-msg out"><div class="chat-bubble">asia-laden in der innenstadt. instant geht auch</div></div>
-<div class="chat-msg in"><div class="chat-bubble">danke &#128591; melde mich in ner woche</div></div>
-<div class="chat-meaning"><strong>&bdquo;wei&szlig; ned&ldquo;</strong> = wei&szlig; nicht (s&uuml;ddeutsch/&ouml;sterreichisch) &middot; <strong>&bdquo;kriegen&ldquo;</strong> = bekommen (sehr umgangssprachlich)</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">&#127814;</div><div><div class="name">Sprechclub-Gruppe</div><div class="stat">3 online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">Habt ihr die Doku f&uuml;r morgen schon geguckt?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">jaa, fand sie spannend! aber bisschen <strong>vereinfacht</strong>, oder?</div></div>
-<div class="chat-msg in"><div class="chat-bubble">ja absolut. typisch galileo halt &mdash; alles wird auf 1 grund reduziert</div></div>
-<div class="chat-msg in"><div class="chat-bubble">aber dieser <strong>kulturschock</strong> mit dem fr&uuml;hst&uuml;ck &#128514; reis um 7 uhr morgens</div></div>
-<div class="chat-msg out"><div class="chat-bubble">&#127908; <em>Voice-Note &middot; 0:18</em></div></div>
-<div class="chat-msg out"><div class="chat-bubble voice">&bdquo;Ich find&apos;s spannend, dass die in Japan kaum Nutri-Score haben &mdash; und trotzdem so schlank sind. Bei uns wird ja alles gelabelt und wir werden trotzdem immer dicker. Da stimmt doch was nicht im System!&ldquo;</div></div>
-<div class="chat-msg in"><div class="chat-bubble">guter punkt!! merk ich mir f&uuml;r morgen</div></div>
-<div class="chat-meaning"><strong>&bdquo;vereinfacht&ldquo;</strong> = verk&uuml;rzt dargestellt &middot; <strong>Voice-Notes</strong> nutzt man, wenn man komplexere Gedanken hat &mdash; tippen w&auml;re zu lang.</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">&#129312;</div><div><div class="name">Max &mdash; reflektiert sp&auml;t</div><div class="stat">heute, 23:47</div></div></div>
-<div class="chat-msg out"><div class="chat-bubble">sry so sp&auml;t noch &mdash; aber ich denk immer noch &uuml;ber das video nach</div></div>
-<div class="chat-msg in"><div class="chat-bubble">welches video?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">japan, schlank, du wei&szlig;t schon</div></div>
-<div class="chat-msg in"><div class="chat-bubble">aaaah ja. was ist?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">eigentlich war das ja kein video &uuml;ber essen. sondern &uuml;ber <strong>gesellschaftlichen druck</strong></div></div>
-<div class="chat-msg in"><div class="chat-bubble">interessanter take. wie meinst du</div></div>
-<div class="chat-msg out"><div class="chat-bubble">na die japaner sind nicht schlank weil sie WOLLEN. sondern weil dick sein da ein <strong>tabu</strong> ist</div></div>
-<div class="chat-msg out"><div class="chat-bubble">und das hat die reporterin halt nicht so klar gemacht ka</div></div>
-<div class="chat-msg in"><div class="chat-bubble">stimmt eigentlich. krass beobachtet &#128064;</div></div>
-<div class="chat-meaning"><strong>&bdquo;take&ldquo;</strong> (Anglizismus) = Sichtweise/Meinung &middot; <strong>&bdquo;gesellschaftlicher Druck&ldquo;</strong> = soziale Norm, die zwingt &middot; nachts schreiben Leute oft die tiefsten Gedanken!</div>
-</div>
-
-<div class="chat">
-<div class="chat-head"><div class="av">&#127869;&#65039;</div><div><div class="name">Sarah &mdash; im Restaurant</div><div class="stat">online</div></div></div>
-<div class="chat-msg in"><div class="chat-bubble">sitze grad bei nem japaner</div></div>
-<div class="chat-msg in"><div class="chat-bubble">die portionen sind echt MINI &#128064;</div></div>
-<div class="chat-msg out"><div class="chat-bubble">haha hara hachi bu in echt!</div></div>
-<div class="chat-msg in"><div class="chat-bubble">hara was?</div></div>
-<div class="chat-msg out"><div class="chat-bubble">die regel aus dem video. nur zu 80% satt essen</div></div>
-<div class="chat-msg in"><div class="chat-bubble">aaah achso. naja bei mir wirds eher <strong>50%</strong> heute &#128517;</div></div>
-<div class="chat-msg in"><div class="chat-bubble">kostet 28 euro pro person ohne getr&auml;nke ngl</div></div>
-<div class="chat-msg out"><div class="chat-bubble">authentisch ist halt teuer in DE&hellip;</div></div>
-<div class="chat-meaning"><strong>&bdquo;MINI&ldquo;</strong> in Gro&szlig;buchstaben = Verst&auml;rkung (wie schreien) &middot; <strong>&bdquo;in echt&ldquo;</strong> = in der Realit&auml;t / wirklich</div>
+<div class="tip">
+  <strong>Zum Schluss:</strong> Wenn ihr Zeit habt, jeder von euch in einem Satz: <strong>„Aus diesem Video nehme ich für mich mit, dass …"</strong>
 </div>
 
 </div>
-</section>
 
-</div>
+<footer>deutschoderwas · Sprechclub · Videoanalyse Donnerstag B2/C1 · zum Galileo-Video „Warum sind alle Japaner schlank?"</footer>
 
-<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch f&uuml;rs Leben<br>Videoanalyse &amp; Debatten &middot; B2/C1 &middot; Galileo: &bdquo;Warum sind alle Japaner schlank?&ldquo;</footer>
-
-<script>
-document.querySelectorAll('.tab').forEach(b=>{b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};});
-
-const KARTEN=[
-  {emoji:'\u{1F60A}',word:'schlank',badge:'Körper',syn:'Synonyme: dünn, schmal, sportlich',rule:'slim / slender — nicht dick',ex:'„Tokio hat die wenigsten Übergewichtigen — alle sind <strong>schlank</strong>.“'},
-  {emoji:'\u{1F35A}',word:'die Esskultur',badge:'Kultur',syn:'Synonyme: Essgewohnheit, Ernährungsweise',rule:'food culture — wie eine Gesellschaft isst',ex:'„Die japanische <strong>Esskultur</strong> unterscheidet sich radikal von der deutschen.“'},
-  {emoji:'\u{1F35C}',word:'die Misosuppe',badge:'Gericht',syn:'aus Misopaste + Tofu + Algen',rule:'miso soup — typisch japan. Suppe',ex:'„Zum Frühstück gibt es <strong>Misosuppe</strong> statt Brötchen.“'},
-  {emoji:'\u{1F371}',word:'das Bento',badge:'Lunchbox',syn:'Synonym: jap. Lunchbox',rule:'bento — kleine Lunchbox mit Schälchen',ex:'„Im <strong>Bento</strong> sind 5–7 verschiedene Komponenten.“'},
-  {emoji:'\u{1F35B}',word:'die Portion',badge:'Menge',syn:'Synonyme: Teller, Ration, Menge',rule:'portion — wieviel auf dem Teller',ex:'„Die japanischen <strong>Portionen</strong> sind viel kleiner als bei uns.“'},
-  {emoji:'\u{1F4CB}',word:'die Lebensmittel­kennzeichnung',badge:'Etikett',syn:'Synonyme: Nährwert-Label, Nutri-Score',rule:'food labeling',ex:'„In Japan gibt es kaum <strong>Lebensmittel­kennzeichnung</strong> — trotzdem sind alle schlank.“'},
-  {emoji:'\u{1F3ED}',word:'die Industrienation',badge:'Land',syn:'Synonyme: entwickeltes Land, Industriestaat',rule:'industrial nation',ex:'„Unter allen <strong>Industrienationen</strong> hat Japan die wenigsten Übergewichtigen.“'},
-  {emoji:'\u{1F4AA}',word:'die Disziplin',badge:'Charakter',syn:'Synonyme: Selbstkontrolle, Konsequenz',rule:'discipline — sich selbst beherrschen',ex:'„<strong>Disziplin</strong> beim Essen spielt eine große Rolle.“'},
-  {emoji:'\u{1F3DB}️',word:'die Tradition',badge:'Kultur',syn:'Synonyme: Brauch, Sitte, Gewohnheit',rule:'tradition — jahrhundertealte Gewohnheit',ex:'„Die Esskultur ist eine gewachsene <strong>Tradition</strong>.“'},
-  {emoji:'\u{1F634}',word:'übergewichtig',badge:'Körper',syn:'Synonyme: zu dick, adipös, korpulent',rule:'overweight',ex:'„Japan hat die wenigsten <strong>übergewichtigen</strong> Menschen weltweit.“'},
-  {emoji:'\u{1F6AB}',word:'das Tabu',badge:'Norm',syn:'Synonyme: verbotenes Thema, no-go',rule:'taboo — worüber man nicht spricht',ex:'„Übergewicht ist in Japan ein großes <strong>Tabu</strong>.“'},
-  {emoji:'\u{1F4CF}',word:'die Taillenmessung',badge:'Gesundheit',syn:'Synonyme: Körperumfang messen',rule:'waist measurement — das Metabo-Gesetz!',ex:'„In Japan gibt es per Gesetz <strong>Taillenmessungen</strong> am Arbeitsplatz.“'},
-  {emoji:'\u{1F3C3}',word:'die Bewegung',badge:'Sport',syn:'Synonyme: Aktivität, Sport, Laufen',rule:'movement — sich bewegen',ex:'„Viel <strong>Bewegung</strong> im Alltag — das ist der Schlüssel.“'},
-  {emoji:'\u{1F50E}',word:'beobachten',badge:'Verb',syn:'Synonyme: sehen, registrieren, wahrnehmen',rule:'to observe — genau hinschauen',ex:'„Die Reporterin <strong>beobachtet</strong> das Alltagsleben in Tokio.“'},
-  {emoji:'\u{1F4DD}',word:'die Reportage',badge:'Medien',syn:'Synonyme: Doku, Beitrag, Feature',rule:'reportage — journalistischer Bericht',ex:'„Die Galileo-<strong>Reportage</strong> hat 7 Millionen Aufrufe.“'},
-  {emoji:'\u{1F4F1}',word:'der O-Ton',badge:'Medien',syn:'Originalton — echte Stimme',rule:'O-Ton — Originalaufnahme einer Person',ex:'„Der <strong>O-Ton</strong> einer Tokio-Passantin zeigt die andere Sicht.“'},
-  {emoji:'\u{1F914}',word:'klischeehaft',badge:'Kritik',syn:'Synonyme: stereotyp, vereinfacht, vorurteilsbeladen',rule:'cliché — zu vereinfachtes Bild',ex:'„Die Darstellung ist oft etwas <strong>klischeehaft</strong>.“'},
-  {emoji:'\u{2696}️',word:'idealisieren',badge:'Verb',syn:'Synonyme: romantisieren, schönfärben',rule:'to idealize — zu positiv darstellen',ex:'„Reportagen <strong>idealisieren</strong> fremde Kulturen oft.“'},
-  {emoji:'\u{1F4AC}',word:'die These',badge:'Argument',syn:'Synonyme: Behauptung, Aussage, Standpunkt',rule:'thesis — Argument zum Diskutieren',ex:'„Maikes zentrale <strong>These</strong>: Mehrere Faktoren zusammen.“'},
-  {emoji:'\u{1F4AD}',word:'das Fazit',badge:'Schluss',syn:'Synonyme: Schlussfolgerung, Resümee, Ergebnis',rule:'conclusion — was am Ende bleibt',ex:'„Das <strong>Fazit</strong> der Reporterin: kein einzelner Grund.“'},
-  {emoji:'\u{1F30D}',word:'kulturell geprägt',badge:'Begriff',syn:'durch Kultur geformt',rule:'culturally shaped',ex:'„Essgewohnheiten sind stark <strong>kulturell geprägt</strong>.“'},
-  {emoji:'\u{1F4A1}',word:'übertragbar',badge:'Adjektiv',syn:'Synonyme: anwendbar, übersetzbar',rule:'transferable — von A nach B übernehmbar',ex:'„Ob das japanische Modell auf Europa <strong>übertragbar</strong> ist, bleibt offen.“'},
-];
-let order=KARTEN.map((_,i)=>i);let lkIdx=0;
-const flipEl=document.getElementById('flip');
-function showCard(){const k=KARTEN[order[lkIdx]];document.getElementById('flipEmoji').textContent=k.emoji;document.getElementById('flipWord').textContent=k.word;document.getElementById('flipBadge').textContent=k.badge;document.getElementById('flipSyn').textContent=k.syn;document.getElementById('flipRule').textContent=k.rule;document.getElementById('flipEx').innerHTML=k.ex;document.getElementById('lkCur').textContent=lkIdx+1;document.getElementById('lkTot').textContent=KARTEN.length;flipEl.classList.remove('flipped');}
-flipEl.onclick=()=>flipEl.classList.toggle('flipped');
-document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
-document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
-document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
-showCard();
-
-document.querySelectorAll('.quiz-opts').forEach(opts=>{const c=parseInt(opts.dataset.c);const chips=opts.querySelectorAll('.quiz-chip');const exp=opts.parentElement.querySelector('.quiz-explain');chips.forEach((chip,i)=>{chip.onclick=()=>{if(opts.dataset.done)return;opts.dataset.done='1';if(i===c)chip.classList.add('correct');else{chip.classList.add('wrong');chips[c].classList.add('correct');}exp.classList.add('show');};});});
-
-document.getElementById('gapCheck').onclick=()=>{const sels=document.querySelectorAll('#gapText select');let right=0,total=sels.length;sels.forEach(s=>{s.classList.remove('right','wrong');if(s.value===s.dataset.sol){s.classList.add('right');right++;}else s.classList.add('wrong');});const score=document.getElementById('gapScore');score.style.display='block';score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'Perfekt!':right>=9?'Sehr gut!':right>=6?'Auf gutem Weg!':'Weiter üben!');};
-document.getElementById('gapReset').onclick=()=>{document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});document.getElementById('gapScore').style.display='none';};
-
-const PAIRS=[
-  {l:'Hara hachi bu',r:'Aufhören, wenn man zu 80% satt ist'},
-  {l:'Bento',r:'Japanische Lunchbox mit 5–7 Schälchen'},
-  {l:'Metabo-Gesetz',r:'Pflicht-Taillenmessung am Arbeitsplatz'},
-  {l:'Misosuppe',r:'Typisches japanisches Frühstücksgericht'},
-  {l:'O-Ton',r:'Originalstimme eines Passanten in der Reportage'},
-  {l:'Galileo',r:'Wissens-Boulevard-Format auf ProSieben'},
-  {l:'Industrienation',r:'Hochentwickeltes Land mit starker Wirtschaft'},
-  {l:'Lebensmittelkennzeichnung',r:'Nutri-Score und Nährwert-Etiketten'},
-  {l:'Tabu',r:'Gesellschaftlich verbotenes Thema'},
-  {l:'übertragbar',r:'Lässt sich von einem Kontext in den anderen übernehmen'},
-];
-function buildMatch(){const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');L.innerHTML='';R.innerHTML='';left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});let pick=null;document.querySelectorAll('.match-item').forEach(item=>{item.onclick=()=>{if(item.classList.contains('done'))return;if(!pick){pick=item;item.classList.add('selected');return;}if(pick===item){item.classList.remove('selected');pick=null;return;}const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}};});}
-buildMatch();
-document.getElementById('matchRestart').onclick=buildMatch;
-const st=document.createElement('style');st.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(st);
-
-const SPEAK=[
-  {emoji:'\u{1F914}',cat:'Erste Reaktion',q:'Was war dein erster Gedanke, als du das Galileo-Video gesehen hast?'},
-  {emoji:'\u{1F633}',cat:'Überraschung',q:'Welche Szene im Video hat dich am meisten überrascht — und warum?'},
-  {emoji:'\u{1F35A}',cat:'Persönlich',q:'Wie sieht dein typisches Frühstück aus? Eher japanisch oder deutsch?'},
-  {emoji:'\u{1F371}',cat:'Probieren',q:'Würdest du gerne eine Woche lang japanisch essen — oder lieber nicht?'},
-  {emoji:'\u{1F3DB}️',q:'Wie ist die Esskultur in deinem Heimatland — eher wie Japan oder eher wie Deutschland?',cat:'Heimat'},
-  {emoji:'\u{1F4CF}',cat:'Metabo-Gesetz',q:'Was hältst du davon, dass japanische Firmen die Taille der Mitarbeiter messen?'},
-  {emoji:'\u{1F4A1}',cat:'Lektion',q:'Welche EINE Sache aus dem Video würdest du für dich übernehmen?'},
-  {emoji:'\u{1F4F1}',cat:'Medienkritik',q:'Galileo ist Boulevard-TV. Wo war die Reportage zu vereinfacht?'},
-  {emoji:'\u{1F4AA}',cat:'Disziplin',q:'Wie diszipliniert bist du beim Essen? Auf einer Skala von 1–10?'},
-  {emoji:'\u{1F37D}️',cat:'Restaurant',q:'In Deutschland sind die Portionen riesig. Stört dich das, oder findest du es gut?'},
-  {emoji:'\u{1F6AB}',cat:'Tabu',q:'Übergewicht ist in Japan ein Tabu. Soll man darüber offen reden — oder ist das verletzend?'},
-  {emoji:'\u{1F4DD}',cat:'Lebensmittel-Labels',q:'Brauchen wir in Deutschland mehr oder weniger Nutri-Score und Kennzeichnung?'},
-  {emoji:'\u{1F40D}',cat:'Übertragbar?',q:'Was an der japanischen Esskultur funktioniert in Deutschland — was nicht?'},
-  {emoji:'\u{1F3C3}',cat:'Bewegung',q:'Wie viel Bewegung hast du im Alltag? Läufst du, oder fährst du immer?'},
-  {emoji:'\u{1F914}',cat:'Hara hachi bu',q:'„Aufhören bei 80% satt“ — könntest du dich daran halten?'},
-  {emoji:'\u{1F4AC}',cat:'Reporterin',q:'Wenn du Reporter:in wärst und Berlin besuchen würdest — worüber würdest du drehen?'},
-  {emoji:'\u{1F36B}',cat:'Junkfood',q:'Wie oft isst du Fast Food oder Tiefkühlessen? Ehrlich!'},
-  {emoji:'\u{1F308}',cat:'Vergleich',q:'Welches Land hat die gesundeste Esskultur — und was zeichnet sie aus?'},
-  {emoji:'\u{1F4B0}',cat:'Politik',q:'Sollte der Staat ungesundes Essen höher besteuern? Warum (nicht)?'},
-  {emoji:'\u{1F468}‍\u{1F469}‍\u{1F467}',cat:'Familie',q:'Wie hast du als Kind gegessen? Was hat sich heute verändert?'},
-  {emoji:'\u{1F305}',cat:'Mittagspause',q:'Hast du eine richtige Mittagspause — oder isst du am Schreibtisch?'},
-  {emoji:'\u{1F4A4}',cat:'Stress-Essen',q:'Wenn du gestresst bist — isst du dann mehr oder weniger? Was hilft dir?'},
-  {emoji:'\u{1F3AD}',cat:'Selbstbild',q:'Beeinflusst dein äußeres Bild von dir, wie du isst? Oder umgekehrt?'},
-  {emoji:'\u{1F389}',cat:'Vision',q:'Wie sieht für dich die ideale Esskultur eines Landes aus — in 3 Sätzen!'},
-];
-let lastS=-1;
-document.getElementById('speakNew').onclick=()=>{let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastS&&SPEAK.length>1);lastS=i;const k=SPEAK[i];const c=document.getElementById('speakCard');c.style.opacity='0';setTimeout(()=>{c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60–90 Sekunden!</div>';c.style.opacity='1';},200);};
-</script>
 </body></html>
