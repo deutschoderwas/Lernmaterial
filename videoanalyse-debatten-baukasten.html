@@ -11,9 +11,7 @@
   --red:#E8302A; --red-soft:#FCE5E3; --red-dark:#C8211D;
   --teal:#0FB5A6; --teal-soft:#D7F0EC;
   --yellow:#FFD24A; --yellow-soft:#FFF1C2;
-  --pink:#E69CB3;
   --sand:#F0E2C8;
-  --blue:#2D6BB5; --blue-soft:#E0EAF7;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -29,46 +27,25 @@ h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yello
 .video-wrap iframe{width:100%;height:100%;border:0;}
 .meta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:1rem 0 2.5rem;}
 .meta-chip{background:var(--paper);border:1.5px solid var(--sand);border-radius:999px;padding:.35rem .9rem;font-size:.82rem;font-weight:600;color:var(--ink);}
-.anchors{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:0 auto 2.5rem;max-width:fit-content;position:sticky;top:1rem;z-index:50;box-shadow:0 4px 12px rgba(38,32,25,.08);}
-.anchors a{font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:600;background:var(--paper);color:var(--ink);padding:.45rem .95rem;border-radius:999px;text-decoration:none;border:2px solid transparent;transition:.15s;}
-.anchors a:hover{border-color:var(--ink);transform:translateY(-1px);}
+
 section{margin:2.5rem 0;}
 section h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.6rem,3.2vw,2.2rem);color:var(--ink);margin-bottom:.4rem;display:flex;align-items:center;gap:.6rem;}
 section h2 .ico{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:14px;background:var(--red-soft);color:var(--red);font-size:1.5rem;}
 section .sub{color:var(--ink-soft);font-size:1rem;margin-bottom:1.4rem;}
+
 .q-list{display:flex;flex-direction:column;gap:.8rem;}
 .q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.4rem;box-shadow:0 3px 10px rgba(38,32,25,.05);transition:.15s;}
 .q:hover{transform:translateX(4px);border-left-width:8px;}
 .q .nr{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
 .q .text{font-family:'Fraunces',serif;font-size:1.08rem;color:var(--ink);margin-top:.3rem;line-height:1.5;}
-.q .text em{font-style:italic;color:var(--ink-soft);font-family:'Fraunces',serif;}
-section.warm h2 .ico{background:var(--yellow-soft);color:#B66809;}
-section.warm .q{border-left-color:var(--yellow);}
-section.warm .q .nr{color:#B66809;}
+
 section.understand h2 .ico{background:var(--teal-soft);color:var(--teal);}
 section.understand .q{border-left-color:var(--teal);}
 section.understand .q .nr{color:var(--teal);}
-section.analyze h2 .ico{background:var(--blue-soft);color:var(--blue);}
-section.analyze .q{border-left-color:var(--blue);}
-section.analyze .q .nr{color:var(--blue);}
-section.discuss h2 .ico{background:var(--red-soft);color:var(--red);}
-section.debate h2 .ico{background:#F0E0FA;color:#6A3D9C;}
-.timecodes{display:grid;grid-template-columns:auto 1fr;gap:.4rem .9rem;background:var(--paper);border:1.5px dashed var(--sand);border-radius:14px;padding:1.2rem 1.4rem;margin:1rem 0;}
-.timecodes .tc{font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:.95rem;}
-.timecodes .descr{color:var(--ink);font-size:.92rem;}
-.these{background:linear-gradient(135deg,#F5F0FA,#FFF);border:2px solid #6A3D9C;border-radius:18px;padding:1.3rem 1.5rem;margin:1rem 0;}
-.these .label{font-size:.72rem;font-weight:700;color:#6A3D9C;letter-spacing:.12em;text-transform:uppercase;}
-.these .statement{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);font-style:italic;margin:.4rem 0 .8rem;line-height:1.45;}
-.these .sides{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.6rem;}
-@media(max-width:600px){.these .sides{grid-template-columns:1fr;}}
-.these-side{padding:.7rem .9rem;border-radius:12px;font-size:.88rem;line-height:1.5;}
-.these-side.pro{background:var(--teal-soft);border-left:4px solid var(--teal);}
-.these-side.con{background:var(--red-soft);border-left:4px solid var(--red);}
-.these-side b{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.3rem;}
-.these-side.pro b{color:var(--teal);}
-.these-side.con b{color:var(--red);}
+
 .tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.5rem 0;line-height:1.7;}
 .tip strong{color:var(--red);}
+
 footer{text-align:center;color:var(--ink-mute);font-size:.78rem;margin-top:3rem;padding:1rem;}
 </style>
 </head>
@@ -78,7 +55,7 @@ footer{text-align:center;color:var(--ink-mute);font-size:.78rem;margin-top:3rem;
 <div class="eyebrow">deutschoderwas · Videoanalyse B2/C1 Sprechclub</div>
 <div class="title-wrap">
   <h1 class="title">Warum sind alle Japaner <span class="hl">schlank?</span></h1>
-  <p class="subtitle">Wir schauen eine Galileo-Reportage aus Tokio — und diskutieren, was sie wirklich erzählt (und was nicht).</p>
+  <p class="subtitle">Wir schauen die Reportage gemeinsam — und reden danach auf Deutsch darüber.</p>
 </div>
 
 <div class="video-wrap">
@@ -88,153 +65,45 @@ footer{text-align:center;color:var(--ink-mute);font-size:.78rem;margin-top:3rem;
 <div class="meta-row">
   <span class="meta-chip">📺 Galileo / ProSieben</span>
   <span class="meta-chip">⏱️ ca. 7 Minuten</span>
-  <span class="meta-chip">🔥 7 Mio. Aufrufe</span>
-  <span class="meta-chip">📅 vor 7 Jahren</span>
   <span class="meta-chip">🗾 Tokio-Reportage</span>
 </div>
 
-<div class="anchors">
-  <a href="#warm">🔥 Aufwärmen</a>
-  <a href="#timecodes">⏱️ Zeitmarken</a>
-  <a href="#understand">👀 Verständnis</a>
-  <a href="#analyze">🧠 Analyse</a>
-  <a href="#discuss">💬 Diskussion</a>
-  <a href="#debate">⚖️ Debatten</a>
-</div>
-
-<section id="warm" class="warm">
-  <h2><span class="ico">🔥</span>Aufwärmen — bevor wir das Video schauen</h2>
-  <p class="sub">5 Fragen zum Einstieg. Antworte spontan — was kommt dir in den Sinn?</p>
+<!-- VERSTÄNDNIS — was haben wir im Video gesehen -->
+<section class="understand">
+  <h2><span class="ico">👀</span>Was haben wir im Video gesehen?</h2>
+  <p class="sub">Erste Runde — gemeinsam besprechen, was passiert ist.</p>
   <div class="q-list">
-    <div class="q"><div class="nr">Frage 1</div><div class="text">Wenn du an „japanisches Essen" denkst — welche 5 Dinge fallen dir sofort ein?</div></div>
-    <div class="q"><div class="nr">Frage 2</div><div class="text">Stimmt der Eindruck eigentlich, dass Japaner schlanker sind als Deutsche? Wo hast du diesen Eindruck her?</div></div>
-    <div class="q"><div class="nr">Frage 3</div><div class="text">Was glaubst du: ist es die Ernährung, die Genetik, die Bewegung, der Lebensstil — oder etwas ganz anderes?</div></div>
-    <div class="q"><div class="nr">Frage 4</div><div class="text">Wann hast du selbst zuletzt etwas an deiner Ernährung geändert — und warum?</div></div>
-    <div class="q"><div class="nr">Frage 5</div><div class="text">Findest du es richtig, dass es in Deutschland Nährwertangaben auf jeder Lebensmittelverpackung gibt — oder ist das übertrieben?</div></div>
+    <div class="q"><div class="nr">Frage 1</div><div class="text">Wohin reist die Reporterin Maike und warum?</div></div>
+    <div class="q"><div class="nr">Frage 2</div><div class="text">Was ist Maikes erster Eindruck von Tokio?</div></div>
+    <div class="q"><div class="nr">Frage 3</div><div class="text">Was essen die Japaner laut Video typischerweise zum Frühstück, Mittag- und Abendessen?</div></div>
+    <div class="q"><div class="nr">Frage 4</div><div class="text">Wie groß sind die Portionen in japanischen Restaurants — verglichen mit Deutschland?</div></div>
+    <div class="q"><div class="nr">Frage 5</div><div class="text">Welche Rolle spielen Reis, Fisch und Gemüse im japanischen Alltag?</div></div>
+    <div class="q"><div class="nr">Frage 6</div><div class="text">Was hat dich an den japanischen Essgewohnheiten am meisten überrascht?</div></div>
+    <div class="q"><div class="nr">Frage 7</div><div class="text">Welche Statistik oder Zahl ist dir aus dem Video besonders im Kopf geblieben?</div></div>
+    <div class="q"><div class="nr">Frage 8</div><div class="text">Was ist die Hauptaussage am Ende der Reportage?</div></div>
   </div>
 </section>
 
-<section id="timecodes">
-  <h2><span class="ico">⏱️</span>Worauf du beim Schauen achten kannst</h2>
-  <p class="sub">Markierte Stellen im Video, die wir später besprechen.</p>
-  <div class="timecodes">
-    <div class="tc">00:00–01:00</div><div class="descr">Einstieg: Maike kommt in Tokio an. Welche ersten Eindrücke nennt sie?</div>
-    <div class="tc">01:00–02:30</div><div class="descr">Essgewohnheiten der Japaner — wie wird gegessen, wie viel, wie oft?</div>
-    <div class="tc">02:30–04:00</div><div class="descr">Portionsgrößen + Lebensmittel-Beispiele. Was fällt dir auf?</div>
-    <div class="tc">04:00–05:30</div><div class="descr">Gesellschaftliche Normen rund ums Essen — was ist erlaubt, was nicht?</div>
-    <div class="tc">05:30–07:00</div><div class="descr">Maikes Fazit + die zentrale Botschaft der Reportage</div>
-  </div>
-  <div class="tip">
-    <strong>Hinweis:</strong> Notiere dir während des Schauens <strong>3 Sätze</strong>, die dich besonders überrascht oder geärgert haben — die brauchen wir gleich.
-  </div>
-</section>
-
-<section id="understand" class="understand">
-  <h2><span class="ico">👀</span>Verständnis — was hat das Video gezeigt?</h2>
-  <p class="sub">Inhaltsfragen direkt zur Reportage. Gemeinsam beantworten.</p>
+<!-- SPRECHEN — eure Meinung & eure Erfahrung -->
+<section>
+  <h2><span class="ico">💬</span>Jetzt ihr — sprechen wir darüber</h2>
+  <p class="sub">Persönliche Fragen. Antwortet in vollständigen Sätzen.</p>
   <div class="q-list">
-    <div class="q"><div class="nr">Frage 1</div><div class="text">Was war Maikes erster Eindruck, als sie in Tokio angekommen ist?</div></div>
-    <div class="q"><div class="nr">Frage 2</div><div class="text">Welche konkreten Unterschiede beim Essen zwischen Japan und Deutschland nennt die Reportage?</div></div>
-    <div class="q"><div class="nr">Frage 3</div><div class="text">Wie groß sind die Portionen in japanischen Restaurants laut Video — und wie wirkt das auf die Reporterin?</div></div>
-    <div class="q"><div class="nr">Frage 4</div><div class="text">Welche Rolle spielen Reis, Fisch und Gemüse im japanischen Alltag?</div></div>
-    <div class="q"><div class="nr">Frage 5</div><div class="text">Warum gibt es in Japan keine Nährwertkennzeichnungen auf den Lebensmittel-Verpackungen — und welche Folgen hat das laut Reportage?</div></div>
-    <div class="q"><div class="nr">Frage 6</div><div class="text">Wer wird im Video interviewt? Welche Berufe oder Personengruppen kommen zu Wort?</div></div>
-    <div class="q"><div class="nr">Frage 7</div><div class="text">Was ist die Hauptaussage am Ende der Reportage? Mit welchem Satz oder Bild schließt das Video?</div></div>
-    <div class="q"><div class="nr">Frage 8</div><div class="text">Welche Statistik oder Zahl ist dir aus dem Video besonders im Gedächtnis geblieben?</div></div>
-  </div>
-</section>
-
-<section id="analyze" class="analyze">
-  <h2><span class="ico">🧠</span>Analyse — wie wird erzählt?</h2>
-  <p class="sub">Nicht nur was, sondern WIE das Video erzählt. Fragen zur Reporterin, Bildern, Stil.</p>
-  <div class="q-list">
-    <div class="q"><div class="nr">Frage 1</div><div class="text">Wie tritt Maike, die Reporterin, im Video auf? Eher neugierig, kritisch, naiv, distanziert — wie würdest du ihren Stil beschreiben?</div></div>
-    <div class="q"><div class="nr">Frage 2</div><div class="text">Welche Bilder bleiben dir besonders im Kopf — und welche Emotionen sollen sie auslösen?</div></div>
-    <div class="q"><div class="nr">Frage 3</div><div class="text">Wird das japanische Essen romantisiert? Wo siehst du das im Video — oder findest du, es ist sachlich erzählt?</div></div>
-    <div class="q"><div class="nr">Frage 4</div><div class="text">Welche Stimme kommt im Off vor (die Sprecherstimme)? Welchen Tonfall hat sie — und was bewirkt dieser Ton bei dir?</div></div>
-    <div class="q"><div class="nr">Frage 5</div><div class="text">Welche Argumente bringt die Reportage — und welche Belege liefert sie für ihre Aussagen?</div></div>
-    <div class="q"><div class="nr">Frage 6</div><div class="text">Was wird im Video <em>nicht</em> gesagt? Welche Aspekte fehlen, die du erwartet hättest?</div></div>
-    <div class="q"><div class="nr">Frage 7</div><div class="text">Welche Klischees oder Stereotypen über Japan bedient das Video — bewusst oder unbewusst?</div></div>
-    <div class="q"><div class="nr">Frage 8</div><div class="text">Wenn du dieses Video mit einem Wort beschreiben müsstest: welches Adjektiv passt — und warum?</div></div>
-  </div>
-</section>
-
-<section id="discuss" class="discuss">
-  <h2><span class="ico">💬</span>Diskussion — eure Meinung</h2>
-  <p class="sub">Offene Fragen. Es gibt keine richtige Antwort.</p>
-  <div class="q-list">
-    <div class="q"><div class="nr">Frage 1</div><div class="text">Was hat dich am Video am meisten überrascht — und was hat dich vielleicht geärgert?</div></div>
-    <div class="q"><div class="nr">Frage 2</div><div class="text">Glaubst du, dass die Reportage ein realistisches Bild von Japan zeichnet — oder ist sie zu einseitig?</div></div>
-    <div class="q"><div class="nr">Frage 3</div><div class="text">Was könnten wir in Deutschland von der japanischen Esskultur lernen — und was sollte man besser <em>nicht</em> übernehmen?</div></div>
-    <div class="q"><div class="nr">Frage 4</div><div class="text">Würdest du dich selbst „gesund ernähren"? Was bedeutet das für dich konkret im Alltag?</div></div>
-    <div class="q"><div class="nr">Frage 5</div><div class="text">Hast du schon mal versucht, dauerhaft Gewohnheiten zu ändern? Was hat funktioniert, was nicht?</div></div>
-    <div class="q"><div class="nr">Frage 6</div><div class="text">Wie groß ist der Einfluss der Gesellschaft auf das, was und wie wir essen — verglichen mit unserer freien Entscheidung?</div></div>
-    <div class="q"><div class="nr">Frage 7</div><div class="text">Wenn du eine Reportage über die <em>deutsche</em> Esskultur drehen würdest: welche 3 Szenen würdest du auf jeden Fall zeigen?</div></div>
-    <div class="q"><div class="nr">Frage 8</div><div class="text">Findest du es problematisch, wenn fremde Kulturen in deutschen Medien immer „idealisiert" werden? Wo fängt das an, wo hört es auf?</div></div>
-  </div>
-</section>
-
-<section id="debate" class="debate">
-  <h2><span class="ico">⚖️</span>Debatten-Thesen — wer ist Pro, wer ist Contra?</h2>
-  <p class="sub">Jede These bekommt zwei Seiten. Wählt eine — und verteidigt sie.</p>
-
-  <div class="these">
-    <div class="label">These 1</div>
-    <div class="statement">„Lebensmittelkennzeichnungen sind überflüssig — Japan beweist es."</div>
-    <div class="sides">
-      <div class="these-side pro"><b>✓ Pro</b>Vertrauen statt Bevormundung · Eigenverantwortung · keine Reizüberflutung im Supermarkt · Tradition zählt mehr als Statistik</div>
-      <div class="these-side con"><b>✗ Contra</b>Allergiker brauchen das · Transparenz schützt · Verbraucherrecht · ohne Kennzeichnung mehr Übergewichtige</div>
-    </div>
-  </div>
-
-  <div class="these">
-    <div class="label">These 2</div>
-    <div class="statement">„Übergewicht ist eine Frage der individuellen Disziplin — nicht der Gesellschaft."</div>
-    <div class="sides">
-      <div class="these-side pro"><b>✓ Pro</b>Jeder entscheidet selbst was er isst · Selbstverantwortung · Ausreden helfen niemandem · auch in Japan gibt es Übergewichtige</div>
-      <div class="these-side con"><b>✗ Contra</b>Werbung · Lebensmittel-Industrie · Stress · Armut · Esskultur prägt schon Kinder · soziale Determinanten</div>
-    </div>
-  </div>
-
-  <div class="these">
-    <div class="label">These 3</div>
-    <div class="statement">„Reportagen wie diese romantisieren fremde Kulturen unkritisch."</div>
-    <div class="sides">
-      <div class="these-side pro"><b>✓ Pro</b>Klischees · Auslassungen · Wohlstandsbiotop wird gezeigt · Probleme verschwiegen · Tourismus-Werbung</div>
-      <div class="these-side con"><b>✗ Contra</b>Inspiration ist wichtig · positives Beispiel · keine Vorwürfe · Aufmerksamkeit für gute Ansätze</div>
-    </div>
-  </div>
-
-  <div class="these">
-    <div class="label">These 4</div>
-    <div class="statement">„Die deutsche Politik sollte Zucker und Fett höher besteuern."</div>
-    <div class="sides">
-      <div class="these-side pro"><b>✓ Pro</b>Lenkungswirkung · Gesundheitskosten reduzieren · andere Länder zeigen Erfolg · gerechte Belastung</div>
-      <div class="these-side con"><b>✗ Contra</b>Bevormundung · trifft sozial Schwache am härtesten · Schwarzmarkt · Eingriff in Markt</div>
-    </div>
-  </div>
-
-  <div class="these">
-    <div class="label">These 5</div>
-    <div class="statement">„Restaurants in Deutschland sollten ihre Portionen halbieren."</div>
-    <div class="sides">
-      <div class="these-side pro"><b>✓ Pro</b>Lebensmittelverschwendung · Gesundheit · niedriger Preis · echtes Sattgefühl · Italien macht es vor</div>
-      <div class="these-side con"><b>✗ Contra</b>Gäste erwarten viel fürs Geld · kulturell verankert · Geschmack vor Menge · funktioniert nicht</div>
-    </div>
-  </div>
-
-  <div class="these">
-    <div class="label">These 6</div>
-    <div class="statement">„Solche Trend-Reportagen ändern eigentlich nichts — sie sind nur Unterhaltung."</div>
-    <div class="sides">
-      <div class="these-side pro"><b>✓ Pro</b>7 Mio Aufrufe · trotzdem mehr Übergewicht in DE · TV-Konsum ≠ Verhaltensänderung · Aufmerksamkeitsökonomie</div>
-      <div class="these-side con"><b>✗ Contra</b>Bewusstsein schaffen ist erster Schritt · Vorbilder wirken · auch kleine Impulse zählen · Bildung beginnt mit Information</div>
-    </div>
+    <div class="q"><div class="nr">Frage 1</div><div class="text">Was isst du selbst typischerweise zum Frühstück, Mittag- und Abendessen?</div></div>
+    <div class="q"><div class="nr">Frage 2</div><div class="text">Wie oft kochst du selbst — und wie oft isst du auswärts oder bestellst?</div></div>
+    <div class="q"><div class="nr">Frage 3</div><div class="text">Was würdest du in Tokio gerne essen — und was würdest du auf keinen Fall probieren wollen?</div></div>
+    <div class="q"><div class="nr">Frage 4</div><div class="text">Findest du, du isst gesund? Was würdest du an deiner Ernährung gerne ändern?</div></div>
+    <div class="q"><div class="nr">Frage 5</div><div class="text">Achtest du beim Einkaufen auf die Nährwertangaben? Warum (nicht)?</div></div>
+    <div class="q"><div class="nr">Frage 6</div><div class="text">Was könnten wir in Deutschland von der japanischen Esskultur lernen?</div></div>
+    <div class="q"><div class="nr">Frage 7</div><div class="text">Welches Gericht würdest du jemandem aus Japan als „typisch deutsch" kochen — und warum genau dieses?</div></div>
+    <div class="q"><div class="nr">Frage 8</div><div class="text">Hast du selbst schon mal versucht, deine Essgewohnheiten zu ändern? Was hat funktioniert, was nicht?</div></div>
+    <div class="q"><div class="nr">Frage 9</div><div class="text">Was ist für dich wichtiger beim Essen: Geschmack, Gesundheit, Preis oder Tradition?</div></div>
+    <div class="q"><div class="nr">Frage 10</div><div class="text">Wenn du eine Woche in Tokio leben dürftest — was würdest du dort am liebsten machen, und was würdest du essen?</div></div>
   </div>
 </section>
 
 <div class="tip">
-  <strong>Zum Schluss:</strong> Wenn ihr Zeit habt, jeder von euch in einem Satz: <strong>„Aus diesem Video nehme ich für mich mit, dass …"</strong>
+  <strong>Zum Schluss:</strong> Jeder von euch in einem Satz: <strong>„Aus diesem Video nehme ich für mich mit, dass …"</strong>
 </div>
 
 </div>
