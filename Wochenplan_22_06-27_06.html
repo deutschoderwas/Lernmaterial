@@ -52,6 +52,7 @@ tr.kurs-spiele td:first-child{border-left-color:#9B59B6;}
 .kurs-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.76rem;font-weight:600;padding:.28rem .75rem;border-radius:20px;text-decoration:none;transition:opacity .15s,transform .1s;border:1.5px solid transparent;}
 .kurs-link:hover{opacity:.85;transform:scale(1.03);}
 .kurs-link.material{background:linear-gradient(135deg,#E8302A,#C8211D);color:white;}
+.kurs-link.video{background:linear-gradient(135deg,#FF0000,#990000);color:white;}
 footer{text-align:center;font-size:.75rem;color:#bbb;padding:2rem 1rem 1rem;}
 @media(max-width:700px){.page-header{padding:1.4rem 1.2rem;}.week-container{padding:1rem 1rem 0;}.legende{padding:1rem 1.2rem;}thead{display:none;}tbody td{display:block;padding:.3rem .9rem;border:none!important;border-radius:0!important;}tbody td:first-child{border-radius:var(--border-radius) var(--border-radius) 0 0!important;border-left:4px solid #ccc!important;}tbody td:last-child{border-radius:0 0 var(--border-radius) var(--border-radius)!important;padding-bottom:.7rem;}}
 </style>
@@ -88,35 +89,37 @@ footer{text-align:center;font-size:.75rem;color:#bbb;padding:2rem 1rem 1rem;}
   <table><thead><tr>
     <th style="width:120px">Uhrzeit</th><th>Thema</th><th style="width:90px">Niveau</th><th style="width:230px">Links</th>
   </tr></thead><tbody>
-    <tr class="kurs-grammatik">
+    <tr class="kurs-b1b2">
       <td>09:00&ndash;10:00</td>
-      <td class="thema-cell">Grammatik: Das Passiv</td>
-      <td><span class="niveau-badge niv-b1c1">ab B1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/passiv-formen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td class="thema-cell">Rollenspiele: Kindererziehung heute vs. fr&uuml;her</td>
+      <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/kindererziehung-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b1b2">
       <td>10:00&ndash;11:00</td>
-      <td class="thema-cell">Konflikte am Arbeitsplatz</td>
+      <td class="thema-cell">Debatten: Kindererziehung heute vs. fr&uuml;her</td>
       <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/konflikte-arbeitsplatz-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/kindererziehung-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-boost">
       <td>17:00&ndash;18:00</td>
-      <td class="thema-cell">Wortschatzboost: Das Verb GEHEN</td>
+      <td class="thema-cell">Wortschatzboost: Das Verb MACHEN</td>
       <td><span class="niveau-badge niv-ab1">ab B1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/verb-gehen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/verb-machen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b1b2">
       <td>18:00&ndash;19:00</td>
-      <td class="thema-cell">Konflikte am Arbeitsplatz</td>
+      <td class="thema-cell">Rollenspiele: Kindererziehung heute vs. fr&uuml;her</td>
       <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/konflikte-arbeitsplatz-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
-    </tr>
-    <tr class="kurs-b1b2">
-      <td>19:05&ndash;20:05</td>
-      <td class="thema-cell">Konflikte am Arbeitsplatz</td>
-      <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/konflikte-arbeitsplatz-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/kindererziehung-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
   </tbody></table>
 </div>
@@ -129,27 +132,35 @@ footer{text-align:center;font-size:.75rem;color:#bbb;padding:2rem 1rem 1rem;}
   </tr></thead><tbody>
     <tr class="kurs-a2">
       <td>09:00&ndash;10:00</td>
-      <td class="thema-cell">Familie &amp; Verwandte</td>
+      <td class="thema-cell">Wetter &amp; Jahreszeiten</td>
       <td><span class="niveau-badge niv-a2">A2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/familie-verwandtschaft-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/wetter-jahreszeiten-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b1b2">
       <td>10:00&ndash;11:00</td>
-      <td class="thema-cell">Reisen organisieren + Beschwerden</td>
+      <td class="thema-cell">Rollenspiele: Smalltalk drau&szlig;en</td>
       <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/reisen-organisieren-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/smalltalk-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b2c1">
       <td>18:00&ndash;19:00</td>
-      <td class="thema-cell">Globalisierung &ndash; Pro &amp; Contra</td>
+      <td class="thema-cell">Generationenkonflikte</td>
       <td><span class="niveau-badge niv-b2c1">B2/C1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/globalisierung-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/familie-heute-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-a2">
       <td>19:05&ndash;20:05</td>
-      <td class="thema-cell">Familie &amp; Verwandte</td>
+      <td class="thema-cell">Wetter &amp; Jahreszeiten</td>
       <td><span class="niveau-badge niv-a2">A2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/familie-verwandtschaft-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/wetter-jahreszeiten-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
   </tbody></table>
 </div>
@@ -162,33 +173,43 @@ footer{text-align:center;font-size:.75rem;color:#bbb;padding:2rem 1rem 1rem;}
   </tr></thead><tbody>
     <tr class="kurs-boost">
       <td>09:00&ndash;10:00</td>
-      <td class="thema-cell">Wortschatzboost: Das Verb GEHEN</td>
+      <td class="thema-cell">Wortschatzboost: Das Verb MACHEN</td>
       <td><span class="niveau-badge niv-ab1">ab B1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/verb-gehen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/verb-machen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b1b2">
       <td>10:00&ndash;11:00</td>
-      <td class="thema-cell">Gesundheit &amp; Vorsorge</td>
+      <td class="thema-cell">Rollenspiele: Beim Arzt &amp; in der Apotheke</td>
       <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/gesundheit-vorsorge-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
-    </tr>
-    <tr class="kurs-grammatik">
-      <td>11:30&ndash;12:30</td>
-      <td class="thema-cell">Grammatik: Konjunktiv 1 &ndash; Indirekte Rede</td>
-      <td><span class="niveau-badge niv-b1c1">ab B1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/konjunktiv1-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/apotheke.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-grammatik">
       <td>17:00&ndash;18:00</td>
-      <td class="thema-cell">Grammatik: Konjunktiv 1 &ndash; Indirekte Rede</td>
+      <td class="thema-cell">Grammatik: Konjunktiv II</td>
       <td><span class="niveau-badge niv-b1c1">ab B1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/konjunktiv1-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/konjunktiv2-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b1b2">
       <td>18:00&ndash;19:00</td>
-      <td class="thema-cell">Gesundheit &amp; Vorsorge</td>
+      <td class="thema-cell">Debatten: Kindererziehung heute vs. fr&uuml;her</td>
       <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/gesundheit-vorsorge-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/kindererziehung-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
+    </tr>
+    <tr class="kurs-b1b2">
+      <td>19:05&ndash;20:05</td>
+      <td class="thema-cell">Rollenspiele: Beim Arzt &amp; in der Apotheke</td>
+      <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/apotheke.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
   </tbody></table>
 </div>
@@ -201,27 +222,28 @@ footer{text-align:center;font-size:.75rem;color:#bbb;padding:2rem 1rem 1rem;}
   </tr></thead><tbody>
     <tr class="kurs-b1b2">
       <td>10:00&ndash;11:00</td>
-      <td class="thema-cell">Freies Sprechen &ndash; freie Dialoge</td>
+      <td class="thema-cell">Freies Sprechen</td>
       <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/freies-sprechen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/freies-sprechen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b1b2">
       <td>17:00&ndash;18:00</td>
-      <td class="thema-cell">Reisen organisieren + Beschwerden</td>
+      <td class="thema-cell">Rollenspiele: Smalltalk drau&szlig;en</td>
       <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/reisen-organisieren-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/smalltalk-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b2c1">
       <td>18:00&ndash;19:00</td>
-      <td class="thema-cell">K&uuml;nstliche Intelligenz im Alltag &ndash; Debatte</td>
+      <td class="thema-cell">Videoanalyse &amp; Debatten &middot; Teil 2</td>
       <td><span class="niveau-badge niv-b2c1">B2/C1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/ki-alltag-debatte-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
-    </tr>
-    <tr class="kurs-b1b2">
-      <td>19:05&ndash;20:05</td>
-      <td class="thema-cell">Reisen organisieren + Beschwerden</td>
-      <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/reisen-organisieren-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link video" href="https://www.youtube.com/watch?v=BUzgVvq5JEM" target="_blank">&#127916; Video vorher ansehen</a>
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/videoanalyse-debatten-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
   </tbody></table>
 </div>
@@ -232,35 +254,29 @@ footer{text-align:center;font-size:.75rem;color:#bbb;padding:2rem 1rem 1rem;}
   <table><thead><tr>
     <th style="width:120px">Uhrzeit</th><th>Thema</th><th style="width:90px">Niveau</th><th style="width:230px">Links</th>
   </tr></thead><tbody>
-    <tr class="kurs-b1b2">
-      <td>09:00&ndash;10:00</td>
-      <td class="thema-cell">Wohnungssuche &amp; Mietvertr&auml;ge</td>
-      <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/wohnungssuche-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
-    </tr>
     <tr class="kurs-a2">
       <td>10:00&ndash;11:00</td>
-      <td class="thema-cell">Wohnen &amp; M&ouml;bel</td>
+      <td class="thema-cell">Wetter &amp; Jahreszeiten &middot; Teil 2</td>
       <td><span class="niveau-badge niv-a2">A2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/wohnen-moebel-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
-    </tr>
-    <tr class="kurs-boost">
-      <td>17:00&ndash;18:00</td>
-      <td class="thema-cell">Wortschatzboost: Das Verb GEHEN</td>
-      <td><span class="niveau-badge niv-ab1">ab B1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/verb-gehen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/wetter-jahreszeiten-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-a2">
       <td>18:00&ndash;19:00</td>
-      <td class="thema-cell">Wohnen &amp; M&ouml;bel</td>
+      <td class="thema-cell">Wetter &amp; Jahreszeiten &middot; Teil 2</td>
       <td><span class="niveau-badge niv-a2">A2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/wohnen-moebel-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/wetter-jahreszeiten-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
     <tr class="kurs-b1b2">
       <td>19:05&ndash;20:05</td>
       <td class="thema-cell">Freies Sprechen</td>
       <td><span class="niveau-badge niv-b1b2">B1/B2</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/freies-sprechen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/freies-sprechen-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
   </tbody></table>
 </div>
@@ -275,12 +291,14 @@ footer{text-align:center;font-size:.75rem;color:#bbb;padding:2rem 1rem 1rem;}
       <td>11:00&ndash;12:00</td>
       <td class="thema-cell">Sprachspiele</td>
       <td><span class="niveau-badge niv-spiele">ab B1</span></td>
-      <td><div class="link-cell"><a class="kurs-link material" href="https://lernmaterial.vercel.app/sprachspiele-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a></div></td>
+      <td><div class="link-cell">
+        <a class="kurs-link material" href="https://lernmaterial.vercel.app/sprachspiele-baukasten.html" target="_blank">&#128218; Material f&uuml;r den Unterricht</a>
+      </div></td>
     </tr>
   </tbody></table>
 </div>
 
 </div>
-<footer>deutschoderwas Sprechclub &middot; Wochenplan 22.06 &ndash; 27.06 &middot; KW26 (11 neue Baukasten · Auto-Pipeline)</footer>
+<footer>deutschoderwas Sprechclub &middot; Wochenplan 22.06 &ndash; 27.06 &middot; KW26 &middot; Material f&uuml;r den Unterricht zu jedem Thema</footer>
 </body>
 </html>
