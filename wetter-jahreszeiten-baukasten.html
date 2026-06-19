@@ -1,0 +1,709 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Wetter &amp; Jahreszeiten · A2 | deutschoderwas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FDF6EC; --cream-warm:#FBEDD8; --paper:#FFFFFF;
+  --ink:#262019; --ink-soft:#5C4E3E; --ink-mute:#A8957D;
+  --red:#E8302A; --red-soft:#FCE5E3;
+  --teal:#0FB5A6; --teal-soft:#D7F0EC;
+  --yellow:#FFD24A; --yellow-soft:#FFF1C2;
+  --pink:#E69CB3;
+  --sand:#F0E2C8;
+  --wa-bg:#ECE5DD; --wa-out:#DCF8C6; --wa-in:#FFFFFF;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:linear-gradient(180deg,#FDE6E0 0%,var(--cream) 14%,var(--cream) 100%);color:var(--ink);font-family:'Outfit',sans-serif;line-height:1.55;min-height:100vh;}
+.wrapper{max-width:920px;margin:0 auto;padding:2.5rem 1.4rem 5rem;}
+.eyebrow{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.9rem;}
+.title-wrap{text-align:center;margin-bottom:1rem;}
+h1.title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,3.6rem);line-height:1.05;color:var(--ink);letter-spacing:-.01em;}
+h1.title .hl{position:relative;display:inline-block;font-style:italic;font-weight:600;padding:.05em .35em;}
+h1.title .hl::before{content:'';position:absolute;inset:0;background:var(--yellow);border-radius:14px;transform:rotate(-2deg);z-index:-1;}
+.subtitle{text-align:center;max-width:620px;margin:.9rem auto 0;font-size:1.05rem;color:var(--ink-soft);}
+.hero-svg{display:block;margin:1.5rem auto 0;max-width:400px;width:100%;}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;background:var(--cream-warm);border-radius:999px;padding:.5rem;margin:2rem auto;max-width:fit-content;position:sticky;top:.5rem;z-index:50;}
+.tab{font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:600;border:2px solid transparent;background:var(--paper);color:var(--ink);padding:.55rem 1.1rem;border-radius:999px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:.4rem;}
+.tab:hover{border-color:var(--ink);transform:translateY(-1px);}
+.tab.active{background:var(--red);color:white;border-color:var(--red);}
+.section{display:none;animation:fade .35s ease;}
+.section.active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+h2.section-title{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.5vw,2.5rem);text-align:center;color:var(--ink);margin:2.5rem 0 .6rem;}
+.section-sub{text-align:center;color:var(--ink-soft);font-size:1rem;margin-bottom:1.5rem;}
+.tip{background:var(--yellow-soft);border:2px dashed var(--yellow);border-radius:18px;padding:1rem 1.4rem;font-size:.96rem;color:var(--ink);margin:1.2rem 0;line-height:1.7;}
+.tip strong{color:var(--red);font-weight:700;}
+.tip em{color:var(--ink);font-style:italic;}
+.tip u{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px;}
+
+.prep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.5rem 0;}
+@media(max-width:600px){.prep-grid{grid-template-columns:repeat(2,1fr);}}
+.prep{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.9rem;text-align:center;}
+.prep-icon{font-size:1.8rem;margin-bottom:.3rem;}
+.prep-word{font-family:'Fraunces',serif;font-weight:900;color:var(--red);font-size:1.05rem;margin-bottom:.2rem;}
+.prep-case{font-size:.7rem;font-weight:700;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.05em;}
+.prep-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.82rem;margin-top:.3rem;}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.5rem 0;}
+@media(max-width:600px){.compare{grid-template-columns:1fr;}}
+.comp-card{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.1rem 1.2rem;}
+.comp-card.a{border-color:var(--red);background:#FFF6F5;}
+.comp-card.b{border-color:var(--teal);background:#F1FAF8;}
+.comp-tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem;}
+.comp-card.a .comp-tag{background:var(--red);color:white;}
+.comp-card.b .comp-tag{background:var(--teal);color:white;}
+.comp-text{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);line-height:1.5;}
+.comp-text strong{color:var(--red);}
+.comp-card.b .comp-text strong{color:var(--teal);}
+.comp-note{font-size:.82rem;color:var(--ink-soft);margin-top:.5rem;}
+
+.dialog-grid{display:grid;grid-template-columns:1fr;gap:.7rem;margin:1.5rem 0;}
+.dial{background:var(--paper);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.1rem;display:grid;grid-template-columns:50px 1fr;gap:.7rem;}
+.dial.d1{border-left:5px solid var(--red);}
+.dial.d2{border-left:5px solid var(--teal);}
+.dial.d3{border-left:5px solid #B66809;}
+.dial.d4{border-left:5px solid #6A3D9C;}
+.dial-icon{background:var(--red);color:white;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
+.dial.d2 .dial-icon{background:var(--teal);}
+.dial.d3 .dial-icon{background:#B66809;}
+.dial.d4 .dial-icon{background:#6A3D9C;}
+.dial-body h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.02rem;margin-bottom:.3rem;}
+.dial-body ul{list-style:none;padding:0;}
+.dial-body li{padding:.2rem 0;font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.9rem;padding-left:1.1rem;position:relative;}
+.dial-body li::before{content:'\203A';position:absolute;left:0;color:var(--red);font-weight:900;font-style:normal;font-family:'Outfit',sans-serif;}
+
+.alltag-q{background:var(--paper);border-left:5px solid var(--red);border-radius:14px;padding:1.1rem 1.3rem;margin:1rem 0;box-shadow:0 2px 10px rgba(38,32,25,.04);}
+.alltag-q .ql{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;}
+.alltag-q .qq{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-top:.3rem;font-style:italic;}
+.alltag-q .think{font-size:.85rem;color:var(--ink-soft);margin-top:.4rem;}
+
+.chat{background:var(--wa-bg);border-radius:16px;padding:1rem .8rem;margin:1rem 0;border:1.5px solid var(--sand);}
+.chat-head{background:var(--teal);color:white;padding:.6rem .9rem;border-radius:10px 10px 0 0;font-weight:600;font-size:.85rem;margin:-1rem -.8rem 1rem;display:flex;align-items:center;gap:.5rem;}
+.chat-head .av{width:32px;height:32px;border-radius:50%;background:var(--cream-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+.chat-head .name{font-weight:700;font-size:.92rem;line-height:1.1;}
+.chat-head .stat{font-size:.7rem;opacity:.85;}
+.chat-msg{margin:.4rem 0;display:flex;}
+.chat-msg.out{justify-content:flex-end;}
+.chat-bubble{max-width:80%;padding:.5rem .8rem;border-radius:14px;font-size:.92rem;color:var(--ink);line-height:1.45;}
+.chat-msg.in .chat-bubble{background:var(--wa-in);border-bottom-left-radius:4px;}
+.chat-msg.out .chat-bubble{background:var(--wa-out);border-bottom-right-radius:4px;}
+.chat-bubble strong{color:var(--red);font-weight:700;background:#FFE8E3;padding:.05em .25em;border-radius:4px;}
+.chat-meaning{background:var(--yellow-soft);border-left:3px solid var(--yellow);padding:.5rem .8rem;border-radius:8px;margin-top:.6rem;font-size:.82rem;color:var(--ink);}
+.chat-meaning strong{color:#B66809;}
+.uss-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:700px){.uss-grid{grid-template-columns:1fr;}}
+
+.flip{perspective:1000px;width:100%;max-width:440px;height:360px;margin:1.5rem auto;cursor:pointer;}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;}
+.flip.flipped .flip-inner{transform:rotateY(180deg);}
+.flip-side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(38,32,25,.08);}
+.flip-side.back{transform:rotateY(180deg);background:linear-gradient(135deg,var(--cream-warm),var(--yellow-soft));border-color:var(--yellow);}
+.flip-emoji{font-size:3rem;margin-bottom:.6rem;}
+.flip-word{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:var(--ink);margin-bottom:.3rem;line-height:1.3;}
+.flip-badge{display:inline-block;background:var(--teal-soft);color:var(--teal);font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;margin:.4rem auto;}
+.flip-prompt{font-size:.82rem;color:var(--ink-mute);font-style:italic;margin-top:.5rem;}
+.flip-rule{color:var(--red);font-weight:700;font-size:.98rem;}
+.flip-ex{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);font-size:.96rem;margin-top:.6rem;line-height:1.55;}
+.flip-ex strong{color:var(--red);background:var(--yellow-soft);padding:.05em .3em;border-radius:5px;font-style:normal;font-family:'Outfit',sans-serif;font-weight:700;}
+.lk-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem;}
+.lk-btn{font-size:1.4rem;background:var(--paper);border:2px solid var(--ink);width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--ink);}
+.lk-btn:hover{background:var(--ink);color:white;}
+.lk-counter{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;color:var(--ink);}
+.lk-shuffle{display:block;margin:1rem auto 0;background:var(--paper);border:2px solid var(--ink);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.2rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+
+.quiz{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;}
+.quiz-q{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:.9rem;line-height:1.5;}
+.quiz-opts{display:flex;flex-wrap:wrap;gap:.45rem;}
+.quiz-chip{background:var(--cream-warm);border:2px solid var(--sand);font-weight:600;font-size:.95rem;color:var(--ink);padding:.45rem 1rem;border-radius:999px;cursor:pointer;}
+.quiz-chip:hover{border-color:var(--ink);background:var(--paper);}
+.quiz-chip.correct{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);}
+.quiz-chip.wrong{background:var(--red-soft);border-color:var(--red);color:var(--red);text-decoration:line-through;}
+.quiz-explain{margin-top:.7rem;font-size:.88rem;color:var(--teal);background:var(--teal-soft);padding:.55rem .9rem;border-radius:10px;display:none;}
+.quiz-explain.show{display:block;}
+
+.gap-text{background:var(--paper);border:2px solid var(--sand);border-radius:18px;padding:1.4rem 1.5rem;margin:1rem 0;font-family:'Fraunces',serif;font-size:1.02rem;color:var(--ink);line-height:1.9;}
+.gap-text .gap-line{padding:.5rem 0;border-bottom:1px dashed var(--sand);}
+.gap-text .gap-line:last-of-type{border-bottom:0;}
+.gap-text select{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:600;color:var(--red);background:var(--cream-warm);border:1.5px solid var(--sand);border-radius:8px;padding:.2rem .5rem;margin:0 .25em;cursor:pointer;}
+.gap-text select.right{background:var(--teal-soft);color:var(--teal);border-color:var(--teal);}
+.gap-text select.wrong{background:var(--red-soft);color:var(--red);border-color:var(--red);}
+.gap-actions{display:flex;gap:.6rem;margin-top:1rem;justify-content:flex-end;}
+.btn-primary{background:var(--red);color:white;border:2px solid var(--red);font-family:'Outfit',sans-serif;font-weight:700;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-primary:hover{background:#C8211D;border-color:#C8211D;}
+.btn-secondary{background:var(--paper);color:var(--ink);border:2px solid var(--ink);font-family:'Outfit',sans-serif;font-weight:600;padding:.55rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.95rem;}
+.btn-secondary:hover{background:var(--ink);color:white;}
+
+.match-stage{margin:1.5rem 0;}
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:600px){.match-cols{grid-template-columns:1fr;}}
+.match-col h4{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.05rem;text-align:center;margin-bottom:.7rem;}
+.match-list{display:flex;flex-direction:column;gap:.45rem;}
+.match-item{background:var(--paper);border:2px solid var(--sand);border-radius:14px;padding:.7rem 1rem;cursor:pointer;font-weight:600;color:var(--ink);font-size:.88rem;transition:.15s;text-align:center;}
+.match-item:hover{border-color:var(--ink);transform:translateX(2px);}
+.match-item.selected{background:var(--yellow-soft);border-color:var(--yellow);}
+.match-item.done{background:var(--teal-soft);border-color:var(--teal);color:var(--teal);cursor:default;pointer-events:none;}
+.match-restart{display:block;margin:1.2rem auto 0;}
+
+.speak-card{background:linear-gradient(135deg,var(--paper),var(--cream-warm));border:2px solid var(--sand);border-radius:24px;padding:2rem 1.8rem;text-align:center;min-height:200px;display:flex;flex-direction:column;justify-content:center;margin:1.5rem auto;max-width:540px;box-shadow:0 8px 24px rgba(38,32,25,.07);}
+.speak-emoji{font-size:2.6rem;margin-bottom:.7rem;}
+.speak-cat{font-size:.72rem;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;}
+.speak-q{font-family:'Fraunces',serif;font-size:1.2rem;color:var(--ink);font-style:italic;line-height:1.5;}
+.speak-hint{font-size:.85rem;color:var(--ink-soft);margin-top:.7rem;font-style:italic;}
+.speak-controls{text-align:center;margin-top:1rem;}
+.role-section{margin-top:2.5rem;}
+.role{background:var(--paper);border:2px solid var(--sand);border-radius:20px;padding:1.5rem 1.6rem;margin-bottom:1.2rem;}
+.role-tag{display:inline-block;background:var(--red);color:white;font-size:.7rem;font-weight:700;padding:.22rem .8rem;border-radius:999px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:.6rem;}
+.role-title{font-family:'Fraunces',serif;font-weight:700;color:var(--ink);font-size:1.25rem;margin-bottom:.5rem;}
+.role-situation{background:var(--cream-warm);border-radius:12px;padding:.8rem 1rem;color:var(--ink);font-size:.92rem;font-style:italic;font-family:'Fraunces',serif;margin-bottom:.9rem;}
+.role-people{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:600px){.role-people{grid-template-columns:1fr;}}
+.person{background:var(--cream);border:1.5px solid var(--sand);border-radius:14px;padding:.9rem 1.05rem;display:grid;grid-template-columns:40px 1fr;gap:.6rem;align-items:start;}
+.person.a{border-color:var(--red);background:#FFF6F5;}
+.person.b{border-color:var(--teal);background:#F1FAF8;}
+.person-avatar{width:40px;height:40px;border-radius:50%;background:var(--paper);display:flex;align-items:center;justify-content:center;font-size:1.4rem;border:2px solid var(--sand);}
+.person.a .person-avatar{border-color:var(--red);}
+.person.b .person-avatar{border-color:var(--teal);}
+.person-label{font-weight:700;font-size:.82rem;color:var(--ink);margin-bottom:.3rem;}
+.person-quote{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-soft);font-size:.88rem;line-height:1.55;}
+.role-goal{background:var(--yellow-soft);border-left:4px solid var(--yellow);padding:.55rem .9rem;border-radius:8px;margin-top:.7rem;font-size:.85rem;color:#7A6300;}
+
+footer{text-align:center;color:var(--ink-mute);font-size:.85rem;padding:3rem 1rem 1.5rem;margin-top:3rem;}
+footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+<div class="eyebrow">deutschoderwas &middot; A2 Sprechclub &middot; Alltag</div>
+
+<div class="title-wrap">
+<h1 class="title">Über das <span class="hl">Wetter</span> reden</h1>
+</div>
+<p class="subtitle">Vom sonnigen Tag bis zum Schneesturm &mdash; mit Modalverben „können" und „müssen" planst du jede Aktivität!</p>
+
+<svg class="hero-svg" viewBox="0 0 400 110" xmlns="http://www.w3.org/2000/svg">
+<g font-family="Outfit, sans-serif" font-weight="700" font-size="9">
+<g transform="translate(40,20)"><circle cx="0" cy="0" r="22" fill="#FFF1C2"/><text text-anchor="middle" dy="5" font-size="22">☀️</text><text text-anchor="middle" y="40" fill="#B66809">Sommer</text></g>
+<g transform="translate(110,20)"><circle cx="0" cy="0" r="22" fill="#D7F0EC"/><text text-anchor="middle" dy="5" font-size="22">🌧️</text><text text-anchor="middle" y="40" fill="#0FB5A6">Herbst</text></g>
+<g transform="translate(180,20)"><circle cx="0" cy="0" r="22" fill="#E5EEF7"/><text text-anchor="middle" dy="5" font-size="22">❄️</text><text text-anchor="middle" y="40" fill="#2A6FB5">Winter</text></g>
+<g transform="translate(250,20)"><circle cx="0" cy="0" r="22" fill="#FAE0EA"/><text text-anchor="middle" dy="5" font-size="22">🌸</text><text text-anchor="middle" y="40" fill="#A04060">Frühling</text></g>
+<g transform="translate(320,20)"><circle cx="0" cy="0" r="22" fill="#FCE5E3"/><text text-anchor="middle" dy="5" font-size="22">⛈️</text><text text-anchor="middle" y="40" fill="#E8302A">Sturm</text></g>
+</g>
+</svg>
+
+<nav class="tabs">
+<button class="tab active" data-tab="0">📖 Überblick</button>
+<button class="tab" data-tab="1">💬 Umgangssprache</button>
+<button class="tab" data-tab="2">🃏 Lernkarten</button>
+<button class="tab" data-tab="3">✅ Quiz</button>
+<button class="tab" data-tab="4">✍️ Lückentext</button>
+<button class="tab" data-tab="5">🧩 Zuordnen</button>
+<button class="tab" data-tab="6">🗣️ Sprechen</button>
+</nav>
+
+<!-- ============== ÜBERBLICK ============== -->
+<section class="section active" data-section="0">
+
+<h2 class="section-title">Die wichtigsten <em style="font-style:italic;">Wetter-Wörter</em></h2>
+<p class="section-sub">So beschreibst du jeden Tag &mdash; von Hitzewelle bis Schneechaos.</p>
+
+<div class="prep-grid">
+<div class="prep"><div class="prep-icon">☀️</div><div class="prep-word">sonnig</div><div class="prep-case">Sonne scheint</div><div class="prep-ex">„Heute ist es sonnig."</div></div>
+<div class="prep"><div class="prep-icon">🌧️</div><div class="prep-word">regnerisch</div><div class="prep-case">Regen</div><div class="prep-ex">„Es ist regnerisch."</div></div>
+<div class="prep"><div class="prep-icon">☁️</div><div class="prep-word">bewölkt</div><div class="prep-case">Wolken</div><div class="prep-ex">„Der Himmel ist bewölkt."</div></div>
+<div class="prep"><div class="prep-icon">⛈️</div><div class="prep-word">stürmisch</div><div class="prep-case">starker Wind</div><div class="prep-ex">„Achtung &mdash; stürmisch!"</div></div>
+<div class="prep"><div class="prep-icon">❄️</div><div class="prep-word">frostig / eisig</div><div class="prep-case">unter 0°C</div><div class="prep-ex">„Frostige Nacht!"</div></div>
+<div class="prep"><div class="prep-icon">🥶</div><div class="prep-word">kalt</div><div class="prep-case">niedrige Temperatur</div><div class="prep-ex">„Es ist sehr kalt."</div></div>
+<div class="prep"><div class="prep-icon">🌤️</div><div class="prep-word">warm</div><div class="prep-case">angenehm</div><div class="prep-ex">„20 Grad &mdash; schön warm!"</div></div>
+<div class="prep"><div class="prep-icon">🥵</div><div class="prep-word">heiß</div><div class="prep-case">über 28°C</div><div class="prep-ex">„Heute ist es heiß!"</div></div>
+<div class="prep"><div class="prep-icon">💨</div><div class="prep-word">windig</div><div class="prep-case">Wind weht</div><div class="prep-ex">„Es ist windig draußen."</div></div>
+</div>
+
+<div class="tip">
+💡 <strong>So fragt man nach dem Wetter:</strong> <em>„Wie ist das Wetter heute?"</em> &middot; <em>„Wie wird das Wetter morgen?"</em> &middot; <em>„Wie warm ist es?"</em><br>Antwort beginnt oft mit <strong>„Es ist…"</strong> oder <strong>„Wir haben…"</strong> &mdash; z. B. „Wir haben heute 25 Grad und Sonne!"
+</div>
+
+<h2 class="section-title">Die 4 <em style="font-style:italic;">Jahreszeiten</em></h2>
+<p class="section-sub">Typisches Wetter &mdash; und was man da macht.</p>
+
+<div class="dialog-grid">
+<div class="dial d1">
+<div class="dial-icon">🌸</div>
+<div class="dial-body">
+<h4>Frühling (März - Mai)</h4>
+<ul>
+<li>warm, manchmal regnerisch, alles blüht</li>
+<li>„Im Frühling können wir wieder draußen sitzen."</li>
+<li>typisch: Spaziergang, Picknick, Fahrrad fahren</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d2">
+<div class="dial-icon">☀️</div>
+<div class="dial-body">
+<h4>Sommer (Juni - August)</h4>
+<ul>
+<li>heiß, sonnig, manchmal Gewitter</li>
+<li>„Im Sommer können wir schwimmen gehen."</li>
+<li>typisch: Schwimmbad, Eis essen, Grillen</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d3">
+<div class="dial-icon">🍂</div>
+<div class="dial-body">
+<h4>Herbst (September - November)</h4>
+<ul>
+<li>windig, regnerisch, bunte Blätter</li>
+<li>„Im Herbst müssen wir eine Jacke tragen."</li>
+<li>typisch: Wandern, Tee trinken, Drachen steigen</li>
+</ul>
+</div>
+</div>
+
+<div class="dial d4">
+<div class="dial-icon">❄️</div>
+<div class="dial-body">
+<h4>Winter (Dezember - Februar)</h4>
+<ul>
+<li>kalt, frostig, oft Schnee</li>
+<li>„Im Winter müssen wir warme Kleidung anziehen."</li>
+<li>typisch: Skifahren, Glühwein, Weihnachten</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2 class="section-title">Modalverben: <em style="font-style:italic;">können vs. müssen</em></h2>
+<p class="section-sub">Mit „können" beschreibst du Möglichkeiten &mdash; mit „müssen" Pflichten je nach Wetter.</p>
+
+<div class="compare">
+<div class="comp-card a">
+<span class="comp-tag">MÜSSEN 😬</span>
+<div class="comp-text">„Bei Regen <strong>müssen</strong> wir drinnen bleiben."</div>
+<div class="comp-note">= Pflicht / keine andere Wahl. Wir <em>haben</em> keine andere Möglichkeit!</div>
+</div>
+<div class="comp-card b">
+<span class="comp-tag">KÖNNEN 😍</span>
+<div class="comp-text">„Bei Sonne <strong>können</strong> wir schwimmen."</div>
+<div class="comp-note">= Möglichkeit / freie Wahl. Wir <em>dürfen</em> &mdash; es ist möglich!</div>
+</div>
+</div>
+
+<div class="tip">
+🎯 <strong>Wortstellung-Trick:</strong> Modalverb auf Position 2, Vollverb am Ende!
+<br>&middot; „Im Sommer <strong>können</strong> wir am See <u>schwimmen</u>."
+<br>&middot; „Bei Schnee <strong>müssen</strong> wir vorsichtig <u>fahren</u>."
+<br>&middot; „Wenn es regnet, <strong>kann</strong> ich nicht joggen <u>gehen</u>."
+</div>
+
+<h2 class="section-title">Konjugation: <em style="font-style:italic;">können &amp; müssen</em></h2>
+
+<div class="compare">
+<div class="comp-card a">
+<span class="comp-tag">KÖNNEN</span>
+<div class="comp-text">ich <strong>kann</strong><br>du <strong>kannst</strong><br>er/sie/es <strong>kann</strong><br>wir <strong>können</strong><br>ihr <strong>könnt</strong><br>sie/Sie <strong>können</strong></div>
+</div>
+<div class="comp-card b">
+<span class="comp-tag">MÜSSEN</span>
+<div class="comp-text">ich <strong>muss</strong><br>du <strong>musst</strong><br>er/sie/es <strong>muss</strong><br>wir <strong>müssen</strong><br>ihr <strong>müsst</strong><br>sie/Sie <strong>müssen</strong></div>
+</div>
+</div>
+
+<h2 class="section-title">Eine Frage <em style="font-style:italic;">zwischendurch</em></h2>
+
+<div class="alltag-q">
+<div class="ql">Alltag &middot; Morgens</div>
+<div class="qq">Es regnet draußen. Was sagst du auf Deutsch?</div>
+<div class="think">💭 „Heute regnet es &mdash; ich muss einen Regenschirm mitnehmen!"</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:var(--teal);">
+<div class="ql" style="color:var(--teal);">Alltag &middot; Wochenende</div>
+<div class="qq">Am Samstag scheint die Sonne, 25 Grad. Was kannst du machen?</div>
+<div class="think">💭 „Wir können ins Schwimmbad gehen oder grillen!"</div>
+</div>
+
+<div class="alltag-q" style="border-left-color:#B66809;">
+<div class="ql" style="color:#B66809;">Alltag &middot; Lieblingsjahreszeit</div>
+<div class="qq">Welche Jahreszeit magst du am liebsten? Warum?</div>
+<div class="think">💭 „Ich liebe den Frühling &mdash; nicht zu heiß, nicht zu kalt, alles blüht!"</div>
+</div>
+
+</section>
+
+<!-- ============== UMGANGSSPRACHE ============== -->
+<section class="section" data-section="1">
+<h2 class="section-title">💬 So reden Deutsche <em style="font-style:italic;">über das Wetter</em></h2>
+<p class="section-sub">Echte Chats &mdash; vom Smalltalk bis zur Klimadebatte.</p>
+
+<div class="tip">🔥 <strong>Tipp:</strong> Wetter ist DER deutsche Smalltalk-Klassiker! Statt formeller Fragen sagt man oft einfach <strong>„Schönes Wetter heute, oder?"</strong> &mdash; und schon ist man im Gespräch!</div>
+
+<div class="uss-grid">
+
+<div class="chat">
+<div class="chat-head"><div class="av">🌤️</div><div><div class="name">Mama &middot; Morgen-Check</div><div class="stat">online</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Guten Morgen Schatz! <strong>Wie ist das Wetter</strong> bei euch?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Hier scheint die Sonne, ca. 18 Grad 😊</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Bei uns regnet es seit Stunden! <strong>Ich muss</strong> trotzdem zum Markt 😅</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Vergiss den Regenschirm nicht!</div></div>
+<div class="chat-meaning">Klassischer Wetter-Smalltalk! <strong>„Wie ist das Wetter?"</strong> ist DIE Eröffnungsfrage in Deutschland.</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🧺</div><div><div class="name">Tim &middot; Picknick-Plan</div><div class="stat">plant…</div></div></div>
+<div class="chat-msg out"><div class="chat-bubble">Picknick am Samstag im Park? 🌳</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Lass uns die Wettervorhersage checken! 📱</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Samstag: 22 Grad, <strong>sonnig</strong>! Sonntag: Regen 🌧️</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Perfekt &mdash; Samstag <strong>können wir</strong> draußen sein. Bringst du Wein mit?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Klar, und Salat. Hauptsache es bleibt trocken!</div></div>
+<div class="chat-meaning"><strong>„Wettervorhersage"</strong> = der Wetterbericht. <strong>„trocken bleiben"</strong> = kein Regen!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">✈️</div><div><div class="name">Anna &middot; Urlaubsplanung</div><div class="stat">recherchiert</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Ich überleg, im April nach Mallorca zu fliegen. <strong>Wie ist da das Wetter</strong>?</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Im April? Schon ziemlich warm, vielleicht 20 Grad. Aber abends kühl!</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Hm, kann man da schon schwimmen? 🌊</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Das Meer ist noch <strong>frisch</strong>! Du <strong>musst</strong> warten bis Mai 🥶</div></div>
+<div class="chat-meaning"><strong>„frisch"</strong> = ein bisschen kalt, aber nicht eisig. Höflicher als „kalt"!</div>
+</div>
+
+<div class="chat">
+<div class="chat-head"><div class="av">🌍</div><div><div class="name">Oma &middot; Klimawandel</div><div class="stat">besorgt</div></div></div>
+<div class="chat-msg in"><div class="chat-bubble">Früher hatten wir richtige Winter mit viel Schnee!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Heute schneit es kaum noch, Oma. <strong>Klimawandel</strong> ist real 😢</div></div>
+<div class="chat-msg in"><div class="chat-bubble">Und die Sommer werden immer <strong>heißer</strong>!</div></div>
+<div class="chat-msg out"><div class="chat-bubble">Genau. Im Juli hatten wir 38 Grad &mdash; das ist nicht normal!</div></div>
+<div class="chat-meaning"><strong>„Klimawandel"</strong> = climate change. Wichtiges Thema für Diskussionen!</div>
+</div>
+
+</div>
+
+<h2 class="section-title">8 <em style="font-style:italic;">Wetter-Alltagssätze</em></h2>
+
+<div class="prep-grid" style="grid-template-columns:1fr;">
+<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Wie ist das Wetter heute?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Standardfrage / Smalltalk-Klassiker</div></div>
+<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„Schönes Wetter heute, oder?"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">positiver Gesprächsstarter</div></div>
+<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">„Es soll morgen regnen."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Wettervorhersage zitieren</div></div>
+<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">„Hoffentlich bleibt es trocken!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">vor Picknick / Hochzeit / Veranstaltung</div></div>
+<div class="prep" style="text-align:left;border-color:var(--red);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--red);font-size:1rem;">„Mir ist kalt / heiß."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Dativ! Nicht „ich bin kalt"</div></div>
+<div class="prep" style="text-align:left;border-color:var(--teal);"><div style="font-family:'Fraunces',serif;font-weight:700;color:var(--teal);font-size:1rem;">„Es zieht!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">= kalter Wind im Raum (Fenster!)</div></div>
+<div class="prep" style="text-align:left;border-color:#B66809;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#B66809;font-size:1rem;">„Was für ein Sauwetter!"</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">= ganz schlechtes Wetter (Slang)</div></div>
+<div class="prep" style="text-align:left;border-color:#6A3D9C;"><div style="font-family:'Fraunces',serif;font-weight:700;color:#6A3D9C;font-size:1rem;">„Heute haben wir 25 Grad."</div><div style="font-size:.78rem;color:var(--ink-soft);margin-top:.2rem;">Temperatur angeben</div></div>
+</div>
+
+</section>
+
+<!-- ============== LERNKARTEN ============== -->
+<section class="section" data-section="2">
+<h2 class="section-title">Lernkarten &middot; <em style="font-style:italic;">Wetter &amp; Jahreszeiten</em></h2>
+<p class="section-sub">Erst raten &mdash; dann umdrehen.</p>
+
+<div class="flip" id="flip">
+<div class="flip-inner">
+<div class="flip-side front">
+<div class="flip-emoji" id="flipEmoji">☀️</div>
+<div class="flip-word" id="flipWord">sonnig</div>
+<div class="flip-badge" id="flipBadge">Wetter</div>
+<div class="flip-prompt">Was bedeutet das? In welcher Jahreszeit?<br>(zum Umdrehen tippen)</div>
+</div>
+<div class="flip-side back">
+<div class="flip-rule" id="flipRule">die Sonne scheint &mdash; klarer Himmel</div>
+<div class="flip-ex" id="flipEx">„Im Sommer ist es oft <strong>sonnig</strong> und heiß."</div>
+</div>
+</div>
+</div>
+
+<div class="lk-nav">
+<button class="lk-btn" id="lkPrev">←</button>
+<span class="lk-counter"><span id="lkCur">1</span> / <span id="lkTot">15</span></span>
+<button class="lk-btn" id="lkNext">→</button>
+</div>
+<button class="lk-shuffle" id="lkShuffle">🔀 Mischen</button>
+</section>
+
+<!-- ============== QUIZ ============== -->
+<section class="section" data-section="3">
+<h2 class="section-title">Quiz: <em style="font-style:italic;">Wetter &amp; Modalverben</em></h2>
+
+<div class="quiz"><div class="quiz-q">Welche Endung passt? &mdash; „Bei Regen <strong>__</strong> wir drinnen bleiben."</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">kann</span><span class="quiz-chip">müssen</span><span class="quiz-chip">muss</span></div><div class="quiz-explain">✓ „müssen" &mdash; Pflicht im Plural (wir). Bei Regen haben wir keine andere Wahl.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was passt? &mdash; „Im Sommer <strong>__</strong> ich schwimmen gehen."</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">kann</span><span class="quiz-chip">muss</span><span class="quiz-chip">könnt</span></div><div class="quiz-explain">✓ „kann" &mdash; ich-Form von „können". Möglichkeit, keine Pflicht!</div></div>
+
+<div class="quiz"><div class="quiz-q">In welcher Jahreszeit ist es typisch <strong>frostig</strong>?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Sommer</span><span class="quiz-chip">Frühling</span><span class="quiz-chip">Winter</span></div><div class="quiz-explain">✓ „frostig" = unter 0 Grad. Klassisches Winter-Wetter!</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet <strong>„Es soll morgen regnen"</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">Der Regen ist eine Pflicht.</span><span class="quiz-chip">Die Wettervorhersage sagt: Regen.</span><span class="quiz-chip">Es regnet jetzt.</span></div><div class="quiz-explain">✓ „Es soll…" = laut Vorhersage. Typischer Wetter-Konjunktiv!</div></div>
+
+<div class="quiz"><div class="quiz-q">Welcher Satz ist richtig?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Ich bin kalt.</span><span class="quiz-chip">Ich habe kalt.</span><span class="quiz-chip">Mir ist kalt.</span></div><div class="quiz-explain">✓ „Mir ist kalt" &mdash; Dativ! „Ich bin kalt" wäre auf Englisch „I am cold (character)"!</div></div>
+
+<div class="quiz"><div class="quiz-q">Welches Wetter passt zu <strong>„grillen im Garten"</strong>?</div><div class="quiz-opts" data-c="0"><span class="quiz-chip">warm und sonnig</span><span class="quiz-chip">frostig und windig</span><span class="quiz-chip">stürmisch und kalt</span></div><div class="quiz-explain">✓ Grillen geht nur bei schönem Wetter &mdash; warm und sonnig!</div></div>
+
+<div class="quiz"><div class="quiz-q">Wortstellung: Wo steht das Vollverb mit Modalverb?</div><div class="quiz-opts" data-c="2"><span class="quiz-chip">Position 2</span><span class="quiz-chip">Position 1</span><span class="quiz-chip">am Ende</span></div><div class="quiz-explain">✓ Vollverb am Ende! „Wir <strong>können</strong> schwimmen <strong>gehen</strong>." Modalverb auf 2, Vollverb am Ende.</div></div>
+
+<div class="quiz"><div class="quiz-q">Was bedeutet <strong>„Sauwetter"</strong>?</div><div class="quiz-opts" data-c="1"><span class="quiz-chip">warmes Wetter</span><span class="quiz-chip">ganz schlechtes Wetter (Slang)</span><span class="quiz-chip">Wetter für Schweine</span></div><div class="quiz-explain">✓ „Sauwetter" = miserables Wetter. Lockerer Slang-Ausdruck im Alltag!</div></div>
+
+</section>
+
+<!-- ============== LÜCKENTEXT ============== -->
+<section class="section" data-section="4">
+<h2 class="section-title">Lückentext &middot; <em style="font-style:italic;">Wetter im Alltag</em></h2>
+
+<div class="gap-text" id="gapText">
+<div class="gap-line">1. „Heute ist es <select data-sol="sonnig"><option value="">…</option><option>sonnig</option><option>regnerisch</option><option>frostig</option></select> &mdash; perfekt für ein Eis!"</div>
+<div class="gap-line">2. „Bei Regen <select data-sol="müssen"><option value="">…</option><option>können</option><option>müssen</option><option>könnt</option></select> wir leider zu Hause bleiben."</div>
+<div class="gap-line">3. „Im Winter <select data-sol="kann"><option value="">…</option><option>kann</option><option>muss</option><option>könnt</option></select> man in den Alpen Ski fahren."</div>
+<div class="gap-line">4. „Es zieht &mdash; mach bitte das <select data-sol="Fenster"><option value="">…</option><option>Auto</option><option>Fenster</option><option>Buch</option></select> zu!"</div>
+<div class="gap-line">5. „Mir <select data-sol="ist"><option value="">…</option><option>bin</option><option>ist</option><option>habe</option></select> kalt &mdash; gib mir eine Decke!"</div>
+<div class="gap-line">6. „Die <select data-sol="Wettervorhersage"><option value="">…</option><option>Jahreszeit</option><option>Wettervorhersage</option><option>Temperatur</option></select> sagt: morgen Gewitter."</div>
+<div class="gap-line">7. „Im Frühling <select data-sol="blühen"><option value="">…</option><option>schneien</option><option>blühen</option><option>frieren</option></select> die Blumen."</div>
+<div class="gap-line">8. „Heute haben wir 35 Grad &mdash; das ist viel zu <select data-sol="heiß"><option value="">…</option><option>kalt</option><option>heiß</option><option>frisch</option></select>!"</div>
+<div class="gap-actions">
+<button class="btn-secondary" id="gapReset">Neu</button>
+<button class="btn-primary" id="gapCheck">Überprüfen</button>
+</div>
+</div>
+
+<div class="tip" id="gapScore" style="display:none;"></div>
+</section>
+
+<!-- ============== ZUORDNEN ============== -->
+<section class="section" data-section="5">
+<h2 class="section-title">Wetter &harr; <em style="font-style:italic;">Kleidung / Aktivität</em></h2>
+<p class="section-sub">Was passt zu welchem Wetter?</p>
+
+<div class="match-stage">
+<div class="match-cols">
+<div class="match-col">
+<h4>🌡️ Wetter</h4>
+<div class="match-list" id="leftCol"></div>
+</div>
+<div class="match-col">
+<h4>🎒 Kleidung / Aktivität</h4>
+<div class="match-list" id="rightCol"></div>
+</div>
+</div>
+<button class="btn-secondary match-restart" id="matchRestart">🔄 Nochmal</button>
+</div>
+</section>
+
+<!-- ============== SPRECHEN ============== -->
+<section class="section" data-section="6">
+<h2 class="section-title">Sprechen &mdash; <em style="font-style:italic;">los geht’s!</em></h2>
+<p class="section-sub">Zieh eine Karte. Beschreibe das Wetter &mdash; oder plane eine Aktivität mit „können" und „müssen"!</p>
+
+<div class="speak-card" id="speakCard">
+<div class="speak-emoji">🎲</div>
+<div class="speak-cat">Sprechclub-Karte</div>
+<div class="speak-q">Tippe unten auf „Neue Karte" und leg los!</div>
+</div>
+
+<div class="speak-controls">
+<button class="btn-primary" id="speakNew">🎲 Neue Karte</button>
+</div>
+
+<div class="role-section">
+<h2 class="section-title">3 Rollenspiele <em style="font-style:italic;">zum Mitmachen</em></h2>
+<p class="section-sub">Übt zu zweit &mdash; jede:r übernimmt eine Rolle!</p>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 1 &middot; Picknick-Planung</div>
+<div class="role-title">🧺 Picknick am Samstag?</div>
+<div class="role-situation">Person A will am Samstag im Park grillen, Person B ist skeptisch wegen der Wettervorhersage (Regen möglich). Diskutiert mit „können" und „müssen"!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">😎</div><div><div class="person-label">Person A &mdash; Optimist:in</div><div class="person-quote">„Schau, am Vormittag sonnig &mdash; wir können um 11 Uhr starten, dann sind wir bis 14 Uhr fertig!"</div></div></div>
+<div class="person b"><div class="person-avatar">🤔</div><div><div class="person-label">Person B &mdash; Skeptiker:in</div><div class="person-quote">„Aber ab 15 Uhr soll es regnen! Wir müssen einen Plan B haben. Vielleicht doch lieber zu Hause?"</div></div></div>
+</div>
+<div class="role-goal">🎯 Mindestens 6 Sätze mit „können" oder „müssen". Findet einen Kompromiss!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 2 &middot; Reisewetter</div>
+<div class="role-title">✈️ Urlaubsziel finden</div>
+<div class="role-situation">Person A liebt heiße Sommer am Meer, Person B mag kühles, regnerisches Wetter und Wandern. Plant zusammen einen Urlaub für Juni &mdash; mit Wetter-Argumenten!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">🏖️</div><div><div class="person-label">Person A &mdash; Strand-Fan</div><div class="person-quote">„In Spanien können wir schwimmen! 30 Grad, Sonne, ich brauche das nach diesem Winter!"</div></div></div>
+<div class="person b"><div class="person-avatar">🥾</div><div><div class="person-label">Person B &mdash; Wander-Fan</div><div class="person-quote">„Bei 30 Grad muss ich nur Wasser trinken &mdash; Norwegen ist viel besser! Kühl, frisch, perfekt zum Wandern."</div></div></div>
+</div>
+<div class="role-goal">🎯 Beschreibt das Wetter eures Wunschziels mit 4 Adjektiven und 3 Aktivitäten!</div>
+</div>
+
+<div class="role">
+<div class="role-tag">Rollenspiel 3 &middot; Smalltalk</div>
+<div class="role-title">☕ Im Bus / Aufzug</div>
+<div class="role-situation">Zwei Personen treffen sich im Aufzug. Sie kennen sich nicht. Person A startet das Gespräch mit Wetter-Smalltalk. Beide reden 1 Minute &mdash; ohne private Themen!</div>
+<div class="role-people">
+<div class="person a"><div class="person-avatar">👋</div><div><div class="person-label">Person A &mdash; freundlich</div><div class="person-quote">„Puh, was für ein heißer Tag heute! Hoffentlich soll es bald regnen, oder?"</div></div></div>
+<div class="person b"><div class="person-avatar">🙂</div><div><div class="person-label">Person B &mdash; höflich</div><div class="person-quote">„Ja, wirklich! Im Wetterbericht haben sie 32 Grad gesagt. Im Büro können wir nicht mehr arbeiten…"</div></div></div>
+</div>
+<div class="role-goal">🎯 Nur Wetter-Themen! Mindestens 8 Sätze mit Wetter-Wörtern, dann höflich verabschieden.</div>
+</div>
+</div>
+
+<h2 class="section-title">🎯 Mission der Woche</h2>
+<div class="tip" style="background:var(--red-soft);border-color:var(--red);border-style:solid;">
+<strong>Tägliche Mini-Aufgabe:</strong> Beschreibe jeden Morgen das Wetter auf Deutsch &mdash; mit Temperatur + 1 Adjektiv + 1 Aktivität mit „können" oder „müssen". Beispiel: „Heute 18 Grad und bewölkt &mdash; ich kann joggen gehen, aber muss eine Jacke tragen."<br><br>
+🏆 <strong>Bonus-Challenge:</strong> Starte 3-mal pro Woche ein Wetter-Smalltalk mit jemandem auf Deutsch (Nachbar:in, Kassierer:in, Kolleg:in). Notiere danach: Welche Sätze hast du benutzt? Was hat die andere Person geantwortet?
+</div>
+
+</section>
+
+</div>
+
+<footer><strong>deutschoderwas</strong> &mdash; authentisches Deutsch für den Alltag<br>Erstellt mit ❤️ für meine Sprechclub-Lernenden &middot; Wetter &amp; Jahreszeiten &middot; A2</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelector('[data-section="'+b.dataset.tab+'"]').classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+// LERNKARTEN
+const KARTEN=[
+  {emoji:'☀️',word:'sonnig',badge:'Sommer',rule:'die Sonne scheint — klarer Himmel',ex:'„Im Sommer ist es oft <strong>sonnig<\/strong> und heiß.“'},
+  {emoji:'🌧️',word:'regnerisch',badge:'Herbst',rule:'es regnet viel und oft',ex:'„Im November ist es meistens <strong>regnerisch<\/strong>.“'},
+  {emoji:'☁️',word:'bewölkt',badge:'ganzjährig',rule:'der Himmel ist voller Wolken',ex:'„Heute ist es stark <strong>bewölkt<\/strong>.“'},
+  {emoji:'⛈️',word:'stürmisch',badge:'gefährlich',rule:'starker Wind + oft Gewitter',ex:'„Es ist <strong>stürmisch<\/strong> — bleib zu Hause!“'},
+  {emoji:'❄️',word:'frostig / eisig',badge:'Winter',rule:'unter 0 Grad, Eis auf der Straße',ex:'„Vorsicht: <strong>eisige<\/strong> Straßen!“'},
+  {emoji:'🥶',word:'kalt',badge:'Winter',rule:'niedrige Temperatur',ex:'„Mir ist <strong>kalt<\/strong> — schließ das Fenster!“'},
+  {emoji:'🌤️',word:'warm',badge:'Frühling/Sommer',rule:'angenehme Temperatur, 18-25 Grad',ex:'„Es wird endlich wieder <strong>warm<\/strong>!“'},
+  {emoji:'🥵',word:'heiß',badge:'Sommer',rule:'sehr hohe Temperatur, über 28 Grad',ex:'„Heute ist es <strong>heiß<\/strong> — 33 Grad!“'},
+  {emoji:'💨',word:'windig',badge:'Herbst',rule:'der Wind weht stark',ex:'„Im Herbst ist es oft <strong>windig<\/strong>.“'},
+  {emoji:'🌫️',word:'neblig',badge:'Herbst-Morgen',rule:'man sieht wenig — viel Nebel',ex:'„Morgens ist es manchmal <strong>neblig<\/strong>.“'},
+  {emoji:'🌸',word:'der Frühling',badge:'März-Mai',rule:'alles blüht, wird wieder warm',ex:'„Im <strong>Frühling<\/strong> können wir wieder draußen sitzen.“'},
+  {emoji:'☀️',word:'der Sommer',badge:'Juni-August',rule:'heißeste Jahreszeit, Urlaub',ex:'„Im <strong>Sommer<\/strong> fahren wir ans Meer.“'},
+  {emoji:'🍂',word:'der Herbst',badge:'Sept-Nov',rule:'bunte Blätter, kühler',ex:'„Im <strong>Herbst<\/strong> müssen wir eine Jacke tragen.“'},
+  {emoji:'❄️',word:'der Winter',badge:'Dez-Feb',rule:'kalt, oft Schnee',ex:'„Im <strong>Winter<\/strong> kann man Ski fahren.“'},
+  {emoji:'🌡️',word:'die Temperatur',badge:'Substantiv',rule:'wie warm oder kalt es ist',ex:'„Die <strong>Temperatur<\/strong> beträgt 22 Grad.“'},
+];
+let order=KARTEN.map((_,i)=>i);
+let lkIdx=0;
+const flipEl=document.getElementById('flip');
+function showCard(){
+  const k=KARTEN[order[lkIdx]];
+  document.getElementById('flipEmoji').textContent=k.emoji;
+  document.getElementById('flipWord').textContent=k.word;
+  document.getElementById('flipBadge').textContent=k.badge;
+  document.getElementById('flipRule').textContent=k.rule;
+  document.getElementById('flipEx').innerHTML=k.ex;
+  document.getElementById('lkCur').textContent=lkIdx+1;
+  document.getElementById('lkTot').textContent=KARTEN.length;
+  flipEl.classList.remove('flipped');
+}
+flipEl.onclick=()=>flipEl.classList.toggle('flipped');
+document.getElementById('lkPrev').onclick=()=>{lkIdx=(lkIdx-1+KARTEN.length)%KARTEN.length;showCard();};
+document.getElementById('lkNext').onclick=()=>{lkIdx=(lkIdx+1)%KARTEN.length;showCard();};
+document.getElementById('lkShuffle').onclick=()=>{order=order.sort(()=>Math.random()-.5);lkIdx=0;showCard();};
+showCard();
+
+// QUIZ
+document.querySelectorAll('.quiz-opts').forEach(opts=>{
+  const c=parseInt(opts.dataset.c);
+  const chips=opts.querySelectorAll('.quiz-chip');
+  const exp=opts.parentElement.querySelector('.quiz-explain');
+  chips.forEach((chip,i)=>{
+    chip.onclick=()=>{
+      if(opts.dataset.done)return;opts.dataset.done='1';
+      if(i===c)chip.classList.add('correct');
+      else{chip.classList.add('wrong');chips[c].classList.add('correct');}
+      exp.classList.add('show');
+    };
+  });
+});
+
+// GAP
+document.getElementById('gapCheck').onclick=()=>{
+  const sels=document.querySelectorAll('#gapText select');
+  let right=0,total=sels.length;
+  sels.forEach(s=>{
+    s.classList.remove('right','wrong');
+    if(s.value===s.dataset.sol){s.classList.add('right');right++;}
+    else s.classList.add('wrong');
+  });
+  const score=document.getElementById('gapScore');
+  score.style.display='block';
+  score.innerHTML='Ergebnis: <strong>'+right+' von '+total+'</strong> richtig! '+(right===total?'🎉 Perfekt!':right>=6?'👏 Sehr gut!':right>=4?'👍 Auf gutem Weg!':'💪 Weiter üben!');
+};
+document.getElementById('gapReset').onclick=()=>{
+  document.querySelectorAll('#gapText select').forEach(s=>{s.value='';s.classList.remove('right','wrong');});
+  document.getElementById('gapScore').style.display='none';
+};
+
+// MATCH
+const PAIRS=[
+  {l:'☀️ heiß und sonnig',r:'ins Schwimmbad gehen'},
+  {l:'❄️ frostig und eisig',r:'warme Mütze + Handschuhe'},
+  {l:'🌧️ regnerisch',r:'Regenschirm mitnehmen'},
+  {l:'⛈️ stürmisch',r:'drinnen bleiben'},
+  {l:'💨 windig im Herbst',r:'Drachen steigen lassen'},
+  {l:'🌸 mild im Frühling',r:'Picknick im Park'},
+  {l:'🌫️ neblig morgens',r:'langsam Auto fahren'},
+  {l:'🥶 sehr kalt (Winter)',r:'dicker Mantel + Schal'},
+];
+function buildMatch(){
+  const left=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const right=PAIRS.map((p,i)=>({...p,i})).sort(()=>Math.random()-.5);
+  const L=document.getElementById('leftCol');const R=document.getElementById('rightCol');
+  L.innerHTML='';R.innerHTML='';
+  left.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.l;L.appendChild(d);});
+  right.forEach(p=>{const d=document.createElement('div');d.className='match-item';d.dataset.i=p.i;d.textContent=p.r;R.appendChild(d);});
+  let pick=null;
+  document.querySelectorAll('.match-item').forEach(item=>{
+    item.onclick=()=>{
+      if(item.classList.contains('done'))return;
+      if(!pick){pick=item;item.classList.add('selected');return;}
+      if(pick===item){item.classList.remove('selected');pick=null;return;}
+      const pickCol=pick.parentElement.id;const itemCol=item.parentElement.id;
+      if(pickCol===itemCol){pick.classList.remove('selected');pick=item;item.classList.add('selected');return;}
+      if(pick.dataset.i===item.dataset.i){pick.classList.add('done');item.classList.add('done');pick.classList.remove('selected');pick=null;}
+      else{const a=pick,b=item;a.classList.add('wrong');b.classList.add('wrong');setTimeout(()=>{a.classList.remove('wrong','selected');b.classList.remove('wrong');},700);pick=null;}
+    };
+  });
+}
+buildMatch();
+document.getElementById('matchRestart').onclick=buildMatch;
+const style=document.createElement('style');style.textContent='.match-item.wrong{background:var(--red-soft)!important;border-color:var(--red)!important;color:var(--red);animation:shake .4s;}@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}';document.head.appendChild(style);
+
+// SPEAK
+const SPEAK=[
+  {emoji:'🌤️',cat:'Wetter beschreiben',q:'Wie ist heute das Wetter? Beschreibe mit 4 Wörtern: Sonne, Wind, Temperatur, Wolken!'},
+  {emoji:'☀️',cat:'Lieblings-Jahreszeit',q:'Welche Jahreszeit magst du am liebsten? Begründe mit 3 Argumenten!'},
+  {emoji:'🧺',cat:'Picknick planen',q:'Plane ein Picknick am Wochenende. Sag, was ihr machen könnt — und was ihr müsst!'},
+  {emoji:'✈️',cat:'Reise-Wetter',q:'Du fährst im Juli nach Italien. Beschreibe das erwartete Wetter und 4 Aktivitäten!'},
+  {emoji:'🥶',cat:'Bei Kälte',q:'Es ist -5 Grad. Was musst du anziehen? Was kannst du draußen machen, was nicht?'},
+  {emoji:'🥵',cat:'Bei Hitze',q:'Es ist 35 Grad. Wie überlebst du den Tag? 5 Tipps mit „können" und „müssen"!'},
+  {emoji:'⛈️',cat:'Sturm-Warnung',q:'Der Wetterbericht warnt vor Sturm. Was sagst du deinen Kindern / Eltern?'},
+  {emoji:'🌧️',cat:'Regen-Tag',q:'Es regnet seit 3 Tagen. Wie ist deine Stimmung? Was machst du, um dich zu beschäftigen?'},
+  {emoji:'❄️',cat:'Schnee!',q:'Heute ist viel Schnee gefallen. Beschreibe deinen perfekten Schnee-Tag (5 Sätze)!'},
+  {emoji:'🌸',cat:'Frühlingsgefühle',q:'Was ist das erste, was du im Frühling draußen machst, wenn es warm wird?'},
+  {emoji:'🌍',cat:'Klimawandel',q:'Hat sich das Wetter in deiner Heimat verändert? Gib 3 Beispiele!'},
+  {emoji:'☕',cat:'Smalltalk',q:'Starte ein Wetter-Gespräch mit der Person neben dir — höflich und freundlich!'},
+  {emoji:'🌡️',cat:'Temperatur',q:'Bei wie viel Grad ist es für dich kalt, warm, heiß? Begründe!'},
+  {emoji:'🎿',cat:'Winter-Aktivität',q:'Welche Wintersportarten kennst du? Welche kannst du / welche möchtest du lernen?'},
+  {emoji:'🌈',cat:'Wetter-Phänomen',q:'Beschreibe den schönsten Regenbogen / Sonnenuntergang / Sturm, den du gesehen hast!'},
+  {emoji:'⚖️',cat:'können vs. müssen',q:'Bilde 4 Sätze: 2 mit „können" (Möglichkeit), 2 mit „müssen" (Pflicht) — je nach Wetter!'},
+];
+let lastSpeak=-1;
+document.getElementById('speakNew').onclick=()=>{
+  let i;do{i=Math.floor(Math.random()*SPEAK.length);}while(i===lastSpeak&&SPEAK.length>1);
+  lastSpeak=i;const k=SPEAK[i];
+  const c=document.getElementById('speakCard');
+  c.style.opacity='0';
+  setTimeout(()=>{
+    c.innerHTML='<div class="speak-emoji">'+k.emoji+'</div><div class="speak-cat">'+k.cat+'</div><div class="speak-q">'+k.q+'</div><div class="speak-hint">Sprich frei — 60-90 Sekunden!</div>';
+    c.style.opacity='1';
+  },200);
+};
+</script>
+</body></html>
