@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deutschoderwas · Mo 29.06 09:30 · Beruf &amp; Lernen Teil 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6f6a62; --cream:#fdf8f1; --card:#ffffff;
+    --red:#dd0000; --gold:#ffce00; --teal:#2bbfbf; --teal-dark:#138a8a;
+    --teal-soft:#e7f6f3; --gold-soft:#fff6da; --line:#ece5d8; --green:#127a44;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--cream); line-height:1.55; padding-bottom:48px; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.brand-name{font-family:'Space Grotesk','Inter',sans-serif;}
+  header{background:#fff; border-bottom:1px solid var(--line); padding:0 22px 20px;}
+  .accent-bar{height:5px; margin:0 -22px 18px; background:linear-gradient(135deg,var(--red),var(--gold));}
+  .brand{display:flex; align-items:center; gap:11px; padding-top:16px;}
+  .logo-dot{width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--red),var(--gold)); flex:none;}
+  .brand-name{font-weight:700; font-size:1.05rem; letter-spacing:-.3px;}
+  .brand-tag{font-size:.72rem; color:var(--muted);}
+  .handout-title{font-weight:700; font-size:1.5rem; margin-top:18px; letter-spacing:-.5px; line-height:1.15;}
+  .handout-sub{color:var(--muted); font-size:.86rem; margin-top:5px; font-weight:500;}
+  nav{position:sticky; top:0; z-index:50; display:flex; gap:8px; overflow-x:auto; padding:12px 16px; background:rgba(253,248,241,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); scrollbar-width:none;}
+  nav::-webkit-scrollbar{display:none;}
+  nav label{flex:none; font-weight:700; font-size:.8rem; color:var(--ink); background:#fff; border:1.5px solid var(--line); padding:8px 15px; border-radius:50px; cursor:pointer; white-space:nowrap; transition:.12s;}
+  nav label:hover{border-color:var(--red);}
+  input[type=radio]{display:none;}
+  #t1:checked~nav label[for=t1],#t2:checked~nav label[for=t2],#t3:checked~nav label[for=t3],#t4:checked~nav label[for=t4],#t5:checked~nav label[for=t5],#t6:checked~nav label[for=t6]{background:var(--red); border-color:var(--red); color:#fff;}
+  .tab-content{display:none; max-width:720px; margin:0 auto; padding:22px 16px;}
+  #t1:checked~.panels #p1,#t2:checked~.panels #p2,#t3:checked~.panels #p3,#t4:checked~.panels #p4,#t5:checked~.panels #p5,#t6:checked~.panels #p6{display:block;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 20px rgba(50,35,10,.05);}
+  .card h2{font-size:1.12rem; font-weight:700; letter-spacing:-.3px; margin-bottom:12px; display:flex; gap:9px; align-items:center;}
+  .card p{font-size:.94rem;}
+  .card.a-red{border-left:5px solid var(--red);}
+  .card.a-teal{border-left:5px solid var(--teal);}
+  .card.a-gold{border-left:5px solid var(--gold);}
+  .card.a-ink{border-left:5px solid var(--ink);}
+  .satz-list{list-style:none;}
+  .satz-list li{background:#faf6ef; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:10px; padding:11px 13px; margin-bottom:9px; font-size:.92rem;}
+  .satz-list li .note{display:block; margin-top:4px; color:var(--muted); font-size:.82rem; font-style:italic;}
+  .satz-list li strong{color:var(--teal-dark);}
+  strong{font-weight:700;}
+  .box{border-radius:14px; padding:14px 16px; margin-bottom:10px; border:1px solid var(--line);}
+  .box.mint{background:var(--teal-soft); border-color:#cdeae5;}
+  .box.sun{background:var(--gold-soft); border-color:#f3e4b0;}
+  .box .box-label{font-size:.73rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--teal-dark); margin-bottom:6px;}
+  .box.sun .box-label{color:#a9750a;}
+  .box p{font-size:.9rem;}
+  .box .hl{font-weight:700; color:var(--red);}
+  table{width:100%; border-collapse:separate; border-spacing:0; font-size:.88rem; border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  th{background:var(--ink); color:#fff; text-align:left; padding:10px 11px; font-weight:700; font-family:'Space Grotesk',sans-serif;}
+  td{padding:9px 11px; border-top:1px solid var(--line); vertical-align:top;}
+  tbody tr:nth-child(even){background:#faf6ef;}
+  td strong{color:var(--red);}
+  details{background:#fff; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:12px; padding:13px 15px; margin-bottom:10px; cursor:pointer;}
+  details summary{font-weight:700; font-size:.92rem; list-style:none; display:flex; justify-content:space-between; gap:12px; align-items:center;}
+  details summary::after{content:"ansehen"; font-size:.72rem; font-weight:700; color:#fff; background:var(--teal); padding:3px 11px; border-radius:50px; white-space:nowrap;}
+  details[open] summary::after{content:"zu"; background:var(--muted);}
+  details .answer{margin-top:11px; padding-top:11px; border-top:1px dashed var(--line); font-size:.95rem; line-height:1.6;}
+  .exercise{margin-bottom:20px;}
+  .exercise p{font-weight:700; font-size:.92rem; margin-bottom:8px;}
+  select{font-family:'Inter',sans-serif; font-size:.9rem; padding:6px 9px; border:1.5px solid #d8d2c6; border-radius:9px; background:#fff; color:var(--ink); font-weight:600; cursor:pointer;}
+  select.correct{border-color:var(--green); background:#eafaf1;}
+  select.wrong{border-color:var(--red); background:#fdeaea;}
+  .fehler-card{background:#fff; border:1px solid var(--line); border-left:5px solid var(--red); border-radius:14px; padding:14px 16px; margin-bottom:12px;}
+  .fehler-card .falsch{color:var(--red); font-weight:700; font-size:.92rem; margin-bottom:6px;}
+  .fehler-card .falsch span{text-decoration:line-through; opacity:.6;}
+  .fehler-card .richtig{color:var(--green); font-weight:700; font-size:.92rem; margin-bottom:6px;}
+  .fehler-card .richtig .hl{background:#eafaf1; border-radius:5px; padding:1px 5px;}
+  .fehler-card .erklaerung{color:#555; font-size:.84rem; font-style:italic; margin-top:6px; line-height:1.5;}
+</style>
+
+<input type="radio" name="tabs" id="t1" checked>
+<input type="radio" name="tabs" id="t2">
+<input type="radio" name="tabs" id="t3">
+<input type="radio" name="tabs" id="t4">
+<input type="radio" name="tabs" id="t5">
+<input type="radio" name="tabs" id="t6">
+
+<header>
+  <div class="accent-bar"></div>
+  <div class="brand">
+    <div class="logo-dot"></div>
+    <div>
+      <div class="brand-name">deutschoderwas</div>
+      <div class="brand-tag">Deutsch lernen mit Spaß</div>
+    </div>
+  </div>
+  <h1 class="handout-title">Handout · Beruf &amp; Lernen Teil 1</h1>
+  <p class="handout-sub">Mo 29.06 · 09:30 Uhr · über Beruf, Ziele &amp; Herausforderungen sprechen</p>
+</header>
+
+<nav>
+  <label for="t1">📋 Zusammenfassung</label>
+  <label for="t2">📖 Vokabeln</label>
+  <label for="t3">🗣️ Redemittel</label>
+  <label for="t4">✏️ Übungen</label>
+  <label for="t5">💬 Sprechen</label>
+  <label for="t6">🔴 Fehler</label>
+</nav>
+
+<div class="panels">
+
+<!-- TAB 1 -->
+<div class="tab-content" id="p1">
+  <div class="card a-red">
+    <h2>🔑 Thema der Stunde</h2>
+    <p>Heute habt ihr euch <strong>beruflich vorgestellt</strong> und über eure <strong>Ziele</strong> und <strong>Herausforderungen</strong> beim Deutschlernen gesprochen: Welcher Beruf, welcher Bereich, warum Deutsch, was ist das Ziel?</p>
+  </div>
+
+  <div class="card a-teal">
+    <h2>💼 Sich beruflich vorstellen</h2>
+    <ul class="satz-list">
+      <li>Ich bin <strong>Internistin</strong>. · Ich bin <strong>Logistikerin von Beruf</strong>.</li>
+      <li>Ich habe früher als Ärztin gearbeitet, aber im Moment arbeite ich nicht, <strong>weil</strong> ich Deutsch lernen muss.</li>
+      <li>In der Ukraine habe ich lange Zeit <strong>im Bereich Logistik</strong> gearbeitet.</li>
+    </ul>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🎯 Ziele &amp; Herausforderungen</h2>
+    <ul class="satz-list">
+      <li>Mein Ziel ist es, das <strong>B2-Niveau zu erreichen</strong> und die <strong>Anerkennung</strong> meiner Dokumente zu bekommen.</li>
+      <li>Mein Ziel ist es, in Zukunft eine <strong>höhere Position</strong> zu bekommen.</li>
+      <li>Für mich ist die größte <strong>Herausforderung</strong>, mit Deutschen Deutsch zu sprechen.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TAB 2 -->
+<div class="tab-content" id="p2">
+  <div class="card a-teal">
+    <h2>📖 Wortschatz „Beruf &amp; Lernen"</h2>
+    <table>
+      <thead><tr><th>Wort / Ausdruck</th><th>Bedeutung</th></tr></thead>
+      <tbody>
+        <tr><td><strong>beruflich</strong></td><td>professionally („Was machst du beruflich?")</td></tr>
+        <tr><td><strong>der Bereich</strong></td><td>field / area („im Bereich Logistik")</td></tr>
+        <tr><td><strong>die Fachärztin / der Facharzt</strong></td><td>specialist doctor</td></tr>
+        <tr><td><strong>die Internistin</strong></td><td>internist</td></tr>
+        <tr><td><strong>die Logistikerin</strong></td><td>logistics specialist</td></tr>
+        <tr><td><strong>die Spedition</strong></td><td>freight / shipping company</td></tr>
+        <tr><td><strong>die Stelle</strong></td><td>job / position („eine gute Stelle bekommen")</td></tr>
+        <tr><td><strong>die Position (niedrig ↔ hoch)</strong></td><td>position (low ↔ high)</td></tr>
+        <tr><td><strong>das Unternehmen</strong></td><td>company</td></tr>
+        <tr><td><strong>das Ziel</strong></td><td>goal („Mein Ziel ist es, … zu …")</td></tr>
+        <tr><td><strong>das Niveau erreichen</strong></td><td>to reach a level (B2)</td></tr>
+        <tr><td><strong>die Anerkennung</strong></td><td>recognition (of qualifications/documents)</td></tr>
+        <tr><td><strong>die Herausforderung</strong></td><td>challenge</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TAB 3 -->
+<div class="tab-content" id="p3">
+  <div class="card a-red">
+    <h2>🗣️ Fragen &amp; Antworten</h2>
+    <div class="box mint">
+      <div class="box-label">nach dem Beruf fragen</div>
+      <p>Was machst du beruflich? · In welchem Bereich hast du gearbeitet? · Welche Fachärztin bist du?</p>
+    </div>
+    <div class="box sun">
+      <div class="box-label">antworten</div>
+      <p>Ich bin … von Beruf. · Ich habe früher als … gearbeitet. · Im Moment arbeite ich (nicht), weil …</p>
+    </div>
+  </div>
+
+  <div class="card a-teal">
+    <h2>🎯 Über Ziele sprechen</h2>
+    <div class="box mint">
+      <div class="box-label">„Mein Ziel ist es, … zu + Infinitiv"</div>
+      <p>Mein Ziel ist es, das B2-Niveau <span class="hl">zu erreichen</span>. · …, eine höhere Position <span class="hl">zu bekommen</span>. · …, die Anerkennung meiner Dokumente <span class="hl">zu bekommen</span>.</p>
+    </div>
+    <div class="box sun">
+      <div class="box-label">Gründe nennen (weil)</div>
+      <p>Ich lerne Deutsch, <span class="hl">weil</span> ich in Deutschland wohne. (Verb am Ende!)</p>
+    </div>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🃏 Karten</h2>
+    <details>
+      <summary>„What do you do for a living?"</summary>
+      <div class="answer">👉 „Was machst du <strong>beruflich</strong>?" / „Was bist du von Beruf?"</div>
+    </details>
+    <details>
+      <summary>„My goal is to reach B2."</summary>
+      <div class="answer">👉 „Mein Ziel ist es, das B2-Niveau <strong>zu erreichen</strong>."</div>
+    </details>
+    <details>
+      <summary>„recognition of documents" auf Deutsch?</summary>
+      <div class="answer">👉 die <strong>Anerkennung</strong> der Dokumente (an<strong>erkennen</strong>, nicht „erkennen").</div>
+    </details>
+  </div>
+</div>
+
+<!-- TAB 4 -->
+<div class="tab-content" id="p4">
+  <div class="card a-teal">
+    <h2>✏️ Beruf &amp; Ziele</h2>
+    <div class="exercise">
+      <p>1. ___ welchem Bereich hast du gearbeitet?</p>
+      <select onchange="checkSelect(this,'In')">
+        <option value="">— wählen —</option><option>In</option><option>Welcher</option><option>Auf</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>2. Im Moment arbeite ich in ___ Spedition.</p>
+      <select onchange="checkSelect(this,'einer')">
+        <option value="">— wählen —</option><option>einer</option><option>eine</option><option>einem</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>3. Mein Ziel ist ___, das B2-Niveau zu erreichen.</p>
+      <select onchange="checkSelect(this,'es')">
+        <option value="">— wählen —</option><option>es</option><option>das</option><option>—</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>4. Ich lerne Deutsch, weil ich eine gute Stelle bekommen ___.</p>
+      <select onchange="checkSelect(this,'möchte')">
+        <option value="">— wählen —</option><option>möchte</option><option>möchte will</option><option>will möchte</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🔤 Wortschatz</h2>
+    <div class="exercise">
+      <p>5. Ich brauche die ___ meiner Dokumente.</p>
+      <select onchange="checkSelect(this,'Anerkennung')">
+        <option value="">— wählen —</option><option>Anerkennung</option><option>Erkennung</option><option>Anmeldung</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>6. Leider habe ich nur eine ___ Position.</p>
+      <select onchange="checkSelect(this,'niedrige')">
+        <option value="">— wählen —</option><option>niedrige</option><option>niedrig</option><option>niedriger</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>7. Die größte ___ ist, frei zu sprechen.</p>
+      <select onchange="checkSelect(this,'Herausforderung')">
+        <option value="">— wählen —</option><option>Herausforderung</option><option>Aufforderung</option><option>Anforderung</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>8. Ich möchte in Zukunft eine ___ Position bekommen.</p>
+      <select onchange="checkSelect(this,'höhere')">
+        <option value="">— wählen —</option><option>höhere</option><option>hohere</option><option>hoche</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5 -->
+<div class="tab-content" id="p5">
+  <div class="card a-teal">
+    <h2>💬 Sprechen &amp; anwenden</h2>
+    <div class="exercise">
+      <p>9. Stell dich beruflich vor: Beruf, Bereich, aktuelle Situation.</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Ich bin Internistin von Beruf. Ich habe früher als Ärztin gearbeitet, aber im Moment arbeite ich nicht, weil ich Deutsch lernen muss.</div>
+      </details>
+    </div>
+    <div class="exercise">
+      <p>10. Warum lernst du Deutsch und was ist dein Ziel?</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Ich lerne Deutsch, weil ich in Deutschland wohne. Mein Ziel ist es, das B2-Niveau zu erreichen und die Anerkennung meiner Dokumente zu bekommen.</div>
+      </details>
+    </div>
+    <div class="exercise">
+      <p>11. Was ist beim Lernen für dich die größte Herausforderung?</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Für mich ist die größte Herausforderung, mit Deutschen Deutsch zu sprechen. Im Unterricht geht es gut, aber im Alltag bin ich noch unsicher.</div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 6 -->
+<div class="tab-content" id="p6">
+  <div class="card a-red">
+    <h2>🔴 Fehlerkorrektur</h2>
+    <p style="font-size:.85rem; color:var(--muted);">Die wichtigsten Korrekturen aus eurer Stunde.</p>
+  </div>
+
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: … jetzt arbeite ich nicht. <span>Weil ich Deutsch lernen muss.</span></div>
+    <div class="richtig">✅ Richtig: …, <span class="hl">weil</span> ich Deutsch lernen muss.</div>
+    <div class="erklaerung">„weil" leitet einen Nebensatz ein – mit Komma, klein, Verb am Ende. Kein eigener Satz.</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: <span>Welcher Bereich arbeitest du?</span></div>
+    <div class="richtig">✅ Richtig: <span class="hl">In welchem Bereich</span> hast du gearbeitet?</div>
+    <div class="erklaerung">„in welchem Bereich" (Dativ). Für die Vergangenheit: Perfekt „hast du gearbeitet".</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich arbeite jetzt in <span>eine</span> Spedition.</div>
+    <div class="richtig">✅ Richtig: … in <span class="hl">einer</span> Spedition.</div>
+    <div class="erklaerung">Ort (wo?) → Dativ: „in einer Spedition". (Richtung wäre Akkusativ.)</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Mein Ziel ist <span>bei meiner Arbeit hohere Position in Zukunft bekommen</span>.</div>
+    <div class="richtig">✅ Richtig: Mein Ziel ist <span class="hl">es</span>, in Zukunft eine <span class="hl">höhere</span> Position <span class="hl">zu bekommen</span>.</div>
+    <div class="erklaerung">Struktur: „Mein Ziel ist es, … zu + Infinitiv." Adjektiv: höhere (mit Umlaut).</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich möchte meine Dokumente <span>erkennen</span>.</div>
+    <div class="richtig">✅ Richtig: … die <span class="hl">Anerkennung</span> meiner Dokumente bekommen (an<span class="hl">erkennen</span>).</div>
+    <div class="erklaerung">„anerkennen" = offiziell akzeptieren. „erkennen" = wiedererkennen/identifizieren.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function checkSelect(el,correct){el.className=el.value===correct?'correct':(el.value!==''?'wrong':'');}
+</script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deutschoderwas · Mo 29.06 17:55 · Umgangssprache Teil 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6f6a62; --cream:#fdf8f1; --card:#ffffff;
+    --red:#dd0000; --gold:#ffce00; --teal:#2bbfbf; --teal-dark:#138a8a;
+    --teal-soft:#e7f6f3; --gold-soft:#fff6da; --line:#ece5d8; --green:#127a44;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--cream); line-height:1.55; padding-bottom:48px; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.brand-name{font-family:'Space Grotesk','Inter',sans-serif;}
+  header{background:#fff; border-bottom:1px solid var(--line); padding:0 22px 20px;}
+  .accent-bar{height:5px; margin:0 -22px 18px; background:linear-gradient(135deg,var(--red),var(--gold));}
+  .brand{display:flex; align-items:center; gap:11px; padding-top:16px;}
+  .logo-dot{width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--red),var(--gold)); flex:none;}
+  .brand-name{font-weight:700; font-size:1.05rem; letter-spacing:-.3px;}
+  .brand-tag{font-size:.72rem; color:var(--muted);}
+  .handout-title{font-weight:700; font-size:1.5rem; margin-top:18px; letter-spacing:-.5px; line-height:1.15;}
+  .handout-sub{color:var(--muted); font-size:.86rem; margin-top:5px; font-weight:500;}
+  nav{position:sticky; top:0; z-index:50; display:flex; gap:8px; overflow-x:auto; padding:12px 16px; background:rgba(253,248,241,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); scrollbar-width:none;}
+  nav::-webkit-scrollbar{display:none;}
+  nav label{flex:none; font-weight:700; font-size:.8rem; color:var(--ink); background:#fff; border:1.5px solid var(--line); padding:8px 15px; border-radius:50px; cursor:pointer; white-space:nowrap; transition:.12s;}
+  nav label:hover{border-color:var(--red);}
+  input[type=radio]{display:none;}
+  #t1:checked~nav label[for=t1],#t2:checked~nav label[for=t2],#t3:checked~nav label[for=t3],#t4:checked~nav label[for=t4],#t5:checked~nav label[for=t5],#t6:checked~nav label[for=t6]{background:var(--red); border-color:var(--red); color:#fff;}
+  .tab-content{display:none; max-width:720px; margin:0 auto; padding:22px 16px;}
+  #t1:checked~.panels #p1,#t2:checked~.panels #p2,#t3:checked~.panels #p3,#t4:checked~.panels #p4,#t5:checked~.panels #p5,#t6:checked~.panels #p6{display:block;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 20px rgba(50,35,10,.05);}
+  .card h2{font-size:1.12rem; font-weight:700; letter-spacing:-.3px; margin-bottom:12px; display:flex; gap:9px; align-items:center;}
+  .card p{font-size:.94rem;}
+  .card.a-red{border-left:5px solid var(--red);}
+  .card.a-teal{border-left:5px solid var(--teal);}
+  .card.a-gold{border-left:5px solid var(--gold);}
+  .card.a-ink{border-left:5px solid var(--ink);}
+  .satz-list{list-style:none;}
+  .satz-list li{background:#faf6ef; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:10px; padding:11px 13px; margin-bottom:9px; font-size:.92rem;}
+  .satz-list li .note{display:block; margin-top:4px; color:var(--muted); font-size:.82rem; font-style:italic;}
+  .satz-list li strong{color:var(--teal-dark);}
+  strong{font-weight:700;}
+  .box{border-radius:14px; padding:14px 16px; margin-bottom:10px; border:1px solid var(--line);}
+  .box.mint{background:var(--teal-soft); border-color:#cdeae5;}
+  .box.sun{background:var(--gold-soft); border-color:#f3e4b0;}
+  .box .box-label{font-size:.73rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--teal-dark); margin-bottom:6px;}
+  .box.sun .box-label{color:#a9750a;}
+  .box p{font-size:.9rem;}
+  .box .hl{font-weight:700; color:var(--red);}
+  table{width:100%; border-collapse:separate; border-spacing:0; font-size:.88rem; border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  th{background:var(--ink); color:#fff; text-align:left; padding:10px 11px; font-weight:700; font-family:'Space Grotesk',sans-serif;}
+  td{padding:9px 11px; border-top:1px solid var(--line); vertical-align:top;}
+  tbody tr:nth-child(even){background:#faf6ef;}
+  td strong{color:var(--red);}
+  .dialog{background:#fff; border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:12px;}
+  .dialog .line{font-size:.92rem; margin-bottom:6px;}
+  .dialog .who{font-weight:700; color:var(--teal-dark);}
+  .dialog .ugs{background:var(--gold-soft); border-radius:5px; padding:1px 5px; font-weight:600;}
+  details{background:#fff; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:12px; padding:13px 15px; margin-bottom:10px; cursor:pointer;}
+  details summary{font-weight:700; font-size:.92rem; list-style:none; display:flex; justify-content:space-between; gap:12px; align-items:center;}
+  details summary::after{content:"ansehen"; font-size:.72rem; font-weight:700; color:#fff; background:var(--teal); padding:3px 11px; border-radius:50px; white-space:nowrap;}
+  details[open] summary::after{content:"zu"; background:var(--muted);}
+  details .answer{margin-top:11px; padding-top:11px; border-top:1px dashed var(--line); font-size:.95rem; line-height:1.6;}
+  .exercise{margin-bottom:20px;}
+  .exercise p{font-weight:700; font-size:.92rem; margin-bottom:8px;}
+  select{font-family:'Inter',sans-serif; font-size:.9rem; padding:6px 9px; border:1.5px solid #d8d2c6; border-radius:9px; background:#fff; color:var(--ink); font-weight:600; cursor:pointer;}
+  select.correct{border-color:var(--green); background:#eafaf1;}
+  select.wrong{border-color:var(--red); background:#fdeaea;}
+  .fehler-card{background:#fff; border:1px solid var(--line); border-left:5px solid var(--red); border-radius:14px; padding:14px 16px; margin-bottom:12px;}
+  .fehler-card .falsch{color:var(--red); font-weight:700; font-size:.92rem; margin-bottom:6px;}
+  .fehler-card .falsch span{text-decoration:line-through; opacity:.6;}
+  .fehler-card .richtig{color:var(--green); font-weight:700; font-size:.92rem; margin-bottom:6px;}
+  .fehler-card .richtig .hl{background:#eafaf1; border-radius:5px; padding:1px 5px;}
+  .fehler-card .erklaerung{color:#555; font-size:.84rem; font-style:italic; margin-top:6px; line-height:1.5;}
+</style>
+
+<input type="radio" name="tabs" id="t1" checked>
+<input type="radio" name="tabs" id="t2">
+<input type="radio" name="tabs" id="t3">
+<input type="radio" name="tabs" id="t4">
+<input type="radio" name="tabs" id="t5">
+<input type="radio" name="tabs" id="t6">
+
+<header>
+  <div class="accent-bar"></div>
+  <div class="brand">
+    <div class="logo-dot"></div>
+    <div>
+      <div class="brand-name">deutschoderwas</div>
+      <div class="brand-tag">Deutsch lernen mit Spaß</div>
+    </div>
+  </div>
+  <h1 class="handout-title">Handout · Umgangssprache Teil 1</h1>
+  <p class="handout-sub">Mo 29.06 · 17:55 Uhr · locker reden · „Echt jetzt?", „Ich bin platt", „Quatsch!"</p>
+</header>
+
+<nav>
+  <label for="t1">📋 Zusammenfassung</label>
+  <label for="t2">💬 Umgangssprache</label>
+  <label for="t3">🎭 Dialoge</label>
+  <label for="t4">✏️ Übungen</label>
+  <label for="t5">🗣️ Sprechen</label>
+  <label for="t6">🔴 Fehler</label>
+</nav>
+
+<div class="panels">
+
+<!-- TAB 1 -->
+<div class="tab-content" id="p1">
+  <div class="card a-red">
+    <h2>🔑 Thema der Stunde</h2>
+    <p>Heute haben wir <strong>umgangssprachlich</strong> (locker, informell) geredet – wie unter Freunden. In zwei Rollenspielen (ein Bekannter heiratet / ein Actionfilm) habt ihr typische Ausdrücke geübt: <em>„Echt jetzt?", „Ich bin platt", „Quatsch!", „ein Hammer-Film", „checken", „Alter"</em>.</p>
+  </div>
+
+  <div class="card a-teal">
+    <h2>💡 Locker reagieren</h2>
+    <ul class="satz-list">
+      <li><strong>Echt jetzt?</strong> = Wirklich? / Im Ernst?</li>
+      <li><strong>Ich bin platt.</strong> = Ich bin sehr überrascht.</li>
+      <li><strong>Quatsch!</strong> = Unsinn! / Das glaube ich nicht.</li>
+      <li><strong>Erzähl schon!</strong> = Los, erzähl!</li>
+    </ul>
+  </div>
+
+  <div class="card a-gold">
+    <h2>😎 Locker bewerten &amp; ansprechen</h2>
+    <ul class="satz-list">
+      <li>ein <strong>Hammer-Film</strong> = ein super/krasser Film.</li>
+      <li><strong>checken</strong> (ugs.) = verstehen. „Ich kann's nicht checken."</li>
+      <li><strong>Alter!</strong> = lockere Anrede unter Freunden (≈ „Mann"/„Kumpel").</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TAB 2 -->
+<div class="tab-content" id="p2">
+  <div class="card a-teal">
+    <h2>💬 Umgangssprache &amp; Standard</h2>
+    <table>
+      <thead><tr><th>Umgangssprache</th><th>Standard / Bedeutung</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Echt jetzt?</strong></td><td>Wirklich? / Im Ernst?</td></tr>
+        <tr><td><strong>Ich bin platt.</strong></td><td>Ich bin (sehr) überrascht / erstaunt.</td></tr>
+        <tr><td><strong>Quatsch!</strong></td><td>Unsinn! / Das glaube ich nicht.</td></tr>
+        <tr><td><strong>ein Hammer-Film</strong></td><td>ein super / fantastischer Film</td></tr>
+        <tr><td><strong>checken</strong></td><td>verstehen / kapieren</td></tr>
+        <tr><td><strong>Alter! (Anrede)</strong></td><td>lockere Anrede (≈ „Mann", „Kumpel")</td></tr>
+        <tr><td><strong>Erzähl schon!</strong></td><td>Los, erzähl mir das!</td></tr>
+        <tr><td><strong>Jaja</strong></td><td>Ja (locker, manchmal genervt)</td></tr>
+        <tr><td><strong>Kennst du noch …?</strong></td><td>Erinnerst du dich an …?</td></tr>
+        <tr><td><strong>zusammenkommen</strong></td><td>ein Paar werden</td></tr>
+        <tr><td><strong>der Kommilitone</strong></td><td>Studienkollege/-kollegin</td></tr>
+        <tr><td><strong>das Drehbuch</strong></td><td>(film) script / screenplay</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TAB 3 -->
+<div class="tab-content" id="p3">
+  <div class="card a-red">
+    <h2>🎭 Szenario 1 · Ein Bekannter heiratet</h2>
+    <div class="dialog">
+      <div class="line"><span class="who">Irina:</span> Kennst du noch Aleksandar?</div>
+      <div class="line"><span class="who">Andrea:</span> Ja, klar!</div>
+      <div class="line"><span class="who">Irina:</span> Ich habe gehört, dass er geheiratet hat.</div>
+      <div class="line"><span class="who">Andrea:</span> <span class="ugs">Echt jetzt?</span></div>
+      <div class="line"><span class="who">Irina:</span> Seine Frau kommt aus Bangladesch. Sie sind erst (kurz) zusammengekommen.</div>
+      <div class="line"><span class="who">Andrea:</span> <span class="ugs">Ich bin platt.</span> Ich habe gehört, dass sie nach Bangladesch ziehen.</div>
+      <div class="line"><span class="who">Irina:</span> <span class="ugs">Quatsch</span>, ich glaube nicht!</div>
+    </div>
+  </div>
+
+  <div class="card a-teal">
+    <h2>🎬 Szenario 2 · Actionfilm</h2>
+    <div class="dialog">
+      <div class="line"><span class="who">Aleksandar:</span> Hi Tatjana, wo bist du, <span class="ugs">Alter</span>?</div>
+      <div class="line"><span class="who">Tatjana:</span> Hallo! Wo soll ich sein? Zu Hause.</div>
+      <div class="line"><span class="who">Aleksandar:</span> Ich habe gestern einen <span class="ugs">Hammer-Film</span> gesehen.</div>
+      <div class="line"><span class="who">Tatjana:</span> <span class="ugs">Erzähl schon!</span></div>
+      <div class="line"><span class="who">Aleksandar:</span> Ich war voll platt. Ich kann's nicht <span class="ugs">checken</span>, wie Steven Spielberg solche Drehbücher schreiben kann.</div>
+      <div class="line"><span class="who">Tatjana:</span> … (jetzt bist du dran!)</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 4 -->
+<div class="tab-content" id="p4">
+  <div class="card a-teal">
+    <h2>✏️ Umgangssprache verstehen</h2>
+    <div class="exercise">
+      <p>1. „___ jetzt?" – wenn du etwas kaum glauben kannst.</p>
+      <select onchange="checkSelect(this,'Echt')">
+        <option value="">— wählen —</option><option>Echt</option><option>Recht</option><option>Schlecht</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>2. „Ich bin ___." = Ich bin total überrascht.</p>
+      <select onchange="checkSelect(this,'platt')">
+        <option value="">— wählen —</option><option>platt</option><option>glatt</option><option>satt</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>3. „___!" = Unsinn, das glaube ich nicht.</p>
+      <select onchange="checkSelect(this,'Quatsch')">
+        <option value="">— wählen —</option><option>Quatsch</option><option>Quark</option><option>Klatsch</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>4. Ein super Film ist ein ___-Film.</p>
+      <select onchange="checkSelect(this,'Hammer')">
+        <option value="">— wählen —</option><option>Hammer</option><option>Hummer</option><option>Hampel</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🔤 Standard finden</h2>
+    <div class="exercise">
+      <p>5. „checken" (ugs.) bedeutet eigentlich …</p>
+      <select onchange="checkSelect(this,'verstehen')">
+        <option value="">— wählen —</option><option>verstehen</option><option>prüfen lassen</option><option>einchecken</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>6. „Kennst du noch …?" = „___ du dich an …?"</p>
+      <select onchange="checkSelect(this,'Erinnerst')">
+        <option value="">— wählen —</option><option>Erinnerst</option><option>Vergisst</option><option>Verstehst</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>7. Ein Film hat ein gutes Skript = ein gutes ___.</p>
+      <select onchange="checkSelect(this,'Drehbuch')">
+        <option value="">— wählen —</option><option>Drehbuch</option><option>Szenario</option><option>Tagebuch</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>8. „Sie sind erst ___." = Sie sind gerade ein Paar geworden.</p>
+      <select onchange="checkSelect(this,'zusammengekommen')">
+        <option value="">— wählen —</option><option>zusammengekommen</option><option>zusammen gewesen</option><option>zusammengelebt</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5 -->
+<div class="tab-content" id="p5">
+  <div class="card a-teal">
+    <h2>🗣️ Sprechen &amp; üben</h2>
+    <div class="exercise">
+      <p>9. Du erfährst, dass ein alter Bekannter geheiratet hat. Reagiere locker.</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">— Kennst du noch Max? Er hat geheiratet! — Echt jetzt? Ich bin platt! Wen denn? — Quatsch, das glaube ich nicht!</div>
+      </details>
+    </div>
+    <div class="exercise">
+      <p>10. Erzähl von einem „Hammer-Film", den du gesehen hast.</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Alter, ich habe gestern einen Hammer-Film gesehen! Ich war total platt. Ich kann's nicht checken, wie sie so ein Drehbuch schreiben.</div>
+      </details>
+    </div>
+    <div class="exercise">
+      <p>11. Tatjana ist dran (Szenario 2). Wie könnte sie antworten?</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Echt jetzt? Klingt mega! Wie heißt der Film denn? Den muss ich auch checken. Lass uns den mal zusammen schauen!</div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 6 -->
+<div class="tab-content" id="p6">
+  <div class="card a-red">
+    <h2>🔴 Fehlerkorrektur</h2>
+    <p style="font-size:.85rem; color:var(--muted);">Die wichtigsten Korrekturen aus eurer Stunde.</p>
+  </div>
+
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich kann das nicht checken, dass Steven Spielberg <span>schreibt das Szenario</span>.</div>
+    <div class="richtig">✅ Richtig: …, wie Steven Spielberg solche <span class="hl">Drehbücher schreiben kann</span>.</div>
+    <div class="erklaerung">Film-Skript = das Drehbuch (nicht „Szenario"). Im Nebensatz steht das Verb am Ende.</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Sie waren <span>ganz wenig Zeit zusammen</span>.</div>
+    <div class="richtig">✅ Besser: Sie sind erst <span class="hl">(kurz) zusammengekommen</span> / Sie waren nur kurz zusammen.</div>
+    <div class="erklaerung">„zusammenkommen" = ein Paar werden. „nur kurz zusammen sein" für wenig Zeit.</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Wackelig: Sie werden nach der Hochzeit <span>in Bangladesch wohnen werden</span>.</div>
+    <div class="richtig">✅ Richtig: Sie <span class="hl">ziehen nach Bangladesch</span>. / Sie werden in Bangladesch wohnen.</div>
+    <div class="erklaerung">Nur ein „werden" für die Zukunft. Bewegung mit Ziel: „nach … ziehen".</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">⚠️ Stilebene: „Alter", „checken", „Hammer" sind <span>sehr locker</span>.</div>
+    <div class="richtig">✅ Merke: <span class="hl">Umgangssprache</span> nur unter Freunden – im Job/formell lieber Standard.</div>
+    <div class="erklaerung">Toll für den Alltag, aber im Bewerbungsgespräch sagst du nicht „Alter" oder „Hammer".</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function checkSelect(el,correct){el.className=el.value===correct?'correct':(el.value!==''?'wrong':'');}
+</script>
+</body>
+</html>

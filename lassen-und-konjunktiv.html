@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deutschoderwas · Mo 29.06 19:00 · lassen &amp; Konjunktiv</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6f6a62; --cream:#fdf8f1; --card:#ffffff;
+    --red:#dd0000; --gold:#ffce00; --teal:#2bbfbf; --teal-dark:#138a8a;
+    --teal-soft:#e7f6f3; --gold-soft:#fff6da; --line:#ece5d8; --green:#127a44;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--cream); line-height:1.55; padding-bottom:48px; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.brand-name{font-family:'Space Grotesk','Inter',sans-serif;}
+  header{background:#fff; border-bottom:1px solid var(--line); padding:0 22px 20px;}
+  .accent-bar{height:5px; margin:0 -22px 18px; background:linear-gradient(135deg,var(--red),var(--gold));}
+  .brand{display:flex; align-items:center; gap:11px; padding-top:16px;}
+  .logo-dot{width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--red),var(--gold)); flex:none;}
+  .brand-name{font-weight:700; font-size:1.05rem; letter-spacing:-.3px;}
+  .brand-tag{font-size:.72rem; color:var(--muted);}
+  .handout-title{font-weight:700; font-size:1.5rem; margin-top:18px; letter-spacing:-.5px; line-height:1.15;}
+  .handout-sub{color:var(--muted); font-size:.86rem; margin-top:5px; font-weight:500;}
+  nav{position:sticky; top:0; z-index:50; display:flex; gap:8px; overflow-x:auto; padding:12px 16px; background:rgba(253,248,241,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); scrollbar-width:none;}
+  nav::-webkit-scrollbar{display:none;}
+  nav label{flex:none; font-weight:700; font-size:.8rem; color:var(--ink); background:#fff; border:1.5px solid var(--line); padding:8px 15px; border-radius:50px; cursor:pointer; white-space:nowrap; transition:.12s;}
+  nav label:hover{border-color:var(--red);}
+  input[type=radio]{display:none;}
+  #t1:checked~nav label[for=t1],#t2:checked~nav label[for=t2],#t3:checked~nav label[for=t3],#t4:checked~nav label[for=t4],#t5:checked~nav label[for=t5],#t6:checked~nav label[for=t6]{background:var(--red); border-color:var(--red); color:#fff;}
+  .tab-content{display:none; max-width:720px; margin:0 auto; padding:22px 16px;}
+  #t1:checked~.panels #p1,#t2:checked~.panels #p2,#t3:checked~.panels #p3,#t4:checked~.panels #p4,#t5:checked~.panels #p5,#t6:checked~.panels #p6{display:block;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 20px rgba(50,35,10,.05);}
+  .card h2{font-size:1.12rem; font-weight:700; letter-spacing:-.3px; margin-bottom:12px; display:flex; gap:9px; align-items:center;}
+  .card p{font-size:.94rem;}
+  .card.a-red{border-left:5px solid var(--red);}
+  .card.a-teal{border-left:5px solid var(--teal);}
+  .card.a-gold{border-left:5px solid var(--gold);}
+  .card.a-ink{border-left:5px solid var(--ink);}
+  .satz-list{list-style:none;}
+  .satz-list li{background:#faf6ef; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:10px; padding:11px 13px; margin-bottom:9px; font-size:.92rem;}
+  .satz-list li .note{display:block; margin-top:4px; color:var(--muted); font-size:.82rem; font-style:italic;}
+  .satz-list li strong{color:var(--teal-dark);}
+  strong{font-weight:700;}
+  .box{border-radius:14px; padding:14px 16px; margin-bottom:10px; border:1px solid var(--line);}
+  .box.mint{background:var(--teal-soft); border-color:#cdeae5;}
+  .box.sun{background:var(--gold-soft); border-color:#f3e4b0;}
+  .box .box-label{font-size:.73rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--teal-dark); margin-bottom:6px;}
+  .box.sun .box-label{color:#a9750a;}
+  .box p{font-size:.9rem;}
+  .box .hl{font-weight:700; color:var(--red);}
+  table{width:100%; border-collapse:separate; border-spacing:0; font-size:.88rem; border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  th{background:var(--ink); color:#fff; text-align:left; padding:10px 11px; font-weight:700; font-family:'Space Grotesk',sans-serif;}
+  td{padding:9px 11px; border-top:1px solid var(--line); vertical-align:top;}
+  tbody tr:nth-child(even){background:#faf6ef;}
+  td strong{color:var(--red);}
+  details{background:#fff; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:12px; padding:13px 15px; margin-bottom:10px; cursor:pointer;}
+  details summary{font-weight:700; font-size:.92rem; list-style:none; display:flex; justify-content:space-between; gap:12px; align-items:center;}
+  details summary::after{content:"ansehen"; font-size:.72rem; font-weight:700; color:#fff; background:var(--teal); padding:3px 11px; border-radius:50px; white-space:nowrap;}
+  details[open] summary::after{content:"zu"; background:var(--muted);}
+  details .answer{margin-top:11px; padding-top:11px; border-top:1px dashed var(--line); font-size:.95rem; line-height:1.6;}
+  .exercise{margin-bottom:20px;}
+  .exercise p{font-weight:700; font-size:.92rem; margin-bottom:8px;}
+  select{font-family:'Inter',sans-serif; font-size:.9rem; padding:6px 9px; border:1.5px solid #d8d2c6; border-radius:9px; background:#fff; color:var(--ink); font-weight:600; cursor:pointer;}
+  select.correct{border-color:var(--green); background:#eafaf1;}
+  select.wrong{border-color:var(--red); background:#fdeaea;}
+  .fehler-card{background:#fff; border:1px solid var(--line); border-left:5px solid var(--red); border-radius:14px; padding:14px 16px; margin-bottom:12px;}
+  .fehler-card .falsch{color:var(--red); font-weight:700; font-size:.92rem; margin-bottom:6px;}
+  .fehler-card .falsch span{text-decoration:line-through; opacity:.6;}
+  .fehler-card .richtig{color:var(--green); font-weight:700; font-size:.92rem; margin-bottom:6px;}
+  .fehler-card .richtig .hl{background:#eafaf1; border-radius:5px; padding:1px 5px;}
+  .fehler-card .erklaerung{color:#555; font-size:.84rem; font-style:italic; margin-top:6px; line-height:1.5;}
+</style>
+
+<input type="radio" name="tabs" id="t1" checked>
+<input type="radio" name="tabs" id="t2">
+<input type="radio" name="tabs" id="t3">
+<input type="radio" name="tabs" id="t4">
+<input type="radio" name="tabs" id="t5">
+<input type="radio" name="tabs" id="t6">
+
+<header>
+  <div class="accent-bar"></div>
+  <div class="brand">
+    <div class="logo-dot"></div>
+    <div>
+      <div class="brand-name">deutschoderwas</div>
+      <div class="brand-tag">Deutsch lernen mit Spaß</div>
+    </div>
+  </div>
+  <h1 class="handout-title">Handout · „lassen" &amp; Konjunktiv</h1>
+  <p class="handout-sub">Mo 29.06 · 19:00 Uhr · das „Fake"-Modalverb · Doppelinfinitiv · hätte … können</p>
+</header>
+
+<nav>
+  <label for="t1">📋 Zusammenfassung</label>
+  <label for="t2">🔑 lassen</label>
+  <label for="t3">🧩 hätte … können</label>
+  <label for="t4">✏️ Übungen</label>
+  <label for="t5">💬 Sprechen</label>
+  <label for="t6">🔴 Fehler</label>
+</nav>
+
+<div class="panels">
+
+<!-- TAB 1 -->
+<div class="tab-content" id="p1">
+  <div class="card a-red">
+    <h2>🔑 Thema der Stunde</h2>
+    <p>Zwei knifflige Strukturen: das <strong>„Fake"-Modalverb lassen</strong> (etwas machen lassen) und der <strong>Konjunktiv II der Vergangenheit</strong> (hypothetisch: <em>„Ich hätte mehr machen können"</em>). Beide nutzen den <strong>Doppelinfinitiv</strong>.</p>
+  </div>
+
+  <div class="card a-teal">
+    <h2>🔧 „lassen" – machen lassen</h2>
+    <ul class="satz-list">
+      <li>Es <strong>lässt sich</strong> machen. <span class="note">= Es ist machbar / geht.</span></li>
+      <li>Ich habe meine Haare <strong>schneiden lassen</strong>. <span class="note">jemand anderes schneidet sie</span></li>
+      <li>Ich habe meiner Mutter <strong>helfen müssen</strong>. <span class="note">Doppelinfinitiv im Perfekt</span></li>
+    </ul>
+  </div>
+
+  <div class="card a-gold">
+    <h2>💭 Konjunktiv II Vergangenheit</h2>
+    <ul class="satz-list">
+      <li>Ich <strong>hätte</strong> anders reagieren <strong>sollen</strong>.</li>
+      <li>Ich <strong>hätte</strong> mehr machen <strong>können</strong>.</li>
+      <li>Sie <strong>hätte</strong> gut Englisch sprechen <strong>können</strong>.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TAB 2 -->
+<div class="tab-content" id="p2">
+  <div class="card a-red">
+    <h2>🔧 „lassen" – drei Bedeutungen</h2>
+    <div class="box mint">
+      <div class="box-label">1. etwas machen lassen (jemand anderes tut es)</div>
+      <p>Ich <span class="hl">lasse</span> meine Haare <span class="hl">schneiden</span>. → Perfekt: Ich habe meine Haare schneiden <span class="hl">lassen</span>.</p>
+    </div>
+    <div class="box sun">
+      <div class="box-label">2. sich lassen = möglich sein</div>
+      <p>Das <span class="hl">lässt sich</span> machen. = Das ist machbar / geht.</p>
+    </div>
+    <div class="box mint">
+      <div class="box-label">3. zulassen / erlauben</div>
+      <p>Lass mich in Ruhe. · Lass uns gehen!</p>
+    </div>
+  </div>
+
+  <div class="card a-teal">
+    <h2>♻️ Doppelinfinitiv im Perfekt</h2>
+    <div class="box sun">
+      <div class="box-label">Kein Partizip – zwei Infinitive!</div>
+      <p>Ich habe dich sehen <span class="hl">wollen</span>. (= Ich wollte dich sehen.)<br>Ich habe länger arbeiten <span class="hl">müssen</span>. (= Ich musste länger arbeiten.)</p>
+    </div>
+    <p style="font-size:.86rem; color:var(--muted); margin-top:6px;">Hinweis: Für Modalverben ist das <strong>Präteritum</strong> (musste, konnte, sollte) im Alltag normaler als das Perfekt.</p>
+  </div>
+</div>
+
+<!-- TAB 3 -->
+<div class="tab-content" id="p3">
+  <div class="card a-red">
+    <h2>🧩 hätte + Infinitiv + Modalverb</h2>
+    <div class="box mint">
+      <div class="box-label">Bauplan</div>
+      <p><span class="hl">hätte</span> + … + Vollverb-Infinitiv + Modalverb-Infinitiv<br>Ich <span class="hl">hätte</span> mehr machen <span class="hl">können</span>. · Ich <span class="hl">hätte</span> anders reagieren <span class="hl">sollen</span>.</p>
+    </div>
+    <div class="box sun">
+      <div class="box-label">Bedeutung</div>
+      <p>= rückblickend, hypothetisch: „Es war möglich/nötig, aber ich habe es nicht getan."</p>
+    </div>
+  </div>
+
+  <div class="card a-teal">
+    <h2>⏱️ Präsens vs. Vergangenheit (hypothetisch)</h2>
+    <div class="box mint">
+      <div class="box-label">Präsens + hypothetisch</div>
+      <p>Sie <span class="hl">könnte</span> gut Englisch (sprechen), aber … <span class="note">jetzt möglich</span></p>
+    </div>
+    <div class="box sun">
+      <div class="box-label">Vergangenheit + hypothetisch</div>
+      <p>Sie <span class="hl">hätte</span> gut Englisch sprechen <span class="hl">können</span>. <span class="note">damals möglich gewesen</span></p>
+    </div>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🃏 Karten</h2>
+    <details>
+      <summary>„I had to work longer." (Perfekt mit Modalverb)</summary>
+      <div class="answer">👉 „Ich habe länger arbeiten <strong>müssen</strong>." / „Ich <strong>musste</strong> länger arbeiten."</div>
+    </details>
+    <details>
+      <summary>„I could have done more." (hypothetisch, Vergangenheit)</summary>
+      <div class="answer">👉 „Ich <strong>hätte</strong> mehr machen <strong>können</strong>."</div>
+    </details>
+    <details>
+      <summary>„I had my hair cut." auf Deutsch?</summary>
+      <div class="answer">👉 „Ich habe meine Haare schneiden <strong>lassen</strong>."</div>
+    </details>
+  </div>
+</div>
+
+<!-- TAB 4 -->
+<div class="tab-content" id="p4">
+  <div class="card a-teal">
+    <h2>✏️ lassen &amp; Doppelinfinitiv</h2>
+    <div class="exercise">
+      <p>1. Ich habe meine Haare schneiden ___.</p>
+      <select onchange="checkSelect(this,'lassen')">
+        <option value="">— wählen —</option><option>lassen</option><option>gelassen</option><option>lasst</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>2. Das ___ sich machen. (= ist machbar)</p>
+      <select onchange="checkSelect(this,'lässt')">
+        <option value="">— wählen —</option><option>lässt</option><option>lasst</option><option>lässen</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>3. Ich habe länger arbeiten ___.</p>
+      <select onchange="checkSelect(this,'müssen')">
+        <option value="">— wählen —</option><option>müssen</option><option>gemusst</option><option>musste</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>4. Ich habe meiner Mutter helfen ___.</p>
+      <select onchange="checkSelect(this,'müssen')">
+        <option value="">— wählen —</option><option>müssen</option><option>gemusst</option><option>müsste</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🔤 Konjunktiv II Vergangenheit</h2>
+    <div class="exercise">
+      <p>5. Ich ___ mehr machen können. (hypothetisch, Vergangenheit)</p>
+      <select onchange="checkSelect(this,'hätte')">
+        <option value="">— wählen —</option><option>hätte</option><option>habe</option><option>hatte</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>6. Ich hätte anders reagieren ___.</p>
+      <select onchange="checkSelect(this,'sollen')">
+        <option value="">— wählen —</option><option>sollen</option><option>gesollt</option><option>sollte</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>7. Sie hätte gut Englisch sprechen ___.</p>
+      <select onchange="checkSelect(this,'können')">
+        <option value="">— wählen —</option><option>können</option><option>gekonnt</option><option>konnte</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>8. Es ist nicht einfach, eine Gewohnheit auf___geben.</p>
+      <select onchange="checkSelect(this,'zu')">
+        <option value="">— wählen —</option><option>zu</option><option>zum</option><option>—</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5 -->
+<div class="tab-content" id="p5">
+  <div class="card a-teal">
+    <h2>💬 Sprechen &amp; anwenden</h2>
+    <div class="exercise">
+      <p>9. Was lässt du machen (statt es selbst zu tun)? Nenne 2 Dinge.</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Ich lasse meine Haare beim Friseur schneiden und mein Auto in der Werkstatt reparieren. Das Putzen lasse ich aber nicht machen – das mache ich selbst.</div>
+      </details>
+    </div>
+    <div class="exercise">
+      <p>10. Was hättest du letzte Woche anders machen können/sollen?</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Ich hätte mehr Deutsch lernen sollen. Und ich hätte früher ins Bett gehen können – dann wäre ich nicht so müde gewesen.</div>
+      </details>
+    </div>
+    <div class="exercise">
+      <p>11. Sprich über eine Gewohnheit, die schwer aufzugeben ist.</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Es ist nicht einfach, das Handy abends wegzulegen. Unter der Woche schaffe ich es manchmal, aber am Wochenende ist es schwieriger. Ich müsste konsequenter sein.</div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 6 -->
+<div class="tab-content" id="p6">
+  <div class="card a-red">
+    <h2>🔴 Fehlerkorrektur &amp; Stolperfallen</h2>
+    <p style="font-size:.85rem; color:var(--muted);">Worauf du bei lassen &amp; Konjunktiv achten solltest.</p>
+  </div>
+
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich habe meine Haare <span>geschnitten</span>. (du selbst?)</div>
+    <div class="richtig">✅ Richtig: Ich habe meine Haare schneiden <span class="hl">lassen</span>.</div>
+    <div class="erklaerung">Wenn jemand anderes es tut → „… machen lassen" (Doppelinfinitiv, kein Partizip).</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich habe länger arbeiten <span>gemusst</span>.</div>
+    <div class="richtig">✅ Richtig: Ich habe länger arbeiten <span class="hl">müssen</span>.</div>
+    <div class="erklaerung">Modalverb im Perfekt = Infinitiv (Doppelinfinitiv), nicht das Partizip „gemusst".</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich habe <span>meine Mutter</span> helfen müssen.</div>
+    <div class="richtig">✅ Richtig: Ich habe <span class="hl">meiner Mutter</span> helfen müssen.</div>
+    <div class="erklaerung">„helfen" + Dativ: jemandem helfen → meiner Mutter.</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich <span>habe</span> mehr machen können. (hypothetisch gemeint)</div>
+    <div class="richtig">✅ Richtig: Ich <span class="hl">hätte</span> mehr machen können.</div>
+    <div class="erklaerung">Hypothetisch/Vergangenheit → Konjunktiv „hätte" + Infinitiv + Modalverb.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function checkSelect(el,correct){el.className=el.value===correct?'correct':(el.value!==''?'wrong':'');}
+</script>
+</body>
+</html>
