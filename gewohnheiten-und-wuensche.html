@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>deutschoderwas · Alltag, Gewohnheiten &amp; Wünsche</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6f6a62; --cream:#fdf8f1; --card:#ffffff;
+    --red:#dd0000; --gold:#ffce00; --teal:#2bbfbf; --teal-dark:#138a8a;
+    --teal-soft:#e7f6f3; --gold-soft:#fff6da; --line:#ece5d8; --green:#127a44;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Inter',system-ui,sans-serif; color:var(--ink); background:var(--cream); line-height:1.55; padding-bottom:48px; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.brand-name{font-family:'Space Grotesk','Inter',sans-serif;}
+  header{background:#fff; border-bottom:1px solid var(--line); padding:0 22px 20px;}
+  .accent-bar{height:5px; margin:0 -22px 18px; background:linear-gradient(135deg,var(--red),var(--gold));}
+  .brand{display:flex; align-items:center; gap:11px; padding-top:16px;}
+  .logo-dot{width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,var(--red),var(--gold)); flex:none;}
+  .brand-name{font-weight:700; font-size:1.05rem; letter-spacing:-.3px;}
+  .brand-tag{font-size:.72rem; color:var(--muted);}
+  .handout-title{font-weight:700; font-size:1.5rem; margin-top:18px; letter-spacing:-.5px; line-height:1.15;}
+  .handout-sub{color:var(--muted); font-size:.86rem; margin-top:5px; font-weight:500;}
+  nav{position:sticky; top:0; z-index:50; display:flex; gap:8px; overflow-x:auto; padding:12px 16px; background:rgba(253,248,241,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); scrollbar-width:none;}
+  nav::-webkit-scrollbar{display:none;}
+  nav label{flex:none; font-weight:700; font-size:.8rem; color:var(--ink); background:#fff; border:1.5px solid var(--line); padding:8px 15px; border-radius:50px; cursor:pointer; white-space:nowrap; transition:.12s;}
+  nav label:hover{border-color:var(--red);}
+  input[type=radio]{display:none;}
+  #t1:checked~nav label[for=t1],#t2:checked~nav label[for=t2],#t3:checked~nav label[for=t3],#t4:checked~nav label[for=t4],#t5:checked~nav label[for=t5],#t6:checked~nav label[for=t6]{background:var(--red); border-color:var(--red); color:#fff;}
+  .tab-content{display:none; max-width:720px; margin:0 auto; padding:22px 16px;}
+  #t1:checked~.panels #p1,#t2:checked~.panels #p2,#t3:checked~.panels #p3,#t4:checked~.panels #p4,#t5:checked~.panels #p5,#t6:checked~.panels #p6{display:block;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 20px rgba(50,35,10,.05);}
+  .card h2{font-size:1.12rem; font-weight:700; letter-spacing:-.3px; margin-bottom:12px; display:flex; gap:9px; align-items:center;}
+  .card p{font-size:.94rem;}
+  .card.a-red{border-left:5px solid var(--red);}
+  .card.a-teal{border-left:5px solid var(--teal);}
+  .card.a-gold{border-left:5px solid var(--gold);}
+  .card.a-ink{border-left:5px solid var(--ink);}
+  .satz-list{list-style:none;}
+  .satz-list li{background:#faf6ef; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:10px; padding:11px 13px; margin-bottom:9px; font-size:.92rem;}
+  .satz-list li .note{display:block; margin-top:4px; color:var(--muted); font-size:.82rem; font-style:italic;}
+  .satz-list li strong{color:var(--teal-dark);}
+  strong{font-weight:700;}
+  .box{border-radius:14px; padding:14px 16px; margin-bottom:10px; border:1px solid var(--line);}
+  .box.mint{background:var(--teal-soft); border-color:#cdeae5;}
+  .box.sun{background:var(--gold-soft); border-color:#f3e4b0;}
+  .box .box-label{font-size:.73rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:var(--teal-dark); margin-bottom:6px;}
+  .box.sun .box-label{color:#a9750a;}
+  .box p{font-size:.9rem;}
+  .box .hl{font-weight:700; color:var(--red);}
+  table{width:100%; border-collapse:separate; border-spacing:0; font-size:.88rem; border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  th{background:var(--ink); color:#fff; text-align:left; padding:10px 11px; font-weight:700; font-family:'Space Grotesk',sans-serif;}
+  td{padding:9px 11px; border-top:1px solid var(--line); vertical-align:top;}
+  tbody tr:nth-child(even){background:#faf6ef;}
+  td strong{color:var(--red);}
+  details{background:#fff; border:1px solid var(--line); border-left:4px solid var(--teal); border-radius:12px; padding:13px 15px; margin-bottom:10px; cursor:pointer;}
+  details summary{font-weight:700; font-size:.92rem; list-style:none; display:flex; justify-content:space-between; gap:12px; align-items:center;}
+  details summary::after{content:"ansehen"; font-size:.72rem; font-weight:700; color:#fff; background:var(--teal); padding:3px 11px; border-radius:50px; white-space:nowrap;}
+  details[open] summary::after{content:"zu"; background:var(--muted);}
+  details .answer{margin-top:11px; padding-top:11px; border-top:1px dashed var(--line); font-size:.95rem; line-height:1.6;}
+  .exercise{margin-bottom:20px;}
+  .exercise p{font-weight:700; font-size:.92rem; margin-bottom:8px;}
+  select{font-family:'Inter',sans-serif; font-size:.9rem; padding:6px 9px; border:1.5px solid #d8d2c6; border-radius:9px; background:#fff; color:var(--ink); font-weight:600; cursor:pointer;}
+  select.correct{border-color:var(--green); background:#eafaf1;}
+  select.wrong{border-color:var(--red); background:#fdeaea;}
+  .fehler-card{background:#fff; border:1px solid var(--line); border-left:5px solid var(--red); border-radius:14px; padding:14px 16px; margin-bottom:12px;}
+  .fehler-card .falsch{color:var(--red); font-weight:700; font-size:.92rem; margin-bottom:6px;}
+  .fehler-card .falsch span{text-decoration:line-through; opacity:.6;}
+  .fehler-card .richtig{color:var(--green); font-weight:700; font-size:.92rem; margin-bottom:6px;}
+  .fehler-card .richtig .hl{background:#eafaf1; border-radius:5px; padding:1px 5px;}
+  .fehler-card .erklaerung{color:#555; font-size:.84rem; font-style:italic; margin-top:6px; line-height:1.5;}
+</style>
+
+<input type="radio" name="tabs" id="t1" checked>
+<input type="radio" name="tabs" id="t2">
+<input type="radio" name="tabs" id="t3">
+<input type="radio" name="tabs" id="t4">
+<input type="radio" name="tabs" id="t5">
+<input type="radio" name="tabs" id="t6">
+
+<header>
+  <div class="accent-bar"></div>
+  <div class="brand">
+    <div class="logo-dot"></div>
+    <div>
+      <div class="brand-name">deutschoderwas</div>
+      <div class="brand-tag">Deutsch lernen mit Spaß</div>
+    </div>
+  </div>
+  <h1 class="handout-title">Handout · Alltag, Gewohnheiten &amp; Wünsche</h1>
+  <p class="handout-sub">frei sprechen · Konjunktiv II (könnte / hätte … würde) · verzichten, wissen, vertrauen</p>
+</header>
+
+<nav>
+  <label for="t1">📋 Zusammenfassung</label>
+  <label for="t2">📖 Vokabeln</label>
+  <label for="t3">🔑 Konjunktiv II</label>
+  <label for="t4">✏️ Übungen</label>
+  <label for="t5">💬 Sprechen</label>
+  <label for="t6">🔴 Fehler</label>
+</nav>
+
+<div class="panels">
+
+<!-- TAB 1 -->
+<div class="tab-content" id="p1">
+  <div class="card a-red">
+    <h2>🔑 Thema der Stunde</h2>
+    <p>Freies Sprechen über <strong>Alltag &amp; Gewohnheiten</strong>: was uns guttut, worauf wir (nicht) verzichten können und was wir tun würden, wenn wir mehr Zeit hätten. Grammatik-Fokus: der <strong>Konjunktiv II</strong> (könnte / hätte … würde).</p>
+  </div>
+
+  <div class="card a-teal">
+    <h2>🚴 Gewohnheiten &amp; was guttut</h2>
+    <ul class="satz-list">
+      <li>Ich <strong>stehe früh auf</strong>. · Ich bin mit dem Fahrrad gefahren und es <strong>hat gut getan</strong>.</li>
+      <li>Ich <strong>könnte nie</strong> auf Kaffee und Süßigkeiten <strong>verzichten</strong>.</li>
+      <li>Ich <strong>verschwende</strong> zu viel Zeit am Handy. → die <strong>Abhängigkeit</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🌦️ Befinden &amp; Wetter</h2>
+    <ul class="satz-list">
+      <li>Ich <strong>fühle mich wohl</strong>. · Heute <strong>regnet es</strong>, aber es ist <strong>angenehm</strong> draußen.</li>
+      <li><strong>Wenn</strong> ich frei <strong>hätte</strong>, <strong>würde</strong> ich spazieren gehen.</li>
+      <li>Wir hatten gestern unseren <strong>Hochzeitstag</strong>.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TAB 2 -->
+<div class="tab-content" id="p2">
+  <div class="card a-teal">
+    <h2>📖 Wortschatz der Stunde</h2>
+    <table>
+      <thead><tr><th>Wort / Ausdruck</th><th>Bedeutung / Hinweis</th></tr></thead>
+      <tbody>
+        <tr><td><strong>sich entscheiden</strong></td><td>to decide („Ich habe mich entschieden.")</td></tr>
+        <tr><td><strong>effektiv / effektiver</strong></td><td>effective / more effective</td></tr>
+        <tr><td><strong>der Hochzeitstag</strong></td><td>wedding anniversary</td></tr>
+        <tr><td><strong>(jdm.) guttun</strong></td><td>to do (sb.) good („Es hat gut getan.")</td></tr>
+        <tr><td><strong>auf etwas verzichten (+ Akk.)</strong></td><td>to do without sth.</td></tr>
+        <tr><td><strong>Zeit verschwenden</strong></td><td>to waste time</td></tr>
+        <tr><td><strong>die Abhängigkeit</strong></td><td>dependency / addiction</td></tr>
+        <tr><td><strong>(Wände) streichen</strong></td><td>to paint (walls) – strich, gestrichen</td></tr>
+        <tr><td><strong>der Kaffee ↔ das Café</strong></td><td>coffee (drink) ↔ café (place)</td></tr>
+        <tr><td><strong>sich wohlfühlen</strong></td><td>to feel comfortable / well</td></tr>
+        <tr><td><strong>angenehm</strong></td><td>pleasant</td></tr>
+        <tr><td><strong>einen Witz erzählen</strong></td><td>to tell a joke</td></tr>
+        <tr><td><strong>die Ausnahme</strong></td><td>exception</td></tr>
+        <tr><td><strong>ein schlechtes Gewissen haben</strong></td><td>to have a bad conscience</td></tr>
+        <tr><td><strong>(jdm.) vertrauen (+ Dativ)</strong></td><td>to trust (sb.)</td></tr>
+        <tr><td><strong>wissen (weiß, wusste)</strong></td><td>to know (a fact)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TAB 3 -->
+<div class="tab-content" id="p3">
+  <div class="card a-red">
+    <h2>🔑 Konjunktiv II – höflich &amp; hypothetisch</h2>
+    <div class="box mint">
+      <div class="box-label">könnte (Möglichkeit)</div>
+      <p>Ich <span class="hl">könnte</span> nie auf Kaffee verzichten. <span class="note">= es wäre für mich unmöglich</span></p>
+    </div>
+    <div class="box sun">
+      <div class="box-label">Wenn … hätte, würde …</div>
+      <p><span class="hl">Wenn</span> ich frei <span class="hl">hätte</span>, <span class="hl">würde</span> ich spazieren gehen.<br><span class="note">irreale Bedingung: hätte im Wenn-Satz, würde + Infinitiv im Hauptsatz.</span></p>
+    </div>
+  </div>
+
+  <div class="card a-teal">
+    <h2>📐 Wichtige Verben</h2>
+    <div class="box mint">
+      <div class="box-label">verzichten AUF + Akkusativ</div>
+      <p>Ich verzichte auf <span class="hl">den</span> Kaffee / auf <span class="hl">die</span> Süßigkeiten.</p>
+    </div>
+    <div class="box sun">
+      <div class="box-label">vertrauen + Dativ · wissen</div>
+      <p>Sie haben <span class="hl">ihm</span> vertraut. (jemandem vertrauen) · Meine Familie <span class="hl">weiß</span> das. · Wir <span class="hl">wissen</span> nichts über sie.</p>
+    </div>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🃏 Karten</h2>
+    <details>
+      <summary>„I could never give up coffee."</summary>
+      <div class="answer">👉 „Ich <strong>könnte</strong> nie auf Kaffee <strong>verzichten</strong>."</div>
+    </details>
+    <details>
+      <summary>„If I had free time, I would …"</summary>
+      <div class="answer">👉 „Wenn ich frei <strong>hätte</strong>, <strong>würde</strong> ich …"</div>
+    </details>
+    <details>
+      <summary>„to trust someone" – welcher Fall?</summary>
+      <div class="answer">👉 jemandem vertrauen (<strong>Dativ</strong>): „Sie haben ihm vertraut."</div>
+    </details>
+  </div>
+</div>
+
+<!-- TAB 4 -->
+<div class="tab-content" id="p4">
+  <div class="card a-teal">
+    <h2>✏️ Konjunktiv &amp; Verben</h2>
+    <div class="exercise">
+      <p>1. Ich ___ nie auf Kaffee verzichten. (hypothetisch)</p>
+      <select onchange="checkSelect(this,'könnte')">
+        <option value="">— wählen —</option><option>könnte</option><option>kann</option><option>konnte</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>2. Ich verzichte ___ Süßigkeiten.</p>
+      <select onchange="checkSelect(this,'auf')">
+        <option value="">— wählen —</option><option>auf</option><option>von</option><option>über</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>3. Wenn ich frei ___, würde ich spazieren gehen.</p>
+      <select onchange="checkSelect(this,'hätte')">
+        <option value="">— wählen —</option><option>hätte</option><option>habe</option><option>hatte</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>4. Sie haben ___ vertraut. (jemandem)</p>
+      <select onchange="checkSelect(this,'ihm')">
+        <option value="">— wählen —</option><option>ihm</option><option>ihn</option><option>er</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card a-gold">
+    <h2>🔤 Wortschatz &amp; Formen</h2>
+    <div class="exercise">
+      <p>5. Ich habe meine Wände mit Farbe ___. (streichen)</p>
+      <select onchange="checkSelect(this,'gestrichen')">
+        <option value="">— wählen —</option><option>gestrichen</option><option>gestreicht</option><option>gestrocken</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>6. Meine Familie ___ das. (wissen)</p>
+      <select onchange="checkSelect(this,'weiß')">
+        <option value="">— wählen —</option><option>weiß</option><option>weißt</option><option>wisst</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>7. Ich trinke einen ___ und sitze im ___. (Getränk / Ort)</p>
+      <select onchange="checkSelect(this,'Kaffee … Café')">
+        <option value="">— wählen —</option><option>Kaffee … Café</option><option>Café … Kaffee</option><option>Kaffee … Kaffee</option>
+      </select>
+    </div>
+    <div class="exercise">
+      <p>8. Ich habe kein schlechtes ___.</p>
+      <select onchange="checkSelect(this,'Gewissen')">
+        <option value="">— wählen —</option><option>Gewissen</option><option>Gewitter</option><option>Gewicht</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5 -->
+<div class="tab-content" id="p5">
+  <div class="card a-teal">
+    <h2>💬 Sprechen &amp; anwenden</h2>
+    <div class="exercise">
+      <p>9. Worauf könntest du nie verzichten – und was würdest du gern ändern?</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Ich könnte nie auf Kaffee verzichten. Aber ich verschwende zu viel Zeit am Handy – das ist fast eine kleine Abhängigkeit. Ich würde das gern ändern.</div>
+      </details>
+    </div>
+    <div class="exercise">
+      <p>10. „Wenn ich (mehr) frei hätte, würde ich …" – bilde 2 Sätze.</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Wenn ich frei hätte, würde ich spazieren gehen und Fahrrad fahren – das tut mir gut. Und ich würde endlich meine Wände neu streichen.</div>
+      </details>
+    </div>
+    <div class="exercise">
+      <p>11. Was tut dir im Alltag gut, und wobei fühlst du dich wohl?</p>
+      <details>
+        <summary>Beispiel</summary>
+        <div class="answer">Es tut mir gut, früh aufzustehen und mich zu bewegen. Bei einem Kaffee im Café mit Freunden fühle ich mich wohl – da kann jemand auch mal einen Witz erzählen.</div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 6 -->
+<div class="tab-content" id="p6">
+  <div class="card a-red">
+    <h2>🔴 Fehlerkorrektur &amp; Stolperfallen</h2>
+    <p style="font-size:.85rem; color:var(--muted);">Die wichtigsten Punkte aus eurer Stunde.</p>
+  </div>
+
+  <div class="fehler-card">
+    <div class="falsch">❌ Verwechslung: der Kaffee <span>= das Café</span></div>
+    <div class="richtig">✅ Richtig: der <span class="hl">Kaffee</span> (Getränk) ↔ das <span class="hl">Café</span> (Ort).</div>
+    <div class="erklaerung">„Ich trinke einen Kaffee im Café." Aussprache: Café mit Betonung auf „é".</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich verzichte <span>von</span> Süßigkeiten.</div>
+    <div class="richtig">✅ Richtig: Ich verzichte <span class="hl">auf</span> Süßigkeiten.</div>
+    <div class="erklaerung">verzichten <strong>auf</strong> + Akkusativ: auf den Kaffee, auf die Süßigkeiten.</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Ich habe meine Wände <span>gestreicht</span>.</div>
+    <div class="richtig">✅ Richtig: Ich habe meine Wände <span class="hl">gestrichen</span>.</div>
+    <div class="erklaerung">streichen – strich – gestrichen (unregelmäßig).</div>
+  </div>
+  <div class="fehler-card">
+    <div class="falsch">❌ Falsch: Sie haben <span>ihn</span> vertraut.</div>
+    <div class="richtig">✅ Richtig: Sie haben <span class="hl">ihm</span> vertraut.</div>
+    <div class="erklaerung">vertrauen + <strong>Dativ</strong>: jemandem vertrauen → ihm / ihr / ihnen.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function checkSelect(el,correct){el.className=el.value===correct?'correct':(el.value!==''?'wrong':'');}
+</script>
+</body>
+</html>
